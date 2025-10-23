@@ -1,0 +1,846 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+&S	��ѹesp32: SPI Speed   �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1fb70h (129904) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002fb98 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002fbc0 vaddr=3ffb0000 size=00458h (  1112) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a463ch (673340) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d4664 vaddr=3ffb0458 size=03b80h ( 15232) load[0m
+[0;32mI (380) esp_image: segment 5: paddr=000d81ec vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (452) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      v5.5-dirty[0m
+[0;32mI (460) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (465) app_init: ELF file SHA256:  ce9684788...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (486) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB8790 len 00027870 (158 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (520) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (537) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (557) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2667) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2717) wifi:wifi driver task: 3ffc0988, prio:23, stack:6656, core=0[0m
+[0;32mI (2737) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2737) wifi:wifi certification version: v7.0[0m
+[0;32mI (2737) wifi:config NVS flash: enabled[0m
+[0;32mI (2737) wifi:config nano formatting: disabled[0m
+[0;32mI (2737) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2747) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2747) wifi:Init management short buffer num: 32[0m
+[0;32mI (2757) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2757) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2757) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2767) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2767) wifi_init: rx ba win: 6[0m
+[0;32mI (2767) wifi_init: accept mbox: 6[0m
+[0;32mI (2777) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2777) wifi_init: udp mbox: 6[0m
+[0;32mI (2777) wifi_init: tcp mbox: 6[0m
+[0;32mI (2787) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2787) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2787) wifi_init: tcp mss: 1440[0m
+[0;32mI (2797) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2797) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2877) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2957) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2957) wifi:enable tsf[0m
+[0;32mI (2957) KEYPAD: WiFi initialized[0m
+[0;32mI (2967) KEYPAD: WiFi STA started[0m
+[0;32mI (2967) KEYPAD: No Device ID saved, using default[0m
+[0;32mI (2967) KEYPAD: Have a saved wifi network in NVS[0m
+[0;33mW (4507) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (5567) main_task: Returned from app_main()[0m
+[0;32mI (6977) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (10387) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (13797) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (17207) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (20617) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (24027) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (27437) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: B
+[KEY] Pressed: B (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 3
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 33
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 333
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 3333
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 3333
+[0;33mW (29937) KEYPAD: MQTT not connected[0m
+[0;32mI (30847) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 3
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 33
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 333
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 3333
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 3333
+[0;33mW (33897) KEYPAD: MQTT not connected[0m
+[0;32mI (34257) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 3
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 33
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 333
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 0)
+[NORMAL] Input: 3333
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 3333
+[0;33mW (36907) KEYPAD: MQTT not connected[0m
+[0;32mI (37667) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 0)
+[NORMAL] Input: 6
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 0)
+[NORMAL] Input: 66
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 0)
+[NORMAL] Input: 666
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 0)
+[NORMAL] Input: 6666
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 6666
+[0;33mW (40467) KEYPAD: MQTT not connected[0m
+[0;32mI (41077) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 9
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 99
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 999
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 9999
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 9999
+[0;33mW (44267) KEYPAD: MQTT not connected[0m
+[0;32mI (44487) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 7
+[KEY] Pressed: 7 (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 7
+[KEY] Pressed: 7 (State: 0, Error: 0)
+[NORMAL] Input: 7
+Key pressed: 7
+[KEY] Pressed: 7 (State: 0, Error: 0)
+[NORMAL] Input: 77
+[0;32mI (47897) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 9
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 99
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (51307) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (54717) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (58127) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (61537) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (64947) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 8
+[KEY] Pressed: 8 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (68357) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (71767) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (75177) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (78587) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (81997) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (85407) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (88817) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (92227) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 3
+[KEY] Pressed: 3 (State: 1, Error: 0)
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+[0;32mI (95637) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (99047) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+[0;32mI (102457) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 3
+[KEY] Pressed: 3 (State: 1, Error: 0)
+Key pressed: 3
+[KEY] Pressed: 3 (State: 1, Error: 0)
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+[0;32mI (105867) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (109277) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: D
+[KEY] Pressed: D (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (112687) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 6
+[KEY] Pressed: 6 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 4
+[KEY] Pressed: 4 (State: 0, Error: 0)
+[NORMAL] Input: 4
+Key pressed: 4
+[KEY] Pressed: 4 (State: 0, Error: 0)
+[NORMAL] Input: 44
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 449
+Key pressed: 7
+[KEY] Pressed: 7 (State: 0, Error: 0)
+[NORMAL] Input: 4497
+Key pressed: 8
+[KEY] Pressed: 8 (State: 0, Error: 0)
+Key pressed: *
+[KEY] Pressed: * (State: 0, Error: 0)
+[NORMAL] Skip number
+[1;31mE (114737) mqtt_client: Client was not initialized[0m
+Key pressed: 0
+[KEY] Pressed: 0 (State: 0, Error: 0)
+[NORMAL] Input: 80
+Key pressed: #
+[KEY] Pressed: # (State: 0, Error: 0)
+[NORMAL] Recall number
+[1;31mE (115297) mqtt_client: Client was not initialized[0m
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 809
+[0;32mI (116097) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 8
+[KEY] Pressed: 8 (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: #
+[KEY] Pressed: # (State: 0, Error: 0)
+[NORMAL] Recall number
+[1;31mE (116987) mqtt_client: Client was not initialized[0m
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 9
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 99
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 999
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[NORMAL] Input: 9999
+Key pressed: 9
+[KEY] Pressed: 9 (State: 0, Error: 0)
+[0;32mI (119507) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 5
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 55
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 555
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 5555
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 5
+[0;33mW (121717) KEYPAD: MQTT not connected[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (122917) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 3
+[KEY] Pressed: 3 (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 2
+[KEY] Pressed: 2 (State: 0, Error: 0)
+[NORMAL] Input: 2
+Key pressed: 1
+[KEY] Pressed: 1 (State: 0, Error: 0)
+[NORMAL] Input: 21
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (126327) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (129737) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (133147) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (136557) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (139967) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: #
+[KEY] Pressed: # (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (143377) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (146787) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (150197) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (153607) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (157017) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (160427) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (163837) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (167247) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (170657) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (174067) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (177477) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (180887) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (184297) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (187707) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (191117) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (194527) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: B
+[KEY] Pressed: B (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 3
+[KEY] Pressed: 3 (State: 1, Error: 0)
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+[0;32mI (197937) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (201347) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 2
+[KEY] Pressed: 2 (State: 0, Error: 0)
+[NORMAL] Input: 2
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (204757) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 2
+[KEY] Pressed: 2 (State: 0, Error: 0)
+[NORMAL] Input: 2
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+[0;32mI (208167) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (211577) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (214987) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 2
+[KEY] Pressed: 2 (State: 0, Error: 0)
+[NORMAL] Input: 2
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (218397) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 0)
+[MENU] Cancelled
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (221807) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: #
+[KEY] Pressed: # (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+Key pressed: D
+[KEY] Pressed: D (State: 1, Error: 0)
+[MENU] Confirmed: WiFi
+[STATE] Entered WIFI_SSID
+[0;32mI (225217) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (228627) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: *
+[KEY] Pressed: * (State: 2, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: *
+[KEY] Pressed: * (State: 0, Error: 0)
+[NORMAL] Skip number
+[1;31mE (231077) mqtt_client: Client was not initialized[0m
+Key pressed: *
+[KEY] Pressed: * (State: 0, Error: 0)
+[NORMAL] Skip number
+[1;31mE (231507) mqtt_client: Client was not initialized[0m
+Key pressed: B
+[KEY] Pressed: B (State: 0, Error: 0)
+[NORMAL] Requesting next number
+[1;31mE (231987) mqtt_client: Client was not initialized[0m
+[0;32mI (232037) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 0)
+[NORMAL] Input: 6
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 65
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 0)
+[NORMAL] Sending priority number: 65
+[0;33mW (234057) KEYPAD: MQTT not connected[0m
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 3)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: *
+[KEY] Pressed: * (State: 0, Error: 0)
+[NORMAL] Skip number
+[1;31mE (235197) mqtt_client: Client was not initialized[0m
+[0;32mI (235447) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 3
+[KEY] Pressed: 3 (State: 1, Error: 0)
+Key pressed: 2
+[KEY] Pressed: 2 (State: 1, Error: 0)
+[MENU] Selected Set ID
+[0;32mI (238857) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: D
+[KEY] Pressed: D (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (242267) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 0
+[KEY] Pressed: 0 (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 0
+[KEY] Pressed: 0 (State: 0, Error: 0)
+[NORMAL] Input: 0
+Key pressed: 8
+[KEY] Pressed: 8 (State: 0, Error: 0)
+[NORMAL] Input: 08
+[0;32mI (245677) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 0
+[KEY] Pressed: 0 (State: 0, Error: 0)
+[NORMAL] Input: 0
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 05
+Key pressed: 2
+[KEY] Pressed: 2 (State: 0, Error: 0)
+[NORMAL] Input: 052
+[0;32mI (249087) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: D
+[KEY] Pressed: D (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (252497) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: D
+[KEY] Pressed: D (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: D
+[KEY] Pressed: D (State: 1, Error: 0)
+[MENU] Confirmed: WiFi
+[STATE] Entered WIFI_SSID
+[0;32mI (255907) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (259317) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: 6
+[KEY] Pressed: 6 (State: 2, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+[0;32mI (262727) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: 6
+[KEY] Pressed: 6 (State: 0, Error: 0)
+[NORMAL] Input: 6
+Key pressed: 5
+[KEY] Pressed: 5 (State: 0, Error: 0)
+[NORMAL] Input: 65
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: *
+[KEY] Pressed: * (State: 1, Error: 0)
+[0;32mI (266137) KEYPAD: STA disconnected, reason=201[0m
+Key pressed: A
+[KEY] Pressed: A (State: 1, Error: 2)
+[ERROR] Exiting error screen
+[STATE] Entered NORMAL - ID: 01, Calling: ---
+Key pressed: A
+[KEY] Pressed: A (State: 0, Error: 0)
+[NORMAL] Opening menu
+[STATE] Entered MENU_MAIN
+Key pressed: 1
+[KEY] Pressed: 1 (State: 1, Error: 0)
+[MENU] Selected WiFi
+[0;32mI (269547) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (272957) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (276367) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (279777) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (283187) KEYPAD: STA disconnected, reason=201[0m

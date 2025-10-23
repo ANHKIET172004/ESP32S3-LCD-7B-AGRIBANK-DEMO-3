@@ -1,0 +1,691 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+J��ѹesp32: SPI Speed�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e468h (124008) map[0m
+[0;32mI (131) esp_image: segment 1: paddr=0002e490 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=0002e4b8 vaddr=3ffb0000 size=01b60h (  7008) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=9fce0h (654560) map[0m
+[0;32mI (366) esp_image: segment 4: paddr=000cfd08 vaddr=3ffb1b60 size=02418h (  9240) load[0m
+[0;32mI (369) esp_image: segment 5: paddr=000d2128 vaddr=40080000 size=17fa4h ( 98212) load[0m
+[0;32mI (419) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (420) boot: Disabling RNG early entropy source...[0m
+[0;32mI (430) cpu_start: Multicore app[0m
+[0;32mI (438) cpu_start: Pro cpu start user code[0m
+[0;32mI (438) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (439) app_init: Application information:[0m
+[0;32mI (439) app_init: Project name:     hello_world[0m
+[0;32mI (443) app_init: App version:      v5.5-dirty[0m
+[0;32mI (447) app_init: Compile time:     Oct 19 2025 19:25:48[0m
+[0;32mI (452) app_init: ELF file SHA256:  4748902d7...[0m
+[0;32mI (456) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (460) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (464) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (468) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (472) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (479) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (484) heap_init: At 3FFB8710 len 000278F0 (158 KiB): DRAM[0m
+[0;32mI (489) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (494) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (500) heap_init: At 40097FA4 len 0000805C (32 KiB): IRAM[0m
+[0;32mI (506) spi_flash: detected chip: generic[0m
+[0;32mI (509) spi_flash: flash io: dio[0m
+[0;33mW (512) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (525) main_task: Started on CPU0[0m
+[0;32mI (535) main_task: Calling app_main()[0m
+[0;32mI (535) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (585) wifi:wifi driver task: 3ffc07b8, prio:23, stack:6656, core=0[0m
+[0;32mI (605) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (605) wifi:wifi certification version: v7.0[0m
+[0;32mI (605) wifi:config NVS flash: enabled[0m
+[0;32mI (605) wifi:config nano formatting: disabled[0m
+[0;32mI (605) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (615) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (615) wifi:Init management short buffer num: 32[0m
+[0;32mI (625) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (625) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (625) wifi:Init static rx buffer num: 10[0m
+[0;32mI (635) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (635) wifi_init: rx ba win: 6[0m
+[0;32mI (635) wifi_init: accept mbox: 6[0m
+[0;32mI (645) wifi_init: tcpip mbox: 32[0m
+[0;32mI (645) wifi_init: udp mbox: 6[0m
+[0;32mI (645) wifi_init: tcp mbox: 6[0m
+[0;32mI (655) wifi_init: tcp tx win: 5760[0m
+[0;32mI (655) wifi_init: tcp rx win: 5760[0m
+[0;32mI (655) wifi_init: tcp mss: 1440[0m
+[0;32mI (655) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (665) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (715) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (795) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (795) wifi:enable tsf[0m
+[0;32mI (805) KEYPAD: WiFi initialized[0m
+[0;32mI (805) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (805) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1145) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (1145) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1165) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1175) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1205) wifi:connected with NamTrung, aid = 18, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (1205) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
+[0;32mI (1215) wifi:pm start, type: 1[0m
+
+[0;32mI (1215) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1225) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (1225) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (1255) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1865) main_task: Returned from app_main()[0m
+[0;32mI (2295) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:6, winSize:64[0m
+[0;32mI (2755) esp_netif_handlers: sta ip: 10.10.1.30, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (2755) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (2755) KEYPAD: MQTT initialized[0m
+[0;32mI (2805) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2815) KEYPAD: MQTT connected[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: *
+BỎ QUA SỐ HIỆN TẠI
+Key pressed: #
+GỌI LẠI
+Key pressed: #
+GỌI LẠI
+Key pressed: #
+GỌI LẠI
+Key pressed: #
+GỌI LẠI
+Key pressed: #
+GỌI LẠI
+Key pressed: 4
+Input: 4
+Key pressed: 2
+Input: 42
+Key pressed: 8
+Input: 428
+[0;32mI (20755) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: 6
+Input: 4286
+Key pressed: D
+Sending number: 4286
+GỌI ƯU TIÊN
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: #
+GỌI LẠI
+Key pressed: *
+BỎ QUA SỐ HIỆN TẠI
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: A
+WiFi Configuration Mode
+Enter WiFi SSID:
+[0;32mI (93245) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: *
+CAPSLOCK ON
+Key pressed: 6
+SSID: M
+Key pressed: 6
+SSID: MM
+Key pressed: #
+SSID: M
+Key pressed: #
+SSID: 
+Key pressed: 6
+SSID: M
+Key pressed: 6
+SSID: N
+[0;32mI (102255) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: *
+CAPSLOCK OFF
+Key pressed: 2
+SSID: Na
+Key pressed: 6
+SSID: Nam
+Key pressed: *
+CAPSLOCK ON
+Key pressed: 8
+SSID: NamT
+Key pressed: *
+CAPSLOCK OFF
+Key pressed: 7
+SSID: NamTp
+Key pressed: 7
+SSID: NamTq
+Key pressed: 7
+SSID: NamTr
+Key pressed: 8
+SSID: NamTrt
+Key pressed: 8
+SSID: NamTru
+Key pressed: 6
+SSID: NamTrum
+Key pressed: 6
+SSID: NamTrun
+[0;32mI (111275) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: 4
+SSID: NamTrung
+Key pressed: D
+SSID saved: NamTrung
+Enter WiFi password:
+Key pressed: B
+Key pressed: B
+Key pressed: 6
+PASSWORD: m
+Key pressed: 6
+PASSWORD: n
+Key pressed: 8
+PASSWORD: nt
+Key pressed: 7
+PASSWORD: ntp
+Key pressed: #
+PASSWORD: nt
+Key pressed: 1
+PASSWORD: nt.
+Key pressed: 1
+PASSWORD: nt,
+Key pressed: 1
+PASSWORD: nt!
+Key pressed: 1
+PASSWORD: nt?
+Key pressed: 1
+PASSWORD: nt'
+Key pressed: 1
+PASSWORD: nt"
+Key pressed: 1
+PASSWORD: nt1
+Key pressed: 1
+PASSWORD: nt-
+Key pressed: 1
+PASSWORD: nt(
+Key pressed: 1
+PASSWORD: nt@
+Key pressed: 1
+PASSWORD: nt@.
+Key pressed: 1
+PASSWORD: nt@,
+Key pressed: 1
+PASSWORD: nt@!
+Key pressed: 1
+PASSWORD: nt@?
+Key pressed: 1
+PASSWORD: nt@'
+Key pressed: 1
+PASSWORD: nt@"
+Key pressed: 1
+PASSWORD: nt@1
+Key pressed: 4
+PASSWORD: nt@1g
+Key pressed: 4
+PASSWORD: nt@1h
+Key pressed: 4
+PASSWORD: nt@1i
+Key pressed: 4
+PASSWORD: nt@1ig
+[0;32mI (138175) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: #
+PASSWORD: nt@1i
+Key pressed: #
+PASSWORD: nt@1
+Key pressed: 4
+PASSWORD: nt@1g
+Key pressed: 4
+PASSWORD: nt@1h
+Key pressed: 4
+PASSWORD: nt@1i
+Key pressed: 4
+PASSWORD: nt@14
+Key pressed: 0
+PASSWORD: nt@14 
+Key pressed: 0
+PASSWORD: nt@140
+Key pressed: 9
+PASSWORD: nt@140w
+Key pressed: 9
+PASSWORD: nt@140x
+[0;32mI (147205) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: 9
+PASSWORD: nt@140y
+Key pressed: 9
+PASSWORD: nt@140z
+Key pressed: 9
+PASSWORD: nt@1409
+Key pressed: 2
+PASSWORD: nt@1409a
+Key pressed: 2
+PASSWORD: nt@1409b
+Key pressed: 2
+PASSWORD: nt@1409c
+Key pressed: 2
+PASSWORD: nt@14092
+Key pressed: 0
+PASSWORD: nt@14092 
+Key pressed: 0
+PASSWORD: nt@140920
+Key pressed: 1
+PASSWORD: nt@140920.
+Key pressed: 1
+PASSWORD: nt@140920,
+Key pressed: 1
+PASSWORD: nt@140920!
+Key pressed: 1
+PASSWORD: nt@140920?
+Key pressed: 1
+PASSWORD: nt@140920'
+Key pressed: 1
+PASSWORD: nt@140920"
+Key pressed: 1
+PASSWORD: nt@1409201
+[0;32mI (156225) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: 1
+PASSWORD: nt@1409201.
+Key pressed: 1
+PASSWORD: nt@1409201,
+Key pressed: 1
+PASSWORD: nt@1409201!
+Key pressed: 1
+PASSWORD: nt@1409201?
+Key pressed: 1
+PASSWORD: nt@1409201'
+Key pressed: 1
+PASSWORD: nt@1409201"
+Key pressed: 1
+PASSWORD: nt@14092011
+Key pressed: D
+Password saved: nt@14092011
+[0;32mI (161845) wifi:state: run -> init (0x0)[0m
+[0;32mI (161855) wifi:pm stop, total sleep time: 107644001 us / 160638108 us[0m
+
+[0;32mI (161855) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (161855) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (161855) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;33mW (161865) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+WiFi connecting with SSID: NamTrung
+[0;32mI (161875) KEYPAD: STA disconnected, reason=8[0m
+[0;32mI (161875) KEYPAD: WIFI STA_DISCONNECTED.[0m
+[1;31mE (161885) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (161885) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[1;31mE (161895) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (161905) KEYPAD: MQTT disconnected[0m
+[0;32mI (161925) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (161925) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (161935) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (161955) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (161975) wifi:connected with NamTrung, aid = 18, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (161975) wifi:security: WPA2-PSK, phy: bgn, rssi: -80[0m
+[0;32mI (161985) wifi:pm start, type: 1[0m
+
+[0;32mI (161985) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (161985) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (162025) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (163085) esp_netif_handlers: sta ip: 10.10.1.30, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (163085) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (163085) KEYPAD: Wi-Fi credentials unchanged, skip saving[0m
+[0;32mI (163085) KEYPAD: MQTT initialized[0m
+[0;32mI (163105) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (163125) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (163135) KEYPAD: MQTT connected[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[1;31mE (176915) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (176915) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (176925) KEYPAD: MQTT connected[0m
+[1;31mE (176925) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (176935) KEYPAD: MQTT disconnected[0m
+Key pressed: B
+[0;33mW (177025) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (182245) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (185885) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (186055) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (186575) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+[1;31mE (191945) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (191945) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (191945) KEYPAD: MQTT connected[0m
+[1;31mE (191955) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (191965) KEYPAD: MQTT disconnected[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[1;31mE (207005) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (207005) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (207005) KEYPAD: MQTT connected[0m
+[1;31mE (207005) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (207015) KEYPAD: MQTT disconnected[0m
+Key pressed: B
+[0;33mW (212955) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (214325) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (215495) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (215865) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (216235) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (216505) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (216825) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (217145) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (217515) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (217835) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (218155) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (218475) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (218845) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (219165) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (219485) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (219805) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (220075) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (220395) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (220765) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (220935) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+[1;31mE (222035) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (222035) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (222045) KEYPAD: MQTT connected[0m
+[1;31mE (222045) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (222055) KEYPAD: MQTT disconnected[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[1;31mE (237065) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (237065) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (237065) KEYPAD: MQTT connected[0m
+[1;31mE (237075) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (237085) KEYPAD: MQTT disconnected[0m
+Key pressed: B
+[0;33mW (248515) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (249385) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (249975) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (251545) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+Key pressed: B
+[0;33mW (251715) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+GỌI SỐ TIẾP THEO
+[1;31mE (252115) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (252115) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (252115) KEYPAD: MQTT connected[0m
+[1;31mE (252115) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (252125) KEYPAD: MQTT disconnected[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[1;31mE (262155) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (262155) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (262155) KEYPAD: MQTT connected[0m
+[1;31mE (262155) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (262175) KEYPAD: MQTT disconnected[0m
+[1;31mE (277205) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (277205) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (277205) KEYPAD: MQTT connected[0m
+[1;31mE (277215) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (277225) KEYPAD: MQTT disconnected[0m
+[1;31mE (292255) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (292255) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (292255) KEYPAD: MQTT connected[0m
+[1;31mE (292255) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (292265) KEYPAD: MQTT disconnected[0m
+[1;31mE (307275) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (307275) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (307275) KEYPAD: MQTT connected[0m
+[1;31mE (307285) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (307295) KEYPAD: MQTT disconnected[0m
+[1;31mE (322315) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (322325) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (322325) KEYPAD: MQTT connected[0m
+[1;31mE (322325) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (322335) KEYPAD: MQTT disconnected[0m
+[1;31mE (337345) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (337355) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (337355) KEYPAD: MQTT connected[0m
+[1;31mE (337355) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (337365) KEYPAD: MQTT disconnected[0m
+[1;31mE (352375) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (352375) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (352375) KEYPAD: MQTT connected[0m
+[1;31mE (352385) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (352395) KEYPAD: MQTT disconnected[0m
+[1;31mE (367425) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (367425) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (367425) KEYPAD: MQTT connected[0m
+[1;31mE (367425) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (367435) KEYPAD: MQTT disconnected[0m
+[1;31mE (377485) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (377485) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (377485) KEYPAD: MQTT connected[0m
+[1;31mE (377485) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (377495) KEYPAD: MQTT disconnected[0m
+[1;31mE (392535) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (392535) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (392535) KEYPAD: MQTT connected[0m
+[1;31mE (392545) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (392555) KEYPAD: MQTT disconnected[0m
+[1;31mE (407585) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (407585) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (407595) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (407595) KEYPAD: MQTT connected[0m
+[0;32mI (407595) KEYPAD: MQTT disconnected[0m
+[1;31mE (417655) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[0;32mI (417655) KEYPAD: MQTT connected[0m
+[1;31mE (417655) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (417665) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (417675) KEYPAD: MQTT disconnected[0m
+[1;31mE (432745) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (432745) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (432745) KEYPAD: MQTT connected[0m
+[1;31mE (432755) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (432765) KEYPAD: MQTT disconnected[0m
+[0;32mI (447795) KEYPAD: MQTT connected[0m
+[1;31mE (447795) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (447805) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (447805) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (447815) KEYPAD: MQTT disconnected[0m
+[1;31mE (462845) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (462845) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (462845) KEYPAD: MQTT connected[0m
+[1;31mE (462855) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (462865) KEYPAD: MQTT disconnected[0m
+[1;31mE (477875) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (477875) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (477875) KEYPAD: MQTT connected[0m
+[1;31mE (477885) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (477895) KEYPAD: MQTT disconnected[0m
+[1;31mE (492915) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[1;31mE (492915) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;32mI (492915) KEYPAD: MQTT connected[0m
+[1;31mE (492915) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (492935) KEYPAD: MQTT disconnected[0m
+[1;31mE (507955) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read(): EOF[0m
+[0;32mI (507955) KEYPAD: MQTT connected[0m
+[1;31mE (507955) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[1;31mE (507965) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (507975) KEYPAD: MQTT disconnected[0m

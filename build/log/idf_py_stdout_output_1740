@@ -1,0 +1,403 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+B��J��ѹesp32: SPI Spe�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f4cch (128204) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002f4f4 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002f51c vaddr=3ffb0000 size=00afch (  2812) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a1aa4h (662180) map[0m
+[0;32mI (370) esp_image: segment 4: paddr=000d1acc vaddr=3ffb0afc size=034ach ( 13484) load[0m
+[0;32mI (375) esp_image: segment 5: paddr=000d4f80 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (427) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (427) boot: Disabling RNG early entropy source...[0m
+[0;32mI (438) cpu_start: Multicore app[0m
+[0;32mI (446) cpu_start: Pro cpu start user code[0m
+[0;32mI (446) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (446) app_init: Application information:[0m
+[0;32mI (446) app_init: Project name:     hello_world[0m
+[0;32mI (451) app_init: App version:      v5.5-dirty[0m
+[0;32mI (455) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (460) app_init: ELF file SHA256:  2e88de7a7...[0m
+[0;32mI (464) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (468) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (472) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (476) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (480) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (486) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (491) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (502) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (508) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (514) spi_flash: detected chip: generic[0m
+[0;32mI (517) spi_flash: flash io: dio[0m
+[0;33mW (519) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (532) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (542) main_task: Started on CPU0[0m
+[0;32mI (552) main_task: Calling app_main()[0m
+[0;32mI (552) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2652) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2702) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2722) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2722) wifi:wifi certification version: v7.0[0m
+[0;32mI (2722) wifi:config NVS flash: enabled[0m
+[0;32mI (2722) wifi:config nano formatting: disabled[0m
+[0;32mI (2722) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2732) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2732) wifi:Init management short buffer num: 32[0m
+[0;32mI (2742) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2742) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2742) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2752) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2752) wifi_init: rx ba win: 6[0m
+[0;32mI (2752) wifi_init: accept mbox: 6[0m
+[0;32mI (2762) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2762) wifi_init: udp mbox: 6[0m
+[0;32mI (2762) wifi_init: tcp mbox: 6[0m
+[0;32mI (2772) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2772) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2772) wifi_init: tcp mss: 1440[0m
+[0;32mI (2782) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2782) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2842) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2922) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2922) wifi:enable tsf[0m
+[0;32mI (2932) KEYPAD: WiFi initialized[0m
+[0;32mI (2932) KEYPAD: WiFi STA started[0m
+[0;32mI (2932) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4472) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4862) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4862) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4882) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4912) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4942) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4942) wifi:security: WPA2-PSK, phy: bgn, rssi: -71[0m
+[0;32mI (4952) wifi:pm start, type: 1[0m
+
+[0;32mI (4952) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4952) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4962) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (4982) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5532) main_task: Returned from app_main()[0m
+[0;32mI (6042) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (6042) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (6052) KEYPAD: MQTT initialized[0m
+[0;32mI (6072) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (6072) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6092) KEYPAD: MQTT connected[0m
+Key pressed: A
+WiFi Configuration Mode
+Key pressed: #
+Key pressed: *
+CAPSLOCK ON
+Key pressed: 6
+SSID: M
+Key pressed: 6
+SSID: N
+Key pressed: *
+CAPSLOCK OFF
+Key pressed: 2
+SSID: Na
+Key pressed: 6
+SSID: Nam
+Key pressed: *
+CAPSLOCK ON
+Key pressed: 8
+SSID: NamT
+Key pressed: *
+CAPSLOCK OFF
+Key pressed: 7
+SSID: NamTp
+Key pressed: 7
+SSID: NamTq
+Key pressed: 7
+SSID: NamTr
+Key pressed: 8
+SSID: NamTrt
+Key pressed: 8
+SSID: NamTru
+Key pressed: 6
+SSID: NamTrum
+Key pressed: 6
+SSID: NamTrun
+Key pressed: 4
+SSID: NamTrung
+Key pressed: D
+SSID selected: NamTrung
+Key pressed: 6
+PASSWORD: m
+Key pressed: #
+PASSWORD: 
+Key pressed: 6
+PASSWORD: m
+Key pressed: 6
+PASSWORD: n
+Key pressed: 8
+PASSWORD: nt
+Key pressed: 1
+PASSWORD: nt.
+Key pressed: 1
+PASSWORD: nt,
+Key pressed: 1
+PASSWORD: nt!
+Key pressed: 1
+PASSWORD: nt?
+Key pressed: 1
+PASSWORD: nt'
+Key pressed: 1
+PASSWORD: nt"
+Key pressed: 1
+PASSWORD: nt1
+Key pressed: 1
+PASSWORD: nt-
+Key pressed: 1
+PASSWORD: nt(
+Key pressed: 1
+PASSWORD: nt@
+Key pressed: 1
+PASSWORD: nt@.
+Key pressed: 1
+PASSWORD: nt@,
+Key pressed: 1
+PASSWORD: nt@!
+Key pressed: 1
+PASSWORD: nt@?
+Key pressed: 1
+PASSWORD: nt@'
+Key pressed: 1
+PASSWORD: nt@"
+Key pressed: 1
+PASSWORD: nt@1
+Key pressed: 1
+PASSWORD: nt@-
+Key pressed: 1
+PASSWORD: nt@(
+Key pressed: 1
+PASSWORD: nt@@
+Key pressed: 1
+PASSWORD: nt@*
+Key pressed: 1
+PASSWORD: nt@#
+Key pressed: 1
+PASSWORD: nt@.
+Key pressed: 1
+PASSWORD: nt@,
+Key pressed: 1
+PASSWORD: nt@!
+Key pressed: 1
+PASSWORD: nt@?
+Key pressed: 1
+PASSWORD: nt@'
+Key pressed: 1
+PASSWORD: nt@"
+Key pressed: 1
+PASSWORD: nt@1
+Key pressed: 4
+PASSWORD: nt@1g
+Key pressed: 4
+PASSWORD: nt@1h
+Key pressed: 4
+PASSWORD: nt@1i
+Key pressed: 4
+PASSWORD: nt@14
+Key pressed: 4
+PASSWORD: nt@1g
+Key pressed: 4
+PASSWORD: nt@1h
+Key pressed: 4
+PASSWORD: nt@1i
+Key pressed: 4
+PASSWORD: nt@14
+Key pressed: 0
+PASSWORD: nt@14 
+Key pressed: 0
+PASSWORD: nt@140
+Key pressed: 9
+PASSWORD: nt@140w
+Key pressed: 9
+PASSWORD: nt@140x
+Key pressed: 9
+PASSWORD: nt@140y
+Key pressed: 9
+PASSWORD: nt@140z
+Key pressed: 9
+PASSWORD: nt@1409
+Key pressed: 2
+PASSWORD: nt@1409a
+Key pressed: 2
+PASSWORD: nt@1409b
+Key pressed: 2
+PASSWORD: nt@1409c
+Key pressed: 2
+PASSWORD: nt@14092
+Key pressed: 0
+PASSWORD: nt@14092 
+Key pressed: 0
+PASSWORD: nt@140920
+Key pressed: 0
+PASSWORD: nt@14092 
+Key pressed: 0
+PASSWORD: nt@140920
+Key pressed: 1
+PASSWORD: nt@140920.
+Key pressed: 1
+PASSWORD: nt@140920,
+Key pressed: 1
+PASSWORD: nt@140920!
+Key pressed: 1
+PASSWORD: nt@140920?
+Key pressed: 1
+PASSWORD: nt@140920'
+Key pressed: 1
+PASSWORD: nt@140920"
+Key pressed: 1
+PASSWORD: nt@1409201
+Key pressed: 1
+PASSWORD: nt@1409201.
+Key pressed: 1
+PASSWORD: nt@1409201,
+Key pressed: 1
+PASSWORD: nt@1409201!
+Key pressed: 1
+PASSWORD: nt@1409201?
+Key pressed: 1
+PASSWORD: nt@1409201'
+Key pressed: 1
+PASSWORD: nt@1409201"
+Key pressed: 1
+PASSWORD: nt@14092011
+Key pressed: D
+Password saved: nt@14092011
+[0;32mI (119912) wifi:state: run -> init (0x0)[0m
+[0;32mI (119922) wifi:pm stop, total sleep time: 87678309 us / 114968089 us[0m
+
+[0;32mI (119922) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (119922) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (119922) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;33mW (119932) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+WiFi connecting with SSID: NamTrung
+[0;32mI (119942) KEYPAD: STA disconnected, reason=8[0m
+[1;31mE (119942) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (119952) wifi:E (119952) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0
+[1;31mE (119962) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (119972) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (119982) KEYPAD: MQTT disconnected[0m
+[0;32mI (119992) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (120002) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (120032) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (120032) wifi:security: WPA2-PSK, phy: bgn, rssi: -66[0m
+[0;32mI (120042) wifi:pm start, type: 1[0m
+
+[0;32mI (120072) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (120972) mqtt_client: Client asked to disconnect[0m
+[0;32mI (124992) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (124992) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (125022) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:3, winSize:64[0m
+[0;32mI (126022) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (126022) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (126032) KEYPAD: Wi-Fi credentials unchanged, skip saving[0m
+[0;32mI (126032) KEYPAD: MQTT initialized[0m
+[0;32mI (126082) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (126102) KEYPAD: MQTT connected[0m
+[0;32mI (134692) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (143712) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (152832) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (165572) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (174582) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (193032) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (202052) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (211062) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (223282) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (232322) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (253532) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (262542) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (271572) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (283802) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (292842) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (314292) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (323312) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (332322) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (344532) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (353552) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (374782) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (383792) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (392812) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (405282) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (414322) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (428932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (443572) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (452582) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (465782) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (474802) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (488932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (499032) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (508042) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (517082) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (529532) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (542352) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (556792) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (565822) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (574842) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (592112) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (608932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (620282) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (629332) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (638352) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (650782) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (668932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (681032) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (690552) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (699572) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (711282) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (728932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (746662) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (755682) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (773872) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (788932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (807372) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (816402) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (834582) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (848932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (868012) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (877022) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (895242) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (908932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (928422) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (937442) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (955932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (968932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (989142) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (998152) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1011282) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1028932) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1041782) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1050792) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1059802) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1072052) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1088942) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1102282) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1111302) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1120322) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1132532) wifi:bcn_timeout,ap_probe_send_start[0m

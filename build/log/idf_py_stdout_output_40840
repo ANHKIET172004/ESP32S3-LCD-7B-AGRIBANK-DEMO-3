@@ -1,0 +1,166 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+i�J��ѹesp32:�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f6d0h (128720) map[0m
+[0;32mI (132) esp_image: segment 1: paddr=0002f6f8 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f720 vaddr=3ffb0000 size=008f8h (  2296) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4404h (672772) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d442c vaddr=3ffb08f8 size=036c0h ( 14016) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7af4 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  b7d4a26e1...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB87C0 len 00027840 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2146) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2196) wifi:wifi driver task: 3ffc09c4, prio:23, stack:6656, core=0[0m
+[0;32mI (2216) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2216) wifi:wifi certification version: v7.0[0m
+[0;32mI (2216) wifi:config NVS flash: enabled[0m
+[0;32mI (2216) wifi:config nano formatting: disabled[0m
+[0;32mI (2216) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2226) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2226) wifi:Init management short buffer num: 32[0m
+[0;32mI (2236) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2236) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2236) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2246) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2246) wifi_init: rx ba win: 6[0m
+[0;32mI (2246) wifi_init: accept mbox: 6[0m
+[0;32mI (2256) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2256) wifi_init: udp mbox: 6[0m
+[0;32mI (2256) wifi_init: tcp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2266) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2266) wifi_init: tcp mss: 1440[0m
+[0;32mI (2276) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2276) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2336) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2426) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2426) wifi:enable tsf[0m
+[0;32mI (2436) KEYPAD: WiFi initialized[0m
+[0;32mI (2436) KEYPAD: WiFi STA started[0m
+[0;32mI (2446) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;33mW (3256) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3326) wifi:flush txq[0m
+[0;32mI (3326) wifi:stop sw txq[0m
+[0;32mI (3326) wifi:lmac stop hw txq[0m
+[0;32mI (3326) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (3326) wifi:enable tsf[0m
+[0;32mI (3336) KEYPAD: WiFi STA started[0m
+[1;31mE (3336) wifi:sta is connecting, return error[0m
+[0;32mI (3626) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (3626) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3656) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3676) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3756) wifi:connected with NamTrung, aid = 20, channel 6, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (3756) wifi:security: WPA2-PSK, phy: bgn, rssi: -78[0m
+[0;32mI (3766) wifi:pm start, type: 1[0m
+
+[0;32mI (3766) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3776) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (3826) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4876) esp_netif_handlers: sta ip: 10.10.1.66, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (4876) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (6216) KEYPAD: MQTT initialized[0m
+[0;32mI (6236) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (6276) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6426) KEYPAD: MQTT connected[0m
+Key pressed: 6
+Key pressed: 5
+Key pressed: 6
+Key pressed: 5
+Key pressed: 6
+Key pressed: 5
+Key pressed: 6
+Key pressed: 5
+Key pressed: D
+[0;32mI (15656) KEYPAD: Published number 6565[0m
+[0;32mI (15846) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+[0;32mI (20536) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+[0;32mI (24246) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: 6
+Key pressed: B
+[0;32mI (35296) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+[0;32mI (35826) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+[0;32mI (36826) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+[0;32mI (46156) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (47116) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (47586) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (51536) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (51576) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (52586) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (52636) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (53436) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (53586) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: 6
+Key pressed: 5
+Key pressed: 6
+Key pressed: B
+[0;32mI (56736) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: D
+[0;32mI (57516) KEYPAD: Published number 6656[0m
+[0;32mI (57776) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: 6

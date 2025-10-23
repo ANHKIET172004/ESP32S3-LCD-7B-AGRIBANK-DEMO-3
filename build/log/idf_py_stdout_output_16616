@@ -1,0 +1,1505 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+RB��J��ѹesp32: SPI Speed  ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2706) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2726) wifi:wifi certification version: v7.0[0m
+[0;32mI (2726) wifi:config NVS flash: enabled[0m
+[0;32mI (2726) wifi:config nano formatting: disabled[0m
+[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2736) wifi:Init management short buffer num: 32[0m
+[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2756) wifi_init: rx ba win: 6[0m
+[0;32mI (2756) wifi_init: accept mbox: 6[0m
+[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2766) wifi_init: udp mbox: 6[0m
+[0;32mI (2766) wifi_init: tcp mbox: 6[0m
+[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp mss: 1440[0m
+[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2926) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2936) wifi:enable tsf[0m
+[0;32mI (2936) KEYPAD: WiFi initialized[0m
+[0;32mI (2936) KEYPAD: WiFi STA started[0m
+[0;32mI (2946) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4476) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4856) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4856) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4866) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4876) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4926) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4926) wifi:security: WPA2-PSK, phy: bgn, rssi: -65[0m
+[0;32mI (4936) wifi:pm start, type: 1[0m
+
+[0;32mI (4936) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4936) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4936) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (4986) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5566) main_task: Returned from app_main()[0m
+[0;32mI (5966) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5966) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5966) KEYPAD: MQTT initialized[0m
+[0;32mI (5976) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (5996) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6026) KEYPAD: MQTT connected[0m
+[0;32mI (6036) KEYPAD: MQTT published, msg_id=59013[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2706) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2726) wifi:wifi certification version: v7.0[0m
+[0;32mI (2726) wifi:config NVS flash: enabled[0m
+[0;32mI (2726) wifi:config nano formatting: disabled[0m
+[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2736) wifi:Init management short buffer num: 32[0m
+[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2756) wifi_init: rx ba win: 6[0m
+[0;32mI (2756) wifi_init: accept mbox: 6[0m
+[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2766) wifi_init: udp mbox: 6[0m
+[0;32mI (2766) wifi_init: tcp mbox: 6[0m
+[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp mss: 1440[0m
+[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2926) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2926) wifi:enable tsf[0m
+[0;32mI (2936) KEYPAD: WiFi initialized[0m
+[0;32mI (2936) KEYPAD: WiFi STA started[0m
+[0;32mI (2946) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4476) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4836) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4836) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4846) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4856) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4886) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4886) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
+[0;32mI (4896) wifi:pm start, type: 1[0m
+
+[0;32mI (4896) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4896) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4906) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (4936) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5166) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5566) main_task: Returned from app_main()[0m
+[0;32mI (5916) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5916) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5916) KEYPAD: MQTT initialized[0m
+[0;32mI (5926) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (5996) KEYPAD: MQTT connected[0m
+[0;32mI (6006) KEYPAD: MQTT published, msg_id=47640[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (8126) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (8126) TAG: TOPIC=responsenumber[0m
+[0;32mI (8126) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (9726) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (9726) TAG: TOPIC=responsenumber[0m
+[0;32mI (9726) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[0;32mI (11096) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (11096) TAG: TOPIC=responsenumber[0m
+[0;32mI (11096) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (12386) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (12386) TAG: TOPIC=responsenumber[0m
+[0;32mI (12386) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[0;32mI (21126) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (21136) TAG: TOPIC=responsenumber[0m
+[0;32mI (21136) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4324","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (21136) TAG: Updated label with number: 4324[0m
+[0;32mI (21156) KEYPAD: MQTT published, msg_id=16533[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (29936) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (29936) TAG: TOPIC=responsenumber[0m
+[0;32mI (29936) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4325","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (29946) TAG: Updated label with number: 4325[0m
+[0;32mI (29956) KEYPAD: MQTT published, msg_id=54443[0m
+[0;32mI (31176) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (31176) TAG: TOPIC=responsenumber[0m
+[0;32mI (31176) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4326","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (31186) TAG: Updated label with number: 4326[0m
+[0;32mI (31206) KEYPAD: MQTT published, msg_id=36304[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (34236) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (34236) TAG: TOPIC=responsenumber[0m
+[0;32mI (34236) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4327","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (34246) TAG: Updated label with number: 4327[0m
+[0;32mI (34256) KEYPAD: MQTT published, msg_id=5451[0m
+Key pressed: 4
+Input: 4
+Key pressed: 3
+Input: 43
+[0;32mI (41096) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (41096) TAG: TOPIC=responsenumber[0m
+[0;32mI (41096) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4328","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (41106) TAG: Updated label with number: 4328[0m
+[0;32mI (41116) KEYPAD: MQTT published, msg_id=25061[0m
+Key pressed: 4
+Input: 434
+Key pressed: C
+Clear
+Key pressed: 4
+Input: 4
+[0;32mI (51136) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (51136) TAG: TOPIC=responsenumber[0m
+[0;32mI (51136) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4329","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (51146) TAG: Updated label with number: 4329[0m
+[0;32mI (51156) KEYPAD: MQTT published, msg_id=12500[0m
+Key pressed: 4
+Input: 44
+Key pressed: 4
+Input: 444
+Key pressed: 3
+Input: 4443
+Key pressed: D
+Sending number: 4443
+[0;32mI (59656) KEYPAD: Published number 4443, msg_id=0[0m
+[0;32mI (59756) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (59756) TAG: TOPIC=responsenumber[0m
+[0;32mI (59756) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[0;32mI (61066) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (61066) TAG: TOPIC=responsenumber[0m
+[0;32mI (61066) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4330","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (61076) TAG: Updated label with number: 4330[0m
+[0;32mI (61086) KEYPAD: MQTT published, msg_id=11949[0m
+GỌI ƯU TIÊN
+Key pressed: 4
+Input: 4
+Key pressed: 4
+Input: 44
+Key pressed: C
+Clear
+Key pressed: 4
+Input: 4
+Key pressed: 3
+Input: 43
+[0;32mI (71106) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (71106) TAG: TOPIC=responsenumber[0m
+[0;32mI (71106) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4331","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (71116) TAG: Updated label with number: 4331[0m
+[0;32mI (71126) KEYPAD: MQTT published, msg_id=28683[0m
+[0;32mI (81246) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (81246) TAG: TOPIC=responsenumber[0m
+[0;32mI (81246) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4332","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (81256) TAG: Updated label with number: 4332[0m
+[0;32mI (81276) KEYPAD: MQTT published, msg_id=39065[0m
+[0;32mI (91066) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (91066) TAG: TOPIC=responsenumber[0m
+[0;32mI (91066) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4333","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (91076) TAG: Updated label with number: 4333[0m
+[0;32mI (91096) KEYPAD: MQTT published, msg_id=37724[0m
+[0;32mI (101096) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (101096) TAG: TOPIC=responsenumber[0m
+[0;32mI (101096) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4334","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (101106) TAG: Updated label with number: 4334[0m
+[0;32mI (101116) KEYPAD: MQTT published, msg_id=54366[0m
+[1;31mE (107426) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (107426) KEYPAD: MQTT disconnected[0m
+[0;32mI (114096) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (117476) KEYPAD: MQTT connected[0m
+[0;32mI (117486) KEYPAD: MQTT published, msg_id=45251[0m
+[0;32mI (121176) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (121176) TAG: TOPIC=responsenumber[0m
+[0;32mI (121176) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4336","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (121186) TAG: Updated label with number: 4336[0m
+[0;32mI (121206) KEYPAD: MQTT published, msg_id=17210[0m
+[1;31mE (123226) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (123226) KEYPAD: MQTT disconnected[0m
+[0;32mI (132816) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (133396) KEYPAD: MQTT connected[0m
+[0;32mI (133406) KEYPAD: MQTT published, msg_id=20784[0m
+[0;32mI (141176) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (141176) TAG: TOPIC=responsenumber[0m
+[0;32mI (141176) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[1;31mE (147376) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (147376) KEYPAD: MQTT disconnected[0m
+[0;32mI (156606) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (157446) KEYPAD: MQTT connected[0m
+[0;32mI (157456) KEYPAD: MQTT published, msg_id=7079[0m
+[0;32mI (161136) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (161136) TAG: TOPIC=responsenumber[0m
+[0;32mI (161136) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[0;32mI (171146) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (171146) TAG: TOPIC=responsenumber[0m
+[0;32mI (171146) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[0;32mI (181096) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (181096) TAG: TOPIC=responsenumber[0m
+[0;32mI (181096) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2706) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2726) wifi:wifi certification version: v7.0[0m
+[0;32mI (2726) wifi:config NVS flash: enabled[0m
+[0;32mI (2726) wifi:config nano formatting: disabled[0m
+[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2736) wifi:Init management short buffer num: 32[0m
+[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2756) wifi_init: rx ba win: 6[0m
+[0;32mI (2756) wifi_init: accept mbox: 6[0m
+[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2766) wifi_init: udp mbox: 6[0m
+[0;32mI (2766) wifi_init: tcp mbox: 6[0m
+[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp mss: 1440[0m
+[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2936) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2936) wifi:enable tsf[0m
+[0;32mI (2936) KEYPAD: WiFi initialized[0m
+[0;32mI (2936) KEYPAD: WiFi STA started[0m
+[0;32mI (2946) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4476) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4836) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4836) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4846) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4866) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4886) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4886) wifi:security: WPA2-PSK, phy: bgn, rssi: -69[0m
+[0;32mI (4906) wifi:pm start, type: 1[0m
+
+[0;32mI (4906) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4906) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4906) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (4946) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5536) main_task: Returned from app_main()[0m
+[0;32mI (5936) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5936) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5936) KEYPAD: MQTT initialized[0m
+[0;32mI (5956) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (5986) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5996) KEYPAD: MQTT connected[0m
+[0;32mI (6026) KEYPAD: MQTT published, msg_id=31125[0m
+[0;32mI (7956) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (7956) TAG: TOPIC=responsenumber[0m
+[0;32mI (7956) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4338","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (7966) TAG: Updated label with number: 4338[0m
+[0;32mI (7996) KEYPAD: MQTT published, msg_id=42845[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (12076) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (12076) TAG: TOPIC=responsenumber[0m
+[0;32mI (12076) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4339","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (12086) TAG: Updated label with number: 4339[0m
+[0;32mI (12196) KEYPAD: MQTT published, msg_id=52813[0m
+Key pressed: 4
+Input: 4
+[0;32mI (17976) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (17976) TAG: TOPIC=responsenumber[0m
+[0;32mI (17976) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4340","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (17986) TAG: Updated label with number: 4340[0m
+[0;32mI (17996) KEYPAD: MQTT published, msg_id=41341[0m
+[0;32mI (28036) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (28036) TAG: TOPIC=responsenumber[0m
+[0;32mI (28036) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4341","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (28046) TAG: Updated label with number: 4341[0m
+[0;32mI (28056) KEYPAD: MQTT published, msg_id=48161[0m
+Key pressed: 4
+Input: 44
+Key pressed: C
+Clear
+Key pressed: 4
+Input: 4
+Key pressed: 3
+Input: 43
+Key pressed: 4
+Input: 434
+Key pressed: 2
+Input: 4342
+Key pressed: D
+Sending number: 4342
+[0;32mI (46116) KEYPAD: Published number 4342, msg_id=0[0m
+[0;32mI (46216) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (46216) TAG: TOPIC=responsenumber[0m
+[0;32mI (46216) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4342"}[0m
+[0;32mI (46226) TAG: Updated label with number: 4342[0m
+[0;32mI (46236) KEYPAD: MQTT published, msg_id=22138[0m
+GỌI ƯU TIÊN
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (56696) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (56696) TAG: TOPIC=responsenumber[0m
+[0;32mI (56696) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4343","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (56706) TAG: Updated label with number: 4343[0m
+[0;32mI (56716) KEYPAD: MQTT published, msg_id=20999[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (57566) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (57566) TAG: TOPIC=responsenumber[0m
+[0;32mI (57566) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4344","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (57576) TAG: Updated label with number: 4344[0m
+[0;32mI (57596) KEYPAD: MQTT published, msg_id=2433[0m
+Key pressed: 4
+Input: 4
+Key pressed: 3
+Input: 43
+Key pressed: 4
+Input: 434
+Key pressed: 5
+Input: 4345
+Key pressed: D
+Sending number: 4345
+[0;32mI (64076) KEYPAD: Published number 4345, msg_id=0[0m
+[0;32mI (64166) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (64166) TAG: TOPIC=responsenumber[0m
+[0;32mI (64166) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4345"}[0m
+[0;32mI (64176) TAG: Updated label with number: 4345[0m
+[0;32mI (64196) KEYPAD: MQTT published, msg_id=37263[0m
+GỌI ƯU TIÊN
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (150996) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (150996) TAG: TOPIC=responsenumber[0m
+[0;32mI (150996) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4346","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (151006) TAG: Updated label with number: 4346[0m
+[0;32mI (151016) KEYPAD: MQTT published, msg_id=45546[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (153566) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (153566) TAG: TOPIC=responsenumber[0m
+[0;32mI (153566) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (154556) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (154556) TAG: TOPIC=responsenumber[0m
+[0;32mI (154556) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (155186) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (155186) TAG: TOPIC=responsenumber[0m
+[0;32mI (155186) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (155586) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (155596) TAG: TOPIC=responsenumber[0m
+[0;32mI (155596) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2706) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2726) wifi:wifi certification version: v7.0[0m
+[0;32mI (2726) wifi:config NVS flash: enabled[0m
+[0;32mI (2726) wifi:config nano formatting: disabled[0m
+[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2736) wifi:Init management short buffer num: 32[0m
+[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2756) wifi_init: rx ba win: 6[0m
+[0;32mI (2756) wifi_init: accept mbox: 6[0m
+[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2766) wifi_init: udp mbox: 6[0m
+[0;32mI (2766) wifi_init: tcp mbox: 6[0m
+[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp mss: 1440[0m
+[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2936) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2936) wifi:enable tsf[0m
+[0;32mI (2936) KEYPAD: WiFi initialized[0m
+[0;32mI (2936) KEYPAD: WiFi STA started[0m
+[0;32mI (2946) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4476) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4816) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4816) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4826) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4836) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4876) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4876) wifi:security: WPA2-PSK, phy: bgn, rssi: -63[0m
+[0;32mI (4886) wifi:pm start, type: 1[0m
+
+[0;32mI (4886) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4896) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4896) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (4956) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5536) main_task: Returned from app_main()[0m
+[0;32mI (5786) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5916) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5916) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5916) KEYPAD: MQTT initialized[0m
+[0;32mI (5956) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (6026) KEYPAD: MQTT connected[0m
+[0;32mI (6036) KEYPAD: MQTT published, msg_id=11004[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (16246) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (16256) TAG: TOPIC=responsenumber[0m
+[0;32mI (16256) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4347","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (16256) TAG: Updated label with number: 4347[0m
+[0;32mI (16436) KEYPAD: MQTT published, msg_id=46080[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (18086) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (18086) TAG: TOPIC=responsenumber[0m
+[0;32mI (18086) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4348","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (18096) TAG: Updated label with number: 4348[0m
+[0;32mI (18106) KEYPAD: MQTT published, msg_id=41602[0m
+Key pressed: 4
+Input: 4
+Key pressed: 3
+Input: 43
+Key pressed: 5
+Input: 435
+Key pressed: 0
+Input: 4350
+Key pressed: D
+Sending number: 4350
+[0;32mI (27636) KEYPAD: Published number 4350, msg_id=0[0m
+[0;32mI (27796) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (27796) TAG: TOPIC=responsenumber[0m
+[0;32mI (27796) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4350"}[0m
+[0;32mI (27806) TAG: Updated label with number: 4350[0m
+[0;32mI (27826) KEYPAD: MQTT published, msg_id=45891[0m
+GỌI ƯU TIÊN
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (35376) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (35376) TAG: TOPIC=responsenumber[0m
+[0;32mI (35376) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4349","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (35386) TAG: Updated label with number: 4349[0m
+[0;32mI (35396) KEYPAD: MQTT published, msg_id=1821[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (39676) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (39676) TAG: TOPIC=responsenumber[0m
+[0;32mI (39686) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4351","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (39686) TAG: Updated label with number: 4351[0m
+[0;32mI (39696) KEYPAD: MQTT published, msg_id=10025[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (54266) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (54266) TAG: TOPIC=responsenumber[0m
+[0;32mI (54266) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4352","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (54266) TAG: Updated label with number: 4352[0m
+[0;32mI (54296) KEYPAD: MQTT published, msg_id=43756[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (55146) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (55146) TAG: TOPIC=responsenumber[0m
+[0;32mI (55146) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4353","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (55156) TAG: Updated label with number: 4353[0m
+[0;32mI (55186) KEYPAD: MQTT published, msg_id=48127[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (55866) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (55866) TAG: TOPIC=responsenumber[0m
+[0;32mI (55866) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4354","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (55876) TAG: Updated label with number: 4354[0m
+[0;32mI (55886) KEYPAD: MQTT published, msg_id=63738[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (57926) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (57926) TAG: TOPIC=responsenumber[0m
+[0;32mI (57936) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4355","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (57936) TAG: Updated label with number: 4355[0m
+[0;32mI (58176) KEYPAD: MQTT published, msg_id=10700[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (60676) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (60676) TAG: TOPIC=responsenumber[0m
+[0;32mI (60676) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4356","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (60686) TAG: Updated label with number: 4356[0m
+[0;32mI (60706) KEYPAD: MQTT published, msg_id=52471[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (64256) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (64256) TAG: TOPIC=responsenumber[0m
+[0;32mI (64256) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (67276) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (67276) TAG: TOPIC=responsenumber[0m
+[0;32mI (67276) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (67836) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (67846) TAG: TOPIC=responsenumber[0m
+[0;32mI (67846) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (68456) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (68456) TAG: TOPIC=responsenumber[0m
+[0;32mI (68466) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (121926) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (121926) TAG: TOPIC=responsenumber[0m
+[0;32mI (121926) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4357","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (121936) TAG: Updated label with number: 4357[0m
+[0;32mI (121946) KEYPAD: MQTT published, msg_id=52651[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (123596) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (123606) TAG: TOPIC=responsenumber[0m
+[0;32mI (123606) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4358","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (123606) TAG: Updated label with number: 4358[0m
+[0;32mI (123626) KEYPAD: MQTT published, msg_id=43455[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (124966) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (124966) TAG: TOPIC=responsenumber[0m
+[0;32mI (124966) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4359","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (124976) TAG: Updated label with number: 4359[0m
+[0;32mI (124986) KEYPAD: MQTT published, msg_id=12333[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (136056) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (136056) TAG: TOPIC=responsenumber[0m
+[0;32mI (136056) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4360","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (136066) TAG: Updated label with number: 4360[0m
+[0;32mI (136076) KEYPAD: MQTT published, msg_id=30225[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (139616) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (139616) TAG: TOPIC=responsenumber[0m
+[0;32mI (139616) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4361","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (139626) TAG: Updated label with number: 4361[0m
+[0;32mI (139636) KEYPAD: MQTT published, msg_id=12311[0m
+[0;32mI (139726) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (139726) TAG: TOPIC=responsenumber[0m
+[0;32mI (139726) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (162396) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (162396) TAG: TOPIC=responsenumber[0m
+[0;32mI (162396) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (165776) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (165776) TAG: TOPIC=responsenumber[0m
+[0;32mI (165776) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (167376) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (167376) TAG: TOPIC=responsenumber[0m
+[0;32mI (167376) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (169116) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (169116) TAG: TOPIC=responsenumber[0m
+[0;32mI (169116) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (169836) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (169836) TAG: TOPIC=responsenumber[0m
+[0;32mI (169836) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2706) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2726) wifi:wifi certification version: v7.0[0m
+[0;32mI (2726) wifi:config NVS flash: enabled[0m
+[0;32mI (2726) wifi:config nano formatting: disabled[0m
+[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2736) wifi:Init management short buffer num: 32[0m
+[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2756) wifi_init: rx ba win: 6[0m
+[0;32mI (2756) wifi_init: accept mbox: 6[0m
+[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2766) wifi_init: udp mbox: 6[0m
+[0;32mI (2766) wifi_init: tcp mbox: 6[0m
+[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp mss: 1440[0m
+[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2866) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2946) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2946) wifi:enable tsf[0m
+[0;32mI (2956) KEYPAD: WiFi initialized[0m
+[0;32mI (2956) KEYPAD: WiFi STA started[0m
+[0;32mI (2956) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4496) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4826) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4826) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4836) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4846) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4916) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4916) wifi:security: WPA2-PSK, phy: bgn, rssi: -65[0m
+[0;32mI (4936) wifi:pm start, type: 1[0m
+
+[0;32mI (4936) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4936) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4936) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (5006) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5226) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5556) main_task: Returned from app_main()[0m
+[0;32mI (5966) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5966) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5966) KEYPAD: MQTT initialized[0m
+[0;32mI (5976) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (6016) KEYPAD: MQTT connected[0m
+[0;32mI (6036) KEYPAD: MQTT published, msg_id=55757[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (6746) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (6746) TAG: TOPIC=responsenumber[0m
+[0;32mI (6746) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (8496) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (8496) TAG: TOPIC=responsenumber[0m
+[0;32mI (8496) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (10436) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (10436) TAG: TOPIC=responsenumber[0m
+[0;32mI (10436) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (11056) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (11056) TAG: TOPIC=responsenumber[0m
+[0;32mI (11056) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (18706) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (18706) TAG: TOPIC=responsenumber[0m
+[0;32mI (18706) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4362","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (18716) TAG: Updated label with number: 4362[0m
+[0;32mI (18736) KEYPAD: MQTT published, msg_id=44777[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (21116) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (21116) TAG: TOPIC=responsenumber[0m
+[0;32mI (21116) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4363","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (21126) TAG: Updated label with number: 4363[0m
+[0;32mI (21146) KEYPAD: MQTT published, msg_id=45128[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (21356) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (21356) TAG: TOPIC=responsenumber[0m
+[0;32mI (21356) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4364","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (21366) TAG: Updated label with number: 4364[0m
+[0;32mI (21396) KEYPAD: MQTT published, msg_id=20785[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (22226) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (22226) TAG: TOPIC=responsenumber[0m
+[0;32mI (22226) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (22966) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (22966) TAG: TOPIC=responsenumber[0m
+[0;32mI (22966) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (47326) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (47326) TAG: TOPIC=responsenumber[0m
+[0;32mI (47326) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+[0;32mI (47466) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (47466) TAG: TOPIC=responsenumber[0m
+[0;32mI (47466) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (58356) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (58356) TAG: TOPIC=responsenumber[0m
+[0;32mI (58356) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4365","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (58366) TAG: Updated label with number: 4365[0m
+[0;32mI (58376) KEYPAD: MQTT published, msg_id=56048[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (63726) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (63726) TAG: TOPIC=responsenumber[0m
+[0;32mI (63726) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4366","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (63736) TAG: Updated label with number: 4366[0m
+[0;32mI (63746) KEYPAD: MQTT published, msg_id=58358[0m
+&S	��ѹesp32: SPI Speed      : 40MHz
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f920h (129312) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002f948 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f970 vaddr=3ffb0000 size=006a8h (  1704) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a40d8h (671960) map[0m
+[0;32mI (373) esp_image: segment 4: paddr=000d4100 vaddr=3ffb06a8 size=03910h ( 14608) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000d7a18 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      v5.5-dirty[0m
+[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (464) app_init: ELF file SHA256:  dc431b772...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2706) wifi:wifi driver task: 3ffc0948, prio:23, stack:6656, core=0[0m
+[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2726) wifi:wifi certification version: v7.0[0m
+[0;32mI (2726) wifi:config NVS flash: enabled[0m
+[0;32mI (2726) wifi:config nano formatting: disabled[0m
+[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2736) wifi:Init management short buffer num: 32[0m
+[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2756) wifi_init: rx ba win: 6[0m
+[0;32mI (2756) wifi_init: accept mbox: 6[0m
+[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2766) wifi_init: udp mbox: 6[0m
+[0;32mI (2766) wifi_init: tcp mbox: 6[0m
+[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2776) wifi_init: tcp mss: 1440[0m
+[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2926) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2926) wifi:enable tsf[0m
+[0;32mI (2936) KEYPAD: WiFi initialized[0m
+[0;32mI (2936) KEYPAD: WiFi STA started[0m
+[0;32mI (2936) NVS: Have a saved wifi network in NVS[0m
+[0;33mW (4476) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (4886) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (4886) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4896) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4906) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4946) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4956) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (4966) wifi:pm start, type: 1[0m
+
+[0;32mI (4966) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4966) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (4966) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
+[0;32mI (5026) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5566) main_task: Returned from app_main()[0m
+[0;32mI (5986) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5986) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5986) KEYPAD: MQTT initialized[0m
+[0;32mI (6016) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (6136) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6166) KEYPAD: MQTT connected[0m
+[0;32mI (6196) KEYPAD: MQTT published, msg_id=3452[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (145606) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (145606) TAG: TOPIC=responsenumber[0m
+[0;32mI (145606) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4367","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (145616) TAG: Updated label with number: 4367[0m
+[0;32mI (145666) KEYPAD: MQTT published, msg_id=62454[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (149386) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (149386) TAG: TOPIC=responsenumber[0m
+[0;32mI (149386) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4368","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (149396) TAG: Updated label with number: 4368[0m
+[0;32mI (149406) KEYPAD: MQTT published, msg_id=56379[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (150756) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (150756) TAG: TOPIC=responsenumber[0m
+[0;32mI (150756) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4369","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (150766) TAG: Updated label with number: 4369[0m
+[0;32mI (150766) KEYPAD: MQTT published, msg_id=64246[0m
+Key pressed: 4
+Input: 4
+Key pressed: 3
+Input: 43
+Key pressed: 7
+Input: 437
+Key pressed: 0
+Input: 4370
+Key pressed: D
+Sending number: 4370
+[0;32mI (177906) KEYPAD: Published number 4370, msg_id=0[0m
+[0;32mI (178086) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (178096) TAG: TOPIC=responsenumber[0m
+[0;32mI (178096) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4370"}[0m
+[0;32mI (178106) TAG: Updated label with number: 4370[0m
+[0;32mI (178116) KEYPAD: MQTT published, msg_id=61087[0m
+GỌI ƯU TIÊN
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (184666) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (184666) TAG: TOPIC=responsenumber[0m
+[0;32mI (184666) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (186386) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (186386) TAG: TOPIC=responsenumber[0m
+[0;32mI (186386) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (187006) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (187006) TAG: TOPIC=responsenumber[0m
+[0;32mI (187006) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (241206) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (241206) TAG: TOPIC=responsenumber[0m
+[0;32mI (241206) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4371","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (241216) TAG: Updated label with number: 4371[0m
+[0;32mI (241226) KEYPAD: MQTT published, msg_id=31188[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (247106) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (247106) TAG: TOPIC=responsenumber[0m
+[0;32mI (247106) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4372","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (247116) TAG: Updated label with number: 4372[0m
+[0;32mI (247126) KEYPAD: MQTT published, msg_id=27891[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (249666) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (249666) TAG: TOPIC=responsenumber[0m
+[0;32mI (249666) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4373","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (249676) TAG: Updated label with number: 4373[0m
+[0;32mI (249686) KEYPAD: MQTT published, msg_id=23544[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (252156) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (252156) TAG: TOPIC=responsenumber[0m
+[0;32mI (252156) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4374","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (252166) TAG: Updated label with number: 4374[0m
+[0;32mI (252186) KEYPAD: MQTT published, msg_id=36638[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (258966) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (258966) TAG: TOPIC=responsenumber[0m
+[0;32mI (258966) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4375","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (258976) TAG: Updated label with number: 4375[0m
+[0;32mI (258986) KEYPAD: MQTT published, msg_id=20295[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (259286) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (259286) TAG: TOPIC=responsenumber[0m
+[0;32mI (259286) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4376","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (259296) TAG: Updated label with number: 4376[0m
+[0;32mI (259306) KEYPAD: MQTT published, msg_id=14519[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (261656) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (261656) TAG: TOPIC=responsenumber[0m
+[0;32mI (261656) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4377","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (261666) TAG: Updated label with number: 4377[0m
+[0;32mI (261676) KEYPAD: MQTT published, msg_id=55290[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (262056) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (262056) TAG: TOPIC=responsenumber[0m
+[0;32mI (262056) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4378","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (262066) TAG: Updated label with number: 4378[0m
+[0;32mI (262076) KEYPAD: MQTT published, msg_id=19955[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (293286) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (293286) TAG: TOPIC=responsenumber[0m
+[0;32mI (293286) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4379","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (293296) TAG: Updated label with number: 4379[0m
+Key pressed: B
+[0;32mI (293306) KEYPAD: MQTT published, msg_id=38116[0m
+GỌI SỐ TIẾP THEO
+[0;32mI (293366) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (293366) TAG: TOPIC=responsenumber[0m
+[0;32mI (293366) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4380","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (293376) TAG: Updated label with number: 4380[0m
+[0;32mI (293386) KEYPAD: MQTT published, msg_id=17561[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (295176) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (295176) TAG: TOPIC=responsenumber[0m
+[0;32mI (295176) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4381","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (295186) TAG: Updated label with number: 4381[0m
+[0;32mI (295196) KEYPAD: MQTT published, msg_id=20430[0m
+[0;32mI (295256) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (295256) TAG: TOPIC=responsenumber[0m
+[0;32mI (295256) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4382","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (295266) TAG: Updated label with number: 4382[0m
+[0;32mI (295276) KEYPAD: MQTT published, msg_id=47945[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (298096) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (298096) TAG: TOPIC=responsenumber[0m
+[0;32mI (298096) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4383","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (298106) TAG: Updated label with number: 4383[0m
+[0;32mI (298116) KEYPAD: MQTT published, msg_id=59761[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (299426) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (299426) TAG: TOPIC=responsenumber[0m
+[0;32mI (299426) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4384","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (299436) TAG: Updated label with number: 4384[0m
+[0;32mI (299456) KEYPAD: MQTT published, msg_id=51456[0m
+[0;32mI (299536) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (299536) TAG: TOPIC=responsenumber[0m
+[0;32mI (299536) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4385","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (299546) TAG: Updated label with number: 4385[0m
+[0;32mI (299556) KEYPAD: MQTT published, msg_id=30791[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (301326) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (301326) TAG: TOPIC=responsenumber[0m
+[0;32mI (301326) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4386","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (301336) TAG: Updated label with number: 4386[0m
+[0;32mI (301346) KEYPAD: MQTT published, msg_id=58263[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (302606) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (302606) TAG: TOPIC=responsenumber[0m
+[0;32mI (302606) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4387","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (302616) TAG: Updated label with number: 4387[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (302626) KEYPAD: MQTT published, msg_id=18176[0m
+[0;32mI (302736) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (302736) TAG: TOPIC=responsenumber[0m
+[0;32mI (302736) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4388","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (302746) TAG: Updated label with number: 4388[0m
+[0;32mI (302756) KEYPAD: MQTT published, msg_id=11067[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (303916) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (303916) TAG: TOPIC=responsenumber[0m
+[0;32mI (303916) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4389","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (303926) TAG: Updated label with number: 4389[0m
+[0;32mI (303936) KEYPAD: MQTT published, msg_id=53368[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (304136) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (304136) TAG: TOPIC=responsenumber[0m
+[0;32mI (304146) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4390","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (304146) TAG: Updated label with number: 4390[0m
+[0;32mI (304156) KEYPAD: MQTT published, msg_id=14004[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (309196) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (309196) TAG: TOPIC=responsenumber[0m
+[0;32mI (309196) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4391","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (309206) TAG: Updated label with number: 4391[0m
+[0;32mI (309216) KEYPAD: MQTT published, msg_id=39379[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (313976) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (313976) TAG: TOPIC=responsenumber[0m
+[0;32mI (313976) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4392","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (313986) TAG: Updated label with number: 4392[0m
+[0;32mI (313996) KEYPAD: MQTT published, msg_id=8786[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (315316) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (315316) TAG: TOPIC=responsenumber[0m
+[0;32mI (315316) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4393","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (315326) TAG: Updated label with number: 4393[0m
+[0;32mI (315346) KEYPAD: MQTT published, msg_id=16925[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (333956) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (333956) TAG: TOPIC=responsenumber[0m
+[0;32mI (333956) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"1005","service_name":"\u0110\u00f3ng thu\u1ebf"}[0m
+[0;32mI (333976) TAG: Updated label with number: 1005[0m
+[0;32mI (333986) KEYPAD: MQTT published, msg_id=5177[0m
+[0;32mI (334146) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (334146) TAG: TOPIC=responsenumber[0m
+[0;32mI (334146) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"1006","service_name":"\u0110\u00f3ng thu\u1ebf"}[0m
+[0;32mI (334156) TAG: Updated label with number: 1006[0m
+[0;32mI (334166) KEYPAD: MQTT published, msg_id=15159[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (344386) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (344386) TAG: TOPIC=responsenumber[0m
+[0;32mI (344386) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"1008","service_name":"\u0110\u00f3ng thu\u1ebf"}[0m
+[0;32mI (344396) TAG: Updated label with number: 1008[0m
+[0;32mI (344406) KEYPAD: MQTT published, msg_id=21023[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (346736) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (346736) TAG: TOPIC=responsenumber[0m
+[0;32mI (346736) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4394","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+Key pressed: B
+[0;32mI (346746) TAG: Updated label with number: 4394[0m
+GỌI SỐ TIẾP THEO
+[0;32mI (346756) KEYPAD: MQTT published, msg_id=61719[0m
+[0;32mI (346986) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (346986) TAG: TOPIC=responsenumber[0m
+[0;32mI (346986) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4395","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (346996) TAG: Updated label with number: 4395[0m
+[0;32mI (347006) KEYPAD: MQTT published, msg_id=28808[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (349366) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (349366) TAG: TOPIC=responsenumber[0m
+[0;32mI (349366) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4396","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (349366) TAG: Updated label with number: 4396[0m
+[0;32mI (349376) KEYPAD: MQTT published, msg_id=62992[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (349706) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (349706) TAG: TOPIC=responsenumber[0m
+[0;32mI (349706) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4397","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (349716) TAG: Updated label with number: 4397[0m
+[0;32mI (349726) KEYPAD: MQTT published, msg_id=61660[0m
+Key pressed: B
+GỌI SỐ TIẾP THEO
+[0;32mI (354616) TAG: MQTT_EVENT_DATA[0m
+[0;32mI (354616) TAG: TOPIC=responsenumber[0m
+[0;32mI (354616) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4398","service_name":"Tr\u1ea3 n\u1ee3"}[0m
+[0;32mI (354626) TAG: Updated label with number: 4398[0m
+[0;32mI (354646) KEYPAD: MQTT published, msg_id=63268[0m
