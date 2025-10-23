@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -84,7 +82,6 @@ const char keypad[4][4] = {
 static gpio_num_t rows[4] = {ROW1, ROW2, ROW3, ROW4};
 static gpio_num_t cols[4] = {COL1, COL2, COL3, COL4};
 
-//char input_buffer[MAX_INPUT + 1] = {0};
 char input_buffer[5] = {0};
 int buffer_index = 0;
 char wifi_ssid[32] = {0};
@@ -112,11 +109,11 @@ bool wifi_need_mqtt_start = false;
 bool user_selected_wifi = false;
 
 bool pri = false;
-bool pri2=false;
+bool pri2 = false;
 char pri_num[5] = {0};
 char current_number[5] = {0};
 
-char temp_buff[17]={0};
+char temp_buff[17] = {0};
 
 typedef enum {
     STATE_INIT = 0,
@@ -131,6 +128,13 @@ typedef enum {
 } SystemState;
 
 static SystemState sys_state = STATE_INIT;
+
+void update_temp_buff(const char *display_text) {
+    if (display_text && strlen(display_text) > 0) {
+        strncpy(temp_buff, display_text, DISPLAY_LINE_MAX);
+        temp_buff[DISPLAY_LINE_MAX] = '\0';
+    }
+}
 
 void lcd_show_main_screen(const char *number) {
     lcd_clear();
@@ -152,16 +156,12 @@ void lcd_show_wifi_status(const char *status) {
     lcd_put_cur(0, 0);
     lcd_send_string("TRANG THAI WIFI:");
     lcd_put_cur(1, 0);
-    if (status &&( strlen(status) > 0) ) {
+    if (status && (strlen(status) > 0)) {
         char buf[DISPLAY_LINE_MAX + 1] = {0};
         strncpy(buf, status, DISPLAY_LINE_MAX);
         buf[DISPLAY_LINE_MAX] = '\0';
         lcd_send_string(buf);
-    } 
-    
-    
-    
-    else {
+    } else {
         lcd_send_string("...");
     }
 }
@@ -171,16 +171,12 @@ void lcd_show_mqtt_status(const char *status) {
     lcd_put_cur(0, 0);
     lcd_send_string("TRANG THAI MQTT:");
     lcd_put_cur(1, 0);
-    if (status &&( strlen(status) > 0) ) {
+    if (status && (strlen(status) > 0)) {
         char buf[DISPLAY_LINE_MAX + 1] = {0};
         strncpy(buf, status, DISPLAY_LINE_MAX);
         buf[DISPLAY_LINE_MAX] = '\0';
         lcd_send_string(buf);
-    } 
-    
-    
-    
-    else {
+    } else {
         lcd_send_string("...");
     }
 }
@@ -205,7 +201,7 @@ void lcd_show_wifi_pass(const char *pass) {
     lcd_put_cur(0, 0);
     lcd_send_string("NHAP PASSWORD:");
     lcd_put_cur(1, 0);
-    if (pass && strlen(pass) > 0&&hide==true) {
+    if (pass && strlen(pass) > 0 && hide == true) {
         int pass_len = strlen(pass);
         int show_len = pass_len;
         if (show_len > DISPLAY_LINE_MAX) show_len = DISPLAY_LINE_MAX;
@@ -215,19 +211,14 @@ void lcd_show_wifi_pass(const char *pass) {
         if (show_len > 0) {
             lcd_send_data(pass[pass_len - 1]);
         }
-    } 
-
-     else if (pass && strlen(pass) > 0&&hide==false) {
+    } else if (pass && strlen(pass) > 0 && hide == false) {
         int pass_len = strlen(pass);
         int show_len = pass_len;
         if (show_len > DISPLAY_LINE_MAX) show_len = DISPLAY_LINE_MAX;
-        for (int i = 0; i < show_len ; i++) {
-         
+        for (int i = 0; i < show_len; i++) {
             lcd_send_data(pass[i]);
         }
-    } 
-    
-    else {
+    } else {
         lcd_send_string("...");
     }
 }
@@ -355,9 +346,9 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                         cJSON *num = cJSON_GetObjectItem(root, "number");
                         cJSON *device_id = cJSON_GetObjectItem(root, "device_id");
                         const char *device_str = device_id->valuestring;
-                        if (num && cJSON_IsString(num) && num->valuestring&&(strcmp(device_str,"04:1A:2B:3C:4D:04")==0)) {
+                        if (num && cJSON_IsString(num) && num->valuestring && (strcmp(device_str, "04:1A:2B:3C:4D:04") == 0)) {
                             const char *number_str = num->valuestring;
-                            if (strcmp(number_str, "No number available") != 0 && strlen(number_str) > 0) {
+                            if (strcmp(number_str, "NoAvailable") != 0 && strlen(number_str) > 0) {
                                 strncpy(current_number, number_str, sizeof(current_number) - 1);
                                 
                                 if (buffer_index == 0 && current_mode == MODE_NORMAL) {
@@ -368,6 +359,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                                         lcd_send_string("                ");
                                         lcd_put_cur(1, 0);
                                         lcd_send_string(display_num);
+                                        update_temp_buff(display_num);
                                     } else {
                                         pri = false;
                                         char display_num[DISPLAY_LINE_MAX + 1] = {0};
@@ -376,7 +368,9 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                                         lcd_send_string("                ");
                                         lcd_put_cur(1, 0);
                                         lcd_send_string(display_num);
+                                        update_temp_buff(display_num);
                                     }
+                                    //esp_mqtt_client_publish(mqtt_client, "number", number_str, 0, 1, 0);
                                 }
                                 esp_mqtt_client_publish(mqtt_client, "number", number_str, 0, 1, 0);
                             }
@@ -389,25 +383,15 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         
         case MQTT_EVENT_ERROR:
             ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
-             if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
-               ESP_LOGI(TAG, "Last error code reported from esp-tls: 0x%x", event->error_handle->esp_tls_last_esp_err);
-               ESP_LOGI(TAG, "Last tls stack error number: 0x%x", event->error_handle->esp_tls_stack_err);
-               ESP_LOGI(TAG, "Last captured errno : %d (%s)",  event->error_handle->esp_transport_sock_errno,
-                     strerror(event->error_handle->esp_transport_sock_errno));
-             } else if (event->error_handle->error_type == MQTT_ERROR_TYPE_CONNECTION_REFUSED) {
+            if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
+                ESP_LOGI(TAG, "Last error code reported from esp-tls: 0x%x", event->error_handle->esp_tls_last_esp_err);
+                ESP_LOGI(TAG, "Last tls stack error number: 0x%x", event->error_handle->esp_tls_stack_err);
+                ESP_LOGI(TAG, "Last captured errno : %d (%s)", event->error_handle->esp_transport_sock_errno,
+                      strerror(event->error_handle->esp_transport_sock_errno));
+            } else if (event->error_handle->error_type == MQTT_ERROR_TYPE_CONNECTION_REFUSED) {
                 ESP_LOGI(TAG, "Connection refused error: 0x%x", event->error_handle->connect_return_code);
-              } else {
-                 ESP_LOGW(TAG, "Unknown error type: 0x%x", event->error_handle->error_type);
-               }
-
-                lcd_show_message("THAT BAI!", "KHONG KET NOI!");
-               vTaskDelay(pdMS_TO_TICKS(2000));
-              if (buffer_index > 0) {
-                lcd_show_main_screen(input_buffer);
-              } else if (strlen(current_number) > 0) {
-                lcd_show_main_screen(current_number);
             } else {
-                lcd_show_main_screen("");
+                ESP_LOGW(TAG, "Unknown error type: 0x%x", event->error_handle->error_type);
             }
             break;    
 
@@ -437,9 +421,13 @@ void mqtt_init(void) {
     };
 
     if (mqtt_client) {
+        esp_mqtt_client_disconnect(mqtt_client);
+        esp_mqtt_client_stop(mqtt_client);
+        esp_mqtt_client_destroy(mqtt_client);
         mqtt_client = NULL;
-        mqtt_connected = false;
     }
+    
+    mqtt_connected = false;  //RESET FLAG
 
     mqtt_client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(mqtt_client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
@@ -452,19 +440,18 @@ void mqtt_publish_number(const char *number) {
         ESP_LOGW(TAG, "MQTT not connected");
         lcd_show_message("GOI THAT BAI!", "KHONG KET NOI!");
         vTaskDelay(pdMS_TO_TICKS(2000));
-        if (buffer_index > 0) {
-            lcd_show_main_screen(input_buffer);
-        } else if (strlen(current_number) > 0) {
-            lcd_show_main_screen(current_number);
-        } else {
-            lcd_show_main_screen("");
-        }
+        lcd_clear();
+        lcd_put_cur(0, 0);
+        lcd_send_string("ID:01");
+        lcd_put_cur(1, 0);
+        lcd_send_string(temp_buff);
         return;
     }
     printf("GOI UU TIEN\n");
     char json_msg[128] = {0};
     snprintf(json_msg, sizeof(json_msg), "{\"device_id\":\"04:1A:2B:3C:4D:04\",\"number\":\"%s\"}", number);
     esp_mqtt_client_publish(mqtt_client, "specificnumber", json_msg, 0, 0, 0);
+    pri2 = false;//
     ESP_LOGI(TAG, "Published number %s", number);
 }
 
@@ -501,6 +488,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t e
 
         wifi_need_mqtt_stop = true;
         wifi_need_mqtt_start = false;
+        mqtt_connected = false;  // ← THÊM DÒNG NÀY
 
         if (mqtt_client) {
             esp_mqtt_client_disconnect(mqtt_client);
@@ -642,21 +630,26 @@ void process_key_wifi_mode(char key) {
         caps_lock = false;
         
         if (buffer_index > 0) {
-            sprintf(temp_buff,"SO DANG GOI:%s",input_buffer);
+            char buf[DISPLAY_LINE_MAX + 1] = {0};
+            snprintf(buf, sizeof(buf), "SO: %s", input_buffer);
+            update_temp_buff(buf);
             lcd_show_main_screen(input_buffer);
         } else if (strlen(current_number) > 0) {
-            if (pri2==false){
-            sprintf(temp_buff,"SO DANG GOI:%s",current_number);
+            char display_label[32] = {0};
+            snprintf(display_label, sizeof(display_label), "SO DANG GOI:%s", current_number);
+            
+            if (pri2 == false) {
+                snprintf(display_label, sizeof(display_label), "SO DANG GOI:%s", current_number);
+            } else {
+                //pri2 = false;
+                snprintf(display_label, sizeof(display_label), "SO UU TIEN:%s", current_number);
             }
-            else {
-                pri2=false;
-            sprintf(temp_buff,"SO UU TEIN:%s",current_number);
-
-            }
-            //lcd_show_main_screen(current_number);
-            lcd_show_main_screen(temp_buff);
+                
+            update_temp_buff(display_label);
+            lcd_show_main_screen(display_label);
         } else {
             lcd_show_main_screen("");
+            memset(temp_buff, 0, sizeof(temp_buff));
         }
         return;
     }
@@ -794,13 +787,17 @@ void process_key_normal_mode(char key) {
             input_buffer[buffer_index] = '\0';
         }
         lcd_show_main_screen(input_buffer);
+        // Cập nhật temp_buff khi người dùng nhập số
+        char buf[DISPLAY_LINE_MAX + 1] = {0};
+        snprintf(buf, sizeof(buf), "SO: %s", input_buffer);
+        update_temp_buff(buf);
         return;
     }
 
     if (key == 'D') {
         if (buffer_index > 0) {
             pri = true;
-            pri2=true;
+            pri2 = true;
             mqtt_publish_number(input_buffer);
             memset(input_buffer, 0, sizeof(input_buffer));
             buffer_index = 0;
@@ -815,6 +812,11 @@ void process_key_normal_mode(char key) {
             last_key = 0;
             key_press_count = 0;
             lcd_show_main_screen(input_buffer);
+            if (buffer_index > 0) {
+                char buf[DISPLAY_LINE_MAX + 1] = {0};
+                snprintf(buf, sizeof(buf), "SO: %s", input_buffer);
+                update_temp_buff(buf);
+            }
         }
         return;
     }
@@ -837,64 +839,56 @@ void process_key_normal_mode(char key) {
 
     if (key == 'B') {
         printf("GOI SO TIEP THEO\n");
-        const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\",\"request\":\"number\"}";
-        esp_mqtt_client_publish(mqtt_client, "requestnumber", json_msg, 0, 0, 0);
-        /*
-        if ((esp_mqtt_client_publish(mqtt_client, "requestnumber", json_msg, 0, 0, 0)) < 0) {
-            ESP_LOGW(TAG, "MQTT not connected");
+        if (!mqtt_connected) {
             lcd_show_message("THAT BAI!", "KHONG KET NOI!");
             vTaskDelay(pdMS_TO_TICKS(2000));
-            if (buffer_index > 0) {
-                lcd_show_main_screen(input_buffer);
-            } else if (strlen(current_number) > 0) {
-                lcd_show_main_screen(current_number);
-            } else {
-                lcd_show_main_screen("");
-            }
+            lcd_clear();
+            lcd_put_cur(0, 0);
+            lcd_send_string("ID:01");
+            lcd_put_cur(1, 0);
+            lcd_send_string(temp_buff);
+        } else {
+            const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\",\"request\":\"number\"}";
+            esp_mqtt_client_publish(mqtt_client, "requestnumber", json_msg, 0, 0, 0);
         }
-            */
         return;
     }
 
     if (key == '#') {
-        const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\"}";
         printf("GOI LAI\n");
-        esp_mqtt_client_publish(mqtt_client, "recallnumber", json_msg, 0, 0, 0);
-/*
-        if ((esp_mqtt_client_publish(mqtt_client, "recallnumber", json_msg, 0, 0, 0)) < 0) {
-            ESP_LOGW(TAG, "MQTT not connected");
+        if (!mqtt_connected) {
             lcd_show_message("THAT BAI!", "KHONG KET NOI!");
             vTaskDelay(pdMS_TO_TICKS(2000));
-            if (buffer_index > 0) {
-                lcd_show_main_screen(input_buffer);
-            } else if (strlen(current_number) > 0) {
-                lcd_show_main_screen(current_number);
-            } else {
-                lcd_show_main_screen("");
-            }
+            // Hiển thị lại từ temp_buff
+            lcd_clear();
+            lcd_put_cur(0, 0);
+            lcd_send_string("ID:01");
+            lcd_put_cur(1, 0);
+            //snprintf(temp_buff, sizeof(temp_buff), "GOI LAI SO:%s", current_number);//
+            lcd_send_string(temp_buff);
+        } else {
+            const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\"}";
+            esp_mqtt_client_publish(mqtt_client, "recallnumber", json_msg, 0, 0, 0);
+            //snprintf(temp_buff, sizeof(temp_buff), "GOI LAI SO:%s", current_number);//
+
         }
-            */
         return;
     }
 
     if (key == '*') {
         printf("BO SO HIEN TAI\n");
-        const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\"}";
-        esp_mqtt_client_publish(mqtt_client, "skipnumber", json_msg, 0, 0, 0);
-        /*
-        if ((esp_mqtt_client_publish(mqtt_client, "skipnumber", json_msg, 0, 0, 0)) < 0) {
-            ESP_LOGW(TAG, "MQTT not connected");
+        if (!mqtt_connected) {
             lcd_show_message("THAT BAI!", "KHONG KET NOI!");
             vTaskDelay(pdMS_TO_TICKS(2000));
-            if (buffer_index > 0) {
-                lcd_show_main_screen(input_buffer);
-            } else if (strlen(current_number) > 0) {
-                lcd_show_main_screen(current_number);
-            } else {
-                lcd_show_main_screen("");
-            }
+            lcd_clear();
+            lcd_put_cur(0, 0);
+            lcd_send_string("ID:01");
+            lcd_put_cur(1, 0);
+            lcd_send_string(temp_buff);
+        } else {
+            const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\"}";
+            esp_mqtt_client_publish(mqtt_client, "skipnumber", json_msg, 0, 0, 0);
         }
-            */
         return;
     }
 }
@@ -909,9 +903,22 @@ void process_key(char key) {
 
 void keypad_task(void *param) {
     char key;
+    char last_pressed_key = 0;
+    uint32_t last_press_time = 0;
+    
     while (1) {
         key = keypad_scan();
         if (key != 0) {
+            uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+            
+            if (key == last_pressed_key && (current_time - last_press_time) < 100) {
+                vTaskDelay(pdMS_TO_TICKS(50));
+                continue;
+            }
+            
+            last_pressed_key = key;
+            last_press_time = current_time;
+            
             printf("Key pressed: %c\n", key);
             process_key(key);
             wait_key_release();
@@ -954,7 +961,6 @@ void app_main(void) {
         switch (sys_state) {
             case STATE_INIT:
             {
-                ///lcd_show_message("Khoi dong...", "");
                 esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_pass, &password_len, NULL);
                 if (err == ESP_OK && strlen(saved_ssid) > 0) {
                     ESP_LOGI(TAG, "Have a saved wifi network in NVS: %s", saved_ssid);
@@ -984,7 +990,7 @@ void app_main(void) {
 
             case STATE_WIFI_CONNECT:
                 if (wifi_need_mqtt_start) {
-                    sys_state = STATE_MQTT_CONNECT;
+                    sys_state = STATE_WIFI_SUCCESS;
                 }
                 break;
 
@@ -1013,12 +1019,22 @@ void app_main(void) {
                     wifi_success_displayed = true;
                 }
                 
+                uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+                
                 if (mqtt_connected) {
                     memset(input_buffer, 0, sizeof(input_buffer));
                     buffer_index = 0;
                     memset(saved_input_buffer, 0, sizeof(saved_input_buffer));
                     saved_buffer_index = 0;
                     current_number[0] = '\0';
+                    lcd_clear();
+                    lcd_show_main_screen("");
+                    wifi_success_displayed = false;
+                    sys_state = STATE_RUNNING;
+                }
+                else if ((current_time - wifi_status_time) > 5000) {//10s
+                    lcd_show_message("KET NOI THAT BAI", "MQTT");
+                    vTaskDelay(pdMS_TO_TICKS(2000));
                     lcd_clear();
                     lcd_show_main_screen("");
                     wifi_success_displayed = false;
@@ -1062,4 +1078,3 @@ void app_main(void) {
         vTaskDelay(pdMS_TO_TICKS(200));
     }
 }
-
