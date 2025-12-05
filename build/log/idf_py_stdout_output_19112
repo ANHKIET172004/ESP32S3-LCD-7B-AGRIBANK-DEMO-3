@@ -1,0 +1,2822 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+�J��ѹesp32: SPI Speed      :�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20568h (132456) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030590 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000305b8 vaddr=3ffb0000 size=04408h ( 17416) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000349c8 vaddr=40080000 size=0b650h ( 46672) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a6b28h (682792) map[0m
+[0;32mI (397) esp_image: segment 5: paddr=000e6b50 vaddr=4008b650 size=0dc94h ( 56468) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov 14 2025 16:49:19[0m
+[0;32mI (464) app_init: ELF file SHA256:  4360e3f20...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8F70 len 00027090 (156 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) LED: LED initialized on GPIO 2[0m
+[0;32mI (556) LED: LED OFF[0m
+[0;32mI (556) DEMO: I2C initialized successfully[0m
+[0;32mI (1446) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1466) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1466) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (1466) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (1486) wifi:wifi driver task: 3ffc1d6c, prio:23, stack:6656, core=0[0m
+[0;32mI (1496) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1496) wifi:wifi certification version: v7.0[0m
+[0;32mI (1496) wifi:config NVS flash: enabled[0m
+[0;32mI (1496) wifi:config nano formatting: disabled[0m
+[0;32mI (1506) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1506) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1506) wifi:Init management short buffer num: 32[0m
+[0;32mI (1516) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1516) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1526) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1526) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1536) wifi_init: rx ba win: 6[0m
+[0;32mI (1536) wifi_init: accept mbox: 6[0m
+[0;32mI (1536) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1536) wifi_init: udp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1546) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1556) wifi_init: tcp mss: 1440[0m
+[0;32mI (1556) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1556) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1606) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1696) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1696) wifi:enable tsf[0m
+[0;32mI (1696) WIFI: WiFi initialized[0m
+[0;32mI (1696) WIFI: WiFi STA started[0m
+[0;32mI (1696) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1746) wifi:flush txq[0m
+[0;32mI (1746) wifi:stop sw txq[0m
+[0;32mI (1746) wifi:lmac stop hw txq[0m
+[0;32mI (1756) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1756) wifi:enable tsf[0m
+[0;32mI (1756) WIFI: WiFi STA started[0m
+[0;32mI (2026) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2026) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2036) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2056) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2166) wifi:connected with NamTrung, aid = 29, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (2166) wifi:security: WPA2-PSK, phy: bgn, rssi: -86[0m
+[0;32mI (2176) wifi:pm start, type: 1[0m
+
+[0;32mI (2176) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2176) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (2196) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4086) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (14036) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:4, winSize:64[0m
+[0;32mI (14726) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (14726) WIFI: WiFi connected, got IP[0m
+[0;32mI (15736) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (15736) MQTT: MQTT initialized[0m
+[0;32mI (15756) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (16986) LED: LED ON[0m
+[0;32mI (16996) MQTT: MQTT connected[0m
+[0;32mI (18536) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (18536) MQTT: Processing topic: device/list[0m
+[0;32mI (18536) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (18536) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18536) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (18536) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (18546) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (18556) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (18556) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (18556) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18566) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (18566) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (18576) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (18576) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (18586) MQTT: Device list updated: 2 devices[0m
+[0;32mI (18606) MQTT: Processing topic: service/list[0m
+[0;32mI (18606) MQTT: Service list updated: 2 services[0m
+[0;32mI (18626) MQTT: Processing topic: feedback_status[0m
+[0;32mI (18626) MQTT: disconnected[0m
+[0;32mI (18626) LED: LED OFF[0m
+[0;32mI (22266) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (22936) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (23256) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (23566) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (23766) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (23976) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (24146) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (24446) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (24726) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (25046) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (25336) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (25606) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (26166) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (26496) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (26896) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (27156) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (28786) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (29276) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (29556) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (29926) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (30176) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (30516) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (31066) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (31896) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (32106) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (32466) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (33856) KEYPRESED: Key pressed: #[0m
+
+Key pressed: #
+[0;32mI (34386) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (34646) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (34876) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (35246) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (35516) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (35746) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (36126) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (36386) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (36676) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (36996) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (38636) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (38856) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (39126) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (39316) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (39696) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (39906) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (40256) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (40596) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (41026) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (41226) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (41426) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (41896) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (42156) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (42446) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (42786) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (43016) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (43196) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (43426) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (43836) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (44086) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (44276) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (44626) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (44996) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (45206) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (45556) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (45766) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (45956) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (46136) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (46326) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (46516) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (46866) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (47486) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (47746) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[1;31mE (47946) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (47946) MQTT: MQTT disconnected[0m
+[0;32mI (47946) LED: LED OFF[0m
+[0;32mI (47986) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (48726) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (48936) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (49136) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (49866) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (50106) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (50716) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (50926) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (51306) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (51526) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (51726) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (52056) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (52376) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (53136) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (53376) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (53676) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (53906) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (54096) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (54306) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (54616) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (55396) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (55396) wifi:state: run -> init (0x0)[0m
+[0;32mI (55406) wifi:pm stop, total sleep time: 20494226 us / 53228052 us[0m
+
+[0;32mI (55406) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (55406) wifi:<ba-del>idx:1, tid:7[0m
+[0;32mI (55406) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (55416) WIFI: STA disconnected, reason=8[0m
+[0;33mW (55416) WIFI: WiFi connection failed, retry count: 1/5[0m
+[0;32mI (55426) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (55426) wifi:state: init -> auth (0xb0)[0m
+[1;31mE (55446) wifi:sta is connecting, return error[0m
+[0;32mI (55456) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (55466) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (55496) wifi:connected with NamTrung, aid = 29, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (55496) wifi:security: WPA2-PSK, phy: bgn, rssi: -73[0m
+[0;32mI (55506) wifi:pm start, type: 1[0m
+
+[0;32mI (55506) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (55546) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (56576) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (56576) WIFI: WiFi connected, got IP[0m
+[0;32mI (56576) NVS_UTILS: WIFI_CRED NO CHANGE, SKIP SAVING[0m
+[0;32mI (56906) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (57576) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (57576) mqtt_client: Client asked to disconnect[0m
+[0;32mI (57946) MQTT: MQTT initialized[0m
+[0;32mI (57986) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (58216) LED: LED ON[0m
+[0;32mI (58216) MQTT: MQTT connected[0m
+[0;32mI (58466) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58466) MQTT: Processing topic: device/list[0m
+[0;32mI (58476) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (58476) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (58476) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (58476) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (58476) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58496) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (58496) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (58496) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58506) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (58506) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (58506) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (58516) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (58516) MQTT: Device list updated: 2 devices[0m
+[0;32mI (58546) MQTT: Processing topic: service/list[0m
+[0;32mI (58546) MQTT: Service list updated: 2 services[0m
+[0;32mI (58566) MQTT: Processing topic: feedback_status[0m
+[0;32mI (58566) MQTT: disconnected[0m
+[0;32mI (58566) LED: LED OFF[0m
+[0;32mI (65606) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (66276) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (66716) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (67036) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (67206) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (67426) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (67626) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (67896) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (68316) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (68766) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (69096) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (69406) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (69696) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (69916) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (70586) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (70866) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (71126) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (71356) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (71656) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (72076) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (72666) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (72936) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (73226) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (73726) KEYPRESED: Key pressed: #[0m
+
+Key pressed: #
+[0;32mI (74476) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (74796) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (75086) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (75296) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (75696) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (75906) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (76126) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (76326) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (76556) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (76766) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (77786) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (78046) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (78286) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (78456) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (78646) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (78816) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (79206) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (79566) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (79816) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (80136) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (80486) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (81076) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (81296) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[1;31mE (81746) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (81746) MQTT: MQTT disconnected[0m
+[0;32mI (81746) LED: LED OFF[0m
+[0;32mI (81846) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (82086) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (82296) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (82486) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (82666) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (82896) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (83366) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (83586) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (83776) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (83966) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (84176) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (84636) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (84866) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (85046) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (85306) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (86006) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (86256) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (86536) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (86906) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (87336) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (87626) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (87906) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (88206) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (88466) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (88736) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (89086) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (89336) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (89646) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (90406) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (90696) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (90956) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (91146) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (91356) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (91586) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (91876) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (92566) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (92566) wifi:state: run -> init (0x0)[0m
+[0;32mI (92576) wifi:pm stop, total sleep time: 18989424 us / 37069668 us[0m
+
+[0;32mI (92576) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (92576) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (92576) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (92586) WIFI: STA disconnected, reason=8[0m
+[0;33mW (92586) WIFI: WiFi connection failed, retry count: 1/5[0m
+[1;31mE (92596) wifi:sta is connecting, return error[0m
+[0;32mI (93806) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (93806) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (93816) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (93826) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (93846) wifi:connected with NamTrung, aid = 23, channel 11, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (93846) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (93886) wifi:pm start, type: 1[0m
+
+[0;32mI (93886) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (93886) WIFI: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (94906) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (94906) WIFI: WiFi connected, got IP[0m
+[0;32mI (94906) NVS_UTILS: WIFI_CRED NO CHANGE, SKIP SAVING[0m
+[0;32mI (95606) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (95916) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (95916) mqtt_client: Client asked to disconnect[0m
+[0;32mI (96746) MQTT: MQTT initialized[0m
+[0;32mI (96806) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (96826) LED: LED ON[0m
+[0;32mI (96826) MQTT: MQTT connected[0m
+[0;32mI (97056) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (97056) MQTT: Processing topic: device/list[0m
+[0;32mI (97066) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (97066) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (97066) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (97066) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (97076) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (97076) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (97076) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (97086) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (97096) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (97096) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (97096) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (97106) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (97106) MQTT: Device list updated: 2 devices[0m
+[0;32mI (97136) MQTT: Processing topic: service/list[0m
+[0;32mI (97136) MQTT: Service list updated: 2 services[0m
+[0;32mI (97156) MQTT: Processing topic: feedback_status[0m
+[0;32mI (97156) MQTT: disconnected[0m
+[0;32mI (97156) LED: LED OFF[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20568h (132456) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030590 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000305b8 vaddr=3ffb0000 size=04408h ( 17416) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000349c8 vaddr=40080000 size=0b650h ( 46672) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a6b28h (682792) map[0m
+[0;32mI (397) esp_image: segment 5: paddr=000e6b50 vaddr=4008b650 size=0dc94h ( 56468) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov 14 2025 16:49:19[0m
+[0;32mI (464) app_init: ELF file SHA256:  4360e3f20...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8F70 len 00027090 (156 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) LED: LED initialized on GPIO 2[0m
+[0;32mI (556) LED: LED OFF[0m
+[0;32mI (556) DEMO: I2C initialized successfully[0m
+[0;32mI (1446) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1466) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1466) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (1466) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (1486) wifi:wifi driver task: 3ffc1d6c, prio:23, stack:6656, core=0[0m
+[0;32mI (1496) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1496) wifi:wifi certification version: v7.0[0m
+[0;32mI (1496) wifi:config NVS flash: enabled[0m
+[0;32mI (1496) wifi:config nano formatting: disabled[0m
+[0;32mI (1506) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1506) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1506) wifi:Init management short buffer num: 32[0m
+[0;32mI (1516) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1516) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1526) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1526) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1536) wifi_init: rx ba win: 6[0m
+[0;32mI (1536) wifi_init: accept mbox: 6[0m
+[0;32mI (1536) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1536) wifi_init: udp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1546) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1556) wifi_init: tcp mss: 1440[0m
+[0;32mI (1556) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1556) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1606) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1686) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1716) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1716) wifi:enable tsf[0m
+[0;32mI (1716) WIFI: WiFi initialized[0m
+[0;32mI (1716) WIFI: WiFi STA started[0m
+[0;32mI (1726) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1776) wifi:flush txq[0m
+[0;32mI (1776) wifi:stop sw txq[0m
+[0;32mI (1776) wifi:lmac stop hw txq[0m
+[0;32mI (1776) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1776) wifi:enable tsf[0m
+[0;32mI (1776) WIFI: WiFi STA started[0m
+[0;32mI (2046) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2056) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3056) wifi:state: auth -> init (0x200)[0m
+[0;32mI (3066) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3066) WIFI: STA disconnected, reason=2[0m
+[0;32mI (3076) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3076) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3086) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4086) wifi:state: assoc -> init (0x400)[0m
+[0;32mI (4096) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4096) WIFI: STA disconnected, reason=4[0m
+[0;32mI (4226) wifi:new:<1,0>, old:<11,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4226) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4236) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4256) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4276) wifi:connected with NamTrung, aid = 17, channel 1, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (4276) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (4306) wifi:pm start, type: 1[0m
+
+[0;32mI (4306) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4306) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (4346) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5336) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (5336) WIFI: WiFi connected, got IP[0m
+[0;32mI (6346) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (6346) MQTT: MQTT initialized[0m
+[0;32mI (6356) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (6366) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (6416) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6446) LED: LED ON[0m
+[0;32mI (6446) MQTT: MQTT connected[0m
+[0;32mI (6666) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (6676) MQTT: Processing topic: device/list[0m
+[0;32mI (6676) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (6676) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (6676) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (6676) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (6686) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (6696) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (6696) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (6696) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (6706) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (6706) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (6706) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (6716) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (6716) MQTT: Device list updated: 2 devices[0m
+[0;32mI (6746) MQTT: Processing topic: service/list[0m
+[0;32mI (6746) MQTT: Service list updated: 2 services[0m
+[0;32mI (6766) MQTT: Processing topic: feedback_status[0m
+[0;32mI (6766) MQTT: disconnected[0m
+[0;32mI (6766) LED: LED OFF[0m
+[0;32mI (9496) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (9686) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (9696) MQTT: Processing topic: responsenumber[0m
+[0;32mI (9696) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (9706) KEYPAD: current number saved successfully![0m
+[0;32mI (10336) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (11146) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (11326) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (11326) MQTT: Processing topic: responsenumber[0m
+[0;32mI (11336) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (11346) KEYPAD: current number saved successfully![0m
+[0;32mI (11886) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (12226) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (12626) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (13016) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (13146) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (13146) MQTT: Processing topic: responsenumber[0m
+[0;32mI (13146) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (13156) KEYPAD: current number saved successfully![0m
+[0;32mI (13386) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (13686) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (13916) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (14146) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (14366) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (14606) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (14666) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (14666) MQTT: Processing topic: responsenumber[0m
+[0;32mI (14876) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (15466) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (17206) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (17896) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (19026) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (19336) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (19546) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (19766) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (19956) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (20356) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (20706) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (21016) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (21346) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (21676) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (21916) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (22166) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (22536) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (22776) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (23106) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (23336) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (23726) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (24376) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (26266) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (26576) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (27646) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (29266) KEYPRESED: Key pressed: #[0m
+
+Key pressed: #
+[0;32mI (29846) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (30076) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (30266) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (30536) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (30796) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (31086) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (31456) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (31676) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (31866) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (32046) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (33346) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (33646) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (33866) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (34076) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (34246) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (34486) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (34896) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (35296) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (35566) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (35786) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (36106) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (36636) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (36866) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (37216) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (37446) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (37646) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (37876) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (38196) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (38766) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (39026) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (39226) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (39466) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (39856) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (40136) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (40516) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (40796) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (41006) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (41206) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (41386) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (41586) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (42086) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (43166) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (43436) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (44016) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (44376) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (44646) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (44866) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (45316) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (46406) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (46406) wifi:state: run -> init (0x0)[0m
+[0;32mI (46416) wifi:pm stop, total sleep time: 28540673 us / 42111169 us[0m
+
+[0;32mI (46416) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (46416) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (46416) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (46426) WIFI: STA disconnected, reason=8[0m
+[0;33mW (46426) WIFI: WiFi connection failed, retry count: 1/5[0m
+[1;31mE (46436) wifi:sta is connecting, return error[0m
+[1;31mE (46436) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;32mI (46436) wifi:E (46446) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0
+[0;32mI (46456) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (46456) wifi:I (46466) LED: LED OFF[0m
+state: init -> auth (0xb0)E (46466) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2
+
+[0;32mI (46476) MQTT: MQTT disconnected[0m
+[0;32mI (46476) LED: LED OFF[0m
+[0;32mI (46486) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (46496) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (46526) wifi:connected with NamTrung, aid = 17, channel 1, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (46526) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (46526) wifi:pm start, type: 1[0m
+
+[0;32mI (46536) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (46536) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (47586) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (47586) WIFI: WiFi connected, got IP[0m
+[0;32mI (47586) NVS_UTILS: WIFI_CRED NO CHANGE, SKIP SAVING[0m
+[0;32mI (47586) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:7, winSize:64[0m
+[0;32mI (48606) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (48606) mqtt_client: Client asked to disconnect[0m
+[0;32mI (51476) MQTT: MQTT initialized[0m
+[0;32mI (51496) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (51516) LED: LED ON[0m
+[0;32mI (51516) MQTT: MQTT connected[0m
+[0;32mI (51746) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (51746) MQTT: Processing topic: device/list[0m
+[0;32mI (51746) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (51746) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (51756) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (51756) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (51756) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (51766) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (51766) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (51766) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (51776) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (51776) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (51786) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (51796) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (51796) MQTT: Device list updated: 2 devices[0m
+[0;32mI (51816) MQTT: Processing topic: service/list[0m
+[0;32mI (51816) MQTT: Service list updated: 2 services[0m
+[0;32mI (51836) MQTT: Processing topic: feedback_status[0m
+[0;32mI (51836) MQTT: disconnected[0m
+[0;32mI (51836) LED: LED OFF[0m
+[0;32mI (162986) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (163896) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (164936) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (165246) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (165646) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (165876) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (166086) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (166406) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (167106) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (167576) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (167846) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (168056) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (168246) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (168506) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (168996) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (169326) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (169586) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (169776) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (169986) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (170296) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (170796) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (171176) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (171506) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (171786) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (172286) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (172746) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (172936) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (173136) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (173376) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (173726) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (173956) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (174206) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (174546) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (174866) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (175986) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (176546) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (178646) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (179166) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (179426) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (179656) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (179926) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (180276) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (180566) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (180926) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (185506) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (185836) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (186316) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (186906) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (187576) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (188296) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (188706) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (189026) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (191116) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (191376) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (191626) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (192716) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (192986) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (194806) KEYPRESED: Key pressed: 3[0m
+
+Key pressed: 3
+[0;32mI (195126) KEYPRESED: Key pressed: 3[0m
+
+Key pressed: 3
+[0;32mI (197166) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (197656) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (197976) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (198566) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (198836) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (199046) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (199466) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (199766) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (200326) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (200826) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (201196) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (201426) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (201816) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (202096) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (202336) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (202576) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (203106) KEYPRESED: Key pressed: 3[0m
+
+Key pressed: 3
+[0;32mI (203396) KEYPRESED: Key pressed: 3[0m
+
+Key pressed: 3
+[0;32mI (203766) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (208556) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (209296) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (209516) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (209816) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (210156) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (210706) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (211026) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (211636) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (212266) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (212896) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (213316) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (213586) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (214336) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (214596) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (214816) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (215386) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (216266) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (216546) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (216846) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (217176) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (217426) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (217766) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (218186) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (219246) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (219546) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (220866) KEYPRESED: Key pressed: #[0m
+
+Key pressed: #
+[0;32mI (222166) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (222416) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (222946) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (223236) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (223566) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (223986) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (225676) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (226526) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (226816) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (227206) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (227626) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (228256) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (228676) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (228966) KEYPRESED: Key pressed: 5[0m
+
+Key pressed: 5
+[0;32mI (229336) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (230166) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (230166) wifi:state: run -> init (0x0)[0m
+[0;32mI (230176) wifi:pm stop, total sleep time: 128427673 us / 183643020 us[0m
+
+[0;32mI (230176) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (230176) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (230176) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (230196) WIFI: STA disconnected, reason=8[0m
+[1;31mE (230196) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (230196) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (230206) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (230206) LED: LED OFF[0m
+[1;31mE (230206) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (230216) MQTT: MQTT disconnected[0m
+[0;32mI (230216) LED: LED OFF[0m
+[1;31mE (230236) wifi:sta is connecting, return error[0m
+[0;32mI (230516) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (230526) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (230536) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (230556) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (230616) wifi:connected with iPhone Anh Kiet, aid = 1, channel 6, BW20, bssid = a2:19:eb:4d:ba:0b[0m
+[0;32mI (230616) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (230636) wifi:pm start, type: 1[0m
+
+[0;32mI (230636) WIFI: Connected to SSID:iPhone Anh Kiet, channel:6[0m
+[0;32mI (230666) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (231896) esp_netif_handlers: sta ip: 172.20.10.8, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (231896) WIFI: WiFi connected, got IP[0m
+[0;32mI (231906) NVS_UTILS: Wi-Fi credentials saved successfully![0m
+[0;32mI (232916) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (232916) mqtt_client: Client asked to disconnect[0m
+[0;32mI (235226) MQTT: MQTT initialized[0m
+[0;32mI (235236) wifi:<ba-add>idx:0 (ifx:0, a2:19:eb:4d:ba:0b), tid:0, ssn:2, winSize:64[0m
+[1;31mE (253476) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[1;31mE (253476) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (253476) mqtt_client: Error transport connect[0m
+[0;32mI (253476) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (253486) LED: LED OFF[0m
+[0;32mI (253486) MQTT: MQTT disconnected[0m
+[0;32mI (253486) LED: LED OFF[0m
+[1;31mE (286986) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[1;31mE (286986) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (286986) mqtt_client: Error transport connect[0m
+[0;32mI (286986) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (286996) LED: LED OFF[0m
+[0;32mI (286996) MQTT: MQTT disconnected[0m
+[0;32mI (286996) LED: LED OFF[0m
+[0;32mI (287046) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (289546) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (289546) wifi:state: run -> init (0xc800)[0m
+[0;32mI (289556) wifi:pm stop, total sleep time: 41815604 us / 58917914 us[0m
+
+[0;32mI (289556) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (289556) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (289566) WIFI: STA disconnected, reason=200[0m
+[0;32mI (291986) WIFI: STA disconnected, reason=201[0m
+[0;32mI (294396) WIFI: STA disconnected, reason=201[0m
+[0;32mI (296816) WIFI: STA disconnected, reason=201[0m
+[0;32mI (297306) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (299236) WIFI: STA disconnected, reason=201[0m
+[1;31mE (299236) WIFI: Saved WiFi connection failed after 5 retries[0m
+[1;31mE (301996) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (301996) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (301996) mqtt_client: Error transport connect[0m
+[0;32mI (301996) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (302006) LED: LED OFF[0m
+[0;32mI (302006) MQTT: MQTT disconnected[0m
+[0;32mI (302006) LED: LED OFF[0m
+[0;32mI (316156) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[1;31mE (317006) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (317006) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (317006) mqtt_client: Error transport connect[0m
+[0;32mI (317006) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (317016) LED: LED OFF[0m
+[0;32mI (317016) MQTT: MQTT disconnected[0m
+[0;32mI (317016) LED: LED OFF[0m
+[0;32mI (317286) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (318196) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (318726) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[1;31mE (332016) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (332016) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (332016) mqtt_client: Error transport connect[0m
+[0;32mI (332016) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (332026) LED: LED OFF[0m
+[0;32mI (332026) MQTT: MQTT disconnected[0m
+[0;32mI (332026) LED: LED OFF[0m
+[0;32mI (341796) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (342766) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (343386) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (343766) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (344026) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (344266) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (344496) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (344886) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (345336) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (345636) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (345976) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (346676) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[1;31mE (347026) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (347026) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (347026) mqtt_client: Error transport connect[0m
+[0;32mI (347026) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (347036) LED: LED OFF[0m
+[0;32mI (347036) MQTT: MQTT disconnected[0m
+[0;32mI (347036) LED: LED OFF[0m
+[0;32mI (347176) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (347446) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (347816) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (348076) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (348376) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (348616) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (348906) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (349316) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (349706) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (350006) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (350366) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (351616) KEYPRESED: Key pressed: #[0m
+
+Key pressed: #
+[0;32mI (353246) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (353526) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (353726) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (353936) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (354146) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (354316) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (354516) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (354706) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (354876) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (355056) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (355226) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (355556) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (355776) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (355966) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (356156) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (356326) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (356506) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (356696) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (356866) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (357066) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (357236) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (357436) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (358276) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (358506) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (358706) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (358896) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (359086) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (359386) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (359786) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (360156) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (360376) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (360636) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (360946) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (361486) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (361726) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (362036) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[1;31mE (362036) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (362036) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (362036) mqtt_client: Error transport connect[0m
+[0;32mI (362046) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (362046) LED: LED OFF[0m
+[0;32mI (362046) MQTT: MQTT disconnected[0m
+[0;32mI (362046) LED: LED OFF[0m
+[0;32mI (362316) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (362516) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (362706) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (362956) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (363396) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (363616) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (364016) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (364266) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (364686) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (364966) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (365296) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (365536) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (365766) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (365986) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (366186) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (366376) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (366776) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (367756) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (368226) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (368486) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (368926) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (369396) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (369686) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (370066) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (370406) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (370456) wifi:new:<1,0>, old:<6,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (370466) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (370476) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (370486) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (370506) wifi:connected with NamTrung, aid = 17, channel 1, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (370506) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (370516) wifi:pm start, type: 1[0m
+
+[0;32mI (370516) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (370526) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (371556) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (371556) WIFI: WiFi connected, got IP[0m
+[0;32mI (371566) NVS_UTILS: Wi-Fi credentials saved successfully![0m
+[0;32mI (372136) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (372246) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (372286) LED: LED ON[0m
+[0;32mI (372296) MQTT: MQTT connected[0m
+[0;32mI (372616) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (372616) MQTT: Processing topic: device/list[0m
+[0;32mI (372626) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (372626) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (372626) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (372626) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (372636) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (372636) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (372646) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (372646) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (372656) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (372656) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (372656) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (372666) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (372676) MQTT: Device list updated: 2 devices[0m
+[0;32mI (372696) MQTT: Processing topic: service/list[0m
+[0;32mI (372696) MQTT: Service list updated: 2 services[0m
+[0;32mI (372716) MQTT: Processing topic: feedback_status[0m
+[0;32mI (372716) MQTT: disconnected[0m
+[0;32mI (372716) LED: LED OFF[0m
+[0;32mI (376076) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (376146) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (376146) MQTT: Processing topic: responsenumber[0m
+[0;32mI (376946) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (387096) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (387236) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (387236) MQTT: Processing topic: responsenumber[0m
+[0;32mI (387236) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (387246) KEYPAD: current number saved successfully![0m
+[0;32mI (408656) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (408746) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (408746) MQTT: Processing topic: responsenumber[0m
+[0;32mI (408746) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (408756) KEYPAD: current number saved successfully![0m
+[0;32mI (415266) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (415516) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (415516) MQTT: Processing topic: responsenumber[0m
+[0;32mI (415516) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (415526) KEYPAD: current number saved successfully![0m
+[0;32mI (421026) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (422146) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (422386) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (422746) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (423306) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (424096) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (424106) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (424106) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (424106) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (425586) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (426126) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (426596) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (427046) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (427426) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (427876) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (428686) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (428696) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (428696) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (428696) MAC_UTILS: Loaded user_id from NVS: 02[0m
+[0;32mI (430426) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (430436) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (430436) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (430436) MAC_UTILS: Loaded user_id from NVS: 02[0m
+[0;32mI (430966) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (432056) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (432726) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (432836) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (432836) MQTT: Processing topic: responsenumber[0m
+[0;32mI (432836) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (432846) KEYPAD: current number saved successfully![0m
+[0;32mI (434836) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (434906) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (434906) MQTT: Processing topic: responsenumber[0m
+[0;32mI (434906) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (434916) KEYPAD: current number saved successfully![0m
+[0;32mI (443776) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (444626) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (445286) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (445736) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (445996) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (446266) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (446526) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (446826) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (447176) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (447456) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (447696) KEYPRESED: Key pressed: *[0m
+
+Key pressed: *
+[0;32mI (447916) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (448226) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (448436) KEYPRESED: Key pressed: 7[0m
+
+Key pressed: 7
+[0;32mI (448826) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (449106) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (449416) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (449686) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (450026) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (450496) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (450866) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (451406) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (452626) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (452876) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (453496) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (453736) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (454396) KEYPRESED: Key pressed: C[0m
+
+Key pressed: C
+[0;32mI (456676) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (456906) KEYPRESED: Key pressed: 6[0m
+
+Key pressed: 6
+[0;32mI (457806) KEYPRESED: Key pressed: 8[0m
+
+Key pressed: 8
+[0;32mI (458296) KEYPRESED: Key pressed: #[0m
+
+Key pressed: #
+[0;32mI (458856) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (459096) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (459326) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (459526) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (459736) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (459926) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (460126) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (460306) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (460476) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (460676) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (461436) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (461696) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (461896) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (462106) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (462306) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (462506) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (462766) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (463136) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (463406) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (463626) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (463866) KEYPRESED: Key pressed: 4[0m
+
+Key pressed: 4
+[0;32mI (464346) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (464596) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (464896) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (465146) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (465456) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (465806) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (466446) KEYPRESED: Key pressed: 9[0m
+
+Key pressed: 9
+[0;32mI (466986) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (467256) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (467466) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (467856) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (468366) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (468596) KEYPRESED: Key pressed: 0[0m
+
+Key pressed: 0
+[0;32mI (469096) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (469376) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (469646) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (469866) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (470086) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (470276) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (470466) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (471306) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (471596) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (471806) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (472006) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (472246) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (472536) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (472996) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (473406) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (473406) wifi:state: run -> init (0x0)[0m
+[0;32mI (473416) wifi:pm stop, total sleep time: 69697907 us / 102898039 us[0m
+
+[0;32mI (473416) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (473416) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (473416) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[1;31mE (473426) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (473426) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (473436) wifi:I (473436) MQTT: MQTT_EVENT_ERROR[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0I (473446) LED: LED OFF
+
+[1;31mE (473446) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (473456) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (473456) MQTT: MQTT disconnected[0m
+[0;32mI (473436) WIFI: STA disconnected, reason=8[0m
+[0;32mI (473466) LED: LED OFF[0m
+[0;33mW (473466) WIFI: WiFi connection failed, retry count: 1/5[0m
+[1;31mE (473476) wifi:sta is connecting, return error[0m
+[0;32mI (474476) wifi:state: auth -> init (0x200)[0m
+[0;32mI (474486) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (474486) WIFI: STA disconnected, reason=2[0m
+[0;33mW (474486) WIFI: WiFi connection failed, retry count: 2/5[0m
+[0;32mI (474556) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (474556) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (474576) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (474586) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (474606) wifi:connected with NamTrung, aid = 17, channel 1, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (474606) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (474606) wifi:pm start, type: 1[0m
+
+[0;32mI (474616) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (474656) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (475636) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (475636) WIFI: WiFi connected, got IP[0m
+[0;32mI (475636) NVS_UTILS: WIFI_CRED NO CHANGE, SKIP SAVING[0m
+[0;32mI (476646) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (476646) mqtt_client: Client asked to disconnect[0m
+[0;32mI (477716) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (478476) MQTT: MQTT initialized[0m
+[0;32mI (478506) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (478586) LED: LED ON[0m
+[0;32mI (478586) MQTT: MQTT connected[0m
+[0;32mI (478736) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (478736) MQTT: Processing topic: device/list[0m
+[0;32mI (478736) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (478736) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (478746) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (478746) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (478746) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (478756) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (478756) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (478766) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (478766) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (478776) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (478776) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (478786) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (478786) MQTT: Device list updated: 2 devices[0m
+[0;32mI (478816) MQTT: Processing topic: service/list[0m
+[0;32mI (478816) MQTT: Service list updated: 2 services[0m
+[0;32mI (478836) MQTT: Processing topic: feedback_status[0m
+[0;32mI (478836) MQTT: disconnected[0m
+[0;32mI (478836) LED: LED OFF[0m
+[0;32mI (494006) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (494086) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (494086) MQTT: Processing topic: responsenumber[0m
+[0;32mI (494086) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (494106) KEYPAD: current number saved successfully![0m
+[0;32mI (494876) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (495376) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (495886) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (495946) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (495946) MQTT: Processing topic: responsenumber[0m
+[0;32mI (495946) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (495956) KEYPAD: current number saved successfully![0m
+[0;32mI (502036) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (503016) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (503366) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (504296) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (504996) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (505696) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (505706) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (505706) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (505706) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (506676) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (506686) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (506686) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (506686) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (511546) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (512096) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20568h (132456) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030590 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000305b8 vaddr=3ffb0000 size=04408h ( 17416) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000349c8 vaddr=40080000 size=0b650h ( 46672) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a6b28h (682792) map[0m
+[0;32mI (397) esp_image: segment 5: paddr=000e6b50 vaddr=4008b650 size=0dc94h ( 56468) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov 14 2025 16:49:19[0m
+[0;32mI (464) app_init: ELF file SHA256:  4360e3f20...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB8F70 len 00027090 (156 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) LED: LED initialized on GPIO 2[0m
+[0;32mI (556) LED: LED OFF[0m
+[0;32mI (556) DEMO: I2C initialized successfully[0m
+[0;32mI (1446) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1466) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1466) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (1466) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (1486) wifi:wifi driver task: 3ffc1ce8, prio:23, stack:6656, core=0[0m
+[0;32mI (1496) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1496) wifi:wifi certification version: v7.0[0m
+[0;32mI (1496) wifi:config NVS flash: enabled[0m
+[0;32mI (1496) wifi:config nano formatting: disabled[0m
+[0;32mI (1506) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1506) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1506) wifi:Init management short buffer num: 32[0m
+[0;32mI (1516) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1516) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1526) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1526) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1536) wifi_init: rx ba win: 6[0m
+[0;32mI (1536) wifi_init: accept mbox: 6[0m
+[0;32mI (1536) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1536) wifi_init: udp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1546) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1556) wifi_init: tcp mss: 1440[0m
+[0;32mI (1556) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1556) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1606) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1686) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1726) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1726) wifi:enable tsf[0m
+[0;32mI (1726) WIFI: WiFi initialized[0m
+[0;32mI (1726) WIFI: WiFi STA started[0m
+[0;32mI (1736) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1776) wifi:flush txq[0m
+[0;32mI (1776) wifi:stop sw txq[0m
+[0;32mI (1776) wifi:lmac stop hw txq[0m
+[0;32mI (1786) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1786) wifi:enable tsf[0m
+[0;32mI (1786) WIFI: WiFi STA started[0m
+[0;32mI (2076) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2086) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2096) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2116) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2166) wifi:connected with NamTrung, aid = 29, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (2166) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (2176) wifi:pm start, type: 1[0m
+
+[0;32mI (2176) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2186) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (2226) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3806) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:4, winSize:64[0m
+[0;32mI (4686) esp_netif_handlers: sta ip: 10.10.1.101, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (4686) WIFI: WiFi connected, got IP[0m
+[0;32mI (5696) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (5696) MQTT: MQTT initialized[0m
+[0;32mI (5716) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (5786) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5856) LED: LED ON[0m
+[0;32mI (5856) MQTT: MQTT connected[0m
+[0;32mI (6216) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (6216) MQTT: Processing topic: device/list[0m
+[0;32mI (6216) MQTT: Extracted counter ID: 2 from name: quay 2[0m
+[0;32mI (6216) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (6216) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (6216) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (6226) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (6226) MQTT: Extracted counter ID: 1 from name: quay 1[0m
+[0;32mI (6236) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (6236) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (6246) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (6246) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (6246) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (6256) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (6256) MQTT: Device list updated: 2 devices[0m
+[0;32mI (6286) MQTT: Processing topic: service/list[0m
+[0;32mI (6286) MQTT: Service list updated: 2 services[0m
+[0;32mI (6306) MQTT: Processing topic: feedback_status[0m
+[0;32mI (6306) MQTT: disconnected[0m
+[0;32mI (6306) LED: LED OFF[0m
+[0;32mI (8096) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (9026) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (9596) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (9716) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (9716) MQTT: Processing topic: responsenumber[0m
+[0;32mI (9726) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (9736) KEYPAD: current number saved successfully![0m
+[0;32mI (16226) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (16896) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (17216) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (17686) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (18236) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (18686) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (19256) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (19946) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (19956) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19956) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (19956) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (20596) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (20606) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20606) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (20606) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (23546) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (25206) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (25946) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (26456) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (27146) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (27486) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (27816) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (28306) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (29556) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (29556) MQTT: Processing topic: responsenumber[0m
+[0;32mI (29556) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (29566) KEYPAD: current number saved successfully![0m
+[0;32mI (29626) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (29666) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (29666) MQTT: Processing topic: responsenumber[0m
+[0;32mI (29726) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (30466) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (30486) MQTT: Processing topic: responsenumber[0m
+[0;32mI (31286) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (34676) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (35736) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (36036) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (36446) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (37046) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (37726) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (37736) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37736) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (37736) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (38626) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (38636) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38636) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (38636) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (40206) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (40646) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (43986) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (44516) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (45286) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (45596) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (45686) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (45686) MQTT: Processing topic: responsenumber[0m
+[0;32mI (45896) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (46486) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (46556) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (47396) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (48386) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (48396) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (48396) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (48396) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (49046) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (49056) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (49056) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (49056) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (50566) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (50976) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (77896) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (78966) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (79236) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (80166) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (81326) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (81336) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (81336) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (81336) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (82466) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (82466) MQTT: Published id 94:E6:86:09:A4:78[0m
+[0;32mI (84066) KEYPRESED: Key pressed: A[0m
+
+Key pressed: A
+[0;32mI (84656) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (85976) KEYPRESED: Key pressed: D[0m
+
+Key pressed: D
+[0;32mI (85976) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (85986) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (85986) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (87176) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (87186) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (87186) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (87186) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (88486) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (89386) KEYPRESED: Key pressed: 2[0m
+
+Key pressed: 2
+[0;32mI (89956) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (89956) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (89966) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (89966) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (90296) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (90606) KEYPRESED: Key pressed: 1[0m
+
+Key pressed: 1
+[0;32mI (91906) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B
+[0;32mI (92326) KEYPRESED: Key pressed: B[0m
+
+Key pressed: B

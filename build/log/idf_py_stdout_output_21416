@@ -1,0 +1,628 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+B��J��ѹesp32: �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  1 2025 10:14:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20448h (132168) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030470 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030498 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00034458 vaddr=40080000 size=0bbc0h ( 48064) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5918h (678168) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e5940 vaddr=4008bbc0 size=0d860h ( 55392) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     hello_world[0m
+[0;32mI (453) app_init: App version:      e7264df-dirty[0m
+[0;32mI (457) app_init: Compile time:     Nov  1 2025 10:15:09[0m
+[0;32mI (462) app_init: ELF file SHA256:  c8839e14d...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8AA8 len 00027558 (157 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;33mW (522) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (534) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (555) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (555) KEYPAD: LED OFF[0m
+[0;32mI (555) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2165) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2165) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2195) wifi:wifi driver task: 3ffc0c98, prio:23, stack:6656, core=0[0m
+[0;32mI (2205) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2205) wifi:wifi certification version: v7.0[0m
+[0;32mI (2205) wifi:config NVS flash: enabled[0m
+[0;32mI (2205) wifi:config nano formatting: disabled[0m
+[0;32mI (2215) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2215) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2225) wifi:Init management short buffer num: 32[0m
+[0;32mI (2225) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2225) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2235) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2235) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2245) wifi_init: rx ba win: 6[0m
+[0;32mI (2245) wifi_init: accept mbox: 6[0m
+[0;32mI (2245) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2255) wifi_init: udp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2255) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2265) wifi_init: tcp mss: 1440[0m
+[0;32mI (2265) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2265) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2315) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2405) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2405) wifi:enable tsf[0m
+[0;32mI (2405) KEYPAD: WiFi initialized[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2405) KEYPAD: WiFi STA started[0m
+[1;31mE (2415) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2415) KEYPAD: Have a saved wifi network in NVS: Anh Kiet[0m
+[0;32mI (2465) wifi:flush txq[0m
+[0;32mI (2465) wifi:stop sw txq[0m
+[0;32mI (2465) wifi:lmac stop hw txq[0m
+[0;32mI (2475) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2475) wifi:enable tsf[0m
+[0;32mI (2475) KEYPAD: WiFi STA started[0m
+[1;31mE (2475) wifi:sta is connecting, return error[0m
+[0;32mI (2735) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2735) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2775) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2835) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2935) wifi:connected with Anh Kiet, aid = 5, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (2945) wifi:security: WPA2-PSK, phy: bgn, rssi: -64[0m
+[0;32mI (2955) wifi:pm start, type: 1[0m
+
+[0;32mI (2955) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2955) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (3025) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4235) esp_netif_handlers: sta ip: 192.168.1.9, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4235) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5265) KEYPAD: MQTT initialized[0m
+[0;32mI (5275) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[0;32mI (5285) KEYPAD: Read status successfully: SO DANG GOI[0m
+[1;31mE (15275) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (15275) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (15275) mqtt_client: Error transport connect[0m
+[0;32mI (15275) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (15275) KEYPAD: LED OFF[0m
+[0;32mI (15275) KEYPAD: MQTT disconnected[0m
+[0;32mI (15285) KEYPAD: LED OFF[0m
+[1;31mE (35295) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (35295) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (35295) mqtt_client: Error transport connect[0m
+[0;32mI (35295) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (35295) KEYPAD: LED OFF[0m
+[0;32mI (35295) KEYPAD: MQTT disconnected[0m
+[0;32mI (35305) KEYPAD: LED OFF[0m
+[1;31mE (55315) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (55315) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (55315) mqtt_client: Error transport connect[0m
+[0;32mI (55315) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (55315) KEYPAD: LED OFF[0m
+[0;32mI (55315) KEYPAD: MQTT disconnected[0m
+[0;32mI (55325) KEYPAD: LED OFF[0m
+[1;31mE (75335) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (75335) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (75335) mqtt_client: Error transport connect[0m
+[0;32mI (75335) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (75335) KEYPAD: LED OFF[0m
+[0;32mI (75335) KEYPAD: MQTT disconnected[0m
+[0;32mI (75345) KEYPAD: LED OFF[0m
+[1;31mE (95355) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (95355) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (95355) mqtt_client: Error transport connect[0m
+[0;32mI (95355) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (95355) KEYPAD: LED OFF[0m
+[0;32mI (95355) KEYPAD: MQTT disconnected[0m
+[0;32mI (95365) KEYPAD: LED OFF[0m
+[1;31mE (115375) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (115375) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (115375) mqtt_client: Error transport connect[0m
+[0;32mI (115375) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (115375) KEYPAD: LED OFF[0m
+[0;32mI (115375) KEYPAD: MQTT disconnected[0m
+[0;32mI (115385) KEYPAD: LED OFF[0m
+[1;31mE (140395) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (140395) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (140395) mqtt_client: Error transport connect[0m
+[0;32mI (140395) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (140395) KEYPAD: LED OFF[0m
+[0;32mI (140395) KEYPAD: MQTT disconnected[0m
+[0;32mI (140405) KEYPAD: LED OFF[0m
+[1;31mE (165415) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (165415) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (165415) mqtt_client: Error transport connect[0m
+[0;32mI (165415) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (165415) KEYPAD: LED OFF[0m
+[0;32mI (165425) KEYPAD: MQTT disconnected[0m
+[0;32mI (165425) KEYPAD: LED OFF[0m
+[1;31mE (190435) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (190435) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (190435) mqtt_client: Error transport connect[0m
+[0;32mI (190435) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (190435) KEYPAD: LED OFF[0m
+[0;32mI (190435) KEYPAD: MQTT disconnected[0m
+[0;32mI (190445) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+[1;31mE (215455) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (215455) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (215455) mqtt_client: Error transport connect[0m
+[0;32mI (215455) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (215455) KEYPAD: LED OFF[0m
+[0;32mI (215455) KEYPAD: MQTT disconnected[0m
+[0;32mI (215465) KEYPAD: LED OFF[0m
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 1
+Key pressed: 1
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+[0;32mI (220065) KEYPAD: current number saved successfully![0m
+[0;32mI (220065) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: 6
+Key pressed: 6
+Key pressed: 6
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: B
+Key pressed: B
+Key pressed: *
+Key pressed: C
+Key pressed: C
+Key pressed: C
+[0;32mI (229625) KEYPAD: Read status successfully: SO DANG GOI[0m
+[1;31mE (235475) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (235475) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (235475) mqtt_client: Error transport connect[0m
+[0;32mI (235475) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (235475) KEYPAD: LED OFF[0m
+[0;32mI (235475) KEYPAD: MQTT disconnected[0m
+[0;32mI (235485) KEYPAD: LED OFF[0m
+[1;31mE (260495) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (260495) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (260495) mqtt_client: Error transport connect[0m
+[0;32mI (260495) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (260495) KEYPAD: LED OFF[0m
+[0;32mI (260495) KEYPAD: MQTT disconnected[0m
+[0;32mI (260505) KEYPAD: LED OFF[0m
+[1;31mE (285515) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (285515) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (285515) mqtt_client: Error transport connect[0m
+[0;32mI (285515) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (285515) KEYPAD: LED OFF[0m
+[0;32mI (285515) KEYPAD: MQTT disconnected[0m
+[0;32mI (285525) KEYPAD: LED OFF[0m
+[1;31mE (310535) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (310535) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (310535) mqtt_client: Error transport connect[0m
+[0;32mI (310535) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (310535) KEYPAD: LED OFF[0m
+[0;32mI (310535) KEYPAD: MQTT disconnected[0m
+[0;32mI (310545) KEYPAD: LED OFF[0m
+[1;31mE (335555) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (335555) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (335555) mqtt_client: Error transport connect[0m
+[0;32mI (335555) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (335555) KEYPAD: LED OFF[0m
+[0;32mI (335555) KEYPAD: MQTT disconnected[0m
+[0;32mI (335565) KEYPAD: LED OFF[0m
+[1;31mE (360575) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (360575) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (360575) mqtt_client: Error transport connect[0m
+[0;32mI (360575) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (360575) KEYPAD: LED OFF[0m
+[0;32mI (360575) KEYPAD: MQTT disconnected[0m
+[0;32mI (360585) KEYPAD: LED OFF[0m
+[1;31mE (385595) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (385595) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (385595) mqtt_client: Error transport connect[0m
+[0;32mI (385595) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (385595) KEYPAD: LED OFF[0m
+[0;32mI (385595) KEYPAD: MQTT disconnected[0m
+[0;32mI (385605) KEYPAD: LED OFF[0m
+[1;31mE (410615) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (410615) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (410615) mqtt_client: Error transport connect[0m
+[0;32mI (410615) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (410615) KEYPAD: LED OFF[0m
+[0;32mI (410615) KEYPAD: MQTT disconnected[0m
+[0;32mI (410625) KEYPAD: LED OFF[0m
+[1;31mE (435635) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (435635) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (435635) mqtt_client: Error transport connect[0m
+[0;32mI (435635) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (435635) KEYPAD: LED OFF[0m
+[0;32mI (435635) KEYPAD: MQTT disconnected[0m
+[0;32mI (435645) KEYPAD: LED OFF[0m
+[1;31mE (460655) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (460655) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (460655) mqtt_client: Error transport connect[0m
+[0;32mI (460655) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (460655) KEYPAD: LED OFF[0m
+[0;32mI (460655) KEYPAD: MQTT disconnected[0m
+[0;32mI (460665) KEYPAD: LED OFF[0m
+[1;31mE (485675) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (485675) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (485675) mqtt_client: Error transport connect[0m
+[0;32mI (485675) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (485675) KEYPAD: LED OFF[0m
+[0;32mI (485675) KEYPAD: MQTT disconnected[0m
+[0;32mI (485685) KEYPAD: LED OFF[0m
+[1;31mE (510695) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (510695) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (510695) mqtt_client: Error transport connect[0m
+[0;32mI (510695) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (510695) KEYPAD: LED OFF[0m
+[0;32mI (510695) KEYPAD: MQTT disconnected[0m
+[0;32mI (510705) KEYPAD: LED OFF[0m
+[1;31mE (535715) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (535715) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (535715) mqtt_client: Error transport connect[0m
+[0;32mI (535715) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (535715) KEYPAD: LED OFF[0m
+[0;32mI (535715) KEYPAD: MQTT disconnected[0m
+[0;32mI (535725) KEYPAD: LED OFF[0m
+[1;31mE (560735) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (560735) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (560735) mqtt_client: Error transport connect[0m
+[0;32mI (560735) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (560735) KEYPAD: LED OFF[0m
+[0;32mI (560735) KEYPAD: MQTT disconnected[0m
+[0;32mI (560745) KEYPAD: LED OFF[0m
+[1;31mE (585755) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (585755) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (585755) mqtt_client: Error transport connect[0m
+[0;32mI (585755) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (585755) KEYPAD: LED OFF[0m
+[0;32mI (585755) KEYPAD: MQTT disconnected[0m
+[0;32mI (585765) KEYPAD: LED OFF[0m
+[1;31mE (610775) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (610775) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (610775) mqtt_client: Error transport connect[0m
+[0;32mI (610775) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (610775) KEYPAD: LED OFF[0m
+[0;32mI (610775) KEYPAD: MQTT disconnected[0m
+[0;32mI (610785) KEYPAD: LED OFF[0m
+[1;31mE (635795) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (635795) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (635795) mqtt_client: Error transport connect[0m
+[0;32mI (635795) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (635795) KEYPAD: LED OFF[0m
+[0;32mI (635795) KEYPAD: MQTT disconnected[0m
+[0;32mI (635805) KEYPAD: LED OFF[0m
+[1;31mE (660815) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (660815) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (660815) mqtt_client: Error transport connect[0m
+[0;32mI (660815) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (660815) KEYPAD: LED OFF[0m
+[0;32mI (660815) KEYPAD: MQTT disconnected[0m
+[0;32mI (660825) KEYPAD: LED OFF[0m
+[1;31mE (685835) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (685835) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (685835) mqtt_client: Error transport connect[0m
+[0;32mI (685835) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (685835) KEYPAD: LED OFF[0m
+[0;32mI (685835) KEYPAD: MQTT disconnected[0m
+[0;32mI (685845) KEYPAD: LED OFF[0m
+[1;31mE (710855) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (710855) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (710855) mqtt_client: Error transport connect[0m
+[0;32mI (710855) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (710855) KEYPAD: LED OFF[0m
+[0;32mI (710855) KEYPAD: MQTT disconnected[0m
+[0;32mI (710865) KEYPAD: LED OFF[0m
+[1;31mE (735875) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (735875) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (735875) mqtt_client: Error transport connect[0m
+[0;32mI (735875) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (735875) KEYPAD: LED OFF[0m
+[0;32mI (735885) KEYPAD: MQTT disconnected[0m
+[0;32mI (735885) KEYPAD: LED OFF[0m
+[1;31mE (760895) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (760895) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (760895) mqtt_client: Error transport connect[0m
+[0;32mI (760895) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (760895) KEYPAD: LED OFF[0m
+[0;32mI (760895) KEYPAD: MQTT disconnected[0m
+[0;32mI (760905) KEYPAD: LED OFF[0m
+[1;31mE (785915) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (785915) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (785915) mqtt_client: Error transport connect[0m
+[0;32mI (785915) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (785915) KEYPAD: LED OFF[0m
+[0;32mI (785915) KEYPAD: MQTT disconnected[0m
+[0;32mI (785925) KEYPAD: LED OFF[0m
+[1;31mE (810935) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (810935) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (810935) mqtt_client: Error transport connect[0m
+[0;32mI (810935) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (810935) KEYPAD: LED OFF[0m
+[0;32mI (810945) KEYPAD: MQTT disconnected[0m
+[0;32mI (810945) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: 1
+Key pressed: D
+[1;31mE (835955) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (835955) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (835955) mqtt_client: Error transport connect[0m
+[0;32mI (835955) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (835955) KEYPAD: LED OFF[0m
+[0;32mI (835955) KEYPAD: MQTT disconnected[0m
+[0;32mI (835965) KEYPAD: LED OFF[0m
+Key pressed: *
+Key pressed: 2
+Key pressed: *
+Key pressed: 6
+Key pressed: 6
+Key pressed: 4
+Key pressed: 4
+Key pressed: 0
+Key pressed: *
+Key pressed: 5
+Key pressed: 5
+Key pressed: *
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 3
+Key pressed: 3
+Key pressed: 8
+Key pressed: D
+Key pressed: *
+Key pressed: 2
+Key pressed: *
+Key pressed: 6
+Key pressed: 6
+Key pressed: 4
+Key pressed: 4
+Key pressed: #
+Key pressed: 5
+Key pressed: 5
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 3
+Key pressed: 3
+Key pressed: 8
+[1;31mE (860975) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (860975) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (860975) mqtt_client: Error transport connect[0m
+[0;32mI (860975) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (860975) KEYPAD: LED OFF[0m
+[0;32mI (860975) KEYPAD: MQTT disconnected[0m
+[0;32mI (860985) KEYPAD: LED OFF[0m
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 0
+Key pressed: 0
+Key pressed: 0
+Key pressed: 0
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+[0;32mI (870135) wifi:state: run -> init (0x0)[0m
+[0;32mI (870145) wifi:pm stop, total sleep time: 794935757 us / 867188008 us[0m
+
+[0;32mI (870145) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (870145) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (870155) KEYPAD: STA disconnected, reason=8[0m
+[0;32mI (870155) mqtt_client: Client asked to disconnect[0m
+[0;32mI (870165) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (870175) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (870205) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (870255) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (870355) wifi:connected with Anh Kiet, aid = 5, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (870355) wifi:security: WPA2-PSK, phy: bgn, rssi: -70[0m
+[0;32mI (870365) wifi:pm start, type: 1[0m
+
+[0;32mI (870425) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;33mW (870985) KEYPAD: WiFi connection failed, retry count: 1/5[0m
+[0;33mW (870985) wifi:sta is connected, disconnect before connecting to new ap[0m
+[0;32mI (870985) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (872195) esp_netif_handlers: sta ip: 192.168.1.9, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (872195) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (872195) KEYPAD: Wi-Fi credentials saved successfully![0m
+[0;32mI (873215) mqtt_client: Client asked to disconnect[0m
+[0;33mW (873215) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (873225) KEYPAD: MQTT initialized[0m
+[0;32mI (873225) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[1;31mE (883235) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (883235) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (883235) mqtt_client: Error transport connect[0m
+[0;32mI (883235) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (883235) KEYPAD: LED OFF[0m
+[0;32mI (883245) KEYPAD: MQTT disconnected[0m
+[0;32mI (883245) KEYPAD: LED OFF[0m
+Key pressed: B
+[0;32mI (888075) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: *
+[0;32mI (889795) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: #
+[0;32mI (891065) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: D
+Key pressed: 6
+Key pressed: 6
+Key pressed: D
+Key pressed: 6
+Key pressed: 6
+Key pressed: D
+[0;33mW (896455) KEYPAD: MQTT not connected[0m
+[0;32mI (896455) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (896455) KEYPAD: Read status successfully: SO DANG GOI[0m
+[1;31mE (908255) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (908255) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (908255) mqtt_client: Error transport connect[0m
+[0;32mI (908255) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (908255) KEYPAD: LED OFF[0m
+[0;32mI (908255) KEYPAD: MQTT disconnected[0m
+[0;32mI (908265) KEYPAD: LED OFF[0m
+[1;31mE (933275) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (933275) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (933275) mqtt_client: Error transport connect[0m
+[0;32mI (933275) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (933275) KEYPAD: LED OFF[0m
+[0;32mI (933275) KEYPAD: MQTT disconnected[0m
+[0;32mI (933285) KEYPAD: LED OFF[0m
+[1;31mE (958295) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (958295) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (958295) mqtt_client: Error transport connect[0m
+[0;32mI (958295) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (958295) KEYPAD: LED OFF[0m
+[0;32mI (958295) KEYPAD: MQTT disconnected[0m
+[0;32mI (958305) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+[1;31mE (983315) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (983315) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (983315) mqtt_client: Error transport connect[0m
+[0;32mI (983315) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (983315) KEYPAD: LED OFF[0m
+[0;32mI (983315) KEYPAD: MQTT disconnected[0m
+[0;32mI (983325) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+[1;31mE (1008335) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1008335) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1008335) mqtt_client: Error transport connect[0m
+[0;32mI (1008335) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (1008335) KEYPAD: LED OFF[0m
+[0;32mI (1008345) KEYPAD: MQTT disconnected[0m
+[0;32mI (1008345) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: A
+[1;31mE (1033355) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1033355) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1033355) mqtt_client: Error transport connect[0m
+[0;32mI (1033355) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (1033355) KEYPAD: LED OFF[0m
+[0;32mI (1033365) KEYPAD: MQTT disconnected[0m
+[0;32mI (1033365) KEYPAD: LED OFF[0m
+Key pressed: A
+[1;31mE (1058375) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1058375) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1058375) mqtt_client: Error transport connect[0m
+[0;32mI (1058375) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (1058375) KEYPAD: LED OFF[0m
+[0;32mI (1058385) KEYPAD: MQTT disconnected[0m
+[0;32mI (1058385) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+[1;31mE (1083395) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1083395) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1083395) mqtt_client: Error transport connect[0m
+[0;32mI (1083395) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (1083395) KEYPAD: LED OFF[0m
+[0;32mI (1083405) KEYPAD: MQTT disconnected[0m
+[0;32mI (1083405) KEYPAD: LED OFF[0m
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: B
+[0;32mI (1086695) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (1087015) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: *
+[0;32mI (1088735) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: #
+[0;32mI (1090005) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: D
+Key pressed: 6
+Key pressed: 6
+Key pressed: D
+Key pressed: 6
+Key pressed: A
+Key pressed: A
+Key pressed: C
+Key pressed: C
+Key pressed: C
+[0;32mI (1097125) KEYPAD: Read status successfully: SO DANG GOI[0m
+[1;31mE (1108415) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1108415) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1108415) mqtt_client: Error transport connect[0m
+[0;32mI (1108415) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (1108415) KEYPAD: LED OFF[0m
+[0;32mI (1108425) KEYPAD: MQTT disconnected[0m
+[0;32mI (1108425) KEYPAD: LED OFF[0m
+[1;31mE (1133435) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1133435) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1133435) mqtt_client: Error transport connect[0m
+[0;32mI (1133435) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (1133435) KEYPAD: LED OFF[0m
+[0;32mI (1133445) KEYPAD: MQTT disconnected[0m
+[0;32mI (1133445) KEYPAD: LED OFF[0m

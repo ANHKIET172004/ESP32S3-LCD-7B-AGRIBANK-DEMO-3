@@ -1,102 +1,152 @@
-Command: ninja flash
-[1/10] Performing build step for 'bootloader'
-[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
-Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[2/10] No install step for 'bootloader'
-[3/10] Completed 'bootloader'
-[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:30:9: warning: "MAX_INPUT" redefined
-   30 | #define MAX_INPUT 49
-      |         ^~~~~~~~~
-In file included from D:/ESP32_IDF/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/limits.h:6,
-                 from D:/ESP32_IDF/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h:210,
-                 from D:/ESP32_IDF/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/syslimits.h:7,
-                 from D:/ESP32_IDF/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h:34,
-                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:62,
-                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:57,
-                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:69,
-                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:8:
-D:/ESP32_IDF/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/syslimits.h:42:9: note: this is the location of the previous definition
-   42 | #define MAX_INPUT                 255   /* max bytes in terminal input */
-      |         ^~~~~~~~~
-[5/10] Linking C static library esp-idf\main\libmain.a
-[6/10] Generating esp-idf/esp_system/ld/sections.ld
-[7/10] Linking CXX executable hello_world.elf
-[8/10] Generating binary image from built executable
-esptool.py v4.9.1
-Creating esp32 image...
-Merged 2 ELF sections
-Successfully created esp32 image.
-Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
-[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe0b60 bytes. Smallest app partition is 0x100000 bytes. 0x1f4a0 bytes (12%) free.
-[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.9.1
-Serial port COM3
-Connecting....
-Chip is ESP32-D0WD-V3 (revision v3.0)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: a8:42:e3:4c:7c:bc
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f0fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 26240 bytes to 16492...
-Writing at 0x00001000... (50 %)
-Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16492 compressed) at 0x00001000 in 0.5 seconds (effective 393.5 kbit/s)...
-Hash of data verified.
-Compressed 920416 bytes to 575821...
-Writing at 0x00010000... (2 %)
-Writing at 0x0001cf93... (5 %)
-Writing at 0x00027b30... (8 %)
-Writing at 0x00030c09... (11 %)
-Writing at 0x00036631... (13 %)
-Writing at 0x0003c3b4... (16 %)
-Writing at 0x00042485... (19 %)
-Writing at 0x000481a8... (22 %)
-Writing at 0x0004dbe8... (25 %)
-Writing at 0x000538af... (27 %)
-Writing at 0x00059798... (30 %)
-Writing at 0x0005f2e8... (33 %)
-Writing at 0x00064ecc... (36 %)
-Writing at 0x0006abd3... (38 %)
-Writing at 0x00071136... (41 %)
-Writing at 0x00076ec5... (44 %)
-Writing at 0x0007ccab... (47 %)
-Writing at 0x000822d7... (50 %)
-Writing at 0x000875e6... (52 %)
-Writing at 0x0008d27c... (55 %)
-Writing at 0x00092ddc... (58 %)
-Writing at 0x00098695... (61 %)
-Writing at 0x0009dfb2... (63 %)
-Writing at 0x000a3d3b... (66 %)
-Writing at 0x000a95d4... (69 %)
-Writing at 0x000af144... (72 %)
-Writing at 0x000b4e4b... (75 %)
-Writing at 0x000ba772... (77 %)
-Writing at 0x000c05e1... (80 %)
-Writing at 0x000cae18... (83 %)
-Writing at 0x000d0dea... (86 %)
-Writing at 0x000d8fd5... (88 %)
-Writing at 0x000de922... (91 %)
-Writing at 0x000e49ef... (94 %)
-Writing at 0x000ea416... (97 %)
-Writing at 0x000efa39... (100 %)
-Wrote 920416 bytes (575821 compressed) at 0x00010000 in 13.3 seconds (effective 554.1 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 910.7 kbit/s)...
-Hash of data verified.
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM9 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM9'
+�xxx�xxxxx�x�x��x�j��ets Jul 29 2019 12:21:46
 
-Leaving...
-Hard resetting via RTS pin...
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20598h (132504) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000305c0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000305e8 vaddr=3ffb0000 size=04c78h ( 19576) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=00035268 vaddr=40080000 size=0adb0h ( 44464) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a6a34h (682548) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e6a5c vaddr=4008adb0 size=0e534h ( 58676) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (455) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov 14 2025 16:49:19[0m
+[0;32mI (464) app_init: ELF file SHA256:  0709b3cec...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB9520 len 00026AE0 (154 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (521) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) LED: LED initialized on GPIO 2[0m
+[0;32mI (556) LED: LED OFF[0m
+[0;32mI (556) DEMO: I2C initialized successfully[0m
+[0;32mI (1446) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1466) MAC_UTILS: WiFi STA MAC: 94:E6:86:09:A4:78[0m
+[0;32mI (1466) NVS_UTILS: Read user ID successfully: 05[0m
+[0;32mI (1466) MAC_UTILS: Loaded user_id from NVS: 05[0m
+[0;32mI (1486) wifi:wifi driver task: 3ffc24a8, prio:23, stack:6656, core=0[0m
+[0;32mI (1496) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1496) wifi:wifi certification version: v7.0[0m
+[0;32mI (1496) wifi:config NVS flash: enabled[0m
+[0;32mI (1496) wifi:config nano formatting: disabled[0m
+[0;32mI (1506) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1506) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1506) wifi:Init management short buffer num: 32[0m
+[0;32mI (1516) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1516) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1526) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1526) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1536) wifi_init: rx ba win: 6[0m
+[0;32mI (1536) wifi_init: accept mbox: 6[0m
+[0;32mI (1536) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1536) wifi_init: udp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1546) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1556) wifi_init: tcp mss: 1440[0m
+[0;32mI (1556) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1556) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1606) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1676) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1736) wifi:mode : sta (94:e6:86:09:a4:78)[0m
+[0;32mI (1736) wifi:enable tsf[0m
+[0;32mI (1736) WIFI: WiFi initialized[0m
+[0;32mI (1736) WIFI: WiFi STA started[0m
+[0;32mI (1746) main_task: Returned from app_main()[0m
+[0;32mI (1746) STATE_MACHINE: System state task started[0m
+[0;32mI (1846) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1886) wifi:flush txq[0m
+[0;32mI (1886) wifi:stop sw txq[0m
+[0;32mI (1886) wifi:lmac stop hw txq[0m
+[0;32mI (1896) wifi:mode : sta (94:e6:86:09:a4:78)[0m
+[0;32mI (1896) wifi:enable tsf[0m
+[0;32mI (1896) WIFI: WiFi STA started[0m
+[0;32mI (1916) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1916) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1916) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1936) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1966) wifi:connected with NamTrung, aid = 23, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (1966) wifi:security: WPA2-PSK, phy: bgn, rssi: -66[0m
+[0;32mI (1986) wifi:pm start, type: 1[0m
+
+[0;32mI (1986) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1986) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (2056) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2086) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (3016) esp_netif_handlers: sta ip: 10.10.1.37, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3016) WIFI: WiFi connected, got IP[0m
+[0;32mI (3706) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:9, winSize:64[0m
+[0;32mI (4056) MQTT: Registered device with WiFi STA MAC: {"device_id":"94:E6:86:09:A4:78","status":"offline"}[0m
+[0;32mI (4056) MQTT: MQTT initialized[0m
+[0;32mI (4076) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (4096) LED: LED ON[0m
+[0;32mI (4096) MQTT: MQTT connected[0m
+[0;32mI (4336) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4336) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4346) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4356) MQTT: Processing topic: device/list[0m
+[0;32mI (4356) MQTT: Processing topic data: [{"id":"94:E6:86:09:A4:78","name":"5"},{"id":"A8:42:E3:4C:7C:BC","name":"1"}][0m
+[0;32mI (4356) MQTT: [{"id":"94:E6:86:09:A4:78","name":"5"},{"id":"A8:42:E3:4C:7C:BC","name":"1"}][0m
+[0;32mI (4366) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (4366) MAC_UTILS: WiFi STA MAC: 94:E6:86:09:A4:78[0m
+[0;32mI (4376) NVS_UTILS: Read user ID successfully: 05[0m
+[0;32mI (4376) MAC_UTILS: Loaded user_id from NVS: 05[0m
+[0;32mI (4376) MQTT: Found current device (MAC match): 94:E6:86:09:A4:78[0m
+[0;32mI (4386) NVS_UTILS: User ID saved successfully: 05[0m
+[0;32mI (4396) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (4396) MAC_UTILS: WiFi STA MAC: 94:E6:86:09:A4:78[0m
+[0;32mI (4406) NVS_UTILS: Read user ID successfully: 05[0m
+[0;32mI (4406) MAC_UTILS: Loaded user_id from NVS: 05[0m
+[0;32mI (4406) MQTT: Device list updated: 2 devices[0m
+[0;32mI (4436) MQTT: Processing topic: service/list[0m
+[0;32mI (4436) MQTT: Processing topic data: [{"id":1,"name":"Giao dich tren 1 ty"},{"id":7,"name":"Giao dich duoi 1 ty"}][0m
+[0;32mI (4436) MQTT: [{"id":1,"name":"Giao dich tren 1 ty"},{"id":7,"name":"Giao dich duoi 1 ty"}][0m
+[0;32mI (4446) MQTT: Service list updated: 2 services[0m
+[0;32mI (4466) MQTT: Processing topic: feedback_status[0m
+[0;32mI (4466) MQTT: Processing topic data: disconnected[0m
+[0;32mI (4466) MQTT: feedback_screen disconnected[0m
+[0;32mI (20826) MAC_UTILS: WiFi STA MAC: 94:E6:86:09:A4:78[0m
+[0;32mI (20836) NVS_UTILS: Read user ID successfully: 05[0m
+[0;32mI (20836) MAC_UTILS: Loaded user_id from NVS: 05[0m
+[0;32mI (22086) MAC_UTILS: WiFi STA MAC: 94:E6:86:09:A4:78[0m
+[0;32mI (22086) NVS_UTILS: Read user ID successfully: 05[0m
+[0;32mI (22086) MAC_UTILS: Loaded user_id from NVS: 05[0m

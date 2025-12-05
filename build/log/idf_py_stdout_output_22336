@@ -1,0 +1,541 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+) boot.esp32: SPI Speed    �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20598h (132504) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000305c0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000305e8 vaddr=3ffb0000 size=04888h ( 18568) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=00034e78 vaddr=40080000 size=0b1a0h ( 45472) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a68b0h (682160) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e68d8 vaddr=4008b1a0 size=0e144h ( 57668) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (454) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov 14 2025 16:49:19[0m
+[0;32mI (464) app_init: ELF file SHA256:  9fe4638b3...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB90D8 len 00026F28 (155 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (556) LED: LED initialized on GPIO 2[0m
+[0;32mI (556) LED: LED OFF[0m
+[0;32mI (556) DEMO: I2C initialized successfully[0m
+[0;32mI (1446) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1466) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1466) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (1466) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (1486) wifi:wifi driver task: 3ffc20e4, prio:23, stack:6656, core=0[0m
+[0;32mI (1496) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1496) wifi:wifi certification version: v7.0[0m
+[0;32mI (1496) wifi:config NVS flash: enabled[0m
+[0;32mI (1496) wifi:config nano formatting: disabled[0m
+[0;32mI (1506) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1506) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1506) wifi:Init management short buffer num: 32[0m
+[0;32mI (1516) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1516) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1526) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1526) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1536) wifi_init: rx ba win: 6[0m
+[0;32mI (1536) wifi_init: accept mbox: 6[0m
+[0;32mI (1536) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1536) wifi_init: udp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp mbox: 6[0m
+[0;32mI (1546) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1546) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1556) wifi_init: tcp mss: 1440[0m
+[0;32mI (1556) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1556) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1606) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1696) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1736) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1736) wifi:enable tsf[0m
+[0;32mI (1736) WIFI: WiFi initialized[0m
+[0;32mI (1746) WIFI: WiFi STA started[0m
+[0;32mI (1746) main_task: Returned from app_main()[0m
+[0;32mI (1746) STATE_MACHINE: System state task started[0m
+[0;32mI (1846) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1886) wifi:flush txq[0m
+[0;32mI (1886) wifi:stop sw txq[0m
+[0;32mI (1886) wifi:lmac stop hw txq[0m
+[0;32mI (1896) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1896) wifi:enable tsf[0m
+[0;32mI (1896) WIFI: WiFi STA started[0m
+[0;32mI (2176) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2186) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2186) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2206) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2256) wifi:connected with NamTrung, aid = 20, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (2266) wifi:security: WPA2-PSK, phy: bgn, rssi: -68[0m
+[0;32mI (2286) wifi:pm start, type: 1[0m
+
+[0;32mI (2286) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2286) WIFI: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (2336) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3316) esp_netif_handlers: sta ip: 10.10.1.60, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3316) WIFI: WiFi connected, got IP[0m
+[0;32mI (4356) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (4356) MQTT: MQTT initialized[0m
+[0;32mI (4376) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (4426) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (4516) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (4726) LED: LED ON[0m
+[0;32mI (4726) MQTT: MQTT connected[0m
+[0;32mI (4876) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4876) MQTT: Processing topic: device/list[0m
+[0;32mI (4876) MQTT: Processing topic data: [{"id":"94:E6:86:09:A4:78","name":"2"},{"id":"A8:42:E3:4C:7C:BC","name":"1"}][0m
+[0;32mI (4886) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4886) MQTT: [{"id":"94:E6:86:09:A4:78","name":"2"},{"id":"A8:42:E3:4C:7C:BC","name":"1"}][0m
+[0;32mI (4896) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4906) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (4906) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (4906) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (4906) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (4916) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (4916) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (4926) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (4926) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (4936) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (4936) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (4946) MQTT: Device list updated: 2 devices[0m
+[0;32mI (4966) MQTT: Processing topic: service/list[0m
+[0;32mI (4966) MQTT: Processing topic data: [{"id":1,"name":"Giao dich tren 1 ty"},{"id":7,"name":"Giao dich duoi 1 ty"}][0m
+[0;32mI (4966) MQTT: [{"id":1,"name":"Giao dich tren 1 ty"},{"id":7,"name":"Giao dich duoi 1 ty"}][0m
+[0;32mI (4976) MQTT: Service list updated: 2 services[0m
+[0;32mI (4996) MQTT: Processing topic: feedback_status[0m
+[0;32mI (4996) MQTT: Processing topic data: disconnected[0m
+[0;32mI (4996) MQTT: feedback_screen disconnected[0m
+[0;32mI (81766) wifi:state: run -> init (0x0)[0m
+[0;32mI (81776) wifi:pm stop, total sleep time: 55858735 us / 79489462 us[0m
+
+[0;32mI (81776) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (81776) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (81776) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (81796) WIFI: STA disconnected, reason=8[0m
+[1;31mE (81796) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (81796) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (81806) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (81806) LED: LED OFF[0m
+[1;31mE (81806) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (81816) MQTT: MQTT disconnected[0m
+[0;32mI (81816) LED: LED OFF[0m
+[1;31mE (81836) wifi:sta is connecting, return error[0m
+[0;32mI (82116) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (82126) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (82126) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (82136) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (82166) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (82176) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (82176) WIFI: STA disconnected, reason=2[0m
+[0;33mW (82176) WIFI: WiFi connection failed, retry count: 1/5[0m
+[0;32mI (84596) WIFI: STA disconnected, reason=205[0m
+[0;33mW (84596) WIFI: WiFi connection failed, retry count: 2/5[0m
+[0;32mI (84606) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (84606) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (84636) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (84646) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (84676) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (84686) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (84686) WIFI: STA disconnected, reason=2[0m
+[0;33mW (84686) WIFI: WiFi connection failed, retry count: 3/5[0m
+[0;32mI (87106) WIFI: STA disconnected, reason=205[0m
+[0;33mW (87106) WIFI: WiFi connection failed, retry count: 4/5[0m
+[0;32mI (87126) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (87126) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (87136) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (87156) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (87176) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (87186) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (87186) WIFI: STA disconnected, reason=2[0m
+[1;31mE (87186) WIFI: WiFi connection failed after 5 retries[0m
+[1;31mE (91826) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (91826) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (91826) mqtt_client: Error transport connect[0m
+[0;32mI (91826) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (91836) LED: LED OFF[0m
+[0;32mI (91836) MQTT: MQTT disconnected[0m
+[0;32mI (91836) LED: LED OFF[0m
+[1;31mE (106836) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (106836) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (106836) mqtt_client: Error transport connect[0m
+[0;32mI (106836) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (106836) LED: LED OFF[0m
+[0;32mI (106846) MQTT: MQTT disconnected[0m
+[0;32mI (106846) LED: LED OFF[0m
+[1;31mE (121846) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (121846) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (121846) mqtt_client: Error transport connect[0m
+[0;32mI (121846) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (121846) LED: LED OFF[0m
+[0;32mI (121856) MQTT: MQTT disconnected[0m
+[0;32mI (121856) LED: LED OFF[0m
+[0;32mI (133196) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (133206) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (133216) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (133226) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (133256) wifi:connected with iPhone Anh Kiet, aid = 1, channel 6, BW20, bssid = c2:85:74:48:60:19[0m
+[0;32mI (133256) wifi:security: WPA2-PSK, phy: bgn, rssi: -36[0m
+[0;32mI (133276) wifi:pm start, type: 1[0m
+
+[0;32mI (133276) WIFI: Connected to SSID:iPhone Anh Kiet, channel:6[0m
+[0;32mI (133356) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (134306) esp_netif_handlers: sta ip: 172.20.10.8, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (134306) WIFI: WiFi connected, got IP[0m
+[0;32mI (134326) NVS_UTILS: Wi-Fi credentials saved successfully![0m
+[0;32mI (135346) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (135346) mqtt_client: Client force reconnect requested[0m
+[0;32mI (135376) wifi:<ba-add>idx:0 (ifx:0, c2:85:74:48:60:19), tid:0, ssn:2, winSize:64[0m
+[1;31mE (153596) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[1;31mE (153596) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (153596) mqtt_client: Error transport connect[0m
+[0;32mI (153596) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (153606) LED: LED OFF[0m
+[0;32mI (153606) MQTT: MQTT disconnected[0m
+[0;32mI (153606) LED: LED OFF[0m
+[0;32mI (165266) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (167766) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (167766) wifi:state: run -> init (0xc800)[0m
+[0;32mI (167776) wifi:pm stop, total sleep time: 22317354 us / 34498313 us[0m
+
+[0;32mI (167776) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (167776) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (167786) WIFI: STA disconnected, reason=200[0m
+[1;31mE (168606) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (168606) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (168606) mqtt_client: Error transport connect[0m
+[0;32mI (168606) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (168616) LED: LED OFF[0m
+[0;32mI (168616) MQTT: MQTT disconnected[0m
+[0;32mI (168616) LED: LED OFF[0m
+[0;32mI (170206) WIFI: STA disconnected, reason=201[0m
+[0;32mI (172616) WIFI: STA disconnected, reason=201[0m
+[0;32mI (175036) WIFI: STA disconnected, reason=201[0m
+[0;32mI (177446) WIFI: STA disconnected, reason=201[0m
+[1;31mE (177446) WIFI: Saved WiFi connection failed after 5 retries[0m
+[1;31mE (183616) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (183616) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (183616) mqtt_client: Error transport connect[0m
+[0;32mI (183616) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (183626) LED: LED OFF[0m
+[0;32mI (183626) MQTT: MQTT disconnected[0m
+[0;32mI (183626) LED: LED OFF[0m
+[1;31mE (198626) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (198626) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (198626) mqtt_client: Error transport connect[0m
+[0;32mI (198636) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (198636) LED: LED OFF[0m
+[0;32mI (198636) MQTT: MQTT disconnected[0m
+[0;32mI (198646) LED: LED OFF[0m
+[1;31mE (208646) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (208646) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (208646) mqtt_client: Error transport connect[0m
+[0;32mI (208646) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (208646) LED: LED OFF[0m
+[0;32mI (208656) MQTT: MQTT disconnected[0m
+[0;32mI (208656) LED: LED OFF[0m
+[1;31mE (223656) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (223656) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (223656) mqtt_client: Error transport connect[0m
+[0;32mI (223656) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (223656) LED: LED OFF[0m
+[0;32mI (223666) MQTT: MQTT disconnected[0m
+[0;32mI (223666) LED: LED OFF[0m
+[1;31mE (238666) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (238666) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (238666) mqtt_client: Error transport connect[0m
+[0;32mI (238666) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (238666) LED: LED OFF[0m
+[0;32mI (238676) MQTT: MQTT disconnected[0m
+[0;32mI (238676) LED: LED OFF[0m
+[1;31mE (253676) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (253676) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (253676) mqtt_client: Error transport connect[0m
+[0;32mI (253676) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (253676) LED: LED OFF[0m
+[0;32mI (253686) MQTT: MQTT disconnected[0m
+[0;32mI (253686) LED: LED OFF[0m
+[1;31mE (268686) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (268686) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (268686) mqtt_client: Error transport connect[0m
+[0;32mI (268686) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (268686) LED: LED OFF[0m
+[0;32mI (268696) MQTT: MQTT disconnected[0m
+[0;32mI (268696) LED: LED OFF[0m
+[1;31mE (283696) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (283696) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (283696) mqtt_client: Error transport connect[0m
+[0;32mI (283696) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (283696) LED: LED OFF[0m
+[0;32mI (283706) MQTT: MQTT disconnected[0m
+[0;32mI (283706) LED: LED OFF[0m
+[1;31mE (298706) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (298706) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (298706) mqtt_client: Error transport connect[0m
+[0;32mI (298706) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (298706) LED: LED OFF[0m
+[0;32mI (298716) MQTT: MQTT disconnected[0m
+[0;32mI (298716) LED: LED OFF[0m
+[1;31mE (313716) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (313716) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (313716) mqtt_client: Error transport connect[0m
+[0;32mI (313716) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (313716) LED: LED OFF[0m
+[0;32mI (313726) MQTT: MQTT disconnected[0m
+[0;32mI (313726) LED: LED OFF[0m
+[1;31mE (328726) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (328726) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (328726) mqtt_client: Error transport connect[0m
+[0;32mI (328726) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (328726) LED: LED OFF[0m
+[0;32mI (328736) MQTT: MQTT disconnected[0m
+[0;32mI (328736) LED: LED OFF[0m
+[1;31mE (343736) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (343736) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (343736) mqtt_client: Error transport connect[0m
+[0;32mI (343736) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (343736) LED: LED OFF[0m
+[0;32mI (343746) MQTT: MQTT disconnected[0m
+[0;32mI (343746) LED: LED OFF[0m
+[1;31mE (358746) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (358746) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (358746) mqtt_client: Error transport connect[0m
+[0;32mI (358746) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (358756) LED: LED OFF[0m
+[0;32mI (358756) MQTT: MQTT disconnected[0m
+[0;32mI (358756) LED: LED OFF[0m
+[1;31mE (373756) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (373756) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (373756) mqtt_client: Error transport connect[0m
+[0;32mI (373766) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (373766) LED: LED OFF[0m
+[0;32mI (373766) MQTT: MQTT disconnected[0m
+[0;32mI (373766) LED: LED OFF[0m
+[1;31mE (383776) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (383776) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (383776) mqtt_client: Error transport connect[0m
+[0;32mI (383776) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (383776) LED: LED OFF[0m
+[0;32mI (383786) MQTT: MQTT disconnected[0m
+[0;32mI (383786) LED: LED OFF[0m
+[1;31mE (398786) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (398786) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (398786) mqtt_client: Error transport connect[0m
+[0;32mI (398786) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (398786) LED: LED OFF[0m
+[0;32mI (398796) MQTT: MQTT disconnected[0m
+[0;32mI (398796) LED: LED OFF[0m
+[1;31mE (413796) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (413796) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (413796) mqtt_client: Error transport connect[0m
+[0;32mI (413796) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (413796) LED: LED OFF[0m
+[0;32mI (413806) MQTT: MQTT disconnected[0m
+[0;32mI (413806) LED: LED OFF[0m
+[1;31mE (428806) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (428806) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (428806) mqtt_client: Error transport connect[0m
+[0;32mI (428806) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (428806) LED: LED OFF[0m
+[0;32mI (428816) MQTT: MQTT disconnected[0m
+[0;32mI (428816) LED: LED OFF[0m
+[1;31mE (443816) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (443816) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (443816) mqtt_client: Error transport connect[0m
+[0;32mI (443816) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (443816) LED: LED OFF[0m
+[0;32mI (443826) MQTT: MQTT disconnected[0m
+[0;32mI (443826) LED: LED OFF[0m
+[1;31mE (458826) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (458826) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (458826) mqtt_client: Error transport connect[0m
+[0;32mI (458826) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (458826) LED: LED OFF[0m
+[0;32mI (458836) MQTT: MQTT disconnected[0m
+[0;32mI (458836) LED: LED OFF[0m
+[1;31mE (473836) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (473836) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (473836) mqtt_client: Error transport connect[0m
+[0;32mI (473836) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (473836) LED: LED OFF[0m
+[0;32mI (473846) MQTT: MQTT disconnected[0m
+[0;32mI (473846) LED: LED OFF[0m
+[1;31mE (488846) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (488846) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (488846) mqtt_client: Error transport connect[0m
+[0;32mI (488846) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (488856) LED: LED OFF[0m
+[0;32mI (488856) MQTT: MQTT disconnected[0m
+[0;32mI (488856) LED: LED OFF[0m
+[1;31mE (503856) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (503856) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (503856) mqtt_client: Error transport connect[0m
+[0;32mI (503856) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (503866) LED: LED OFF[0m
+[0;32mI (503866) MQTT: MQTT disconnected[0m
+[0;32mI (503866) LED: LED OFF[0m
+[1;31mE (518866) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (518866) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (518866) mqtt_client: Error transport connect[0m
+[0;32mI (518866) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (518866) LED: LED OFF[0m
+[0;32mI (518876) MQTT: MQTT disconnected[0m
+[0;32mI (518876) LED: LED OFF[0m
+[1;31mE (533876) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (533876) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (533876) mqtt_client: Error transport connect[0m
+[0;32mI (533876) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (533886) LED: LED OFF[0m
+[0;32mI (533886) MQTT: MQTT disconnected[0m
+[0;32mI (533886) LED: LED OFF[0m
+[1;31mE (548886) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (548886) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (548886) mqtt_client: Error transport connect[0m
+[0;32mI (548886) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (548886) LED: LED OFF[0m
+[0;32mI (548896) MQTT: MQTT disconnected[0m
+[0;32mI (548896) LED: LED OFF[0m
+[1;31mE (563896) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (563896) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (563896) mqtt_client: Error transport connect[0m
+[0;32mI (563896) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (563906) LED: LED OFF[0m
+[0;32mI (563906) MQTT: MQTT disconnected[0m
+[0;32mI (563906) LED: LED OFF[0m
+[1;31mE (578906) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (578906) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (578906) mqtt_client: Error transport connect[0m
+[0;32mI (578906) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (578906) LED: LED OFF[0m
+[0;32mI (578916) MQTT: MQTT disconnected[0m
+[0;32mI (578916) LED: LED OFF[0m
+[1;31mE (593916) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (593916) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (593916) mqtt_client: Error transport connect[0m
+[0;32mI (593916) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (593926) LED: LED OFF[0m
+[0;32mI (593926) MQTT: MQTT disconnected[0m
+[0;32mI (593926) LED: LED OFF[0m
+[1;31mE (608926) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (608926) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (608926) mqtt_client: Error transport connect[0m
+[0;32mI (608926) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (608936) LED: LED OFF[0m
+[0;32mI (608936) MQTT: MQTT disconnected[0m
+[0;32mI (608936) LED: LED OFF[0m
+[1;31mE (623936) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (623936) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (623936) mqtt_client: Error transport connect[0m
+[0;32mI (623936) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (623936) LED: LED OFF[0m
+[0;32mI (623946) MQTT: MQTT disconnected[0m
+[0;32mI (623946) LED: LED OFF[0m
+[1;31mE (638946) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (638946) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (638946) mqtt_client: Error transport connect[0m
+[0;32mI (638946) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (638956) LED: LED OFF[0m
+[0;32mI (638956) MQTT: MQTT disconnected[0m
+[0;32mI (638956) LED: LED OFF[0m
+[1;31mE (653956) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (653956) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (653956) mqtt_client: Error transport connect[0m
+[0;32mI (653956) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (653956) LED: LED OFF[0m
+[0;32mI (653966) MQTT: MQTT disconnected[0m
+[0;32mI (653966) LED: LED OFF[0m
+[1;31mE (668966) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (668966) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (668966) mqtt_client: Error transport connect[0m
+[0;32mI (668966) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (668966) LED: LED OFF[0m
+[0;32mI (668976) MQTT: MQTT disconnected[0m
+[0;32mI (668976) LED: LED OFF[0m
+[1;31mE (683976) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (683976) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (683976) mqtt_client: Error transport connect[0m
+[0;32mI (683976) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (683976) LED: LED OFF[0m
+[0;32mI (683986) MQTT: MQTT disconnected[0m
+[0;32mI (683986) LED: LED OFF[0m
+[0;32mI (691296) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (691306) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (691316) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (691326) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (691346) wifi:connected with NamTrung, aid = 20, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (691346) wifi:security: WPA2-PSK, phy: bgn, rssi: -69[0m
+[0;32mI (691366) wifi:pm start, type: 1[0m
+
+[0;32mI (691366) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (691366) WIFI: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (692396) esp_netif_handlers: sta ip: 10.10.1.60, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (692396) WIFI: WiFi connected, got IP[0m
+[0;32mI (692406) NVS_UTILS: Wi-Fi credentials saved successfully![0m
+[0;32mI (693436) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (693436) mqtt_client: Client force reconnect requested[0m
+[0;32mI (693446) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (693456) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (693476) LED: LED ON[0m
+[0;32mI (693476) MQTT: MQTT connected[0m
+[0;32mI (693696) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (693696) MQTT: Processing topic: device/list[0m
+[0;32mI (693696) MQTT: Processing topic data: [{"id":"94:E6:86:09:A4:78","name":"2"},{"id":"A8:42:E3:4C:7C:BC","name":"1"}][0m
+[0;32mI (693706) MQTT: [{"id":"94:E6:86:09:A4:78","name":"2"},{"id":"A8:42:E3:4C:7C:BC","name":"1"}][0m
+[0;32mI (693706) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (693716) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (693716) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (693716) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (693726) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (693736) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (693736) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (693736) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (693746) NVS_UTILS: Read user ID successfully: 01[0m
+[0;32mI (693746) MAC_UTILS: Loaded user_id from NVS: 01[0m
+[0;32mI (693756) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (693766) NVS_UTILS: User ID saved successfully: 01[0m
+[0;32mI (693766) MQTT: Device list updated: 2 devices[0m
+[0;32mI (693786) MQTT: Processing topic: service/list[0m
+[0;32mI (693786) MQTT: Processing topic data: [{"id":1,"name":"Giao dich tren 1 ty"},{"id":7,"name":"Giao dich duoi 1 ty"}][0m
+[0;32mI (693786) MQTT: [{"id":1,"name":"Giao dich tren 1 ty"},{"id":7,"name":"Giao dich duoi 1 ty"}][0m
+[0;32mI (693796) MQTT: Service list updated: 2 services[0m
+[0;32mI (693816) MQTT: Processing topic: feedback_status[0m
+[0;32mI (693816) MQTT: Processing topic data: disconnected[0m
+[0;32mI (693816) MQTT: feedback_screen disconnected[0m

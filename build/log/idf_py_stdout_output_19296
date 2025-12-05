@@ -1,78 +1,2994 @@
-Command: ninja flash
-[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe0d50 bytes. Smallest app partition is 0x100000 bytes. 0x1f2b0 bytes (12%) free.
-[2/5] Performing build step for 'bootloader'
-[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
-Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[3/5] No install step for 'bootloader'
-[4/5] Completed 'bootloader'
-[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.9.1
-Serial port COM3
-Connecting....
-Chip is ESP32-D0WD-V3 (revision v3.0)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: a8:42:e3:4c:7c:bc
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f0fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 26240 bytes to 16492...
-Writing at 0x00001000... (50 %)
-Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16492 compressed) at 0x00001000 in 0.5 seconds (effective 394.6 kbit/s)...
-Hash of data verified.
-Compressed 920912 bytes to 575849...
-Writing at 0x00010000... (2 %)
-Writing at 0x0001ced2... (5 %)
-Writing at 0x00027d10... (8 %)
-Writing at 0x00030b55... (11 %)
-Writing at 0x00036582... (13 %)
-Writing at 0x0003c319... (16 %)
-Writing at 0x000423fd... (19 %)
-Writing at 0x00048109... (22 %)
-Writing at 0x0004db1d... (25 %)
-Writing at 0x000537e5... (27 %)
-Writing at 0x000596e7... (30 %)
-Writing at 0x0005f25a... (33 %)
-Writing at 0x00064e1b... (36 %)
-Writing at 0x0006ab29... (38 %)
-Writing at 0x000710b4... (41 %)
-Writing at 0x00076e39... (44 %)
-Writing at 0x0007cc29... (47 %)
-Writing at 0x00082251... (50 %)
-Writing at 0x00087568... (52 %)
-Writing at 0x0008d200... (55 %)
-Writing at 0x00092d6d... (58 %)
-Writing at 0x00098614... (61 %)
-Writing at 0x0009df3c... (63 %)
-Writing at 0x000a3cc8... (66 %)
-Writing at 0x000a9521... (69 %)
-Writing at 0x000af0fe... (72 %)
-Writing at 0x000b4dcb... (75 %)
-Writing at 0x000ba6fc... (77 %)
-Writing at 0x000c0688... (80 %)
-Writing at 0x000cadcc... (83 %)
-Writing at 0x000d0d81... (86 %)
-Writing at 0x000d9195... (88 %)
-Writing at 0x000deae9... (91 %)
-Writing at 0x000e4bb9... (94 %)
-Writing at 0x000ea5cc... (97 %)
-Writing at 0x000efc00... (100 %)
-Wrote 920912 bytes (575849 compressed) at 0x00010000 in 13.3 seconds (effective 555.6 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 939.2 kbit/s)...
-Hash of data verified.
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+) boot.esp32: SPI Speeets Jul 29 2019 12:21:46
 
-Leaving...
-Hard resetting via RTS pin...
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f9f0h (129520) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002fa18 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002fa40 vaddr=3ffb0000 size=005d8h (  1496) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4928h (674088) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d4950 vaddr=3ffb05d8 size=039e0h ( 14816) load[0m
+[0;32mI (380) esp_image: segment 5: paddr=000d8338 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      v5.5-dirty[0m
+[0;32mI (460) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (465) app_init: ELF file SHA256:  13cc216b4...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB87B0 len 00027850 (158 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (537) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (557) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2147) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2197) wifi:wifi driver task: 3ffc09b4, prio:23, stack:6656, core=0[0m
+[0;32mI (2217) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2217) wifi:wifi certification version: v7.0[0m
+[0;32mI (2217) wifi:config NVS flash: enabled[0m
+[0;32mI (2217) wifi:config nano formatting: disabled[0m
+[0;32mI (2217) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2227) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2227) wifi:Init management short buffer num: 32[0m
+[0;32mI (2237) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2237) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2237) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2247) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2247) wifi_init: rx ba win: 6[0m
+[0;32mI (2247) wifi_init: accept mbox: 6[0m
+[0;32mI (2257) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2257) wifi_init: udp mbox: 6[0m
+[0;32mI (2257) wifi_init: tcp mbox: 6[0m
+[0;32mI (2267) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp mss: 1440[0m
+[0;32mI (2277) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2277) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2337) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2417) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2417) wifi:enable tsf[0m
+[0;32mI (2427) KEYPAD: WiFi initialized[0m
+[0;32mI (2427) KEYPAD: WiFi STA started[0m
+[0;32mI (2427) KEYPAD: MQTT reconnect task started[0m
+[0;32mI (2427) KEYPAD: WiFi reconnect task started[0m
+[0;32mI (2427) KEYPAD: Have a saved wifi network in NVS: Anh Kiet[0m
+[0;33mW (3247) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3297) wifi:flush txq[0m
+[0;32mI (3297) wifi:stop sw txq[0m
+[0;32mI (3297) wifi:lmac stop hw txq[0m
+[0;32mI (3307) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (3307) wifi:enable tsf[0m
+[0;32mI (3307) KEYPAD: WiFi STA started[0m
+[1;31mE (3307) wifi:sta is connecting, return error[0m
+[0;32mI (3597) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (3597) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3617) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3677) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3797) wifi:connected with Anh Kiet, aid = 5, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (3797) wifi:security: WPA2-PSK, phy: bgn, rssi: -72[0m
+[0;32mI (3817) wifi:pm start, type: 1[0m
+
+[0;32mI (3817) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3817) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (3897) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5057) esp_netif_handlers: sta ip: 192.168.1.4, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5057) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5327) KEYPAD: MQTT initialized[0m
+[0;32mI (5327) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[1;31mE (15337) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (15337) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (15337) mqtt_client: Error transport connect[0m
+[0;32mI (15337) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (15337) KEYPAD: MQTT disconnected[0m
+[0;32mI (15347) KEYPAD: MQTT disconnect semaphore taken[0m
+[0;32mI (15947) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (15947) mqtt_client: Client force reconnect requested[0m
+[0;32mI (16547) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (16547) mqtt_client: Client force reconnect requested[0m
+[0;32mI (17147) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (17147) mqtt_client: Client force reconnect requested[0m
+[0;32mI (17747) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (17747) mqtt_client: Client force reconnect requested[0m
+[0;32mI (18347) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (18347) mqtt_client: Client force reconnect requested[0m
+[1;31mE (18447) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (20467) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (20467) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (21067) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (21067) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (21667) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (21667) mqtt_client: Client force reconnect requested[0m
+[0;32mI (22267) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (22267) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (22867) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (22867) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (23467) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (23467) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (23527) wifi:state: run -> init (0x0)[0m
+[0;32mI (23537) wifi:pm stop, total sleep time: 17164261 us / 19718034 us[0m
+
+[0;32mI (23537) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (23537) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (23557) KEYPAD: STA disconnected, reason=8[0m
+[1;31mE (23557) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[0;32mI (23557) mqtt_client: Client asked to disconnect[0m
+[1;31mE (23557) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (23567) mqtt_client: Error transport connect[0m
+[0;32mI (23567) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (23577) KEYPAD: MQTT disconnected[0m
+[0;32mI (24177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (24177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (24777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (24777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (25377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (25377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (25977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (25977) mqtt_client: Client force reconnect requested[0m
+[0;33mW (26077) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (26077) KEYPAD: WiFi disconnect semaphore taken[0m
+[0;32mI (26077) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (26077) mqtt_client: Client asked to disconnect[0m
+[0;33mW (26077) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (26087) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[1;31mE (26087) wifi:sta is connecting, return error[0m
+[0;32mI (26577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (26577) mqtt_client: Client force reconnect requested[0m
+[1;31mE (26677) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (26977) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (26977) wifi:sta is connecting, return error[0m
+[0;32mI (27777) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (27777) wifi:sta is connecting, return error[0m
+[0;32mI (28487) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (28487) mqtt_client: Client asked to disconnect[0m
+[0;33mW (28487) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (28487) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (28497) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (28577) KEYPAD: WiFi reconnect attempt[0m
+[0;32mI (28697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (28697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (29297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (29297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (29377) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (29377) wifi:sta is connecting, return error[0m
+[0;32mI (29897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (29897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (30177) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (30177) wifi:sta is connecting, return error[0m
+[0;32mI (30497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (30497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (30987) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (30987) mqtt_client: Client asked to disconnect[0m
+[0;33mW (30987) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (30987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (31097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (31097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (31697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (31697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (32297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (32297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (32897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (32897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (33497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (33497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (34097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (34097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (34697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (34697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (35297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (35297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (35897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (35897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (36497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (36497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (37097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (37097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (37697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (37697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (38297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (38297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (38897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (38897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (39497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (39497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (40097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (40097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (40697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (40697) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (41297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (41297) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+[0;32mI (41897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (41897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: *
+[0;32mI (42497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (42497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (43097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (43097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (43697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (43697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+Key pressed: 4
+[0;32mI (44297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (44297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (44897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (44897) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+[0;32mI (45497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (45497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 5
+Key pressed: 5
+[0;32mI (46097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (46097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (46697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (46697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (47297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (47297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (47897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (47897) mqtt_client: Client force reconnect requested[0m
+Key pressed: #
+[0;32mI (48497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (48497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (49097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (49097) mqtt_client: Client force reconnect requested[0m
+Key pressed: #
+[0;32mI (49697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (49697) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+Key pressed: 4
+[0;32mI (50297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (50297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+Key pressed: 4
+[0;32mI (50897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (50897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (51497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (51497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (52097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (52097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+Key pressed: 3
+[0;32mI (52697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (52697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+Key pressed: 3
+[0;32mI (53297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (53297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (53897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (53897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (54497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (54497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (55097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (55097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (55697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (55697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 8
+[0;32mI (56297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (56297) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (56897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (56897) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+[0;32mI (57497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (57497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: *
+[0;32mI (58097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (58097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (58697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (58697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (59297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (59297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (59897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (59897) mqtt_client: Client force reconnect requested[0m
+Key pressed: C
+[0;32mI (60497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (60497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (61097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (61097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (61697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (61697) mqtt_client: Client force reconnect requested[0m
+Key pressed: #
+Key pressed: 4
+[0;32mI (62297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (62297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (62897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (62897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 5
+[0;32mI (63497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (63497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 5
+[0;32mI (64097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (64097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+Key pressed: 4
+[0;32mI (64697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (64697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (65297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (65297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (65897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (65897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (66497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (66497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 8
+[0;32mI (67097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (67097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (67697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (67697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (68297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (68297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (68897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (68897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (69497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (69497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (70097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (70097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (70697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (70697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (71297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (71297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (71897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (71897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (72497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (72497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: 2
+[0;32mI (73097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (73097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (73697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (73697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (74297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (74297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (74897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (74897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (75497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (75497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (76097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (76097) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: 2
+[0;32mI (76697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (76697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (77297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (77297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (77897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (77897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (78497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (78497) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;33mW (78977) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (79057) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (79067) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (79087) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (79097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (79097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (79117) wifi:state: assoc -> run (0x10)[0m
+[1;31mE (79197) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (79227) wifi:connected with Anh Kiet, aid = 2, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (79227) wifi:security: WPA2-PSK, phy: bgn, rssi: -75[0m
+[0;32mI (79237) wifi:pm start, type: 1[0m
+
+[0;32mI (79237) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (79257) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (79577) mqtt_client: Client asked to disconnect[0m
+[0;33mW (79577) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (79577) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (79577) transport_base: Failed to open a new connection: 32772[0m
+[0;32mI (79587) KEYPAD: MQTT initialized[0m
+[1;31mE (79587) mqtt_client: Error transport connect[0m
+[0;32mI (79587) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (79597) KEYPAD: MQTT disconnected[0m
+[0;32mI (80477) esp_netif_handlers: sta ip: 192.168.1.4, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (80477) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (80477) KEYPAD: Updating Wi-Fi credentials in NVS...[0m
+[0;32mI (80477) KEYPAD: Wi-Fi credentials saved successfully![0m
+[0;32mI (80527) KEYPAD: WiFi disconnect semaphore taken[0m
+[0;32mI (80527) KEYPAD: WiFi already connected[0m
+[0;32mI (81007) mqtt_client: Client asked to disconnect[0m
+[0;32mI (81217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (81217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (81817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (81817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (82107) KEYPAD: MQTT initialized[0m
+[0;32mI (82107) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[0;32mI (82417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (82417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (83017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (83017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (83617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (83617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (84217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (84217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (84817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (84817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (85417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (85417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (86017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (86017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (86617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (86617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (87217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (87217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (87817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (87817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (88417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (88417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (89017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (89017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (89617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (89617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (90217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (90217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (90817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (90817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (91417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (91417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (92017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (92017) mqtt_client: Client force reconnect requested[0m
+[1;31mE (92117) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (92117) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (92117) mqtt_client: Error transport connect[0m
+[0;32mI (92117) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (92117) KEYPAD: MQTT disconnected[0m
+[0;32mI (92817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (92817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (93417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (93417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (94017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (94017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (94617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (94617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (95217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (95217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (95817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (95817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (96417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (96417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (97017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (97017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (97617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (97617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (98217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (98217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (98817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (98817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (99417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (99417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (100017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (100017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (100617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (100617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (101217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (101217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (101817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (101817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (102417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (102417) mqtt_client: Client force reconnect requested[0m
+[1;31mE (102827) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (102827) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (102827) mqtt_client: Error transport connect[0m
+[0;32mI (102827) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (102827) KEYPAD: MQTT disconnected[0m
+[0;32mI (103517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (103517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (104117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (104117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (104717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (104717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (105317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (105317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (105917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (105917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (106517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (106517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (107117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (107117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (107717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (107717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (108317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (108317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (108917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (108917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (109517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (109517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (110117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (110117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (110717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (110717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (111317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (111317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (111917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (111917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (112517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (112517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (113117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (113117) mqtt_client: Client force reconnect requested[0m
+[1;31mE (113527) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (113527) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (113527) mqtt_client: Error transport connect[0m
+[0;32mI (113527) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (113527) KEYPAD: MQTT disconnected[0m
+[0;32mI (114217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (114217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (114817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (114817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (115417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (115417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (116017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (116017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (116617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (116617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (117217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (117217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (117817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (117817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (118417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (118417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (119017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (119017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (119617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (119617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (120217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (120217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (120817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (120817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (121417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (121417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (122017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (122017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (122617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (122617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (123217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (123217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (123817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (123817) mqtt_client: Client force reconnect requested[0m
+[1;31mE (124227) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (124227) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (124227) mqtt_client: Error transport connect[0m
+[0;32mI (124227) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (124227) KEYPAD: MQTT disconnected[0m
+[0;32mI (124917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (124917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (125517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (125517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (126117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (126117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (126717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (126717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (127317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (127317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (127917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (127917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (128517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (128517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (129117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (129117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (129717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (129717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (130317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (130317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (130917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (130917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (131517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (131517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (132117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (132117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (132717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (132717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (133317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (133317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (133917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (133917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (134517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (134517) mqtt_client: Client force reconnect requested[0m
+[1;31mE (134927) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (134927) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (134927) mqtt_client: Error transport connect[0m
+[0;32mI (134927) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (134927) KEYPAD: MQTT disconnected[0m
+[0;32mI (135617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (135617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (136217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (136217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (136817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (136817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (137417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (137417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (138017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (138017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (138617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (138617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (139217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (139217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (139817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (139817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (140417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (140417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (141017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (141017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (141617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (141617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (142217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (142217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (142817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (142817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (143417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (143417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (144017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (144017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (144617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (144617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (145217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (145217) mqtt_client: Client force reconnect requested[0m
+[1;31mE (145627) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (145627) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (145627) mqtt_client: Error transport connect[0m
+[0;32mI (145627) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (145627) KEYPAD: MQTT disconnected[0m
+[0;32mI (146317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (146317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (146917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (146917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (147517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (147517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (148117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (148117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (148717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (148717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (149317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (149317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (149917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (149917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (150517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (150517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (151117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (151117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (151717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (151717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (152317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (152317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (152917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (152917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (153517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (153517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (154117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (154117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (154717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (154717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (155317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (155317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (155917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (155917) mqtt_client: Client force reconnect requested[0m
+[1;31mE (156327) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (156327) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (156327) mqtt_client: Error transport connect[0m
+[0;32mI (156327) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (156327) KEYPAD: MQTT disconnected[0m
+[0;32mI (157017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (157017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (157617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (157617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (158217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (158217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (158817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (158817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (159417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (159417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (160017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (160017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (160617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (160617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (161217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (161217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (161817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (161817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (162417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (162417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (163017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (163017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (163617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (163617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (164217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (164217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (164817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (164817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (165417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (165417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (166017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (166017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (166617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (166617) mqtt_client: Client force reconnect requested[0m
+[1;31mE (167027) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (167027) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (167027) mqtt_client: Error transport connect[0m
+[0;32mI (167027) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (167027) KEYPAD: MQTT disconnected[0m
+[0;32mI (167717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (167717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (168317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (168317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (168917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (168917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (169517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (169517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (170117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (170117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (170717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (170717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (171317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (171317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (171917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (171917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (172517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (172517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (173117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (173117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (173717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (173717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (174317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (174317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (174917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (174917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (175517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (175517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (176117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (176117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (176717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (176717) mqtt_client: Client force reconnect requested[0m
+[0;32mI (177317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (177317) mqtt_client: Client force reconnect requested[0m
+[1;31mE (177727) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (177727) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (177727) mqtt_client: Error transport connect[0m
+[0;32mI (177727) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (177727) KEYPAD: MQTT disconnected[0m
+[0;32mI (178417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (178417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (179017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (179017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (179617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (179617) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (180217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (180217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (180817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (180817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (181417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (181417) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+[0;32mI (182017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (182017) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: *
+[0;32mI (182617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (182617) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (183217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (183217) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (183817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (183817) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+Key pressed: 4
+[0;32mI (184417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (184417) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (185017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (185017) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+Key pressed: 5
+[0;32mI (185617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (185617) mqtt_client: Client force reconnect requested[0m
+Key pressed: 5
+[0;32mI (186217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (186217) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+Key pressed: 4
+[0;32mI (186817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (186817) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+Key pressed: 4
+[0;32mI (187417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (187417) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (188017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (188017) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[1;31mE (188427) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (188427) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (188427) mqtt_client: Error transport connect[0m
+[0;32mI (188427) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (188427) KEYPAD: MQTT disconnected[0m
+Key pressed: 0
+[0;32mI (189117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (189117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (189717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (189717) mqtt_client: Client force reconnect requested[0m
+Key pressed: 9
+[0;32mI (190317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (190317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (190917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (190917) mqtt_client: Client force reconnect requested[0m
+Key pressed: #
+[0;32mI (191517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (191517) mqtt_client: Client force reconnect requested[0m
+Key pressed: #
+[0;32mI (192117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (192117) mqtt_client: Client force reconnect requested[0m
+Key pressed: 8
+[0;32mI (192717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (192717) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (193317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (193317) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+[0;32mI (193917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (193917) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (194517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (194517) mqtt_client: Client force reconnect requested[0m
+Key pressed: #
+[0;32mI (195117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (195117) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (195717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (195717) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+[0;32mI (196317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (196317) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+Key pressed: 6
+[0;32mI (196917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (196917) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (197517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (197517) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (198117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (198117) mqtt_client: Client force reconnect requested[0m
+Key pressed: C
+[0;32mI (198717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (198717) mqtt_client: Client force reconnect requested[0m
+[1;31mE (199127) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (199127) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (199127) mqtt_client: Error transport connect[0m
+[0;32mI (199127) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (199127) KEYPAD: MQTT disconnected[0m
+[0;32mI (199817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (199817) mqtt_client: Client force reconnect requested[0m
+Key pressed: 5
+Key pressed: 5
+[0;32mI (200417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (200417) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+Key pressed: 4
+[0;32mI (201017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (201017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (201617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (201617) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (202217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (202217) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+Key pressed: 3
+[0;32mI (202817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (202817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (203417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (203417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (204017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (204017) mqtt_client: Client force reconnect requested[0m
+Key pressed: 8
+[0;32mI (204617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (204617) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (205217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (205217) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (205817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (205817) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (206417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (206417) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (207017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (207017) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (207617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (207617) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+Key pressed: 1
+[0;32mI (208217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (208217) mqtt_client: Client force reconnect requested[0m
+Key pressed: 1
+[0;32mI (208817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (208817) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (209417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (209417) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[1;31mE (209827) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (209827) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (209827) mqtt_client: Error transport connect[0m
+[0;32mI (209827) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (209827) KEYPAD: MQTT disconnected[0m
+Key pressed: 2
+[0;32mI (210517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (210517) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (211117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (211117) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (211717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (211717) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (212317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (212317) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (212917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (212917) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+[0;32mI (213517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (213517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (214117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (214117) mqtt_client: Client force reconnect requested[0m
+Key pressed: 0
+Key pressed: 0
+[0;32mI (214717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (214717) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (215317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (215317) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: 2
+[0;32mI (215917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (215917) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (216517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (216517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (217117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (217117) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (217147) wifi:state: run -> init (0x0)[0m
+[0;32mI (217157) wifi:pm stop, total sleep time: 123764816 us / 137918092 us[0m
+
+[0;32mI (217157) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (217157) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;33mW (217157) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (217177) KEYPAD: STA disconnected, reason=8[0m
+[0;32mI (217177) mqtt_client: Client asked to disconnect[0m
+[1;31mE (217177) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[0;32mI (217187) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0E (217187) transport_base: Failed to open a new connection: 32772[0m
+
+[1;31mE (217197) mqtt_client: Error transport connect[0m
+[0;32mI (217197) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (217207) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (217207) KEYPAD: MQTT disconnected[0m
+[0;32mI (217227) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (217307) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (217417) wifi:connected with Anh Kiet, aid = 2, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (217417) wifi:security: WPA2-PSK, phy: bgn, rssi: -73[0m
+[0;32mI (217417) wifi:pm start, type: 1[0m
+
+[0;32mI (217497) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (217817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (217817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (218417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (218417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (219017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (219017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (219617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (219617) mqtt_client: Client force reconnect requested[0m
+[0;33mW (219717) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;33mW (219717) wifi:sta is connected, disconnect before connecting to new ap[0m
+[0;32mI (219717) KEYPAD: WiFi disconnect semaphore taken[0m
+[0;32mI (219717) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (219797) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:3, winSize:64[0m
+[0;32mI (219937) mqtt_client: Client asked to disconnect[0m
+[0;33mW (219937) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (219937) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (219937) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (219947) mqtt_client: Error transport connect[0m
+[0;32mI (219947) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (219947) KEYPAD: MQTT disconnected[0m
+[0;32mI (219957) KEYPAD: MQTT initialized[0m
+[0;32mI (220517) KEYPAD: WiFi reconnect attempt[0m
+[0;33mW (220517) wifi:sta is connected, disconnect before connecting to new ap[0m
+[0;32mI (220617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (220617) mqtt_client: Client force reconnect requested[0m
+[1;31mE (220617) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (220617) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (220617) mqtt_client: Error transport connect[0m
+[0;32mI (220627) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (220627) KEYPAD: MQTT disconnected[0m
+[0;32mI (220967) esp_netif_handlers: sta ip: 192.168.1.4, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (220967) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (220967) KEYPAD: Updating Wi-Fi credentials in NVS...[0m
+[0;32mI (220967) KEYPAD: Wi-Fi credentials saved successfully![0m
+[0;32mI (221177) mqtt_client: Client asked to disconnect[0m
+[0;32mI (221317) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (221317) mqtt_client: Client force reconnect requested[0m
+[0;32mI (221917) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (221917) mqtt_client: Client force reconnect requested[0m
+[0;32mI (222517) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (222517) mqtt_client: Client force reconnect requested[0m
+[0;32mI (223117) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (223117) mqtt_client: Client force reconnect requested[0m
+[0;32mI (223147) KEYPAD: MQTT initialized[0m
+[0;32mI (223717) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (223717) mqtt_client: Client force reconnect requested[0m
+[1;31mE (223817) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (225837) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (225837) mqtt_client: Client force reconnect requested[0m
+[0;32mI (226437) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (226437) mqtt_client: Client force reconnect requested[0m
+[0;32mI (227037) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (227037) mqtt_client: Client force reconnect requested[0m
+[0;32mI (227637) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (227637) mqtt_client: Client force reconnect requested[0m
+[0;32mI (228237) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (228237) mqtt_client: Client force reconnect requested[0m
+[0;32mI (228837) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (228837) mqtt_client: Client force reconnect requested[0m
+[0;32mI (229437) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (229437) mqtt_client: Client force reconnect requested[0m
+[0;32mI (230037) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (230037) mqtt_client: Client force reconnect requested[0m
+[0;32mI (230637) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (230637) mqtt_client: Client force reconnect requested[0m
+[0;32mI (231237) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (231237) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (231837) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (231837) mqtt_client: Client force reconnect requested[0m
+[0;32mI (232437) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (232437) mqtt_client: Client force reconnect requested[0m
+Key pressed: *
+Key pressed: 2
+[0;32mI (233037) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (233037) mqtt_client: Client force reconnect requested[0m
+[1;31mE (233157) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (233157) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (233157) mqtt_client: Error transport connect[0m
+[0;32mI (233157) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (233157) KEYPAD: MQTT disconnected[0m
+Key pressed: *
+Key pressed: 6
+[0;32mI (233837) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (233837) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+Key pressed: 4
+[0;32mI (234437) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (234437) mqtt_client: Client force reconnect requested[0m
+Key pressed: 4
+[0;32mI (235037) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (235037) mqtt_client: Client force reconnect requested[0m
+[0;32mI (235637) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (235637) mqtt_client: Client force reconnect requested[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f9f0h (129520) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002fa18 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002fa40 vaddr=3ffb0000 size=005d8h (  1496) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4928h (674088) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d4950 vaddr=3ffb05d8 size=039e0h ( 14816) load[0m
+[0;32mI (380) esp_image: segment 5: paddr=000d8338 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      v5.5-dirty[0m
+[0;32mI (460) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (465) app_init: ELF file SHA256:  13cc216b4...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB87B0 len 00027850 (158 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (537) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (557) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2147) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2197) wifi:wifi driver task: 3ffc09b4, prio:23, stack:6656, core=0[0m
+[0;32mI (2217) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2217) wifi:wifi certification version: v7.0[0m
+[0;32mI (2217) wifi:config NVS flash: enabled[0m
+[0;32mI (2217) wifi:config nano formatting: disabled[0m
+[0;32mI (2217) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2227) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2227) wifi:Init management short buffer num: 32[0m
+[0;32mI (2237) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2237) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2237) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2247) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2247) wifi_init: rx ba win: 6[0m
+[0;32mI (2247) wifi_init: accept mbox: 6[0m
+[0;32mI (2257) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2257) wifi_init: udp mbox: 6[0m
+[0;32mI (2257) wifi_init: tcp mbox: 6[0m
+[0;32mI (2267) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp mss: 1440[0m
+[0;32mI (2277) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2277) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2357) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2437) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2437) wifi:enable tsf[0m
+[0;32mI (2447) KEYPAD: WiFi initialized[0m
+[0;32mI (2447) KEYPAD: WiFi STA started[0m
+[0;32mI (2447) KEYPAD: MQTT reconnect task started[0m
+[0;32mI (2447) KEYPAD: WiFi reconnect task started[0m
+[0;32mI (2447) KEYPAD: Have a saved wifi network in NVS: Anh Kiet[0m
+[0;33mW (3267) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3317) wifi:flush txq[0m
+[0;32mI (3317) wifi:stop sw txq[0m
+[0;32mI (3317) wifi:lmac stop hw txq[0m
+[0;32mI (3327) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (3327) wifi:enable tsf[0m
+[0;32mI (3327) KEYPAD: WiFi STA started[0m
+[1;31mE (3327) wifi:sta is connecting, return error[0m
+[0;32mI (3577) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (3587) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3607) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3667) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3767) wifi:connected with Anh Kiet, aid = 5, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (3767) wifi:security: WPA2-PSK, phy: bgn, rssi: -76[0m
+[0;32mI (3787) wifi:pm start, type: 1[0m
+
+[0;32mI (3787) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3787) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3797) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (5097) esp_netif_handlers: sta ip: 192.168.1.4, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5097) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5337) KEYPAD: MQTT initialized[0m
+[0;32mI (5357) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[1;31mE (15347) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (15347) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (15347) mqtt_client: Error transport connect[0m
+[0;32mI (15347) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (15347) KEYPAD: MQTT disconnected[0m
+[0;32mI (15357) KEYPAD: MQTT disconnect semaphore taken[0m
+[0;32mI (15957) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (15957) mqtt_client: Client force reconnect requested[0m
+[0;32mI (16557) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (16557) mqtt_client: Client force reconnect requested[0m
+[0;32mI (17157) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (17157) mqtt_client: Client force reconnect requested[0m
+[0;32mI (17757) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (17757) mqtt_client: Client force reconnect requested[0m
+[0;32mI (18357) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (18357) mqtt_client: Client force reconnect requested[0m
+[1;31mE (18457) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (20477) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (20477) mqtt_client: Client force reconnect requested[0m
+[0;32mI (21077) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (21077) mqtt_client: Client force reconnect requested[0m
+[0;32mI (21677) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (21677) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (22277) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (22277) mqtt_client: Client force reconnect requested[0m
+[0;32mI (22877) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (22877) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (23477) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (23477) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (24077) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (24077) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (24677) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (24677) mqtt_client: Client force reconnect requested[0m
+[0;32mI (25277) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (25277) mqtt_client: Client force reconnect requested[0m
+[0;32mI (25877) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (25877) mqtt_client: Client force reconnect requested[0m
+[1;31mE (25967) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (25967) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (25967) mqtt_client: Error transport connect[0m
+[0;32mI (25967) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (25967) KEYPAD: MQTT disconnected[0m
+[0;32mI (26577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (26577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (27177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (27177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (27777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (27777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (28377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (28377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (28977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (28977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (29577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (29577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (30177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (30177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (30777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (30777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (31377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (31377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (31977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (31977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (32577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (32577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (33177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (33177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (33777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (33777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (34377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (34377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (34977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (34977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (35577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (35577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (36177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (36177) mqtt_client: Client force reconnect requested[0m
+[1;31mE (36587) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (36587) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (36587) mqtt_client: Error transport connect[0m
+[0;32mI (36587) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (36587) KEYPAD: MQTT disconnected[0m
+[0;32mI (37277) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (37277) mqtt_client: Client force reconnect requested[0m
+[0;32mI (37877) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (37877) mqtt_client: Client force reconnect requested[0m
+[0;32mI (38477) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (38477) mqtt_client: Client force reconnect requested[0m
+[0;32mI (39077) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (39077) mqtt_client: Client force reconnect requested[0m
+[0;32mI (39677) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (39677) mqtt_client: Client force reconnect requested[0m
+[0;32mI (40277) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (40277) mqtt_client: Client force reconnect requested[0m
+[0;32mI (40877) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (40877) mqtt_client: Client force reconnect requested[0m
+[0;32mI (41477) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (41477) mqtt_client: Client force reconnect requested[0m
+[0;32mI (42077) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (42077) mqtt_client: Client force reconnect requested[0m
+[0;32mI (42677) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (42677) mqtt_client: Client force reconnect requested[0m
+[0;32mI (43277) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (43277) mqtt_client: Client force reconnect requested[0m
+[0;32mI (43877) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (43877) mqtt_client: Client force reconnect requested[0m
+[0;32mI (44477) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (44477) mqtt_client: Client force reconnect requested[0m
+[0;32mI (45077) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (45077) mqtt_client: Client force reconnect requested[0m
+[0;32mI (45677) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (45677) mqtt_client: Client force reconnect requested[0m
+[0;32mI (46277) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (46277) mqtt_client: Client force reconnect requested[0m
+[0;32mI (46877) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (46877) mqtt_client: Client force reconnect requested[0m
+[1;31mE (47287) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (47287) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (47287) mqtt_client: Error transport connect[0m
+[0;32mI (47287) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (47287) KEYPAD: MQTT disconnected[0m
+[0;32mI (47977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (47977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (48577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (48577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (49177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (49177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (49777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (49777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (50377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (50377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (50977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (50977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (51577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (51577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (52177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (52177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (52777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (52777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (53377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (53377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (53977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (53977) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (54577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (54577) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (55177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (55177) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (55777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (55777) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (56377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (56377) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (56897) wifi:state: run -> init (0x0)[0m
+[0;32mI (56907) wifi:pm stop, total sleep time: 47014712 us / 53118048 us[0m
+
+[0;32mI (56907) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (56907) wifi:new:<2,0>, old:<2,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (56927) KEYPAD: STA disconnected, reason=8[0m
+[1;31mE (56927) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[0;32mI (56927) mqtt_client: Client asked to disconnect[0m
+[1;31mE (56927) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (56937) mqtt_client: Error transport connect[0m
+[0;32mI (56937) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (56947) KEYPAD: MQTT disconnected[0m
+[0;32mI (57577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (57577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (58177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (58177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (58777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (58777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (59377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (59377) mqtt_client: Client force reconnect requested[0m
+[0;33mW (59447) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (59447) KEYPAD: WiFi disconnect semaphore taken[0m
+[0;32mI (59447) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (59447) mqtt_client: Client asked to disconnect[0m
+[0;33mW (59447) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (59457) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[1;31mE (59457) wifi:sta is connecting, return error[0m
+[0;32mI (59977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (59977) mqtt_client: Client force reconnect requested[0m
+[1;31mE (60077) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (60347) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (60347) wifi:sta is connecting, return error[0m
+[0;32mI (61147) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (61147) wifi:sta is connecting, return error[0m
+[0;32mI (61857) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (61857) mqtt_client: Client asked to disconnect[0m
+[0;33mW (61857) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (61857) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (61867) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (61947) KEYPAD: WiFi reconnect attempt[0m
+[0;32mI (62097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (62097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (62697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (62697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (62747) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (62747) wifi:sta is connecting, return error[0m
+[0;32mI (63297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (63297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (63547) KEYPAD: WiFi reconnect attempt[0m
+[1;31mE (63547) wifi:sta is connecting, return error[0m
+[0;32mI (63897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (63897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (64357) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (64357) mqtt_client: Client asked to disconnect[0m
+[0;33mW (64357) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (64357) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (64497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (64497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (65097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (65097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (65697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (65697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (66297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (66297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (66897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (66897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (67497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (67497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (68097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (68097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (68697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (68697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (69297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (69297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (69897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (69897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (70497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (70497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (71097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (71097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (71697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (71697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (72297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (72297) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (72897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (72897) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (73497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (73497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (74097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (74097) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (74697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (74697) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (75297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (75297) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (75897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (75897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (76497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (76497) mqtt_client: Client force reconnect requested[0m
+[1;31mE (76597) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (78127) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (78127) mqtt_client: Client asked to disconnect[0m
+[0;33mW (78127) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (78127) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (78617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (78617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (79217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (79217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (79817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (79817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (80417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (80417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (80547) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (80547) mqtt_client: Client asked to disconnect[0m
+[0;33mW (80547) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (80557) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (81017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (81017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (81617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (81617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (82217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (82217) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+Key pressed: 2
+[0;32mI (82817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (82817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (82977) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (82977) mqtt_client: Client asked to disconnect[0m
+[0;33mW (82977) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (82977) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (82987) KEYPAD: WiFi connection failed after 3 retries[0m
+Key pressed: D
+[0;32mI (83417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (83417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (84017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (84017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (84617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (84617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (85217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (85217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (85817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (85817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (86417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (86417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (87017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (87017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (87617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (87617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (88217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (88217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (88817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (88817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (89417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (89417) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (90017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (90017) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (90617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (90617) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (91217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (91217) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+Key pressed: 2
+[0;32mI (91817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (91817) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (92417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (92417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (93017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (93017) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+Key pressed: 2
+[0;32mI (93617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (93617) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (94217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (94217) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+Key pressed: D
+[0;32mI (94817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (94817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (95417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (95417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (96017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (96017) mqtt_client: Client force reconnect requested[0m
+[1;31mE (96117) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (97107) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (97107) mqtt_client: Client asked to disconnect[0m
+[0;33mW (97107) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (97107) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (98137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (98137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (98737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (98737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (99337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (99337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (99537) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (99537) mqtt_client: Client asked to disconnect[0m
+[0;33mW (99537) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (99537) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (99937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (99937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (100537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (100537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (101137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (101137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (101737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (101737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (101957) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (101957) mqtt_client: Client asked to disconnect[0m
+[0;33mW (101957) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (101957) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (101967) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (102337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (102337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (102937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (102937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (103537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (103537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (104137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (104137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (104737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (104737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (105337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (105337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (105937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (105937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (106537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (106537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (107137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (107137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (107737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (107737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (108337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (108337) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (108937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (108937) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (109537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (109537) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (110137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (110137) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (110737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (110737) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (111337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (111337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (111937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (111937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (112537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (112537) mqtt_client: Client force reconnect requested[0m
+[1;31mE (112637) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (113437) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (113437) mqtt_client: Client asked to disconnect[0m
+[0;33mW (113437) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (113447) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (114657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (114657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (115257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (115257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (115857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (115857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (115867) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (115867) mqtt_client: Client asked to disconnect[0m
+[0;33mW (115867) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (115867) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (116457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (116457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (117057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (117057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (117657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (117657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (118257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (118257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (118287) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (118287) mqtt_client: Client asked to disconnect[0m
+[0;33mW (118287) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (118287) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (118297) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (118857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (118857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (119457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (119457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (120057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (120057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (120657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (120657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (121257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (121257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (121857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (121857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (122457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (122457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (123057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (123057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (123657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (123657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (124257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (124257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (124857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (124857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (125457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (125457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (126057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (126057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (126657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (126657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (127257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (127257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (127857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (127857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (128457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (128457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (129057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (129057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (129657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (129657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (130257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (130257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (130857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (130857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (131457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (131457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (132057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (132057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (132657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (132657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (133257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (133257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (133857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (133857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (134457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (134457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (135057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (135057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (135657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (135657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (136257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (136257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (136857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (136857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (137457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (137457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (138057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (138057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (138657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (138657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (139257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (139257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (139857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (139857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (140457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (140457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (141057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (141057) mqtt_client: Client force reconnect requested[0m
+[0;32mI (141657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (141657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (142257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (142257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (142857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (142857) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (143457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (143457) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (144057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (144057) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (144657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (144657) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;33mW (145187) KEYPAD: MQTT not connected[0m
+[0;32mI (145257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (145257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (145857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (145857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (146457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (146457) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (147057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (147057) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (147657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (147657) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (148257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (148257) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (148857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (148857) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (149457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (149457) mqtt_client: Client force reconnect requested[0m
+Key pressed: 2
+[0;32mI (150057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (150057) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (150657) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (150657) mqtt_client: Client force reconnect requested[0m
+[0;32mI (151257) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (151257) mqtt_client: Client force reconnect requested[0m
+[0;32mI (151857) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (151857) mqtt_client: Client force reconnect requested[0m
+[0;32mI (152457) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (152457) mqtt_client: Client force reconnect requested[0m
+[0;32mI (152757) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (152757) mqtt_client: Client asked to disconnect[0m
+[0;33mW (152757) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (152767) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (153057) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (153057) mqtt_client: Client force reconnect requested[0m
+[1;31mE (153157) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (155177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (155177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (155187) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (155187) mqtt_client: Client asked to disconnect[0m
+[0;33mW (155187) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (155187) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (155777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (155777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (156377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (156377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (156977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (156977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (157577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (157577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (157607) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (157607) mqtt_client: Client asked to disconnect[0m
+[0;33mW (157607) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (157617) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (157617) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (158177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (158177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (158777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (158777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (159377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (159377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (159977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (159977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (160577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (160577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (161177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (161177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (161777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (161777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (162377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (162377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (162977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (162977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (163577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (163577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (164177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (164177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (164777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (164777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (165377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (165377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (165977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (165977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (166577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (166577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (167177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (167177) mqtt_client: Client force reconnect requested[0m
+[0;32mI (167777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (167777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (168377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (168377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (168977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (168977) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (169577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (169577) mqtt_client: Client force reconnect requested[0m
+[0;32mI (170177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (170177) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+Key pressed: 2
+[0;32mI (170777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (170777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (171377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (171377) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (171977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (171977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (172577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (172577) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+Key pressed: 3
+[0;32mI (173177) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (173177) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (173777) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (173777) mqtt_client: Client force reconnect requested[0m
+[0;32mI (174377) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (174377) mqtt_client: Client force reconnect requested[0m
+[0;32mI (174977) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (174977) mqtt_client: Client force reconnect requested[0m
+[0;32mI (175577) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (175577) mqtt_client: Client force reconnect requested[0m
+[1;31mE (175677) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (176057) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (176057) mqtt_client: Client asked to disconnect[0m
+[0;33mW (176057) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (176057) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (177697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (177697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (178297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (178297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (178487) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (178487) mqtt_client: Client asked to disconnect[0m
+[0;33mW (178487) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (178487) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (178897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (178897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (179497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (179497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (180097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (180097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (180697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (180697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (180907) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (180907) mqtt_client: Client asked to disconnect[0m
+[0;33mW (180907) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (180907) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (180917) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (181297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (181297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (181897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (181897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (182497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (182497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (183097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (183097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (183697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (183697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (184297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (184297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (184897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (184897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (185497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (185497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (186097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (186097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (186697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (186697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (187297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (187297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (187897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (187897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (188497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (188497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (189097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (189097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (189697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (189697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (190297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (190297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (190897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (190897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (191497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (191497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (192097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (192097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (192697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (192697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (193297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (193297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (193897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (193897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (194497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (194497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (195097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (195097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (195697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (195697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (196297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (196297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (196897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (196897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (197497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (197497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (198097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (198097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (198697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (198697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (199297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (199297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (199897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (199897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (200497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (200497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (201097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (201097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (201697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (201697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (202297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (202297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (202897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (202897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (203497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (203497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (204097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (204097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (204697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (204697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (205297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (205297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (205897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (205897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (206497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (206497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (207097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (207097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (207697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (207697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (208297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (208297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (208897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (208897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (209497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (209497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (210097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (210097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (210697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (210697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (211297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (211297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (211897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (211897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (212497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (212497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (213097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (213097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (213697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (213697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (214297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (214297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (214897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (214897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (215497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (215497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (216097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (216097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (216697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (216697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (217297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (217297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (217897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (217897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (218497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (218497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (219097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (219097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (219697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (219697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (220297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (220297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (220897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (220897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (221497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (221497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (222097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (222097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (222697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (222697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (223297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (223297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (223897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (223897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (224497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (224497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (225097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (225097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (225697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (225697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (226297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (226297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (226897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (226897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (227497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (227497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (228097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (228097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (228697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (228697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (229297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (229297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (229897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (229897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (230497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (230497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (231097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (231097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (231697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (231697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (232297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (232297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (232897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (232897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (233497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (233497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (234097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (234097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (234697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (234697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (235297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (235297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (235897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (235897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (236497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (236497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (237097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (237097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (237697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (237697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (238297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (238297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (238897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (238897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (239497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (239497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (240097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (240097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (240697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (240697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (241297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (241297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (241897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (241897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (242497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (242497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (243097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (243097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (243697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (243697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (244297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (244297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (244897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (244897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (245497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (245497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (246097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (246097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (246697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (246697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (247297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (247297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (247897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (247897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (248497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (248497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (249097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (249097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (249697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (249697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (250297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (250297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (250897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (250897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (251497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (251497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (252097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (252097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (252697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (252697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (253297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (253297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (253897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (253897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (254497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (254497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (255097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (255097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (255697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (255697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (256297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (256297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (256897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (256897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (257497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (257497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (258097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (258097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (258697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (258697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (259297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (259297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (259897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (259897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (260497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (260497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (261097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (261097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (261697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (261697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (262297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (262297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (262897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (262897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (263497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (263497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (264097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (264097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (264697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (264697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (265297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (265297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (265897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (265897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (266497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (266497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (267097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (267097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (267697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (267697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (268297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (268297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (268897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (268897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (269497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (269497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (270097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (270097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (270697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (270697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (271297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (271297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (271897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (271897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (272497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (272497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (273097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (273097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (273697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (273697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (274297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (274297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (274897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (274897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (275497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (275497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (276097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (276097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (276697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (276697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (277297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (277297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (277897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (277897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (278497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (278497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (279097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (279097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (279697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (279697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (280297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (280297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (280897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (280897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (281497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (281497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (282097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (282097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (282697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (282697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (283297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (283297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (283897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (283897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (284497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (284497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (285097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (285097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (285697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (285697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (286297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (286297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (286897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (286897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (287497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (287497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (288097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (288097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (288697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (288697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (289297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (289297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (289897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (289897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (290497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (290497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (291097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (291097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (291697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (291697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (292297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (292297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (292897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (292897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (293497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (293497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (294097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (294097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (294697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (294697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (295297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (295297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (295897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (295897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (296497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (296497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (297097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (297097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (297697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (297697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (298297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (298297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (298897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (298897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (299497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (299497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (300097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (300097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (300697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (300697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (301297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (301297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (301897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (301897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (302497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (302497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (303097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (303097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (303697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (303697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (304297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (304297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (304897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (304897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (305497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (305497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (306097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (306097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (306697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (306697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (307297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (307297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (307897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (307897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (308497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (308497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (309097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (309097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (309697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (309697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (310297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (310297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (310897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (310897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (311497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (311497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (312097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (312097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (312697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (312697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (313297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (313297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (313897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (313897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (314497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (314497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (315097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (315097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (315697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (315697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (316297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (316297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (316897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (316897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (317497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (317497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (318097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (318097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (318697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (318697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (319297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (319297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (319897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (319897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (320497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (320497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (321097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (321097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (321697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (321697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (322297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (322297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (322897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (322897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (323497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (323497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (324097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (324097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (324697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (324697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (325297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (325297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (325897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (325897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (326497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (326497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (327097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (327097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (327697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (327697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (328297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (328297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (328897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (328897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (329497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (329497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (330097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (330097) mqtt_client: Client force reconnect requested[0m
+[0;32mI (330697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (330697) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (331297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (331297) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (331897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (331897) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (332497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (332497) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+[0;32mI (333097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (333097) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (333697) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (333697) mqtt_client: Client force reconnect requested[0m
+[0;32mI (334297) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (334297) mqtt_client: Client force reconnect requested[0m
+[0;32mI (334897) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (334897) mqtt_client: Client force reconnect requested[0m
+[0;32mI (335497) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (335497) mqtt_client: Client force reconnect requested[0m
+[0;32mI (335837) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (335837) mqtt_client: Client asked to disconnect[0m
+[0;33mW (335837) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (335847) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (336097) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (336097) mqtt_client: Client force reconnect requested[0m
+[1;31mE (336197) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (338217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (338217) mqtt_client: Client force reconnect requested[0m
+[0;32mI (338267) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (338267) mqtt_client: Client asked to disconnect[0m
+[0;33mW (338267) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (338267) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (338817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (338817) mqtt_client: Client force reconnect requested[0m
+[0;32mI (339417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (339417) mqtt_client: Client force reconnect requested[0m
+[0;32mI (340017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (340017) mqtt_client: Client force reconnect requested[0m
+[0;32mI (340617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (340617) mqtt_client: Client force reconnect requested[0m
+[0;32mI (340687) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (340687) mqtt_client: Client asked to disconnect[0m
+[0;33mW (340687) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (340687) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (340697) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (341217) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (341217) mqtt_client: Client force reconnect requested[0m
+Key pressed: A
+[0;32mI (341817) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (341817) mqtt_client: Client force reconnect requested[0m
+Key pressed: 3
+[0;32mI (342417) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (342417) mqtt_client: Client force reconnect requested[0m
+Key pressed: D
+[0;32mI (343017) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (343017) mqtt_client: Client force reconnect requested[0m
+Key pressed: 6
+Key pressed: D
+[0;32mI (343617) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (343617) mqtt_client: Client force reconnect requested[0m
+[1;31mE (343717) KEYPAD: MQTT reconnect retries failed after 5 times retry![0m
+[0;32mI (345737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (345737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (345897) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (345897) mqtt_client: Client asked to disconnect[0m
+[0;33mW (345897) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (345907) KEYPAD: WiFi connection failed, retry count: 1/3[0m
+[0;32mI (346337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (346337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (346937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (346937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (347537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (347537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (348137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (348137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (348327) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (348327) mqtt_client: Client asked to disconnect[0m
+[0;33mW (348327) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (348327) KEYPAD: WiFi connection failed, retry count: 2/3[0m
+[0;32mI (348737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (348737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (349337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (349337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (349937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (349937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (350537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (350537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (350747) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (350747) mqtt_client: Client asked to disconnect[0m
+[0;33mW (350747) mqtt_client: Client asked to stop, but was not started[0m
+[0;33mW (350747) KEYPAD: WiFi connection failed, retry count: 3/3[0m
+[1;31mE (350757) KEYPAD: WiFi connection failed after 3 retries[0m
+[0;32mI (351137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (351137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (351737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (351737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (352337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (352337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (352937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (352937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (353537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (353537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (354137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (354137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (354737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (354737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (355337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (355337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (355937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (355937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (356537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (356537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (357137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (357137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (357737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (357737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (358337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (358337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (358937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (358937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (359537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (359537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (360137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (360137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (360737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (360737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (361337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (361337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (361937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (361937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (362537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (362537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (363137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (363137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (363737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (363737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (364337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (364337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (364937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (364937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (365537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (365537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (366137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (366137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (366737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (366737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (367337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (367337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (367937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (367937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (368537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (368537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (369137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (369137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (369737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (369737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (370337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (370337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (370937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (370937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (371537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (371537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (372137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (372137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (372737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (372737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (373337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (373337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (373937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (373937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (374537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (374537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (375137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (375137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (375737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (375737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (376337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (376337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (376937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (376937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (377537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (377537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (378137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (378137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (378737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (378737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (379337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (379337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (379937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (379937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (380537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (380537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (381137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (381137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (381737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (381737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (382337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (382337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (382937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (382937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (383537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (383537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (384137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (384137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (384737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (384737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (385337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (385337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (385937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (385937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (386537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (386537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (387137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (387137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (387737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (387737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (388337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (388337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (388937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (388937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (389537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (389537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (390137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (390137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (390737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (390737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (391337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (391337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (391937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (391937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (392537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (392537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (393137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (393137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (393737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (393737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (394337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (394337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (394937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (394937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (395537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (395537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (396137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (396137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (396737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (396737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (397337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (397337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (397937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (397937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (398537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (398537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (399137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (399137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (399737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (399737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (400337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (400337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (400937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (400937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (401537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (401537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (402137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (402137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (402737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (402737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (403337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (403337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (403937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (403937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (404537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (404537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (405137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (405137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (405737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (405737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (406337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (406337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (406937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (406937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (407537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (407537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (408137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (408137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (408737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (408737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (409337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (409337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (409937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (409937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (410537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (410537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (411137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (411137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (411737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (411737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (412337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (412337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (412937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (412937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (413537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (413537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (414137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (414137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (414737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (414737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (415337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (415337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (415937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (415937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (416537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (416537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (417137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (417137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (417737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (417737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (418337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (418337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (418937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (418937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (419537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (419537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (420137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (420137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (420737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (420737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (421337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (421337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (421937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (421937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (422537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (422537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (423137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (423137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (423737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (423737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (424337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (424337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (424937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (424937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (425537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (425537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (426137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (426137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (426737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (426737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (427337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (427337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (427937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (427937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (428537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (428537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (429137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (429137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (429737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (429737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (430337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (430337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (430937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (430937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (431537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (431537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (432137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (432137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (432737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (432737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (433337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (433337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (433937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (433937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (434537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (434537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (435137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (435137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (435737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (435737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (436337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (436337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (436937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (436937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (437537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (437537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (438137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (438137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (438737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (438737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (439337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (439337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (439937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (439937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (440537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (440537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (441137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (441137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (441737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (441737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (442337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (442337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (442937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (442937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (443537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (443537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (444137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (444137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (444737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (444737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (445337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (445337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (445937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (445937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (446537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (446537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (447137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (447137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (447737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (447737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (448337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (448337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (448937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (448937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (449537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (449537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (450137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (450137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (450737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (450737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (451337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (451337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (451937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (451937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (452537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (452537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (453137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (453137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (453737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (453737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (454337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (454337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (454937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (454937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (455537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (455537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (456137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (456137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (456737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (456737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (457337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (457337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (457937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (457937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (458537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (458537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (459137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (459137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (459737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (459737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (460337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (460337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (460937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (460937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (461537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (461537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (462137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (462137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (462737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (462737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (463337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (463337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (463937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (463937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (464537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (464537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (465137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (465137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (465737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (465737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (466337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (466337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (466937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (466937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (467537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (467537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (468137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (468137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (468737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (468737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (469337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (469337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (469937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (469937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (470537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (470537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (471137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (471137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (471737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (471737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (472337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (472337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (472937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (472937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (473537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (473537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (474137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (474137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (474737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (474737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (475337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (475337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (475937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (475937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (476537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (476537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (477137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (477137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (477737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (477737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (478337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (478337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (478937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (478937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (479537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (479537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (480137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (480137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (480737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (480737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (481337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (481337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (481937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (481937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (482537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (482537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (483137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (483137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (483737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (483737) mqtt_client: Client force reconnect requested[0m
+[0;32mI (484337) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (484337) mqtt_client: Client force reconnect requested[0m
+[0;32mI (484937) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (484937) mqtt_client: Client force reconnect requested[0m
+[0;32mI (485537) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (485537) mqtt_client: Client force reconnect requested[0m
+[0;32mI (486137) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (486137) mqtt_client: Client force reconnect requested[0m
+[0;32mI (486737) KEYPAD: MQTT reconnect attempt[0m
+[0;32mI (486737) mqtt_client: Client force reconnect requested[0m

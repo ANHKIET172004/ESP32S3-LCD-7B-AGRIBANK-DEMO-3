@@ -1,0 +1,578 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+J&S	��ѹesp32: SPI Speed  ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 30 2025 15:44:26[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20180h (131456) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=000301a8 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000301d0 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00034190 vaddr=40080000 size=0be88h ( 48776) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5240h (676416) map[0m
+[0;32mI (395) esp_image: segment 5: paddr=000e5268 vaddr=4008be88 size=0d598h ( 54680) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     hello_world[0m
+[0;32mI (452) app_init: App version:      e7264df-dirty[0m
+[0;32mI (457) app_init: Compile time:     Oct 30 2025 15:45:01[0m
+[0;32mI (462) app_init: ELF file SHA256:  84a70f716...[0m
+[0;32mI (466) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (488) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8990 len 00027670 (157 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (516) spi_flash: detected chip: generic[0m
+[0;32mI (518) spi_flash: flash io: dio[0m
+[0;33mW (521) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (533) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (544) main_task: Started on CPU0[0m
+[0;32mI (554) main_task: Calling app_main()[0m
+[1;31mE (554) i2c: i2c_master_cmd_begin(1552): i2c driver not installed[0m
+[0;32mI (554) DEMO: Error in sending command[0m
+[0;32mI (564) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (564) KEYPAD: LED OFF[0m
+[0;32mI (564) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2154) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2184) wifi:wifi driver task: 3ffc14ac, prio:23, stack:6656, core=0[0m
+[0;32mI (2194) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2194) wifi:wifi certification version: v7.0[0m
+[0;32mI (2194) wifi:config NVS flash: enabled[0m
+[0;32mI (2194) wifi:config nano formatting: disabled[0m
+[0;32mI (2204) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2204) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2204) wifi:Init management short buffer num: 32[0m
+[0;32mI (2214) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2214) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2224) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2224) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2234) wifi_init: rx ba win: 6[0m
+[0;32mI (2234) wifi_init: accept mbox: 6[0m
+[0;32mI (2234) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2234) wifi_init: udp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2244) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2254) wifi_init: tcp mss: 1440[0m
+[0;32mI (2254) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2254) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2304) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2384) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2394) wifi:enable tsf[0m
+[0;32mI (2394) KEYPAD: WiFi initialized[0m
+[1;31mE (2394) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2394) KEYPAD: WiFi STA started[0m
+[1;31mE (2394) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2404) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (2404) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (2414) mqtt_client: Error transport connect[0m
+[0;32mI (2414) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (2424) KEYPAD: LED OFF[0m
+[0;32mI (2424) KEYPAD: MQTT disconnected[0m
+[0;32mI (2424) KEYPAD: LED OFF[0m
+[0;32mI (2424) KEYPAD: MQTT initialized[0m
+[0;32mI (2434) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (2454) mqtt_client: Client asked to disconnect[0m
+[1;31mE (7424) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (7424) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (7424) mqtt_client: Error transport connect[0m
+[0;32mI (7424) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (7434) KEYPAD: LED OFF[0m
+[0;32mI (7434) KEYPAD: MQTT disconnected[0m
+[0;32mI (7434) KEYPAD: LED OFF[0m
+[0;32mI (7434) KEYPAD: MQTT initialized[0m
+[0;32mI (7464) mqtt_client: Client asked to disconnect[0m
+[1;31mE (12434) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (12434) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (12434) mqtt_client: Error transport connect[0m
+[0;32mI (12434) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (12444) KEYPAD: LED OFF[0m
+[0;32mI (12444) KEYPAD: MQTT disconnected[0m
+[0;32mI (12444) KEYPAD: LED OFF[0m
+[0;32mI (12454) KEYPAD: MQE (12454) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (12454) task_wdt:  - main (CPU 0)[0m
+[1;31mE (12454) task_wdt: Tasks currently running:[0m
+[1;31mE (12454) task_wdt: CPU 0: main[0m
+[1;31mE (12454) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (12454) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65CC:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+TT initialized
+[0;32mI (12544) mqtt_client: Client asked to disconnect[0m
+[1;31mE (17444) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (17444) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (17444) mqtt_client: Error transport connect[0m
+[0;32mI (17444) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (17454) KEYPAD: LED OFF[0m
+[0;32mI (17454) KEYPAD: MQTT disconnected[0m
+[0;32mI (17454) KEYPAD: LED OFF[0m
+[0;32mI (17454) KEYPAD: MQTT initialized[0m
+[0;32mI (17484) mqtt_client: Client asked to disconnect[0m
+[1;31mE (22454) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (22454) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (22454) mqtt_client: Error transport connect[0m
+[0;32mI (22454) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (22464) KEYPAD: LED OFF[0m
+[0;32mI (22464) KEYPAD: MQTT disconnected[0m
+[0;32mI (22464) KEYPAD: LED OFF[0m
+[0;32mI (22464) KEYPAD: MQTT initiE (22474) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (22474) task_wdt:  - main (CPU 0)[0m
+[1;31mE (22474) task_wdt: Tasks currently running:[0m
+[1;31mE (22474) task_wdt: CPU 0: main[0m
+[1;31mE (22474) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (22474) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65CA:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+alized
+[0;32mI (22564) mqtt_client: Client asked to disconnect[0m
+[1;31mE (27464) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (27464) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (27464) mqtt_client: Error transport connect[0m
+[0;32mI (27464) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (27474) KEYPAD: LED OFF[0m
+[0;32mI (27474) KEYPAD: MQTT disconnected[0m
+[0;32mI (27474) KEYPAD: LED OFF[0m
+[0;32mI (27474) KEYPAD: MQTT initialized[0m
+[0;32mI (27504) mqtt_client: Client asked to disconnect[0m
+[1;31mE (32474) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (32474) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (32474) mqtt_client: Error transport connect[0m
+[0;32mI (32474) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (32484) KEYPAD: LED OFF[0m
+[0;32mI (32484) KEYPAD: MQTT disconnected[0m
+[0;32mI (32484) KEYPAD: LED OFF[0m
+[0;32mI (32484) KEYPAD: MQTT initiE (32494) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (32494) task_wdt:  - main (CPU 0)[0m
+[1;31mE (32494) task_wdt: Tasks currently running:[0m
+[1;31mE (32494) task_wdt: CPU 0: main[0m
+[1;31mE (32494) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (32494) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65BD:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+alized
+[0;32mI (32584) mqtt_client: Client asked to disconnect[0m
+[1;31mE (37484) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (37484) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (37484) mqtt_client: Error transport connect[0m
+[0;32mI (37484) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (37494) KEYPAD: LED OFF[0m
+[0;32mI (37494) KEYPAD: MQTT disconnected[0m
+[0;32mI (37494) KEYPAD: LED OFF[0m
+[0;32mI (37494) KEYPAD: MQTT initialized[0m
+[0;32mI (37524) mqtt_client: Client asked to disconnect[0m
+[1;31mE (42494) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (42494) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (42494) mqtt_client: Error transport connect[0m
+[0;32mI (42494) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (42504) KEYPAD: LED OFF[0m
+[0;32mI (42504) KEYPAD: MQTT disconnected[0m
+[0;32mI (42504) KEYPAD: LED OFF[0m
+[0;32mI (42504) KEYPAD: MQTT initiE (42514) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (42514) task_wdt:  - main (CPU 0)[0m
+[1;31mE (42514) task_wdt: Tasks currently running:[0m
+[1;31mE (42514) task_wdt: CPU 0: main[0m
+[1;31mE (42514) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (42514) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65BD:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+alized
+[0;32mI (42604) mqtt_client: Client asked to disconnect[0m
+[1;31mE (47504) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (47504) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (47504) mqtt_client: Error transport connect[0m
+[0;32mI (47504) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (47514) KEYPAD: LED OFF[0m
+[0;32mI (47514) KEYPAD: MQTT disconnected[0m
+[0;32mI (47514) KEYPAD: LED OFF[0m
+[0;32mI (47514) KEYPAD: MQTT initialized[0m
+[0;32mI (47544) mqtt_client: Client asked to disconnect[0m
+[1;31mE (52514) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (52514) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (52514) mqtt_client: Error transport connect[0m
+[0;32mI (52514) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (52524) KEYPAD: LED OFF[0m
+[0;32mI (52524) KEYPAD: MQTT disconnected[0m
+[0;32mI (52524) KEYPAD: LED OFF[0m
+[0;32mI (52524) KEYPAD: MQTT initiE (52534) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (52534) task_wdt:  - main (CPU 0)[0m
+[1;31mE (52534) task_wdt: Tasks currently running:[0m
+[1;31mE (52534) task_wdt: CPU 0: main[0m
+[1;31mE (52534) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (52534) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65BD:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+alized
+[0;32mI (52624) mqtt_client: Client asked to disconnect[0m
+Key pressed: B
+[0;32mI (54924) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (55714) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (57054) KEYPAD: Read status successfully: SO DANG GOI[0m
+[1;31mE (57524) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (57524) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (57524) mqtt_client: Error transport connect[0m
+[0;32mI (57524) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (57534) KEYPAD: LED OFF[0m
+[0;32mI (57534) KEYPAD: MQTT disconnected[0m
+[0;32mI (57534) KEYPAD: LED OFF[0m
+[0;32mI (57544) KEYPAD: MQTT initialized[0m
+[0;32mI (57564) mqtt_client: Client asked to disconnect[0m
+�당esp32: SPI Speed      : 40MHz
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20180h (131456) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=000301a8 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000301d0 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00034190 vaddr=40080000 size=0be88h ( 48776) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5240h (676416) map[0m
+[0;32mI (395) esp_image: segment 5: paddr=000e5268 vaddr=4008be88 size=0d598h ( 54680) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     hello_world[0m
+[0;32mI (452) app_init: App version:      e7264df-dirty[0m
+[0;32mI (457) app_init: Compile time:     Oct 30 2025 15:45:01[0m
+[0;32mI (462) app_init: ELF file SHA256:  84a70f716...[0m
+[0;32mI (466) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (488) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8990 len 00027670 (157 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (516) spi_flash: detected chip: generic[0m
+[0;32mI (518) spi_flash: flash io: dio[0m
+[0;33mW (521) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (533) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (544) main_task: Started on CPU0[0m
+[0;32mI (554) main_task: Calling app_main()[0m
+[1;31mE (554) i2c: i2c_master_cmd_begin(1552): i2c driver not installed[0m
+[0;32mI (554) DEMO: Error in sending command[0m
+[0;32mI (564) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (564) KEYPAD: LED OFF[0m
+[0;32mI (564) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2154) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2184) wifi:wifi driver task: 3ffc14ac, prio:23, stack:6656, core=0[0m
+[0;32mI (2194) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2194) wifi:wifi certification version: v7.0[0m
+[0;32mI (2194) wifi:config NVS flash: enabled[0m
+[0;32mI (2194) wifi:config nano formatting: disabled[0m
+[0;32mI (2204) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2204) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2204) wifi:Init management short buffer num: 32[0m
+[0;32mI (2214) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2214) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2224) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2224) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2234) wifi_init: rx ba win: 6[0m
+[0;32mI (2234) wifi_init: accept mbox: 6[0m
+[0;32mI (2234) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2234) wifi_init: udp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2244) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2254) wifi_init: tcp mss: 1440[0m
+[0;32mI (2254) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2254) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2264) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2354) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2354) wifi:enable tsf[0m
+[0;32mI (2354) KEYPAD: WiFi initialized[0m
+[1;31mE (2354) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2354) KEYPAD: WiFi STA started[0m
+[1;31mE (2364) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2374) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (2374) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (2374) mqtt_client: Error transport connect[0m
+[0;32mI (2384) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (2384) KEYPAD: LED OFF[0m
+[0;32mI (2384) KEYPAD: MQTT disconnected[0m
+[0;32mI (2384) KEYPAD: LED OFF[0m
+[0;32mI (2394) KEYPAD: MQTT initialized[0m
+[0;32mI (2404) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (2414) mqtt_client: Client asked to disconnect[0m
+[1;31mE (7394) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (7394) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (7394) mqtt_client: Error transport connect[0m
+[0;32mI (7394) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (7404) KEYPAD: LED OFF[0m
+[0;32mI (7404) KEYPAD: MQTT disconnected[0m
+[0;32mI (7404) KEYPAD: LED OFF[0m
+[0;32mI (7404) KEYPAD: MQTT initialized[0m
+[0;32mI (7434) mqtt_client: Client asked to disconnect[0m
+[1;31mE (12404) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (12404) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (12404) mqtt_client: Error transport connect[0m
+[0;32mI (12404) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (12414) KEYPAD: LED OFF[0m
+[0;32mI (12414) KEYPAD: MQTT disconnected[0m
+[0;32mI (12414) KEYPAD: LED OFF[0m
+[0;32mI (12424) KEYPAD: MQE (12424) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (12424) task_wdt:  - main (CPU 0)[0m
+[1;31mE (12424) task_wdt: Tasks currently running:[0m
+[1;31mE (12424) task_wdt: CPU 0: main[0m
+[1;31mE (12424) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (12424) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65BD:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+TT initialized
+[0;32mI (12514) mqtt_client: Client asked to disconnect[0m
+[1;31mE (17414) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (17414) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (17414) mqtt_client: Error transport connect[0m
+[0;32mI (17414) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (17424) KEYPAD: LED OFF[0m
+[0;32mI (17424) KEYPAD: MQTT disconnected[0m
+[0;32mI (17424) KEYPAD: LED OFF[0m
+[0;32mI (17424) KEYPAD: MQTT initialized[0m
+[0;32mI (17454) mqtt_client: Client asked to disconnect[0m
+[1;31mE (22424) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (22424) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (22424) mqtt_client: Error transport connect[0m
+[0;32mI (22424) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (22434) KEYPAD: LED OFF[0m
+[0;32mI (22434) KEYPAD: MQTT disconnected[0m
+[0;32mI (22434) KEYPAD: LED OFF[0m
+[0;32mI (22434) KEYPAD: MQTT initiE (22444) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (22444) task_wdt:  - main (CPU 0)[0m
+[1;31mE (22444) task_wdt: Tasks currently running:[0m
+[1;31mE (22444) task_wdt: CPU 0: main[0m
+[1;31mE (22444) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (22444) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65CA:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+alized
+[0;32mI (22534) mqtt_client: Client asked to disconnect[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 30 2025 15:44:26[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20180h (131456) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=000301a8 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000301d0 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00034190 vaddr=40080000 size=0be88h ( 48776) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5240h (676416) map[0m
+[0;32mI (395) esp_image: segment 5: paddr=000e5268 vaddr=4008be88 size=0d598h ( 54680) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     hello_world[0m
+[0;32mI (452) app_init: App version:      e7264df-dirty[0m
+[0;32mI (457) app_init: Compile time:     Oct 30 2025 15:45:01[0m
+[0;32mI (462) app_init: ELF file SHA256:  84a70f716...[0m
+[0;32mI (466) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (488) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8990 len 00027670 (157 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (516) spi_flash: detected chip: generic[0m
+[0;32mI (518) spi_flash: flash io: dio[0m
+[0;33mW (521) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (533) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (544) main_task: Started on CPU0[0m
+[0;32mI (554) main_task: Calling app_main()[0m
+[1;31mE (554) i2c: i2c_master_cmd_begin(1552): i2c driver not installed[0m
+[0;32mI (554) DEMO: Error in sending command[0m
+[0;32mI (564) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (564) KEYPAD: LED OFF[0m
+[0;32mI (564) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2154) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2184) wifi:wifi driver task: 3ffc14ac, prio:23, stack:6656, core=0[0m
+[0;32mI (2194) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2194) wifi:wifi certification version: v7.0[0m
+[0;32mI (2194) wifi:config NVS flash: enabled[0m
+[0;32mI (2194) wifi:config nano formatting: disabled[0m
+[0;32mI (2204) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2204) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2204) wifi:Init management short buffer num: 32[0m
+[0;32mI (2214) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2214) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2224) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2224) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2234) wifi_init: rx ba win: 6[0m
+[0;32mI (2234) wifi_init: accept mbox: 6[0m
+[0;32mI (2234) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2234) wifi_init: udp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2244) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2254) wifi_init: tcp mss: 1440[0m
+[0;32mI (2254) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2254) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2264) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2354) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2354) wifi:enable tsf[0m
+[0;32mI (2354) KEYPAD: WiFi initialized[0m
+[1;31mE (2354) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2354) KEYPAD: WiFi STA started[0m
+[1;31mE (2364) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2374) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (2374) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (2374) mqtt_client: Error transport connect[0m
+[0;32mI (2384) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (2384) KEYPAD: LED OFF[0m
+[0;32mI (2384) KEYPAD: MQTT disconnected[0m
+[0;32mI (2384) KEYPAD: LED OFF[0m
+[0;32mI (2394) KEYPAD: MQTT initialized[0m
+[0;32mI (2404) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (2414) mqtt_client: Client asked to disconnect[0m
+[1;31mE (7394) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (7394) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (7394) mqtt_client: Error transport connect[0m
+[0;32mI (7394) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (7404) KEYPAD: LED OFF[0m
+[0;32mI (7404) KEYPAD: MQTT disconnected[0m
+[0;32mI (7404) KEYPAD: LED OFF[0m
+[0;32mI (7404) KEYPAD: MQTT initialized[0m
+[0;32mI (7434) mqtt_client: Client asked to disconnect[0m
+[1;31mE (12404) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (12404) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (12404) mqtt_client: Error transport connect[0m
+[0;32mI (12404) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (12414) KEYPAD: LED OFF[0m
+[0;32mI (12414) KEYPAD: MQTT disconnected[0m
+[0;32mI (12414) KEYPAD: LED OFF[0m
+[0;32mI (12424) KEYPAD: MQE (12424) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (12424) task_wdt:  - main (CPU 0)[0m
+[1;31mE (12424) task_wdt: Tasks currently running:[0m
+[1;31mE (12424) task_wdt: CPU 0: main[0m
+[1;31mE (12424) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (12424) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E3826:0x3FFB1FD0 0x400E3BE8:0x3FFB1FF0 0x40083875:0x3FFB2020 0x400D65BD:0x3FFBA540 0x400D6CEC:0x3FFBA570 0x400D813A:0x3FFBA5A0 0x4000BD83:0x3FFBA5C0 0x4000182A:0x3FFBA5E0 0x400D7671:0x3FFBA600 0x400D813A:0x3FFBA620 0x4000BD83:0x3FFBA640 0x4000117D:0x3FFBA660 0x400592FE:0x3FFBA680 0x4005937A:0x3FFBA6A0 0x4015D995:0x3FFBA6C0 0x40165DDB:0x3FFBA6F0 0x401657F2:0x3FFBA710 0x4015DD61:0x3FFBAA30 0x40090787:0x3FFBAA60 0x400DA053:0x3FFBAAC0 0x400DAF3B:0x3FFBABA0 0x40173384:0x3FFBAC90 0x4008AA21:0x3FFBACC0
+
+TT initialized
+[0;32mI (12514) mqtt_client: Client asked to disconnect[0m
+�&S	��ѹesp32: SPI Speed      : 40MHz
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20180h (131456) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=000301a8 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000301d0 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00034190 vaddr=40080000 size=0be88h ( 48776) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5240h (676416) map[0m
+[0;32mI (395) esp_image: segment 5: paddr=000e5268 vaddr=4008be88 size=0d598h ( 54680) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     hello_world[0m
+[0;32mI (452) app_init: App version:      e7264df-dirty[0m
+[0;32mI (457) app_init: Compile time:     Oct 30 2025 15:45:01[0m
+[0;32mI (462) app_init: ELF file SHA256:  84a70f716...[0m
+[0;32mI (466) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (488) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8990 len 00027670 (157 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (516) spi_flash: detected chip: generic[0m
+[0;32mI (518) spi_flash: flash io: dio[0m
+[0;33mW (521) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (533) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (544) main_task: Started on CPU0[0m
+[0;32mI (554) main_task: Calling app_main()[0m
+[1;31mE (554) i2c: i2c_master_cmd_begin(1552): i2c driver not installed[0m
+[0;32mI (554) DEMO: Error in sending command[0m
+[0;32mI (564) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (564) KEYPAD: LED OFF[0m
+[0;32mI (564) KEYPAD: I2C initialized successfully[0m

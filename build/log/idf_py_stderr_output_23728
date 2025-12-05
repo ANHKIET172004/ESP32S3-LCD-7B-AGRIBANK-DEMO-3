@@ -1,0 +1,958 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM9 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM9'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM9 instead...[0m
+[0;33m--- esp-idf-monitor 1.7.0 on \\.\COM9 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000bfed: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4008ad7e: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x400856d7: [0;33mphy_exit_critical[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/src/phy_init.c[0m[0m:[1;31m232[0m
+[0m--- 0x40176141: [0;33mphy_wakeup_init[0m[0m at [0;32m/home/lxf/gittree/chip7.1_phy/chip_7.1/board_code/app_test/pp/phy/phy_chip_v7.c[0m[0m:[1;31m3764[0m
+[0m--- 0x401473a0: [0;33mesp_phy_enable[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/src/phy_init.c[0m[0m:[1;31m315[0m
+[0m--- 0x401743d5: [0;33mesp_phy_enable_wrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/esp32/esp_adapter.c[0m[0m:[1;31m613[0m
+[0m--- 0x40091c79: [0;33mwifi_rf_phy_enable[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x400954cd: [0;33mpm_dream[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x400960d2: [0;33mpm_tbtt_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x401724a6: [0;33mwDev_DiscardFrame[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4017250a: [0;33mpp_timer_do_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x400933d9: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40008544: [0;33mets_delay_us[0m[0m in [0;32mROM[0m
+[0m--- 0x400d59be: [0;33musleep[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/time.c[0m[0m:[1;31m208[0m
+[0m--- 0x400dc767: [0;33mlcd_clear[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c[0m[0m:[1;31m65[0m
+[0m--- 0x400d9a24: [0;33mlcd_show_main_screen[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c[0m[0m:[1;31m736[0m
+[0m--- 0x400d9e66: [0;33mhandle_display[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c[0m[0m:[1;31m977[0m
+[0m--- 0x400dc506: [0;33mapp_main[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c[0m[0m:[1;31m3013[0m
+[0m--- 0x401749a0: [0;33mmain_task[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000bfed: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4008ad7e: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x400e4ffe: [0;33mesp_task_wdt_reset[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m715[0m
+[0m--- 0x400e5007: [0;33midle_hook_cb[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m462[0m
+[0m--- 0x400d40a5: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m46[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40008547: [0;33mets_delay_us[0m[0m in [0;32mROM[0m
+[0m--- 0x400d59be: [0;33musleep[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/time.c[0m[0m:[1;31m208[0m
+[0m--- 0x400dc767: [0;33mlcd_clear[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c[0m[0m:[1;31m65[0m
+[0m--- 0x400d9a24: [0;33mlcd_show_main_screen[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c[0m[0m:[1;31m736[0m
+[0m--- 0x400d9e66: [0;33mhandle_display[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c[0m[0m:[1;31m977[0m
+[0m--- 0x400dc506: [0;33mapp_main[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c[0m[0m:[1;31m3013[0m
+[0m--- 0x401749a0: [0;33mmain_task[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000bfed: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4008ad7e: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4008f20a: [0;33mvPortExitCriticalSafe[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mmulti_heap_internal_unlock[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/multi_heap.c[0m[0m:[1;31m176[0m
+[0m--- 0x4008f256: [0;33mmulti_heap_malloc_impl[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/multi_heap.c[0m[0m:[1;31m224[0m
+[0m--- 0x40082521: [0;33maligned_or_unaligned_alloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m93[0m
+[0m--- 0x40082645: [0;33mheap_caps_aligned_alloc_base[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m175[0m
+[0m--- 0x40082675: [0;33mheap_caps_malloc_base[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps_base.c[0m[0m:[1;31m202[0m
+[0m--- 0x4008227c: [0;33mheap_caps_malloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps.c[0m[0m:[1;31m84[0m
+[0m--- 0x400822b1: [0;33mheap_caps_malloc_default[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/heap_caps.c[0m[0m:[1;31m110[0m
+[0m--- 0x40091fa9: [0;33mmalloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/src/heap.c[0m[0m:[1;31m24[0m
+[0m--- 0x400ec1dd: [0;33mmem_malloc[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/lwip/src/core/mem.c[0m[0m:[1;31m209[0m
+[0m--- 0x4014868e: [0;33mesp_pbuf_allocate[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/lwip/netif/esp_pbuf_ref.c[0m[0m:[1;31m52[0m
+[0m--- 0x401485ed: [0;33mwlanif_input[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/lwip/netif/wlanif.c[0m[0m:[1;31m168[0m
+[0m--- 0x400fff56: [0;33mesp_netif_receive[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/lwip/esp_netif_lwip.c[0m[0m:[1;31m1403[0m
+[0m--- 0x40089fa5: [0;33mwifi_sta_receive[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/src/wifi_netif.c[0m[0m:[1;31m39[0m
+[0m--- 0x40091b4b: [0;33msta_input[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40091c01: [0;33msta_rx_cb[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40096491: [0;33mppRxPkt[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009343b: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400e4dce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400e5190: [0;33mtask_wdt_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084966: [0;33mesp_crosscore_isr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083875: [0;33m_xt_lowint1[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40087cb7: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x400d40b3: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4008ba9d: [0;33mprvIdleTask[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008aa21: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m

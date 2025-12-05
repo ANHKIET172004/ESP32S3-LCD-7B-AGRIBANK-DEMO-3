@@ -1,0 +1,707 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+��J��ѹesp32: SPI Speed�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1fa00h (129536) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002fa28 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002fa50 vaddr=3ffb0000 size=005c8h (  1480) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a489ch (673948) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d48c4 vaddr=3ffb05c8 size=039f0h ( 14832) load[0m
+[0;32mI (380) esp_image: segment 5: paddr=000d82bc vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      v5.5-dirty[0m
+[0;32mI (460) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (465) app_init: ELF file SHA256:  9bcc5a0ac...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB87B0 len 00027850 (158 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (537) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (557) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2147) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2197) wifi:wifi driver task: 3ffc0a38, prio:23, stack:6656, core=0[0m
+[0;32mI (2217) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2217) wifi:wifi certification version: v7.0[0m
+[0;32mI (2217) wifi:config NVS flash: enabled[0m
+[0;32mI (2217) wifi:config nano formatting: disabled[0m
+[0;32mI (2217) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2227) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2227) wifi:Init management short buffer num: 32[0m
+[0;32mI (2237) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2237) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2237) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2247) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2247) wifi_init: rx ba win: 6[0m
+[0;32mI (2247) wifi_init: accept mbox: 6[0m
+[0;32mI (2257) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2257) wifi_init: udp mbox: 6[0m
+[0;32mI (2257) wifi_init: tcp mbox: 6[0m
+[0;32mI (2267) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp mss: 1440[0m
+[0;32mI (2277) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2277) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2337) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2417) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2427) wifi:enable tsf[0m
+[0;32mI (2427) KEYPAD: WiFi initialized[0m
+[0;32mI (2427) KEYPAD: WiFi STA started[0m
+[0;32mI (2427) KEYPAD: MQTT reconnect task started[0m
+[0;32mI (2427) KEYPAD: WiFi reconnect task started[0m
+[0;32mI (2437) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;33mW (3027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (3227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (3247) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3317) wifi:flush txq[0m
+[0;32mI (3317) wifi:stop sw txq[0m
+[0;32mI (3317) wifi:lmac stop hw txq[0m
+[0;32mI (3317) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (3317) wifi:enable tsf[0m
+[0;32mI (3327) KEYPAD: WiFi STA started[0m
+[1;31mE (3327) wifi:sta is connecting, return error[0m
+[0;33mW (3627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (4127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[1;31mE (4127) wifi:sta is connecting, return error[0m
+[0;33mW (4227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (4827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (5027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (5027) wifi:sta is connecting, return error[0m
+[0;33mW (5427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (5737) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (5747) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (6027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (6627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (6647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (6647) wifi:sta is connecting, return error[0m
+[0;33mW (7227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (7547) KEYPAD: WiFi reconnect attempt (4/5)[0m
+[1;31mE (7547) wifi:sta is connecting, return error[0m
+[0;33mW (7827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (8157) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (8157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (8427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (9027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (9057) KEYPAD: WiFi reconnect attempt (5/5)[0m
+[1;31mE (9057) wifi:sta is connecting, return error[0m
+[0;33mW (9627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (9957) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (10227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (10567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (10577) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (10577) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (10577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (10827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (11377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (11427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (12027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (12177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (12627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (12977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (13227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (13777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (13827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (14427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (14577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (15027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (15377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (15627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (16177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (16227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (16827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (16977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (17427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (17777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (18027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (18577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (18627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (19227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (19377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (19827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (20177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (20427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (20977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (21027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (21627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (21777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (22227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (22577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (22827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (23377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (23427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (24027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (24177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (24627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (24977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (25227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (25777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (25827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (26427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (26577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (27027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (27377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (27627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: A
+[0;33mW (28177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (28227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (28827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (28977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (29427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (29777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (30027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (30577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (30627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (31227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (31377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (31827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (32177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (32427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (32977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (33027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (33627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (33777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (34227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (34577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: *
+[0;33mW (34827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: B
+Key pressed: B
+[0;33mW (35377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (35427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (36027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (36177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (36627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (36977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: *
+[0;33mW (37227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 6
+Key pressed: 6
+[0;33mW (37777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (37827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: *
+[0;33mW (38427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (38577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: #
+[0;33mW (39027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (39377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: *
+[0;33mW (39627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+[0;33mW (40177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (40227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (40827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (40977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: *
+Key pressed: #
+[0;33mW (41427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (41777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (42027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+Key pressed: *
+[0;33mW (42577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 6
+[0;33mW (42627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 6
+Key pressed: 4
+[0;33mW (43227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (43377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 4
+[0;33mW (43827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (44177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 5
+[0;33mW (44427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 5
+Key pressed: 4
+[0;33mW (44977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (45027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 4
+Key pressed: 4
+[0;33mW (45627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 3
+[0;33mW (45777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 3
+[0;33mW (46227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (46577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (46827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 8
+[0;33mW (47377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (47427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: B
+[0;33mW (48027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (48177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (48627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (48977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (49227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (49777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (49827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: #
+[0;33mW (50427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: #
+[0;33mW (50577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (51027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: #
+Key pressed: #
+[0;33mW (51377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (51627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 0
+[0;33mW (52177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (52227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: *
+Key pressed: 5
+[0;33mW (52827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 5
+[0;33mW (52977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (53427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: *
+Key pressed: 4
+[0;33mW (53777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 4
+[0;33mW (54027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 4
+[0;33mW (54577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (54627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 3
+Key pressed: 3
+[0;33mW (55227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (55377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (55827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (56177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 8
+[0;33mW (56427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (56977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (57027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (57627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: D
+[0;33mW (57777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (58227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (58577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: *
+[0;33mW (58827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (59377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (59427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 4
+[0;33mW (60027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (60177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (60627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (60977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (61227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: #
+[0;33mW (61777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (61827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+Key pressed: *
+[0;33mW (62427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (62577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 6
+Key pressed: 6
+[0;33mW (63027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 4
+[0;33mW (63377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 4
+[0;33mW (63627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: C
+[0;33mW (64177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (64227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 5
+[0;33mW (64827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (64977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 5
+Key pressed: 4
+[0;33mW (65427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 4
+Key pressed: 4
+[0;33mW (65777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (66027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 3
+Key pressed: 3
+[0;33mW (66577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (66627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 8
+[0;33mW (67227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (67377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (67827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 1
+Key pressed: 1
+[0;33mW (68177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 1
+[0;33mW (68427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+[0;33mW (68977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (69027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 1
+Key pressed: 1
+[0;33mW (69627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 1
+[0;33mW (69777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 1
+[0;33mW (70227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (70577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (70827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+Key pressed: 2
+[0;33mW (71377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (71427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+Key pressed: 2
+[0;33mW (72027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (72177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (72627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 0
+[0;33mW (72977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 0
+[0;33mW (73227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (73777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (73827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (74427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (74577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (75027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (75377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 0
+[0;33mW (75627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 0
+[0;33mW (76177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (76227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+[0;33mW (76827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+[0;33mW (76977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: 2
+[0;33mW (77427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+Key pressed: 2
+[0;33mW (77777) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (78027) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (78577) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (78627) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (79227) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (79377) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+Key pressed: D
+[0;33mW (79397) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;33mW (79827) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (79847) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (79847) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (79887) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (79937) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (80047) wifi:connected with Anh Kiet, aid = 6, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (80047) wifi:security: WPA2-PSK, phy: bgn, rssi: -69[0m
+[0;32mI (80057) wifi:pm start, type: 1[0m
+
+[0;32mI (80057) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (80067) KEYPAD: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (80077) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;33mW (80177) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (80427) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[1;31mE (80427) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (80427) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (80427) mqtt_client: Error transport connect[0m
+[0;32mI (80437) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (80437) KEYPAD: MQTT disconnected[0m
+[0;32mI (80437) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (80437) KEYPAD: MQTT initialized[0m
+[0;33mW (80447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (80977) KEYPAD: WiFi reconnect retries exhausted (5/5)[0m
+[0;33mW (81047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (81297) esp_netif_handlers: sta ip: 192.168.1.4, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (81297) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (81297) KEYPAD: Updating Wi-Fi credentials in NVS...[0m
+[0;32mI (81307) KEYPAD: Wi-Fi credentials saved successfully![0m
+[0;32mI (81647) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (81647) mqtt_client: Client force reconnect requested[0m
+[0;32mI (81657) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[0;32mI (81777) KEYPAD: WiFi already connected[0m
+[0;32mI (81857) mqtt_client: Client asked to disconnect[0m
+[0;32mI (82347) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (82347) mqtt_client: Client force reconnect requested[0m
+[0;32mI (82577) KEYPAD: WiFi already connected[0m
+[0;32mI (83047) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (83047) mqtt_client: Client force reconnect requested[0m
+[0;32mI (83377) KEYPAD: WiFi already connected[0m
+[0;32mI (83747) KEYPAD: MQTT reconnect attempt (4/5)[0m
+[0;32mI (83747) mqtt_client: Client force reconnect requested[0m
+[0;32mI (84177) KEYPAD: WiFi already connected[0m
+[0;32mI (84447) KEYPAD: MQTT reconnect attempt (5/5)[0m
+[0;32mI (84447) mqtt_client: Client force reconnect requested[0m
+[0;32mI (84977) KEYPAD: WiFi already connected[0m
+[0;33mW (85147) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (85747) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (85777) KEYPAD: WiFi already connected[0m
+[0;33mW (86347) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (86577) KEYPAD: WiFi already connected[0m
+[0;33mW (86947) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (87377) KEYPAD: WiFi already connected[0m
+[0;33mW (87547) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (88147) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (88177) KEYPAD: WiFi already connected[0m
+[0;33mW (88747) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (88977) KEYPAD: WiFi already connected[0m
+[0;33mW (89347) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (89777) KEYPAD: WiFi already connected[0m
+[0;33mW (89947) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (90547) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (90577) KEYPAD: WiFi already connected[0m
+[0;33mW (91147) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (91377) KEYPAD: WiFi already connected[0m
+[1;31mE (91657) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (91657) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (91657) mqtt_client: Error transport connect[0m
+[0;32mI (91657) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (91657) KEYPAD: MQTT disconnected[0m
+[0;32mI (91667) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (92177) KEYPAD: WiFi already connected[0m
+[0;32mI (92367) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (92367) mqtt_client: Client force reconnect requested[0m
+[0;32mI (92977) KEYPAD: WiFi already connected[0m
+[0;32mI (93067) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (93067) mqtt_client: Client force reconnect requested[0m
+[0;32mI (93767) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (93767) mqtt_client: Client force reconnect requested[0m
+[0;32mI (93777) KEYPAD: WiFi already connected[0m
+[0;32mI (94167) KEYPAD: MQTT initialized[0m
+[0;32mI (94467) KEYPAD: MQTT reconnect attempt (4/5)[0m
+[0;32mI (94467) mqtt_client: Client force reconnect requested[0m
+I (94577) KEYPAD: WiFi already connected
+[0;32mI (95167) KEYPAD: MQTT reconnect attempt (5/5)[0m
+[0;32mI (95167) mqtt_client: Client force reconnect requested[0m
+[0;32mI (95377) KEYPAD: WiFi already connected[0m
+[0;33mW (95867) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (96177) KEYPAD: WiFi already connected[0m
+[0;33mW (96467) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (96977) KEYPAD: WiFi already connected[0m
+[0;33mW (97067) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (97667) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (97777) KEYPAD: WiFi already connected[0m
+[0;33mW (98267) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (98577) KEYPAD: WiFi already connected[0m
+[0;33mW (98867) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (99377) KEYPAD: WiFi already connected[0m
+[0;33mW (99467) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (100067) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (100177) KEYPAD: WiFi already connected[0m
+[0;33mW (100667) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (100977) KEYPAD: WiFi already connected[0m
+[0;33mW (101267) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (101777) KEYPAD: WiFi already connected[0m
+[0;33mW (101867) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (102467) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (102577) KEYPAD: WiFi already connected[0m
+[0;33mW (103067) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (103377) KEYPAD: WiFi already connected[0m
+[0;33mW (103667) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[1;31mE (104177) esp-tls: [sock=54] select() timeout[0m
+[0;32mI (104177) KEYPAD: WiFi already connected[0m
+[1;31mE (104177) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (104177) mqtt_client: Error transport connect[0m
+[0;32mI (104177) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (104187) KEYPAD: MQTT disconnected[0m
+[0;32mI (104187) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (104887) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (104887) mqtt_client: Client force reconnect requested[0m
+[0;32mI (104977) KEYPAD: WiFi already connected[0m
+[0;32mI (105587) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (105587) mqtt_client: Client force reconnect requested[0m
+[0;32mI (105777) KEYPAD: WiFi already connected[0m
+[0;32mI (106287) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (106287) mqtt_client: Client force reconnect requested[0m
+[0;32mI (106577) KEYPAD: WiFi already connected[0m
+[0;32mI (106987) KEYPAD: MQTT reconnect attempt (4/5)[0m
+[0;32mI (106987) mqtt_client: Client force reconnect requested[0m
+[0;32mI (107377) KEYPAD: WiFi already connected[0m
+[0;32mI (107687) KEYPAD: MQTT reconnect attempt (5/5)[0m
+[0;32mI (107687) mqtt_client: Client force reconnect requested[0m
+[0;32mI (108177) KEYPAD: WiFi already connected[0m
+[0;33mW (108387) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (108977) KEYPAD: WiFi already connected[0m
+[0;33mW (108987) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (109587) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (109777) KEYPAD: WiFi already connected[0m
+[0;33mW (110187) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (110577) KEYPAD: WiFi already connected[0m
+[0;33mW (110787) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (111377) KEYPAD: WiFi already connected[0m
+[0;33mW (111387) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (111987) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (112177) KEYPAD: WiFi already connected[0m
+[0;33mW (112587) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (112977) KEYPAD: WiFi already connected[0m
+[0;33mW (113187) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (113777) KEYPAD: WiFi already connected[0m
+[0;33mW (113787) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (114387) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (114577) KEYPAD: WiFi already connected[0m
+[1;31mE (114897) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (114897) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (114897) mqtt_client: Error transport connect[0m
+[0;32mI (114897) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (114897) KEYPAD: MQTT disconnected[0m
+[0;32mI (114907) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (115377) KEYPAD: WiFi already connected[0m
+[0;32mI (115607) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (115607) mqtt_client: Client force reconnect requested[0m
+[0;32mI (116177) KEYPAD: WiFi already connected[0m
+[0;32mI (116307) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (116307) mqtt_client: Client force reconnect requested[0m
+[0;32mI (116977) KEYPAD: WiFi already connected[0m
+[0;32mI (117007) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (117007) mqtt_client: Client force reconnect requested[0m
+[0;32mI (117707) KEYPAD: MQTT reconnect attempt (4/5)[0m
+[0;32mI (117707) mqtt_client: Client force reconnect requested[0m
+[0;32mI (117777) KEYPAD: WiFi already connected[0m
+[0;32mI (118407) KEYPAD: MQTT reconnect attempt (5/5)[0m
+[0;32mI (118407) mqtt_client: Client force reconnect requested[0m
+[0;32mI (118577) KEYPAD: WiFi already connected[0m
+[0;33mW (119107) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (119377) KEYPAD: WiFi already connected[0m
+[0;33mW (119707) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (120177) KEYPAD: WiFi already connected[0m
+[0;33mW (120307) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (120907) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (120977) KEYPAD: WiFi already connected[0m
+[0;33mW (121507) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (121777) KEYPAD: WiFi already connected[0m
+[0;33mW (122107) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (122577) KEYPAD: WiFi already connected[0m
+Key pressed: 6
+[0;33mW (122707) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+Key pressed: 5
+[0;33mW (123307) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (123377) KEYPAD: WiFi already connected[0m
+[0;33mW (123907) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (124177) KEYPAD: WiFi already connected[0m
+[0;33mW (124507) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (124977) KEYPAD: WiFi already connected[0m
+[0;33mW (125107) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[1;31mE (125617) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (125617) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (125617) mqtt_client: Error transport connect[0m
+[0;32mI (125617) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (125617) KEYPAD: MQTT disconnected[0m
+[0;32mI (125627) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (125777) KEYPAD: WiFi already connected[0m
+[0;32mI (126327) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (126327) mqtt_client: Client force reconnect requested[0m
+[0;32mI (126577) KEYPAD: WiFi already connected[0m
+[0;32mI (127027) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (127027) mqtt_client: Client force reconnect requested[0m
+[0;32mI (127377) KEYPAD: WiFi already connected[0m
+[0;32mI (127727) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (127727) mqtt_client: Client force reconnect requested[0m
+[0;32mI (128177) KEYPAD: WiFi already connected[0m
+[0;32mI (128427) KEYPAD: MQTT reconnect attempt (4/5)[0m
+[0;32mI (128427) mqtt_client: Client force reconnect requested[0m
+[0;32mI (128977) KEYPAD: WiFi already connected[0m
+[0;32mI (129127) KEYPAD: MQTT reconnect attempt (5/5)[0m
+[0;32mI (129127) mqtt_client: Client force reconnect requested[0m
+[0;32mI (129777) KEYPAD: WiFi already connected[0m
+[0;33mW (129827) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (130427) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (130577) KEYPAD: WiFi already connected[0m
+[0;33mW (131027) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (131377) KEYPAD: WiFi already connected[0m
+[0;33mW (131627) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (132177) KEYPAD: WiFi already connected[0m
+[0;33mW (132227) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (132827) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (132977) KEYPAD: WiFi already connected[0m
+[0;33mW (133427) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (133777) KEYPAD: WiFi already connected[0m
+[0;33mW (134027) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (134577) KEYPAD: WiFi already connected[0m
+[0;33mW (134627) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (135227) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (135377) KEYPAD: WiFi already connected[0m
+[0;33mW (135827) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (136177) KEYPAD: WiFi already connected[0m
+[1;31mE (136337) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (136337) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (136337) mqtt_client: Error transport connect[0m
+[0;32mI (136337) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (136337) KEYPAD: MQTT disconnected[0m
+[0;32mI (136347) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (136977) KEYPAD: WiFi already connected[0m
+[0;32mI (137047) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (137047) mqtt_client: Client force reconnect requested[0m
+[0;32mI (137747) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (137747) mqtt_client: Client force reconnect requested[0m
+[0;32mI (137777) KEYPAD: WiFi already connected[0m
+[0;32mI (138447) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (138447) mqtt_client: Client force reconnect requested[0m
+[0;32mI (138577) KEYPAD: WiFi already connected[0m
+[0;32mI (139147) KEYPAD: MQTT reconnect attempt (4/5)[0m
+[0;32mI (139147) mqtt_client: Client force reconnect requested[0m
+[0;32mI (139377) KEYPAD: WiFi already connected[0m
+[0;32mI (139847) KEYPAD: MQTT reconnect attempt (5/5)[0m
+[0;32mI (139847) mqtt_client: Client force reconnect requested[0m
+[0;32mI (140177) KEYPAD: WiFi already connected[0m
+[0;33mW (140547) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (140977) KEYPAD: WiFi already connected[0m
+[0;33mW (141147) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (141747) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (141777) KEYPAD: WiFi already connected[0m
+[0;33mW (142347) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (142577) KEYPAD: WiFi already connected[0m
+[0;33mW (142947) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (143377) KEYPAD: WiFi already connected[0m
+[0;33mW (143547) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (144147) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (144177) KEYPAD: WiFi already connected[0m
+[0;33mW (144747) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (144977) KEYPAD: WiFi already connected[0m
+[0;33mW (145347) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (145777) KEYPAD: WiFi already connected[0m
+[0;33mW (145947) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;33mW (146547) KEYPAD: MQTT reconnect retries exhausted (5/5)[0m
+[0;32mI (146577) KEYPAD: WiFi already connected[0m
+[1;31mE (147057) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (147057) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (147057) mqtt_client: Error transport connect[0m
+[0;32mI (147057) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (147057) KEYPAD: MQTT disconnected[0m
+[0;32mI (147067) KEYPAD: MQTT disconnect signal received[0m
+[0;32mI (147377) KEYPAD: WiFi already connected[0m
+[0;32mI (147767) KEYPAD: MQTT reconnect attempt (1/5)[0m
+[0;32mI (147767) mqtt_client: Client force reconnect requested[0m
+[0;32mI (148177) KEYPAD: WiFi already connected[0m
+[0;32mI (148467) KEYPAD: MQTT reconnect attempt (2/5)[0m
+[0;32mI (148467) mqtt_client: Client force reconnect requested[0m
+[0;32mI (148977) KEYPAD: WiFi already connected[0m
+[0;32mI (149167) KEYPAD: MQTT reconnect attempt (3/5)[0m
+[0;32mI (149167) mqtt_client: Client force reconnect requested[0m

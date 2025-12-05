@@ -1,0 +1,1779 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+i�J��ѹesp32: SPI Speed�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=204c8h (132296) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000304f0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030518 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000344d8 vaddr=40080000 size=0bb40h ( 47936) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5b04h (678660) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e5b2c vaddr=4008bb40 size=0d8e0h ( 55520) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     hello_world[0m
+[0;32mI (453) app_init: App version:      e7264df-dirty[0m
+[0;32mI (458) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (463) app_init: ELF file SHA256:  5ddb89538...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8AB0 len 00027550 (157 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;33mW (522) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (555) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (555) KEYPAD: LED OFF[0m
+[0;32mI (555) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2165) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2165) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2195) wifi:wifi driver task: 3ffc1624, prio:23, stack:6656, core=0[0m
+[0;32mI (2205) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2205) wifi:wifi certification version: v7.0[0m
+[0;32mI (2205) wifi:config NVS flash: enabled[0m
+[0;32mI (2205) wifi:config nano formatting: disabled[0m
+[0;32mI (2215) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2215) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2215) wifi:Init management short buffer num: 32[0m
+[0;32mI (2225) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2225) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2235) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2235) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2245) wifi_init: rx ba win: 6[0m
+[0;32mI (2245) wifi_init: accept mbox: 6[0m
+[0;32mI (2245) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2245) wifi_init: udp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2255) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2265) wifi_init: tcp mss: 1440[0m
+[0;32mI (2265) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2265) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2315) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2405) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2405) wifi:enable tsf[0m
+[0;32mI (2405) KEYPAD: WiFi initialized[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2405) KEYPAD: WiFi STA started[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2415) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2485) wifi:flush txq[0m
+[0;32mI (2485) wifi:stop sw txq[0m
+[0;32mI (2485) wifi:lmac stop hw txq[0m
+[0;32mI (2485) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2485) wifi:enable tsf[0m
+[0;32mI (2485) KEYPAD: WiFi STA started[0m
+[1;31mE (2495) wifi:sta is connecting, return error[0m
+[0;32mI (2765) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2775) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2785) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2795) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2845) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2855) wifi:security: WPA2-PSK, phy: bgn, rssi: -68[0m
+[0;32mI (2865) wifi:pm start, type: 1[0m
+
+[0;32mI (2865) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2865) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2915) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3945) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3945) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (4615) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (4615) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (4975) KEYPAD: MQTT initialized[0m
+[0;32mI (4995) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (5015) KEYPAD: LED ON[0m
+[0;32mI (5015) KEYPAD: MQTT connected[0m
+[0;32mI (5225) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5225) KEYPAD: Processing topic: device/list[0m
+[0;32mI (5235) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (5235) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5255) KEYPAD: Processing topic: service/list[0m
+[0;32mI (5255) KEYPAD: Service list updated: 6 services[0m
+Key pressed: B
+[0;32mI (5705) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5705) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (5705) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (5715) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (6225) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (6225) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (6225) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (6235) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (6675) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (6675) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (6685) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (6695) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (7125) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (7125) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (7125) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (7135) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (7545) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (7545) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (7545) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (7555) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (7855) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (7855) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (7855) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (7865) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (8175) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (8175) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (8185) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (8195) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (8565) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (8565) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (8565) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (8575) KEYPAD: current number saved successfully![0m
+Key pressed: A
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: A
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: B
+[0;32mI (34465) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (34465) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (34465) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (34485) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (35935) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (35935) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (35935) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (35955) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (36615) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (36625) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (36625) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (36635) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (36955) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (36955) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (36955) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (36965) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (37545) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (37545) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (37545) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (37555) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (37955) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (37955) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (37955) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (37965) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (38465) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (38465) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (38465) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (38475) KEYPAD: current number saved successfully![0m
+Key pressed: A
+Key pressed: A
+Key pressed: *
+[0;32mI (45115) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (45115) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (45115) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (45135) KEYPAD: current number saved successfully![0m
+Key pressed: *
+[0;32mI (45425) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (45425) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (45425) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (45435) KEYPAD: current number saved successfully![0m
+Key pressed: #
+[0;32mI (46245) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (46245) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (46255) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (46255) KEYPAD: current number saved successfully![0m
+Key pressed: #
+[0;32mI (46555) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (46555) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (46565) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (46565) KEYPAD: current number saved successfully![0m
+Key pressed: 4
+Key pressed: 1
+Key pressed: 0
+Key pressed: 5
+Key pressed: D
+[0;32mI (51375) KEYPAD: Published number 4105[0m
+[0;32mI (51375) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (51475) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (51475) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (51485) KEYPAD: Status saved successfully: SO UU TIEN[0m
+[0;32mI (51485) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (52925) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (52925) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (52935) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (52935) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (53305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (53315) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (53315) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (53325) KEYPAD: current number saved successfully![0m
+Key pressed: 1
+Key pressed: C
+[0;32mI (58455) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: A
+Key pressed: D
+Key pressed: *
+Key pressed: 2
+Key pressed: 2
+Key pressed: C
+Key pressed: 6
+Key pressed: 6
+Key pressed: *
+Key pressed: 2
+Key pressed: 6
+Key pressed: *
+Key pressed: 8
+Key pressed: *
+Key pressed: 7
+Key pressed: 7
+Key pressed: 7
+Key pressed: 8
+Key pressed: 8
+Key pressed: 6
+Key pressed: 6
+Key pressed: 7
+Key pressed: C
+Key pressed: 4
+Key pressed: D
+Key pressed: 6
+Key pressed: 6
+Key pressed: 8
+Key pressed: #
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 0
+Key pressed: 0
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 0
+Key pressed: 0
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: D
+[0;32mI (94335) wifi:state: run -> init (0x0)[0m
+[0;32mI (94345) wifi:pm stop, total sleep time: 68222296 us / 91478038 us[0m
+
+[0;32mI (94345) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (94345) wifi:<ba-del>idx:1, tid:7[0m
+[0;32mI (94345) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (94355) KEYPAD: STA disconnected, reason=8[0m
+[0;32mI (94355) mqtt_client: Client asked to disconnect[0m
+[1;31mE (94365) transport_base: poll_write select error 113, errno = Software caused connection abort, fd = 54[0m
+[0;33mW (94365) transport_base: Poll timeout or error, errno=Success, fd=54, timeout_ms=10000[0m
+[1;31mE (94375) mqtt_client: Writing failed: errno=0[0m
+[0;32mI (94385) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (94385) KEYPAD: LED OFF[0m
+[1;31mE (94385) mqtt_client: Error sending disconnect message[0m
+[0;32mI (94375) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (94395) wifi:state: init -> auth (0xb0)[0m
+[0;33mW (94405) KEYPAD: WiFi connection failed, retry count: 1/5[0m
+[1;31mE (94415) wifi:sta is connecting, return error[0m
+[0;32mI (94415) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (94425) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (94455) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (94455) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (94455) wifi:pm start, type: 1[0m
+
+[0;32mI (94465) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (94465) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (95505) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (95505) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (95505) KEYPAD: Wi-Fi credentials saved successfully![0m
+[0;32mI (96235) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:11, winSize:64[0m
+[0;32mI (96525) mqtt_client: Client asked to disconnect[0m
+[0;33mW (96525) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (96535) KEYPAD: MQTT initialized[0m
+[0;32mI (96625) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (97905) KEYPAD: LED ON[0m
+[0;32mI (97905) KEYPAD: MQTT connected[0m
+[0;32mI (98035) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (98045) KEYPAD: Processing topic: device/list[0m
+[0;32mI (98045) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (98045) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (98065) KEYPAD: Processing topic: service/list[0m
+[0;32mI (98065) KEYPAD: Service list updated: 6 services[0m
+Key pressed: B
+[0;32mI (106045) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (106045) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (106045) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (106055) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (106655) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (106655) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (106655) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (106675) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (107375) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (107375) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (107375) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (107385) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (107895) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (107895) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (107895) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (107905) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (108395) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (108395) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (108405) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (108415) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (109015) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (109015) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (109425) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (109425) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (109935) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (109935) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (116445) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (116445) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (116895) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (116895) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (117305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (117305) KEYPAD: Processing topic: responsenumber[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=204c8h (132296) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000304f0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030518 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000344d8 vaddr=40080000 size=0bb40h ( 47936) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5b04h (678660) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e5b2c vaddr=4008bb40 size=0d8e0h ( 55520) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     hello_world[0m
+[0;32mI (453) app_init: App version:      e7264df-dirty[0m
+[0;32mI (458) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (463) app_init: ELF file SHA256:  5ddb89538...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8AB0 len 00027550 (157 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;33mW (522) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (555) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (555) KEYPAD: LED OFF[0m
+[0;32mI (555) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2165) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2165) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2195) wifi:wifi driver task: 3ffc1624, prio:23, stack:6656, core=0[0m
+[0;32mI (2205) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2205) wifi:wifi certification version: v7.0[0m
+[0;32mI (2205) wifi:config NVS flash: enabled[0m
+[0;32mI (2205) wifi:config nano formatting: disabled[0m
+[0;32mI (2215) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2215) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2215) wifi:Init management short buffer num: 32[0m
+[0;32mI (2225) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2225) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2235) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2235) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2245) wifi_init: rx ba win: 6[0m
+[0;32mI (2245) wifi_init: accept mbox: 6[0m
+[0;32mI (2245) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2245) wifi_init: udp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2255) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2265) wifi_init: tcp mss: 1440[0m
+[0;32mI (2265) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2265) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2315) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2405) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2405) wifi:enable tsf[0m
+[0;32mI (2405) KEYPAD: WiFi initialized[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2405) KEYPAD: WiFi STA started[0m
+[1;31mE (2415) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2415) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2475) wifi:flush txq[0m
+[0;32mI (2475) wifi:stop sw txq[0m
+[0;32mI (2475) wifi:lmac stop hw txq[0m
+[0;32mI (2485) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2485) wifi:enable tsf[0m
+[0;32mI (2485) KEYPAD: WiFi STA started[0m
+[1;31mE (2485) wifi:sta is connecting, return error[0m
+[0;32mI (2755) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2765) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2795) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2805) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2835) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2835) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (2845) wifi:pm start, type: 1[0m
+
+[0;32mI (2845) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2845) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2855) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4025) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (4025) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (4425) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:11, winSize:64[0m
+[0;32mI (5045) KEYPAD: MQTT initialized[0m
+[0;32mI (5075) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (5095) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5145) KEYPAD: LED ON[0m
+[0;32mI (5145) KEYPAD: MQTT connected[0m
+[0;32mI (5315) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5315) KEYPAD: Processing topic: device/list[0m
+[0;32mI (5325) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (5325) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5345) KEYPAD: Processing topic: service/list[0m
+[0;32mI (5345) KEYPAD: Service list updated: 6 services[0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+[0;32mI (21585) KEYPAD: current number saved successfully![0m
+[0;32mI (21585) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+[0;32mI (26425) KEYPAD: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC"}[0m
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: A
+Key pressed: D
+Key pressed: *
+Key pressed: 6
+Key pressed: 6
+Key pressed: *
+Key pressed: 2
+Key pressed: 6
+Key pressed: *
+Key pressed: 8
+Key pressed: *
+Key pressed: 7
+Key pressed: 7
+Key pressed: 7
+Key pressed: 8
+Key pressed: 8
+Key pressed: 6
+Key pressed: 6
+Key pressed: 4
+Key pressed: D
+Key pressed: 6
+Key pressed: 6
+Key pressed: 8
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: #
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 0
+Key pressed: 0
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 0
+Key pressed: 0
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: D
+[0;32mI (110295) wifi:state: run -> init (0x0)[0m
+[0;32mI (110305) wifi:pm stop, total sleep time: 80456124 us / 107458065 us[0m
+
+[0;32mI (110305) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (110305) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (110305) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (110315) KEYPAD: STA disconnected, reason=8[0m
+[0;32mI (110315) mqtt_client: Client asked to disconnect[0m
+[1;31mE (110325) transport_base: poll_write select error 113, errno = Software caused connection abort, fd = 54[0m
+[0;33mW (110325) transport_base: Poll timeout or error, errno=Success, fd=54, timeout_ms=10000[0m
+[1;31mE (110335) mqtt_client: Writing failed: errno=0[0m
+[0;32mI (110345) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (110345) KEYPAD: LED OFF[0m
+[1;31mE (110345) mqtt_client: Error sending disconnect message[0m
+[0;33mW (110355) KEYPAD: WiFi connection failed, retry count: 1/5[0m
+[1;31mE (110355) wifi:sta is connecting, return error[0m
+[0;32mI (110375) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (110375) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (110385) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (110405) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (110435) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (110435) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (110445) wifi:pm start, type: 1[0m
+
+[0;32mI (110445) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (110475) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (111465) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (111465) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (111465) KEYPAD: Wi-Fi credentials saved successfully![0m
+[0;32mI (112255) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:10, winSize:64[0m
+[0;32mI (112485) mqtt_client: Client asked to disconnect[0m
+[0;33mW (112485) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (112495) KEYPAD: MQTT initialized[0m
+[0;32mI (112555) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (112585) KEYPAD: LED ON[0m
+[0;32mI (112585) KEYPAD: MQTT connected[0m
+[0;32mI (112785) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (112785) KEYPAD: Processing topic: device/list[0m
+[0;32mI (112795) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (112795) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (112815) KEYPAD: Processing topic: service/list[0m
+[0;32mI (112815) KEYPAD: Service list updated: 6 services[0m
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: *
+Key pressed: #
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: D
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+[0;32mI (193235) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (193235) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=204c8h (132296) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000304f0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030518 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000344d8 vaddr=40080000 size=0bb40h ( 47936) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5b04h (678660) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e5b2c vaddr=4008bb40 size=0d8e0h ( 55520) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     hello_world[0m
+[0;32mI (453) app_init: App version:      e7264df-dirty[0m
+[0;32mI (458) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (463) app_init: ELF file SHA256:  5ddb89538...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8AB0 len 00027550 (157 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;33mW (522) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (555) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (555) KEYPAD: LED OFF[0m
+[0;32mI (555) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2165) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2165) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2195) wifi:wifi driver task: 3ffc1624, prio:23, stack:6656, core=0[0m
+[0;32mI (2205) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2205) wifi:wifi certification version: v7.0[0m
+[0;32mI (2205) wifi:config NVS flash: enabled[0m
+[0;32mI (2205) wifi:config nano formatting: disabled[0m
+[0;32mI (2215) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2215) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2215) wifi:Init management short buffer num: 32[0m
+[0;32mI (2225) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2225) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2235) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2235) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2245) wifi_init: rx ba win: 6[0m
+[0;32mI (2245) wifi_init: accept mbox: 6[0m
+[0;32mI (2245) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2245) wifi_init: udp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2255) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2265) wifi_init: tcp mss: 1440[0m
+[0;32mI (2265) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2265) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2315) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2405) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2405) wifi:enable tsf[0m
+[0;32mI (2405) KEYPAD: WiFi initialized[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2405) KEYPAD: WiFi STA started[0m
+[1;31mE (2415) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2415) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2485) wifi:flush txq[0m
+[0;32mI (2485) wifi:stop sw txq[0m
+[0;32mI (2485) wifi:lmac stop hw txq[0m
+[0;32mI (2485) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2485) wifi:enable tsf[0m
+[0;32mI (2485) KEYPAD: WiFi STA started[0m
+[1;31mE (2495) wifi:sta is connecting, return error[0m
+[0;32mI (2765) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2775) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2795) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2805) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2975) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2975) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (2995) wifi:pm start, type: 1[0m
+
+[0;32mI (2995) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2995) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (3015) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4035) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (4035) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5065) KEYPAD: MQTT initialized[0m
+[0;32mI (5075) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:10, winSize:64[0m
+[0;32mI (5085) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (5125) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5155) KEYPAD: LED ON[0m
+[0;32mI (5155) KEYPAD: MQTT connected[0m
+[0;32mI (5345) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5345) KEYPAD: Processing topic: device/list[0m
+[0;32mI (5345) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (5345) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5365) KEYPAD: Processing topic: service/list[0m
+[0;32mI (5365) KEYPAD: Service list updated: 6 services[0m
+Key pressed: B
+[0;32mI (8045) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (8045) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (8045) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (8055) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (8765) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (8765) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (8765) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (8775) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (9375) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (9375) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (9375) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (9385) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (9995) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (9995) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (9995) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (10005) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (10505) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (10505) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (10505) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (10525) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (11215) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (11215) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (11225) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (11235) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (11935) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (11935) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (11935) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (11945) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (12345) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (12345) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (12345) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (12355) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (12755) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (12755) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (12755) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (12765) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (13065) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (13065) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (13065) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (13075) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (13465) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (13465) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (13475) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (13485) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (90505) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (90505) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (90515) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (90525) KEYPAD: current number saved successfully![0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: B
+[0;32mI (98385) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (98385) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (98385) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (98395) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (98535) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (98535) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (98545) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (98555) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (99275) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (99275) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (99285) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (99295) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (99715) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (99715) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (99715) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (99725) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (100305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (100305) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (100305) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (100305) KEYPAD: current number saved successfully![0m
+Key pressed: B
+Key pressed: B
+[0;32mI (100665) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (100665) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (100665) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (100665) KEYPAD: current number saved successfully![0m
+[0;32mI (100815) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (100815) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (100815) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (100825) KEYPAD: current number saved successfully![0m
+Key pressed: B
+Key pressed: B
+[0;32mI (101295) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (101295) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (101295) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (101295) KEYPAD: current number saved successfully![0m
+[0;32mI (101535) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (101535) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (101545) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (101545) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (102355) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (102355) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (103075) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (103075) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (103895) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (103895) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: 2
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 1
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: C
+[0;32mI (123155) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (123945) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (123945) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (123945) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (123955) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (124675) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (124685) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (124685) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (124695) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (124985) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (124985) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (124985) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (124995) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (125695) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (125705) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (125705) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (125715) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (126515) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (126515) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (126525) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (126535) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (127035) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (127035) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (127035) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (127045) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (127545) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (127545) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (127545) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (127565) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (128055) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (128055) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (128565) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (128565) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (128975) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (128975) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (129275) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (129275) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (129805) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (129805) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (130815) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (130815) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (133075) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (133075) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (133305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (133305) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (133585) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (133585) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (134225) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (134225) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (134405) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (134405) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (134805) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (134815) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (135425) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (135425) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (136145) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (136145) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (136555) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (136565) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (137165) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (137165) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (137785) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (137785) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (138705) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (138705) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (139625) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (139625) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: B
+[0;32mI (160005) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (160005) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (161645) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (161645) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (162565) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (162565) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (163225) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (163235) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: D
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+[0;32mI (171925) KEYPAD: current number saved successfully![0m
+[0;32mI (171925) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (220005) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (220005) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (220285) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (220285) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (220725) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (220725) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (220935) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (220935) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (221335) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (221335) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (221645) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (221645) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (222175) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (222175) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (227015) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (227015) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (227305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (227305) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (227305) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (227315) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (228715) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (228715) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (230555) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (230555) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (230555) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (230565) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (231685) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (231685) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (231685) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (231695) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (234145) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234145) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234145) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (234155) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (235155) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (235165) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (235165) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (235165) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (236115) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236115) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (237825) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (237825) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (237825) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (237825) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (240385) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (240385) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (240385) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (240405) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (241255) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (241255) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (241255) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (241265) KEYPAD: current number saved successfully![0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 1
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: B
+[0;32mI (266355) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (266355) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (266355) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (266365) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (266905) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (266905) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (266905) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (266915) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (267315) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (267315) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (267535) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (267535) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (268125) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (268125) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+Key pressed: B
+[0;32mI (270905) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (270905) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (270905) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (270915) KEYPAD: current number saved successfully![0m
+[0;32mI (271105) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (271105) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (271105) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (271115) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (271995) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (271995) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (271995) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (272015) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (272555) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (272555) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (287615) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (287615) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (287615) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (287625) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (288235) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (288235) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (288235) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (288255) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (294665) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (294665) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (294665) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (294685) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (295815) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (295815) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (295815) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (295825) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (309095) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (309095) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (309105) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (309115) KEYPAD: current number saved successfully![0m
+Key pressed: 4
+Key pressed: 1
+Key pressed: 3
+Key pressed: 6
+Key pressed: D
+[0;32mI (313315) KEYPAD: Published number 4136[0m
+[0;32mI (313315) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (313515) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (313515) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (313525) KEYPAD: Status saved successfully: SO UU TIEN[0m
+[0;32mI (313525) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (407905) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (407905) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (407925) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (407935) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (408515) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (408515) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (408525) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (408535) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (409235) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (409245) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (409245) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (409255) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (409645) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (409645) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (410365) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (410365) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (410675) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (410675) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (411085) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (411085) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (411385) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (411385) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: D
+Key pressed: A
+Key pressed: B
+[0;32mI (429615) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429615) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: D
+Key pressed: 2
+Key pressed: 1
+Key pressed: 2
+Key pressed: D
+[0;32mI (440245) KEYPAD: Published id 1[0m
+Key pressed: B
+[0;32mI (442715) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (442715) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (443455) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (443455) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (444005) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (444005) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (444775) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (444775) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (445405) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445405) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (445795) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445795) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (446615) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (446615) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (447125) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447125) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (448175) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (448175) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (448975) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (448975) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (449585) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449585) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (450335) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (450335) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+[0;32mI (455925) KEYPAD: current number saved successfully![0m
+[0;32mI (455925) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (458715) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (458715) KEYPAD: Processing topic: responsenumber[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=204c8h (132296) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000304f0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030518 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000344d8 vaddr=40080000 size=0bb40h ( 47936) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5b04h (678660) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e5b2c vaddr=4008bb40 size=0d8e0h ( 55520) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     hello_world[0m
+[0;32mI (453) app_init: App version:      e7264df-dirty[0m
+[0;32mI (458) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (463) app_init: ELF file SHA256:  5ddb89538...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8AB0 len 00027550 (157 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;33mW (522) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (555) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (555) KEYPAD: LED OFF[0m
+[0;32mI (555) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2165) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2165) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2195) wifi:wifi driver task: 3ffc1624, prio:23, stack:6656, core=0[0m
+[0;32mI (2205) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2205) wifi:wifi certification version: v7.0[0m
+[0;32mI (2205) wifi:config NVS flash: enabled[0m
+[0;32mI (2205) wifi:config nano formatting: disabled[0m
+[0;32mI (2215) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2215) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2215) wifi:Init management short buffer num: 32[0m
+[0;32mI (2225) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2225) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2235) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2235) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2245) wifi_init: rx ba win: 6[0m
+[0;32mI (2245) wifi_init: accept mbox: 6[0m
+[0;32mI (2245) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2245) wifi_init: udp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2255) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2265) wifi_init: tcp mss: 1440[0m
+[0;32mI (2265) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2265) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2315) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2405) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2405) wifi:enable tsf[0m
+[0;32mI (2405) KEYPAD: WiFi initialized[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2405) KEYPAD: WiFi STA started[0m
+[1;31mE (2405) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2415) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2465) wifi:flush txq[0m
+[0;32mI (2465) wifi:stop sw txq[0m
+[0;32mI (2465) wifi:lmac stop hw txq[0m
+[0;32mI (2475) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2475) wifi:enable tsf[0m
+[0;32mI (2475) KEYPAD: WiFi STA started[0m
+[1;31mE (2475) wifi:sta is connecting, return error[0m
+[0;32mI (2755) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2765) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2765) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2825) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2825) wifi:security: WPA2-PSK, phy: bgn, rssi: -61[0m
+[0;32mI (2845) wifi:pm start, type: 1[0m
+
+[0;32mI (2845) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2845) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2855) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3925) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3925) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (4445) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:11, winSize:64[0m
+[0;32mI (4955) KEYPAD: MQTT initialized[0m
+[0;32mI (4975) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (5005) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5095) KEYPAD: LED ON[0m
+[0;32mI (5095) KEYPAD: MQTT connected[0m
+[0;32mI (5475) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5475) KEYPAD: Processing topic: device/list[0m
+[0;32mI (5475) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (5485) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5505) KEYPAD: Processing topic: service/list[0m
+[0;32mI (5505) KEYPAD: Service list updated: 6 services[0m
+Key pressed: B
+[0;32mI (6145) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (6145) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (6655) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (6655) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: C
+Key pressed: C
+Key pressed: C
+Key pressed: B
+[0;32mI (21305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (21305) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (21305) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (21315) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (21715) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (21715) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (21715) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (21725) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (22335) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (22345) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (22345) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (22355) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (22735) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (22735) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (22745) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (22755) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (23255) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (23255) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (23255) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (23265) KEYPAD: current number saved successfully![0m
+Key pressed: A
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: D
+Key pressed: D
+Key pressed: B
+[0;32mI (34625) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (34625) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (35335) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (35335) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (35645) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (35645) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (37795) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (37795) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (40345) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (40345) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (40345) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (40355) KEYPAD: current number saved successfully![0m
+Key pressed: B
+Key pressed: B
+[0;32mI (44595) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (44595) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (44595) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (44605) KEYPAD: current number saved successfully![0m
+Key pressed: B
+Key pressed: B
+Key pressed: B
+[0;32mI (46305) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (46305) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (46465) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (46465) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (46465) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (46475) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (46485) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (46505) KEYPAD: Processing topic: responsenumber[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=204c8h (132296) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000304f0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030518 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000344d8 vaddr=40080000 size=0bb40h ( 47936) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5b04h (678660) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e5b2c vaddr=4008bb40 size=0d8e0h ( 55520) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     hello_world[0m
+[0;32mI (453) app_init: App version:      e7264df-dirty[0m
+[0;32mI (458) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (463) app_init: ELF file SHA256:  5ddb89538...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8AB0 len 00027550 (157 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;33mW (522) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (555) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (555) KEYPAD: LED OFF[0m
+[0;32mI (555) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2165) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2165) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2195) wifi:wifi driver task: 3ffc1624, prio:23, stack:6656, core=0[0m
+[0;32mI (2205) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2205) wifi:wifi certification version: v7.0[0m
+[0;32mI (2205) wifi:config NVS flash: enabled[0m
+[0;32mI (2205) wifi:config nano formatting: disabled[0m
+[0;32mI (2215) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2215) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2215) wifi:Init management short buffer num: 32[0m
+[0;32mI (2225) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2225) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2235) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2235) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2245) wifi_init: rx ba win: 6[0m
+[0;32mI (2245) wifi_init: accept mbox: 6[0m
+[0;32mI (2245) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2245) wifi_init: udp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp mbox: 6[0m
+[0;32mI (2255) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2255) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2265) wifi_init: tcp mss: 1440[0m
+[0;32mI (2265) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2265) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2325) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2405) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2415) wifi:enable tsf[0m
+[0;32mI (2415) KEYPAD: WiFi initialized[0m
+[1;31mE (2415) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2415) KEYPAD: WiFi STA started[0m
+[1;31mE (2415) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2425) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2475) wifi:flush txq[0m
+[0;32mI (2475) wifi:stop sw txq[0m
+[0;32mI (2475) wifi:lmac stop hw txq[0m
+[0;32mI (2485) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2485) wifi:enable tsf[0m
+[0;32mI (2485) KEYPAD: WiFi STA started[0m
+[1;31mE (2485) wifi:sta is connecting, return error[0m
+[0;32mI (2755) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2765) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2765) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2835) wifi:connected with NamTrung, aid = 23, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2845) wifi:security: WPA2-PSK, phy: bgn, rssi: -53[0m
+[0;32mI (2855) wifi:pm start, type: 1[0m
+
+[0;32mI (2855) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2855) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2865) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (3895) esp_netif_handlers: sta ip: 10.10.1.34, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3895) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (4925) KEYPAD: MQTT initialized[0m
+[0;32mI (4945) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (4955) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:11, winSize:64[0m
+[0;32mI (4985) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5065) KEYPAD: LED ON[0m
+[0;32mI (5065) KEYPAD: MQTT connected[0m
+[0;32mI (5185) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5185) KEYPAD: Processing topic: device/list[0m
+[0;32mI (5195) KEYPAD: Device list updated: 7 devices[0m
+[0;32mI (5195) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5215) KEYPAD: Processing topic: service/list[0m
+[0;32mI (5215) KEYPAD: Service list updated: 6 services[0m

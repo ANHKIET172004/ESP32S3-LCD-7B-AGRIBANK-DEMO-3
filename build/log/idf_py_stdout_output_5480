@@ -1,0 +1,813 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+$i�J��ѹesp32: SPI Sp�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 30 2025 15:44:26[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20190h (131472) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=000301b8 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=000301e0 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=000341a0 vaddr=40080000 size=0be78h ( 48760) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a5210h (676368) map[0m
+[0;32mI (395) esp_image: segment 5: paddr=000e5238 vaddr=4008be78 size=0d5a8h ( 54696) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     hello_world[0m
+[0;32mI (452) app_init: App version:      e7264df-dirty[0m
+[0;32mI (457) app_init: Compile time:     Oct 30 2025 15:45:01[0m
+[0;32mI (462) app_init: ELF file SHA256:  f2033ac69...[0m
+[0;32mI (466) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (488) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8990 len 00027670 (157 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (516) spi_flash: detected chip: generic[0m
+[0;32mI (518) spi_flash: flash io: dio[0m
+[0;33mW (521) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (534) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (544) main_task: Started on CPU0[0m
+[0;32mI (554) main_task: Calling app_main()[0m
+[1;31mE (554) i2c: i2c_master_cmd_begin(1552): i2c driver not installed[0m
+[0;32mI (554) DEMO: Error in sending command[0m
+[0;32mI (564) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (564) KEYPAD: LED OFF[0m
+[0;32mI (564) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2154) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2184) wifi:wifi driver task: 3ffc1428, prio:23, stack:6656, core=0[0m
+[0;32mI (2194) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2194) wifi:wifi certification version: v7.0[0m
+[0;32mI (2194) wifi:config NVS flash: enabled[0m
+[0;32mI (2194) wifi:config nano formatting: disabled[0m
+[0;32mI (2204) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2204) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2204) wifi:Init management short buffer num: 32[0m
+[0;32mI (2214) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2214) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2224) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2224) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2234) wifi_init: rx ba win: 6[0m
+[0;32mI (2234) wifi_init: accept mbox: 6[0m
+[0;32mI (2234) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2234) wifi_init: udp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp mbox: 6[0m
+[0;32mI (2244) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2244) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2254) wifi_init: tcp mss: 1440[0m
+[0;32mI (2254) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2254) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2304) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2384) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2394) wifi:enable tsf[0m
+[0;32mI (2394) KEYPAD: WiFi initialized[0m
+[1;31mE (2394) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2394) KEYPAD: WiFi STA started[0m
+[1;31mE (2394) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2404) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2454) wifi:flush txq[0m
+[0;32mI (2454) wifi:stop sw txq[0m
+[0;32mI (2454) wifi:lmac stop hw txq[0m
+[0;32mI (2464) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2464) wifi:enable tsf[0m
+[0;32mI (2464) KEYPAD: WiFi STA started[0m
+[1;31mE (2464) wifi:sta is connecting, return error[0m
+[0;32mI (2534) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2534) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2604) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2674) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2764) wifi:connected with NamTrung, aid = 27, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2774) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (2784) wifi:pm start, type: 1[0m
+
+[0;32mI (2784) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2784) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2844) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3814) esp_netif_handlers: sta ip: 10.10.1.18, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3814) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (4824) KEYPAD: MQTT initialized[0m
+[0;32mI (4834) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (4844) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (4864) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (4904) KEYPAD: LED ON[0m
+[0;32mI (4904) KEYPAD: MQTT connected[0m
+[0;32mI (5104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5104) KEYPAD: Processing topic: device/list[0m
+[1;31mE (5104) KEYPAD: Failed to parse device/list JSON[0m
+[0;32mI (5114) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (5114) KEYPAD: Processing topic: device/list[0m
+[1;31mE (5114) KEYPAD: Failed to parse device/list JSON[0m
+[0;32mI (234354) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234364) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (234624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234644) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234664) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (234664) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (234674) KEYPAD: current number saved successfully![0m
+[0;32mI (234694) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236544) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236544) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236614) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (236624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236644) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236664) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (236664) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (236674) KEYPAD: current number saved successfully![0m
+[0;32mI (236694) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (238674) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238674) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (238934) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238934) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (238934) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238944) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238944) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238944) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238954) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (238954) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (238974) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (238994) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (239014) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (239014) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (239024) KEYPAD: current number saved successfully![0m
+[0;32mI (239044) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (240824) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (240824) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (240844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (240844) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (240844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (240844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (240864) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (240884) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (240894) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (240904) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (241074) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (241084) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (241084) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (241084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (241094) KEYPAD: current number saved successfully![0m
+[0;32mI (241114) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (242964) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (242964) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (243074) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (243074) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (243084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (243084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (243094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (243094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (243094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (243104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (243124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (243144) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (243164) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (243164) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (243174) KEYPAD: current number saved successfully![0m
+[0;32mI (243194) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245234) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245234) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245254) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245254) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245264) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245264) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245264) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245274) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245294) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245314) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245424) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245424) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (245434) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (245434) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (245444) KEYPAD: current number saved successfully![0m
+[0;32mI (245464) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247364) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247364) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247374) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247384) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (247604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247644) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (247644) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (247654) KEYPAD: current number saved successfully![0m
+[0;32mI (247674) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249514) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249514) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249574) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249574) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249594) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249624) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249824) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249824) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (249844) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (249844) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (249854) KEYPAD: current number saved successfully![0m
+[0;32mI (249874) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251764) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251764) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251824) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251824) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251844) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (251864) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251884) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251904) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (251904) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (251914) KEYPAD: current number saved successfully![0m
+[0;32mI (251934) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (253814) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (253814) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (253834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (253834) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (253834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (253854) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (254084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (254084) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (254084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (254084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (254094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (254104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (254124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (254124) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (254134) KEYPAD: current number saved successfully![0m
+[0;32mI (254154) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (255964) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (255964) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (256084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (256084) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (256084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (256084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (256104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (256124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (256334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (256334) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (256334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (256334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (256354) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (256354) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (256364) KEYPAD: current number saved successfully![0m
+[0;32mI (256384) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258214) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258224) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258464) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258464) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258474) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258474) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258474) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258484) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258484) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258504) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258524) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258534) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (258544) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (258544) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (258554) KEYPAD: current number saved successfully![0m
+[0;32mI (258574) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260394) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260394) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (260624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260644) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260664) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (260664) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (260674) KEYPAD: current number saved successfully![0m
+[0;32mI (260694) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262524) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262534) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262594) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262614) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262634) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262654) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262674) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (262674) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (262684) KEYPAD: current number saved successfully![0m
+[0;32mI (262694) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (262704) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (265384) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (265384) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (265384) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (265394) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (267944) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (267944) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (267944) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (267954) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (269064) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (269064) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (269074) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (269084) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (270094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (270094) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (270104) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (270114) KEYPAD: current number saved successfully![0m
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: B
+[0;32mI (275314) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (275314) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (275334) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (276654) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (276654) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (276664) KEYPAD: current number saved successfully![0m
+Key pressed: 6
+Key pressed: 6
+Key pressed: 6
+Key pressed: 6
+Key pressed: B
+[0;32mI (280864) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (280864) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (280874) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (281664) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (281674) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (281684) KEYPAD: current number saved successfully![0m
+Key pressed: 6
+Key pressed: B
+[0;32mI (284734) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (284734) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (284754) KEYPAD: current number saved successfully![0m
+Key pressed: C
+Key pressed: C
+Key pressed: C
+Key pressed: C
+[0;32mI (286304) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (287094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (287094) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (287094) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (287114) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (287504) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (287504) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (287504) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (287524) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (288024) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (288024) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (288024) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (288034) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (288424) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (288424) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (288434) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (288444) KEYPAD: current number saved successfully![0m
+[0;32mI (369934) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (369944) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (370074) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (370074) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (370084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (370084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (370084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (370094) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (370094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (370094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (370114) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (370134) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (370154) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (370154) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (370164) KEYPAD: current number saved successfully![0m
+[0;32mI (370184) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372094) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372334) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (372354) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372374) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372394) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372414) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (372434) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374244) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374244) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374254) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374254) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374264) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374264) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374284) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374304) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374334) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (374354) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (374374) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376394) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376394) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376594) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (376614) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376634) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376654) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376674) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (376694) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378534) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378544) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378574) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378574) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378834) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378854) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378854) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378854) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (378874) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378894) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (378914) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (380784) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (380784) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (380824) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (380824) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (380834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (380834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (380844) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (380864) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (381104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (381104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (381104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (381104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (381124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (381144) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (382944) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (382944) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (383084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (383084) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (383084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (383084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (383094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (383094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (383094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (383104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (383124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (383144) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (383164) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (383184) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (384994) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (384994) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (385094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (385094) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (385094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (385094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (385104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (385104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (385114) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (385134) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (385154) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (385174) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (385334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (385334) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387234) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387234) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387344) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387354) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387354) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387354) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387364) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387364) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387364) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (387384) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387404) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387424) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (387444) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389394) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389394) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389614) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389614) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389624) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389624) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389634) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389634) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (389654) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389674) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389694) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (389714) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427834) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427854) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427854) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427854) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427854) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (427874) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427894) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427914) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (427914) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (427924) KEYPAD: current number saved successfully![0m
+[0;32mI (427944) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429754) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429754) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429764) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429764) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429774) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429774) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429794) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429814) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429834) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429854) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (429854) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (429864) KEYPAD: current number saved successfully![0m
+[0;32mI (429874) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (429884) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (431994) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (431994) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (432094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (432094) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (432094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (432104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (432104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (432114) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (432114) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (432134) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (432154) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (432174) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (432174) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (432184) KEYPAD: current number saved successfully![0m
+[0;32mI (432194) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (432204) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434034) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434034) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434084) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434144) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434334) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (434334) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (434334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (434344) KEYPAD: current number saved successfully![0m
+[0;32mI (434364) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436284) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436284) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436324) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436324) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436344) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436364) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436384) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436594) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (436594) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (436604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (436614) KEYPAD: current number saved successfully![0m
+[0;32mI (436634) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438434) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438434) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438604) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (438624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438644) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438664) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (438684) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440594) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440834) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440854) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440854) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (440874) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440894) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440914) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (440934) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (442764) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (442764) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (442824) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (442824) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (442834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (442834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (442854) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (442874) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (443084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (443084) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (443084) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (443094) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (443104) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (443124) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445004) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445004) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445114) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445114) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445114) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445124) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445124) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445124) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445134) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445154) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445174) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445194) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (445334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (445334) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447144) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447144) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447324) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447324) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (447354) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447374) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447394) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447414) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (447434) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449294) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449294) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449324) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449324) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449334) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449344) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449344) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449354) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449364) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449384) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449404) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (449584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (449584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451444) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451444) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451584) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451584) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451594) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451604) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451624) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451644) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451834) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (451834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (451854) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: B
+[0;32mI (455844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (455844) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (456664) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (456664) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: C
+Key pressed: C
+Key pressed: C
+Key pressed: C
+[0;32mI (458484) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (459224) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (459224) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (459844) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (459844) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: 6
+Key pressed: B
+[0;32mI (471634) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (471634) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (471644) KEYPAD: current number saved successfully![0m
+Key pressed: 6
+Key pressed: C
+Key pressed: C
+[0;32mI (474794) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: C
+Key pressed: B
+[0;32mI (475924) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (475924) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (475934) KEYPAD: Status saved successfully: SO DANG GOI[0m
+[0;32mI (475944) KEYPAD: current number saved successfully![0m
+Key pressed: B
+[0;32mI (476524) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (476524) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (477384) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (477384) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (478244) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (478244) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: 6
+Key pressed: 6
+Key pressed: 6
+Key pressed: C
+Key pressed: C
+Key pressed: C
+[0;32mI (482734) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (484104) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (484104) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (484624) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (484624) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (509914) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (509914) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: B
+[0;32mI (510834) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (510834) KEYPAD: Processing topic: responsenumber[0m
+Key pressed: 6
+Key pressed: 6
+Key pressed: B
+[0;32mI (521794) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (521794) KEYPAD: Processing topic: responsenumber[0m
+[0;32mI (521804) KEYPAD: current number saved successfully![0m

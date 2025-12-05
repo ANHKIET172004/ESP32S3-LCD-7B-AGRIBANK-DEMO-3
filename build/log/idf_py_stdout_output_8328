@@ -1,0 +1,1442 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+��J��ѹesp32: SPI Speed     �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1fa00h (129536) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002fa28 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002fa50 vaddr=3ffb0000 size=005c8h (  1480) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4824h (673828) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d484c vaddr=3ffb05c8 size=039f0h ( 14832) load[0m
+[0;32mI (380) esp_image: segment 5: paddr=000d8244 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      v5.5-dirty[0m
+[0;32mI (460) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (465) app_init: ELF file SHA256:  ae04a12e2...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB87A0 len 00027860 (158 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (519) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (537) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (557) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2147) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2197) wifi:wifi driver task: 3ffc09a4, prio:23, stack:6656, core=0[0m
+[0;32mI (2217) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2217) wifi:wifi certification version: v7.0[0m
+[0;32mI (2217) wifi:config NVS flash: enabled[0m
+[0;32mI (2217) wifi:config nano formatting: disabled[0m
+[0;32mI (2217) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2227) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2227) wifi:Init management short buffer num: 32[0m
+[0;32mI (2237) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2237) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2237) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2247) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2247) wifi_init: rx ba win: 6[0m
+[0;32mI (2247) wifi_init: accept mbox: 6[0m
+[0;32mI (2257) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2257) wifi_init: udp mbox: 6[0m
+[0;32mI (2257) wifi_init: tcp mbox: 6[0m
+[0;32mI (2267) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp mss: 1440[0m
+[0;32mI (2277) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2277) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2337) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2417) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2427) wifi:enable tsf[0m
+[0;32mI (2427) KEYPAD: WiFi initialized[0m
+[0;32mI (2427) KEYPAD: WiFi STA started[0m
+[0;32mI (2427) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;33mW (3237) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3317) wifi:flush txq[0m
+[0;32mI (3317) wifi:stop sw txq[0m
+[0;32mI (3317) wifi:lmac stop hw txq[0m
+[0;32mI (3317) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (3317) wifi:enable tsf[0m
+[0;32mI (3327) KEYPAD: WiFi STA started[0m
+[1;31mE (3327) wifi:sta is connecting, return error[0m
+[0;32mI (3607) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (3607) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3617) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3627) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3647) wifi:connected with NamTrung, aid = 24, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (3647) wifi:security: WPA2-PSK, phy: bgn, rssi: -51[0m
+[0;32mI (3667) wifi:pm start, type: 1[0m
+
+[0;32mI (3667) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3667) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (3677) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4727) esp_netif_handlers: sta ip: 10.10.1.36, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (4727) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (5197) KEYPAD: MQTT initialized[0m
+[0;32mI (5217) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (5267) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5307) KEYPAD: MQTT connected[0m
+[0;32mI (7427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (7427) KEYPAD: MQTT already connected[0m
+[0;32mI (12427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (12427) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (16597) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (16627) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (17427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (17427) KEYPAD: MQTT already connected[0m
+Key pressed: A
+Key pressed: A
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (22327) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (22427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (22427) KEYPAD: MQTT already connected[0m
+Key pressed: A
+Key pressed: A
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (25317) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (27427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (27427) KEYPAD: MQTT already connected[0m
+Key pressed: 4
+Key pressed: 3
+Key pressed: 5
+Key pressed: 9
+[0;32mI (31337) wifi:bcn_timeout,ap_probe_send_start[0m
+Key pressed: D
+GOI UU TIEN
+[0;32mI (32037) KEYPAD: Published number 4359[0m
+[0;32mI (32367) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (32427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (32427) KEYPAD: MQTT already connected[0m
+Key pressed: A
+Key pressed: A
+[0;32mI (37427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (37427) KEYPAD: MQTT already connected[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (38417) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+Key pressed: #
+GOI LAI
+[0;32mI (39547) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (39567) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (39957) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (42427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (42427) KEYPAD: MQTT already connected[0m
+[0;32mI (47427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (47427) KEYPAD: MQTT already connected[0m
+[0;32mI (48977) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (52427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (52427) KEYPAD: MQTT already connected[0m
+[0;32mI (57427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (57427) KEYPAD: MQTT already connected[0m
+[0;32mI (58027) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (62427) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (62427) KEYPAD: MQTT already connected[0m
+[0;32mI (66227) KEYPAD: MQTT disconnected[0m
+[0;32mI (66227) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (66287) KEYPAD: MQTT connected[0m
+[0;32mI (71227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (71227) KEYPAD: MQTT already connected[0m
+[0;32mI (75457) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (76227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (76227) KEYPAD: MQTT already connected[0m
+[0;32mI (81227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (81227) KEYPAD: MQTT already connected[0m
+[0;32mI (84487) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (86227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (86227) KEYPAD: MQTT already connected[0m
+[0;32mI (91227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (91227) KEYPAD: MQTT already connected[0m
+[0;32mI (93507) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (96227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (96227) KEYPAD: MQTT already connected[0m
+[0;32mI (101227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (101227) KEYPAD: MQTT already connected[0m
+[0;32mI (105697) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (106227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (106227) KEYPAD: MQTT already connected[0m
+[0;32mI (111227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (111227) KEYPAD: MQTT already connected[0m
+[0;32mI (114707) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (116227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (116227) KEYPAD: MQTT already connected[0m
+[0;32mI (121227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (121227) KEYPAD: MQTT already connected[0m
+[0;32mI (126227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (126227) KEYPAD: MQTT already connected[0m
+[0;32mI (126907) KEYPAD: MQTT disconnected[0m
+[0;32mI (126907) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (126937) KEYPAD: MQTT connected[0m
+[0;32mI (131907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (131907) KEYPAD: MQTT already connected[0m
+[0;32mI (136907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (136907) KEYPAD: MQTT already connected[0m
+[0;32mI (138137) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (141907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (141907) KEYPAD: MQTT already connected[0m
+[0;32mI (146907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (146907) KEYPAD: MQTT already connected[0m
+[0;32mI (147167) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (151907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (151907) KEYPAD: MQTT already connected[0m
+[0;32mI (156277) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (156907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (156907) KEYPAD: MQTT already connected[0m
+[0;32mI (161907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (161907) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (164367) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (165387) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (166907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (166907) KEYPAD: MQTT already connected[0m
+Key pressed: *
+BO SO HIEN TAI
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (167337) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (167527) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (168547) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (169077) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (169577) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (170007) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+Key pressed: #
+GOI LAI
+[0;32mI (170487) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (170937) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (171097) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (171907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (171907) KEYPAD: MQTT already connected[0m
+Key pressed: D
+[0;32mI (176907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (176907) KEYPAD: MQTT already connected[0m
+[0;32mI (177117) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (181907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (181907) KEYPAD: MQTT already connected[0m
+[0;32mI (186907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (186907) KEYPAD: MQTT already connected[0m
+[0;32mI (187267) KEYPAD: MQTT disconnected[0m
+[0;32mI (187267) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (187327) KEYPAD: MQTT connected[0m
+[0;32mI (192267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (192267) KEYPAD: MQTT already connected[0m
+[0;32mI (196447) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (197267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (197267) KEYPAD: MQTT already connected[0m
+[0;32mI (202267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (202267) KEYPAD: MQTT already connected[0m
+[0;32mI (205457) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (207267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (207267) KEYPAD: MQTT already connected[0m
+[0;32mI (212267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (212267) KEYPAD: MQTT already connected[0m
+[0;32mI (214477) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (217267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (217267) KEYPAD: MQTT already connected[0m
+[0;32mI (222267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (222267) KEYPAD: MQTT already connected[0m
+[0;32mI (227267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (227267) KEYPAD: MQTT already connected[0m
+[0;32mI (231737) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (232267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (232267) KEYPAD: MQTT already connected[0m
+[0;32mI (237267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (237267) KEYPAD: MQTT already connected[0m
+[0;32mI (240787) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (242267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (242267) KEYPAD: MQTT already connected[0m
+[0;32mI (247267) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (247267) KEYPAD: MQTT already connected[0m
+[0;32mI (247957) KEYPAD: MQTT disconnected[0m
+[0;32mI (247957) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (247997) KEYPAD: MQTT connected[0m
+[0;32mI (252957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (252957) KEYPAD: MQTT already connected[0m
+[0;32mI (257197) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (257957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (257957) KEYPAD: MQTT already connected[0m
+[0;32mI (262957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (262957) KEYPAD: MQTT already connected[0m
+[0;32mI (266217) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (267957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (267957) KEYPAD: MQTT already connected[0m
+[0;32mI (272957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (272957) KEYPAD: MQTT already connected[0m
+[0;32mI (275257) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (277957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (277957) KEYPAD: MQTT already connected[0m
+[0;32mI (282957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (282957) KEYPAD: MQTT already connected[0m
+[0;32mI (287957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (287957) KEYPAD: MQTT already connected[0m
+[0;32mI (292667) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (292957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (292957) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (297077) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (297957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (297957) KEYPAD: MQTT already connected[0m
+[0;32mI (298097) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (302957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (302957) KEYPAD: MQTT already connected[0m
+[0;32mI (307957) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (307957) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (308207) KEYPAD: MQTT disconnected[0m
+[0;32mI (308207) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (308287) KEYPAD: MQTT connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (310167) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (311417) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (313207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (313207) KEYPAD: MQTT already connected[0m
+Key pressed: 4
+[0;32mI (318207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (318207) KEYPAD: MQTT already connected[0m
+Key pressed: 3
+Key pressed: 7
+Key pressed: 1
+Key pressed: D
+GOI UU TIEN
+[0;32mI (320447) KEYPAD: Published number 4371[0m
+[0;32mI (320447) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (320717) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (323207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (323207) KEYPAD: MQTT already connected[0m
+[0;32mI (328207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (328207) KEYPAD: MQTT already connected[0m
+[0;32mI (329747) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (333207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (333207) KEYPAD: MQTT already connected[0m
+[0;32mI (338207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (338207) KEYPAD: MQTT already connected[0m
+[0;32mI (338847) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (343207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (343207) KEYPAD: MQTT already connected[0m
+[0;32mI (347957) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (348207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (348207) KEYPAD: MQTT already connected[0m
+[0;32mI (353207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (353207) KEYPAD: MQTT already connected[0m
+[0;32mI (356977) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (358207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (358207) KEYPAD: MQTT already connected[0m
+[0;32mI (363207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (363207) KEYPAD: MQTT already connected[0m
+[0;32mI (368207) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (368207) KEYPAD: MQTT already connected[0m
+[0;32mI (369217) KEYPAD: MQTT disconnected[0m
+[0;32mI (369227) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (369277) KEYPAD: MQTT connected[0m
+[0;32mI (374227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (374227) KEYPAD: MQTT already connected[0m
+[0;32mI (379227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (379227) KEYPAD: MQTT already connected[0m
+[0;32mI (383587) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (384227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (384227) KEYPAD: MQTT already connected[0m
+[0;32mI (389227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (389227) KEYPAD: MQTT already connected[0m
+[0;32mI (392607) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (394227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (394227) KEYPAD: MQTT already connected[0m
+[0;32mI (399227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (399227) KEYPAD: MQTT already connected[0m
+[0;32mI (404227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (404227) KEYPAD: MQTT already connected[0m
+[0;32mI (405697) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (409227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (409227) KEYPAD: MQTT already connected[0m
+[0;32mI (414227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (414227) KEYPAD: MQTT already connected[0m
+[0;32mI (414727) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (419227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (419227) KEYPAD: MQTT already connected[0m
+[0;32mI (424227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (424227) KEYPAD: MQTT already connected[0m
+[0;32mI (429227) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (429227) KEYPAD: MQTT already connected[0m
+[0;32mI (429327) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (429917) KEYPAD: MQTT disconnected[0m
+[0;32mI (429917) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (429957) KEYPAD: MQTT connected[0m
+[0;32mI (434917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (434917) KEYPAD: MQTT already connected[0m
+[0;32mI (439917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (439917) KEYPAD: MQTT already connected[0m
+[0;32mI (444207) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (444917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (444917) KEYPAD: MQTT already connected[0m
+[0;32mI (449917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (449917) KEYPAD: MQTT already connected[0m
+[0;32mI (453267) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (454917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (454917) KEYPAD: MQTT already connected[0m
+[0;32mI (459917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (459917) KEYPAD: MQTT already connected[0m
+[0;32mI (464917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (464917) KEYPAD: MQTT already connected[0m
+[0;32mI (466447) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (469917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (469917) KEYPAD: MQTT already connected[0m
+[0;32mI (474917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (474917) KEYPAD: MQTT already connected[0m
+[0;32mI (475457) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (479917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (479917) KEYPAD: MQTT already connected[0m
+[0;32mI (484917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (484917) KEYPAD: MQTT already connected[0m
+[0;32mI (489917) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (489917) KEYPAD: MQTT already connected[0m
+[0;32mI (490617) KEYPAD: MQTT disconnected[0m
+[0;32mI (490617) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (490647) KEYPAD: MQTT connected[0m
+[0;32mI (495617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (495617) KEYPAD: MQTT already connected[0m
+[0;32mI (500617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (500617) KEYPAD: MQTT already connected[0m
+[0;32mI (501937) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (505617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (505617) KEYPAD: MQTT already connected[0m
+[0;32mI (510617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (510617) KEYPAD: MQTT already connected[0m
+[0;32mI (510977) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (515617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (515617) KEYPAD: MQTT already connected[0m
+[0;32mI (519997) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (520617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (520617) KEYPAD: MQTT already connected[0m
+[0;32mI (525617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (525617) KEYPAD: MQTT already connected[0m
+[0;32mI (530617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (530617) KEYPAD: MQTT already connected[0m
+[0;32mI (535137) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (535617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (535617) KEYPAD: MQTT already connected[0m
+[0;32mI (540617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (540617) KEYPAD: MQTT already connected[0m
+[0;32mI (545617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (545617) KEYPAD: MQTT already connected[0m
+[0;32mI (549417) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (550617) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (550617) KEYPAD: MQTT already connected[0m
+[0;32mI (551277) KEYPAD: MQTT disconnected[0m
+[0;32mI (551277) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (551347) KEYPAD: MQTT connected[0m
+[0;32mI (556277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (556277) KEYPAD: MQTT already connected[0m
+[0;32mI (561277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (561277) KEYPAD: MQTT already connected[0m
+[0;32mI (565557) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (566277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (566277) KEYPAD: MQTT already connected[0m
+[0;32mI (571277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (571277) KEYPAD: MQTT already connected[0m
+[0;32mI (574567) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (576277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (576277) KEYPAD: MQTT already connected[0m
+[0;32mI (581277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (581277) KEYPAD: MQTT already connected[0m
+[0;32mI (586277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (586277) KEYPAD: MQTT already connected[0m
+[0;32mI (591277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (591277) KEYPAD: MQTT already connected[0m
+[0;32mI (592757) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (596277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (596277) KEYPAD: MQTT already connected[0m
+[0;32mI (601277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (601277) KEYPAD: MQTT already connected[0m
+[0;32mI (606277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (606277) KEYPAD: MQTT already connected[0m
+[0;32mI (609357) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (611277) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (611277) KEYPAD: MQTT already connected[0m
+[0;32mI (611967) KEYPAD: MQTT disconnected[0m
+[0;32mI (611967) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (611997) KEYPAD: MQTT connected[0m
+[0;32mI (616967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (616967) KEYPAD: MQTT already connected[0m
+[0;32mI (621967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (621967) KEYPAD: MQTT already connected[0m
+[0;32mI (626177) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (626967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (626967) KEYPAD: MQTT already connected[0m
+[0;32mI (631967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (631967) KEYPAD: MQTT already connected[0m
+[0;32mI (635187) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (636967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (636967) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (638467) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (639497) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (640207) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (640827) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (641967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (641967) KEYPAD: MQTT already connected[0m
+[0;32mI (646967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (646967) KEYPAD: MQTT already connected[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (647787) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: #
+GOI LAI
+[0;32mI (649217) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (649987) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (651967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (651967) KEYPAD: MQTT already connected[0m
+[0;32mI (656967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (656967) KEYPAD: MQTT already connected[0m
+[0;32mI (659057) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (661967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (661967) KEYPAD: MQTT already connected[0m
+[0;32mI (666967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (666967) KEYPAD: MQTT already connected[0m
+[0;32mI (671967) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (671967) KEYPAD: MQTT already connected[0m
+[0;32mI (672217) KEYPAD: MQTT disconnected[0m
+[0;32mI (672217) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (672277) KEYPAD: MQTT connected[0m
+[0;32mI (677217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (677217) KEYPAD: MQTT already connected[0m
+[0;32mI (682217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (682217) KEYPAD: MQTT already connected[0m
+[0;32mI (683377) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (687217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (687217) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (690097) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (691097) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (691177) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (691817) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (692217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (692217) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (692457) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (692517) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (693897) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (693927) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (694587) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (694787) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (695917) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (697217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (697217) KEYPAD: MQTT already connected[0m
+[0;32mI (701927) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (702217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (702217) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (706567) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (707217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (707217) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (707797) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (709077) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (709637) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (710257) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (711177) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (711687) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (712217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (712217) KEYPAD: MQTT already connected[0m
+[0;32mI (712287) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (712987) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (713227) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (713587) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (714557) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (715067) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (715577) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (717217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (717217) KEYPAD: MQTT already connected[0m
+[0;32mI (722217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (722217) KEYPAD: MQTT already connected[0m
+[0;32mI (727217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (727217) KEYPAD: MQTT already connected[0m
+[0;32mI (732217) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (732217) KEYPAD: MQTT already connected[0m
+[0;32mI (732327) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (732747) KEYPAD: MQTT disconnected[0m
+[0;32mI (732747) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (732797) KEYPAD: MQTT connected[0m
+[0;32mI (737747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (737747) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (739167) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (739327) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (740257) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (740867) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (742747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (742747) KEYPAD: MQTT already connected[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (745067) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (746697) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (747437) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (747747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (747747) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (749647) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (749887) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (751007) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (751077) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (751617) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (751727) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (752237) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (752737) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (752747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (752747) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (753357) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (757747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (757747) KEYPAD: MQTT already connected[0m
+[0;32mI (759457) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (762747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (762747) KEYPAD: MQTT already connected[0m
+[0;32mI (767747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (767747) KEYPAD: MQTT already connected[0m
+[0;32mI (772747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (772747) KEYPAD: MQTT already connected[0m
+[0;32mI (772967) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (777747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (777747) KEYPAD: MQTT already connected[0m
+[0;32mI (782747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (782747) KEYPAD: MQTT already connected[0m
+[0;32mI (787747) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (787747) KEYPAD: MQTT already connected[0m
+[0;32mI (789327) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (791837) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (791837) wifi:state: run -> init (0xc800)[0m
+[0;32mI (791847) wifi:pm stop, total sleep time: 594531115 us / 788178013 us[0m
+
+[0;32mI (791847) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (791847) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (791847) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (791857) KEYPAD: STA disconnected, reason=200[0m
+[0;32mI (791857) mqtt_client: Client asked to disconnect[0m
+[1;31mE (791857) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (791867) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (791877) KEYPAD: MQTT_EVENT_ERROR[0m
+[0;32mI (791887) KEYPAD: Last error code reported from esp-tls: 0x0[0m
+[0;32mI (791887) KEYPAD: Last tls stack error number: 0x0[0m
+[0;32mI (791897) KEYPAD: Last captured errno : 113 (Software caused connection abort)[0m
+[1;31mE (791897) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (791907) KEYPAD: MQTT disconnected[0m
+[0;32mI (791907) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (791927) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:9, snd_ch_cfg:0x0[0m
+[0;32mI (791927) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (791967) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (791977) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (791997) wifi:connected with NamTrung, aid = 24, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (791997) wifi:security: WPA2-PSK, phy: bgn, rssi: -61[0m
+[0;32mI (792007) wifi:pm start, type: 1[0m
+
+[0;32mI (792007) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (792037) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (793027) esp_netif_handlers: sta ip: 10.10.1.36, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (793027) KEYPAD: WiFi connected, got IP[0m
+[0;32mI (794237) mqtt_client: Client asked to disconnect[0m
+[0;33mW (794237) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (794237) KEYPAD: MQTT initialized[0m
+[0;32mI (794257) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:8, winSize:64[0m
+[0;32mI (794287) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (794337) KEYPAD: MQTT connected[0m
+[0;32mI (796907) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (796907) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (801177) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (801897) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (801897) KEYPAD: MQTT already connected[0m
+[0;32mI (802117) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (802667) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (805377) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (805667) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (806097) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (806297) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (806607) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (806887) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (806887) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (806917) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (806967) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (807317) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (807837) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (811877) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (811877) KEYPAD: MQTT already connected[0m
+[0;32mI (816867) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (816867) KEYPAD: MQTT already connected[0m
+[0;32mI (821857) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (821857) KEYPAD: MQTT already connected[0m
+[0;32mI (826847) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (826847) KEYPAD: MQTT already connected[0m
+[0;32mI (831837) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (831837) KEYPAD: MQTT already connected[0m
+[0;32mI (836827) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (836827) KEYPAD: MQTT already connected[0m
+[0;32mI (841817) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (841817) KEYPAD: MQTT already connected[0m
+[0;32mI (846807) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (846807) KEYPAD: MQTT already connected[0m
+[0;32mI (851797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (851797) KEYPAD: MQTT already connected[0m
+[0;32mI (855357) KEYPAD: MQTT disconnected[0m
+[0;32mI (855357) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (855387) KEYPAD: MQTT connected[0m
+[0;32mI (860357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (860357) KEYPAD: MQTT already connected[0m
+[0;32mI (865357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (865357) KEYPAD: MQTT already connected[0m
+[0;32mI (870357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (870357) KEYPAD: MQTT already connected[0m
+[0;32mI (875357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (875357) KEYPAD: MQTT already connected[0m
+[0;32mI (880357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (880357) KEYPAD: MQTT already connected[0m
+[0;32mI (885357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (885357) KEYPAD: MQTT already connected[0m
+[0;32mI (890357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (890357) KEYPAD: MQTT already connected[0m
+[0;32mI (895357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (895357) KEYPAD: MQTT already connected[0m
+[0;32mI (900357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (900357) KEYPAD: MQTT already connected[0m
+[0;32mI (905357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (905357) KEYPAD: MQTT already connected[0m
+[0;32mI (910357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (910357) KEYPAD: MQTT already connected[0m
+[0;32mI (915357) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (915357) KEYPAD: MQTT already connected[0m
+[0;32mI (916077) KEYPAD: MQTT disconnected[0m
+[0;32mI (916077) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (916107) KEYPAD: MQTT connected[0m
+[0;32mI (921077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (921077) KEYPAD: MQTT already connected[0m
+[0;32mI (926077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (926077) KEYPAD: MQTT already connected[0m
+[0;32mI (931077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (931077) KEYPAD: MQTT already connected[0m
+[0;32mI (936077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (936077) KEYPAD: MQTT already connected[0m
+[0;32mI (941077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (941077) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (943207) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (945137) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (946077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (946077) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (946467) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (947447) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (947607) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (948377) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (948487) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (951077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (951077) KEYPAD: MQTT already connected[0m
+[0;32mI (956077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (956077) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (958577) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (959607) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (961077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (961077) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (961347) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (961667) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (965277) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (965427) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (966077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (966077) KEYPAD: MQTT already connected[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (966857) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (971077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (971077) KEYPAD: MQTT already connected[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (973027) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: *
+BO SO HIEN TAI
+[0;32mI (973627) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (975257) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (975567) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (975997) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (976077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (976077) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (976387) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (976407) KEYPAD: MQTT disconnected[0m
+[0;32mI (976407) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (976427) KEYPAD: MQTT connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (976797) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (977207) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (977257) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (977527) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (981407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (981407) KEYPAD: MQTT already connected[0m
+[0;32mI (986407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (986407) KEYPAD: MQTT already connected[0m
+[0;32mI (991407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (991407) KEYPAD: MQTT already connected[0m
+[0;32mI (996407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (996407) KEYPAD: MQTT already connected[0m
+[0;32mI (1001407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1001407) KEYPAD: MQTT already connected[0m
+[0;32mI (1006407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1006407) KEYPAD: MQTT already connected[0m
+[0;32mI (1011407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1011407) KEYPAD: MQTT already connected[0m
+[0;32mI (1016407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1016407) KEYPAD: MQTT already connected[0m
+[0;32mI (1021407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1021407) KEYPAD: MQTT already connected[0m
+[0;32mI (1026407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1026407) KEYPAD: MQTT already connected[0m
+[0;32mI (1031407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1031407) KEYPAD: MQTT already connected[0m
+[0;32mI (1036407) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1036407) KEYPAD: MQTT already connected[0m
+[0;32mI (1037127) KEYPAD: MQTT disconnected[0m
+[0;32mI (1037127) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1037177) KEYPAD: MQTT connected[0m
+[0;32mI (1042127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1042127) KEYPAD: MQTT already connected[0m
+[0;32mI (1047127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1047127) KEYPAD: MQTT already connected[0m
+[0;32mI (1052127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1052127) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1056777) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1057127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1057127) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1057487) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1058517) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1059317) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1059727) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1060267) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1060877) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1061167) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1061797) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1061917) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1062127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1062127) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1062797) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1067127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1067127) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1070897) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1071307) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1071717) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1072127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1072127) KEYPAD: MQTT already connected[0m
+[0;32mI (1072227) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1072687) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1077127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1077127) KEYPAD: MQTT already connected[0m
+[0;32mI (1082127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1082127) KEYPAD: MQTT already connected[0m
+[0;32mI (1087127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1087127) KEYPAD: MQTT already connected[0m
+[0;32mI (1092127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1092127) KEYPAD: MQTT already connected[0m
+[0;32mI (1097127) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1097127) KEYPAD: MQTT already connected[0m
+[0;32mI (1097947) KEYPAD: MQTT disconnected[0m
+[0;32mI (1097947) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1098167) KEYPAD: MQTT connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1101307) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1101937) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1102247) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1102947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1102947) KEYPAD: MQTT already connected[0m
+[0;32mI (1103147) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1103677) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1104167) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1104547) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1105197) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1106247) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1106627) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1107947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1107947) KEYPAD: MQTT already connected[0m
+[0;32mI (1112947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1112947) KEYPAD: MQTT already connected[0m
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+[0;32mI (1117947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1117947) KEYPAD: MQTT already connected[0m
+Key pressed: 5
+Key pressed: D
+GOI UU TIEN
+[0;32mI (1119837) KEYPAD: Published number 4445[0m
+[0;32mI (1120047) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1122947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1122947) KEYPAD: MQTT already connected[0m
+[0;32mI (1127947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1127947) KEYPAD: MQTT already connected[0m
+[0;32mI (1132947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1132947) KEYPAD: MQTT already connected[0m
+Key pressed: D
+[0;32mI (1137947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1137947) KEYPAD: MQTT already connected[0m
+Key pressed: D
+Key pressed: D
+Key pressed: D
+[0;32mI (1142947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1142947) KEYPAD: MQTT already connected[0m
+[0;32mI (1147947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1147947) KEYPAD: MQTT already connected[0m
+Key pressed: D
+Key pressed: D
+[0;32mI (1152947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1152947) KEYPAD: MQTT already connected[0m
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: D
+Key pressed: D
+[0;32mI (1157947) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1157947) KEYPAD: MQTT already connected[0m
+[0;32mI (1158457) KEYPAD: MQTT disconnected[0m
+[0;32mI (1158457) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1158487) KEYPAD: MQTT connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1159477) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1160847) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1161217) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1161617) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1162147) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1162367) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1162637) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1163147) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1163387) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1163457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1163457) KEYPAD: MQTT already connected[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1163677) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1163877) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1163927) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1164397) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1164587) KEYPAD: MQTT_EVENT_DATA[0m
+Key pressed: B
+GOI SO TIEP THEO
+Key pressed: B
+GOI SO TIEP THEO
+[0;32mI (1164897) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1165107) KEYPAD: MQTT_EVENT_DATA[0m
+[0;32mI (1168457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1168457) KEYPAD: MQTT already connected[0m
+[0;32mI (1173457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1173457) KEYPAD: MQTT already connected[0m
+[0;32mI (1178457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1178457) KEYPAD: MQTT already connected[0m
+[0;32mI (1183457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1183457) KEYPAD: MQTT already connected[0m
+[0;32mI (1188457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1188457) KEYPAD: MQTT already connected[0m
+[0;32mI (1193457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1193457) KEYPAD: MQTT already connected[0m
+[0;32mI (1198457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1198457) KEYPAD: MQTT already connected[0m
+[0;32mI (1203457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1203457) KEYPAD: MQTT already connected[0m
+[0;32mI (1208457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1208457) KEYPAD: MQTT already connected[0m
+[0;32mI (1213457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1213457) KEYPAD: MQTT already connected[0m
+[0;32mI (1218457) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1218457) KEYPAD: MQTT already connected[0m
+[0;32mI (1218667) KEYPAD: MQTT disconnected[0m
+[0;32mI (1218667) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1218687) KEYPAD: MQTT connected[0m
+[0;32mI (1223667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1223667) KEYPAD: MQTT already connected[0m
+[0;32mI (1228667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1228667) KEYPAD: MQTT already connected[0m
+[0;32mI (1233667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1233667) KEYPAD: MQTT already connected[0m
+[0;32mI (1238667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1238667) KEYPAD: MQTT already connected[0m
+[0;32mI (1243667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1243667) KEYPAD: MQTT already connected[0m
+[0;32mI (1248667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1248667) KEYPAD: MQTT already connected[0m
+[0;32mI (1253667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1253667) KEYPAD: MQTT already connected[0m
+[0;32mI (1258667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1258667) KEYPAD: MQTT already connected[0m
+[0;32mI (1263667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1263667) KEYPAD: MQTT already connected[0m
+[0;32mI (1268667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1268667) KEYPAD: MQTT already connected[0m
+[0;32mI (1273667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1273667) KEYPAD: MQTT already connected[0m
+[0;32mI (1278667) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1278667) KEYPAD: MQTT already connected[0m
+[0;32mI (1279317) KEYPAD: MQTT disconnected[0m
+[0;32mI (1279317) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1279397) KEYPAD: MQTT connected[0m
+[0;32mI (1284317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1284317) KEYPAD: MQTT already connected[0m
+[0;32mI (1289317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1289317) KEYPAD: MQTT already connected[0m
+[0;32mI (1294317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1294317) KEYPAD: MQTT already connected[0m
+[0;32mI (1299317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1299317) KEYPAD: MQTT already connected[0m
+[0;32mI (1304317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1304317) KEYPAD: MQTT already connected[0m
+[0;32mI (1309317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1309317) KEYPAD: MQTT already connected[0m
+[0;32mI (1314317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1314317) KEYPAD: MQTT already connected[0m
+[0;32mI (1319317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1319317) KEYPAD: MQTT already connected[0m
+[0;32mI (1324317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1324317) KEYPAD: MQTT already connected[0m
+[0;32mI (1329317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1329317) KEYPAD: MQTT already connected[0m
+[0;32mI (1334317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1334317) KEYPAD: MQTT already connected[0m
+[0;32mI (1339317) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1339317) KEYPAD: MQTT already connected[0m
+[0;32mI (1340027) KEYPAD: MQTT disconnected[0m
+[0;32mI (1340027) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1340067) KEYPAD: MQTT connected[0m
+[0;32mI (1345027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1345027) KEYPAD: MQTT already connected[0m
+[0;32mI (1350027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1350027) KEYPAD: MQTT already connected[0m
+[0;32mI (1355027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1355027) KEYPAD: MQTT already connected[0m
+[0;32mI (1360027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1360027) KEYPAD: MQTT already connected[0m
+[0;32mI (1365027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1365027) KEYPAD: MQTT already connected[0m
+[0;32mI (1370027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1370027) KEYPAD: MQTT already connected[0m
+[0;32mI (1375027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1375027) KEYPAD: MQTT already connected[0m
+[0;32mI (1380027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1380027) KEYPAD: MQTT already connected[0m
+[0;32mI (1385027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1385027) KEYPAD: MQTT already connected[0m
+[0;32mI (1390027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1390027) KEYPAD: MQTT already connected[0m
+[0;32mI (1395027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1395027) KEYPAD: MQTT already connected[0m
+[0;32mI (1400027) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1400027) KEYPAD: MQTT already connected[0m
+[0;32mI (1400717) KEYPAD: MQTT disconnected[0m
+[0;32mI (1400717) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1400747) KEYPAD: MQTT connected[0m
+[0;32mI (1405717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1405717) KEYPAD: MQTT already connected[0m
+[0;32mI (1410717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1410717) KEYPAD: MQTT already connected[0m
+[0;32mI (1415717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1415717) KEYPAD: MQTT already connected[0m
+[0;32mI (1420717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1420717) KEYPAD: MQTT already connected[0m
+[0;32mI (1425717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1425717) KEYPAD: MQTT already connected[0m
+[0;32mI (1430717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1430717) KEYPAD: MQTT already connected[0m
+[0;32mI (1435717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1435717) KEYPAD: MQTT already connected[0m
+[0;32mI (1440717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1440717) KEYPAD: MQTT already connected[0m
+[0;32mI (1445717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1445717) KEYPAD: MQTT already connected[0m
+[0;32mI (1450717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1450717) KEYPAD: MQTT already connected[0m
+[0;32mI (1455717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1455717) KEYPAD: MQTT already connected[0m
+[0;32mI (1460717) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1460717) KEYPAD: MQTT already connected[0m
+[0;32mI (1461387) KEYPAD: MQTT disconnected[0m
+[0;32mI (1461387) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1461447) KEYPAD: MQTT connected[0m
+[0;32mI (1466387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1466387) KEYPAD: MQTT already connected[0m
+[0;32mI (1471387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1471387) KEYPAD: MQTT already connected[0m
+[0;32mI (1476387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1476387) KEYPAD: MQTT already connected[0m
+[0;32mI (1481387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1481387) KEYPAD: MQTT already connected[0m
+[0;32mI (1486387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1486387) KEYPAD: MQTT already connected[0m
+[0;32mI (1491387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1491387) KEYPAD: MQTT already connected[0m
+[0;32mI (1496387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1496387) KEYPAD: MQTT already connected[0m
+[0;32mI (1501387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1501387) KEYPAD: MQTT already connected[0m
+[0;32mI (1506387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1506387) KEYPAD: MQTT already connected[0m
+[0;32mI (1511387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1511387) KEYPAD: MQTT already connected[0m
+[0;32mI (1516387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1516387) KEYPAD: MQTT already connected[0m
+[0;32mI (1521387) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1521387) KEYPAD: MQTT already connected[0m
+[0;32mI (1522077) KEYPAD: MQTT disconnected[0m
+[0;32mI (1522077) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1522107) KEYPAD: MQTT connected[0m
+[0;32mI (1527077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1527077) KEYPAD: MQTT already connected[0m
+[0;32mI (1532077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1532077) KEYPAD: MQTT already connected[0m
+[0;32mI (1537077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1537077) KEYPAD: MQTT already connected[0m
+[0;32mI (1542077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1542077) KEYPAD: MQTT already connected[0m
+[0;32mI (1547077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1547077) KEYPAD: MQTT already connected[0m
+[0;32mI (1552077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1552077) KEYPAD: MQTT already connected[0m
+[0;32mI (1557077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1557077) KEYPAD: MQTT already connected[0m
+[0;32mI (1562077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1562077) KEYPAD: MQTT already connected[0m
+[0;32mI (1567077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1567077) KEYPAD: MQTT already connected[0m
+[0;32mI (1572077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1572077) KEYPAD: MQTT already connected[0m
+[0;32mI (1577077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1577077) KEYPAD: MQTT already connected[0m
+[0;32mI (1582077) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1582077) KEYPAD: MQTT already connected[0m
+[0;32mI (1582797) KEYPAD: MQTT disconnected[0m
+[0;32mI (1582797) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1582827) KEYPAD: MQTT connected[0m
+[0;32mI (1587797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1587797) KEYPAD: MQTT already connected[0m
+[0;32mI (1592797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1592797) KEYPAD: MQTT already connected[0m
+[0;32mI (1597797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1597797) KEYPAD: MQTT already connected[0m
+[0;32mI (1602797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1602797) KEYPAD: MQTT already connected[0m
+[0;32mI (1607797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1607797) KEYPAD: MQTT already connected[0m
+[0;32mI (1612797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1612797) KEYPAD: MQTT already connected[0m
+[0;32mI (1617797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1617797) KEYPAD: MQTT already connected[0m
+[0;32mI (1622797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1622797) KEYPAD: MQTT already connected[0m
+[0;32mI (1627797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1627797) KEYPAD: MQTT already connected[0m
+[0;32mI (1632797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1632797) KEYPAD: MQTT already connected[0m
+[0;32mI (1637797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1637797) KEYPAD: MQTT already connected[0m
+[0;32mI (1642797) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1642797) KEYPAD: MQTT already connected[0m
+[0;32mI (1643497) KEYPAD: MQTT disconnected[0m
+[0;32mI (1643497) KEYPAD: Semaphore received - starting reconnect attempt[0m
+[0;32mI (1643537) KEYPAD: MQTT connected[0m
+[0;32mI (1648497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1648497) KEYPAD: MQTT already connected[0m
+[0;32mI (1653497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1653497) KEYPAD: MQTT already connected[0m
+[0;32mI (1658497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1658497) KEYPAD: MQTT already connected[0m
+[0;32mI (1663497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1663497) KEYPAD: MQTT already connected[0m
+[0;32mI (1668497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1668497) KEYPAD: MQTT already connected[0m
+[0;32mI (1673497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1673497) KEYPAD: MQTT already connected[0m
+[0;32mI (1678497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1678497) KEYPAD: MQTT already connected[0m
+[0;32mI (1683497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1683497) KEYPAD: MQTT already connected[0m
+[0;32mI (1688497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1688497) KEYPAD: MQTT already connected[0m
+[0;32mI (1693497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1693497) KEYPAD: MQTT already connected[0m
+[0;32mI (1698497) KEYPAD: Timeout - checking if need to reconnect[0m
+[0;32mI (1698497) KEYPAD: MQTT already connected[0m

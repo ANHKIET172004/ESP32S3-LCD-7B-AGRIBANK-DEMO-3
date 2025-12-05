@@ -1,0 +1,2464 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+(34) boot.esp�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1fa20h (129568) map[0m
+[0;32mI (133) esp_image: segment 1: paddr=0002fa48 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002fa70 vaddr=3ffb0000 size=005a8h (  1448) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a48a0h (673952) map[0m
+[0;32mI (374) esp_image: segment 4: paddr=000d48c8 vaddr=3ffb05a8 size=03a10h ( 14864) load[0m
+[0;32mI (380) esp_image: segment 5: paddr=000d82e0 vaddr=40080000 size=192e4h (103140) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (443) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      v5.5-dirty[0m
+[0;32mI (460) app_init: Compile time:     Oct 20 2025 20:55:32[0m
+[0;32mI (465) app_init: ELF file SHA256:  398296c4e...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB87B0 len 00027850 (158 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (513) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (520) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (537) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (557) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2147) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2197) wifi:wifi driver task: 3ffc09b4, prio:23, stack:6656, core=0[0m
+[0;32mI (2217) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2217) wifi:wifi certification version: v7.0[0m
+[0;32mI (2217) wifi:config NVS flash: enabled[0m
+[0;32mI (2217) wifi:config nano formatting: disabled[0m
+[0;32mI (2217) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2227) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2227) wifi:Init management short buffer num: 32[0m
+[0;32mI (2237) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2237) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2237) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2247) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2247) wifi_init: rx ba win: 6[0m
+[0;32mI (2247) wifi_init: accept mbox: 6[0m
+[0;32mI (2257) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2257) wifi_init: udp mbox: 6[0m
+[0;32mI (2257) wifi_init: tcp mbox: 6[0m
+[0;32mI (2267) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2267) wifi_init: tcp mss: 1440[0m
+[0;32mI (2277) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2277) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2337) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2417) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (2437) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2437) wifi:enable tsf[0m
+[0;32mI (2447) KEYPAD: WiFi initialized[0m
+[0;32mI (2447) KEYPAD: WiFi STA started[0m
+[0;32mI (2447) KEYPAD: MQTT reconnect task started[0m
+[0;32mI (2447) KEYPAD: WiFi reconnect task started[0m
+[0;32mI (2447) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;33mW (3047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (3247) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (3267) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3337) wifi:flush txq[0m
+[0;32mI (3347) wifi:stop sw txq[0m
+[0;32mI (3347) wifi:lmac stop hw txq[0m
+[0;32mI (3347) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (3347) wifi:enable tsf[0m
+[0;32mI (3347) KEYPAD: WiFi STA started[0m
+[1;31mE (3357) wifi:sta is connecting, return error[0m
+[0;33mW (3647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (4147) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[1;31mE (4147) wifi:sta is connecting, return error[0m
+[0;33mW (4247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (4847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (5047) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (5047) wifi:sta is connecting, return error[0m
+[0;33mW (5447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (5767) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (5767) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (6047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (6647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (6667) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[1;31mE (6667) wifi:sta is connecting, return error[0m
+[0;33mW (7247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (7567) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (7567) wifi:sta is connecting, return error[0m
+[0;33mW (7847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (8187) KEYPAD: STA disconnected, reason=201[0m
+[0;32mI (8187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (8447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (9047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (9087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[1;31mE (9087) wifi:sta is connecting, return error[0m
+[0;33mW (9647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (9987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (9987) wifi:sta is connecting, return error[0m
+[0;33mW (10247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (10597) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (10597) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (10597) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (10847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (11447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (11507) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (12047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (12407) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (12407) wifi:sta is connecting, return error[0m
+[0;33mW (12647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (13247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (13307) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (13307) wifi:sta is connecting, return error[0m
+[0;33mW (13847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (13917) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (13917) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (13917) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (14447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (14817) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (15047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (15647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (15717) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (15717) wifi:sta is connecting, return error[0m
+[0;33mW (16247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (16617) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (16617) wifi:sta is connecting, return error[0m
+[0;33mW (16847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (17227) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (17227) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (17227) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (17447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (18047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (18127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (18647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (19027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (19027) wifi:sta is connecting, return error[0m
+[0;33mW (19247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (19847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (19927) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (19927) wifi:sta is connecting, return error[0m
+[0;33mW (20447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (20537) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (20537) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (20537) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (21047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (21437) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (21647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (22247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (22337) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (22337) wifi:sta is connecting, return error[0m
+[0;33mW (22847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (23237) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (23237) wifi:sta is connecting, return error[0m
+[0;33mW (23447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (23847) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (23847) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (23847) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (24047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (24647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (24747) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (25247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (25647) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (25647) wifi:sta is connecting, return error[0m
+[0;33mW (25847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (26447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (26547) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (26547) wifi:sta is connecting, return error[0m
+[0;33mW (27047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (27157) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (27157) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (27157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (27647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (28057) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (28247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (28847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (28957) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (28957) wifi:sta is connecting, return error[0m
+[0;33mW (29447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (29857) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (29857) wifi:sta is connecting, return error[0m
+[0;33mW (30047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (30467) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (30467) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (30467) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (30647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (31247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (31367) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (31847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (32267) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (32267) wifi:sta is connecting, return error[0m
+[0;33mW (32447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (33047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (33167) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (33167) wifi:sta is connecting, return error[0m
+[0;33mW (33647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (33777) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (33777) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (33777) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (34247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (34677) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (34847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (35447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (35577) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (35577) wifi:sta is connecting, return error[0m
+[0;33mW (36047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (36477) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (36477) wifi:sta is connecting, return error[0m
+[0;33mW (36647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (37087) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (37087) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (37087) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (37247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (37847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (37987) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (38447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (38887) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (38887) wifi:sta is connecting, return error[0m
+[0;33mW (39047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (39647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (39787) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (39787) wifi:sta is connecting, return error[0m
+[0;33mW (40247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (40397) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (40397) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (40397) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (40847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (41297) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (41447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (42047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (42197) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (42197) wifi:sta is connecting, return error[0m
+[0;33mW (42647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (43097) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (43097) wifi:sta is connecting, return error[0m
+[0;33mW (43247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (43707) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (43707) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (43707) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (43847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (44447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (44607) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (45047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (45507) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (45507) wifi:sta is connecting, return error[0m
+[0;33mW (45647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (46247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (46407) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (46407) wifi:sta is connecting, return error[0m
+[0;33mW (46847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (47017) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (47017) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (47017) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (47447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (47917) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (48047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (48647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (48817) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (48817) wifi:sta is connecting, return error[0m
+[0;33mW (49247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (49717) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (49717) wifi:sta is connecting, return error[0m
+[0;33mW (49847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (50327) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (50327) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (50327) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (50447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (51047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (51227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (51647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (52127) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (52127) wifi:sta is connecting, return error[0m
+[0;33mW (52247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (52847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (53027) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (53027) wifi:sta is connecting, return error[0m
+[0;33mW (53447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (53637) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (53637) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (53637) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (54047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (54537) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (54647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (55247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (55437) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (55437) wifi:sta is connecting, return error[0m
+[0;33mW (55847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (56337) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (56337) wifi:sta is connecting, return error[0m
+[0;33mW (56447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (56947) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (56947) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (56947) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (57047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (57647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (57847) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (58247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (58747) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (58747) wifi:sta is connecting, return error[0m
+[0;33mW (58847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (59447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (59647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (59647) wifi:sta is connecting, return error[0m
+[0;33mW (60047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (60257) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (60257) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (60257) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (60647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (61157) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (61247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (61847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (62057) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (62057) wifi:sta is connecting, return error[0m
+[0;33mW (62447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (62957) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (62957) wifi:sta is connecting, return error[0m
+[0;33mW (63047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (63567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (63567) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (63567) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (63647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (64247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (64467) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (64847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (65367) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (65367) wifi:sta is connecting, return error[0m
+[0;33mW (65447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (66047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (66267) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (66267) wifi:sta is connecting, return error[0m
+[0;33mW (66647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (66877) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (66877) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (66877) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (67247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (67777) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (67847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (68447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (68677) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (68677) wifi:sta is connecting, return error[0m
+[0;33mW (69047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (69577) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (69577) wifi:sta is connecting, return error[0m
+[0;33mW (69647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (70187) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (70187) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (70187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (70247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (70847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (71087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (71447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (71987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (71987) wifi:sta is connecting, return error[0m
+[0;33mW (72047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (72647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (72887) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (72887) wifi:sta is connecting, return error[0m
+[0;33mW (73247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (73497) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (73497) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (73497) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (73847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (74397) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (74447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (75047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (75297) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (75297) wifi:sta is connecting, return error[0m
+[0;33mW (75647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (76197) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (76197) wifi:sta is connecting, return error[0m
+[0;33mW (76247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (76807) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (76807) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (76807) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (76847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (77447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (77707) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (78047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (78607) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (78607) wifi:sta is connecting, return error[0m
+[0;33mW (78647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (79247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (79507) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (79507) wifi:sta is connecting, return error[0m
+[0;33mW (79847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (80117) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (80117) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (80117) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (80447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (81017) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (81047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (81647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (81917) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (81917) wifi:sta is connecting, return error[0m
+[0;33mW (82247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (82817) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (82817) wifi:sta is connecting, return error[0m
+[0;33mW (82847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (83427) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (83427) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (83427) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (83447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (84047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (84327) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (84647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (85227) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (85227) wifi:sta is connecting, return error[0m
+[0;33mW (85247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (85847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (86127) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (86127) wifi:sta is connecting, return error[0m
+[0;33mW (86447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (86737) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (86737) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (86737) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (87047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (87637) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (87647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (88247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (88537) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (88537) wifi:sta is connecting, return error[0m
+[0;33mW (88847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (89437) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (89437) wifi:sta is connecting, return error[0m
+[0;33mW (89447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (90047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (90047) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (90047) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (90047) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (90647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (90957) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (91247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (91847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (91857) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (91857) wifi:sta is connecting, return error[0m
+[0;33mW (92447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (92757) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (92757) wifi:sta is connecting, return error[0m
+[0;33mW (93047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (93367) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (93367) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (93367) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (93647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (94247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (94267) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (94847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (95167) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (95167) wifi:sta is connecting, return error[0m
+[0;33mW (95447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (96047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (96067) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (96067) wifi:sta is connecting, return error[0m
+[0;33mW (96647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (96677) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (96677) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (96677) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (97247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (97577) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (97847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (98447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (98477) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (98477) wifi:sta is connecting, return error[0m
+[0;33mW (99047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (99377) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (99377) wifi:sta is connecting, return error[0m
+[0;33mW (99647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (99987) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (99987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (99987) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (100247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (100847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (100887) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (101447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (101787) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (101787) wifi:sta is connecting, return error[0m
+[0;33mW (102047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (102647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (102687) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (102687) wifi:sta is connecting, return error[0m
+[0;33mW (103247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (103297) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (103297) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (103297) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (103847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (104197) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (104447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (105047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (105097) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (105097) wifi:sta is connecting, return error[0m
+[0;33mW (105647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (105997) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (105997) wifi:sta is connecting, return error[0m
+[0;33mW (106247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (106607) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (106607) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (106607) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (106847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (107447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (107507) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (108047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (108407) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (108407) wifi:sta is connecting, return error[0m
+[0;33mW (108647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (109247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (109307) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (109307) wifi:sta is connecting, return error[0m
+[0;33mW (109847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (109917) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (109917) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (109917) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (110447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (110817) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (111047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (111647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (111717) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (111717) wifi:sta is connecting, return error[0m
+[0;33mW (112247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (112617) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (112617) wifi:sta is connecting, return error[0m
+[0;33mW (112847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (113227) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (113227) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (113227) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (113447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (114047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (114127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (114647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (115027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (115027) wifi:sta is connecting, return error[0m
+[0;33mW (115247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (115847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (115927) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (115927) wifi:sta is connecting, return error[0m
+[0;33mW (116447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (116537) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (116537) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (116537) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (117047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (117437) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (117647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (118247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (118337) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (118337) wifi:sta is connecting, return error[0m
+[0;33mW (118847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (119237) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (119237) wifi:sta is connecting, return error[0m
+[0;33mW (119447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (119847) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (119847) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (119847) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (120047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (120647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (120747) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (121247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (121647) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (121647) wifi:sta is connecting, return error[0m
+[0;33mW (121847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (122447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (122547) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (122547) wifi:sta is connecting, return error[0m
+[0;33mW (123047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (123157) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (123157) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (123157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (123647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (124057) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (124247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (124847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (124957) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (124957) wifi:sta is connecting, return error[0m
+[0;33mW (125447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (125857) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (125857) wifi:sta is connecting, return error[0m
+[0;33mW (126047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (126467) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (126467) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (126467) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (126647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (127247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (127367) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (127847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (128267) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (128267) wifi:sta is connecting, return error[0m
+[0;33mW (128447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (129047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (129167) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (129167) wifi:sta is connecting, return error[0m
+[0;33mW (129647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (129777) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (129777) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (129777) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (130247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (130677) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (130847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (131447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (131577) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (131577) wifi:sta is connecting, return error[0m
+[0;33mW (132047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (132477) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (132477) wifi:sta is connecting, return error[0m
+[0;33mW (132647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (133087) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (133087) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (133087) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (133247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (133847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (133987) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (134447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (134887) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (134887) wifi:sta is connecting, return error[0m
+[0;33mW (135047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (135647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (135787) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (135787) wifi:sta is connecting, return error[0m
+[0;33mW (136247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (136397) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (136397) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (136397) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (136847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (137297) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (137447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (138047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (138197) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (138197) wifi:sta is connecting, return error[0m
+[0;33mW (138647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (139097) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (139097) wifi:sta is connecting, return error[0m
+[0;33mW (139247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (139707) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (139707) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (139707) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (139847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (140447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (140607) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (141047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (141507) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (141507) wifi:sta is connecting, return error[0m
+[0;33mW (141647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (142247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (142407) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (142407) wifi:sta is connecting, return error[0m
+[0;33mW (142847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (143017) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (143017) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (143017) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (143447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (143917) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (144047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (144647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (144817) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (144817) wifi:sta is connecting, return error[0m
+[0;33mW (145247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (145717) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (145717) wifi:sta is connecting, return error[0m
+[0;33mW (145847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (146327) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (146327) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (146327) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (146447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (147047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (147227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (147647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (148127) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (148127) wifi:sta is connecting, return error[0m
+[0;33mW (148247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (148847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (149027) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (149027) wifi:sta is connecting, return error[0m
+[0;33mW (149447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (149637) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (149637) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (149637) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (150047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (150537) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (150647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (151247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (151437) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (151437) wifi:sta is connecting, return error[0m
+[0;33mW (151847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (152337) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (152337) wifi:sta is connecting, return error[0m
+[0;33mW (152447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (152947) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (152947) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (152947) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (153047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (153647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (153847) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (154247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (154747) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (154747) wifi:sta is connecting, return error[0m
+[0;33mW (154847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (155447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (155647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (155647) wifi:sta is connecting, return error[0m
+[0;33mW (156047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (156257) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (156257) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (156257) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (156647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (157157) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (157247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (157847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (158057) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (158057) wifi:sta is connecting, return error[0m
+[0;33mW (158447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (158957) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (158957) wifi:sta is connecting, return error[0m
+[0;33mW (159047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (159567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (159567) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (159567) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (159647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (160247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (160467) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (160847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (161367) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (161367) wifi:sta is connecting, return error[0m
+[0;33mW (161447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (162047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (162267) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (162267) wifi:sta is connecting, return error[0m
+[0;33mW (162647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (162877) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (162877) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (162877) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (163247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (163777) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (163847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (164447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (164677) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (164677) wifi:sta is connecting, return error[0m
+[0;33mW (165047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (165577) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (165577) wifi:sta is connecting, return error[0m
+[0;33mW (165647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (166187) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (166187) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (166187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (166247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (166847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (167087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (167447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (167987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (167987) wifi:sta is connecting, return error[0m
+[0;33mW (168047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (168647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (168887) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (168887) wifi:sta is connecting, return error[0m
+[0;33mW (169247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (169497) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (169497) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (169497) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (169847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (170397) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (170447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (171047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (171297) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (171297) wifi:sta is connecting, return error[0m
+[0;33mW (171647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (172197) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (172197) wifi:sta is connecting, return error[0m
+[0;33mW (172247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (172807) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (172807) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (172807) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (172847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (173447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (173707) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (174047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (174607) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (174607) wifi:sta is connecting, return error[0m
+[0;33mW (174647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (175247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (175507) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (175507) wifi:sta is connecting, return error[0m
+[0;33mW (175847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (176117) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (176117) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (176117) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (176447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (177017) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (177047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (177647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (177917) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (177917) wifi:sta is connecting, return error[0m
+[0;33mW (178247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (178817) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (178817) wifi:sta is connecting, return error[0m
+[0;33mW (178847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (179427) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (179427) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (179427) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (179447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (180047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (180327) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (180647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (181227) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (181227) wifi:sta is connecting, return error[0m
+[0;33mW (181247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (181847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (182127) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (182127) wifi:sta is connecting, return error[0m
+[0;33mW (182447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (182737) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (182737) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (182737) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (183047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (183637) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (183647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (184247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (184537) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (184537) wifi:sta is connecting, return error[0m
+[0;33mW (184847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (185437) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (185437) wifi:sta is connecting, return error[0m
+[0;33mW (185447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (186047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (186047) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (186047) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (186047) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (186647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (186957) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (187247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (187847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (187857) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (187857) wifi:sta is connecting, return error[0m
+[0;33mW (188447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (188757) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (188757) wifi:sta is connecting, return error[0m
+[0;33mW (189047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (189367) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (189367) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (189367) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (189647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (190247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (190267) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (190847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (191167) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (191167) wifi:sta is connecting, return error[0m
+[0;33mW (191447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (192047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (192067) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (192067) wifi:sta is connecting, return error[0m
+[0;33mW (192647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (192677) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (192677) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (192677) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (193247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (193577) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (193847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (194447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (194477) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (194477) wifi:sta is connecting, return error[0m
+[0;33mW (195047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (195377) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (195377) wifi:sta is connecting, return error[0m
+[0;33mW (195647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (195987) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (195987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (195987) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (196247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (196847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (196887) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (197447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (197787) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (197787) wifi:sta is connecting, return error[0m
+[0;33mW (198047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (198647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (198687) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (198687) wifi:sta is connecting, return error[0m
+[0;33mW (199247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (199297) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (199297) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (199297) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (199847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (200197) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (200447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (201047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (201097) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (201097) wifi:sta is connecting, return error[0m
+[0;33mW (201647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (201997) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (201997) wifi:sta is connecting, return error[0m
+[0;33mW (202247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (202607) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (202607) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (202607) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (202847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (203447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (203507) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (204047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (204407) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (204407) wifi:sta is connecting, return error[0m
+[0;33mW (204647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (205247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (205307) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (205307) wifi:sta is connecting, return error[0m
+[0;33mW (205847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (205917) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (205917) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (205917) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (206447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (206817) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (207047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (207647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (207717) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (207717) wifi:sta is connecting, return error[0m
+[0;33mW (208247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (208617) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (208617) wifi:sta is connecting, return error[0m
+[0;33mW (208847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (209227) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (209227) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (209227) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (209447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (210047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (210127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (210647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (211027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (211027) wifi:sta is connecting, return error[0m
+[0;33mW (211247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (211847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (211927) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (211927) wifi:sta is connecting, return error[0m
+[0;33mW (212447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (212537) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (212537) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (212537) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (213047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (213437) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (213647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (214247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (214337) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (214337) wifi:sta is connecting, return error[0m
+[0;33mW (214847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (215237) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (215237) wifi:sta is connecting, return error[0m
+[0;33mW (215447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (215847) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (215847) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (215847) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (216047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (216647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (216747) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (217247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (217647) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (217647) wifi:sta is connecting, return error[0m
+[0;33mW (217847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (218447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (218547) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (218547) wifi:sta is connecting, return error[0m
+[0;33mW (219047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (219157) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (219157) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (219157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (219647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (220057) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (220247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (220847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (220957) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (220957) wifi:sta is connecting, return error[0m
+[0;33mW (221447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (221857) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (221857) wifi:sta is connecting, return error[0m
+[0;33mW (222047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (222467) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (222467) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (222467) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (222647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (223247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (223367) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (223847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (224267) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (224267) wifi:sta is connecting, return error[0m
+[0;33mW (224447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (225047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (225167) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (225167) wifi:sta is connecting, return error[0m
+[0;33mW (225647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (225777) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (225777) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (225777) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (226247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (226677) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (226847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (227447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (227577) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (227577) wifi:sta is connecting, return error[0m
+[0;33mW (228047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (228477) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (228477) wifi:sta is connecting, return error[0m
+[0;33mW (228647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (229087) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (229087) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (229087) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (229247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (229847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (229987) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (230447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (230887) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (230887) wifi:sta is connecting, return error[0m
+[0;33mW (231047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (231647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (231787) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (231787) wifi:sta is connecting, return error[0m
+[0;33mW (232247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (232397) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (232397) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (232397) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (232847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (233297) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (233447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (234047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (234197) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (234197) wifi:sta is connecting, return error[0m
+[0;33mW (234647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (235097) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (235097) wifi:sta is connecting, return error[0m
+[0;33mW (235247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (235707) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (235707) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (235707) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (235847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (236447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (236607) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (237047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (237507) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (237507) wifi:sta is connecting, return error[0m
+[0;33mW (237647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (238247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (238407) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (238407) wifi:sta is connecting, return error[0m
+[0;33mW (238847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (239017) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (239017) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (239017) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (239447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (239917) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (240047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (240647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (240817) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (240817) wifi:sta is connecting, return error[0m
+[0;33mW (241247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (241717) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (241717) wifi:sta is connecting, return error[0m
+[0;33mW (241847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (242327) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (242327) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (242327) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (242447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (243047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (243227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (243647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (244127) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (244127) wifi:sta is connecting, return error[0m
+[0;33mW (244247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (244847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (245027) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (245027) wifi:sta is connecting, return error[0m
+[0;33mW (245447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (245637) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (245637) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (245637) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (246047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (246537) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (246647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (247247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (247437) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (247437) wifi:sta is connecting, return error[0m
+[0;33mW (247847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (248337) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (248337) wifi:sta is connecting, return error[0m
+[0;33mW (248447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (248947) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (248947) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (248947) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (249047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (249647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (249847) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (250247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (250747) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (250747) wifi:sta is connecting, return error[0m
+[0;33mW (250847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (251447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (251647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (251647) wifi:sta is connecting, return error[0m
+[0;33mW (252047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (252257) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (252257) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (252257) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (252647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (253157) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (253247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (253847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (254057) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (254057) wifi:sta is connecting, return error[0m
+[0;33mW (254447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (254957) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (254957) wifi:sta is connecting, return error[0m
+[0;33mW (255047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (255567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (255567) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (255567) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (255647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (256247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (256467) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (256847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (257367) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (257367) wifi:sta is connecting, return error[0m
+[0;33mW (257447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (258047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (258267) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (258267) wifi:sta is connecting, return error[0m
+[0;33mW (258647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (258877) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (258877) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (258877) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (259247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (259777) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (259847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (260447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (260677) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (260677) wifi:sta is connecting, return error[0m
+[0;33mW (261047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (261577) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (261577) wifi:sta is connecting, return error[0m
+[0;33mW (261647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (262187) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (262187) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (262187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (262247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (262847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (263087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (263447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (263987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (263987) wifi:sta is connecting, return error[0m
+[0;33mW (264047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (264647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (264887) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (264887) wifi:sta is connecting, return error[0m
+[0;33mW (265247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (265497) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (265497) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (265497) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (265847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (266397) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (266447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (267047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (267297) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (267297) wifi:sta is connecting, return error[0m
+[0;33mW (267647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (268197) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (268197) wifi:sta is connecting, return error[0m
+[0;33mW (268247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (268807) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (268807) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (268807) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (268847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (269447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (269707) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (270047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (270607) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (270607) wifi:sta is connecting, return error[0m
+[0;33mW (270647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (271247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (271507) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (271507) wifi:sta is connecting, return error[0m
+[0;33mW (271847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (272117) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (272117) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (272117) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (272447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (273017) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (273047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (273647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (273917) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (273917) wifi:sta is connecting, return error[0m
+[0;33mW (274247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (274817) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (274817) wifi:sta is connecting, return error[0m
+[0;33mW (274847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (275427) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (275427) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (275427) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (275447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (276047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (276327) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (276647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (277227) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (277227) wifi:sta is connecting, return error[0m
+[0;33mW (277247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (277847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (278127) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (278127) wifi:sta is connecting, return error[0m
+[0;33mW (278447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (278737) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (278737) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (278737) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (279047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (279637) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (279647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (280247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (280537) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (280537) wifi:sta is connecting, return error[0m
+[0;33mW (280847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (281437) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (281437) wifi:sta is connecting, return error[0m
+[0;33mW (281447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (282047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (282047) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (282047) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (282047) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (282647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (282957) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (283247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (283847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (283857) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (283857) wifi:sta is connecting, return error[0m
+[0;33mW (284447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (284757) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (284757) wifi:sta is connecting, return error[0m
+[0;33mW (285047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (285367) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (285367) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (285367) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (285647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (286247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (286267) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (286847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (287167) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (287167) wifi:sta is connecting, return error[0m
+[0;33mW (287447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (288047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (288067) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (288067) wifi:sta is connecting, return error[0m
+[0;33mW (288647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (288677) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (288677) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (288677) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (289247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (289577) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (289847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (290447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (290477) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (290477) wifi:sta is connecting, return error[0m
+[0;33mW (291047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (291377) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (291377) wifi:sta is connecting, return error[0m
+[0;33mW (291647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (291987) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (291987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (291987) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (292247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (292847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (292887) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (293447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (293787) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (293787) wifi:sta is connecting, return error[0m
+[0;33mW (294047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (294647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (294687) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (294687) wifi:sta is connecting, return error[0m
+[0;33mW (295247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (295297) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (295297) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (295297) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (295847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (296197) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (296447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (297047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (297097) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (297097) wifi:sta is connecting, return error[0m
+[0;33mW (297647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (297997) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (297997) wifi:sta is connecting, return error[0m
+[0;33mW (298247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (298607) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (298607) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (298607) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (298847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (299447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (299507) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (300047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (300407) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (300407) wifi:sta is connecting, return error[0m
+[0;33mW (300647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (301247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (301307) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (301307) wifi:sta is connecting, return error[0m
+[0;33mW (301847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (301917) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (301917) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (301917) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (302447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (302817) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (303047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (303647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (303717) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (303717) wifi:sta is connecting, return error[0m
+[0;33mW (304247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (304617) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (304617) wifi:sta is connecting, return error[0m
+[0;33mW (304847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (305227) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (305227) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (305227) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (305447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (306047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (306127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (306647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (307027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (307027) wifi:sta is connecting, return error[0m
+[0;33mW (307247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (307847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (307927) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (307927) wifi:sta is connecting, return error[0m
+[0;33mW (308447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (308537) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (308537) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (308537) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (309047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (309437) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (309647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (310247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (310337) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (310337) wifi:sta is connecting, return error[0m
+[0;33mW (310847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (311237) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (311237) wifi:sta is connecting, return error[0m
+[0;33mW (311447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (311847) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (311847) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (311847) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (312047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (312647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (312747) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (313247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (313647) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (313647) wifi:sta is connecting, return error[0m
+[0;33mW (313847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (314447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (314547) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (314547) wifi:sta is connecting, return error[0m
+[0;33mW (315047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (315157) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (315157) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (315157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (315647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (316057) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (316247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (316847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (316957) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (316957) wifi:sta is connecting, return error[0m
+[0;33mW (317447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (317857) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (317857) wifi:sta is connecting, return error[0m
+[0;33mW (318047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (318467) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (318467) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (318467) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (318647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (319247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (319367) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (319847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (320267) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (320267) wifi:sta is connecting, return error[0m
+[0;33mW (320447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (321047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (321167) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (321167) wifi:sta is connecting, return error[0m
+[0;33mW (321647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (321777) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (321777) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (321777) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (322247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (322677) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (322847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (323447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (323577) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (323577) wifi:sta is connecting, return error[0m
+[0;33mW (324047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (324477) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (324477) wifi:sta is connecting, return error[0m
+[0;33mW (324647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (325087) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (325087) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (325087) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (325247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (325847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (325987) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (326447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (326887) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (326887) wifi:sta is connecting, return error[0m
+[0;33mW (327047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (327647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (327787) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (327787) wifi:sta is connecting, return error[0m
+[0;33mW (328247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (328397) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (328397) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (328397) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (328847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (329297) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (329447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (330047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (330197) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (330197) wifi:sta is connecting, return error[0m
+[0;33mW (330647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (331097) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (331097) wifi:sta is connecting, return error[0m
+[0;33mW (331247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (331707) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (331707) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (331707) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (331847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (332447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (332607) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (333047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (333507) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (333507) wifi:sta is connecting, return error[0m
+[0;33mW (333647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (334247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (334407) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (334407) wifi:sta is connecting, return error[0m
+[0;33mW (334847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (335017) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (335017) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (335017) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (335447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (335917) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (336047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (336647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (336817) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (336817) wifi:sta is connecting, return error[0m
+[0;33mW (337247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (337717) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (337717) wifi:sta is connecting, return error[0m
+[0;33mW (337847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (338327) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (338327) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (338327) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (338447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (339047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (339227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (339647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (340127) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (340127) wifi:sta is connecting, return error[0m
+[0;33mW (340247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (340847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (341027) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (341027) wifi:sta is connecting, return error[0m
+[0;33mW (341447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (341637) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (341637) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (341637) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (342047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (342537) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (342647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (343247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (343437) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (343437) wifi:sta is connecting, return error[0m
+[0;33mW (343847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (344337) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (344337) wifi:sta is connecting, return error[0m
+[0;33mW (344447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (344947) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (344947) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (344947) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (345047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (345647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (345847) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (346247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (346747) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (346747) wifi:sta is connecting, return error[0m
+[0;33mW (346847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (347447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (347647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (347647) wifi:sta is connecting, return error[0m
+[0;33mW (348047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (348257) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (348257) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (348257) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (348647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (349157) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (349247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (349847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (350057) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (350057) wifi:sta is connecting, return error[0m
+[0;33mW (350447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (350957) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (350957) wifi:sta is connecting, return error[0m
+[0;33mW (351047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (351567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (351567) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (351567) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (351647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (352247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (352467) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (352847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (353367) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (353367) wifi:sta is connecting, return error[0m
+[0;33mW (353447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (354047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (354267) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (354267) wifi:sta is connecting, return error[0m
+[0;33mW (354647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (354877) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (354877) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (354877) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (355247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (355777) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (355847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (356447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (356677) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (356677) wifi:sta is connecting, return error[0m
+[0;33mW (357047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (357577) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (357577) wifi:sta is connecting, return error[0m
+[0;33mW (357647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (358187) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (358187) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (358187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (358247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (358847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (359087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (359447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (359987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (359987) wifi:sta is connecting, return error[0m
+[0;33mW (360047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (360647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (360887) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (360887) wifi:sta is connecting, return error[0m
+[0;33mW (361247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (361497) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (361497) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (361497) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (361847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (362397) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (362447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (363047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (363297) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (363297) wifi:sta is connecting, return error[0m
+[0;33mW (363647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (364197) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (364197) wifi:sta is connecting, return error[0m
+[0;33mW (364247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (364807) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (364807) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (364807) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (364847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (365447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (365707) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (366047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (366607) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (366607) wifi:sta is connecting, return error[0m
+[0;33mW (366647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (367247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (367507) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (367507) wifi:sta is connecting, return error[0m
+[0;33mW (367847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (368117) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (368117) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (368117) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (368447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (369017) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (369047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (369647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (369917) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (369917) wifi:sta is connecting, return error[0m
+[0;33mW (370247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (370817) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (370817) wifi:sta is connecting, return error[0m
+[0;33mW (370847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (371427) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (371427) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (371427) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (371447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (372047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (372327) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (372647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (373227) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (373227) wifi:sta is connecting, return error[0m
+[0;33mW (373247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (373847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (374127) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (374127) wifi:sta is connecting, return error[0m
+[0;33mW (374447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (374737) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (374737) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (374737) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (375047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (375637) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (375647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (376247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (376537) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (376537) wifi:sta is connecting, return error[0m
+[0;33mW (376847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (377437) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (377437) wifi:sta is connecting, return error[0m
+[0;33mW (377447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (378047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (378047) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (378047) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (378047) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (378647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (378957) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (379247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (379847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (379857) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (379857) wifi:sta is connecting, return error[0m
+[0;33mW (380447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (380757) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (380757) wifi:sta is connecting, return error[0m
+[0;33mW (381047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (381367) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (381367) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (381367) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (381647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (382247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (382267) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (382847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (383167) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (383167) wifi:sta is connecting, return error[0m
+[0;33mW (383447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (384047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (384067) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (384067) wifi:sta is connecting, return error[0m
+[0;33mW (384647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (384677) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (384677) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (384677) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (385247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (385577) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (385847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (386447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (386477) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (386477) wifi:sta is connecting, return error[0m
+[0;33mW (387047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (387377) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (387377) wifi:sta is connecting, return error[0m
+[0;33mW (387647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (387987) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (387987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (387987) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (388247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (388847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (388887) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (389447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (389787) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (389787) wifi:sta is connecting, return error[0m
+[0;33mW (390047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (390647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (390687) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (390687) wifi:sta is connecting, return error[0m
+[0;33mW (391247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (391297) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (391297) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (391297) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (391847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (392197) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (392447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (393047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (393097) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (393097) wifi:sta is connecting, return error[0m
+[0;33mW (393647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (393997) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (393997) wifi:sta is connecting, return error[0m
+[0;33mW (394247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (394607) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (394607) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (394607) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (394847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (395447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (395507) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (396047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (396407) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (396407) wifi:sta is connecting, return error[0m
+[0;33mW (396647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (397247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (397307) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (397307) wifi:sta is connecting, return error[0m
+[0;33mW (397847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (397917) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (397917) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (397917) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (398447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (398817) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (399047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (399647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (399717) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (399717) wifi:sta is connecting, return error[0m
+[0;33mW (400247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (400617) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (400617) wifi:sta is connecting, return error[0m
+[0;33mW (400847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (401227) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (401227) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (401227) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (401447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (402047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (402127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (402647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (403027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (403027) wifi:sta is connecting, return error[0m
+[0;33mW (403247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (403847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (403927) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (403927) wifi:sta is connecting, return error[0m
+[0;33mW (404447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (404537) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (404537) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (404537) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (405047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (405437) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (405647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (406247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (406337) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (406337) wifi:sta is connecting, return error[0m
+[0;33mW (406847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (407237) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (407237) wifi:sta is connecting, return error[0m
+[0;33mW (407447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (407847) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (407847) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (407847) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (408047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (408647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (408747) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (409247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (409647) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (409647) wifi:sta is connecting, return error[0m
+[0;33mW (409847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (410447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (410547) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (410547) wifi:sta is connecting, return error[0m
+[0;33mW (411047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (411157) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (411157) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (411157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (411647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (412057) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (412247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (412847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (412957) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (412957) wifi:sta is connecting, return error[0m
+[0;33mW (413447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (413857) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (413857) wifi:sta is connecting, return error[0m
+[0;33mW (414047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (414467) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (414467) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (414467) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (414647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (415247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (415367) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (415847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (416267) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (416267) wifi:sta is connecting, return error[0m
+[0;33mW (416447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (417047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (417167) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (417167) wifi:sta is connecting, return error[0m
+[0;33mW (417647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (417777) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (417777) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (417777) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (418247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (418677) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (418847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (419447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (419577) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (419577) wifi:sta is connecting, return error[0m
+[0;33mW (420047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (420477) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (420477) wifi:sta is connecting, return error[0m
+[0;33mW (420647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (421087) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (421087) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (421087) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (421247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (421847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (421987) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (422447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (422887) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (422887) wifi:sta is connecting, return error[0m
+[0;33mW (423047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (423647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (423787) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (423787) wifi:sta is connecting, return error[0m
+[0;33mW (424247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (424397) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (424397) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (424397) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (424847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (425297) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (425447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (426047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (426197) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (426197) wifi:sta is connecting, return error[0m
+[0;33mW (426647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (427097) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (427097) wifi:sta is connecting, return error[0m
+[0;33mW (427247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (427707) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (427707) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (427707) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (427847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (428447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (428607) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (429047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (429507) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (429507) wifi:sta is connecting, return error[0m
+[0;33mW (429647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (430247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (430407) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (430407) wifi:sta is connecting, return error[0m
+[0;33mW (430847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (431017) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (431017) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (431017) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (431447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (431917) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (432047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (432647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (432817) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (432817) wifi:sta is connecting, return error[0m
+[0;33mW (433247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (433717) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (433717) wifi:sta is connecting, return error[0m
+[0;33mW (433847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (434327) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (434327) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (434327) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (434447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (435047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (435227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (435647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (436127) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (436127) wifi:sta is connecting, return error[0m
+[0;33mW (436247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (436847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (437027) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (437027) wifi:sta is connecting, return error[0m
+[0;33mW (437447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (437637) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (437637) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (437637) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (438047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (438537) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (438647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (439247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (439437) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (439437) wifi:sta is connecting, return error[0m
+[0;33mW (439847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (440337) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (440337) wifi:sta is connecting, return error[0m
+[0;33mW (440447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (440947) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (440947) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (440947) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (441047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (441647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (441847) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (442247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (442747) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (442747) wifi:sta is connecting, return error[0m
+[0;33mW (442847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (443447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (443647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (443647) wifi:sta is connecting, return error[0m
+[0;33mW (444047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (444257) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (444257) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (444257) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (444647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (445157) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (445247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (445847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (446057) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (446057) wifi:sta is connecting, return error[0m
+[0;33mW (446447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (446957) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (446957) wifi:sta is connecting, return error[0m
+[0;33mW (447047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (447567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (447567) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (447567) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (447647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (448247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (448467) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (448847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (449367) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (449367) wifi:sta is connecting, return error[0m
+[0;33mW (449447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (450047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (450267) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (450267) wifi:sta is connecting, return error[0m
+[0;33mW (450647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (450877) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (450877) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (450877) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (451247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (451777) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (451847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (452447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (452677) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (452677) wifi:sta is connecting, return error[0m
+[0;33mW (453047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (453577) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (453577) wifi:sta is connecting, return error[0m
+[0;33mW (453647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (454187) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (454187) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (454187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (454247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (454847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (455087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (455447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (455987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (455987) wifi:sta is connecting, return error[0m
+[0;33mW (456047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (456647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (456887) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (456887) wifi:sta is connecting, return error[0m
+[0;33mW (457247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (457497) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (457497) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (457497) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (457847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (458397) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (458447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (459047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (459297) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (459297) wifi:sta is connecting, return error[0m
+[0;33mW (459647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (460197) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (460197) wifi:sta is connecting, return error[0m
+[0;33mW (460247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (460807) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (460807) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (460807) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (460847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (461447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (461707) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (462047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (462607) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (462607) wifi:sta is connecting, return error[0m
+[0;33mW (462647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (463247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (463507) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (463507) wifi:sta is connecting, return error[0m
+[0;33mW (463847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (464117) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (464117) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (464117) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (464447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (465017) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (465047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (465647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (465917) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (465917) wifi:sta is connecting, return error[0m
+[0;33mW (466247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (466817) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (466817) wifi:sta is connecting, return error[0m
+[0;33mW (466847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (467427) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (467427) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (467427) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (467447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (468047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (468327) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (468647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (469227) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (469227) wifi:sta is connecting, return error[0m
+[0;33mW (469247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (469847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (470127) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (470127) wifi:sta is connecting, return error[0m
+[0;33mW (470447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (470737) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (470737) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (470737) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (471047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (471637) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (471647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (472247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (472537) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (472537) wifi:sta is connecting, return error[0m
+[0;33mW (472847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (473437) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (473437) wifi:sta is connecting, return error[0m
+[0;33mW (473447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (474047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (474047) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (474047) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (474047) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (474647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (474957) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (475247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (475847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (475857) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (475857) wifi:sta is connecting, return error[0m
+[0;33mW (476447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (476757) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (476757) wifi:sta is connecting, return error[0m
+[0;33mW (477047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (477367) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (477367) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (477367) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (477647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (478247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (478267) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (478847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (479167) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (479167) wifi:sta is connecting, return error[0m
+[0;33mW (479447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (480047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (480067) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (480067) wifi:sta is connecting, return error[0m
+[0;33mW (480647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (480677) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (480677) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (480677) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (481247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (481577) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (481847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (482447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (482477) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (482477) wifi:sta is connecting, return error[0m
+[0;33mW (483047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (483377) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (483377) wifi:sta is connecting, return error[0m
+[0;33mW (483647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (483987) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (483987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (483987) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (484247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (484847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (484887) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (485447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (485787) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (485787) wifi:sta is connecting, return error[0m
+[0;33mW (486047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (486647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (486687) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (486687) wifi:sta is connecting, return error[0m
+[0;33mW (487247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (487297) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (487297) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (487297) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (487847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (488197) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (488447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (489047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (489097) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (489097) wifi:sta is connecting, return error[0m
+[0;33mW (489647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (489997) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (489997) wifi:sta is connecting, return error[0m
+[0;33mW (490247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (490607) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (490607) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (490607) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (490847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (491447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (491507) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (492047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (492407) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (492407) wifi:sta is connecting, return error[0m
+[0;33mW (492647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (493247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (493307) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (493307) wifi:sta is connecting, return error[0m
+[0;33mW (493847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (493917) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (493917) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (493917) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (494447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (494817) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (495047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (495647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (495717) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (495717) wifi:sta is connecting, return error[0m
+[0;33mW (496247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (496617) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (496617) wifi:sta is connecting, return error[0m
+[0;33mW (496847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (497227) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (497227) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (497227) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (497447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (498047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (498127) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (498647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (499027) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (499027) wifi:sta is connecting, return error[0m
+[0;33mW (499247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (499847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (499927) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (499927) wifi:sta is connecting, return error[0m
+[0;33mW (500447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (500537) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (500537) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (500537) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (501047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (501437) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (501647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (502247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (502337) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (502337) wifi:sta is connecting, return error[0m
+[0;33mW (502847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (503237) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (503237) wifi:sta is connecting, return error[0m
+[0;33mW (503447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (503847) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (503847) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (503847) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (504047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (504647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (504747) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (505247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (505647) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (505647) wifi:sta is connecting, return error[0m
+[0;33mW (505847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (506447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (506547) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (506547) wifi:sta is connecting, return error[0m
+[0;33mW (507047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (507157) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (507157) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (507157) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (507647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (508057) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (508247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (508847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (508957) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (508957) wifi:sta is connecting, return error[0m
+[0;33mW (509447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (509857) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (509857) wifi:sta is connecting, return error[0m
+[0;33mW (510047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (510467) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (510467) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (510467) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (510647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (511247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (511367) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (511847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (512267) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (512267) wifi:sta is connecting, return error[0m
+[0;33mW (512447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (513047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (513167) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (513167) wifi:sta is connecting, return error[0m
+[0;33mW (513647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (513777) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (513777) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (513777) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (514247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (514677) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (514847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (515447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (515577) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (515577) wifi:sta is connecting, return error[0m
+[0;33mW (516047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (516477) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (516477) wifi:sta is connecting, return error[0m
+[0;33mW (516647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (517087) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (517087) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (517087) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (517247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (517847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (517987) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (518447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (518887) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (518887) wifi:sta is connecting, return error[0m
+[0;33mW (519047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (519647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (519787) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (519787) wifi:sta is connecting, return error[0m
+[0;33mW (520247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (520397) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (520397) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (520397) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (520847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (521297) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (521447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (522047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (522197) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (522197) wifi:sta is connecting, return error[0m
+[0;33mW (522647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (523097) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (523097) wifi:sta is connecting, return error[0m
+[0;33mW (523247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (523707) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (523707) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (523707) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (523847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (524447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (524607) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (525047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (525507) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (525507) wifi:sta is connecting, return error[0m
+[0;33mW (525647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (526247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (526407) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (526407) wifi:sta is connecting, return error[0m
+[0;33mW (526847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (527017) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (527017) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (527017) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (527447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (527917) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (528047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (528647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (528817) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (528817) wifi:sta is connecting, return error[0m
+[0;33mW (529247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (529717) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (529717) wifi:sta is connecting, return error[0m
+[0;33mW (529847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (530327) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (530327) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (530327) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (530447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (531047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (531227) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (531647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (532127) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (532127) wifi:sta is connecting, return error[0m
+[0;33mW (532247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (532847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (533027) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (533027) wifi:sta is connecting, return error[0m
+[0;33mW (533447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (533637) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (533637) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (533637) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (534047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (534537) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (534647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (535247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (535437) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (535437) wifi:sta is connecting, return error[0m
+[0;33mW (535847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (536337) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (536337) wifi:sta is connecting, return error[0m
+[0;33mW (536447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (536947) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (536947) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (536947) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (537047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (537647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (537847) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (538247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (538747) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (538747) wifi:sta is connecting, return error[0m
+[0;33mW (538847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (539447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (539647) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (539647) wifi:sta is connecting, return error[0m
+[0;33mW (540047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (540257) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (540257) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (540257) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (540647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (541157) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (541247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (541847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (542057) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (542057) wifi:sta is connecting, return error[0m
+[0;33mW (542447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (542957) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (542957) wifi:sta is connecting, return error[0m
+[0;33mW (543047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (543567) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (543567) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (543567) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (543647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (544247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (544467) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (544847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (545367) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (545367) wifi:sta is connecting, return error[0m
+[0;33mW (545447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (546047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (546267) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (546267) wifi:sta is connecting, return error[0m
+[0;33mW (546647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (546877) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (546877) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (546877) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (547247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (547777) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (547847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (548447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (548677) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (548677) wifi:sta is connecting, return error[0m
+[0;33mW (549047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (549577) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (549577) wifi:sta is connecting, return error[0m
+[0;33mW (549647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (550187) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (550187) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (550187) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (550247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (550847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (551087) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (551447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (551987) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (551987) wifi:sta is connecting, return error[0m
+[0;33mW (552047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (552647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (552887) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (552887) wifi:sta is connecting, return error[0m
+[0;33mW (553247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (553497) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (553497) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (553497) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (553847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (554397) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (554447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (555047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (555297) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (555297) wifi:sta is connecting, return error[0m
+[0;33mW (555647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (556197) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (556197) wifi:sta is connecting, return error[0m
+[0;33mW (556247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (556807) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (556807) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (556807) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (556847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (557447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (557707) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (558047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (558607) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (558607) wifi:sta is connecting, return error[0m
+[0;33mW (558647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (559247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (559507) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (559507) wifi:sta is connecting, return error[0m
+[0;33mW (559847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (560117) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (560117) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (560117) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (560447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (561017) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (561047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (561647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (561917) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (561917) wifi:sta is connecting, return error[0m
+[0;33mW (562247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (562817) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (562817) wifi:sta is connecting, return error[0m
+[0;33mW (562847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (563427) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (563427) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (563427) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (563447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (564047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (564327) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (564647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (565227) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (565227) wifi:sta is connecting, return error[0m
+[0;33mW (565247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (565847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (566127) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (566127) wifi:sta is connecting, return error[0m
+[0;33mW (566447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (566737) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (566737) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (566737) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (567047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (567637) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (567647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (568247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (568537) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (568537) wifi:sta is connecting, return error[0m
+[0;33mW (568847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (569437) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (569437) wifi:sta is connecting, return error[0m
+[0;33mW (569447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (570047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (570047) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (570047) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (570047) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (570647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (570957) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (571247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (571847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (571857) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (571857) wifi:sta is connecting, return error[0m
+[0;33mW (572447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (572757) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (572757) wifi:sta is connecting, return error[0m
+[0;33mW (573047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (573367) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (573367) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (573367) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (573647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (574247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (574267) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (574847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (575167) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (575167) wifi:sta is connecting, return error[0m
+[0;33mW (575447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (576047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (576067) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (576067) wifi:sta is connecting, return error[0m
+[0;33mW (576647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (576677) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (576677) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (576677) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (577247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (577577) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (577847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (578447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (578477) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (578477) wifi:sta is connecting, return error[0m
+[0;33mW (579047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (579377) KEYPAD: WiFi reconnect attempt (3/5)[0m
+[1;31mE (579377) wifi:sta is connecting, return error[0m
+[0;33mW (579647) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (579987) KEYPAD: STA disconnected, reason=201[0m
+[1;31mE (579987) KEYPAD: Saved WiFi connection failed after 3 retries[0m
+[0;32mI (579987) KEYPAD: WiFi disconnect signal received[0m
+[0;33mW (580247) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;33mW (580847) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (580887) KEYPAD: WiFi reconnect attempt (1/5)[0m
+[0;33mW (581447) KEYPAD: WiFi not connected, skip MQTT reconnect[0m
+[0;32mI (581787) KEYPAD: WiFi reconnect attempt (2/5)[0m
+[1;31mE (581787) wifi:sta is connecting, return error[0m
+[0;33mW (582047) KEYPAD: WiFi not connected, skip MQTT reconnect[0m

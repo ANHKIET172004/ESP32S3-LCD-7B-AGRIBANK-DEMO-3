@@ -1,0 +1,650 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+��(34) boot.esp32: SPI Spe�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=208e8h (133352) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030910 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030938 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000348f8 vaddr=40080000 size=0b720h ( 46880) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a618ch (680332) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e61b4 vaddr=4008b720 size=0dd00h ( 56576) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (454) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (464) app_init: ELF file SHA256:  29bd128f4...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8B08 len 000274F8 (157 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;33mW (556) KEYPAD: Failed to open NVS handle for user_id: ESP_ERR_NVS_NOT_INITIALIZED[0m
+[0;32mI (556) KEYPAD: No saved user_id, using default: 00[0m
+[0;32mI (556) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (566) KEYPAD: LED OFF[0m
+[0;32mI (566) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2166) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2166) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2206) wifi:wifi driver task: 3ffc169c, prio:23, stack:6656, core=0[0m
+[0;32mI (2216) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2216) wifi:wifi certification version: v7.0[0m
+[0;32mI (2216) wifi:config NVS flash: enabled[0m
+[0;32mI (2216) wifi:config nano formatting: disabled[0m
+[0;32mI (2226) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2226) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2236) wifi:Init management short buffer num: 32[0m
+[0;32mI (2236) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2236) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2246) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2246) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2256) wifi_init: rx ba win: 6[0m
+[0;32mI (2256) wifi_init: accept mbox: 6[0m
+[0;32mI (2256) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2256) wifi_init: udp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2266) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2276) wifi_init: tcp mss: 1440[0m
+[0;32mI (2276) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2276) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2336) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2426) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2426) wifi:enable tsf[0m
+[0;32mI (2426) KEYPAD: WiFi STA started[0m
+[0;32mI (2426) KEYPAD: WiFi initialized[0m
+[1;31mE (2426) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2426) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2436) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2496) wifi:flush txq[0m
+[0;32mI (2496) wifi:stop sw txq[0m
+[0;32mI (2496) wifi:lmac stop hw txq[0m
+[0;32mI (2496) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2496) wifi:enable tsf[0m
+[0;32mI (2496) KEYPAD: WiFi STA started[0m
+[1;31mE (2506) wifi:sta is connecting, return error[0m
+[0;32mI (2786) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2796) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2806) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2816) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2876) wifi:connected with NamTrung, aid = 22, channel 6, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (2876) wifi:security: WPA2-PSK, phy: bgn, rssi: -68[0m
+[0;32mI (2886) wifi:pm start, type: 1[0m
+
+[0;32mI (2886) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2886) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (2926) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2986) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+Key pressed: A
+Key pressed: B
+Key pressed: A
+[0;32mI (21816) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (22336) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (23686) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:1, ssn:1, winSize:64[0m
+Key pressed: A
+Key pressed: D
+Key pressed: *
+Key pressed: 6
+Key pressed: 6
+Key pressed: *
+Key pressed: 2
+Key pressed: 6
+Key pressed: *
+Key pressed: 8
+Key pressed: *
+Key pressed: 7
+Key pressed: 7
+Key pressed: 7
+Key pressed: 8
+Key pressed: 8
+Key pressed: 6
+Key pressed: 6
+Key pressed: 4
+Key pressed: 0
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 0
+Key pressed: #
+Key pressed: 1
+Key pressed: 1
+Key pressed: #
+Key pressed: #
+Key pressed: C
+Key pressed: C
+Key pressed: 1
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: *
+Key pressed: 4
+Key pressed: D
+Key pressed: *
+Key pressed: 6
+Key pressed: 6
+Key pressed: C
+Key pressed: 6
+Key pressed: C
+Key pressed: *
+Key pressed: 6
+Key pressed: 6
+Key pressed: 8
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: #
+Key pressed: C
+Key pressed: C
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: C
+Key pressed: C
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 4
+Key pressed: 0
+Key pressed: 0
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 9
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 2
+Key pressed: 0
+Key pressed: 0
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: 1
+Key pressed: D
+[0;32mI (96816) wifi:state: run -> init (0x0)[0m
+[0;32mI (96826) wifi:pm stop, total sleep time: 69245882 us / 93937925 us[0m
+
+[0;32mI (96826) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (96826) wifi:<ba-del>idx:1, tid:1[0m
+[0;32mI (96826) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (96846) KEYPAD: STA disconnected, reason=8[0m
+[1;31mE (96886) wifi:sta is connecting, return error[0m
+[0;32mI (99306) KEYPAD: STA disconnected, reason=201[0m
+[0;33mW (99306) KEYPAD: WiFi connection failed, retry count: 2/5[0m
+[0;32mI (101726) KEYPAD: STA disconnected, reason=201[0m
+[0;33mW (101726) KEYPAD: WiFi connection failed, retry count: 3/5[0m
+[0;32mI (104136) KEYPAD: STA disconnected, reason=201[0m
+[0;33mW (104146) KEYPAD: WiFi connection failed, retry count: 4/5[0m
+[0;32mI (106556) KEYPAD: STA disconnected, reason=201[0m
+[0;33mW (106556) KEYPAD: WiFi connection failed, retry count: 5/5[0m
+[1;31mE (106556) KEYPAD: WiFi connection failed after 5 retries[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=208e8h (133352) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030910 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030938 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000348f8 vaddr=40080000 size=0b720h ( 46880) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a618ch (680332) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e61b4 vaddr=4008b720 size=0dd00h ( 56576) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (454) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (464) app_init: ELF file SHA256:  29bd128f4...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8B08 len 000274F8 (157 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;33mW (556) KEYPAD: Failed to open NVS handle for user_id: ESP_ERR_NVS_NOT_INITIALIZED[0m
+[0;32mI (556) KEYPAD: No saved user_id, using default: 00[0m
+[0;32mI (556) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (566) KEYPAD: LED OFF[0m
+[0;32mI (566) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2166) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2166) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2206) wifi:wifi driver task: 3ffc169c, prio:23, stack:6656, core=0[0m
+[0;32mI (2216) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2216) wifi:wifi certification version: v7.0[0m
+[0;32mI (2216) wifi:config NVS flash: enabled[0m
+[0;32mI (2216) wifi:config nano formatting: disabled[0m
+[0;32mI (2226) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2226) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2236) wifi:Init management short buffer num: 32[0m
+[0;32mI (2236) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2236) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2246) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2246) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2256) wifi_init: rx ba win: 6[0m
+[0;32mI (2256) wifi_init: accept mbox: 6[0m
+[0;32mI (2256) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2266) wifi_init: udp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2266) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2276) wifi_init: tcp mss: 1440[0m
+[0;32mI (2276) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2276) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2336) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2416) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2416) wifi:enable tsf[0m
+[0;32mI (2426) KEYPAD: WiFi STA started[0m
+[0;32mI (2426) KEYPAD: WiFi initialized[0m
+[1;31mE (2426) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2426) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2436) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2486) wifi:flush txq[0m
+[0;32mI (2486) wifi:stop sw txq[0m
+[0;32mI (2486) wifi:lmac stop hw txq[0m
+[0;32mI (2486) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2486) wifi:enable tsf[0m
+[0;32mI (2486) KEYPAD: WiFi STA started[0m
+[1;31mE (2496) wifi:sta is connecting, return error[0m
+[0;32mI (2766) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2776) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2786) wifi:state: auth -> init (0x1100)[0m
+[0;32mI (2796) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2796) KEYPAD: STA disconnected, reason=202[0m
+[0;32mI (2836) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2836) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2886) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2896) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2986) wifi:connected with NamTrung, aid = 22, channel 6, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (2986) wifi:security: WPA2-PSK, phy: bgn, rssi: -72[0m
+[0;32mI (2996) wifi:pm start, type: 1[0m
+
+[0;32mI (2996) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3006) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (3146) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4696) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:3, winSize:64[0m
+[0;32mI (4706) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:5, ssn:1, winSize:64[0m
+[0;32mI (6136) wifi:<ba-del>idx:1, tid:5[0m
+[0;32mI (6156) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+Key pressed: A
+Key pressed: A
+[0;32mI (13666) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: A
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: A
+Key pressed: A
+Key pressed: B
+Key pressed: B
+Key pressed: A
+Key pressed: A
+Key pressed: A
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: B
+Key pressed: D
+Key pressed: C
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=208e8h (133352) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030910 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030938 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000348f8 vaddr=40080000 size=0b720h ( 46880) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a618ch (680332) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e61b4 vaddr=4008b720 size=0dd00h ( 56576) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (454) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (464) app_init: ELF file SHA256:  29bd128f4...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8B08 len 000274F8 (157 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;33mW (556) KEYPAD: Failed to open NVS handle for user_id: ESP_ERR_NVS_NOT_INITIALIZED[0m
+[0;32mI (556) KEYPAD: No saved user_id, using default: 00[0m
+[0;32mI (556) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (566) KEYPAD: LED OFF[0m
+[0;32mI (566) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2166) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2166) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2206) wifi:wifi driver task: 3ffc169c, prio:23, stack:6656, core=0[0m
+[0;32mI (2216) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2216) wifi:wifi certification version: v7.0[0m
+[0;32mI (2216) wifi:config NVS flash: enabled[0m
+[0;32mI (2216) wifi:config nano formatting: disabled[0m
+[0;32mI (2226) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2226) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2236) wifi:Init management short buffer num: 32[0m
+[0;32mI (2236) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2236) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2246) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2246) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2256) wifi_init: rx ba win: 6[0m
+[0;32mI (2256) wifi_init: accept mbox: 6[0m
+[0;32mI (2256) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2256) wifi_init: udp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2266) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2276) wifi_init: tcp mss: 1440[0m
+[0;32mI (2276) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2276) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2336) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2426) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2426) wifi:enable tsf[0m
+[0;32mI (2426) KEYPAD: WiFi STA started[0m
+[0;32mI (2426) KEYPAD: WiFi initialized[0m
+[1;31mE (2426) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2426) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2436) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2496) wifi:flush txq[0m
+[0;32mI (2496) wifi:stop sw txq[0m
+[0;32mI (2496) wifi:lmac stop hw txq[0m
+[0;32mI (2496) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2496) wifi:enable tsf[0m
+[0;32mI (2496) KEYPAD: WiFi STA started[0m
+[1;31mE (2506) wifi:sta is connecting, return error[0m
+[0;32mI (2786) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2796) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2896) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2986) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4046) wifi:connected with NamTrung, aid = 22, channel 6, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (4046) wifi:security: WPA2-PSK, phy: bgn, rssi: -76[0m
+[0;32mI (4056) wifi:pm start, type: 1[0m
+
+[0;32mI (4056) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4056) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4066) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+Key pressed: B
+[0;32mI (5656) KEYPAD: Read status successfully: SO DANG GOI[0m
+[0;32mI (6666) KEYPAD: Read status successfully: SO DANG GOI[0m
+Key pressed: B
+[0;32mI (8996) KEYPAD: Read status successfully: SO DANG GOI[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=208e8h (133352) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030910 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030938 vaddr=3ffb0000 size=03fb8h ( 16312) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=000348f8 vaddr=40080000 size=0b720h ( 46880) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a618ch (680332) map[0m
+[0;32mI (396) esp_image: segment 5: paddr=000e61b4 vaddr=4008b720 size=0dd00h ( 56576) load[0m
+[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (431) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (450) cpu_start: Pro cpu start user code[0m
+[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (450) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     hello_world[0m
+[0;32mI (454) app_init: App version:      e7264df-dirty[0m
+[0;32mI (459) app_init: Compile time:     Nov  3 2025 10:07:16[0m
+[0;32mI (464) app_init: ELF file SHA256:  29bd128f4...[0m
+[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8B08 len 000274F8 (157 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 40099420 len 00006BE0 (26 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;33mW (556) KEYPAD: Failed to open NVS handle for user_id: ESP_ERR_NVS_NOT_INITIALIZED[0m
+[0;32mI (556) KEYPAD: No saved user_id, using default: 00[0m
+[0;32mI (556) KEYPAD: LED initialized on GPIO 2[0m
+[0;32mI (566) KEYPAD: LED OFF[0m
+[0;32mI (566) KEYPAD: I2C initialized successfully[0m
+[0;32mI (2166) KEYPAD: Starting keypad MQTT application[0m
+[0;32mI (2166) KEYPAD: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (2206) wifi:wifi driver task: 3ffc169c, prio:23, stack:6656, core=0[0m
+[0;32mI (2216) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (2216) wifi:wifi certification version: v7.0[0m
+[0;32mI (2216) wifi:config NVS flash: enabled[0m
+[0;32mI (2216) wifi:config nano formatting: disabled[0m
+[0;32mI (2226) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (2226) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (2236) wifi:Init management short buffer num: 32[0m
+[0;32mI (2236) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (2236) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (2246) wifi:Init static rx buffer num: 10[0m
+[0;32mI (2246) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (2256) wifi_init: rx ba win: 6[0m
+[0;32mI (2256) wifi_init: accept mbox: 6[0m
+[0;32mI (2256) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2256) wifi_init: udp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp mbox: 6[0m
+[0;32mI (2266) wifi_init: tcp tx win: 5760[0m
+[0;32mI (2266) wifi_init: tcp rx win: 5760[0m
+[0;32mI (2276) wifi_init: tcp mss: 1440[0m
+[0;32mI (2276) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (2276) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (2326) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (2416) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2416) wifi:enable tsf[0m
+[0;32mI (2416) KEYPAD: WiFi STA started[0m
+[0;32mI (2416) KEYPAD: WiFi initialized[0m
+[1;31mE (2416) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[1;31mE (2416) task_wdt: esp_task_wdt_reset(707): task not found[0m
+[0;32mI (2426) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (2486) wifi:flush txq[0m
+[0;32mI (2486) wifi:stop sw txq[0m
+[0;32mI (2486) wifi:lmac stop hw txq[0m
+[0;32mI (2496) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (2496) wifi:enable tsf[0m
+[0;32mI (2496) KEYPAD: WiFi STA started[0m
+[1;31mE (2506) wifi:sta is connecting, return error[0m
+[0;32mI (2766) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2776) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2846) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2866) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2896) wifi:connected with NamTrung, aid = 30, channel 6, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (2896) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (2906) wifi:pm start, type: 1[0m
+
+[0;32mI (2906) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2906) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2916) KEYPAD: Connected to SSID:NamTrung, channel:6[0m
+[0;32mI (3206) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:5, ssn:1, winSize:64[0m
+[0;32mI (3946) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:1, ssn:1, winSize:64[0m
+[0;32mI (7426) wifi:<ba-del>idx:1, tid:1[0m
+[0;32mI (7426) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m

@@ -1,504 +1,212 @@
-Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
-��J��ѹesp3�ets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:6380
-ho 0 tail 12 room 4
-load:0x40078000,len:15916
-load:0x40080400,len:3860
-entry 0x40080638
-[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
-[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
-[0;32mI (29) boot: Multicore bootloader[0m
-[0;32mI (31) boot: chip revision: v3.0[0m
-[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
-[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
-[0;32mI (45) boot: Enabling RNG early entropy source...[0m
-[0;32mI (49) boot: Partition Table:[0m
-[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (78) boot: End of partition table[0m
-[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f8f0h (129264) map[0m
-[0;32mI (133) esp_image: segment 1: paddr=0002f918 vaddr=3ff80000 size=00020h (    32) load[0m
-[0;32mI (133) esp_image: segment 2: paddr=0002f940 vaddr=3ffb0000 size=006d8h (  1752) load[0m
-[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4088h (671880) map[0m
-[0;32mI (373) esp_image: segment 4: paddr=000d40b0 vaddr=3ffb06d8 size=038e0h ( 14560) load[0m
-[0;32mI (379) esp_image: segment 5: paddr=000d7998 vaddr=40080000 size=192e4h (103140) load[0m
-[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (432) boot: Disabling RNG early entropy source...[0m
-[0;32mI (442) cpu_start: Multicore app[0m
-[0;32mI (450) cpu_start: Pro cpu start user code[0m
-[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (451) app_init: Application information:[0m
-[0;32mI (451) app_init: Project name:     hello_world[0m
-[0;32mI (455) app_init: App version:      v5.5-dirty[0m
-[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
-[0;32mI (464) app_init: ELF file SHA256:  b1c21b81c...[0m
-[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
-[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
-[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (496) heap_init: At 3FFB8768 len 00027898 (158 KiB): DRAM[0m
-[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
-[0;32mI (519) spi_flash: detected chip: generic[0m
-[0;32mI (521) spi_flash: flash io: dio[0m
-[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
-[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
-[0;32mI (546) main_task: Started on CPU0[0m
-[0;32mI (556) main_task: Calling app_main()[0m
-[0;32mI (556) KEYPAD: I2C initialized successfully[0m
-[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
-[0;32mI (2706) wifi:wifi driver task: 3ffc0960, prio:23, stack:6656, core=0[0m
-[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
-[0;32mI (2726) wifi:wifi certification version: v7.0[0m
-[0;32mI (2726) wifi:config NVS flash: enabled[0m
-[0;32mI (2726) wifi:config nano formatting: disabled[0m
-[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
-[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (2736) wifi:Init management short buffer num: 32[0m
-[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
-[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
-[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
-[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
-[0;32mI (2756) wifi_init: rx ba win: 6[0m
-[0;32mI (2756) wifi_init: accept mbox: 6[0m
-[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
-[0;32mI (2766) wifi_init: udp mbox: 6[0m
-[0;32mI (2766) wifi_init: tcp mbox: 6[0m
-[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp mss: 1440[0m
-[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
-[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
-[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
-[0;32mI (2926) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
-[0;32mI (2986) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
-[0;32mI (2986) wifi:enable tsf[0m
-[0;32mI (2986) KEYPAD: WiFi initialized[0m
-[0;32mI (2986) KEYPAD: WiFi STA started[0m
-[0;32mI (2996) NVS: Have a saved wifi network in NVS[0m
-[0;33mW (4526) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
-[0;32mI (4876) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
-[0;32mI (4876) wifi:state: init -> auth (0xb0)[0m
-[0;32mI (4896) wifi:state: auth -> assoc (0x0)[0m
-[0;32mI (4916) wifi:state: assoc -> run (0x10)[0m
-[0;32mI (4936) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
-[0;32mI (4946) wifi:security: WPA2-PSK, phy: bgn, rssi: -67[0m
-[0;32mI (4956) wifi:pm start, type: 1[0m
-
-[0;32mI (4956) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
-[0;32mI (4956) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
-[0;32mI (4956) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
-[0;32mI (4996) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
-[0;32mI (5586) main_task: Returned from app_main()[0m
-[0;32mI (6006) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
-[0;32mI (6006) KEYPAD: WiFi connected, got IP[0m
-[0;32mI (6016) KEYPAD: MQTT initialized[0m
-[0;32mI (6036) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
-[0;32mI (6046) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
-[0;32mI (6066) KEYPAD: MQTT connected[0m
-[0;32mI (6086) KEYPAD: MQTT published, msg_id=43158[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (16986) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (16986) TAG: TOPIC=responsenumber[0m
-[0;32mI (16986) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (25696) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (25696) TAG: TOPIC=responsenumber[0m
-[0;32mI (25696) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (27736) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (27736) TAG: TOPIC=responsenumber[0m
-[0;32mI (27736) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (28276) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (28276) TAG: TOPIC=responsenumber[0m
-[0;32mI (28276) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (42186) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (42186) TAG: TOPIC=responsenumber[0m
-[0;32mI (42186) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4167","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (42196) TAG: Updated label with number: 4167[0m
-[0;32mI (42206) KEYPAD: MQTT published, msg_id=4491[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (44906) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (44906) TAG: TOPIC=responsenumber[0m
-[0;32mI (44906) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4168","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (44916) TAG: Updated label with number: 4168[0m
-[0;32mI (44946) KEYPAD: MQTT published, msg_id=18937[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (45156) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (45156) TAG: TOPIC=responsenumber[0m
-[0;32mI (45156) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4169","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (45166) TAG: Updated label with number: 4169[0m
-[0;32mI (45176) KEYPAD: MQTT published, msg_id=3645[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (46276) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (46276) TAG: TOPIC=responsenumber[0m
-[0;32mI (46276) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4170","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (46286) TAG: Updated label with number: 4170[0m
-[0;32mI (46306) KEYPAD: MQTT published, msg_id=54020[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (47706) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (47706) TAG: TOPIC=responsenumber[0m
-[0;32mI (47706) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4171","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (47716) TAG: Updated label with number: 4171[0m
-[0;32mI (47726) KEYPAD: MQTT published, msg_id=61084[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (48546) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (48546) TAG: TOPIC=responsenumber[0m
-[0;32mI (48546) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4172","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (48556) TAG: Updated label with number: 4172[0m
-[0;32mI (48566) KEYPAD: MQTT published, msg_id=38839[0m
-ets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:6380
-ho 0 tail 12 room 4
-load:0x40078000,len:15916
-load:0x40080400,len:3860
-entry 0x40080638
-[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
-[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
-[0;32mI (29) boot: Multicore bootloader[0m
-[0;32mI (31) boot: chip revision: v3.0[0m
-[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
-[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
-[0;32mI (45) boot: Enabling RNG early entropy source...[0m
-[0;32mI (49) boot: Partition Table:[0m
-[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (78) boot: End of partition table[0m
-[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f8f0h (129264) map[0m
-[0;32mI (133) esp_image: segment 1: paddr=0002f918 vaddr=3ff80000 size=00020h (    32) load[0m
-[0;32mI (133) esp_image: segment 2: paddr=0002f940 vaddr=3ffb0000 size=006d8h (  1752) load[0m
-[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4088h (671880) map[0m
-[0;32mI (373) esp_image: segment 4: paddr=000d40b0 vaddr=3ffb06d8 size=038e0h ( 14560) load[0m
-[0;32mI (379) esp_image: segment 5: paddr=000d7998 vaddr=40080000 size=192e4h (103140) load[0m
-[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (432) boot: Disabling RNG early entropy source...[0m
-[0;32mI (442) cpu_start: Multicore app[0m
-[0;32mI (450) cpu_start: Pro cpu start user code[0m
-[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (451) app_init: Application information:[0m
-[0;32mI (451) app_init: Project name:     hello_world[0m
-[0;32mI (455) app_init: App version:      v5.5-dirty[0m
-[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
-[0;32mI (464) app_init: ELF file SHA256:  b1c21b81c...[0m
-[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
-[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
-[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (496) heap_init: At 3FFB8768 len 00027898 (158 KiB): DRAM[0m
-[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
-[0;32mI (519) spi_flash: detected chip: generic[0m
-[0;32mI (521) spi_flash: flash io: dio[0m
-[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
-[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
-[0;32mI (546) main_task: Started on CPU0[0m
-[0;32mI (556) main_task: Calling app_main()[0m
-[0;32mI (556) KEYPAD: I2C initialized successfully[0m
-[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
-[0;32mI (2706) wifi:wifi driver task: 3ffc0960, prio:23, stack:6656, core=0[0m
-[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
-[0;32mI (2726) wifi:wifi certification version: v7.0[0m
-[0;32mI (2726) wifi:config NVS flash: enabled[0m
-[0;32mI (2726) wifi:config nano formatting: disabled[0m
-[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
-[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (2736) wifi:Init management short buffer num: 32[0m
-[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
-[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
-[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
-[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
-[0;32mI (2756) wifi_init: rx ba win: 6[0m
-[0;32mI (2756) wifi_init: accept mbox: 6[0m
-[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
-[0;32mI (2766) wifi_init: udp mbox: 6[0m
-[0;32mI (2766) wifi_init: tcp mbox: 6[0m
-[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp mss: 1440[0m
-[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
-[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
-[0;32mI (2846) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
-[0;32mI (2926) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
-[0;32mI (2936) wifi:enable tsf[0m
-[0;32mI (2936) KEYPAD: WiFi initialized[0m
-[0;32mI (2936) KEYPAD: WiFi STA started[0m
-[0;32mI (2946) NVS: Have a saved wifi network in NVS[0m
-[0;33mW (4476) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
-[0;32mI (4896) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
-[0;32mI (4896) wifi:state: init -> auth (0xb0)[0m
-[0;32mI (4906) wifi:state: auth -> assoc (0x0)[0m
-[0;32mI (4956) wifi:state: assoc -> run (0x10)[0m
-[0;32mI (4986) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
-[0;32mI (4986) wifi:security: WPA2-PSK, phy: bgn, rssi: -78[0m
-[0;32mI (4996) wifi:pm start, type: 1[0m
-
-[0;32mI (4996) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
-[0;32mI (5006) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
-[0;32mI (5006) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
-[0;32mI (5036) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
-[0;32mI (5536) main_task: Returned from app_main()[0m
-[0;32mI (5616) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
-[0;32mI (6086) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
-[0;32mI (6086) KEYPAD: WiFi connected, got IP[0m
-[0;32mI (6096) KEYPAD: MQTT initialized[0m
-[0;32mI (6116) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:7, winSize:64[0m
-[0;32mI (6146) KEYPAD: MQTT connected[0m
-[0;32mI (6186) KEYPAD: MQTT published, msg_id=10152[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (21076) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (21076) TAG: TOPIC=responsenumber[0m
-[0;32mI (21076) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4173","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (21086) TAG: Updated label with number: 4173[0m
-[0;32mI (21096) KEYPAD: MQTT published, msg_id=63138[0m
-Key pressed: *
-BỎ QUA SỐ HIỆN TẠI
-[0;32mI (70856) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (70856) TAG: TOPIC=responsenumber[0m
-[0;32mI (70856) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4173","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (70866) TAG: Updated label with number: 4173[0m
-[0;32mI (70896) KEYPAD: MQTT published, msg_id=11785[0m
-Key pressed: *
-BỎ QUA SỐ HIỆN TẠI
-[0;32mI (71726) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (71726) TAG: TOPIC=responsenumber[0m
-[0;32mI (71726) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4173","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (71736) TAG: Updated label with number: 4173[0m
-[0;32mI (71746) KEYPAD: MQTT published, msg_id=11869[0m
-Key pressed: *
-BỎ QUA SỐ HIỆN TẠI
-[0;32mI (72326) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (72326) TAG: TOPIC=responsenumber[0m
-[0;32mI (72326) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"4173","service_name":"Tr\u1ea3 n\u1ee3"}[0m
-[0;32mI (72336) TAG: Updated label with number: 4173[0m
-[0;32mI (72346) KEYPAD: MQTT published, msg_id=24443[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (73646) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (73646) TAG: TOPIC=responsenumber[0m
-[0;32mI (73646) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
-Key pressed: B
-GỌI SỐ TIẾP THEO
-[0;32mI (74576) TAG: MQTT_EVENT_DATA[0m
-[0;32mI (74586) TAG: TOPIC=responsenumber[0m
-[0;32mI (74586) TAG: DATA={"device_id":"04:1A:2B:3C:4D:04","number":"No number available"}[0m
-boot.esp32: SPI Speed      : 40MHz
-[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
-[0;32mI (45) boot: Enabling RNG early entropy source...[0m
-[0;32mI (49) boot: Partition Table:[0m
-[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (78) boot: End of partition table[0m
-[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f8f0h (129264) map[0m
-[0;32mI (133) esp_image: segment 1: paddr=0002f918 vaddr=3ff80000 size=00020h (    32) load[0m
-[0;32mI (133) esp_image: segment 2: paddr=0002f940 vaddr=3ffb0000 size=006d8h (  1752) load[0m
-[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4088h (671880) map[0m
-[0;32mI (373) esp_image: segment 4: paddr=000d40b0 vaddr=3ffb06d8 size=038e0h ( 14560) load[0m
-[0;32mI (379) esp_image: segment 5: paddr=000d7998 vaddr=40080000 size=192e4h (103140) load[0m
-[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (432) boot: Disabling RNG early entropy source...[0m
-[0;32mI (442) cpu_start: Multicore app[0m
-[0;32mI (450) cpu_start: Pro cpu start user code[0m
-[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (451) app_init: Application information:[0m
-[0;32mI (451) app_init: Project name:     hello_world[0m
-[0;32mI (455) app_init: App version:      v5.5-dirty[0m
-[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
-[0;32mI (464) app_init: ELF file SHA256:  b1c21b81c...[0m
-[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
-[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
-[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (496) heap_init: At 3FFB8768 len 00027898 (158 KiB): DRAM[0m
-[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
-[0;32mI (519) spi_flash: detected chip: generic[0m
-[0;32mI (521) spi_flash: flash io: dio[0m
-[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
-[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
-[0;32mI (546) main_task: Started on CPU0[0m
-[0;32mI (556) main_task: Calling app_main()[0m
-[0;32mI (556) KEYPAD: I2C initialized successfully[0m
-[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
-[0;32mI (2706) wifi:wifi driver task: 3ffc0960, prio:23, stack:6656, core=0[0m
-[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
-[0;32mI (2726) wifi:wifi certification version: v7.0[0m
-[0;32mI (2726) wifi:config NVS flash: enabled[0m
-[0;32mI (2726) wifi:config nano formatting: disabled[0m
-[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
-[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (2736) wifi:Init management short buffer num: 32[0m
-[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
-[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
-[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
-[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
-[0;32mI (2756) wifi_init: rx ba win: 6[0m
-[0;32mI (2756) wifi_init: accept mbox: 6[0m
-[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
-[0;32mI (2766) wifi_init: udp mbox: 6[0m
-[0;32mI (2766) wifi_init: tcp mbox: 6[0m
-[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp mss: 1440[0m
-[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
-[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
-[0;32mI (2876) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
-[0;32mI (2956) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
-[0;32mI (2956) wifi:enable tsf[0m
-[0;32mI (2956) KEYPAD: WiFi initialized[0m
-[0;32mI (2956) KEYPAD: WiFi STA started[0m
-[0;32mI (2966) NVS: Have a saved wifi network in NVS[0m
-[0;33mW (4496) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
-[0;32mI (4826) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
-[0;32mI (4826) wifi:state: init -> auth (0xb0)[0m
-[0;32mI (4836) wifi:state: auth -> assoc (0x0)[0m
-[0;32mI (4836) wifi:state: assoc -> run (0x10)[0m
-[0;32mI (4866) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
-[0;32mI (4866) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
-[0;32mI (4876) wifi:pm start, type: 1[0m
-
-[0;32mI (4876) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
-[0;32mI (4886) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
-[0;32mI (4886) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
-[0;32mI (4906) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
-[0;32mI (5556) main_task: Returned from app_main()[0m
-[0;32mI (5916) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
-[0;32mI (5916) KEYPAD: WiFi connected, got IP[0m
-[0;32mI (5926) KEYPAD: MQTT initialized[0m
-[0;32mI (5956) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:8, winSize:64[0m
-[0;32mI (5956) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
-[0;32mI (5976) KEYPAD: MQTT connected[0m
-[0;32mI (6006) KEYPAD: MQTT published, msg_id=30253[0m
-J��ѹesp32: SPI Speed      : 40MHz
-[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
-[0;32mI (45) boot: Enabling RNG early entropy source...[0m
-[0;32mI (49) boot: Partition Table:[0m
-[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (78) boot: End of partition table[0m
-[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f8f0h (129264) map[0m
-[0;32mI (133) esp_image: segment 1: paddr=0002f918 vaddr=3ff80000 size=00020h (    32) load[0m
-[0;32mI (133) esp_image: segment 2: paddr=0002f940 vaddr=3ffb0000 size=006d8h (  1752) load[0m
-[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4088h (671880) map[0m
-[0;32mI (373) esp_image: segment 4: paddr=000d40b0 vaddr=3ffb06d8 size=038e0h ( 14560) load[0m
-[0;32mI (379) esp_image: segment 5: paddr=000d7998 vaddr=40080000 size=192e4h (103140) load[0m
-[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (432) boot: Disabling RNG early entropy source...[0m
-[0;32mI (442) cpu_start: Multicore app[0m
-[0;32mI (450) cpu_start: Pro cpu start user code[0m
-[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (451) app_init: Application information:[0m
-[0;32mI (451) app_init: Project name:     hello_world[0m
-[0;32mI (455) app_init: App version:      v5.5-dirty[0m
-[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
-[0;32mI (464) app_init: ELF file SHA256:  b1c21b81c...[0m
-[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
-[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
-[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (496) heap_init: At 3FFB8768 len 00027898 (158 KiB): DRAM[0m
-[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (512) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
-[0;32mI (519) spi_flash: detected chip: generic[0m
-[0;32mI (521) spi_flash: flash io: dio[0m
-[0;33mW (524) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
-[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
-[0;32mI (546) main_task: Started on CPU0[0m
-[0;32mI (556) main_task: Calling app_main()[0m
-[0;32mI (556) KEYPAD: I2C initialized successfully[0m
-[0;32mI (2656) KEYPAD: Starting keypad MQTT application[0m
-[0;32mI (2706) wifi:wifi driver task: 3ffc0960, prio:23, stack:6656, core=0[0m
-[0;32mI (2726) wifi:wifi firmware version: f3dbad7[0m
-[0;32mI (2726) wifi:wifi certification version: v7.0[0m
-[0;32mI (2726) wifi:config NVS flash: enabled[0m
-[0;32mI (2726) wifi:config nano formatting: disabled[0m
-[0;32mI (2726) wifi:Init data frame dynamic rx buffer num: 32[0m
-[0;32mI (2736) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (2736) wifi:Init management short buffer num: 32[0m
-[0;32mI (2746) wifi:Init dynamic tx buffer num: 32[0m
-[0;32mI (2746) wifi:Init static rx buffer size: 1600[0m
-[0;32mI (2746) wifi:Init static rx buffer num: 10[0m
-[0;32mI (2756) wifi:Init dynamic rx buffer num: 32[0m
-[0;32mI (2756) wifi_init: rx ba win: 6[0m
-[0;32mI (2756) wifi_init: accept mbox: 6[0m
-[0;32mI (2766) wifi_init: tcpip mbox: 32[0m
-[0;32mI (2766) wifi_init: udp mbox: 6[0m
-[0;32mI (2766) wifi_init: tcp mbox: 6[0m
-[0;32mI (2776) wifi_init: tcp tx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp rx win: 5760[0m
-[0;32mI (2776) wifi_init: tcp mss: 1440[0m
-[0;32mI (2786) wifi_init: WiFi IRAM OP enabled[0m
-[0;32mI (2786) wifi_init: WiFi RX IRAM OP enabled[0m
-[0;32mI (2866) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
-[0;32mI (2946) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
-[0;32mI (2956) wifi:enable tsf[0m
-[0;32mI (2956) KEYPAD: WiFi initialized[0m
-[0;32mI (2956) KEYPAD: WiFi STA started[0m
-[0;32mI (2966) NVS: Have a saved wifi network in NVS[0m
-[0;33mW (4496) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
-[0;32mI (4826) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:9, snd_ch_cfg:0x0[0m
-[0;32mI (4826) wifi:state: init -> auth (0xb0)[0m
-[0;32mI (4826) wifi:state: auth -> assoc (0x0)[0m
-[0;32mI (4836) wifi:state: assoc -> run (0x10)[0m
-[0;32mI (4866) wifi:connected with NamTrung, aid = 16, channel 11, BW20, bssid = 10:5f:02:75:27:1e[0m
-[0;32mI (4866) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
-[0;32mI (4876) wifi:pm start, type: 1[0m
-
-[0;32mI (4876) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
-[0;32mI (4886) KEYPAD: Connected to SSID:NamTrung, channel:11[0m
-[0;32mI (4886) KEYPAD: SAVED WIFI CREDENTIALS SUCCESSFULLY[0m
-[0;32mI (4886) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
-[0;32mI (5556) main_task: Returned from app_main()[0m
-[0;32mI (5906) esp_netif_handlers: sta ip: 10.10.1.77, mask: 255.255.252.0, gw: 10.10.1.1[0m
-[0;32mI (5906) KEYPAD: WiFi connected, got IP[0m
-[0;32mI (5916) KEYPAD: MQTT initialized[0m
-[0;32mI (5936) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:11, winSize:64[0m
-[0;32mI (5946) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
-[0;32mI (5956) KEYPAD: MQTT connected[0m
-[0;32mI (5976) KEYPAD: MQTT published, msg_id=37813[0m
+Command: ninja all
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c-lcd.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/i2c-lcd.c.obj 
+ccache D:\ESP32_IDF\Espressif\tools\xtensa-esp-elf\esp-14.2.0_20241119\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.5-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/config" -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main" -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/platform_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/esp_additions/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/dma/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/ldo/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/debug_probe/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/power_supply/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/. -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/register -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/platform_port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_common/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/include/private -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/deprecated_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps/sntp -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/lwip/src/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/freertos/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/arch -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/sys -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/spi_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gpio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include/local -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/nan_app/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_event/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/tcp_transport/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls/esp-tls-crypto -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/library -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/esp_crt_bundle/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/everest/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_timer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/deprecated -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_pm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_ringbuf/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_pcnt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gptimer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_spi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_mcpwm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ana_cmpr/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2s/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdspi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_dac/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_rmt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_tsens/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_uart/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/vfs/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ledc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_parlio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_usb_serial_jtag/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/json/cJSON -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/wifi_provisioning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/common -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/security -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/transports -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/crypto/srp6a -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/proto-c -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo=." -fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/i2c-lcd.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\i2c-lcd.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/i2c-lcd.c.obj -c "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c"
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c: In function 'lcd_show_main_screen':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:170:33: error: 'prev_number' undeclared (first use in this function)
+  170 |         size_t num_len = sizeof(prev_number);
+      |                                 ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:170:33: note: each undeclared identifier is reported only once for each function it appears in
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c: In function 'lcd_show_wifi_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:217:37: error: 'hide' undeclared (first use in this function)
+  217 |     if (pass && strlen(pass) > 0 && hide == true) {
+      |                                     ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c: In function 'lcd_show_device_list':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:280:41: error: 'device_list' undeclared (first use in this function)
+  280 |     snprintf(line, sizeof(line), ">%s", device_list[selected_index].name);
+      |                                         ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:280:53: error: 'selected_index' undeclared (first use in this function); did you mean 'selected_id_mutex'?
+  280 |     snprintf(line, sizeof(line), ">%s", device_list[selected_index].name);
+      |                                                     ^~~~~~~~~~~~~~
+      |                                                     selected_id_mutex
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c: In function 'lcd_show_position_list':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:305:9: error: 'selected_positon' undeclared (first use in this function)
+  305 |     if (selected_positon==false){
+      |         ^~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c: In function 'lcd_show_service_list':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:353:41: error: 'service_list' undeclared (first use in this function); did you mean 'service_list_mutex'?
+  353 |     snprintf(line, sizeof(line), ">%s", service_list[selected_index2].name);
+      |                                         ^~~~~~~~~~~~
+      |                                         service_list_mutex
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:353:54: error: 'selected_index2' undeclared (first use in this function); did you mean 'selected_id_mutex'?
+  353 |     snprintf(line, sizeof(line), ">%s", service_list[selected_index2].name);
+      |                                                      ^~~~~~~~~~~~~~~
+      |                                                      selected_id_mutex
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c: In function 'lcd_show_menu':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:367:9: error: 'menu_selection' undeclared (first use in this function)
+  367 |     if (menu_selection==1){
+      |         ^~~~~~~~~~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.h:10,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h:3,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.c:4:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h: At top level:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:85:14: warning: inline function 'set_display_state' declared but never defined
+   85 |  inline void set_display_state(SystemState d);
+      |              ^~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:83:22: warning: inline function 'get_display_state' declared but never defined
+   83 |  inline DisplayState get_display_state(void) ;
+      |                      ^~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:81:14: warning: inline function 'set_sys_state' declared but never defined
+   81 |  inline void set_sys_state(SystemState s) ;
+      |              ^~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:79:20: warning: inline function 'get_sys_state' declared but never defined
+   79 | inline SystemState get_sys_state(void) ;
+      |                    ^~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:77:14: warning: inline function 'increment_wifi_retry_count' declared but never defined
+   77 |  inline void increment_wifi_retry_count(void) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:75:14: warning: inline function 'set_wifi_retry_count' declared but never defined
+   75 |  inline void set_wifi_retry_count(int val) ;
+      |              ^~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:73:13: warning: inline function 'get_wifi_retry_count' declared but never defined
+   73 |  inline int get_wifi_retry_count(void) ;
+      |             ^~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:71:14: warning: inline function 'set_user_selected_wifi' declared but never defined
+   71 |  inline void set_user_selected_wifi(bool val);
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:69:14: warning: inline function 'get_user_selected_wifi' declared but never defined
+   69 |  inline bool get_user_selected_wifi(void) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:67:14: warning: inline function 'set_wifi_need_mqtt_start' declared but never defined
+   67 |  inline void set_wifi_need_mqtt_start(bool val);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:65:14: warning: inline function 'get_wifi_need_mqtt_start' declared but never defined
+   65 |  inline bool get_wifi_need_mqtt_start(void) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:63:14: warning: inline function 'set_publish' declared but never defined
+   63 |  inline void set_publish(bool val) ;
+      |              ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:61:14: warning: inline function 'get_publish' declared but never defined
+   61 |  inline bool get_publish(void) ;
+      |              ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:59:14: warning: inline function 'set_wifi_connected' declared but never defined
+   59 |  inline void set_wifi_connected(bool val) ;
+      |              ^~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:58:14: warning: inline function 'get_wifi_connected' declared but never defined
+   58 |  inline bool get_wifi_connected(void) ;
+      |              ^~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:56:14: warning: inline function 'set_mqtt_connected' declared but never defined
+   56 |  inline void set_mqtt_connected(bool val) ;
+      |              ^~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:54:14: warning: inline function 'get_mqtt_connected' declared but never defined
+   54 |  inline bool get_mqtt_connected(void) ;
+      |              ^~~~~~~~~~~~~~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.h:9,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h:4:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/esp_mqtt_client/esp_mqtt_client.h:32:13: warning: 'mqtt_event_handler' declared 'static' but never defined [-Wunused-function]
+   32 | static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+      |             ^~~~~~~~~~~~~~~~~~
+[5/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj 
+ccache D:\ESP32_IDF\Espressif\tools\xtensa-esp-elf\esp-14.2.0_20241119\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.5-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/config" -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main" -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/platform_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/esp_additions/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/dma/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/ldo/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/debug_probe/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/power_supply/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/. -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/register -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/platform_port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_common/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/include/private -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/deprecated_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps/sntp -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/lwip/src/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/freertos/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/arch -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/sys -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/spi_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gpio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include/local -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/nan_app/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_event/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/tcp_transport/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls/esp-tls-crypto -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/library -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/esp_crt_bundle/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/everest/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_timer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/deprecated -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_pm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_ringbuf/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_pcnt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gptimer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_spi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_mcpwm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ana_cmpr/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2s/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdspi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_dac/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_rmt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_tsens/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_uart/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/vfs/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ledc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_parlio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_usb_serial_jtag/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/json/cJSON -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/wifi_provisioning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/common -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/security -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/transports -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/crypto/srp6a -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/proto-c -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo=." -fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\hello_world_main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj -c "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c"
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c: In function 'remove_accents_v2':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:92:25: error: 'accent_map' undeclared (first use in this function)
+   92 |         for (int j = 0; accent_map[j].accent != NULL; j++) {
+      |                         ^~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:92:25: note: each undeclared identifier is reported only once for each function it appears in
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c: In function 'app_main':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:266:12: error: 'selected_id' undeclared (first use in this function)
+  266 |     strcpy(selected_id,mac_str);
+      |            ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:270:21: error: implicit declaration of function 'read_user_id_from_nvs' [-Wimplicit-function-declaration]
+  270 |     esp_err_t err = read_user_id_from_nvs(saved_user_id, sizeof(saved_user_id));
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:274:13: error: 'user_id' undeclared (first use in this function); did you mean 'cuserid'?
+  274 |     strncpy(user_id, saved_user_id, sizeof(user_id) - 1);
+      |             ^~~~~~~
+      |             cuserid
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:311:64: error: 'saved_ssid' undeclared (first use in this function); did you mean 'saved_user_id'?
+  311 |                 esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_pass, &password_len, NULL);
+      |                                                                ^~~~~~~~~~
+      |                                                                saved_user_id
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:311:77: error: 'ssid_len' undeclared (first use in this function)
+  311 |                 esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_pass, &password_len, NULL);
+      |                                                                             ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:311:87: error: 'saved_pass' undeclared (first use in this function)
+  311 |                 esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_pass, &password_len, NULL);
+      |                                                                                       ^~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:311:100: error: 'password_len' undeclared (first use in this function)
+  311 |                 esp_err_t err = read_wifi_credentials_from_nvs(saved_ssid, &ssid_len, saved_pass, &password_len, NULL);
+      |                                                                                                    ^~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:344:40: error: 'prev_sys_state' undeclared (first use in this function); did you mean 'set_sys_state'?
+  344 |                 if (get_sys_state() != prev_sys_state) {
+      |                                        ^~~~~~~~~~~~~~
+      |                                        set_sys_state
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:345:21: error: 'state_enter_time' undeclared (first use in this function)
+  345 |                     state_enter_time = current_time;
+      |                     ^~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:348:56: error: 'STATE_DISPLAY_DURATION' undeclared (first use in this function)
+  348 |                 if (current_time - state_enter_time >= STATE_DISPLAY_DURATION) {
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:12:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h: At top level:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h:39:13: warning: inline function 'lcd_unlock' declared but never defined
+   39 | inline void lcd_unlock(void) ;
+      |             ^~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h:37:13: warning: inline function 'lcd_lock' declared but never defined
+   37 | inline void lcd_lock(void) ;
+      |             ^~~~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.h:10,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h:3:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:85:14: warning: inline function 'set_display_state' declared but never defined
+   85 |  inline void set_display_state(SystemState d);
+      |              ^~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:83:22: warning: inline function 'get_display_state' declared but never defined
+   83 |  inline DisplayState get_display_state(void) ;
+      |                      ^~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:81:14: warning: inline function 'set_sys_state' declared but never defined
+   81 |  inline void set_sys_state(SystemState s) ;
+      |              ^~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:79:20: warning: inline function 'get_sys_state' declared but never defined
+   79 | inline SystemState get_sys_state(void) ;
+      |                    ^~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:77:14: warning: inline function 'increment_wifi_retry_count' declared but never defined
+   77 |  inline void increment_wifi_retry_count(void) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:75:14: warning: inline function 'set_wifi_retry_count' declared but never defined
+   75 |  inline void set_wifi_retry_count(int val) ;
+      |              ^~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:73:13: warning: inline function 'get_wifi_retry_count' declared but never defined
+   73 |  inline int get_wifi_retry_count(void) ;
+      |             ^~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:71:14: warning: inline function 'set_user_selected_wifi' declared but never defined
+   71 |  inline void set_user_selected_wifi(bool val);
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:69:14: warning: inline function 'get_user_selected_wifi' declared but never defined
+   69 |  inline bool get_user_selected_wifi(void) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:67:14: warning: inline function 'set_wifi_need_mqtt_start' declared but never defined
+   67 |  inline void set_wifi_need_mqtt_start(bool val);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:65:14: warning: inline function 'get_wifi_need_mqtt_start' declared but never defined
+   65 |  inline bool get_wifi_need_mqtt_start(void) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:63:14: warning: inline function 'set_publish' declared but never defined
+   63 |  inline void set_publish(bool val) ;
+      |              ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:61:14: warning: inline function 'get_publish' declared but never defined
+   61 |  inline bool get_publish(void) ;
+      |              ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:59:14: warning: inline function 'set_wifi_connected' declared but never defined
+   59 |  inline void set_wifi_connected(bool val) ;
+      |              ^~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:58:14: warning: inline function 'get_wifi_connected' declared but never defined
+   58 |  inline bool get_wifi_connected(void) ;
+      |              ^~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:56:14: warning: inline function 'set_mqtt_connected' declared but never defined
+   56 |  inline void set_mqtt_connected(bool val) ;
+      |              ^~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:54:14: warning: inline function 'get_mqtt_connected' declared but never defined
+   54 |  inline bool get_mqtt_connected(void) ;
+      |              ^~~~~~~~~~~~~~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.h:9,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/i2c-lcd.h:4:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/esp_mqtt_client/esp_mqtt_client.h:32:13: warning: 'mqtt_event_handler' declared 'static' but never defined [-Wunused-function]
+   32 | static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+      |             ^~~~~~~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.
