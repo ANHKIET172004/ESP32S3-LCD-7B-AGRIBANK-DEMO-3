@@ -30,7 +30,7 @@ void ssid_insert_char(char c);
 void ssid_delete() ;
 
 
-void ssid_cursor_right() ;
+void lcd_cursor_right() ;
 
 void ssid_delete_at_cursor() ;
 

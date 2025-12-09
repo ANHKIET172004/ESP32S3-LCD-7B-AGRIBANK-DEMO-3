@@ -10,14 +10,14 @@ typedef struct {
     char device_id[18];// mac id
     char name[16];
     //char name[64];
-    char user_id[3];
+    char counter_id[3];
 } DeviceInfo;
 
 typedef struct {
     char device_id[18];// mac id
     //char name[16];
     char name[64];
-    char user_id[3];
+    char counter_id[3];
 } ServiceInfo;
 
 
@@ -63,13 +63,13 @@ typedef struct {
     bool        hide;
     uint64_t    last_t_press_time;
     uint64_t    last_a_press_time ; 
-    uint64_t    last_b_press_time;   // Lưu thời gian nhấn B gần nhất (microsecond)
+    uint64_t    last_b_press_time;   
 
     uint64_t    last_s_press_time ; 
     uint64_t    debounce_interval_us;
     uint8_t     positon_flag;
     bool        device_list_ready ;
-    char        user_id[3];
+    char        counter_id[3];
     bool        service_list_ready ;
     bool        switch_device;
     char        prev_number_status[12];
@@ -79,7 +79,8 @@ typedef struct {
     bool         stop;
     int          ssid_real_pos;       
     int          ssid_window_start;   
-    int          ssid_len;            
+    //int          ssid_len;  
+    int          wifi_len;           
     char         wifi_ssid[32]; 
     char         view[17];
     int          len;    

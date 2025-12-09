@@ -25,9 +25,7 @@ SemaphoreHandle_t wifi_start_mutex ;
 SemaphoreHandle_t mqtt_start_mutex ;
 SemaphoreHandle_t wifi_retry_mutex ;
 SemaphoreHandle_t user_selected_wifi_mutex ;
-
-
-
+SemaphoreHandle_t scroll_mutex;
 
 } 
 mutex_context_t;
@@ -42,8 +40,6 @@ void set_mqtt_connected(bool val);
 bool get_wifi_connected(void);
 void set_wifi_connected(bool val);
 
-
-
 bool get_user_selected_wifi(void);
 void set_user_selected_wifi(bool val);
 
@@ -56,7 +52,9 @@ void set_sys_state(SystemState s);
 
 DisplayState get_display_state(void);
 void set_display_state(DisplayState d);
-//void set_display_state(SystemState d) ;
+
+void set_scroll_enable(bool val);
+bool get_scroll_enable(void);
 
 void mutex_init(void);
 

@@ -12,8 +12,8 @@ void lcd_render_ssid_editor() {
 
     char view[17] = {0};
 
-    if (g_keypad.ssid_len <= 16) {
-        memcpy(view, g_keypad.wifi_ssid, g_keypad.ssid_len);
+    if (g_keypad.wifi_len <= 16) {
+        memcpy(view, g_keypad.wifi_ssid, g_keypad.wifi_len);
     } 
     else {
         memcpy(view, &g_keypad.wifi_ssid[g_keypad.ssid_window_start],16);
@@ -37,14 +37,14 @@ void lcd_render_ssid_editor() {
 
 
 void ssid_insert_char(char c) {
-    if (g_keypad.ssid_len >= 32) return;
+    if (g_keypad.wifi_len >= 32) return;
 
-    for (int i = g_keypad.ssid_len; i >= g_keypad.ssid_real_pos; i--) {
+    for (int i = g_keypad.wifi_len; i >= g_keypad.ssid_real_pos; i--) {
         g_keypad.wifi_ssid[i+1] = g_keypad.wifi_ssid[i];
     }
 
     g_keypad.wifi_ssid[g_keypad.ssid_real_pos] = c;
-    g_keypad.ssid_len++;
+    g_keypad.wifi_len++;
     g_keypad.ssid_real_pos++;
 
     if (g_keypad.ssid_real_pos > g_keypad.ssid_window_start + 15)
@@ -57,16 +57,16 @@ void ssid_insert_char(char c) {
 
 void ssid_delete() {
 
-    if (g_keypad.ssid_len == 0 || g_keypad.ssid_real_pos == 0)
+    if (g_keypad.wifi_len == 0 || g_keypad.ssid_real_pos == 0)
         return;
 
     int del_pos = g_keypad.ssid_real_pos - 1;
 
-    for (int i = del_pos; i < g_keypad.ssid_len; i++) {
+    for (int i = del_pos; i < g_keypad.wifi_len; i++) {
         g_keypad.wifi_ssid[i] = g_keypad.wifi_ssid[i+1];
     }
 
-    g_keypad.ssid_len--;
+    g_keypad.wifi_len--;
     g_keypad.ssid_real_pos--;
 
     if (g_keypad.ssid_real_pos < g_keypad.ssid_window_start)
@@ -76,19 +76,19 @@ void ssid_delete() {
 }
 
 
-void ssid_cursor_right() {
-    // Nếu chưa có ký tự nào → không cho di chuyển
-    if (g_keypad.ssid_len == 0) return;
+void lcd_cursor_right() {
+    // ko có ký tự, ko di chuyển trỏ
+    if (g_keypad.wifi_len == 0) return;
 
-    // Tăng vị trí con trỏ (giới hạn không vượt ssid_len)
-    if (g_keypad.ssid_real_pos < g_keypad.ssid_len) {
+    // <len, >0 thì tăng vị trí trỏ
+    if (g_keypad.ssid_real_pos < g_keypad.wifi_len) {
         g_keypad.ssid_real_pos++;
     } else {
-        // Nếu đang ở cuối → quay về đầu (loop)
+        // nếu ở cuối chuỗi thì về 0
         g_keypad.ssid_real_pos = 0;
     }
 
-    // Tự điều chỉnh cửa sổ 16 ký tự
+    // điều chỉnh vị trí start
     if (g_keypad.ssid_real_pos < g_keypad.ssid_window_start) {
         g_keypad.ssid_window_start = g_keypad.ssid_real_pos;
     }
@@ -96,50 +96,41 @@ void ssid_cursor_right() {
         g_keypad.ssid_window_start = g_keypad.ssid_real_pos - 15;
     }
 
-    // Sau khi di chuyển xong thì cập nhật LCD
-    //render_ssid_view();
-     // --- TÍNH WINDOW CHO LCD ---
-    if (g_keypad.ssid_real_pos < g_keypad.ssid_window_start) {
-        g_keypad.ssid_window_start = g_keypad.ssid_real_pos;
-    }
-    else if (g_keypad.ssid_real_pos > g_keypad.ssid_window_start + (16-1)) {
-        g_keypad.ssid_window_start = g_keypad.ssid_real_pos - (16-1);
-    }
 
-    // --- TẠO VIEW 16 KÝ TỰ ---
-    char view[17];
-    if (g_keypad.ssid_len <= 16) {
-        memcpy(view, g_keypad.input_buffer, g_keypad.ssid_len);
-        view[g_keypad.ssid_len] = '\0';
+    //tạo str hiển thị lcd
+    char lcd_str[17];
+    if (g_keypad.wifi_len <= 16) {
+        memcpy(lcd_str, g_keypad.input_buffer, g_keypad.wifi_len);
+        lcd_str[g_keypad.wifi_len] = '\0';
     } else {
-        memcpy(view, &g_keypad.input_buffer[g_keypad.ssid_window_start], 16);
-        view[16] = '\0';
+        memcpy(lcd_str, &g_keypad.input_buffer[g_keypad.ssid_window_start], 16);
+        lcd_str[16] = '\0';
     }
 
-    // --- HIỂN THỊ ---
+    // hiển thị chuỗi custom lên lcd
     if (g_keypad.wifi_step == 0)
-        lcd_show_wifi_input(view);
+        lcd_show_wifi_input(lcd_str);
     else {
         if (g_keypad.hide) {
             char masked[17];
-            int L = strlen(view);
+            int L = strlen(lcd_str);
             for (int i = 0; i < L; i++) 
             {
             if (i!=L-1){
             masked[i] = '*';
             }
             else {
-            masked[i] = view[i];
+            masked[i] = lcd_str[i];
             }
             }
             masked[L] = '\0';
             lcd_show_wifi_pass(masked);
         } else {
-            lcd_show_wifi_pass(view);
+            lcd_show_wifi_pass(lcd_str);
         }
     }
 
-    // --- TÍNH VỊ TRÍ CON TRỎ TRÊN LCD ---
+    // tính vị trí trên lcd
     int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
     if (cursor_col < 0) cursor_col = 0;
     if (cursor_col > 15) cursor_col = 15;
@@ -152,28 +143,28 @@ void ssid_cursor_right() {
 
 void ssid_delete_at_cursor() {
 
-    if (g_keypad.ssid_len == 0) return;
+    if (g_keypad.wifi_len == 0) return;
 
     // Không có ký tự phía TRƯỚC con trỏ -> không xoá được
-    if (g_keypad.ssid_real_pos >= g_keypad.ssid_len) return;
+    if (g_keypad.ssid_real_pos >= g_keypad.wifi_len) return;
 
     int del_pos = g_keypad.ssid_real_pos;
 
     // Dịch trái phần còn lại
-    for (int i = del_pos; i < g_keypad.ssid_len; i++) {
+    for (int i = del_pos; i < g_keypad.wifi_len; i++) {
         g_keypad.input_buffer[i] = g_keypad.input_buffer[i + 1];
     }
 
-    g_keypad.ssid_len--;
+    g_keypad.wifi_len--;
     g_keypad.buffer_index--;
-    g_keypad.input_buffer[g_keypad.ssid_len] = '\0';
+    g_keypad.input_buffer[g_keypad.wifi_len] = '\0';
 
     // Clamp con trỏ nếu vượt giới hạn
-    if (g_keypad.ssid_real_pos > g_keypad.ssid_len)
-        g_keypad.ssid_real_pos = g_keypad.ssid_len;
+    if (g_keypad.ssid_real_pos > g_keypad.wifi_len)
+        g_keypad.ssid_real_pos = g_keypad.wifi_len;
 
     // Reset window nếu chuỗi nhỏ hơn 16
-    if (g_keypad.ssid_len <= 16) {
+    if (g_keypad.wifi_len <= 16) {
         g_keypad.ssid_window_start = 0;
     }
     else {
@@ -188,9 +179,9 @@ void ssid_delete_at_cursor() {
     // --- TẠO VIEW LCD ---
     char view[17];
 
-    if (g_keypad.ssid_len <= 16) {
-        memcpy(view, g_keypad.input_buffer, g_keypad.ssid_len);
-        view[g_keypad.ssid_len] = '\0';
+    if (g_keypad.wifi_len <= 16) {
+        memcpy(view, g_keypad.input_buffer, g_keypad.wifi_len);
+        view[g_keypad.wifi_len] = '\0';
     } else {
         memcpy(view,
                &g_keypad.input_buffer[g_keypad.ssid_window_start],

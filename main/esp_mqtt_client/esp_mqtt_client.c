@@ -283,7 +283,6 @@ void mqtt_process_task(void *pvParameters) {
 
         }
 
-       
 
 
 
@@ -317,3 +316,4 @@ int extract_counter_number(const char *name) {
     
     return -1; // Không parse được
 }
+

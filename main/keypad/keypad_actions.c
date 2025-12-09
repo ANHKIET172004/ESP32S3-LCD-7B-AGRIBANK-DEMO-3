@@ -212,6 +212,8 @@ void publish_device_id(){
         xSemaphoreGive(g_mutex.device_list_mutex);//
 
         mqtt_publish_device_id(g_keypad.temp_selected_device_id);//
+        esp_mqtt_client_publish(mqtt_client, "transfer_number", "YES", 0, 0, true);//
+
 
         g_keypad.in_selection_mode = false;
         g_keypad.current_mode = MODE_NORMAL;
@@ -229,6 +231,8 @@ void publish_service_id(){
         }
         g_keypad.skip=true;
         mqtt_publish_service_id(g_keypad.selected_service_id);//
+        esp_mqtt_client_publish(mqtt_client, "transfer_number", "YES", 0, 0, true);//
+
        
         //in_selection_mode = false;
         g_keypad.current_mode = MODE_NORMAL;

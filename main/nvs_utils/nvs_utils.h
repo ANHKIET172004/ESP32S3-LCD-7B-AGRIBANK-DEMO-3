@@ -8,12 +8,12 @@
 
 
 
-void save_user_id(const char *user_id);
+void save_counter_id(const char *counter_id);
 
 
-esp_err_t read_user_id_from_nvs(char *user_id, size_t buffer_size) ;
+esp_err_t read_counter_id_from_nvs(char *counter_id, size_t buffer_size) ;
 
-void delete_user_id(void) ;
+void delete_counter_id(void) ;
 
 
 void save_wifi_credentials(const char *ssid, const char *password, const uint8_t* bssid) ;

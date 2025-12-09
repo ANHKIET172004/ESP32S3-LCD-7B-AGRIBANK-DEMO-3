@@ -2,63 +2,63 @@
 
 #define TAG "NVS_UTILS"
 
-void save_user_id(const char *user_id) {
-    if (!user_id || strlen(user_id) == 0) {
-        ESP_LOGW(TAG, "Invalid user_id to save");
+void save_counter_id(const char *counter_id) {
+    if (!counter_id || strlen(counter_id) == 0) {
+        ESP_LOGW(TAG, "Invalid counter_id to save");
         return;
     }
 
     nvs_handle_t nvs_handle;
     esp_err_t err = nvs_open("user_config", NVS_READWRITE, &nvs_handle);
     if (err != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to open NVS handle for user_id (%s)!", esp_err_to_name(err));
+        ESP_LOGE(TAG, "Failed to open NVS handle for counter_id (%s)!", esp_err_to_name(err));
         return;
     }
 
-    err = nvs_set_str(nvs_handle, "user_id", user_id);
+    err = nvs_set_str(nvs_handle, "counter_id", counter_id);
     if (err != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to set user_id: %s", esp_err_to_name(err));
+        ESP_LOGE(TAG, "Failed to set counter_id: %s", esp_err_to_name(err));
         nvs_close(nvs_handle);
         return;
     }
 
     err = nvs_commit(nvs_handle);
     if (err == ESP_OK) {
-        ESP_LOGI(TAG, "User ID saved successfully: %s", user_id);
+        ESP_LOGI(TAG, "User ID saved successfully: %s", counter_id);
     } else {
-        ESP_LOGE(TAG, "Failed to commit user_id: %s", esp_err_to_name(err));
+        ESP_LOGE(TAG, "Failed to commit counter_id: %s", esp_err_to_name(err));
     }
     
     nvs_close(nvs_handle);
 }
 
 
-esp_err_t read_user_id_from_nvs(char *user_id, size_t buffer_size) {
-    if (!user_id || buffer_size == 0) {
-        ESP_LOGE(TAG, "Invalid buffer for read_user_id_from_nvs");
+esp_err_t read_counter_id_from_nvs(char *counter_id, size_t buffer_size) {
+    if (!counter_id || buffer_size == 0) {
+        ESP_LOGE(TAG, "Invalid buffer for read_counter_id_from_nvs");
         return ESP_ERR_INVALID_ARG;
     }
 
     nvs_handle_t nvs_handle;
     esp_err_t err = nvs_open("user_config", NVS_READONLY, &nvs_handle);
     if (err != ESP_OK) {
-        ESP_LOGW(TAG, "Failed to open NVS handle for user_id: %s", esp_err_to_name(err));
-        memset(user_id, 0, buffer_size);
+        ESP_LOGW(TAG, "Failed to open NVS handle for counter_id: %s", esp_err_to_name(err));
+        memset(counter_id, 0, buffer_size);
         return err;
     }
 
     size_t required_size = buffer_size;
-    err = nvs_get_str(nvs_handle, "user_id", user_id, &required_size);
+    err = nvs_get_str(nvs_handle, "counter_id", counter_id, &required_size);
     
     if (err != ESP_OK) {
         if (err == ESP_ERR_NVS_NOT_FOUND) {
             ESP_LOGW(TAG, "User ID not found in NVS");
         } else {
-            ESP_LOGE(TAG, "Failed to read user_id: %s", esp_err_to_name(err));
+            ESP_LOGE(TAG, "Failed to read counter_id: %s", esp_err_to_name(err));
         }
-        memset(user_id, 0, buffer_size);
+        memset(counter_id, 0, buffer_size);
     } else {
-        ESP_LOGI(TAG, "Read user ID successfully: %s", user_id);
+        ESP_LOGI(TAG, "Read user ID successfully: %s", counter_id);
     }
     
     nvs_close(nvs_handle);
@@ -66,7 +66,7 @@ esp_err_t read_user_id_from_nvs(char *user_id, size_t buffer_size) {
 }
 
 
-void delete_user_id(void) {
+void delete_counter_id(void) {
     nvs_handle_t nvs_handle;
     esp_err_t err = nvs_open("user_config", NVS_READWRITE, &nvs_handle);
     if (err != ESP_OK) {
@@ -74,18 +74,18 @@ void delete_user_id(void) {
         return;
     }
 
-    err = nvs_erase_key(nvs_handle, "user_id");
+    err = nvs_erase_key(nvs_handle, "counter_id");
     if (err == ESP_OK) {
         err = nvs_commit(nvs_handle);
         if (err == ESP_OK) {
             ESP_LOGI(TAG, "User ID deleted successfully!");
         } else {
-            ESP_LOGE(TAG, "Failed to commit user_id deletion: %s", esp_err_to_name(err));
+            ESP_LOGE(TAG, "Failed to commit counter_id deletion: %s", esp_err_to_name(err));
         }
     } else if (err == ESP_ERR_NVS_NOT_FOUND) {
         ESP_LOGW(TAG, "User ID not found, nothing to delete");
     } else {
-        ESP_LOGE(TAG, "Failed to delete user_id: %s", esp_err_to_name(err));
+        ESP_LOGE(TAG, "Failed to delete counter_id: %s", esp_err_to_name(err));
     }
     
     nvs_close(nvs_handle);

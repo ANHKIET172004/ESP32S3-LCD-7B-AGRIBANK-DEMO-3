@@ -1,13 +1,12 @@
 #include "mutex.h"
 
-
 static bool _mqtt_connected = false;
 static bool _wifi_connected = false;
 static bool _user_selected_wifi = false;
 static int  _wifi_retry_count = 0;
+static bool _service_scroll_enable=false;
 
 extern state_context_t g_state;
-
 
 mutex_context_t g_mutex={
 
@@ -20,9 +19,28 @@ mutex_context_t g_mutex={
 . wifi_config_mutex = NULL,
 . mqtt_mutex = NULL,
 . selected_id_mutex = NULL,
+.scroll_mutex=NULL,
 
 };
 
+void mutex_init() {
+    g_mutex. lcd_mutex = xSemaphoreCreateMutex();
+    g_mutex. state_mutex = xSemaphoreCreateMutex();
+    g_mutex.display_state_mutex = xSemaphoreCreateMutex();
+    g_mutex.input_mutex = xSemaphoreCreateMutex();
+    g_mutex.device_list_mutex = xSemaphoreCreateMutex();
+    g_mutex.service_list_mutex = xSemaphoreCreateMutex();
+    g_mutex.wifi_config_mutex = xSemaphoreCreateMutex();
+    g_mutex.mqtt_mutex = xSemaphoreCreateMutex();
+    g_mutex.selected_id_mutex = xSemaphoreCreateMutex();
+    g_mutex. mqtt_start_mutex = xSemaphoreCreateMutex();
+    g_mutex. wifi_start_mutex = xSemaphoreCreateMutex();
+    g_mutex. mqtt_connected_mutex = xSemaphoreCreateMutex();
+    g_mutex. wifi_connected_mutex = xSemaphoreCreateMutex();
+    g_mutex. wifi_retry_mutex = xSemaphoreCreateMutex();
+    g_mutex. user_selected_wifi_mutex = xSemaphoreCreateMutex();
+    g_mutex.scroll_mutex=xSemaphoreCreateMutex();
+}
 
 bool get_mqtt_connected(void) {
     bool val;
@@ -52,8 +70,6 @@ void set_wifi_connected(bool val) {
     _wifi_connected = val;
     xSemaphoreGive(g_mutex.wifi_connected_mutex);
 }
-
-
 
 bool get_user_selected_wifi(void) {
     bool val;
@@ -108,8 +124,6 @@ void set_sys_state(SystemState s) {
 }
 
 
-
-
  DisplayState get_display_state(void) {
     DisplayState d;
     xSemaphoreTake(g_mutex.display_state_mutex, portMAX_DELAY);
@@ -124,25 +138,19 @@ void set_sys_state(SystemState s) {
     xSemaphoreGive(g_mutex.display_state_mutex);
 }
 
-
-
-
-void mutex_init() {
-    g_mutex. lcd_mutex = xSemaphoreCreateMutex();
-    g_mutex. state_mutex = xSemaphoreCreateMutex();
-    g_mutex.display_state_mutex = xSemaphoreCreateMutex();
-    g_mutex.input_mutex = xSemaphoreCreateMutex();
-    g_mutex.device_list_mutex = xSemaphoreCreateMutex();
-    g_mutex.service_list_mutex = xSemaphoreCreateMutex();
-    g_mutex.wifi_config_mutex = xSemaphoreCreateMutex();
-    g_mutex.mqtt_mutex = xSemaphoreCreateMutex();
-    g_mutex.selected_id_mutex = xSemaphoreCreateMutex();
-    g_mutex. mqtt_start_mutex = xSemaphoreCreateMutex();
-    g_mutex. wifi_start_mutex = xSemaphoreCreateMutex();
-    g_mutex. mqtt_connected_mutex = xSemaphoreCreateMutex();
-    g_mutex. wifi_connected_mutex = xSemaphoreCreateMutex();
-    g_mutex. wifi_retry_mutex = xSemaphoreCreateMutex();
-    g_mutex. user_selected_wifi_mutex = xSemaphoreCreateMutex();
-
-
+void set_scroll_enable(bool val){
+    xSemaphoreTake(g_mutex.scroll_mutex,portMAX_DELAY);
+    _service_scroll_enable=val;
+    xSemaphoreGive(g_mutex.scroll_mutex);
 }
+
+bool get_scroll_enable(void){
+    bool val;
+    xSemaphoreTake(g_mutex.scroll_mutex,portMAX_DELAY);
+    val=_service_scroll_enable;
+    xSemaphoreGive(g_mutex.scroll_mutex);
+    return val;
+}
+
+
+

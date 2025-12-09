@@ -16,10 +16,10 @@
 #define TAG "DEMO"
 
 uint8_t start_cnt = 0;
+bool start=true;
 bool user_selected_wifi = false;
 
-char display_user_id[3]={0};
-
+char counter_id[3]={0};
 
 extern QueueHandle_t mqtt_queue;
 
@@ -44,8 +44,8 @@ void app_main(void) {
         ESP_ERROR_CHECK(nvs_flash_init());
     }
 
-    user_id_init();// mac
-    strcpy(display_user_id,g_keypad.user_id);
+    counter_id_init();// mac
+    strcpy(counter_id,g_keypad.counter_id);
     strcpy(g_keypad.selected_device_id,g_keypad.default_id);
 
     esp_netif_init();
@@ -56,13 +56,10 @@ void app_main(void) {
     if (mqtt_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create MQTT queue!");
     } 
-    //xTaskCreate(mqtt_process_task, "mqtt_task", 6*1024, NULL, 4, NULL);
 
     xTaskCreatePinnedToCore(mqtt_process_task, "mqtt_task", 6* 1024, NULL, 4, NULL,0 );
     xTaskCreatePinnedToCore(keypad_task, "keypad_task", 7* 1024, NULL, 6, NULL, 1);
     xTaskCreatePinnedToCore( system_task, "system_task",  4*1024, NULL,5, &g_state.system_task_handle, 1 );
     xTaskCreate(service_scroll_task, "service_scroll_task", 2048, NULL, 1, NULL);
-
-
 
 }

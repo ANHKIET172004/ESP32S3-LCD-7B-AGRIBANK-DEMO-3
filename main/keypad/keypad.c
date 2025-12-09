@@ -10,10 +10,6 @@
 extern esp_mqtt_client_handle_t mqtt_client;
 
 
-extern char display_user_id[3];
-
-extern bool service_scroll_enable;
-
 keypad_context_t g_keypad={
      .input_buffer= {0},
      .buffer_index = 0,
@@ -38,7 +34,7 @@ keypad_context_t g_keypad={
      .last_a_press_time=0,
      .last_b_press_time=0,
      .last_s_press_time=0,
-     .debounce_interval_us = 1500000,
+     .debounce_interval_us = 1000000,
      .selected_device_id={0},
      .temp_selected_device_name={0},
      .temp_selected_device_id={0},
@@ -46,7 +42,7 @@ keypad_context_t g_keypad={
      . positon_flag=0,
      . menu_selection = 0,
      . device_list_ready = false,
-     . user_id={0},
+     . counter_id={0},
      . default_id={0},
      . device_count=0,
      . service_list_ready = false,
@@ -71,7 +67,7 @@ extern mutex_context_t g_mutex;
 void process_key_wifi_mode(char key) {
     if (key=='A'){
             
-        ssid_cursor_right();
+        lcd_cursor_right();
             
     }
     
@@ -261,12 +257,12 @@ void process_key_service_select(char key) {
         lcd_show_service_list();
     }
     else if (key == 'B') {
-       service_scroll_enable=false;
+       set_scroll_enable(false);
        old_screen_reload();
 
     }
     else if (key == 'D') {
-        service_scroll_enable=false;
+        set_scroll_enable(false);
         enter_service();
     }
 
@@ -381,7 +377,7 @@ void keypad_task(void *param) {
             vTaskDelay(pdMS_TO_TICKS(100));
         }
         
-        // Feed watchdog từ keypad task
+        // feed watchdog 
         esp_task_wdt_reset();
         vTaskDelay(pdMS_TO_TICKS(50));
     }

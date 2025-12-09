@@ -11,6 +11,38 @@ extern char device_name[7] ;
 
 extern esp_mqtt_client_handle_t mqtt_client;
 
+static void sort_device_list_by_counter(void)
+{
+    for (int i = 0; i < g_keypad.device_count - 1; i++) {
+        for (int j = i + 1; j < g_keypad.device_count; j++) {
+
+            //int c1 = atoi(g_keypad.device_list[i].counter_id);
+            //int c2 = atoi(g_keypad.device_list[j].counter_id);
+
+            int c1 = extract_counter_number(g_keypad.device_list[i].counter_id);
+            int c2 = extract_counter_number(g_keypad.device_list[j].counter_id);
+
+            char a[3];
+            char b[3];
+
+            sprintf(a,"%d",c1);
+            sprintf(b,"%d",c2);
+
+            //strncpy(g_keypad.device_list[i].name,a,sizeof(g_keypad.device_list[i].counter_id));
+            //strncpy(g_keypad.device_list[j].name,b,sizeof(g_keypad.device_list[j].counter_id));
+
+
+            if (c1 > c2) {
+                // swap
+                DeviceInfo  temp = g_keypad.device_list[i];
+                g_keypad.device_list[i] = g_keypad.device_list[j];
+                g_keypad.device_list[j] = temp;
+            }
+        }
+    }
+}
+
+
  void responsenumber_topic_handler(mqtt_message_t msg){
             cJSON *root = cJSON_Parse(msg.payload);
             if (!root) {
@@ -141,14 +173,16 @@ extern esp_mqtt_client_handle_t mqtt_client;
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
 
 
-                snprintf(g_keypad.device_list[g_keypad.device_count].user_id, 3, "%02d", counter_num % 100);
+                snprintf(g_keypad.device_list[g_keypad.device_count].counter_id, 3, "%02d", counter_num % 100);
                 ESP_LOGI(TAG, "Extracted counter ID: %d from name: %s", counter_num, name->valuestring);
+
+
 
                 xSemaphoreGive(g_mutex.device_list_mutex);//
             } 
 
              else {
-                ESP_LOGW(TAG, "No valid user_id for device: %s", name->valuestring);
+                ESP_LOGW(TAG, "No valid counter_id for device: %s", name->valuestring);
             }
             
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
@@ -163,7 +197,7 @@ extern esp_mqtt_client_handle_t mqtt_client;
             
             if (cJSON_IsString(id) && id->valuestring) {
                 /////here
-                user_id_init();
+                counter_id_init();
                 if (strcmp(id->valuestring, g_keypad.default_id) == 0) {
                     is_current_device = true;
                     ESP_LOGI(TAG, "Found current device (MAC match): %s", g_keypad.default_id);
@@ -171,9 +205,18 @@ extern esp_mqtt_client_handle_t mqtt_client;
             }
             
             // Lưu id
-            //if (is_current_device) {
+            if (is_current_device) {
                 custom_string(name->valuestring, device_name, 
                 sizeof(device_name));
+                /////
+
+                /*
+                strncpy(device_name,
+                    g_keypad.device_list[g_keypad.device_count].counter_id
+                    ,sizeof(device_name));
+                  */
+
+                /////
                 strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name, 15);
                 char device_name_new[11]={0};
                 //sprintf(device_name_new,"%s (X)",device_name);
@@ -181,12 +224,12 @@ extern esp_mqtt_client_handle_t mqtt_client;
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
                 strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name_new, 15);
                 g_keypad.device_list[g_keypad.device_count].name[15] = '\0';
-                save_user_id(g_keypad.device_list[g_keypad.device_count].user_id
+                save_counter_id(g_keypad.device_list[g_keypad.device_count].counter_id
 );
                 xSemaphoreGive(g_mutex.device_list_mutex);//
 
-           // } 
-            /*
+            } 
+            
             else {
                 custom_string(name->valuestring, device_name, 
                                 sizeof(device_name));
@@ -195,7 +238,7 @@ extern esp_mqtt_client_handle_t mqtt_client;
                 g_keypad.device_list[g_keypad.device_count].name[15] = '\0';
                 xSemaphoreGive(g_mutex.device_list_mutex);//
             }
-                */
+                
             
             g_keypad.device_count++;
         }
@@ -203,6 +246,9 @@ extern esp_mqtt_client_handle_t mqtt_client;
     
     g_keypad.device_list_ready= true;
     ESP_LOGI(TAG, "Device list updated: %d devices", g_keypad.device_count);
+    sort_device_list_by_counter();
+    ESP_LOGI(TAG, "Sorted device list successfully");
+
 
     cJSON_Delete(root);
 

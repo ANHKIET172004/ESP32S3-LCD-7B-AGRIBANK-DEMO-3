@@ -9,6 +9,6 @@
 #include "keypad/keypad_variables.h"
 
 esp_err_t read_mac_address(char *mac_str, uint8_t *mac_raw) ;
-void user_id_init();
-
+void counter_id_init();
+void read_current_counter_id();
 #endif

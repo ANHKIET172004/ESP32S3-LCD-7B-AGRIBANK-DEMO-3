@@ -1,7 +1,7 @@
 
 #include "keypad_menu_actions.h"
 
-extern char display_user_id[3];
+extern char counter_id[3];
 
 extern esp_mqtt_client_handle_t mqtt_client;
 
@@ -13,7 +13,7 @@ void select_option(){
         if (g_keypad.menu_selection == 1) {
 
             g_keypad.ssid_real_pos=0;
-            g_keypad.ssid_len=0;
+            g_keypad.wifi_len=0;
 
             
             xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
@@ -101,18 +101,18 @@ void select_option(){
 
         else if (g_keypad.menu_selection==6){
 
-            char saved_user_id[4] = {0};
-            esp_err_t err = read_user_id_from_nvs(saved_user_id, sizeof(saved_user_id));
+            char saved_counter_id[4] = {0};
+            esp_err_t err = read_counter_id_from_nvs(saved_counter_id, sizeof(saved_counter_id));
 
-            if (err == ESP_OK && strlen(saved_user_id) > 0) {
-                // Có user_id đã lưu
-                strncpy(g_keypad.user_id, saved_user_id, sizeof(g_keypad.user_id) - 1);
-                g_keypad.user_id[sizeof(g_keypad.user_id) - 1] = '\0';
-                ESP_LOGI("DEMO", "Loaded user_id from NVS: %s", g_keypad.user_id);
+            if (err == ESP_OK && strlen(saved_counter_id) > 0) {
+                // Có counter_id đã lưu
+                strncpy(g_keypad.counter_id, saved_counter_id, sizeof(g_keypad.counter_id) - 1);
+                g_keypad.counter_id[sizeof(g_keypad.counter_id) - 1] = '\0';
+                ESP_LOGI("DEMO", "Loaded counter_id from NVS: %s", g_keypad.counter_id);
             } else {
-                // Không có user_id, dùng mặc định
-                strcpy(g_keypad.user_id, "00");
-                ESP_LOGI("DEMO", "No saved g_keypad.user_id, using default: %s", g_keypad.user_id);
+                // Không có counter_id, dùng mặc định 00
+                strcpy(g_keypad.counter_id, "00");
+                ESP_LOGI("DEMO", "No saved g_keypad.counter_id, using default: %s", g_keypad.counter_id);
             }
 
             
@@ -173,10 +173,6 @@ void select_option(){
 }
 
 
-
-
-
-
 void capslock_input() {
     g_keypad.caps_lock = !g_keypad.caps_lock;
 
@@ -184,9 +180,9 @@ void capslock_input() {
 
     char view[17];
 
-    if (g_keypad.ssid_len <= 16) {
-        memcpy(view, g_keypad.input_buffer, g_keypad.ssid_len);
-        view[g_keypad.ssid_len] = '\0';
+    if (g_keypad.wifi_len <= 16) {
+        memcpy(view, g_keypad.input_buffer, g_keypad.wifi_len);
+        view[g_keypad.wifi_len] = '\0';
     } else {
         memcpy(view,
                &g_keypad.input_buffer[g_keypad.ssid_window_start],
@@ -248,31 +244,28 @@ void enter_service(){
 }
 
 void enter_user(){
-            g_keypad.switch_device=true;
+        g_keypad.switch_device=true;
 
         backup_input_buffer();
-    
 
         xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
+
         if (g_keypad.switch_device==true){
         strncpy(g_keypad.selected_device_name, g_keypad.device_list[g_keypad.selected_index].name, sizeof(g_keypad.selected_device_name) - 1);
         g_keypad.selected_device_name[sizeof(g_keypad.selected_device_name) - 1]='\0';
         strncpy(g_keypad.selected_device_id, g_keypad.device_list[g_keypad.selected_index].device_id, sizeof(g_keypad.selected_device_id) - 1);
         g_keypad.selected_device_id[sizeof(g_keypad.selected_device_id) - 1]='\0';
-        //strncpy(selected_id, selected_device_id, sizeof(selected_id) - 1);
-        char recent_user_id[4]={0};
-          //snprintf(recent_user_id, sizeof(recent_user_id), "%02d", selected_index+1);
-        snprintf(recent_user_id, sizeof(recent_user_id), "%02d", g_keypad.selected_index+1);
-        snprintf(recent_user_id, sizeof(recent_user_id), "%s", g_keypad.device_list[g_keypad.selected_index].user_id);
-        strncpy(g_keypad.user_id,recent_user_id,sizeof(g_keypad.user_id)-1);
-        g_keypad.user_id[sizeof(g_keypad.user_id)-1]='\0';
-        strncpy(display_user_id,g_keypad.user_id,sizeof(display_user_id)-1);
-        display_user_id[sizeof(display_user_id)-1]='\0';
+        char recent_counter_id[4]={0};
+        snprintf(recent_counter_id, sizeof(recent_counter_id), "%02d", g_keypad.selected_index+1);
+        snprintf(recent_counter_id, sizeof(recent_counter_id), "%s", g_keypad.device_list[g_keypad.selected_index].counter_id);
+        strncpy(g_keypad.counter_id,recent_counter_id,sizeof(g_keypad.counter_id)-1);
+        g_keypad.counter_id[sizeof(g_keypad.counter_id)-1]='\0';
+        strncpy(counter_id,g_keypad.counter_id,sizeof(counter_id)-1);
+        counter_id[sizeof(counter_id)-1]='\0';
         g_keypad.switch_device=false;
         }
+        
         xSemaphoreGive(g_mutex.device_list_mutex);//
-
-       // mqtt_publish_device_id(selected_device_id);
 
         g_keypad.in_selection_mode = false;
         g_keypad.current_mode = MODE_NORMAL;

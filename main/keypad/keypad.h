@@ -17,6 +17,7 @@
 #include <time.h>
 #include "nvs_flash.h"
 #include "lcd_i2c/i2c-lcd.h"
+#include "lcd_i2c/lcd_option_handler.h"
 #include "mutex/mutex.h"
 #include "keypad_wifi_actions.h"
 #include "keypad_menu_actions.h"
