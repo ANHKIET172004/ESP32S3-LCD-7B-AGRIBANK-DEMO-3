@@ -9,8 +9,10 @@ state_context_t g_state={
     . display_state = DISPLAY_IDLE,
     . prev_display_state = DISPLAY_IDLE,
     . display_update_time = 0,
-    . sys_state = STATE_INIT,
-    . prev_sys_state = STATE_INIT,
+    //. sys_state = STATE_INIT,
+    //. prev_sys_state = STATE_INIT,
+    . sys_state = STATE_LOGOUT,//
+    . prev_sys_state = STATE_LOGOUT,//
     . state_enter_time = 0,
     . system_task_handle = NULL,
     . selected_ssid = {0},
@@ -55,6 +57,28 @@ void handle_display(void) {
             lcd_show_message("GOI THAT BAI!", "KHONG KET NOI!");
            
             break;
+        case DISPLAY_LOGOUT:
+            lcd_show_message("  DA DANG XUAT!","  \"A\"- >LOG IN");
+            break;
+        case DISPLAY_USER_PASS:
+
+            if (g_keypad.user_pass_index>0){
+            lcd_show_user_pass(g_keypad.user_pass_buffer);
+            }
+            else {
+             lcd_show_user_pass("____");   
+            }
+            
+            break;
+        case DISPLAY_NEW_USER_PASS:
+
+             if (g_keypad.user_pass_index>0){
+            lcd_show_new_user_pass(g_keypad.user_pass_buffer);
+            }
+            else {
+             lcd_show_new_user_pass("____");   
+            }
+            
         
         case DISPLAY_MAIN_SCREEN:
             if (g_keypad.current_mode == MODE_NORMAL) {
@@ -67,7 +91,17 @@ void handle_display(void) {
                 }
             }
             break;
-        
+
+        case DISPLAY_USER_PASSWORD_ERROR:
+             lcd_clear();
+             lcd_put_cur(0,0);
+             lcd_send_string("SAI USER PASS!");
+             lcd_put_cur(1,0);
+             lcd_send_string("THU LAI SAU!");
+             break;
+        case DISPLAY_CONTINUE:
+            lcd_show_options();
+            break;
         case DISPLAY_IDLE:
         default:
             break;
@@ -107,6 +141,22 @@ void update_display_state(void) {
         case STATE_RUNNING:
             set_display_state(DISPLAY_MAIN_SCREEN);
             break;
+        case STATE_LOGOUT:
+            set_display_state(DISPLAY_LOGOUT);
+            break;
+        case STATE_USER_PASS:
+             set_display_state(DISPLAY_USER_PASS);
+             break;
+        case STATE_USER_PASSWORD_ERROR:
+             set_display_state(DISPLAY_USER_PASSWORD_ERROR);
+             break;
+
+        case STATE_NEW_USER_PASS:
+             set_display_state(DISPLAY_NEW_USER_PASS);
+             break;
+        case STATE_CONTINUE:
+             set_display_state(DISPLAY_CONTINUE);
+             break;
         
         default:
             set_display_state(DISPLAY_IDLE);
@@ -177,9 +227,31 @@ void system_state_update(){
 
             case STATE_RUNNING:
                 break;
+            
+            case STATE_LOGOUT:
+                 break;
+            case STATE_USER_PASS:
+                 break;
+            case STATE_NEW_USER_PASS:
+                 break;
+            case STATE_CONTINUE:
+                 break;
+            case STATE_USER_PASSWORD_ERROR:
+            uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+                if (get_sys_state() !=g_state. prev_sys_state) {
+                    g_state.state_enter_time = current_time;
+                }
+                
+                if (current_time - g_state.state_enter_time >= STATE_DISPLAY_DURATION) {
+                    set_sys_state(STATE_LOGOUT);
+                    g_keypad.current_mode=MODE_LOGOUT;
+                }
+                esp_task_wdt_reset();
+                break;
 
             default:
-                set_sys_state(STATE_INIT);
+                set_sys_state(STATE_LOGOUT);
+                
                 break;
         }
 

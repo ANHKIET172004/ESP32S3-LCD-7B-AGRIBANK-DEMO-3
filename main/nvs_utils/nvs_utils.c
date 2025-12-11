@@ -122,8 +122,8 @@ esp_err_t read_wifi_credentials_from_nvs(char *ssid, size_t *ssid_len_ptr, char 
 
 bool wifi_credentials_changed(const char *new_ssid, const char *new_password)
 {
-   char old_ssid[17]={0};
-   char old_pass[17]={0};
+   char old_ssid[33]={0};
+   char old_pass[64]={0};
    size_t old_ssid_len=sizeof(old_ssid);
    size_t old_pass_len=sizeof (old_pass);
 
@@ -132,8 +132,8 @@ bool wifi_credentials_changed(const char *new_ssid, const char *new_password)
 
    if (err!=ESP_OK) return true;
 
-   if (strncmp(new_ssid,old_ssid,16)!=0) return true;
-   if (strncmp(new_password,old_pass,16)!=0) return true;
+   if (strncmp(new_ssid,old_ssid,32)!=0) return true;
+   if (strncmp(new_password,old_pass,63)!=0) return true;
 
    return false;
 }
@@ -284,4 +284,148 @@ void delete_number_status(void) {
         }
     }
     nvs_close(nvs_handle);
+}
+
+void save_user_pass(const char *user_pass) {
+    char tmp[5];
+    read_user_pass_from_nvs(tmp,sizeof(tmp));
+
+    if (strcmp(user_pass,tmp)==0){
+        ESP_LOGI(TAG,"PASS NO CHANGE, SKIP SAVING");
+        return;
+    }
+    if (!user_pass || strlen(user_pass) == 0) {
+        ESP_LOGW(TAG, "Invalid counter_id to save");
+        return;
+    }
+
+    nvs_handle_t nvs_handle;
+    esp_err_t err = nvs_open("user_pass", NVS_READWRITE, &nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to open NVS handle for user_pass (%s)!", esp_err_to_name(err));
+        return;
+    }
+
+    err = nvs_set_str(nvs_handle, "user_pass", user_pass);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to set user_pass: %s", esp_err_to_name(err));
+        nvs_close(nvs_handle);
+        return;
+    }
+
+    err = nvs_commit(nvs_handle);
+    if (err == ESP_OK) {
+        ESP_LOGI(TAG, "User PASS saved successfully: %s", user_pass);
+    } else {
+        ESP_LOGE(TAG, "Failed to commit user_pass: %s", esp_err_to_name(err));
+    }
+    
+    nvs_close(nvs_handle);
+}
+
+esp_err_t read_user_pass_from_nvs(char *user_pass, size_t buffer_size) {
+    if (!user_pass || buffer_size == 0) {
+        ESP_LOGE(TAG, "Invalid buffer for user_pass from nvs");
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    nvs_handle_t nvs_handle;
+    esp_err_t err = nvs_open("user_pass", NVS_READONLY, &nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGW(TAG, "Failed to open NVS handle for user_pass: %s", esp_err_to_name(err));
+        memset(user_pass, 0, buffer_size);
+        
+        return err;
+    }
+
+    size_t required_size = buffer_size;
+    err = nvs_get_str(nvs_handle, "user_pass", user_pass, &required_size);
+    
+    if (err != ESP_OK) {
+        if (err == ESP_ERR_NVS_NOT_FOUND) {
+            ESP_LOGW(TAG, "User PASS not found in NVS");
+        } else {
+            ESP_LOGE(TAG, "Failed to read user_pass: %s", esp_err_to_name(err));
+            
+        }
+        memset(user_pass, 0, buffer_size);
+        strcpy(user_pass,"1111");
+    } else {
+        ESP_LOGI(TAG, "Read user ID successfully: %s", user_pass);
+    }
+    
+    nvs_close(nvs_handle);
+    return err;
+}
+void save_login_status(const char *user_pass) {
+    char tmp[5];
+   // read_user_pass_from_nvs(tmp,sizeof(tmp));
+/*
+    if (strcmp(user_pass,tmp)==0){
+        ESP_LOGI(TAG,"PASS NO CHANGE, SKIP SAVING");
+        return;
+    }
+        */
+    if (!user_pass || strlen(user_pass) == 0) {
+        ESP_LOGW(TAG, "Invalid counter_id to save");
+        return;
+    }
+
+    nvs_handle_t nvs_handle;
+    esp_err_t err = nvs_open("login", NVS_READWRITE, &nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to open NVS handle for user_pass (%s)!", esp_err_to_name(err));
+        return;
+    }
+
+    err = nvs_set_str(nvs_handle, "login", user_pass);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to set user_pass: %s", esp_err_to_name(err));
+        nvs_close(nvs_handle);
+        return;
+    }
+
+    err = nvs_commit(nvs_handle);
+    if (err == ESP_OK) {
+        ESP_LOGI(TAG, "login status saved successfully: %s", user_pass);
+    } else {
+        ESP_LOGE(TAG, "Failed to commit user_pass: %s", esp_err_to_name(err));
+    }
+    
+    nvs_close(nvs_handle);
+}
+
+esp_err_t read_login_status(char *user_pass, size_t buffer_size) {
+    if (!user_pass || buffer_size == 0) {
+        ESP_LOGE(TAG, "Invalid buffer for user_pass from nvs");
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    nvs_handle_t nvs_handle;
+    esp_err_t err = nvs_open("login", NVS_READONLY, &nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGW(TAG, "Failed to open NVS handle for user_pass: %s", esp_err_to_name(err));
+        memset(user_pass, 0, buffer_size);
+        
+        return err;
+    }
+
+    size_t required_size = buffer_size;
+    err = nvs_get_str(nvs_handle, "login", user_pass, &required_size);
+    
+    if (err != ESP_OK) {
+        if (err == ESP_ERR_NVS_NOT_FOUND) {
+            ESP_LOGW(TAG, "User PASS not found in NVS");
+        } else {
+            ESP_LOGE(TAG, "Failed to read user_pass: %s", esp_err_to_name(err));
+            
+        }
+        memset(user_pass, 0, buffer_size);
+        strcpy(user_pass,"YES");
+    } else {
+        ESP_LOGI(TAG, "Read login status successfully: %s", user_pass);
+    }
+    
+    nvs_close(nvs_handle);
+    return err;
 }

@@ -46,6 +46,8 @@ typedef struct {
 
     bool        selected_positon;
 
+    bool        selected_option;
+
     char        selected_device_name[18];
     char        selected_device_id[18];
 
@@ -83,11 +85,9 @@ typedef struct {
     int          wifi_len;           
     char         wifi_ssid[32]; 
     char         view[17];
-    int          len;    
-
-
-
-
+    int          len;  
+    char         user_pass_buffer[5];
+    uint8_t      user_pass_index;  
 
 
 } keypad_context_t;

@@ -27,6 +27,10 @@ esp_err_t read_current_number_status_from_nvs(char *number_status, size_t buffer
 
 void save_number_status(const char *number_status);
 void delete_number_status(void) ;
+void save_user_pass(const char *user_pass) ;
+esp_err_t read_user_pass_from_nvs(char *user_pass, size_t buffer_size) ;
 
+void save_login_status(const char *user_pass) ;
+esp_err_t read_login_status(char *user_pass, size_t buffer_size) ;
 
 #endif

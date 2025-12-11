@@ -16,6 +16,7 @@
 void lcd_show_main_screen(const char *number) ;
 void lcd_show_wifi_input(const char *ssid) ;
 void lcd_show_wifi_pass(const char *pass) ;
+void lcd_show_user_pass(const char* number);
 
 void lcd_show_message(const char *line1, const char *line2);
 
@@ -32,9 +33,9 @@ void lcd_show_menu(void) ;
 
 void lcd_mainscreen_init();
 
+void lcd_show_new_user_pass(const char* number);
 
-
-
+void lcd_show_options(void) ;
 
 
 

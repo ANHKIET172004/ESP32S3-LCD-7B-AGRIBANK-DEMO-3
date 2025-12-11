@@ -178,7 +178,7 @@ void mqtt_init(void) {
             .username = "appuser",
             .authentication.password = "1111",
         },
-        .network.timeout_ms = 60000,  
+        //.network.timeout_ms = 60000,  
 
         .session = {
             //.keepalive = 60,

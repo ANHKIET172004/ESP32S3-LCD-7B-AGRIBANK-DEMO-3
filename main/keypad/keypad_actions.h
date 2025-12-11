@@ -41,7 +41,9 @@ void publish_device_id();
 
 void publish_service_id();
 
+void check_user_pass();
 
-
+void update_user_pass_buffer(char key);
+void delete_user_pass_buffer();
 
 #endif

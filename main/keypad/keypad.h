@@ -32,8 +32,11 @@ enum Mode {
     MODE_DEVICE_SELECT = 4,
     MODE_SERVICE_SELECT = 5,
     MODE_POSITION_SELECT=6,
-    MODE_USER_SELECT=7
-
+    MODE_USER_SELECT=7,
+    MODE_LOGOUT=8,
+    MODE_USER_PASS=9,
+    MODE_NEW_USER_PASS=10,
+    MODE_CONTINUE=11,
 
 };
 
@@ -56,6 +59,8 @@ void process_key_service_select(char key);
 
 void process_key_position_select(char key);
 void process_key_menu_mode(char key) ;
+void process_key_new_user_pass(char key);
+void process_key_option_select(char key) ;
 void process_key(char key) ;
 void old_screen_reload();
 

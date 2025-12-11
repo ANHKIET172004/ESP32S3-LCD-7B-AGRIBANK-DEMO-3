@@ -100,7 +100,13 @@ void select_option(){
 
 
         else if (g_keypad.menu_selection==6){
-
+               
+            g_keypad.selected_option=true;//
+            g_keypad.current_mode=MODE_CONTINUE;
+            set_sys_state(STATE_CONTINUE);
+             
+            /*
+            
             char saved_counter_id[4] = {0};
             esp_err_t err = read_counter_id_from_nvs(saved_counter_id, sizeof(saved_counter_id));
 
@@ -149,26 +155,47 @@ void select_option(){
             update_temp_buff(display);
         } else {
             update_temp_buff("___");//
-        }
+        }   
+            //save_login_status("NO");
             g_keypad.current_mode = MODE_NORMAL;
+            */
 
         }
 
         else if (g_keypad.menu_selection==7){
+            g_keypad.selected_option=true;//
+            g_keypad.current_mode=MODE_CONTINUE;
+            set_sys_state(STATE_CONTINUE);
+            /*
             xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
             esp_mqtt_client_publish(mqtt_client, "closed", "closed", 0, 0, 0);
             xSemaphoreGive(g_mutex.mqtt_mutex);
             g_keypad.stop=true;
-            g_keypad.current_mode = MODE_NORMAL;
+            //g_keypad.current_mode = MODE_NORMAL;
+            g_keypad.current_mode=MODE_LOGOUT;//
+            set_sys_state(STATE_LOGOUT);//
+            */
 
         }
+        /*
         else if (g_keypad.menu_selection==8){
             xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
             esp_mqtt_client_publish(mqtt_client, "open", "open", 0, 0, 0);
             xSemaphoreGive(g_mutex.mqtt_mutex);
             g_keypad.stop=false;
             g_keypad.current_mode = MODE_NORMAL;
+            
+
         }
+            */
+        else if (g_keypad.menu_selection==8){
+
+            set_sys_state(STATE_NEW_USER_PASS);
+            g_keypad.current_mode = MODE_NEW_USER_PASS;
+            
+
+        }
+
 
 }
 

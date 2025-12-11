@@ -21,6 +21,8 @@ bool user_selected_wifi = false;
 
 char counter_id[3]={0};
 
+bool start1=true;
+
 extern QueueHandle_t mqtt_queue;
 
 extern state_context_t g_state;

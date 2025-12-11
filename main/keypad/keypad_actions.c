@@ -5,13 +5,18 @@ extern esp_mqtt_client_handle_t mqtt_client;
 
 extern keypad_context_t g_keypad;
 
+extern bool start1;
 
 void old_screen_reload(){
 
+    if (g_keypad.current_mode!=MODE_CONTINUE){
         strncpy(g_keypad.input_buffer,g_keypad.saved_input_buffer, sizeof(g_keypad.input_buffer) - 1);
         g_keypad.input_buffer[sizeof(g_keypad.input_buffer) - 1]='\0';
         g_keypad.buffer_index = g_keypad.saved_buffer_index;
-        
+    }   
+    else {
+        set_sys_state(STATE_RUNNING);
+    }
         //g_keypad.current_mode = MODE_NORMAL;
         memset(g_keypad.saved_input_buffer, 0, sizeof(g_keypad.saved_input_buffer));
         g_keypad.saved_buffer_index = 0;
@@ -19,7 +24,7 @@ void old_screen_reload(){
         g_keypad.last_key = 0;
         g_keypad.key_press_count = 0;
         g_keypad.caps_lock = false;
-
+    
         
         g_keypad.current_mode=MODE_MENU;
         lcd_show_menu();
@@ -68,6 +73,7 @@ void delete_normal_input_key(){
         xSemaphoreGive(g_mutex.input_mutex);
 
 }
+
 
 
 
@@ -239,3 +245,69 @@ void publish_service_id(){
         set_display_state(DISPLAY_MAIN_SCREEN);
 };
 
+void check_user_pass(){
+    
+    char tmp[5];
+    read_user_pass_from_nvs(tmp,sizeof(tmp));
+
+    if (strcmp(g_keypad.user_pass_buffer,tmp)==0){
+
+        ///
+        g_keypad.wifi_step=0;
+        g_keypad.last_key = 0;
+        g_keypad.key_press_count = 0;
+        ///
+
+        xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
+        esp_mqtt_client_publish(mqtt_client, "reset_number", "reset", 0, 0, 0);
+        xSemaphoreGive(g_mutex.mqtt_mutex);
+
+        //save_login_status("YES");
+        if (start1==true){
+            start1=false;
+            g_keypad.current_mode=MODE_NORMAL;
+            set_sys_state(STATE_INIT);
+        }
+        else {
+        g_keypad.current_mode=MODE_NORMAL;
+        set_sys_state(STATE_RUNNING);
+        }
+        
+    }
+    else {
+        set_sys_state(STATE_USER_PASSWORD_ERROR);
+    }
+        memset(g_keypad.user_pass_buffer,0,sizeof(g_keypad.user_pass_buffer));
+        g_keypad.user_pass_index=0;
+    
+}
+
+void update_user_pass_buffer(char key){
+    if (g_keypad.user_pass_index >= 4) {
+        
+        g_keypad.user_pass_index = 0;
+        memset(g_keypad.user_pass_buffer,0,sizeof(g_keypad.user_pass_buffer));
+        
+    }
+        g_keypad.user_pass_buffer[g_keypad.user_pass_index] = key;
+        g_keypad.user_pass_index++;
+        g_keypad.user_pass_buffer[g_keypad.user_pass_index] = '\0';
+    //set_display_state(DISPLAY_MAIN_SCREEN);
+    //update_temp_buff(g_keypad.input_buffer);
+
+}
+
+void delete_user_pass_buffer(){
+    if (g_keypad.user_pass_index > 0) {
+            g_keypad.user_pass_index--;
+            g_keypad.user_pass_buffer[g_keypad.user_pass_index] = '\0';
+            g_keypad.last_key = 0;
+            g_keypad.key_press_count = 0;
+            //lcd_show_user_pass(g_keypad.user_pass_buffer);
+    }
+    else {
+
+    }
+    
+
+}

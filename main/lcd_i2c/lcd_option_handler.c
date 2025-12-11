@@ -77,6 +77,26 @@ void lcd_show_main_screen(const char *number) {
     lcd_unlock();
 }
 
+void lcd_show_user_pass(const char* number){
+       lcd_lock();
+       lcd_clear();
+       lcd_put_cur(0,0);
+       lcd_send_string("*NHAP USER PASS:");
+       lcd_put_cur(1,0);
+       lcd_send_string(number);
+       lcd_unlock();
+}
+
+void lcd_show_new_user_pass(const char* number){
+       lcd_lock();
+       lcd_clear();
+       lcd_put_cur(0,0);
+       lcd_send_string("*NHAP PASS MOI:");
+       lcd_put_cur(1,0);
+       lcd_send_string(number);
+       lcd_unlock();
+}
+
 void lcd_show_wifi_input(const char *ssid) {
     lcd_lock();
     
@@ -326,7 +346,49 @@ void lcd_show_menu(void) {
        lcd_send_string(">MO QUAY");
     }
        */
+    else if (g_keypad.menu_selection==8){
+       lcd_put_cur(1, 0);
+       lcd_send_string(">DOI USER PASS");
+    }
 
+    lcd_unlock();
+}
+
+void lcd_show_options(void) {
+    
+    lcd_lock();
+    lcd_clear();
+    lcd_put_cur(0, 0);
+    char header[17] = {0};
+    snprintf(header, sizeof(header), "*TIEP TUC?");
+    lcd_send_string(header);
+    lcd_put_cur(1,1);
+    lcd_send_string("1.YES");
+    lcd_put_cur(1,11);
+    lcd_send_string("2.NO");
+   
+    char line[2] = {0};
+    
+    if (g_keypad.selected_option==true){
+
+    snprintf(line, sizeof(line), ">");
+    lcd_put_cur(1, 0);
+    lcd_send_string(line);
+    lcd_put_cur(1, 10);
+    lcd_send_string(" ");
+    
+    }
+
+    else {
+
+        snprintf(line, sizeof(line), ">");
+        lcd_put_cur(1, 10);
+        lcd_send_string(line);
+        lcd_put_cur(1, 0);
+        lcd_send_string(" ");
+
+    }
+  
     lcd_unlock();
 }
 
