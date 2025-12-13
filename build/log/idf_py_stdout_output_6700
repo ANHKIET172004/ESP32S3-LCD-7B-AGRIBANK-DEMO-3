@@ -1,349 +1,102 @@
-Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
-�4) boot.esp32: SPI Spe�ets Jul 29 2019 12:21:46
+Command: ninja flash
+[1/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:33:13: warning: unused variable 'best_rssi' [-Wunused-variable]
+   33 |     uint8_t best_rssi=-127;// khoi tao
+      |             ^~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:27:14: warning: unused variable 'count' [-Wunused-variable]
+   27 |     uint16_t count;
+      |              ^~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: At top level:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:14:13: warning: 'ascii_ssid' defined but not used [-Wunused-function]
+   14 | static bool ascii_ssid(const char* ssid){
+      |             ^~~~~~~~~~
+[2/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[3/11] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[4/11] Linking C static library esp-idf\main\libmain.a
+[5/11] No install step for 'bootloader'
+[6/11] Completed 'bootloader'
+[7/11] Generating esp-idf/esp_system/ld/sections.ld
+[8/11] Linking CXX executable hello_world.elf
+[9/11] Generating binary image from built executable
+esptool.py v4.9.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
+[10/11] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
+hello_world.bin binary size 0xe7430 bytes. Smallest app partition is 0x100000 bytes. 0x18bd0 bytes (10%) free.
+[10/11] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.1
+Serial port COM3
+Connecting......
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+WARNING: Detected crystal freq 41.01MHz is quite different to normalized freq 40MHz. Unsupported crystal in use?
+Crystal is 40MHz
+MAC: a8:42:e3:4c:7c:bc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f7fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26240 bytes to 16493...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075f5... (100 %)
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 386.9 kbit/s)...
+Hash of data verified.
+Compressed 947248 bytes to 590258...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001cdce... (5 %)
+Writing at 0x0002862e... (8 %)
+Writing at 0x00031ed1... (10 %)
+Writing at 0x00039f8a... (13 %)
+Writing at 0x0003f8bd... (16 %)
+Writing at 0x00045445... (18 %)
+Writing at 0x0004b17f... (21 %)
+Writing at 0x00050dc0... (24 %)
+Writing at 0x00056e52... (27 %)
+Writing at 0x0005cd96... (29 %)
+Writing at 0x00062692... (32 %)
+Writing at 0x00068325... (35 %)
+Writing at 0x0006e0fd... (37 %)
+Writing at 0x00073e11... (40 %)
+Writing at 0x000799c3... (43 %)
+Writing at 0x0007f7ad... (45 %)
+Writing at 0x00085c31... (48 %)
+Writing at 0x0008baa7... (51 %)
+Writing at 0x000916a8... (54 %)
+Writing at 0x00096be0... (56 %)
+Writing at 0x0009c0a3... (59 %)
+Writing at 0x000a1d44... (62 %)
+Writing at 0x000a77fa... (64 %)
+Writing at 0x000ad057... (67 %)
+Writing at 0x000b2958... (70 %)
+Writing at 0x000b8790... (72 %)
+Writing at 0x000be06d... (75 %)
+Writing at 0x000c3d7f... (78 %)
+Writing at 0x000c9895... (81 %)
+Writing at 0x000cf165... (83 %)
+Writing at 0x000d52a3... (86 %)
+Writing at 0x000df944... (89 %)
+Writing at 0x000e5995... (91 %)
+Writing at 0x000ebe7f... (94 %)
+Writing at 0x000f16ab... (97 %)
+Writing at 0x000f7215... (100 %)
+Wrote 947248 bytes (590258 compressed) at 0x00010000 in 13.6 seconds (effective 556.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 877.4 kbit/s)...
+Hash of data verified.
 
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:6380
-ho 0 tail 12 room 4
-load:0x40078000,len:15916
-load:0x40080400,len:3860
-entry 0x40080638
-[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
-[0;32mI (29) boot: compile time Oct 19 2025 19:26:38[0m
-[0;32mI (29) boot: Multicore bootloader[0m
-[0;32mI (31) boot: chip revision: v3.0[0m
-[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
-[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
-[0;32mI (45) boot: Enabling RNG early entropy source...[0m
-[0;32mI (49) boot: Partition Table:[0m
-[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (78) boot: End of partition table[0m
-[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1f6b0h (128688) map[0m
-[0;32mI (132) esp_image: segment 1: paddr=0002f6d8 vaddr=3ff80000 size=00020h (    32) load[0m
-[0;32mI (133) esp_image: segment 2: paddr=0002f700 vaddr=3ffb0000 size=00918h (  2328) load[0m
-[0;32mI (137) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=a4164h (672100) map[0m
-[0;32mI (373) esp_image: segment 4: paddr=000d418c vaddr=3ffb0918 size=036a0h ( 13984) load[0m
-[0;32mI (379) esp_image: segment 5: paddr=000d7834 vaddr=40080000 size=192e4h (103140) load[0m
-[0;32mI (431) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (431) boot: Disabling RNG early entropy source...[0m
-[0;32mI (442) cpu_start: Multicore app[0m
-[0;32mI (450) cpu_start: Pro cpu start user code[0m
-[0;32mI (450) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (450) app_init: Application information:[0m
-[0;32mI (450) app_init: Project name:     hello_world[0m
-[0;32mI (455) app_init: App version:      v5.5-dirty[0m
-[0;32mI (459) app_init: Compile time:     Oct 20 2025 20:55:32[0m
-[0;32mI (464) app_init: ELF file SHA256:  fb19240cc...[0m
-[0;32mI (468) app_init: ESP-IDF:          v5.5-dirty[0m
-[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (480) efuse_init: Chip rev:         v3.0[0m
-[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (495) heap_init: At 3FFB87B0 len 00027850 (158 KiB): DRAM[0m
-[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (511) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
-[0;32mI (518) spi_flash: detected chip: generic[0m
-[0;32mI (520) spi_flash: flash io: dio[0m
-[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
-[0;33mW (536) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
-[0;32mI (546) main_task: Started on CPU0[0m
-[0;32mI (556) main_task: Calling app_main()[0m
-[0;32mI (556) KEYPAD: I2C initialized successfully[0m
-[0;32mI (2146) KEYPAD: Starting keypad MQTT application[0m
-[0;32mI (2196) wifi:wifi driver task: 3ffc09b4, prio:23, stack:6656, core=0[0m
-[0;32mI (2216) wifi:wifi firmware version: f3dbad7[0m
-[0;32mI (2216) wifi:wifi certification version: v7.0[0m
-[0;32mI (2216) wifi:config NVS flash: enabled[0m
-[0;32mI (2216) wifi:config nano formatting: disabled[0m
-[0;32mI (2216) wifi:Init data frame dynamic rx buffer num: 32[0m
-[0;32mI (2226) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (2226) wifi:Init management short buffer num: 32[0m
-[0;32mI (2236) wifi:Init dynamic tx buffer num: 32[0m
-[0;32mI (2236) wifi:Init static rx buffer size: 1600[0m
-[0;32mI (2236) wifi:Init static rx buffer num: 10[0m
-[0;32mI (2246) wifi:Init dynamic rx buffer num: 32[0m
-[0;32mI (2246) wifi_init: rx ba win: 6[0m
-[0;32mI (2246) wifi_init: accept mbox: 6[0m
-[0;32mI (2256) wifi_init: tcpip mbox: 32[0m
-[0;32mI (2256) wifi_init: udp mbox: 6[0m
-[0;32mI (2256) wifi_init: tcp mbox: 6[0m
-[0;32mI (2266) wifi_init: tcp tx win: 5760[0m
-[0;32mI (2266) wifi_init: tcp rx win: 5760[0m
-[0;32mI (2266) wifi_init: tcp mss: 1440[0m
-[0;32mI (2276) wifi_init: WiFi IRAM OP enabled[0m
-[0;32mI (2276) wifi_init: WiFi RX IRAM OP enabled[0m
-[0;32mI (2336) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
-[0;32mI (2416) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
-[0;32mI (2446) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
-[0;32mI (2446) wifi:enable tsf[0m
-[0;32mI (2456) KEYPAD: WiFi initialized[0m
-[0;32mI (2456) KEYPAD: WiFi STA started[0m
-[0;32mI (2466) KEYPAD: Have a saved wifi network in NVS: NamTrung[0m
-[0;33mW (3276) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
-[0;32mI (3356) wifi:flush txq[0m
-[0;32mI (3356) wifi:stop sw txq[0m
-[0;32mI (3356) wifi:lmac stop hw txq[0m
-[0;32mI (3356) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
-[0;32mI (3356) wifi:enable tsf[0m
-[0;32mI (3356) KEYPAD: WiFi STA started[0m
-[1;31mE (3366) wifi:sta is connecting, return error[0m
-[0;32mI (5776) KEYPAD: STA disconnected, reason=201[0m
-[0;32mI (8686) KEYPAD: STA disconnected, reason=201[0m
-[0;32mI (11596) KEYPAD: STA disconnected, reason=201[0m
-[0;32mI (14506) KEYPAD: STA disconnected, reason=201[0m
-[0;32mI (17416) KEYPAD: STA disconnected, reason=201[0m
-[1;31mE (17916) KEYPAD: Saved WiFi connection failed after 5 retries[0m
-[0;32mI (21166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (21366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (21566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (21766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (21966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (22166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (22366) KEYPAD: Error timeout, returning to main screen[0m
-Key pressed: 4
-[0;32mI (22566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (22766) KEYPAD: Error timeout, returning to main screen[0m
-Key pressed: 7
-[0;32mI (22966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (23166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (23366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (23566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (23766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (23966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (24166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (24366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (24566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (24766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (24966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (25166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (25366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (25566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (25766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (25966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (26166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (26366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (26566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (26766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (26966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (27166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (27366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (27566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (27766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (27966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (28166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (28366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (28566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (28766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (28966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (29166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (29366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (29566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (29766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (29966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (30166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (30366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (30566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (30766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (30966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (31166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (31366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (31566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (31766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (31966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (32166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (32366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (32566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (32766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (32966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (33166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (33366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (33566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (33766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (33966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (34166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (34366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (34566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (34766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (34966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (35166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (35366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (35566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (35766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (35966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (36166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (36366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (36566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (36766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (36966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (37166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (37366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (37566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (37766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (37966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (38166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (38366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (38566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (38766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (38966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (39166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (39366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (39566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (39766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (39966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (40166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (40366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (40566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (40766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (40966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (41166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (41366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (41566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (41766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (41966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (42166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (42366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (42566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (42766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (42966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (43166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (43366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (43566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (43766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (43966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (44166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (44366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (44566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (44766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (44966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (45166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (45366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (45566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (45766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (45966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (46166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (46366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (46566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (46766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (46966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (47166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (47366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (47566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (47766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (47966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (48166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (48366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (48566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (48766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (48966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (49166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (49366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (49566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (49766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (49966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (50166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (50366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (50566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (50766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (50966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (51166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (51366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (51566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (51766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (51966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (52166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (52366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (52566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (52766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (52966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (53166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (53366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (53566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (53766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (53966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (54166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (54366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (54566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (54766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (54966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (55166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (55366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (55566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (55766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (55966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (56166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (56366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (56566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (56766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (56966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (57166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (57366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (57566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (57766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (57966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (58166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (58366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (58566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (58766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (58966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (59166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (59366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (59566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (59766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (59966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (60166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (60366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (60566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (60766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (60966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (61166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (61366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (61566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (61766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (61966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (62166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (62366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (62566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (62766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (62966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (63166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (63366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (63566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (63766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (63966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (64166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (64366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (64566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (64766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (64966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (65166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (65366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (65566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (65766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (65966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (66166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (66366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (66566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (66766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (66966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (67166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (67366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (67566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (67766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (67966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (68166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (68366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (68566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (68766) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (68966) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (69166) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (69366) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (69566) KEYPAD: Error timeout, returning to main screen[0m
-[0;32mI (69766) KEYPAD: Error timeout, returning to main screen[0m
+Leaving...
+Hard resetting via RTS pin...

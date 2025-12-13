@@ -4,92 +4,390 @@ Command: ninja flash
 Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
 [2/10] No install step for 'bootloader'
 [3/10] Completed 'bootloader'
-[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/state_machine.c.obj
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.c: In function 'handle_display':
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.c:73:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   73 |              if (g_keypad.user_pass_index>0){
-      |                 ^
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.c:81:9: note: here
-   81 |         case DISPLAY_MAIN_SCREEN:
-      |         ^~~~
-[5/10] Linking C static library esp-idf\main\libmain.a
-[6/10] Generating esp-idf/esp_system/ld/sections.ld
-[7/10] Linking CXX executable hello_world.elf
-[8/10] Generating binary image from built executable
-esptool.py v4.9.1
-Creating esp32 image...
-Merged 2 ELF sections
-Successfully created esp32 image.
-Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
-[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe5ea0 bytes. Smallest app partition is 0x100000 bytes. 0x1a160 bytes (10%) free.
-[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM11 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.9.1
-Serial port COM11
-Connecting....
-Chip is ESP32-D0WD-V3 (revision v3.0)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: 94:e6:86:09:a4:78
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f5fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 26240 bytes to 16493...
-Writing at 0x00001000... (50 %)
-Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.7 seconds (effective 283.5 kbit/s)...
-Hash of data verified.
-Compressed 941728 bytes to 586609...
-Writing at 0x00010000... (2 %)
-Writing at 0x0001ce45... (5 %)
-Writing at 0x0002859c... (8 %)
-Writing at 0x00031f61... (11 %)
-Writing at 0x00039db7... (13 %)
-Writing at 0x0003f6bf... (16 %)
-Writing at 0x00045277... (19 %)
-Writing at 0x0004afdc... (22 %)
-Writing at 0x00050bf3... (25 %)
-Writing at 0x00056c86... (27 %)
-Writing at 0x0005cc08... (30 %)
-Writing at 0x000624fb... (33 %)
-Writing at 0x00068133... (36 %)
-Writing at 0x0006df2a... (38 %)
-Writing at 0x00073c2b... (41 %)
-Writing at 0x000797d9... (44 %)
-Writing at 0x0007f5cf... (47 %)
-Writing at 0x000859da... (50 %)
-Writing at 0x0008b866... (52 %)
-Writing at 0x0009144b... (55 %)
-Writing at 0x00096975... (58 %)
-Writing at 0x0009be7d... (61 %)
-Writing at 0x000a1d45... (63 %)
-Writing at 0x000a76bd... (66 %)
-Writing at 0x000ace1d... (69 %)
-Writing at 0x000b27a6... (72 %)
-Writing at 0x000b85db... (75 %)
-Writing at 0x000bdee2... (77 %)
-Writing at 0x000c3c3e... (80 %)
-Writing at 0x000c96af... (83 %)
-Writing at 0x000cf020... (86 %)
-Writing at 0x000d6857... (88 %)
-Writing at 0x000dfc8c... (91 %)
-Writing at 0x000e5bc0... (94 %)
-Writing at 0x000ec116... (97 %)
-Writing at 0x000f1499... (100 %)
-Wrote 941728 bytes (586609 compressed) at 0x00010000 in 13.3 seconds (effective 566.7 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 431.2 kbit/s)...
-Hash of data verified.
-
-Leaving...
-Hard resetting via RTS pin...
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj 
+ccache D:\ESP32_IDF\Espressif\tools\xtensa-esp-elf\esp-14.2.0_20241119\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.5-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/config" -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main" -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/platform_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/esp_additions/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/dma/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/ldo/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/debug_probe/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/power_supply/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/. -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/register -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/platform_port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_common/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/include/private -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/deprecated_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps/sntp -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/lwip/src/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/freertos/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/arch -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/sys -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/spi_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gpio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include/local -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/nan_app/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_event/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/tcp_transport/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls/esp-tls-crypto -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/library -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/esp_crt_bundle/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/everest/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_timer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/deprecated -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_pm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_ringbuf/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_pcnt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gptimer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_spi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_mcpwm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ana_cmpr/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2s/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdspi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_dac/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_rmt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_tsens/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_uart/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/vfs/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ledc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_parlio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_usb_serial_jtag/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/json/cJSON -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/wifi_provisioning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/common -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/security -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/transports -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/crypto/srp6a -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/proto-c -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo=." -fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\wifi\wifi.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj -c "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c"
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan1':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:33:12: warning: unused variable 'best_rssi' [-Wunused-variable]
+   33 |     int8_t best_rssi=-127;// khoi tao
+      |            ^~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:27:14: warning: unused variable 'count' [-Wunused-variable]
+   27 |     uint16_t count;
+      |              ^~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan2':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:70:9: warning: variable 'best_saved_index' set but not used [-Wunused-but-set-variable]
+   70 |     int best_saved_index = -1;
+      |         ^~~~~~~~~~~~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/esp_mqtt_client/esp_mqtt_client.h:6,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:4,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.h:11,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.h:10,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:1:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:197:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  197 |         ap_info[best_ap_index].bssi[0],ap_info[best_ap_index].bssi[1],ap_info[best_ap_index].bssi[2],
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:32: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:63: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                               ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:198:94: error: 'wifi_ap_record_t' has no member named 'bssi'; did you mean 'bssid'?
+  198 |         ap_info[best_ap_index].bssi[3],ap_info[best_ap_index].bssi[4],ap_info[best_ap_index].bssi[5]);
+      |                                                                                              ^~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:196:5: note: in expansion of macro 'ESP_LOGI'
+  196 |     ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %d:%d:%d %d:%d:%d",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
+      |     ^~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: At top level:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:14:13: warning: 'ascii_ssid' defined but not used [-Wunused-function]
+   14 | static bool ascii_ssid(const char* ssid){
+      |             ^~~~~~~~~~
+ninja: build stopped: subcommand failed.

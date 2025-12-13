@@ -138,6 +138,30 @@ bool wifi_credentials_changed(const char *new_ssid, const char *new_password)
    return false;
 }
 
+void load_wifi_list(wifi_list* list){
+
+    nvs_handle_t list_handle;
+
+    esp_err_t err=nvs_open("wifi_list",NVS_READONLY,&list_handle);
+
+    if (err!=ESP_OK){
+        list->count=0;
+        return;
+    }
+
+    size_t size=sizeof(wifi_list);
+
+    err=nvs_get_blob(list_handle,"saved",list,&size);
+
+    if (err!=ESP_OK){
+        list->count=0;
+        return;
+    }
+
+    nvs_close(list_handle);
+
+
+}
 
 void save_wifi_credentials(const char *ssid, const char *password, const uint8_t* bssid) {
 
@@ -157,6 +181,10 @@ void save_wifi_credentials(const char *ssid, const char *password, const uint8_t
     if (err!= ESP_OK) goto fail;
     err = nvs_set_str(nvs_handle, "password", password);
     if (err!=ESP_OK) goto fail;
+    /*
+    err = nvs_set_blob(nvs_handle, "bssid", bssid,6);
+    if (err!=ESP_OK) goto fail;
+    */
     err = nvs_commit(nvs_handle);
     if (err!=ESP_OK) goto fail;
 
@@ -170,6 +198,85 @@ void save_wifi_credentials(const char *ssid, const char *password, const uint8_t
     nvs_close(nvs_handle);
 }
 
+void save_wifi_credentials1(const char *ssid, const char *password, const uint8_t* bssid){
+    if (!ssid||!password) return;
+
+    nvs_handle_t wifi_handle;
+    wifi_list list;
+    load_wifi_list(&list);
+
+    if (list.count>10){
+        ESP_LOGI(TAG,"Full 10 wifi cred, skip saving");
+        return ;
+
+    }
+
+    for (uint8_t i=0;i<list.count;i++){
+
+        if ((strcmp(ssid,list.aps[i].ssid)==0)&&(strcmp(password,list.aps[i].pass)==0)){
+            ESP_LOGI(TAG," wifi_cre has saved, skip saving");
+            return ;
+        }
+
+    }
+    
+    esp_err_t err=nvs_open("wifi_list",NVS_READWRITE,&wifi_handle);
+
+    if (err!=ESP_OK){
+        ESP_LOGI(TAG,"Open wifi_list failed!");
+        return;
+    }
+    
+    strncpy(list.aps[list.count].ssid,ssid,sizeof(list.aps[list.count].ssid)-1);
+    list.aps[list.count].ssid[sizeof(list.aps[list.count].ssid)-1]='\0';
+    strncpy(list.aps[list.count].pass,password,sizeof(list.aps[list.count].pass)-1);
+    list.aps[list.count].pass[sizeof(list.aps[list.count].pass)-1]='\0';
+    list.count++;
+
+    err=nvs_set_blob(wifi_handle,"saved",&list,sizeof(list));
+
+    if (err!=ESP_OK){
+        ESP_LOGI(TAG,"save wifi cred failed!");
+        return;
+    }
+
+    nvs_commit(wifi_handle);
+    nvs_close(wifi_handle);
+    ESP_LOGI(TAG,"save wifi cred successfully!");
+
+
+}
+
+esp_err_t save_wifi_list(const wifi_list *list)
+{
+    nvs_handle_t handle;
+    esp_err_t err = nvs_open("wifi_list", NVS_READWRITE, &handle);
+    if (err != ESP_OK) return err;
+
+    err = nvs_set_blob(handle, "saved", list, sizeof(wifi_list));
+    if (err == ESP_OK) err = nvs_commit(handle);
+
+    nvs_close(handle);
+    return err;
+}
+
+void delete_wifi_credentials(uint8_t index){
+
+    wifi_list* list=calloc(1,sizeof(wifi_list));
+    load_wifi_list(list);
+
+    if (index<0||index>list->count){
+        ESP_LOGI(TAG,"INVALID INDEX");
+
+    }
+
+    for (uint8_t i=index;i<list->count-1;i++){
+               list->aps[i]=list->aps[i+1];
+    }
+    list->count--;
+    save_wifi_list(list);
+    
+}
 
 void save_called_number(const char *number) {
     nvs_handle_t nvs_handle;
@@ -334,6 +441,7 @@ esp_err_t read_user_pass_from_nvs(char *user_pass, size_t buffer_size) {
     if (err != ESP_OK) {
         ESP_LOGW(TAG, "Failed to open NVS handle for user_pass: %s", esp_err_to_name(err));
         memset(user_pass, 0, buffer_size);
+        strncpy(user_pass,"1111",sizeof(user_pass));
         
         return err;
     }

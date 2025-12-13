@@ -37,6 +37,7 @@ void lcd_show_new_user_pass(const char* number);
 
 void lcd_show_options(void) ;
 
+void lcd_show_saved_wifi();
 
 
 #endif

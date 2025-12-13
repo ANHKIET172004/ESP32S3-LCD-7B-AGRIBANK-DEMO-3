@@ -95,12 +95,15 @@ void handle_display(void) {
         case DISPLAY_USER_PASSWORD_ERROR:
              lcd_clear();
              lcd_put_cur(0,0);
-             lcd_send_string("SAI USER PASS!");
+             lcd_send_string("SAI MAT KHAU!");
              lcd_put_cur(1,0);
              lcd_send_string("THU LAI SAU!");
              break;
         case DISPLAY_CONTINUE:
             lcd_show_options();
+            break;
+        case DISPLAY_SAVED_WIFI:
+            lcd_show_saved_wifi();
             break;
         case DISPLAY_IDLE:
         default:
@@ -156,6 +159,9 @@ void update_display_state(void) {
              break;
         case STATE_CONTINUE:
              set_display_state(DISPLAY_CONTINUE);
+             break;
+        case STATE_SAVED_WIFI:
+             set_display_state(DISPLAY_SAVED_WIFI);
              break;
         
         default:
@@ -235,6 +241,8 @@ void system_state_update(){
             case STATE_NEW_USER_PASS:
                  break;
             case STATE_CONTINUE:
+                 break;
+            case STATE_SAVED_WIFI:
                  break;
             case STATE_USER_PASSWORD_ERROR:
             uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;

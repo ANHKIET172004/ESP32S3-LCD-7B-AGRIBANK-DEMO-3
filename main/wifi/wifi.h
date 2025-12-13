@@ -9,7 +9,7 @@
 #include "lwip/ip4_addr.h"
 #include "mutex/mutex.h"
 #include "keypad/keypad_variables.h"
-
+#include "types.h"
 
 
 
@@ -18,8 +18,11 @@
 #define WIFI_SUCCESS_TIMEOUT_MS 1000
 
 
+
 void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) ;
 
 void wifi_init(void) ;
+
+void wifi_scan();
 
 #endif

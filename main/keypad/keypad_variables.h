@@ -31,6 +31,7 @@ typedef struct {
     char        wifi_pass[64];//17
     char        saved_ssid[32] ;//17
     char        saved_pass[64] ;//17
+    uint8_t     saved_bssid[6];
     int         current_mode;
     uint8_t         wifi_step;
     bool        caps_lock;
@@ -84,6 +85,7 @@ typedef struct {
     //int          ssid_len;  
     int          wifi_len;           
     char         wifi_ssid[32]; 
+    uint8_t      wifi_position;
     char         view[17];
     int          len;  
     char         user_pass_buffer[5];

@@ -1,0 +1,115 @@
+Command: ninja flash
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lcd_i2c/lcd_option_handler.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_user_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:88:24: warning: passing argument 1 of 'lcd_send_string' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   88 |        lcd_send_string(number);
+      |                        ^~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/esp_mqtt_client/esp_mqtt_client.h:12,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:4,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.h:11,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.h:10,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.h:7,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:1:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:28:29: note: expected 'char *' but argument is of type 'const char *'
+   28 | void lcd_send_string (char *str);  // send string to the lcd
+      |                       ~~~~~~^~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_new_user_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:98:24: warning: passing argument 1 of 'lcd_send_string' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   98 |        lcd_send_string(number);
+      |                        ^~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:28:29: note: expected 'char *' but argument is of type 'const char *'
+   28 | void lcd_send_string (char *str);  // send string to the lcd
+      |                       ~~~~~~^~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_saved_wifi':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:426:32: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  426 |     if (g_keypad.wifi_position < 0 || g_keypad.wifi_position >= list->count) {
+      |                                ^
+[5/10] Linking C static library esp-idf\main\libmain.a
+[6/10] Generating esp-idf/esp_system/ld/sections.ld
+[7/10] Linking CXX executable hello_world.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.9.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
+hello_world.bin binary size 0xe7870 bytes. Smallest app partition is 0x100000 bytes. 0x18790 bytes (10%) free.
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.1
+Serial port COM3
+Connecting...............
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: a8:42:e3:4c:7c:bc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f7fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26240 bytes to 16493...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075f5... (100 %)
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 388.1 kbit/s)...
+Hash of data verified.
+Compressed 948336 bytes to 590897...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001ce70... (5 %)
+Writing at 0x00028739... (8 %)
+Writing at 0x00031f47... (10 %)
+Writing at 0x0003a0f0... (13 %)
+Writing at 0x0003fa0d... (16 %)
+Writing at 0x00045573... (18 %)
+Writing at 0x0004b2f7... (21 %)
+Writing at 0x00050ed7... (24 %)
+Writing at 0x00056efc... (27 %)
+Writing at 0x0005ce51... (29 %)
+Writing at 0x00062786... (32 %)
+Writing at 0x000683f6... (35 %)
+Writing at 0x0006e1e7... (37 %)
+Writing at 0x00073f36... (40 %)
+Writing at 0x00079ab0... (43 %)
+Writing at 0x0007f80a... (45 %)
+Writing at 0x00085cf2... (48 %)
+Writing at 0x0008bb5b... (51 %)
+Writing at 0x00091758... (54 %)
+Writing at 0x00096cbb... (56 %)
+Writing at 0x0009c18b... (59 %)
+Writing at 0x000a1dc3... (62 %)
+Writing at 0x000a78d4... (64 %)
+Writing at 0x000ad158... (67 %)
+Writing at 0x000b2a0b... (70 %)
+Writing at 0x000b87f7... (72 %)
+Writing at 0x000be0ea... (75 %)
+Writing at 0x000c3d8b... (78 %)
+Writing at 0x000c997c... (81 %)
+Writing at 0x000cf1dc... (83 %)
+Writing at 0x000d5337... (86 %)
+Writing at 0x000df9b1... (89 %)
+Writing at 0x000e59f0... (91 %)
+Writing at 0x000ebeba... (94 %)
+Writing at 0x000f1783... (97 %)
+Writing at 0x000f718a... (100 %)
+Wrote 948336 bytes (590897 compressed) at 0x00010000 in 13.6 seconds (effective 558.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 892.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

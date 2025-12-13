@@ -53,6 +53,7 @@ void app_main(void) {
     esp_netif_init();
     esp_event_loop_create_default();
     wifi_init();
+    wifi_scan();
 
     mqtt_queue = xQueueCreate(MQTT_QUEUE_LENGTH, sizeof(mqtt_message_t));
     if (mqtt_queue == NULL) {

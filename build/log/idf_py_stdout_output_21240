@@ -1,78 +1,15 @@
 Command: ninja flash
-[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe1670 bytes. Smallest app partition is 0x100000 bytes. 0x1e990 bytes (12%) free.
-[2/5] Performing build step for 'bootloader'
+[1/10] Performing build step for 'bootloader'
 [1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
 Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[3/5] No install step for 'bootloader'
-[4/5] Completed 'bootloader'
-[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.9.1
-Serial port COM3
-Connecting.......
-Chip is ESP32-D0WD-V3 (revision v3.0)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: a8:42:e3:4c:7c:bc
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f1fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 26240 bytes to 16492...
-Writing at 0x00001000... (50 %)
-Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16492 compressed) at 0x00001000 in 0.5 seconds (effective 389.9 kbit/s)...
-Hash of data verified.
-Compressed 923248 bytes to 577318...
-Writing at 0x00010000... (2 %)
-Writing at 0x0001d044... (5 %)
-Writing at 0x00027e31... (8 %)
-Writing at 0x00030bed... (11 %)
-Writing at 0x0003660d... (13 %)
-Writing at 0x0003c3bf... (16 %)
-Writing at 0x000424c2... (19 %)
-Writing at 0x00048219... (22 %)
-Writing at 0x0004db3d... (25 %)
-Writing at 0x000538d4... (27 %)
-Writing at 0x00059737... (30 %)
-Writing at 0x0005f2d8... (33 %)
-Writing at 0x00064e17... (36 %)
-Writing at 0x0006ac16... (38 %)
-Writing at 0x000711db... (41 %)
-Writing at 0x00076f2b... (44 %)
-Writing at 0x0007cce2... (47 %)
-Writing at 0x0008237a... (50 %)
-Writing at 0x000876e9... (52 %)
-Writing at 0x0008d352... (55 %)
-Writing at 0x00092e6e... (58 %)
-Writing at 0x000986e9... (61 %)
-Writing at 0x0009df1c... (63 %)
-Writing at 0x000a3bfb... (66 %)
-Writing at 0x000a95f5... (69 %)
-Writing at 0x000af162... (72 %)
-Writing at 0x000b4eb2... (75 %)
-Writing at 0x000ba81d... (77 %)
-Writing at 0x000c004b... (80 %)
-Writing at 0x000cab70... (83 %)
-Writing at 0x000d0e8e... (86 %)
-Writing at 0x000d92b5... (88 %)
-Writing at 0x000decfb... (91 %)
-Writing at 0x000e4a8f... (94 %)
-Writing at 0x000ea7c7... (97 %)
-Writing at 0x000efc91... (100 %)
-Wrote 923248 bytes (577318 compressed) at 0x00010000 in 13.3 seconds (effective 555.0 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 910.2 kbit/s)...
-Hash of data verified.
-
-Leaving...
-Hard resetting via RTS pin...
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad.c.obj 
+ccache D:\ESP32_IDF\Espressif\tools\xtensa-esp-elf\esp-14.2.0_20241119\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.5-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/config" -I"D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main" -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/newlib/platform_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/config/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/freertos/esp_additions/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/include/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/dma/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/ldo/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/debug_probe/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/power_supply/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/. -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_hw_support/port/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/heap/tlsf -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/log/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/soc/esp32/register -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/platform_port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/hal/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32/include/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_rom/esp32 -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_common/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/soc -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_system/port/include/private -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/xtensa/deprecated_include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/include/apps/sntp -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/lwip/src/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/freertos/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/arch -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/lwip/port/esp32xx/include/sys -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/spi_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gpio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/nvs_flash/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_partition/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/include/local -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_wifi/wifi_apps/nan_app/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_event/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_phy/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_netif/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mqtt/esp-mqtt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/tcp_transport/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp-tls/esp-tls-crypto -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/port/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/library -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/esp_crt_bundle/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/everest/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_timer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/deprecated -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/i2c/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/driver/touch_sensor/esp32/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_pm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_ringbuf/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_pcnt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_gptimer/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_spi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_mcpwm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ana_cmpr/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_i2s/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/sdmmc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdspi/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_dac/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_rmt/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_tsens/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_sdm/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_uart/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/vfs/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_ledc/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_parlio/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_usb_serial_jtag/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esp_driver_twai/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/json/cJSON -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/wifi_provisioning/include -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/common -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/security -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/transports -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/include/crypto/srp6a -ID:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/protocomm/proto-c -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo=." -fmacro-prefix-map=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\keypad\keypad.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad.c.obj -c "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.c"
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.c: In function 'process_key':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.c:558:14: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  558 |     else if (g_keypad.current_mode=MODE_SAVED_WIFI){
+      |              ^~~~~~~~
+cc1.exe: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

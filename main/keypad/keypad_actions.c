@@ -9,7 +9,7 @@ extern bool start1;
 
 void old_screen_reload(){
 
-    if (g_keypad.current_mode!=MODE_CONTINUE){
+    if (g_keypad.current_mode!=MODE_CONTINUE&&g_keypad.current_mode!=MODE_SAVED_WIFI){
         strncpy(g_keypad.input_buffer,g_keypad.saved_input_buffer, sizeof(g_keypad.input_buffer) - 1);
         g_keypad.input_buffer[sizeof(g_keypad.input_buffer) - 1]='\0';
         g_keypad.buffer_index = g_keypad.saved_buffer_index;
@@ -98,11 +98,11 @@ void update_input_buffer(char key){
 void enter_number(){
      if (g_keypad.buffer_index > 3) {
             g_keypad.pri = true;
-            xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
+            //xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
             mqtt_publish_number(g_keypad.input_buffer);
             memset(g_keypad.input_buffer, 0, sizeof(g_keypad.input_buffer));
             g_keypad.buffer_index = 0;
-            xSemaphoreGive(g_mutex.input_mutex);
+            //xSemaphoreGive(g_mutex.input_mutex);
 
             size_t num_len = sizeof(g_keypad.prev_number);
             size_t status_len = 12;

@@ -37,6 +37,7 @@ enum Mode {
     MODE_USER_PASS=9,
     MODE_NEW_USER_PASS=10,
     MODE_CONTINUE=11,
+    MODE_SAVED_WIFI=12
 
 };
 
@@ -61,6 +62,7 @@ void process_key_position_select(char key);
 void process_key_menu_mode(char key) ;
 void process_key_new_user_pass(char key);
 void process_key_option_select(char key) ;
+void process_saved_wifi_select(char key);
 void process_key(char key) ;
 void old_screen_reload();
 

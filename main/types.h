@@ -13,6 +13,7 @@ typedef enum {
     STATE_USER_PASSWORD_ERROR,
     STATE_NEW_USER_PASS,
     STATE_CONTINUE,
+    STATE_SAVED_WIFI,
 } SystemState;
 
 typedef enum {
@@ -27,5 +28,19 @@ typedef enum {
     DISPLAY_USER_PASS=8,
     DISPLAY_USER_PASSWORD_ERROR=9,
     DISPLAY_NEW_USER_PASS=10,
-    DISPLAY_CONTINUE
+    DISPLAY_CONTINUE=11,
+    DISPLAY_SAVED_WIFI=12,
 } DisplayState;
+
+
+typedef struct {
+      
+    char ssid[33];
+    char pass[64];
+    uint8_t bssid[6];
+} wifi_ap_info;
+
+typedef struct {
+     uint8_t count;
+     wifi_ap_info aps[5];
+}  wifi_list;

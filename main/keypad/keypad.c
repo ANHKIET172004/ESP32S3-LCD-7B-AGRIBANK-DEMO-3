@@ -31,6 +31,7 @@ keypad_context_t g_keypad={
      .current_mode = MODE_LOGOUT,//
      .saved_ssid = {0},
      .saved_pass = {0},
+     .saved_bssid={0},
      .last_t_press_time=0,
      .last_a_press_time=0,
      .last_b_press_time=0,
@@ -56,6 +57,7 @@ keypad_context_t g_keypad={
      .user_pass_buffer={0},
      .user_pass_index=0,
      .selected_option=true,
+     .wifi_position=0,
 
        
 };
@@ -297,7 +299,7 @@ void process_key_position_select(char key) {
 
 void process_key_menu_mode(char key) {
     if (key == '2') {
-        if (g_keypad.menu_selection<8){
+        if (g_keypad.menu_selection<9){
         g_keypad.menu_selection++;
         }
         else {
@@ -310,7 +312,7 @@ void process_key_menu_mode(char key) {
             g_keypad.menu_selection--;
         }
         else {
-            g_keypad.menu_selection=8;
+            g_keypad.menu_selection=9;
         }
         lcd_show_menu();
     }
@@ -497,7 +499,37 @@ void process_key_option_select(char key) {
    
 }
 
+void process_saved_wifi_select(char key){
+    wifi_list* list=calloc(1,sizeof(wifi_list));
+    load_wifi_list(list);
+    if (key=='2'){
+        if (g_keypad.wifi_position<list->count){
+            g_keypad.wifi_position++;
+        }
+        else {
+          //  g_keypad.wifi_position=0;
+        }
+    }
+    else if (key=='1') {
+        if (g_keypad.wifi_position>0){
+            g_keypad.wifi_position--;
+        }
+        else {
+           // g_keypad.wifi_position=list->count-1;
+        }
+    }
 
+    else if (key=='B'){
+
+        set_sys_state(MODE_MENU);
+        old_screen_reload();
+    }
+
+    else if (key=='D') {
+       delete_wifi_credentials(g_keypad.wifi_position);
+    }
+
+}
 
 void process_key(char key) {
     if (g_keypad.current_mode == MODE_NORMAL) {
@@ -532,6 +564,9 @@ void process_key(char key) {
     }
     else if (g_keypad.current_mode==MODE_CONTINUE){
         process_key_option_select(key);
+    }
+    else if (g_keypad.current_mode==MODE_SAVED_WIFI){
+        process_saved_wifi_select(key);
     }
 }
 
