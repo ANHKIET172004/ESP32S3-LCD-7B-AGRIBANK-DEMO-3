@@ -198,7 +198,7 @@ void save_wifi_credentials(const char *ssid, const char *password, const uint8_t
     nvs_close(nvs_handle);
 }
 
-void save_wifi_credentials1(const char *ssid, const char *password, const uint8_t* bssid){
+void save_wifi_credentials2(const char *ssid, const char *password, const uint8_t* bssid){
     if (!ssid||!password) return;
 
     nvs_handle_t wifi_handle;
@@ -246,6 +246,65 @@ void save_wifi_credentials1(const char *ssid, const char *password, const uint8_
 
 
 }
+
+
+static void remove_oldest_wifi(wifi_list *list)
+{
+    if (list->count == 0) return;
+
+    for (uint8_t i = 1; i < list->count; i++) {
+        list->aps[i - 1] = list->aps[i];
+    }
+
+    memset(&list->aps[list->count - 1], 0, sizeof(wifi_list));
+}
+
+
+void save_wifi_credentials1(const char *ssid,
+                            const char *password,
+                            const uint8_t *bssid)
+{
+    if (!ssid || !password) return;
+
+    wifi_list list = {0};
+    load_wifi_list(&list);
+
+    for (uint8_t i = 0; i < list.count; i++) {
+        if (strcmp(ssid, list.aps[i].ssid) == 0) {
+            strncpy(list.aps[i].pass, password,
+                    sizeof(list.aps[i].pass) - 1);
+            goto save;
+        }
+    }
+
+    if (list.count >= 10) {
+        ESP_LOGW(TAG, "WiFi list full, delete oldest wifi");
+        remove_oldest_wifi(&list);
+        list.count = 10 - 1;
+    }
+
+    strncpy(list.aps[list.count].ssid, ssid,
+            sizeof(list.aps[list.count].ssid) - 1);
+    strncpy(list.aps[list.count].pass, password,
+            sizeof(list.aps[list.count].pass) - 1);
+
+    if (bssid) {
+        memcpy(list.aps[list.count].bssid, bssid, 6);
+    }
+
+    list.count++;
+
+save:
+    nvs_handle_t handle;
+    if (nvs_open("wifi_list", NVS_READWRITE, &handle) != ESP_OK) return;
+
+    nvs_set_blob(handle, "saved", &list, sizeof(list));
+    nvs_commit(handle);
+    nvs_close(handle);
+
+    ESP_LOGI(TAG, "WiFi credential saved");
+}
+
 
 esp_err_t save_wifi_list(const wifi_list *list)
 {

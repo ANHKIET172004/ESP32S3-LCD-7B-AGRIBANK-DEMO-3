@@ -45,10 +45,18 @@ void wifi_scan1(){
     //ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&count));
     ESP_LOGI(TAG,"Found %d ap",num);
 
+    ESP_LOGI(TAG," %d saved wifi in nvs",list.count);
+
     load_wifi_list(&list);
 
+    for (uint8_t i=0;i<list.count;i++){
+            
+         ESP_LOGI(TAG,"SAVED WIFI, %s",list.aps[i].ssid);
+            
+    }
+
     for (uint8_t i=0;i<num;i++){
-        for (uint8_t j=0;j<2;j++){
+        for (uint8_t j=0;j<list.count;j++){//2
             if (strcmp((char*)ap_info[i].ssid,list.aps[j].ssid)==0){
                  ESP_LOGI(TAG,"FOUND SAVED WIFI, %s",ap_info[i].ssid);
             }
@@ -166,7 +174,19 @@ void wifi_scan()
 
     ESP_LOGI(TAG, "Found %d APs", num);
 
+
+
+
     load_wifi_list(list);  
+
+    ESP_LOGI(TAG,"%d saved wifi in nvs",list->count);
+
+
+    for (uint8_t i=0;i<list->count;i++){
+            
+         ESP_LOGI(TAG,"SAVED WIF: %s",list->aps[i].ssid);
+            
+    }
 
     for (uint8_t i = 0; i < num; i++) {
 

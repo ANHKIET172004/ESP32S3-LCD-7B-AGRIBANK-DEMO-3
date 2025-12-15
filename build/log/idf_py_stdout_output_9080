@@ -1,78 +1,1424 @@
-Command: ninja flash
-[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe15c0 bytes. Smallest app partition is 0x100000 bytes. 0x1ea40 bytes (12%) free.
-[2/5] Performing build step for 'bootloader'
-[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
-Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[3/5] No install step for 'bootloader'
-[4/5] Completed 'bootloader'
-[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.9.1
-Serial port COM3
-Connecting....
-Chip is ESP32-D0WD-V3 (revision v3.0)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: a8:42:e3:4c:7c:bc
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f1fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 26240 bytes to 16492...
-Writing at 0x00001000... (50 %)
-Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16492 compressed) at 0x00001000 in 0.5 seconds (effective 391.1 kbit/s)...
-Hash of data verified.
-Compressed 923072 bytes to 577231...
-Writing at 0x00010000... (2 %)
-Writing at 0x0001d080... (5 %)
-Writing at 0x00027d8d... (8 %)
-Writing at 0x00030c15... (11 %)
-Writing at 0x000365f7... (13 %)
-Writing at 0x0003c3db... (16 %)
-Writing at 0x000424b4... (19 %)
-Writing at 0x00048222... (22 %)
-Writing at 0x0004db49... (25 %)
-Writing at 0x000538ce... (27 %)
-Writing at 0x0005972e... (30 %)
-Writing at 0x0005f2d5... (33 %)
-Writing at 0x00064e15... (36 %)
-Writing at 0x0006ac19... (38 %)
-Writing at 0x000711d2... (41 %)
-Writing at 0x00076f30... (44 %)
-Writing at 0x0007ccd7... (47 %)
-Writing at 0x0008235e... (50 %)
-Writing at 0x000876e9... (52 %)
-Writing at 0x0008d34f... (55 %)
-Writing at 0x00092e77... (58 %)
-Writing at 0x000986ef... (61 %)
-Writing at 0x0009df2e... (63 %)
-Writing at 0x000a3bfd... (66 %)
-Writing at 0x000a960a... (69 %)
-Writing at 0x000af17c... (72 %)
-Writing at 0x000b4ebe... (75 %)
-Writing at 0x000ba831... (77 %)
-Writing at 0x000c0065... (80 %)
-Writing at 0x000cab86... (83 %)
-Writing at 0x000d0eaf... (86 %)
-Writing at 0x000d9261... (88 %)
-Writing at 0x000decb3... (91 %)
-Writing at 0x000e4a44... (94 %)
-Writing at 0x000ea798... (97 %)
-Writing at 0x000efc60... (100 %)
-Wrote 923072 bytes (577231 compressed) at 0x00010000 in 13.4 seconds (effective 553.1 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 980.2 kbit/s)...
-Hash of data verified.
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+i�J��ѹesp32:�ets Jul 29 2019 12:21:46
 
-Leaving...
-Hard resetting via RTS pin...
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20e44h (134724) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030e6c vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030e94 vaddr=3ffb0000 size=04bd8h ( 19416) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=00035a74 vaddr=40080000 size=0a5a4h ( 42404) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8d74h (691572) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e8d9c vaddr=4008a5a4 size=0ed40h ( 60736) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (454) app_init: Project name:     hello_world[0m
+[0;32mI (458) app_init: App version:      4457077-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 13 2025 20:18:37[0m
+[0;32mI (468) app_init: ELF file SHA256:  48d06038a...[0m
+[0;32mI (472) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (476) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (480) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (484) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (488) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (494) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFB9478 len 00026B88 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (524) spi_flash: flash io: dio[0m
+[0;33mW (527) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (560) LED: LED initialized on GPIO 2[0m
+[0;32mI (560) LED: LED OFF[0m
+[0;32mI (560) DEMO: I2C initialized successfully[0m
+[0;32mI (1450) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1470) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (1470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1490) wifi:wifi driver task: 3ffc24fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1500) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1500) wifi:wifi certification version: v7.0[0m
+[0;32mI (1500) wifi:config NVS flash: enabled[0m
+[0;32mI (1500) wifi:config nano formatting: disabled[0m
+[0;32mI (1510) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1510) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1510) wifi:Init management short buffer num: 32[0m
+[0;32mI (1520) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1520) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1530) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1530) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1540) wifi_init: rx ba win: 6[0m
+[0;32mI (1540) wifi_init: accept mbox: 6[0m
+[0;32mI (1540) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1540) wifi_init: udp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1550) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1560) wifi_init: tcp mss: 1440[0m
+[0;32mI (1560) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1560) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1570) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1660) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1660) wifi:enable tsf[0m
+[0;32mI (1660) WIFI: WiFi initialized[0m
+[0;32mI (1660) WIFI: WiFi STA started[0m
+[0;32mI (4160) WIFI: Found 20 APs[0m
+[0;32mI (4160) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-62), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4160) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-70), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4160) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-74), BSSID: 10:5F:02 75:32:0E[0m
+[0;32mI (4170) WIFI: BEST WIFI: NamTrung (RSSI=-62), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4180) main_task: Returned from app_main()[0m
+[0;32mI (4180) STATE_MACHINE: System state task started[0m
+[0;32mI (37570) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (37570) mqtt_client: Client was not initialized[0m
+[0;32mI (37610) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (37650) wifi:flush txq[0m
+[0;32mI (37650) wifi:stop sw txq[0m
+[0;32mI (37650) wifi:lmac stop hw txq[0m
+[0;32mI (37660) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (37660) wifi:enable tsf[0m
+[0;32mI (37660) WIFI: WiFi STA started[0m
+[0;32mI (37670) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (37670) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (37680) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (37710) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (37760) wifi:connected with NamTrung, aid = 27, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (37760) wifi:security: WPA2-PSK, phy: bgn, rssi: -72[0m
+[0;32mI (37770) wifi:pm start, type: 1[0m
+
+[0;32mI (37770) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (37770) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (37790) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (38830) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (39290) esp_netif_handlers: sta ip: 10.10.1.92, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (39290) WIFI: WiFi connected, got IP[0m
+[0;32mI (39490) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (40360) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (40360) MQTT: MQTT initialized[0m
+[0;32mI (40380) NVS_UTILS: Read status successfully: SO UU TIEN[0m
+[0;32mI (41650) LED: LED ON[0m
+[0;32mI (41650) MQTT: MQTT connected[0m
+[0;32mI (41880) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (41880) MQTT: Processing topic: device/list[0m
+[0;32mI (41880) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (41890) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (41920) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (41950) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (41950) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41960) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41960) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (41970) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41970) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41980) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (41990) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41990) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42000) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (42010) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42010) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42010) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42020) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (42020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42030) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42030) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42040) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (42040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42050) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42050) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (42060) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (42060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42070) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42070) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42080) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (42080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42090) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42090) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42090) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (42100) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (42110) MQTT: Device list updated: 8 devices[0m
+[0;32mI (42110) MQTT: Sorted device list successfully[0m
+[0;32mI (42130) MQTT: Processing topic: service/list[0m
+[0;32mI (42130) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (42130) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (42140) MQTT: Service list updated: 2 services[0m
+[0;32mI (43580) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (43580) MQTT: Processing topic: responsenumber[0m
+[0;32mI (43580) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2834","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (43600) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (43600) NVS_UTILS: current number saved successfully![0m
+[0;32mI (44870) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (44880) MQTT: Processing topic: responsenumber[0m
+[0;32mI (44880) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4791","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (44880) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (44900) NVS_UTILS: current number saved successfully![0m
+[0;32mI (46750) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (46750) MQTT: Processing topic: responsenumber[0m
+[0;32mI (46750) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3794","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (48820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (48830) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (48830) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (49320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (49320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (49320) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (49690) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (49690) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (49690) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (50180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (50190) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (50190) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (50950) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (50950) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (50950) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (51260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (51260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (51260) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (51730) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (51730) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (51730) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (53680) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (53680) MQTT: Processing topic: responsenumber[0m
+[0;32mI (53680) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2835","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (58900) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58900) MQTT: Processing topic: responsenumber[0m
+[0;32mI (58900) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3795","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (61870) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (61870) MQTT: Processing topic: responsenumber[0m
+[0;32mI (61870) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1840","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (65040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (65040) DEMO: Loaded counter_id from NVS: 03[0m
+[0;32mI (65050) NVS_UTILS: current number saved successfully![0m
+[0;32mI (65050) DEMO: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (65050) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (65050) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (65060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (65060) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (68030) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (68040) MQTT: Processing topic: responsenumber[0m
+[0;32mI (68040) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1841","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (71090) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (71090) MQTT: Processing topic: responsenumber[0m
+[0;32mI (71090) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3796","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (72900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (72910) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (72910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (73480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (73480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (73480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (73920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (73920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (73920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (74420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (74430) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (74430) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (74830) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (74830) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (74830) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (75270) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (75270) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (75270) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (75620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (75620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (75620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (75900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (75910) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (75910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (76160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (76160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (76160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (76230) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (76240) MQTT: Processing topic: responsenumber[0m
+[0;32mI (76240) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2836","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (76480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (76480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (76480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (76730) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (76730) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (76730) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (77000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (77010) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (77010) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (77230) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (77230) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (77230) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (77490) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (77490) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (77490) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (77730) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (77730) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (77730) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (79310) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (79310) MQTT: Processing topic: responsenumber[0m
+[0;32mI (79310) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4792","service_name":"Lay so cho vui","device_name":"1"}[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20e44h (134724) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030e6c vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030e94 vaddr=3ffb0000 size=04bd8h ( 19416) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=00035a74 vaddr=40080000 size=0a5a4h ( 42404) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8d74h (691572) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e8d9c vaddr=4008a5a4 size=0ed40h ( 60736) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (454) app_init: Project name:     hello_world[0m
+[0;32mI (458) app_init: App version:      4457077-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 13 2025 20:18:37[0m
+[0;32mI (468) app_init: ELF file SHA256:  48d06038a...[0m
+[0;32mI (472) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (476) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (480) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (484) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (488) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (494) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFB9478 len 00026B88 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (525) spi_flash: flash io: dio[0m
+[0;33mW (527) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (560) LED: LED initialized on GPIO 2[0m
+[0;32mI (560) LED: LED OFF[0m
+[0;32mI (560) DEMO: I2C initialized successfully[0m
+[0;32mI (1450) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1470) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (1470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1490) wifi:wifi driver task: 3ffc24fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1500) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1500) wifi:wifi certification version: v7.0[0m
+[0;32mI (1500) wifi:config NVS flash: enabled[0m
+[0;32mI (1500) wifi:config nano formatting: disabled[0m
+[0;32mI (1510) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1510) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1510) wifi:Init management short buffer num: 32[0m
+[0;32mI (1520) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1520) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1530) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1530) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1540) wifi_init: rx ba win: 6[0m
+[0;32mI (1540) wifi_init: accept mbox: 6[0m
+[0;32mI (1540) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1540) wifi_init: udp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1550) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1560) wifi_init: tcp mss: 1440[0m
+[0;32mI (1560) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1560) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1610) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1690) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1700) wifi:enable tsf[0m
+[0;32mI (1700) WIFI: WiFi initialized[0m
+[0;32mI (1700) WIFI: WiFi STA started[0m
+[0;32mI (4200) WIFI: Found 20 APs[0m
+[0;32mI (4200) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-59), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4200) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-66), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4200) WIFI: BEST WIFI: NamTrung (RSSI=-59), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4210) main_task: Returned from app_main()[0m
+[0;32mI (4210) STATE_MACHINE: System state task started[0m
+[0;32mI (17350) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (17350) mqtt_client: Client was not initialized[0m
+[0;32mI (17380) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (17420) wifi:flush txq[0m
+[0;32mI (17420) wifi:stop sw txq[0m
+[0;32mI (17420) wifi:lmac stop hw txq[0m
+[0;32mI (17430) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (17430) wifi:enable tsf[0m
+[0;32mI (17430) WIFI: WiFi STA started[0m
+[0;32mI (17490) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17490) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (17500) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (17530) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (17580) wifi:connected with NamTrung, aid = 27, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (17580) wifi:security: WPA2-PSK, phy: bgn, rssi: -77[0m
+[0;32mI (17590) wifi:pm start, type: 1[0m
+
+[0;32mI (17590) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (17590) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (17600) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (18730) esp_netif_handlers: sta ip: 10.10.1.92, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (18730) WIFI: WiFi connected, got IP[0m
+[0;32mI (19140) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (19520) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:7, winSize:64[0m
+[0;32mI (19770) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (19770) MQTT: MQTT initialized[0m
+[0;32mI (19790) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (19830) LED: LED ON[0m
+[0;32mI (19830) MQTT: MQTT connected[0m
+[0;32mI (20110) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (20110) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (20120) MQTT: Processing topic: device/list[0m
+[0;32mI (20120) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (20140) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (20180) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (20180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20190) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20190) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (20200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20210) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20210) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (20220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20230) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (20230) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20240) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20250) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (20250) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20260) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20270) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (20270) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20280) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (20290) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (20290) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20310) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (20310) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20310) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20320) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20320) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (20330) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (20330) MQTT: Device list updated: 8 devices[0m
+[0;32mI (20340) MQTT: Sorted device list successfully[0m
+[0;32mI (20360) MQTT: Processing topic: service/list[0m
+[0;32mI (20360) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (20360) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (20370) MQTT: Service list updated: 2 services[0m
+[0;32mI (22510) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (22520) MQTT: Processing topic: responsenumber[0m
+[0;32mI (22520) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3799","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (23950) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (23960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (23960) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (26610) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (26610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (26610) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1844","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (30710) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (30720) MQTT: Processing topic: responsenumber[0m
+[0;32mI (30720) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3800","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (34760) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34760) DEMO: Loaded counter_id from NVS: 03[0m
+[0;32mI (34760) NVS_UTILS: current number saved successfully![0m
+[0;32mI (34760) DEMO: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34770) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34770) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34770) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34780) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (35780) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (35780) MQTT: Processing topic: responsenumber[0m
+[0;32mI (35780) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3801","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (38900) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (38900) MQTT: Processing topic: responsenumber[0m
+[0;32mI (38900) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2838","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (42070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (42070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (42070) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3802","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (42550) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42560) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43390) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43390) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43630) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43880) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43880) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44150) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44150) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44150) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44400) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44400) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44650) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (45080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (45080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (45080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (45300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (45300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (45300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (45530) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (45540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (45540) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (45750) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (45750) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (45750) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (45970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (45970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (45970) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (45970) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4793","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (45970) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (45990) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (46210) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (46210) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (46210) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (46410) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (46420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (46420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (46640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (46640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (46640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (48220) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (48220) MQTT: Processing topic: responsenumber[0m
+[0;32mI (48220) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1845","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (55200) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (55200) MQTT: Processing topic: responsenumber[0m
+[0;32mI (55200) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3803","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (58360) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58360) MQTT: Processing topic: responsenumber[0m
+[0;32mI (58360) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2839","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (61530) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (61530) MQTT: Processing topic: responsenumber[0m
+[0;32mI (61530) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1846","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (67570) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (67580) MQTT: Processing topic: responsenumber[0m
+[0;32mI (67580) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4794","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (70640) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (70640) MQTT: Processing topic: responsenumber[0m
+[0;32mI (70640) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3804","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (74750) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (74750) MQTT: Processing topic: responsenumber[0m
+[0;32mI (74750) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4795","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (81730) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (81730) MQTT: Processing topic: responsenumber[0m
+[0;32mI (81730) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3805","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (83960) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (83960) MQTT: Processing topic: responsenumber[0m
+[0;32mI (83960) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4796","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (86000) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (86000) MQTT: Processing topic: responsenumber[0m
+[0;32mI (86000) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2840","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (89070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (89070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (89070) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2841","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (96140) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (96140) MQTT: Processing topic: responsenumber[0m
+[0;32mI (96140) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3806","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (100260) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (100260) MQTT: Processing topic: responsenumber[0m
+[0;32mI (100260) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4797","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (106280) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (106280) MQTT: Processing topic: responsenumber[0m
+[0;32mI (106280) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4798","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (109450) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (109450) MQTT: Processing topic: responsenumber[0m
+[0;32mI (109450) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2842","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (116520) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (116520) MQTT: Processing topic: responsenumber[0m
+[0;32mI (116520) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4799","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (118460) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (118460) MQTT: Processing topic: responsenumber[0m
+[0;32mI (118460) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3807","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (123540) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (123540) MQTT: Processing topic: responsenumber[0m
+[0;32mI (123540) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4800","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (125770) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (125770) MQTT: Processing topic: responsenumber[0m
+[0;32mI (125770) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1847","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (130860) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (130870) MQTT: Processing topic: responsenumber[0m
+[0;32mI (130870) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1848","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (138490) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (138490) MQTT: Processing topic: responsenumber[0m
+[0;32mI (138490) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1849","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (138940) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (138940) MQTT: Processing topic: responsenumber[0m
+[0;32mI (138940) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2843","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (143060) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (143060) MQTT: Processing topic: responsenumber[0m
+[0;32mI (143060) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4801","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (145080) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (145090) MQTT: Processing topic: responsenumber[0m
+[0;32mI (145090) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4802","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (151130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (151130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (151130) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3808","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (158190) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (158190) MQTT: Processing topic: responsenumber[0m
+[0;32mI (158190) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4803","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (163310) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (163310) MQTT: Processing topic: responsenumber[0m
+[0;32mI (163310) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3809","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (165370) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (165370) MQTT: Processing topic: responsenumber[0m
+[0;32mI (165370) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2844","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (171500) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (171500) MQTT: Processing topic: responsenumber[0m
+[0;32mI (171500) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4804","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (174570) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (174580) MQTT: Processing topic: responsenumber[0m
+[0;32mI (174580) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1850","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (176740) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (176740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (176740) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1851","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (178780) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (178780) MQTT: Processing topic: responsenumber[0m
+[0;32mI (178780) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3810","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (180860) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (180860) MQTT: Processing topic: responsenumber[0m
+[0;32mI (180860) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4805","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (182870) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (182870) MQTT: Processing topic: responsenumber[0m
+[0;32mI (182870) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4806","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (187990) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (187990) MQTT: Processing topic: responsenumber[0m
+[0;32mI (187990) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3811","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (191060) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (191070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (191070) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4807","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (194140) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (194140) MQTT: Processing topic: responsenumber[0m
+[0;32mI (194140) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3812","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (201200) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (201200) MQTT: Processing topic: responsenumber[0m
+[0;32mI (201200) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2845","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (203350) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (203350) MQTT: Processing topic: responsenumber[0m
+[0;32mI (203350) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1852","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (205390) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (205400) MQTT: Processing topic: responsenumber[0m
+[0;32mI (205400) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3813","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (207440) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (207440) MQTT: Processing topic: responsenumber[0m
+[0;32mI (207440) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1853","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (211540) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (211540) MQTT: Processing topic: responsenumber[0m
+[0;32mI (211540) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3814","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (217590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (217590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (217590) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2846","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (222710) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (222720) MQTT: Processing topic: responsenumber[0m
+[0;32mI (222720) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4808","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (226800) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (226810) MQTT: Processing topic: responsenumber[0m
+[0;32mI (226810) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2847","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (228850) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (228850) MQTT: Processing topic: responsenumber[0m
+[0;32mI (228850) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3815","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (233970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (233970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (233970) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4809","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (237070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (237070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (237070) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2848","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (240110) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (240110) MQTT: Processing topic: responsenumber[0m
+[0;32mI (240110) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3816","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (242260) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (242260) MQTT: Processing topic: responsenumber[0m
+[0;32mI (242260) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4810","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (245230) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (245230) MQTT: Processing topic: responsenumber[0m
+[0;32mI (245230) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2849","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (249280) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (249290) MQTT: Processing topic: responsenumber[0m
+[0;32mI (249290) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2850","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (255470) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (255470) MQTT: Processing topic: responsenumber[0m
+[0;32mI (255470) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3817","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (261610) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (261610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (261610) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2851","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (267860) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (267860) MQTT: Processing topic: responsenumber[0m
+[0;32mI (267860) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2852","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (269710) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (269710) MQTT: Processing topic: responsenumber[0m
+[0;32mI (269710) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4811","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (273800) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (273800) MQTT: Processing topic: responsenumber[0m
+[0;32mI (273800) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4812","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (276970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (276970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (276970) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4813","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (283010) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (283010) MQTT: Processing topic: responsenumber[0m
+[0;32mI (283010) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4814","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (289970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (289970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (289980) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2853","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (296120) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (296120) MQTT: Processing topic: responsenumber[0m
+[0;32mI (296120) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2854","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (301140) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (301140) MQTT: Processing topic: responsenumber[0m
+[0;32mI (301140) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1854","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (307180) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (307180) MQTT: Processing topic: responsenumber[0m
+[0;32mI (307180) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3818","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (309430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (309430) MQTT: Processing topic: responsenumber[0m
+[0;32mI (309430) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4815","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (316490) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (316500) MQTT: Processing topic: responsenumber[0m
+[0;32mI (316500) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1855","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (319570) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (319570) MQTT: Processing topic: responsenumber[0m
+[0;32mI (319570) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2855","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (324590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (324590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (324590) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4816","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (330660) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (330660) MQTT: Processing topic: responsenumber[0m
+[0;32mI (330660) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2856","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (337790) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (337800) MQTT: Processing topic: responsenumber[0m
+[0;32mI (337800) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4817","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (339840) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (339840) MQTT: Processing topic: responsenumber[0m
+[0;32mI (339840) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4818","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (346910) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (346910) MQTT: Processing topic: responsenumber[0m
+[0;32mI (346910) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1856","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (349980) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (349980) MQTT: Processing topic: responsenumber[0m
+[0;32mI (349990) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4819","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (352130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (352130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (352130) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1857","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (356230) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (356230) MQTT: Processing topic: responsenumber[0m
+[0;32mI (356230) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4820","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (362370) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (362370) MQTT: Processing topic: responsenumber[0m
+[0;32mI (362370) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3819","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (364520) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (364520) MQTT: Processing topic: responsenumber[0m
+[0;32mI (364520) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3820","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (370560) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (370560) MQTT: Processing topic: responsenumber[0m
+[0;32mI (370560) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1858","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (372610) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (372610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (372610) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1859","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (375580) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (375580) MQTT: Processing topic: responsenumber[0m
+[0;32mI (375580) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3821","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (380720) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (380720) MQTT: Processing topic: responsenumber[0m
+[0;32mI (380720) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3822","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (384800) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (384800) MQTT: Processing topic: responsenumber[0m
+[0;32mI (384800) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1860","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (388890) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (388890) MQTT: Processing topic: responsenumber[0m
+[0;32mI (388890) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1861","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (391960) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (391970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (391970) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4821","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (399030) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (399030) MQTT: Processing topic: responsenumber[0m
+[0;32mI (399030) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3823","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (406090) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (406100) MQTT: Processing topic: responsenumber[0m
+[0;32mI (406100) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4822","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (412170) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (412170) MQTT: Processing topic: responsenumber[0m
+[0;32mI (412170) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1862","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (416230) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (416230) MQTT: Processing topic: responsenumber[0m
+[0;32mI (416230) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3824","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (419300) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (419300) MQTT: Processing topic: responsenumber[0m
+[0;32mI (419300) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1863","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (423400) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (423400) MQTT: Processing topic: responsenumber[0m
+[0;32mI (423400) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3825","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (430460) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (430460) MQTT: Processing topic: responsenumber[0m
+[0;32mI (430460) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1864","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (434660) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (434660) MQTT: Processing topic: responsenumber[0m
+[0;32mI (434660) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4823","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (440800) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (440810) MQTT: Processing topic: responsenumber[0m
+[0;32mI (440810) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1865","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (442850) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (442860) MQTT: Processing topic: responsenumber[0m
+[0;32mI (442860) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3826","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (445930) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (445930) MQTT: Processing topic: responsenumber[0m
+[0;32mI (445930) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1866","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (452990) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (453000) MQTT: Processing topic: responsenumber[0m
+[0;32mI (453000) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2857","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (458010) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (458010) MQTT: Processing topic: responsenumber[0m
+[0;32mI (458010) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2858","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (464150) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (464160) MQTT: Processing topic: responsenumber[0m
+[0;32mI (464160) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1867","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (471320) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (471320) MQTT: Processing topic: responsenumber[0m
+[0;32mI (471320) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3827","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (474290) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (474300) MQTT: Processing topic: responsenumber[0m
+[0;32mI (474300) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2859","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (477550) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (477550) MQTT: Processing topic: responsenumber[0m
+[0;32mI (477550) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3828","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (483610) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (483610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (483610) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1868","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (487500) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (487500) MQTT: Processing topic: responsenumber[0m
+[0;32mI (487500) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2860","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (489750) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (489760) MQTT: Processing topic: responsenumber[0m
+[0;32mI (489760) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3829","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (495700) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (495700) MQTT: Processing topic: responsenumber[0m
+[0;32mI (495700) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2861","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (499890) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (499890) MQTT: Processing topic: responsenumber[0m
+[0;32mI (499890) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1869","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (505930) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (505930) MQTT: Processing topic: responsenumber[0m
+[0;32mI (505930) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4824","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (509980) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (509980) MQTT: Processing topic: responsenumber[0m
+[0;32mI (509980) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2862","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (516070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (516070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (516070) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2863","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (523130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (523130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (523130) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2864","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (529280) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (529280) MQTT: Processing topic: responsenumber[0m
+[0;32mI (529280) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1870","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (531320) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (531330) MQTT: Processing topic: responsenumber[0m
+[0;32mI (531330) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1871","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (537470) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (537470) MQTT: Processing topic: responsenumber[0m
+[0;32mI (537470) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3830","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (539740) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (539740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (539740) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3831","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (545880) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (545880) MQTT: Processing topic: responsenumber[0m
+[0;32mI (545880) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3832","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (551970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (551970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (551970) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1872","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (556950) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (556950) MQTT: Processing topic: responsenumber[0m
+[0;32mI (556950) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4825","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (562050) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (562050) MQTT: Processing topic: responsenumber[0m
+[0;32mI (562050) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1873","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (567090) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (567090) MQTT: Processing topic: responsenumber[0m
+[0;32mI (567090) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4826","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (569220) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (569220) MQTT: Processing topic: responsenumber[0m
+[0;32mI (569220) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3833","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (575260) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (575270) MQTT: Processing topic: responsenumber[0m
+[0;32mI (575270) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2865","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (578320) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (578330) MQTT: Processing topic: responsenumber[0m
+[0;32mI (578330) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4827","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (580380) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (580380) MQTT: Processing topic: responsenumber[0m
+[0;32mI (580380) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2866","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (582520) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (582520) MQTT: Processing topic: responsenumber[0m
+[0;32mI (582520) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2867","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (589590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (589590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (589600) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1874","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (591620) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (591620) MQTT: Processing topic: responsenumber[0m
+[0;32mI (591620) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3834","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (595730) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (595730) MQTT: Processing topic: responsenumber[0m
+[0;32mI (595730) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3835","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (599730) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (599740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (599740) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2868","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (605870) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (605870) MQTT: Processing topic: responsenumber[0m
+[0;32mI (605870) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4828","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (608940) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (608940) MQTT: Processing topic: responsenumber[0m
+[0;32mI (608940) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2869","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (614980) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (614980) MQTT: Processing topic: responsenumber[0m
+[0;32mI (614980) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1875","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (621130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (621130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (621130) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3836","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (628190) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (628190) MQTT: Processing topic: responsenumber[0m
+[0;32mI (628190) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4829","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (632300) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (632300) MQTT: Processing topic: responsenumber[0m
+[0;32mI (632300) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3837","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (637400) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (637410) MQTT: Processing topic: responsenumber[0m
+[0;32mI (637410) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4830","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (644480) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (644480) MQTT: Processing topic: responsenumber[0m
+[0;32mI (644480) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2870","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (649590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (649590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (649590) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4831","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (654610) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (654610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (654610) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3838","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (657700) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (657700) MQTT: Processing topic: responsenumber[0m
+[0;32mI (657700) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1876","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (663830) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (663830) MQTT: Processing topic: responsenumber[0m
+[0;32mI (663830) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4832","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (668950) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (668950) MQTT: Processing topic: responsenumber[0m
+[0;32mI (668950) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4833","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (674990) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (674990) MQTT: Processing topic: responsenumber[0m
+[0;32mI (674990) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2871","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (680010) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (680010) MQTT: Processing topic: responsenumber[0m
+[0;32mI (680010) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3839","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (684100) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (684100) MQTT: Processing topic: responsenumber[0m
+[0;32mI (684100) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2872","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (690170) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (690170) MQTT: Processing topic: responsenumber[0m
+[0;32mI (690170) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2873","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (692430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (692430) MQTT: Processing topic: responsenumber[0m
+[0;32mI (692430) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1877","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (695680) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (695680) MQTT: Processing topic: responsenumber[0m
+[0;32mI (695680) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3840","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (699460) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (699460) MQTT: Processing topic: responsenumber[0m
+[0;32mI (699460) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3841","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (702530) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (702530) MQTT: Processing topic: responsenumber[0m
+[0;32mI (702530) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2874","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (709600) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (709600) MQTT: Processing topic: responsenumber[0m
+[0;32mI (709600) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4834","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (714730) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (714730) MQTT: Processing topic: responsenumber[0m
+[0;32mI (714730) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4835","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (720770) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (720770) MQTT: Processing topic: responsenumber[0m
+[0;32mI (720770) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4836","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (725780) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (725780) MQTT: Processing topic: responsenumber[0m
+[0;32mI (725780) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4837","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (727930) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (727930) MQTT: Processing topic: responsenumber[0m
+[0;32mI (727930) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1878","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (734100) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (734100) MQTT: Processing topic: responsenumber[0m
+[0;32mI (734100) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2875","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (738070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (738070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (738070) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2876","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (743180) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (743180) MQTT: Processing topic: responsenumber[0m
+[0;32mI (743180) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4838","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (748300) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (748300) MQTT: Processing topic: responsenumber[0m
+[0;32mI (748300) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4839","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (754350) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (754350) MQTT: Processing topic: responsenumber[0m
+[0;32mI (754350) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4840","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (760500) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (760500) MQTT: Processing topic: responsenumber[0m
+[0;32mI (760500) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2877","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[1;31mE (761510) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (761510) MQTT: MQTT disconnected[0m
+[0;32mI (761510) LED: LED OFF[0m
+[0;32mI (776530) LED: LED ON[0m
+[0;32mI (776530) MQTT: MQTT connected[0m
+[0;32mI (776770) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (776780) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (776780) MQTT: Processing topic: device/list[0m
+[0;32mI (776780) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (776810) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (776850) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (776850) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776850) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (776860) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (776870) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776870) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776880) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (776880) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (776890) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776890) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776900) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (776900) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (776900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776910) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (776920) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (776920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776930) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776930) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (776940) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (776940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776950) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776950) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (776960) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (776960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776970) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (776980) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (776980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (776990) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (776990) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (777000) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (777000) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (777010) MQTT: Device list updated: 8 devices[0m
+[0;32mI (777010) MQTT: Sorted device list successfully[0m
+[0;32mI (777040) MQTT: Processing topic: service/list[0m
+[0;32mI (777040) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (777040) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (777050) MQTT: Service list updated: 2 services[0m
+[0;32mI (780870) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (780870) MQTT: Processing topic: responsenumber[0m
+[0;32mI (780870) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1880","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (786360) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (786360) MQTT: Processing topic: responsenumber[0m
+[0;32mI (786360) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3843","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (792050) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (792050) MQTT: Processing topic: responsenumber[0m
+[0;32mI (792050) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2879","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (798070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (798070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (798070) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1881","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (800220) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (800220) MQTT: Processing topic: responsenumber[0m
+[0;32mI (800220) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2880","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (807310) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (807310) MQTT: Processing topic: responsenumber[0m
+[0;32mI (807310) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3844","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (813320) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (813330) MQTT: Processing topic: responsenumber[0m
+[0;32mI (813330) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1882","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (820390) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (820390) MQTT: Processing topic: responsenumber[0m
+[0;32mI (820390) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3845","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (823470) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (823470) MQTT: Processing topic: responsenumber[0m
+[0;32mI (823470) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1883","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (827660) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (827660) MQTT: Processing topic: responsenumber[0m
+[0;32mI (827660) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2881","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (831650) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (831660) MQTT: Processing topic: responsenumber[0m
+[0;32mI (831660) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3846","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (838930) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (838930) MQTT: Processing topic: responsenumber[0m
+[0;32mI (838930) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4841","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (843840) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (843840) MQTT: Processing topic: responsenumber[0m
+[0;32mI (843840) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1884","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (850900) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (850910) MQTT: Processing topic: responsenumber[0m
+[0;32mI (850910) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1885","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (857080) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (857080) MQTT: Processing topic: responsenumber[0m
+[0;32mI (857080) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4842","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (863100) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (863100) MQTT: Processing topic: responsenumber[0m
+[0;32mI (863100) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4843","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (868110) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (868120) MQTT: Processing topic: responsenumber[0m
+[0;32mI (868120) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2882","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (871290) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (871290) MQTT: Processing topic: responsenumber[0m
+[0;32mI (871290) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3847","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (877350) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (877350) MQTT: Processing topic: responsenumber[0m
+[0;32mI (877350) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4844","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (883470) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (883470) MQTT: Processing topic: responsenumber[0m
+[0;32mI (883470) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3848","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (887400) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (887400) MQTT: Processing topic: responsenumber[0m
+[0;32mI (887400) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3849","service_name":"Giao dich khac","device_name":"3"}[0m
+[1;31mE (897500) mqtt_client: No PING_RESP, disconnected[0m
+[0;32mI (897500) MQTT: MQTT disconnected[0m
+[0;32mI (897500) LED: LED OFF[0m
+[0;32mI (919950) LED: LED ON[0m
+[0;32mI (919950) MQTT: MQTT connected[0m
+[0;32mI (921340) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (921350) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (921350) MQTT: Processing topic: device/list[0m
+[0;32mI (921350) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (921380) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (921410) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (921410) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921430) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (921430) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921450) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (921450) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921450) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921460) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921460) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (921470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921470) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921480) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (921490) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921490) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921490) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921500) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (921500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921510) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921510) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (921520) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (921530) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921530) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921530) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921540) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (921540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (921550) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (921550) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (921560) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (921560) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (921570) MQTT: Device list updated: 8 devices[0m
+[0;32mI (921580) MQTT: Sorted device list successfully[0m
+[0;32mI (921600) MQTT: Processing topic: service/list[0m
+[0;32mI (921600) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (921600) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (921610) MQTT: Service list updated: 2 services[0m
+[0;32mI (923200) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (923200) MQTT: Processing topic: responsenumber[0m
+[0;32mI (923200) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1888","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (930260) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (930270) MQTT: Processing topic: responsenumber[0m
+[0;32mI (930270) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3853","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (936300) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (936310) MQTT: Processing topic: responsenumber[0m
+[0;32mI (936310) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2884","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (940400) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (940400) MQTT: Processing topic: responsenumber[0m
+[0;32mI (940400) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4846","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (943470) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (943480) MQTT: Processing topic: responsenumber[0m
+[0;32mI (943480) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4847","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (949520) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (949520) MQTT: Processing topic: responsenumber[0m
+[0;32mI (949520) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4848","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (956580) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (956590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (956590) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4849","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (963780) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (963780) MQTT: Processing topic: responsenumber[0m
+[0;32mI (963780) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3854","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (968840) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (968840) MQTT: Processing topic: responsenumber[0m
+[0;32mI (968840) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2885","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (972960) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (972960) MQTT: Processing topic: responsenumber[0m
+[0;32mI (972960) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3855","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (975930) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (975930) MQTT: Processing topic: responsenumber[0m
+[0;32mI (975930) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3856","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (978080) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (978080) MQTT: Processing topic: responsenumber[0m
+[0;32mI (978080) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1889","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (982180) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (982180) MQTT: Processing topic: responsenumber[0m
+[0;32mI (982180) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3857","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (984330) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (984330) MQTT: Processing topic: responsenumber[0m
+[0;32mI (984330) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2886","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (986380) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (986380) MQTT: Processing topic: responsenumber[0m
+[0;32mI (986380) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2887","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (990470) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (990480) MQTT: Processing topic: responsenumber[0m
+[0;32mI (990480) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2888","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (995590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (995590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (995590) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1890","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (997640) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (997650) MQTT: Processing topic: responsenumber[0m
+[0;32mI (997650) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1891","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (999690) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (999700) MQTT: Processing topic: responsenumber[0m
+[0;32mI (999700) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2889","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1001760) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1001760) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1001770) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2890","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1005840) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1005840) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1005840) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4850","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1010950) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1010950) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1010950) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2891","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1014020) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1014020) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1014020) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1892","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1019240) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1019240) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1019240) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1893","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (1025180) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1025180) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1025180) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4851","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1029290) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1029300) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1029300) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2892","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1034380) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1034380) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1034380) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4852","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1036450) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1036450) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1036450) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1894","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1042750) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1042750) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1042760) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4853","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1049760) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1049760) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1049760) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3858","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1053760) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1053770) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1053770) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4854","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1055800) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1055810) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1055810) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2893","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (1060930) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1060930) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1060930) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2894","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1063990) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1063990) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1063990) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4855","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1067030) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1067030) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1067030) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3859","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1072090) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1072090) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1072090) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4856","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1074130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1074130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1074130) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4857","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1076280) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1076280) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1076280) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3860","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1082430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1082430) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1082430) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3861","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1086420) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1086420) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1086420) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2895","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (1093580) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1093580) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1093590) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3862","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1098600) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1098610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1098610) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2896","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (1100850) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1100860) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1100860) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3863","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1107820) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1107820) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1107830) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3864","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1112940) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1112940) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1112940) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2897","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1118060) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1118070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1118070) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2898","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1121340) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1121340) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1121340) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4858","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1124300) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1124310) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1124310) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4859","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1131500) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1131500) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1131500) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4860","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1134340) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1134340) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1134340) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3865","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1138540) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1138540) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1138540) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4861","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1145610) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1145610) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1145610) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1895","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1147650) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1147660) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1147660) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3866","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1151970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1151970) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1151970) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3867","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1153790) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1153790) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1153790) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3868","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1159940) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1159940) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1159940) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1896","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1164240) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1164240) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1164240) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2899","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1166010) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1166010) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1166010) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4862","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1168130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1168130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1168130) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3869","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1173260) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1173260) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1173260) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4863","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1177350) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1177350) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1177350) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3870","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1183420) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1183420) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1183420) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4864","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1186460) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1186470) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1186470) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1897","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1193520) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1193520) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1193520) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2900","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1195570) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1195570) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1195580) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3871","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (1199680) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1199680) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1199680) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4865","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1202740) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1202740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1202740) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1898","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (1207860) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1207860) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1207860) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1899","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1209910) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1209910) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1209910) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2901","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1215950) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1215950) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1215950) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1900","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (1222260) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1222260) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1222260) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2902","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1228800) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1228800) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1228800) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4866","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (1230390) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1230390) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1230390) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2903","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (1236430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1236430) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1236430) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1901","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (1240630) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1240630) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1240630) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1902","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (1244410) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1244420) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1244420) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3872","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (1246570) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1246570) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1246570) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2904","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (1250680) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1250680) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1250680) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1903","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (1257730) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1257740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1257740) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2905","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (1264900) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1264900) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1264900) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4867","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1268910) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1268910) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1268910) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4868","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (1271040) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1271040) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1271040) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1904","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (1276160) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (1276160) MQTT: Processing topic: responsenumber[0m
+[0;32mI (1276160) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1905","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m

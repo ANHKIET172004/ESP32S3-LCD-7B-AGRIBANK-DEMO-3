@@ -4,7 +4,22 @@ Command: ninja flash
 Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
 [2/10] No install step for 'bootloader'
 [3/10] Completed 'bootloader'
-[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/state_machine.c.obj
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan1':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:33:12: warning: unused variable 'best_rssi' [-Wunused-variable]
+   33 |     int8_t best_rssi=-127;// khoi tao
+      |            ^~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:27:14: warning: unused variable 'count' [-Wunused-variable]
+   27 |     uint16_t count;
+      |              ^~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan2':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:78:9: warning: variable 'best_saved_index' set but not used [-Wunused-but-set-variable]
+   78 |     int best_saved_index = -1;
+      |         ^~~~~~~~~~~~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: At top level:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:14:13: warning: 'ascii_ssid' defined but not used [-Wunused-function]
+   14 | static bool ascii_ssid(const char* ssid){
+      |             ^~~~~~~~~~
 [5/10] Linking C static library esp-idf\main\libmain.a
 [6/10] Generating esp-idf/esp_system/ld/sections.ld
 [7/10] Linking CXX executable hello_world.elf
@@ -15,16 +30,16 @@ Merged 2 ELF sections
 Successfully created esp32 image.
 Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe5860 bytes. Smallest app partition is 0x100000 bytes. 0x1a7a0 bytes (10%) free.
+hello_world.bin binary size 0xe7b50 bytes. Smallest app partition is 0x100000 bytes. 0x184b0 bytes (9%) free.
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM11 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
 esptool.py v4.9.1
-Serial port COM11
-Connecting....
+Serial port COM3
+Connecting......
 Chip is ESP32-D0WD-V3 (revision v3.0)
 Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
 Crystal is 40MHz
-MAC: 94:e6:86:09:a4:78
+MAC: a8:42:e3:4c:7c:bc
 Uploading stub...
 Running stub...
 Stub running...
@@ -32,56 +47,57 @@ Changing baud rate to 460800
 Changed.
 Configuring flash size...
 Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f5fff...
+Flash will be erased from 0x00010000 to 0x000f7fff...
 Flash will be erased from 0x00008000 to 0x00008fff...
 SHA digest in image updated
 Compressed 26240 bytes to 16493...
 Writing at 0x00001000... (50 %)
 Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.7 seconds (effective 284.3 kbit/s)...
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 392.4 kbit/s)...
 Hash of data verified.
-Compressed 940128 bytes to 585836...
+Compressed 949072 bytes to 591429...
 Writing at 0x00010000... (2 %)
-Writing at 0x0001cd94... (5 %)
-Writing at 0x00028474... (8 %)
-Writing at 0x00031e10... (11 %)
-Writing at 0x00039c3c... (13 %)
-Writing at 0x0003f53d... (16 %)
-Writing at 0x000450d7... (19 %)
-Writing at 0x0004ae26... (22 %)
-Writing at 0x00050a23... (25 %)
-Writing at 0x00056a50... (27 %)
-Writing at 0x0005c9dd... (30 %)
-Writing at 0x000622bf... (33 %)
-Writing at 0x00067ef8... (36 %)
-Writing at 0x0006dce4... (38 %)
-Writing at 0x00073a92... (41 %)
-Writing at 0x000795f2... (44 %)
-Writing at 0x0007f3be... (47 %)
-Writing at 0x000857bb... (50 %)
-Writing at 0x0008b635... (52 %)
-Writing at 0x000911eb... (55 %)
-Writing at 0x00096704... (58 %)
-Writing at 0x0009bc90... (61 %)
-Writing at 0x000a1ae8... (63 %)
-Writing at 0x000a74b2... (66 %)
-Writing at 0x000acbf4... (69 %)
-Writing at 0x000b25e6... (72 %)
-Writing at 0x000b8389... (75 %)
-Writing at 0x000bdc83... (77 %)
-Writing at 0x000c3a39... (80 %)
-Writing at 0x000c946f... (83 %)
-Writing at 0x000cedcf... (86 %)
-Writing at 0x000d6f1c... (88 %)
-Writing at 0x000dfb37... (91 %)
-Writing at 0x000e5952... (94 %)
-Writing at 0x000ebea8... (97 %)
-Writing at 0x000f1257... (100 %)
-Wrote 940128 bytes (585836 compressed) at 0x00010000 in 13.3 seconds (effective 565.4 kbit/s)...
+Writing at 0x0001ce5f... (5 %)
+Writing at 0x00028718... (8 %)
+Writing at 0x00031f3c... (10 %)
+Writing at 0x0003a0cf... (13 %)
+Writing at 0x0003f9f6... (16 %)
+Writing at 0x00045547... (18 %)
+Writing at 0x0004b299... (21 %)
+Writing at 0x00050e84... (24 %)
+Writing at 0x00056de4... (27 %)
+Writing at 0x0005ce2f... (29 %)
+Writing at 0x0006281d... (32 %)
+Writing at 0x0006843b... (35 %)
+Writing at 0x0006e215... (37 %)
+Writing at 0x00073f2c... (40 %)
+Writing at 0x00079af3... (43 %)
+Writing at 0x0007f844... (45 %)
+Writing at 0x00085d0b... (48 %)
+Writing at 0x0008bb71... (51 %)
+Writing at 0x000917be... (54 %)
+Writing at 0x00096d40... (56 %)
+Writing at 0x0009c15b... (59 %)
+Writing at 0x000a1dda... (62 %)
+Writing at 0x000a7916... (64 %)
+Writing at 0x000ad18f... (67 %)
+Writing at 0x000b2a62... (70 %)
+Writing at 0x000b8812... (72 %)
+Writing at 0x000be134... (75 %)
+Writing at 0x000c3d18... (78 %)
+Writing at 0x000c99d8... (81 %)
+Writing at 0x000cf211... (83 %)
+Writing at 0x000d4e9f... (86 %)
+Writing at 0x000df920... (89 %)
+Writing at 0x000e59f6... (91 %)
+Writing at 0x000ebe9a... (94 %)
+Writing at 0x000f17a1... (97 %)
+Writing at 0x000f6f2e... (100 %)
+Wrote 949072 bytes (591429 compressed) at 0x00010000 in 13.6 seconds (effective 557.0 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 103...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 437.7 kbit/s)...
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 893.8 kbit/s)...
 Hash of data verified.
 
 Leaving...

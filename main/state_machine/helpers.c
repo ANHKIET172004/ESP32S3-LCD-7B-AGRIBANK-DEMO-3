@@ -16,6 +16,8 @@ void wifi_config(){
                 strncpy((char *)wifi_config.sta.password, g_keypad.saved_pass, sizeof(wifi_config.sta.password) - 1);
                 memcpy(wifi_config.sta.bssid,g_keypad.saved_bssid,6);
 
+                //wifi_config.sta.bssid_set=true;//
+
                 wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK;
                 esp_wifi_disconnect();
                 esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
@@ -24,7 +26,7 @@ void wifi_config(){
                 esp_wifi_connect();
                 set_sys_state(STATE_WIFI_CONNECT);
             } else {
-                lcd_show_message("CHUA LUU WIFI", "");
+                lcd_show_message("KHONG CO WIFI", "");
                 vTaskDelay(pdMS_TO_TICKS(800));
                 set_sys_state(STATE_RUNNING);
             }

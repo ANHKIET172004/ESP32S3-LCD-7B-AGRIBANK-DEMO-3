@@ -196,7 +196,8 @@ void select_option(){
 
         }
         else if (g_keypad.menu_selection==9){
-            set_sys_state(STATE_SAVED_WIFI);
+            //set_sys_state(STATE_SAVED_WIFI);
+            lcd_show_saved_wifi();//
             g_keypad.current_mode=MODE_SAVED_WIFI;
         }
 

@@ -90,6 +90,7 @@ typedef struct {
     int          len;  
     char         user_pass_buffer[5];
     uint8_t      user_pass_index;  
+    uint8_t      delete_wifi_option;
 
 
 } keypad_context_t;

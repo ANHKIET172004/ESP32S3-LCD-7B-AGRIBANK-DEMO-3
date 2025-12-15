@@ -58,7 +58,7 @@ void handle_display(void) {
            
             break;
         case DISPLAY_LOGOUT:
-            lcd_show_message("  DA DANG XUAT!","  \"A\"- >LOG IN");
+            lcd_show_message("  DA DANG XUAT!"," \"A\"->DANG NHAP");
             break;
         case DISPLAY_USER_PASS:
 
@@ -105,6 +105,12 @@ void handle_display(void) {
         case DISPLAY_SAVED_WIFI:
             lcd_show_saved_wifi();
             break;
+        case DISPLAY_DELET_WIFI_OPTION:
+            lcd_show_delete_wifi_options();
+            break;
+        case DISPLAY_MENU:
+             lcd_show_menu();
+             break;
         case DISPLAY_IDLE:
         default:
             break;
@@ -161,7 +167,13 @@ void update_display_state(void) {
              set_display_state(DISPLAY_CONTINUE);
              break;
         case STATE_SAVED_WIFI:
-             set_display_state(DISPLAY_SAVED_WIFI);
+             //set_display_state(DISPLAY_SAVED_WIFI);
+             break;
+        case STATE_DELETE_WIFI_OPTION:
+             //set_display_state(DISPLAY_DELET_WIFI_OPTION);
+             break;
+        case STATE_MENU:
+             set_display_state(DISPLAY_MENU);
              break;
         
         default:
@@ -204,6 +216,7 @@ void system_state_update(){
             case STATE_WIFI_SUCCESS:
             {
                 uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+
                 if (get_sys_state() != g_state.prev_sys_state) {
                     g_state.state_enter_time = current_time;
                 }
@@ -212,6 +225,7 @@ void system_state_update(){
                     set_sys_state(STATE_RUNNING);//
                     mqtt_init();
                 }
+
                 esp_task_wdt_reset();
                 break;
             }
@@ -243,6 +257,10 @@ void system_state_update(){
             case STATE_CONTINUE:
                  break;
             case STATE_SAVED_WIFI:
+                 break;
+            case STATE_DELETE_WIFI_OPTION:
+                 break;
+            case STATE_MENU:
                  break;
             case STATE_USER_PASSWORD_ERROR:
             uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;

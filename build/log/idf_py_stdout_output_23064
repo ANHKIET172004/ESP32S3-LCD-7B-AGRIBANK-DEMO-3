@@ -4,7 +4,7 @@ Command: ninja flash
 Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
 [2/10] No install step for 'bootloader'
 [3/10] Completed 'bootloader'
-[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/state_machine.c.obj
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/helpers.c.obj
 [5/10] Linking C static library esp-idf\main\libmain.a
 [6/10] Generating esp-idf/esp_system/ld/sections.ld
 [7/10] Linking CXX executable hello_world.elf
@@ -15,16 +15,16 @@ Merged 2 ELF sections
 Successfully created esp32 image.
 Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe5910 bytes. Smallest app partition is 0x100000 bytes. 0x1a6f0 bytes (10%) free.
+hello_world.bin binary size 0xe7be0 bytes. Smallest app partition is 0x100000 bytes. 0x18420 bytes (9%) free.
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM11 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
 esptool.py v4.9.1
-Serial port COM11
-Connecting.....
+Serial port COM3
+Connecting....
 Chip is ESP32-D0WD-V3 (revision v3.0)
 Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
 Crystal is 40MHz
-MAC: 94:e6:86:09:a4:78
+MAC: a8:42:e3:4c:7c:bc
 Uploading stub...
 Running stub...
 Stub running...
@@ -32,56 +32,57 @@ Changing baud rate to 460800
 Changed.
 Configuring flash size...
 Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f5fff...
+Flash will be erased from 0x00010000 to 0x000f7fff...
 Flash will be erased from 0x00008000 to 0x00008fff...
 SHA digest in image updated
 Compressed 26240 bytes to 16493...
 Writing at 0x00001000... (50 %)
 Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.7 seconds (effective 282.0 kbit/s)...
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 393.7 kbit/s)...
 Hash of data verified.
-Compressed 940304 bytes to 585931...
+Compressed 949216 bytes to 591497...
 Writing at 0x00010000... (2 %)
-Writing at 0x0001cd92... (5 %)
-Writing at 0x00028474... (8 %)
-Writing at 0x00031e33... (11 %)
-Writing at 0x00039c63... (13 %)
-Writing at 0x0003f564... (16 %)
-Writing at 0x000450fe... (19 %)
-Writing at 0x0004ae4e... (22 %)
-Writing at 0x00050a55... (25 %)
-Writing at 0x00056aa4... (27 %)
-Writing at 0x0005ca2c... (30 %)
-Writing at 0x000622e2... (33 %)
-Writing at 0x00067f05... (36 %)
-Writing at 0x0006dd26... (38 %)
-Writing at 0x00073a88... (41 %)
-Writing at 0x0007960d... (44 %)
-Writing at 0x0007f407... (47 %)
-Writing at 0x000857fd... (50 %)
-Writing at 0x0008b682... (52 %)
-Writing at 0x0009122e... (55 %)
-Writing at 0x0009674d... (58 %)
-Writing at 0x0009bcdb... (61 %)
-Writing at 0x000a1b3f... (63 %)
-Writing at 0x000a74fe... (66 %)
-Writing at 0x000acc44... (69 %)
-Writing at 0x000b263c... (72 %)
-Writing at 0x000b83e7... (75 %)
-Writing at 0x000bdcca... (77 %)
-Writing at 0x000c3a7f... (80 %)
-Writing at 0x000c9487... (83 %)
-Writing at 0x000cedfa... (86 %)
-Writing at 0x000d6ec1... (88 %)
-Writing at 0x000dfb5d... (91 %)
-Writing at 0x000e5996... (94 %)
-Writing at 0x000ebef2... (97 %)
-Writing at 0x000f128f... (100 %)
-Wrote 940304 bytes (585931 compressed) at 0x00010000 in 13.3 seconds (effective 565.9 kbit/s)...
+Writing at 0x0001ce75... (5 %)
+Writing at 0x00028751... (8 %)
+Writing at 0x00031f65... (10 %)
+Writing at 0x0003a103... (13 %)
+Writing at 0x0003fa1b... (16 %)
+Writing at 0x0004558b... (18 %)
+Writing at 0x0004b2dd... (21 %)
+Writing at 0x00050ebb... (24 %)
+Writing at 0x00056e10... (27 %)
+Writing at 0x0005ce54... (29 %)
+Writing at 0x00062839... (32 %)
+Writing at 0x0006845f... (35 %)
+Writing at 0x0006e244... (37 %)
+Writing at 0x00073f4f... (40 %)
+Writing at 0x00079ad1... (43 %)
+Writing at 0x0007f826... (45 %)
+Writing at 0x00085d0b... (48 %)
+Writing at 0x0008bb81... (51 %)
+Writing at 0x000917d5... (54 %)
+Writing at 0x00096d36... (56 %)
+Writing at 0x0009c13f... (59 %)
+Writing at 0x000a1dcd... (62 %)
+Writing at 0x000a7935... (64 %)
+Writing at 0x000ad1b0... (67 %)
+Writing at 0x000b2a81... (70 %)
+Writing at 0x000b8837... (72 %)
+Writing at 0x000be14b... (75 %)
+Writing at 0x000c3d23... (78 %)
+Writing at 0x000c9a05... (81 %)
+Writing at 0x000cf22f... (83 %)
+Writing at 0x000d4e6b... (86 %)
+Writing at 0x000df949... (89 %)
+Writing at 0x000e5a24... (91 %)
+Writing at 0x000ebed4... (94 %)
+Writing at 0x000f17e1... (97 %)
+Writing at 0x000f6f1d... (100 %)
+Wrote 949216 bytes (591497 compressed) at 0x00010000 in 13.6 seconds (effective 557.5 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 103...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 430.4 kbit/s)...
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 949.2 kbit/s)...
 Hash of data verified.
 
 Leaving...

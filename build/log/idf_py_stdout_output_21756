@@ -1,10 +1,22 @@
-Command: ninja flash
-[1/11] Performing build step for 'bootloader'
+Command: ninja all
+[1/16] Performing build step for 'bootloader'
 [1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
 Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[2/11] No install step for 'bootloader'
-[3/11] Completed 'bootloader'
-[4/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj
+[2/16] No install step for 'bootloader'
+[3/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mutex/mutex.c.obj
+[4/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/state_machine.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.c: In function 'handle_display':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.c:75:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   75 |              if (g_keypad.user_pass_index>0){
+      |                 ^
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.c:83:9: note: here
+   83 |         case DISPLAY_MAIN_SCREEN:
+      |         ^~~~
+[5/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mac_utils/mac_utils.c.obj
+[6/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/helpers.c.obj
+[7/16] Completed 'bootloader'
+[8/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad.c.obj
+[9/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj
 D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c: In function 'wifi_scan1':
 D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:33:12: warning: unused variable 'best_rssi' [-Wunused-variable]
    33 |     int8_t best_rssi=-127;// khoi tao
@@ -20,90 +32,50 @@ D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank dem
 D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.c:14:13: warning: 'ascii_ssid' defined but not used [-Wunused-function]
    14 | static bool ascii_ssid(const char* ssid){
       |             ^~~~~~~~~~
-[5/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/nvs_utils/nvs_utils.c.obj
+[10/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/nvs_utils/nvs_utils.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/nvs_utils/nvs_utils.c: In function 'delete_wifi_credentials':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/nvs_utils/nvs_utils.c:268:14: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  268 |     if (index<0||index>list->count){
+      |              ^
 D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/nvs_utils/nvs_utils.c: In function 'save_login_status':
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/nvs_utils/nvs_utils.c:438:10: warning: unused variable 'tmp' [-Wunused-variable]
-  438 |     char tmp[5];
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/nvs_utils/nvs_utils.c:469:10: warning: unused variable 'tmp' [-Wunused-variable]
+  469 |     char tmp[5];
       |          ^~~
-[6/11] Linking C static library esp-idf\main\libmain.a
-[7/11] Generating esp-idf/esp_system/ld/sections.ld
-[8/11] Linking CXX executable hello_world.elf
-[9/11] Generating binary image from built executable
+[11/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lcd_i2c/lcd_option_handler.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_user_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:88:24: warning: passing argument 1 of 'lcd_send_string' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   88 |        lcd_send_string(number);
+      |                        ^~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/esp_mqtt_client/esp_mqtt_client.h:12,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:4,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.h:11,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.h:10,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.h:7,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:1:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:28:29: note: expected 'char *' but argument is of type 'const char *'
+   28 | void lcd_send_string (char *str);  // send string to the lcd
+      |                       ~~~~~~^~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_new_user_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:98:24: warning: passing argument 1 of 'lcd_send_string' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   98 |        lcd_send_string(number);
+      |                        ^~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:28:29: note: expected 'char *' but argument is of type 'const char *'
+   28 | void lcd_send_string (char *str);  // send string to the lcd
+      |                       ~~~~~~^~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_saved_wifi':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:465:32: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  465 |     if (g_keypad.wifi_position < 0 || g_keypad.wifi_position >= list->count) {
+      |                                ^
+[12/16] Linking C static library esp-idf\main\libmain.a
+[13/16] Generating esp-idf/esp_system/ld/sections.ld
+[14/16] Linking CXX executable hello_world.elf
+[15/16] Generating binary image from built executable
 esptool.py v4.9.1
 Creating esp32 image...
 Merged 2 ELF sections
 Successfully created esp32 image.
 Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
-[10/11] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe7670 bytes. Smallest app partition is 0x100000 bytes. 0x18990 bytes (10%) free.
-[10/11] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.9.1
-Serial port COM3
-Connecting....
-Chip is ESP32-D0WD-V3 (revision v3.0)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: a8:42:e3:4c:7c:bc
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f7fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 26240 bytes to 16493...
-Writing at 0x00001000... (50 %)
-Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 392.7 kbit/s)...
-Hash of data verified.
-Compressed 947824 bytes to 590542...
-Writing at 0x00010000... (2 %)
-Writing at 0x0001ce5e... (5 %)
-Writing at 0x00028705... (8 %)
-Writing at 0x00031f20... (10 %)
-Writing at 0x0003a0a1... (13 %)
-Writing at 0x0003f9c4... (16 %)
-Writing at 0x0004551d... (18 %)
-Writing at 0x0004b2b0... (21 %)
-Writing at 0x00050e7f... (24 %)
-Writing at 0x00056f2c... (27 %)
-Writing at 0x0005ce62... (29 %)
-Writing at 0x00062763... (32 %)
-Writing at 0x000683e4... (35 %)
-Writing at 0x0006e1d7... (37 %)
-Writing at 0x00073edd... (40 %)
-Writing at 0x00079a7b... (43 %)
-Writing at 0x0007f856... (45 %)
-Writing at 0x00085ce2... (48 %)
-Writing at 0x0008bb56... (51 %)
-Writing at 0x0009174d... (54 %)
-Writing at 0x00096c84... (56 %)
-Writing at 0x0009c14c... (59 %)
-Writing at 0x000a1dd2... (62 %)
-Writing at 0x000a789d... (64 %)
-Writing at 0x000ad0f5... (67 %)
-Writing at 0x000b29ed... (70 %)
-Writing at 0x000b8819... (72 %)
-Writing at 0x000be110... (75 %)
-Writing at 0x000c3e16... (78 %)
-Writing at 0x000c993b... (81 %)
-Writing at 0x000cf20b... (83 %)
-Writing at 0x000d5348... (86 %)
-Writing at 0x000df9e9... (89 %)
-Writing at 0x000e5a2c... (91 %)
-Writing at 0x000ebf39... (94 %)
-Writing at 0x000f1790... (97 %)
-Writing at 0x000f72ff... (100 %)
-Wrote 947824 bytes (590542 compressed) at 0x00010000 in 13.6 seconds (effective 557.5 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 909.5 kbit/s)...
-Hash of data verified.
-
-Leaving...
-Hard resetting via RTS pin...
+[16/16] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
+hello_world.bin binary size 0xe7a30 bytes. Smallest app partition is 0x100000 bytes. 0x185d0 bytes (10%) free.

@@ -62,7 +62,7 @@ void hide_wifi_input() {
     lcd_lock();
     lcd_clear();
     lcd_put_cur(0, 0);
-    lcd_send_string("*NHAP PASSWORD:");
+    lcd_send_string("*NHAP MAT KHAU:");
 
     xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
 

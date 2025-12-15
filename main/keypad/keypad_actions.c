@@ -8,15 +8,24 @@ extern keypad_context_t g_keypad;
 extern bool start1;
 
 void old_screen_reload(){
+    //lcd_clear();
 
-    if (g_keypad.current_mode!=MODE_CONTINUE&&g_keypad.current_mode!=MODE_SAVED_WIFI){
+    if (g_keypad.current_mode!=MODE_CONTINUE&&g_keypad.current_mode!=MODE_SAVED_WIFI
+        &&g_keypad.current_mode!=MODE_NEW_USER_PASS&&g_keypad.current_mode!=MODE_DELETE_WIFI_OPTION){
         strncpy(g_keypad.input_buffer,g_keypad.saved_input_buffer, sizeof(g_keypad.input_buffer) - 1);
         g_keypad.input_buffer[sizeof(g_keypad.input_buffer) - 1]='\0';
         g_keypad.buffer_index = g_keypad.saved_buffer_index;
-    }   
-    else {
+    }  
+    else { 
+        
         set_sys_state(STATE_RUNNING);
-    }
+
+      if (g_keypad.current_mode==MODE_SAVED_WIFI) {
+      
+        set_sys_state(STATE_MENU);//
+       }
+        
+     }
         //g_keypad.current_mode = MODE_NORMAL;
         memset(g_keypad.saved_input_buffer, 0, sizeof(g_keypad.saved_input_buffer));
         g_keypad.saved_buffer_index = 0;
@@ -96,13 +105,19 @@ void update_input_buffer(char key){
 }
 
 void enter_number(){
+
+    if (!get_mqtt_connected()){
+        reload_oldscreen();
+        return;
+    }
+
      if (g_keypad.buffer_index > 3) {
             g_keypad.pri = true;
-            //xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
+            xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
             mqtt_publish_number(g_keypad.input_buffer);
             memset(g_keypad.input_buffer, 0, sizeof(g_keypad.input_buffer));
             g_keypad.buffer_index = 0;
-            //xSemaphoreGive(g_mutex.input_mutex);
+            xSemaphoreGive(g_mutex.input_mutex);
 
             size_t num_len = sizeof(g_keypad.prev_number);
             size_t status_len = 12;
@@ -141,8 +156,6 @@ void call_number(){
             g_keypad.skip=false;
             //set_publish(true); 
              char json_msg[64];
-            //const char *json_msg = "{\"device_id\":\"04:1A:2B:3C:4D:04\",\"request\":\"number\"}";
-            //sprintf(json_msg, "{\"device_id\":\"%s\",\"request\":\"number\"}",selected_id);
             sprintf(json_msg, "{\"device_id\":\"%s\",\"request\":\"number\"}",g_keypad.selected_device_id);//
             xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
             esp_mqtt_client_publish(mqtt_client, "requestnumber", json_msg, 0, 0, 0);

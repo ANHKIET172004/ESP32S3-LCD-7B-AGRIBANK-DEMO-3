@@ -14,6 +14,8 @@ typedef enum {
     STATE_NEW_USER_PASS,
     STATE_CONTINUE,
     STATE_SAVED_WIFI,
+    STATE_DELETE_WIFI_OPTION,
+    STATE_MENU,
 } SystemState;
 
 typedef enum {
@@ -30,6 +32,8 @@ typedef enum {
     DISPLAY_NEW_USER_PASS=10,
     DISPLAY_CONTINUE=11,
     DISPLAY_SAVED_WIFI=12,
+    DISPLAY_DELET_WIFI_OPTION=13,
+    DISPLAY_MENU=14,
 } DisplayState;
 
 

@@ -93,7 +93,7 @@ void lcd_show_new_user_pass(const char* number){
        lcd_lock();
        lcd_clear();
        lcd_put_cur(0,0);
-       lcd_send_string("*NHAP PASS MOI:");
+       lcd_send_string("*MAT KHAU MOI:");
        lcd_put_cur(1,0);
        lcd_send_string(number);
        lcd_unlock();
@@ -125,7 +125,7 @@ void lcd_show_wifi_pass(const char *pass) {
     
     lcd_clear();
     lcd_put_cur(0, 0);
-    lcd_send_string("*NHAP PASSWORD:");
+    lcd_send_string("*NHAP MAT KHAU:");
     lcd_put_cur(1, 0);
     if (pass && strlen(pass) > 0 && g_keypad.hide == true) {
         int pass_len = strlen(pass);
@@ -312,7 +312,7 @@ void lcd_show_menu(void) {
     lcd_lock();
     lcd_clear();
     lcd_put_cur(0, 0);
-    lcd_send_string("*SETTING");
+    lcd_send_string("*CAI DAT");
     if (g_keypad.menu_selection==1){
     lcd_put_cur(1, 0);
     lcd_send_string(">CAU HINH WIFI");
@@ -399,6 +399,45 @@ void lcd_show_options(void) {
     lcd_unlock();
 }
 
+
+void lcd_show_delete_wifi_options(void) {
+    
+    lcd_lock();
+    lcd_clear();
+    lcd_put_cur(0, 0);
+    char header[17] = {0};
+    snprintf(header, sizeof(header), "*XOA LUU WIFI?");
+    lcd_send_string(header);
+    lcd_put_cur(1,1);
+    lcd_send_string("1.YES");
+    lcd_put_cur(1,11);
+    lcd_send_string("2.NO");
+   
+    char line[2] = {0};
+    
+    if (g_keypad.delete_wifi_option==1){
+
+    snprintf(line, sizeof(line), ">");
+    lcd_put_cur(1, 0);
+    lcd_send_string(line);
+    lcd_put_cur(1, 10);
+    lcd_send_string(" ");
+    
+    }
+
+    else {
+
+        snprintf(line, sizeof(line), ">");
+        lcd_put_cur(1, 10);
+        lcd_send_string(line);
+        lcd_put_cur(1, 0);
+        lcd_send_string(" ");
+
+    }
+  
+    lcd_unlock();
+}
+
 void lcd_show_saved_wifi(void) {
     wifi_list *list = calloc(1, sizeof(wifi_list));
     if (!list) {
@@ -406,66 +445,40 @@ void lcd_show_saved_wifi(void) {
         return;
     }
 
-    // Load danh sách wifi đã lưu
     load_wifi_list(list);
 
-    // KHÔNG có wifi nào
+    
     if (list->count <= 0) {
         lcd_clear();
         lcd_put_cur(0,0);
         lcd_send_string("*WIFI DA LUU:");
 
         lcd_put_cur(1,0);
-        lcd_send_string(">KHONG CO WIFI");
+        lcd_send_string(">CHUA LUU WIFI");
 
         free(list);
         return;
     }
 
-    // Giới hạn wifi_position
-    if (g_keypad.wifi_position < 0 || g_keypad.wifi_position >= list->count) {
-        g_keypad.wifi_position = 0;
-    }
-
-    // Đảm bảo SSID luôn null-terminate (an toàn)
     list->aps[g_keypad.wifi_position].ssid[31] = '\0';
 
     lcd_clear();
     lcd_put_cur(0,0);
     lcd_send_string("*WIFI DA LUU:");
 
-    char display_saved_wifi[34];
-    //snprintf(display_saved_wifi, sizeof(display_saved_wifi),
-      //       ">%.*s", 15, list->aps[g_keypad.wifi_position].ssid);
+    char display_saved_wifi[17];
     snprintf(display_saved_wifi, sizeof(display_saved_wifi),
-         ">%.*s", 16, list->aps[g_keypad.wifi_position].ssid);
+           ">%.*s", 15, list->aps[g_keypad.wifi_position].ssid);
+    display_saved_wifi[16] = '\0';
+
+
     lcd_put_cur(1,0);
     lcd_send_string(display_saved_wifi);
 
     free(list);
+    
 }
 
-    
-void lcd_show_saved_wifi1(){
-    wifi_list* list=calloc(1,sizeof(wifi_list));
-    
-   // if (g_keypad.wifi_position==0){
-    
-    load_wifi_list(list);
-    //}
-    lcd_clear();
-    lcd_put_cur(0,0);
-    lcd_send_string("*WIFI DA LUU:");
-    char display_saved_wifi[34];
-    //sprintf(display_saved_wifi,">%s",list->aps[g_keypad.wifi_position].ssid);
-    snprintf(display_saved_wifi, sizeof(display_saved_wifi),
-         ">%.*s", 16, list->aps[g_keypad.wifi_position].ssid);
-
-    lcd_put_cur(1,0);
-    lcd_send_string(display_saved_wifi);
-    
-
-}
 
 void service_scroll_task(void *pvParameter) {
     char lcd_str[17];
