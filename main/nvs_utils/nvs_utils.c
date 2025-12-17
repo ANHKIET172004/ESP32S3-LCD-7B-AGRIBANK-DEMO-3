@@ -58,7 +58,7 @@ esp_err_t read_counter_id_from_nvs(char *counter_id, size_t buffer_size) {
         }
         memset(counter_id, 0, buffer_size);
     } else {
-        ESP_LOGI(TAG, "Read user ID successfully: %s", counter_id);
+       // ESP_LOGI(TAG, "Read user ID successfully: %s", counter_id);
     }
     
     nvs_close(nvs_handle);
@@ -263,7 +263,9 @@ static void remove_oldest_wifi(wifi_list *list)
 void save_wifi_credentials1(const char *ssid,
                             const char *password,
                             const uint8_t *bssid)
-{
+{   
+
+    ESP_LOGI("DEBUG","%s",ssid);//
     if (!ssid || !password) return;
 
     wifi_list list = {0};
@@ -451,6 +453,92 @@ void delete_number_status(void) {
     }
     nvs_close(nvs_handle);
 }
+
+static esp_err_t read_pass_count(uint8_t *count)
+{
+    nvs_handle_t handle;
+    esp_err_t err = nvs_open("user_pass", NVS_READWRITE, &handle);
+    if (err != ESP_OK) return err;
+
+    err = nvs_get_u8(handle, "pass_count", count);
+    if (err == ESP_ERR_NVS_NOT_FOUND) {
+        *count = 0;
+        err = ESP_OK;
+    }
+
+    nvs_close(handle);
+    return err;
+}
+
+static esp_err_t read_pass_by_index(uint8_t index, char *pass, size_t len)
+{
+    char key[9];
+    snprintf(key, sizeof(key), "pass %d", index);
+
+    nvs_handle_t handle;
+    esp_err_t err = nvs_open("user_pass", NVS_READONLY, &handle);
+    if (err != ESP_OK) return err;
+
+    size_t required = len;
+    err = nvs_get_str(handle, key, pass, &required);
+
+    nvs_close(handle);
+    return err;
+}
+
+void save_user_pass1(const char *new_pass)
+{
+    if (!new_pass || strlen(new_pass) == 0) {
+        ESP_LOGW(TAG, "Invalid pass");
+        return;
+    }
+
+    uint8_t pass_count = 0;
+    if (read_pass_count(&pass_count) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to read pass_count");
+        return;
+    }
+
+    if (pass_count >= 3) {
+        ESP_LOGW(TAG, "PASS list full (%d). Skip saving", pass_count);
+        return;
+    }
+
+    char tmp[5];
+    for (uint8_t i = 0; i < pass_count; i++) {
+        if (read_pass_by_index(i, tmp, sizeof(tmp)) == ESP_OK) {
+            if (strcmp(tmp, new_pass) == 0) {
+                ESP_LOGI(TAG, "PASS already exists, skip saving");
+                return;
+            }
+        }
+    }
+
+    nvs_handle_t handle;
+    esp_err_t err = nvs_open("user_pass", NVS_READWRITE, &handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "NVS open failed");
+        return;
+    }
+
+    char key[9];
+    snprintf(key, sizeof(key), "pass %d", pass_count);
+
+    err = nvs_set_str(handle, key, new_pass);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to save pass");
+        nvs_close(handle);
+        return;
+    }
+
+    pass_count++;
+    nvs_set_u8(handle, "pass_count", pass_count);
+    nvs_commit(handle);
+
+    ESP_LOGI(TAG, "Saved PASS[%d]: %s", pass_count - 1, new_pass);
+    nvs_close(handle);
+}
+
 
 void save_user_pass(const char *user_pass) {
     char tmp[5];

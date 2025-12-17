@@ -66,7 +66,7 @@ void read_current_counter_id(){
 
     if (esp_read_mac(mac, ESP_MAC_WIFI_STA) == ESP_OK) {
         snprintf(mac_str, 18, "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-        ESP_LOGI(TAG, "WiFi STA MAC: %s", mac_str);
+        //ESP_LOGI(TAG, "WiFi STA MAC: %s", mac_str);
     }
     
     strcpy(g_keypad.default_id,mac_str);
@@ -76,7 +76,7 @@ void read_current_counter_id(){
     if (err == ESP_OK && strlen(saved_user_id) > 0) {
         strncpy(current_counter_id, saved_user_id, sizeof(g_keypad.counter_id) - 1);
         current_counter_id[sizeof(current_counter_id) - 1] = '\0';
-        ESP_LOGI(TAG, "Loaded user_id from NVS: %s", g_keypad.counter_id);
+        //ESP_LOGI(TAG, "Loaded user_id from NVS: %s", g_keypad.counter_id);
     } else {
         strcpy(g_keypad.counter_id, "00");
         ESP_LOGI(TAG, "No saved user_id, using default: %s", g_keypad.counter_id);

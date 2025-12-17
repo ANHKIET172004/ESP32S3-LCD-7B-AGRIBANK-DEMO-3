@@ -11,23 +11,30 @@ void old_screen_reload(){
     //lcd_clear();
 
     if (g_keypad.current_mode!=MODE_CONTINUE&&g_keypad.current_mode!=MODE_SAVED_WIFI
-        &&g_keypad.current_mode!=MODE_NEW_USER_PASS&&g_keypad.current_mode!=MODE_DELETE_WIFI_OPTION){
+        &&g_keypad.current_mode!=MODE_NEW_USER_PASS&&g_keypad.current_mode!=MODE_DELETE_WIFI_OPTION
+    &&g_keypad.current_mode!=MODE_DEVICE_SELECT&&g_keypad.current_mode!=MODE_SERVICE_SELECT
+    ){
         strncpy(g_keypad.input_buffer,g_keypad.saved_input_buffer, sizeof(g_keypad.input_buffer) - 1);
         g_keypad.input_buffer[sizeof(g_keypad.input_buffer) - 1]='\0';
         g_keypad.buffer_index = g_keypad.saved_buffer_index;
     }  
     else { 
         
-        set_sys_state(STATE_RUNNING);
+      //  set_sys_state(STATE_RUNNING);
 
-      if (g_keypad.current_mode==MODE_SAVED_WIFI) {
+     // if (g_keypad.current_mode==MODE_SAVED_WIFI||g_keypad.current_mode==MODE_DEVICE_SELECT
+       // ||g_keypad.current_mode==MODE_SERVICE_SELECT) {
       
-        set_sys_state(STATE_MENU);//
-       }
+       // set_sys_state(STATE_MENU);//
+     //  }
         
      }
+     set_sys_state(STATE_MENU);//
         //g_keypad.current_mode = MODE_NORMAL;
         memset(g_keypad.saved_input_buffer, 0, sizeof(g_keypad.saved_input_buffer));
+        memset(g_keypad.view,0,sizeof(g_keypad.view));//
+        memset(g_keypad.masked,0,sizeof(g_keypad.masked));//
+        g_keypad.cursor_col=0;//
         g_keypad.saved_buffer_index = 0;
         g_keypad.wifi_step=0;
         g_keypad.last_key = 0;
@@ -36,7 +43,7 @@ void old_screen_reload(){
     
         
         g_keypad.current_mode=MODE_MENU;
-        lcd_show_menu();
+        //lcd_show_menu();
 }
 
 
@@ -235,8 +242,11 @@ void publish_device_id(){
 
 
         g_keypad.in_selection_mode = false;
+
+
         g_keypad.current_mode = MODE_NORMAL;
-        set_display_state(DISPLAY_MAIN_SCREEN);
+        set_sys_state(STATE_RUNNING);//
+        //set_display_state(DISPLAY_MAIN_SCREEN);
 
 };
 
@@ -255,7 +265,8 @@ void publish_service_id(){
        
         //in_selection_mode = false;
         g_keypad.current_mode = MODE_NORMAL;
-        set_display_state(DISPLAY_MAIN_SCREEN);
+        set_sys_state(STATE_RUNNING);
+        //set_display_state(DISPLAY_MAIN_SCREEN);
 };
 
 void check_user_pass(){

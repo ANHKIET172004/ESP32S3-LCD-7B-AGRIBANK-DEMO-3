@@ -3,7 +3,10 @@
 static char* TAG ="DEBUG";
 
 char service_scroll_buffer[68];
-int service_scroll_pos = 0;
+char ssid_scroll_buffer[36];
+
+uint8_t service_scroll_pos = 0;
+uint8_t ssid_scroll_pos = 0;
 
 extern char current_counter_id[3];
 extern char counter_id[3];
@@ -280,18 +283,21 @@ void lcd_show_position_list(void) {
 void lcd_show_service_list(void) {
 
     lcd_lock();
-    lcd_clear();
+   // lcd_clear();
     lcd_put_cur(0, 0);
     lcd_send_string("*CHON DICH VU:");
 
     char full_name[64] = {0};
+    
+    //xSemaphoreTake(g_mutex.display_service_mutex, portMAX_DELAY);//
 
     xSemaphoreTake(g_mutex.service_list_mutex, portMAX_DELAY);
-    strncpy(full_name, g_keypad.service_list[g_keypad.selected_index2].name, sizeof(full_name) - 1);
+    strncpy(full_name, g_keypad.service_list[g_keypad.selected_index2].name, sizeof(g_keypad.display_service) - 1);
+    
     xSemaphoreGive(g_mutex.service_list_mutex);
 
     int len = strlen(full_name);
-
+    
     if (len <= 15) {
         set_scroll_enable(false);
         lcd_put_cur(1, 0);
@@ -302,8 +308,10 @@ void lcd_show_service_list(void) {
         set_scroll_enable(true);
         //strcpy(service_scroll_buffer, full_name);
         sprintf(service_scroll_buffer,"%s   ",full_name);
-        service_scroll_pos = 0;
+        //service_scroll_pos = 0;
+
     }
+   // xSemaphoreGive(g_mutex.display_service_mutex);//
 
     lcd_unlock();
 }
@@ -462,7 +470,7 @@ void lcd_show_saved_wifi(void) {
 
     list->aps[g_keypad.wifi_position].ssid[31] = '\0';
 
-    lcd_clear();
+    //lcd_clear();
     lcd_put_cur(0,0);
     lcd_send_string("*WIFI DA LUU:");
 
@@ -472,8 +480,18 @@ void lcd_show_saved_wifi(void) {
     display_saved_wifi[16] = '\0';
 
 
-    lcd_put_cur(1,0);
-    lcd_send_string(display_saved_wifi);
+    
+    if (strlen(list->aps[g_keypad.wifi_position].ssid)<=15){
+        lcd_put_cur(1,0);
+        lcd_send_string("                ");
+        lcd_put_cur(1,0);
+        lcd_send_string(display_saved_wifi);
+    }
+    else {
+       // strncpy(ssid_scroll_buffer,list->aps[g_keypad.wifi_position].ssid,sizeof(ssid_scroll_buffer));
+        sprintf(ssid_scroll_buffer,"%s   ",list->aps[g_keypad.wifi_position].ssid);
+        set_ssid_scroll_enable(true);//
+    }
 
     free(list);
     
@@ -481,30 +499,36 @@ void lcd_show_saved_wifi(void) {
 
 
 void service_scroll_task(void *pvParameter) {
-    char lcd_str[17];
+    //char lcd_str[17];
 
     while (1) {
 
         if (get_scroll_enable()) {
 
+            //service_scroll_pos = 0;//
+
+            xSemaphoreTake(g_mutex.display_service_mutex,portMAX_DELAY);
+
             uint8_t len = strlen(service_scroll_buffer);
 
-            lcd_str[0] = '>';
+            g_keypad.display_service[0] = '>';
 
             for (int i = 0; i < 15; i++) {
                 
                 uint8_t idx = (service_scroll_pos + i) % len;// vd: len=20, pos<=len: 1%20=1 20%20=0, pos>len: 21%20=1
                
-                lcd_str[i + 1] = service_scroll_buffer[idx];//i+1 vì bắt đầu hiển thị từ vị trí 0 trên lcd (vị trí 0 là '>')
+                g_keypad.display_service[i + 1] = service_scroll_buffer[idx];//i+1 vì bắt đầu hiển thị từ vị trí 0 trên lcd (vị trí 0 là '>')
               
             }
 
-            lcd_str[16] = '\0';
+            g_keypad.display_service[16] = '\0';
 
+            
             lcd_lock();
             lcd_put_cur(1, 0);
-            lcd_send_string(lcd_str);
+            lcd_send_string(g_keypad.display_service);//lcd_str
             lcd_unlock();
+            
 
             service_scroll_pos++;
             if (service_scroll_pos >= len){
@@ -512,9 +536,60 @@ void service_scroll_task(void *pvParameter) {
                 service_scroll_pos = 0;                  
                 
             }
+            xSemaphoreGive(g_mutex.display_service_mutex);
+            vTaskDelay(pdMS_TO_TICKS(500)); //
         }
 
-        vTaskDelay(pdMS_TO_TICKS(500)); 
+        vTaskDelay(pdMS_TO_TICKS(50)); //500
+    }
+}
+
+void ssid_scroll_task(void *pvParameter) {
+    //char lcd_str[17];
+
+    while (1) {
+
+        if (get_ssid_scroll_enable()) {
+
+            //service_scroll_pos = 0;//
+
+           // xSemaphoreTake(g_mutex.display_saved_ssid_mutex,portMAX_DELAY);
+
+            uint8_t len = strlen(ssid_scroll_buffer);
+
+            g_keypad.display_saved_ssid[0] = '>';
+
+            for (int i = 0; i < 15; i++) {
+                
+                uint8_t idx = (ssid_scroll_pos + i) % len;// vd: len=20, pos<=len: 1%20=1 20%20=0, pos>len: 21%20=1
+               
+                g_keypad.display_saved_ssid[i + 1] = ssid_scroll_buffer[idx];//i+1 vì bắt đầu hiển thị từ vị trí 0 trên lcd (vị trí 0 là '>')
+              
+            }
+
+            g_keypad.display_saved_ssid[16] = '\0';
+
+            
+            lcd_lock();
+            lcd_clear();
+            lcd_put_cur(0,0);
+            lcd_send_string("*WIFI DA LUU:");
+            lcd_put_cur(1, 0);
+            lcd_send_string(g_keypad.display_saved_ssid);//lcd_str
+            lcd_unlock();
+            
+
+            ssid_scroll_pos++;
+            if (ssid_scroll_pos >= len){
+                
+                ssid_scroll_pos = 0;                  
+                
+            }
+           // xSemaphoreGive(g_mutex.display_saved_ssid_mutex);
+            vTaskDelay(pdMS_TO_TICKS(500)); //
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(50)); //500
     }
 }
 

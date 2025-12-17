@@ -182,7 +182,7 @@ void mqtt_init(void) {
 
         .session = {
             //.keepalive = 60,
-            .keepalive = 15,
+            .keepalive = 16,
             .disable_clean_session = false,
             .last_will.topic = "device/status",
 

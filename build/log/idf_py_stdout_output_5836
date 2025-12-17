@@ -15,16 +15,16 @@ Merged 2 ELF sections
 Successfully created esp32 image.
 Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe5020 bytes. Smallest app partition is 0x100000 bytes. 0x1afe0 bytes (11%) free.
+hello_world.bin binary size 0xe7b70 bytes. Smallest app partition is 0x100000 bytes. 0x18490 bytes (9%) free.
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM9 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
 esptool.py v4.9.1
-Serial port COM9
-Connecting....
+Serial port COM3
+Connecting.......
 Chip is ESP32-D0WD-V3 (revision v3.0)
 Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
 Crystal is 40MHz
-MAC: 94:e6:86:09:a4:78
+MAC: a8:42:e3:4c:7c:bc
 Uploading stub...
 Running stub...
 Stub running...
@@ -32,56 +32,57 @@ Changing baud rate to 460800
 Changed.
 Configuring flash size...
 Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f5fff...
+Flash will be erased from 0x00010000 to 0x000f7fff...
 Flash will be erased from 0x00008000 to 0x00008fff...
 SHA digest in image updated
 Compressed 26240 bytes to 16493...
 Writing at 0x00001000... (50 %)
 Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.7 seconds (effective 281.1 kbit/s)...
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 388.7 kbit/s)...
 Hash of data verified.
-Compressed 938016 bytes to 584743...
+Compressed 949104 bytes to 591605...
 Writing at 0x00010000... (2 %)
-Writing at 0x0001cd9b... (5 %)
-Writing at 0x00028409... (8 %)
-Writing at 0x00031d66... (11 %)
-Writing at 0x00039acb... (13 %)
-Writing at 0x0003f3c7... (16 %)
-Writing at 0x00044f67... (19 %)
-Writing at 0x0004ac9e... (22 %)
-Writing at 0x000507f0... (25 %)
-Writing at 0x00056841... (27 %)
-Writing at 0x0005c74d... (30 %)
-Writing at 0x00062027... (33 %)
-Writing at 0x00067c70... (36 %)
-Writing at 0x0006da86... (38 %)
-Writing at 0x0007386a... (41 %)
-Writing at 0x000793bf... (44 %)
-Writing at 0x0007f137... (47 %)
-Writing at 0x000855da... (50 %)
-Writing at 0x0008b42c... (52 %)
-Writing at 0x00090f0e... (55 %)
-Writing at 0x00096455... (58 %)
-Writing at 0x0009baad... (61 %)
-Writing at 0x000a186d... (63 %)
-Writing at 0x000a7286... (66 %)
-Writing at 0x000ac94c... (69 %)
-Writing at 0x000b23d7... (72 %)
-Writing at 0x000b80be... (75 %)
-Writing at 0x000bda4b... (77 %)
-Writing at 0x000c3841... (80 %)
-Writing at 0x000c91ab... (83 %)
-Writing at 0x000ceae0... (86 %)
-Writing at 0x000d70a4... (88 %)
-Writing at 0x000df91a... (91 %)
-Writing at 0x000e56df... (94 %)
-Writing at 0x000ebc0e... (97 %)
-Writing at 0x000f0f86... (100 %)
-Wrote 938016 bytes (584743 compressed) at 0x00010000 in 13.2 seconds (effective 567.1 kbit/s)...
+Writing at 0x0001cde6... (5 %)
+Writing at 0x0002865d... (8 %)
+Writing at 0x00031ea8... (10 %)
+Writing at 0x0003a021... (13 %)
+Writing at 0x0003f967... (16 %)
+Writing at 0x000454db... (18 %)
+Writing at 0x0004b245... (21 %)
+Writing at 0x00050e3c... (24 %)
+Writing at 0x00056d97... (27 %)
+Writing at 0x0005cdb8... (29 %)
+Writing at 0x00062771... (32 %)
+Writing at 0x000683a6... (35 %)
+Writing at 0x0006e1b9... (37 %)
+Writing at 0x00073e9e... (40 %)
+Writing at 0x000799cf... (43 %)
+Writing at 0x0007f739... (45 %)
+Writing at 0x00085c35... (48 %)
+Writing at 0x0008ba6e... (51 %)
+Writing at 0x000916c9... (54 %)
+Writing at 0x00096c67... (56 %)
+Writing at 0x0009c044... (59 %)
+Writing at 0x000a1d19... (62 %)
+Writing at 0x000a7889... (64 %)
+Writing at 0x000ad0cb... (67 %)
+Writing at 0x000b29c7... (70 %)
+Writing at 0x000b877e... (72 %)
+Writing at 0x000be049... (75 %)
+Writing at 0x000c3c43... (78 %)
+Writing at 0x000c9973... (81 %)
+Writing at 0x000cf155... (83 %)
+Writing at 0x000d4b80... (86 %)
+Writing at 0x000df5ff... (89 %)
+Writing at 0x000e592a... (91 %)
+Writing at 0x000ebddb... (94 %)
+Writing at 0x000f16fc... (97 %)
+Writing at 0x000f6db6... (100 %)
+Wrote 949104 bytes (591605 compressed) at 0x00010000 in 13.7 seconds (effective 556.1 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 103...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 420.9 kbit/s)...
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 940.7 kbit/s)...
 Hash of data verified.
 
 Leaving...

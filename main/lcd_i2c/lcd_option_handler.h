@@ -41,5 +41,4 @@ void lcd_show_saved_wifi();
 
 void lcd_show_delete_wifi_options(void) ;
 
-
 #endif

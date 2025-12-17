@@ -36,6 +36,7 @@ void handle_display(void) {
     
     switch (get_display_state()){
         case DISPLAY_WIFI_CONNECTING:
+            lcd_send_cmd(0x0C);
             lcd_show_message("TRANG THAI WIFI:", "DANG KET NOI...");
             break;
         
@@ -78,6 +79,7 @@ void handle_display(void) {
             else {
              lcd_show_new_user_pass("____");   
             }
+            break;
             
         
         case DISPLAY_MAIN_SCREEN:
@@ -109,11 +111,47 @@ void handle_display(void) {
             lcd_show_delete_wifi_options();
             break;
         case DISPLAY_MENU:
+             lcd_send_cmd(0x0C);
              lcd_show_menu();
              break;
+        case DISPLAY_DEVICE_LIST:
+             lcd_show_device_list();
+             break;
+        case DISPLAY_SERVICE_LIST:
+             lcd_show_service_list();
+
+            
+             break;
+        case DISPLAY_SERVICE_POSITION:
+             lcd_show_position_list();
+             break;
+        case DISPLAY_USER_LIST:
+             lcd_show_user_list();
+             break;
+        case DISPLAY_NO_DATA:
+             lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU");
+             break;
+        case DISPLAY_WIFI_INPUT:
+
+             if (g_keypad.wifi_step == 0){
+             lcd_show_wifi_input(g_keypad.view);
+             }
+             else {
+                if (g_keypad.hide) {
+                    
+                    lcd_show_wifi_pass(g_keypad.masked);
+                }
+                else {
+                    lcd_show_wifi_pass(g_keypad.view);
+                }
+            }
+             lcd_put_cur(1, g_keypad.cursor_col);
+             lcd_send_cmd(0x0F);
+
+                    break;
         case DISPLAY_IDLE:
         default:
-            break;
+                    break;
     }
     
     g_state.prev_display_state = get_display_state();
@@ -167,13 +205,32 @@ void update_display_state(void) {
              set_display_state(DISPLAY_CONTINUE);
              break;
         case STATE_SAVED_WIFI:
-             //set_display_state(DISPLAY_SAVED_WIFI);
+             set_display_state(DISPLAY_SAVED_WIFI);
              break;
         case STATE_DELETE_WIFI_OPTION:
-             //set_display_state(DISPLAY_DELET_WIFI_OPTION);
+             set_display_state(DISPLAY_DELET_WIFI_OPTION);
              break;
         case STATE_MENU:
              set_display_state(DISPLAY_MENU);
+             break;
+
+        case STATE_DEVICE_LIST:
+              set_display_state(DISPLAY_DEVICE_LIST);
+              break;
+        case STATE_SERVICE_LIST:
+              set_display_state(DISPLAY_SERVICE_LIST);
+              break;
+        case STATE_SERVICE_POSITON:
+             set_display_state(DISPLAY_SERVICE_POSITION);
+             break;
+        case STATE_WIFI_INPUT:
+             set_display_state(DISPLAY_WIFI_INPUT);
+             break;
+        case STATE_USER_LIST:
+             set_display_state(DISPLAY_USER_LIST);
+             break;
+        case STATE_NO_DATA:
+             set_display_state(DISPLAY_NO_DATA);
              break;
         
         default:
@@ -244,6 +301,25 @@ void system_state_update(){
                 break;
             }
 
+            case STATE_NO_DATA:
+            {
+                uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+
+                if (get_sys_state() != g_state.prev_sys_state) {
+                    g_state.state_enter_time = current_time;
+                }
+                
+                if (current_time - g_state.state_enter_time >= STATE_DISPLAY_DURATION) {
+                    g_keypad.current_mode=MODE_NORMAL;
+                    set_sys_state(STATE_RUNNING);//
+                    //mqtt_init();
+                }
+
+                esp_task_wdt_reset();
+                break;
+            }
+
+
 
             case STATE_RUNNING:
                 break;
@@ -261,6 +337,16 @@ void system_state_update(){
             case STATE_DELETE_WIFI_OPTION:
                  break;
             case STATE_MENU:
+                 break;
+            case STATE_DEVICE_LIST:
+                 break;
+            case STATE_SERVICE_LIST:
+                 break;
+            case STATE_SERVICE_POSITON:
+                 break;
+            case STATE_WIFI_INPUT:
+                break;
+            case STATE_USER_LIST:
                  break;
             case STATE_USER_PASSWORD_ERROR:
             uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;

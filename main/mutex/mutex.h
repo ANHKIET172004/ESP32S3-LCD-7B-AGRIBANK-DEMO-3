@@ -26,6 +26,9 @@ SemaphoreHandle_t mqtt_start_mutex ;
 SemaphoreHandle_t wifi_retry_mutex ;
 SemaphoreHandle_t user_selected_wifi_mutex ;
 SemaphoreHandle_t scroll_mutex;
+SemaphoreHandle_t display_service_mutex;
+SemaphoreHandle_t display_saved_ssid_mutex;
+SemaphoreHandle_t ssid_scroll_mutex;
 
 } 
 mutex_context_t;
@@ -55,6 +58,10 @@ void set_display_state(DisplayState d);
 
 void set_scroll_enable(bool val);
 bool get_scroll_enable(void);
+
+void set_ssid_scroll_enable(bool val);
+bool get_ssid_scroll_enable(void);
+
 
 void mutex_init(void);
 

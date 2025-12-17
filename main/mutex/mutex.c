@@ -5,6 +5,8 @@ static bool _wifi_connected = false;
 static bool _user_selected_wifi = false;
 static int  _wifi_retry_count = 0;
 static bool _service_scroll_enable=false;
+static bool _ssid_service_scroll_enable=false;
+
 
 extern state_context_t g_state;
 
@@ -20,6 +22,7 @@ mutex_context_t g_mutex={
 . mqtt_mutex = NULL,
 . selected_id_mutex = NULL,
 .scroll_mutex=NULL,
+.ssid_scroll_mutex=NULL,
 
 };
 
@@ -40,6 +43,9 @@ void mutex_init() {
     g_mutex. wifi_retry_mutex = xSemaphoreCreateMutex();
     g_mutex. user_selected_wifi_mutex = xSemaphoreCreateMutex();
     g_mutex.scroll_mutex=xSemaphoreCreateMutex();
+    g_mutex.display_service_mutex=xSemaphoreCreateMutex();
+    g_mutex.ssid_scroll_mutex=xSemaphoreCreateMutex();
+    g_mutex.display_saved_ssid_mutex=xSemaphoreCreateMutex();
 }
 
 bool get_mqtt_connected(void) {
@@ -148,6 +154,20 @@ bool get_scroll_enable(void){
     bool val;
     xSemaphoreTake(g_mutex.scroll_mutex,portMAX_DELAY);
     val=_service_scroll_enable;
+    xSemaphoreGive(g_mutex.scroll_mutex);
+    return val;
+}
+
+void set_ssid_scroll_enable(bool val){
+    xSemaphoreTake(g_mutex.scroll_mutex,portMAX_DELAY);
+    _ssid_service_scroll_enable=val;
+    xSemaphoreGive(g_mutex.scroll_mutex);
+}
+
+bool get_ssid_scroll_enable(void){
+    bool val;
+    xSemaphoreTake(g_mutex.scroll_mutex,portMAX_DELAY);
+    val=_ssid_service_scroll_enable;
     xSemaphoreGive(g_mutex.scroll_mutex);
     return val;
 }

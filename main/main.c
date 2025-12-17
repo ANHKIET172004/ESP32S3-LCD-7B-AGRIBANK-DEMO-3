@@ -29,6 +29,9 @@ extern state_context_t g_state;
 
 extern void service_scroll_task(void *pvParameter);
 
+extern void ssid_scroll_task(void *pvParameter) ;
+
+
 void app_main(void) {
 
     mutex_init();
@@ -59,10 +62,12 @@ void app_main(void) {
     if (mqtt_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create MQTT queue!");
     } 
-
+    //save_wifi_credentials1("NGUYEN HUYNH ANH KIET 2002","1234",NULL);
     xTaskCreatePinnedToCore(mqtt_process_task, "mqtt_task", 6* 1024, NULL, 4, NULL,0 );
     xTaskCreatePinnedToCore(keypad_task, "keypad_task", 7* 1024, NULL, 6, NULL, 1);
     xTaskCreatePinnedToCore( system_task, "system_task",  4*1024, NULL,5, &g_state.system_task_handle, 1 );
     xTaskCreate(service_scroll_task, "service_scroll_task", 2048, NULL, 1, NULL);
+    xTaskCreate(ssid_scroll_task, "ssid_scroll_task", 2048, NULL, 1, NULL);
+
 
 }

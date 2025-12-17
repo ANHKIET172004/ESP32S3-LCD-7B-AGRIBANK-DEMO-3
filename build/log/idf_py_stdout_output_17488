@@ -1,0 +1,694 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+34) boot.esp32: SPI Speed   ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20d84h (134532) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030dac vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030dd4 vaddr=3ffb0000 size=04bd8h ( 19416) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000359b4 vaddr=40080000 size=0a664h ( 42596) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8e14h (691732) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e8e3c vaddr=4008a664 size=0ec80h ( 60544) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (454) app_init: Project name:     hello_world[0m
+[0;32mI (458) app_init: App version:      8d7e8db-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 15 2025 10:53:14[0m
+[0;32mI (468) app_init: ELF file SHA256:  1de5cf60f...[0m
+[0;32mI (472) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (476) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (480) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (484) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (488) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (494) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFB9478 len 00026B88 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (524) spi_flash: flash io: dio[0m
+[0;33mW (527) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (560) LED: LED initialized on GPIO 2[0m
+[0;32mI (560) LED: LED OFF[0m
+[0;32mI (560) DEMO: I2C initialized successfully[0m
+[0;32mI (1450) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1490) wifi:wifi driver task: 3ffc24fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1500) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1500) wifi:wifi certification version: v7.0[0m
+[0;32mI (1500) wifi:config NVS flash: enabled[0m
+[0;32mI (1500) wifi:config nano formatting: disabled[0m
+[0;32mI (1510) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1510) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1520) wifi:Init management short buffer num: 32[0m
+[0;32mI (1520) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1520) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1530) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1530) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1540) wifi_init: rx ba win: 6[0m
+[0;32mI (1540) wifi_init: accept mbox: 6[0m
+[0;32mI (1540) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1540) wifi_init: udp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1550) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1560) wifi_init: tcp mss: 1440[0m
+[0;32mI (1560) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1560) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1570) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1660) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1660) wifi:enable tsf[0m
+[0;32mI (1660) WIFI: WiFi initialized[0m
+[0;32mI (1660) WIFI: WiFi STA started[0m
+[0;32mI (4160) WIFI: Found 20 APs[0m
+[0;32mI (4160) WIFI: 3 saved wifi in nvs[0m
+[0;32mI (4160) WIFI: SAVED WIF: Anh Kiet[0m
+[0;32mI (4160) WIFI: SAVED WIF: NamTrung[0m
+[0;32mI (4160) WIFI: SAVED WIF: Namtrung 2.4G[0m
+[0;32mI (4160) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-66), BSSID: 12:5F:02 15:27:1E[0m
+[0;32mI (4170) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-67), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4180) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-74), BSSID: 10:5F:02 75:32:0E[0m
+[0;32mI (4190) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-74), BSSID: 12:5F:02 15:1E:9A[0m
+[0;32mI (4190) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-75), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4200) WIFI: BEST WIFI: Namtrung 2.4G (RSSI=-66), BSSID: 12:5F:02 15:27:1E[0m
+[0;32mI (4210) main_task: Returned from app_main()[0m
+[0;32mI (4210) STATE_MACHINE: System state task started[0m
+[0;32mI (7120) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (7120) mqtt_client: Client was not initialized[0m
+[0;32mI (7130) STATE_MACHINE: Have a saved wifi network in NVS: Namtrung 2.4G[0m
+[0;32mI (7170) wifi:flush txq[0m
+[0;32mI (7170) wifi:stop sw txq[0m
+[0;32mI (7170) wifi:lmac stop hw txq[0m
+[0;32mI (7180) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (7180) wifi:enable tsf[0m
+[0;32mI (7180) WIFI: WiFi STA started[0m
+[0;32mI (7370) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7370) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (7380) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (7390) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (7440) wifi:connected with Namtrung 2.4G, aid = 16, channel 1, BW20, bssid = 12:5f:02:15:32:0e[0m
+[0;32mI (7440) wifi:security: WPA2-PSK, phy: bgn, rssi: -75[0m
+[0;32mI (7450) wifi:pm start, type: 1[0m
+
+[0;32mI (7450) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (7460) WIFI: Connected to SSID:Namtrung 2.4G, channel:1[0m
+[0;32mI (7470) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (8510) esp_netif_handlers: sta ip: 10.10.1.92, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (8510) WIFI: WiFi connected, got IP[0m
+[0;32mI (8710) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:32:0e), tid:7, ssn:6, winSize:64[0m
+[0;32mI (9580) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (9580) MQTT: MQTT initialized[0m
+[0;32mI (9600) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (9610) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (9640) LED: LED ON[0m
+[0;32mI (9640) MQTT: MQTT connected[0m
+[0;32mI (9860) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (9870) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (9870) MQTT: Processing topic: device/list[0m
+[0;32mI (9870) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (9900) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (9930) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (9940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (9940) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (9950) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (9950) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (9950) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (9960) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (9960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (9970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (9970) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (9980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (9980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (9990) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (9990) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (9990) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (10000) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (10000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (10010) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (10010) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (10020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (10030) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (10030) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (10030) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (10040) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (10040) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (10050) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (10050) MQTT: Device list updated: 8 devices[0m
+[0;32mI (10060) MQTT: Sorted device list successfully[0m
+[0;32mI (10080) MQTT: Processing topic: service/list[0m
+[0;32mI (10080) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (10080) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (10090) MQTT: Service list updated: 2 services[0m
+[0;32mI (12290) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (12290) MQTT: Processing topic: responsenumber[0m
+[0;32mI (12290) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4778","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (16380) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (16380) MQTT: Processing topic: responsenumber[0m
+[0;32mI (16380) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4779","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (16570) MQTT: Published id 1[0m
+[0;32mI (18850) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (18850) MQTT: Processing topic: responsenumber[0m
+[0;32mI (18850) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2800","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (18860) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (18880) NVS_UTILS: current number saved successfully![0m
+[0;32mI (20040) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (20040) MQTT: Processing topic: responsenumber[0m
+[0;32mI (20040) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2801","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (20050) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (20060) NVS_UTILS: current number saved successfully![0m
+[0;32mI (22540) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (22540) MQTT: Processing topic: responsenumber[0m
+[0;32mI (22540) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"4774","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20d84h (134532) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030dac vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030dd4 vaddr=3ffb0000 size=04bd8h ( 19416) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000359b4 vaddr=40080000 size=0a664h ( 42596) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8e14h (691732) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e8e3c vaddr=4008a664 size=0ec80h ( 60544) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (454) app_init: Project name:     hello_world[0m
+[0;32mI (458) app_init: App version:      8d7e8db-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 15 2025 10:53:14[0m
+[0;32mI (468) app_init: ELF file SHA256:  1de5cf60f...[0m
+[0;32mI (472) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (476) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (480) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (484) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (488) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (494) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFB9478 len 00026B88 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (524) spi_flash: flash io: dio[0m
+[0;33mW (527) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (560) LED: LED initialized on GPIO 2[0m
+[0;32mI (560) LED: LED OFF[0m
+[0;32mI (560) DEMO: I2C initialized successfully[0m
+[0;32mI (1450) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1490) wifi:wifi driver task: 3ffc24fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1500) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1500) wifi:wifi certification version: v7.0[0m
+[0;32mI (1500) wifi:config NVS flash: enabled[0m
+[0;32mI (1500) wifi:config nano formatting: disabled[0m
+[0;32mI (1510) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1510) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1520) wifi:Init management short buffer num: 32[0m
+[0;32mI (1520) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1520) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1530) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1530) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1540) wifi_init: rx ba win: 6[0m
+[0;32mI (1540) wifi_init: accept mbox: 6[0m
+[0;32mI (1540) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1550) wifi_init: udp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1550) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1560) wifi_init: tcp mss: 1440[0m
+[0;32mI (1560) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1560) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1610) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1700) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1700) wifi:enable tsf[0m
+[0;32mI (1700) WIFI: WiFi initialized[0m
+[0;32mI (1700) WIFI: WiFi STA started[0m
+[0;32mI (4210) WIFI: Found 20 APs[0m
+[0;32mI (4210) WIFI: 3 saved wifi in nvs[0m
+[0;32mI (4210) WIFI: SAVED WIF: Anh Kiet[0m
+[0;32mI (4210) WIFI: SAVED WIF: NamTrung[0m
+[0;32mI (4210) WIFI: SAVED WIF: Namtrung 2.4G[0m
+[0;32mI (4210) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-60), BSSID: 12:5F:02 15:1E:9A[0m
+[0;32mI (4220) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-60), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4230) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-64), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4240) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-64), BSSID: 12:5F:02 15:27:1E[0m
+[0;32mI (4240) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-71), BSSID: 10:5F:02 75:32:0E[0m
+[0;32mI (4250) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-71), BSSID: 12:5F:02 15:32:0E[0m
+[0;32mI (4260) WIFI: BEST WIFI: Namtrung 2.4G (RSSI=-60), BSSID: 12:5F:02 15:1E:9A[0m
+[0;32mI (4260) main_task: Returned from app_main()[0m
+[0;32mI (4260) STATE_MACHINE: System state task started[0m
+[0;32mI (79480) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (79480) mqtt_client: Client was not initialized[0m
+[0;32mI (79480) STATE_MACHINE: Have a saved wifi network in NVS: Namtrung 2.4G[0m
+[0;32mI (79530) wifi:flush txq[0m
+[0;32mI (79530) wifi:stop sw txq[0m
+[0;32mI (79530) wifi:lmac stop hw txq[0m
+[0;32mI (79540) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (79540) wifi:enable tsf[0m
+[0;32mI (79540) WIFI: WiFi STA started[0m
+[0;32mI (79670) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (79670) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (79710) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (79760) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (80790) wifi:connected with Namtrung 2.4G, aid = 16, channel 1, BW20, bssid = 12:5f:02:15:32:0e[0m
+[0;32mI (80790) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (80800) wifi:pm start, type: 1[0m
+
+[0;32mI (80800) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (80800) WIFI: Connected to SSID:Namtrung 2.4G, channel:1[0m
+[0;32mI (80830) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (81840) esp_netif_handlers: sta ip: 10.10.1.92, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (81840) WIFI: WiFi connected, got IP[0m
+[0;32mI (82900) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (82900) MQTT: MQTT initialized[0m
+[0;32mI (82920) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (82930) wifi:<ba-add>idx:0 (ifx:0, 12:5f:02:15:32:0e), tid:7, ssn:8, winSize:64[0m
+[0;32mI (82960) wifi:<ba-add>idx:1 (ifx:0, 12:5f:02:15:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (84320) LED: LED ON[0m
+[0;32mI (84330) MQTT: MQTT connected[0m
+[0;32mI (84430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (84440) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (84440) MQTT: Processing topic: device/list[0m
+[0;32mI (84440) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (84470) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (84500) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (84500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84510) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84510) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (84520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84520) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84530) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (84530) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84540) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84540) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (84550) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84550) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84560) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (84560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84560) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84570) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (84570) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84580) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (84580) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (84590) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84600) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (84600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (84610) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (84610) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (84620) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (84620) MQTT: Device list updated: 8 devices[0m
+[0;32mI (84630) MQTT: Sorted device list successfully[0m
+[0;32mI (84650) MQTT: Processing topic: service/list[0m
+[0;32mI (84650) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (84650) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (84660) MQTT: Service list updated: 2 services[0m
+[0;32mI (85180) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (85180) MQTT: Processing topic: responsenumber[0m
+[0;32mI (85180) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1782","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (92220) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (92220) MQTT: Processing topic: responsenumber[0m
+[0;32mI (92220) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4785","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (92240) NVS_UTILS: current number saved successfully![0m
+[0;32mI (93160) MQTT: Published id 1[0m
+[0;32mI (95170) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (95170) MQTT: Processing topic: responsenumber[0m
+[0;32mI (95170) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2805","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (95180) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (95190) NVS_UTILS: current number saved successfully![0m
+[0;32mI (96430) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (96430) MQTT: Processing topic: responsenumber[0m
+[0;32mI (96430) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20d84h (134532) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030dac vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030dd4 vaddr=3ffb0000 size=04bd8h ( 19416) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000359b4 vaddr=40080000 size=0a664h ( 42596) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8e14h (691732) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e8e3c vaddr=4008a664 size=0ec80h ( 60544) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (454) app_init: Project name:     hello_world[0m
+[0;32mI (458) app_init: App version:      8d7e8db-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 15 2025 10:53:14[0m
+[0;32mI (468) app_init: ELF file SHA256:  1de5cf60f...[0m
+[0;32mI (472) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (476) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (480) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (484) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (488) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (494) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFB9478 len 00026B88 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (524) spi_flash: flash io: dio[0m
+[0;33mW (527) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (560) LED: LED initialized on GPIO 2[0m
+[0;32mI (560) LED: LED OFF[0m
+[0;32mI (560) DEMO: I2C initialized successfully[0m
+[0;32mI (1450) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1490) wifi:wifi driver task: 3ffc24fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1500) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1500) wifi:wifi certification version: v7.0[0m
+[0;32mI (1500) wifi:config NVS flash: enabled[0m
+[0;32mI (1500) wifi:config nano formatting: disabled[0m
+[0;32mI (1510) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1510) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1520) wifi:Init management short buffer num: 32[0m
+[0;32mI (1520) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1520) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1530) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1530) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1540) wifi_init: rx ba win: 6[0m
+[0;32mI (1540) wifi_init: accept mbox: 6[0m
+[0;32mI (1540) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1550) wifi_init: udp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1550) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1560) wifi_init: tcp mss: 1440[0m
+[0;32mI (1560) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1560) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1610) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1700) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1700) wifi:enable tsf[0m
+[0;32mI (1700) WIFI: WiFi initialized[0m
+[0;32mI (1700) WIFI: WiFi STA started[0m
+[0;32mI (4200) WIFI: Found 20 APs[0m
+[0;32mI (4200) WIFI: 3 saved wifi in nvs[0m
+[0;32mI (4200) WIFI: SAVED WIF: Anh Kiet[0m
+[0;32mI (4200) WIFI: SAVED WIF: NamTrung[0m
+[0;32mI (4200) WIFI: SAVED WIF: Namtrung 2.4G[0m
+[0;32mI (4200) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-65), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4210) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-65), BSSID: 12:5F:02 15:27:1E[0m
+[0;32mI (4220) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-78), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4230) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-78), BSSID: 12:5F:02 15:1E:9A[0m
+[0;32mI (4230) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-81), BSSID: 10:5F:02 75:32:0E[0m
+[0;32mI (4240) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-81), BSSID: 12:5F:02 15:32:0E[0m
+[0;32mI (4250) WIFI: BEST WIFI: NamTrung (RSSI=-65), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4250) main_task: Returned from app_main()[0m
+[0;32mI (4250) STATE_MACHINE: System state task started[0m
+[0;32mI (6490) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (6490) mqtt_client: Client was not initialized[0m
+[0;32mI (6520) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (6560) wifi:flush txq[0m
+[0;32mI (6560) wifi:stop sw txq[0m
+[0;32mI (6560) wifi:lmac stop hw txq[0m
+[0;32mI (6570) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (6570) wifi:enable tsf[0m
+[0;32mI (6570) WIFI: WiFi STA started[0m
+[0;32mI (6710) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6720) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (6740) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (6770) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (6860) wifi:connected with NamTrung, aid = 16, channel 1, BW20, bssid = 10:5f:02:75:32:0e[0m
+[0;32mI (6860) wifi:security: WPA2-PSK, phy: bgn, rssi: -79[0m
+[0;32mI (6880) wifi:pm start, type: 1[0m
+
+[0;32mI (6880) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (6880) WIFI: Connected to SSID:NamTrung, channel:1[0m
+[0;32mI (6920) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (8500) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:32:0e), tid:7, ssn:3, winSize:64[0m
+[0;32mI (9390) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:32:0e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (9890) esp_netif_handlers: sta ip: 10.10.1.92, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (9890) WIFI: WiFi connected, got IP[0m
+[0;32mI (10950) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (10950) MQTT: MQTT initialized[0m
+[0;32mI (10970) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (11600) LED: LED ON[0m
+[0;32mI (11600) MQTT: MQTT connected[0m
+[0;32mI (11980) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (11980) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (11990) MQTT: Processing topic: device/list[0m
+[0;32mI (11990) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (12020) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (12050) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (12050) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12060) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (12060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12070) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12070) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (12080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12090) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (12090) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12100) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (12110) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12110) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12120) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (12120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12130) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (12130) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (12140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12140) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12150) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (12150) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (12160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (12160) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (12170) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (12170) MQTT: Device list updated: 8 devices[0m
+[0;32mI (12170) MQTT: Sorted device list successfully[0m
+[0;32mI (12200) MQTT: Processing topic: service/list[0m
+[0;32mI (12200) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (12200) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (12210) MQTT: Service list updated: 2 services[0m
+[0;32mI (12860) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (12860) MQTT: Processing topic: responsenumber[0m
+[0;32mI (12870) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2807","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (17960) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (17960) MQTT: Processing topic: responsenumber[0m
+[0;32mI (17960) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4786","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (17980) NVS_UTILS: current number saved successfully![0m
+[0;32mI (19200) MQTT: Published id 00:1A:2B:3C:4D:05[0m
+[0;32mI (22910) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (22910) MQTT: Processing topic: responsenumber[0m
+[0;32mI (22910) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (27970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (27980) MQTT: Processing topic: responsenumber[0m
+[0;32mI (27980) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2808","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (30070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (30070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (30070) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4787","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (30080) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (30090) NVS_UTILS: current number saved successfully![0m
+[0;32mI (33140) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (33150) MQTT: Processing topic: responsenumber[0m
+[0;32mI (33150) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4785","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (36220) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (36220) MQTT: Processing topic: responsenumber[0m
+[0;32mI (36220) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1783","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (41440) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (41440) MQTT: Processing topic: responsenumber[0m
+[0;32mI (41440) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2809","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (43480) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (43490) MQTT: Processing topic: responsenumber[0m
+[0;32mI (43490) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1784","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (45530) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (45530) MQTT: Processing topic: responsenumber[0m
+[0;32mI (45530) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3764","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (51680) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (51680) MQTT: Processing topic: responsenumber[0m
+[0;32mI (51680) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2810","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (54750) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (54750) MQTT: Processing topic: responsenumber[0m
+[0;32mI (54750) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4788","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (54760) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (54780) NVS_UTILS: current number saved successfully![0m
+[0;32mI (58740) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (58740) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4789","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (58750) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (58760) NVS_UTILS: current number saved successfully![0m
+[0;32mI (64880) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (64880) MQTT: Processing topic: responsenumber[0m
+[0;32mI (64880) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1785","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (67950) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (67960) MQTT: Processing topic: responsenumber[0m
+[0;32mI (67960) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1786","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (71130) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (71130) MQTT: Processing topic: responsenumber[0m
+[0;32mI (71130) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4790","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (71140) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (71150) NVS_UTILS: current number saved successfully![0m
+[0;32mI (76040) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (76050) MQTT: Processing topic: responsenumber[0m
+[0;32mI (76050) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1787","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (83110) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (83110) MQTT: Processing topic: responsenumber[0m
+[0;32mI (83110) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4791","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (83120) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (83130) NVS_UTILS: current number saved successfully![0m
+[0;32mI (90280) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (90280) MQTT: Processing topic: responsenumber[0m
+[0;32mI (90280) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3765","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (92320) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (92330) MQTT: Processing topic: responsenumber[0m
+[0;32mI (92330) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4792","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (92330) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (92350) NVS_UTILS: current number saved successfully![0m
+[0;32mI (99490) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (99490) MQTT: Processing topic: responsenumber[0m
+[0;32mI (99490) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1788","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (103590) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (103590) MQTT: Processing topic: responsenumber[0m
+[0;32mI (103590) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3766","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (110760) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (110760) MQTT: Processing topic: responsenumber[0m
+[0;32mI (110760) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1789","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (114750) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (114750) MQTT: Processing topic: responsenumber[0m
+[0;32mI (114750) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1790","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (118850) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (118850) MQTT: Processing topic: responsenumber[0m
+[0;32mI (118850) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2811","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (125000) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (125000) MQTT: Processing topic: responsenumber[0m
+[0;32mI (125000) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1791","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (127040) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (127040) MQTT: Processing topic: responsenumber[0m
+[0;32mI (127040) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1792","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (134310) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (134310) MQTT: Processing topic: responsenumber[0m
+[0;32mI (134310) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1793","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (137180) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (137180) MQTT: Processing topic: responsenumber[0m
+[0;32mI (137180) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1794","service_name":"Giao dich tren 1 ty","device_name":"2"}[0m
+[0;32mI (139220) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (139230) MQTT: Processing topic: responsenumber[0m
+[0;32mI (139230) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2812","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (141380) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (141380) MQTT: Processing topic: responsenumber[0m
+[0;32mI (141380) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4793","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (141390) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (141400) NVS_UTILS: current number saved successfully![0m
+[0;32mI (145380) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (145380) MQTT: Processing topic: responsenumber[0m
+[0;32mI (145380) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4794","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (145390) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (145400) NVS_UTILS: current number saved successfully![0m
+[0;32mI (150600) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (150600) MQTT: Processing topic: responsenumber[0m
+[0;32mI (150600) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4795","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (157560) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (157560) MQTT: Processing topic: responsenumber[0m
+[0;32mI (157560) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2813","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (164720) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (164720) MQTT: Processing topic: responsenumber[0m
+[0;32mI (164720) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (167700) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (167700) MQTT: Processing topic: responsenumber[0m
+[0;32mI (167700) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (169740) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (169740) MQTT: Processing topic: responsenumber[0m
+[0;32mI (169740) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3767","service_name":"Giao dich khac","device_name":"3"}[0m
+[0;32mI (173940) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (173940) MQTT: Processing topic: responsenumber[0m
+[0;32mI (173940) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (181010) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (181010) MQTT: Processing topic: responsenumber[0m
+[0;32mI (181010) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"NoAvailable"}[0m
+[0;32mI (184070) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (184070) MQTT: Processing topic: responsenumber[0m
+[0;32mI (184070) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4796","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (184080) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (184110) NVS_UTILS: current number saved successfully![0m
+[0;32mI (190140) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (190140) MQTT: Processing topic: responsenumber[0m
+[0;32mI (190140) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4797","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (190150) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (190170) NVS_UTILS: current number saved successfully![0m
+[0;32mI (193290) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (193290) MQTT: Processing topic: responsenumber[0m
+[0;32mI (193290) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"NoAvailable"}[0m

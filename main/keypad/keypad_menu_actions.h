@@ -22,7 +22,6 @@
 
 void select_option();
 
-void capslock_input();
 void enter_service();
 
 void enter_user();

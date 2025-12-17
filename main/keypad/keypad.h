@@ -39,6 +39,8 @@ enum Mode {
     MODE_CONTINUE=11,
     MODE_SAVED_WIFI=12,
     MODE_DELETE_WIFI_OPTION=13,
+    MODE_DELETE_USER_PASS=14,
+    
 
 };
 

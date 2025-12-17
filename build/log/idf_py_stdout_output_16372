@@ -1,29 +1,1384 @@
-Command: ninja all
-[1/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/keypad/T9.c.obj
-[2/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mac_utils/mac_utils.c.obj
-[3/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj
-[4/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_mqtt_client/esp_mqtt_topic_handler.c.obj
-[5/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_mqtt_client/esp_mqtt_actions.c.obj
-[6/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mutex/mutex.c.obj
-[7/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_mqtt_client/esp_mqtt_client.c.obj
-[8/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad.c.obj
-[9/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lcd_i2c/i2c-lcd.c.obj
-[10/20] Performing build step for 'bootloader'
-[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/bootloader/bootloader.bin""
-Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[11/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/keypad/keypad_actions.c.obj
-[12/20] No install step for 'bootloader'
-[13/20] Completed 'bootloader'
-[14/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/state_machine/state_machine.c.obj
-[15/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi/wifi.c.obj
-[16/20] Linking C static library esp-idf\main\libmain.a
-[17/20] Generating esp-idf/esp_system/ld/sections.ld
-[18/20] Linking CXX executable hello_world.elf
-[19/20] Generating binary image from built executable
-esptool.py v4.9.1
-Creating esp32 image...
-Merged 2 ELF sections
-Successfully created esp32 image.
-Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
-[20/20] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe5270 bytes. Smallest app partition is 0x100000 bytes. 0x1ad90 bytes (10%) free.
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+�34) boot.esp32: SPI Spe�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20d84h (134532) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030dac vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030dd4 vaddr=3ffb0000 size=04bd8h ( 19416) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000359b4 vaddr=40080000 size=0a664h ( 42596) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8e0ch (691724) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e8e34 vaddr=4008a664 size=0ec80h ( 60544) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (454) app_init: Project name:     hello_world[0m
+[0;32mI (458) app_init: App version:      8d7e8db-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 15 2025 10:53:14[0m
+[0;32mI (468) app_init: ELF file SHA256:  2e7dd6ef7...[0m
+[0;32mI (472) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (476) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (480) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (484) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (488) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (494) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFB9478 len 00026B88 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (525) spi_flash: flash io: dio[0m
+[0;33mW (527) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (560) LED: LED initialized on GPIO 2[0m
+[0;32mI (560) LED: LED OFF[0m
+[0;32mI (560) DEMO: I2C initialized successfully[0m
+[0;32mI (1450) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1470) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (1470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1490) wifi:wifi driver task: 3ffc24fc, prio:23, stack:6656, core=0[0m
+[0;32mI (1500) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1500) wifi:wifi certification version: v7.0[0m
+[0;32mI (1500) wifi:config NVS flash: enabled[0m
+[0;32mI (1500) wifi:config nano formatting: disabled[0m
+[0;32mI (1510) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1510) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1520) wifi:Init management short buffer num: 32[0m
+[0;32mI (1520) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1520) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1530) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1530) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1540) wifi_init: rx ba win: 6[0m
+[0;32mI (1540) wifi_init: accept mbox: 6[0m
+[0;32mI (1540) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1550) wifi_init: udp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp mbox: 6[0m
+[0;32mI (1550) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1550) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1560) wifi_init: tcp mss: 1440[0m
+[0;32mI (1560) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1560) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1570) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1660) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1660) wifi:enable tsf[0m
+[0;32mI (1660) WIFI: WiFi initialized[0m
+[0;32mI (1660) WIFI: WiFi STA started[0m
+[0;32mI (4160) WIFI: Found 20 APs[0m
+[0;32mI (4160) WIFI: 3 saved wifi in nvs[0m
+[0;32mI (4160) WIFI: SAVED WIF: Anh Kiet[0m
+[0;32mI (4160) WIFI: SAVED WIF: NamTrung[0m
+[0;32mI (4160) WIFI: SAVED WIF: Namtrung 2.4G[0m
+[0;32mI (4160) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-60), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4170) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-60), BSSID: 12:5F:02 15:1E:9A[0m
+[0;32mI (4180) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-68), BSSID: 12:5F:02 15:27:1E[0m
+[0;32mI (4190) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-69), BSSID: 10:5F:02 75:27:1E[0m
+[0;32mI (4190) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-77), BSSID: 10:5F:02 75:32:0E[0m
+[0;32mI (4200) WIFI: FOUND SAVED WIFI: Namtrung 2.4G (RSSI=-79), BSSID: 12:5F:02 15:32:0E[0m
+[0;32mI (4210) WIFI: FOUND SAVED WIFI: NamTrung (RSSI=-91), BSSID: 10:5F:02 75:17:10[0m
+[0;32mI (4210) WIFI: BEST WIFI: NamTrung (RSSI=-60), BSSID: 10:5F:02 75:1E:9A[0m
+[0;32mI (4220) main_task: Returned from app_main()[0m
+[0;32mI (4220) STATE_MACHINE: System state task started[0m
+[0;32mI (7890) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (7890) mqtt_client: Client was not initialized[0m
+[0;32mI (7890) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (7950) wifi:flush txq[0m
+[0;32mI (7950) wifi:stop sw txq[0m
+[0;32mI (7950) wifi:lmac stop hw txq[0m
+[0;32mI (7950) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (7950) wifi:enable tsf[0m
+[0;32mI (7960) WIFI: WiFi STA started[0m
+[0;32mI (8100) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (8100) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8130) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (9130) wifi:state: assoc -> init (0x400)[0m
+[0;32mI (9150) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9150) WIFI: STA disconnected, reason=4[0m
+[0;32mI (9780) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9780) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10800) wifi:state: auth -> init (0x200)[0m
+[0;32mI (10810) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10810) WIFI: STA disconnected, reason=2[0m
+[0;32mI (12080) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12090) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12100) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (12120) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (12140) wifi:connected with NamTrung, aid = 27, channel 11, BW20, bssid = 10:5f:02:75:1e:9a[0m
+[0;32mI (12140) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (12170) wifi:pm start, type: 1[0m
+
+[0;32mI (12170) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (12170) WIFI: Connected to SSID:NamTrung, channel:11[0m
+[0;32mI (12180) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (13200) esp_netif_handlers: sta ip: 10.10.1.92, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (13200) WIFI: WiFi connected, got IP[0m
+[0;32mI (14260) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (14260) MQTT: MQTT initialized[0m
+[0;32mI (14270) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (14280) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:1e:9a), tid:7, ssn:5, winSize:64[0m
+[0;32mI (14290) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:1e:9a), tid:0, ssn:1, winSize:64[0m
+[0;32mI (14310) LED: LED ON[0m
+[0;32mI (14310) MQTT: MQTT connected[0m
+[0;32mI (14530) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (14540) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (14540) MQTT: Processing topic: device/list[0m
+[0;32mI (14540) MQTT: Processing topic data: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (14570) MQTT: [{"id":"00:1A:2B:3C:4D:05","name":"1"},{"id":"00:1A:2B:3C:4D:06","name":"2"},{"id":"00:1A:2B:3C:4D:07","name":"4"},{"id":"00:1A:2B:3C:4D:09","name":"6"},{"id":"02:1A:2B:3C:4D:02","name":"5"},{"id":"10:20:BA:01:48:A8","name":"cmm 8"},{"id":"94:E6:86:09:A4:78","name":"7777777777777777777777777777777777"},{"id":"A8:42:E3:4C:7C:BC","name":"3"}][0m
+[0;32mI (14600) MQTT: Extracted counter ID: 1 from name: 1[0m
+[0;32mI (14600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14610) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14610) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14620) MQTT: Extracted counter ID: 2 from name: 2[0m
+[0;32mI (14620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14630) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14630) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14640) MQTT: Extracted counter ID: 4 from name: 4[0m
+[0;32mI (14640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14650) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14650) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14650) MQTT: Extracted counter ID: 6 from name: 6[0m
+[0;32mI (14660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14670) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14670) MQTT: Extracted counter ID: 5 from name: 5[0m
+[0;32mI (14680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14690) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14690) MQTT: Extracted counter ID: 8 from name: cmm 8[0m
+[0;32mI (14700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;33mW (14710) MQTT: No valid counter_id for device: 7777777777777777777777777777777777[0m
+[0;32mI (14720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14730) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14730) MQTT: Extracted counter ID: 3 from name: 3[0m
+[0;32mI (14730) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (14740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (14740) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (14750) MQTT: Found current device (MAC match): A8:42:E3:4C:7C:BC[0m
+[0;32mI (14760) NVS_UTILS: User ID saved successfully: 03[0m
+[0;32mI (14760) MQTT: Device list updated: 8 devices[0m
+[0;32mI (14760) MQTT: Sorted device list successfully[0m
+[0;32mI (14790) MQTT: Processing topic: service/list[0m
+[0;32mI (14790) MQTT: Processing topic data: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (14790) MQTT: [{"id":1,"name":"\u0110\u00f3ng thu\u1ebf"},{"id":2,"name":"R\u00fat ti\u1ec1nn"}][0m
+[0;32mI (14800) MQTT: Service list updated: 2 services[0m
+[0;32mI (17010) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (17010) MQTT: Processing topic: responsenumber[0m
+[0;32mI (17010) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3689","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (17400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17410) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17410) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17460) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17520) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17520) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17580) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17580) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17760) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17760) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17770) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17820) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17830) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17880) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17880) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (17940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (17940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (17950) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18000) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18070) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18190) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18240) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18330) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18330) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18340) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18360) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18430) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18430) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18540) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18660) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18780) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18780) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18810) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18810) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18820) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18850) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18850) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (18960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (18960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (18970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19030) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19090) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19150) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19210) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19270) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19290) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19330) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19330) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19390) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19390) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19450) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19450) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19510) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19510) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19570) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19570) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19630) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19630) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19690) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19690) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19740) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19800) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (19970) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (19980) MQTT: Processing topic: responsenumber[0m
+[0;32mI (19980) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4721","service_name":"Lay so cho vui","device_name":"4"}[0m
+[0;32mI (19980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (19990) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (19990) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20050) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20050) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20050) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20070) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20070) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20110) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20110) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20110) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20170) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20170) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20170) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20230) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20230) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20230) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20290) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20290) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20290) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20350) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20350) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20350) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20410) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20410) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20410) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20470) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20470) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20490) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20490) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20490) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20530) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20530) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20530) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20590) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20590) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20590) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20650) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20650) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20650) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20710) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20710) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20710) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20770) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20770) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20770) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20830) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20840) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20840) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20850) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20850) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20850) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20910) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (20960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (20970) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (20970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21030) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21030) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21090) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21090) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21090) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21150) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21150) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21210) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21210) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21270) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21270) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21280) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21320) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21380) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21570) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21740) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21810) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21870) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21910) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21930) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (21980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (21980) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (21980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22050) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22050) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22280) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22340) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22340) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22350) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22400) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22400) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22520) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22530) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22580) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22580) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (22640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (22640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (22640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (26120) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (26120) MQTT: Processing topic: responsenumber[0m
+[0;32mI (26120) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2734","service_name":"Giao dich duoi 1 ty","device_name":"1"}[0m
+[0;32mI (26140) NVS_UTILS: current number saved successfully![0m
+[0;32mI (26880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (26890) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (26890) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (26940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (26940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (26940) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27000) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27180) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27250) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27370) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27550) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27660) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27780) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27780) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27850) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27850) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (27960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (27960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (27970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28020) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28040) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28090) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28140) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28200) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28260) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28330) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28390) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28560) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28740) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28800) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (28980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (28990) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (28990) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29040) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29290) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29290) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29340) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29340) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29340) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29400) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29400) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29460) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29500) MQTT: Published id 00:1A:2B:3C:4D:05[0m
+[0;32mI (29520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29530) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29530) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29590) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29590) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29760) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29760) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29760) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29820) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29820) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29880) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29880) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (29940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (29940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (29940) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30000) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30190) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30240) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30370) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30540) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30660) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30780) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30780) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30840) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30840) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30900) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (30960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (30960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (30960) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31030) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31150) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31200) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31260) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31330) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31380) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31560) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31740) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31800) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (31980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (31980) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (31980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32040) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32080) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (32080) MQTT: Processing topic: responsenumber[0m
+[0;32mI (32080) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2735","service_name":"Giao dich duoi 1 ty","device_name":"3"}[0m
+[0;32mI (32100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32110) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32170) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32290) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32340) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32340) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32350) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32400) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32400) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32460) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32520) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32520) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32580) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32580) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32760) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32760) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32770) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32820) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32820) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32880) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32880) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (32940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (32940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (32940) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33000) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33180) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33240) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33360) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33550) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33660) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33790) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33790) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33840) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33850) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33910) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (33960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (33960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (33960) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34020) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34140) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34200) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34260) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34320) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34380) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34570) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34630) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34750) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34800) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34930) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (34980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (34980) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (34980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35050) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35230) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (35230) MQTT: Processing topic: responsenumber[0m
+[0;32mI (35230) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4722","service_name":"Lay so cho vui","device_name":"1"}[0m
+[0;32mI (35250) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (35260) NVS_UTILS: current number saved successfully![0m
+[0;32mI (35280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35290) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35340) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35350) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35350) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35400) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35400) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35460) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35530) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35530) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35580) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35590) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35650) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35760) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35760) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35760) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35820) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35820) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35880) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35890) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (35940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (35940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (35940) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36000) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36180) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36250) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36360) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36490) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36540) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36670) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36780) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36780) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36840) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36840) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36900) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (36960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (36960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (36970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37020) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37140) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37200) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37270) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37270) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37330) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37380) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37560) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37740) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37810) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (37980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (37980) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (37980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38050) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38270) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (38270) MQTT: Processing topic: responsenumber[0m
+[0;32mI (38270) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"3690","service_name":"Giao dich khac","device_name":"2"}[0m
+[0;32mI (38280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38290) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38340) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38340) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38340) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38410) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38410) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38460) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38530) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38530) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38580) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38580) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38650) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38760) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38770) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38770) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38820) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38820) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38880) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38880) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (38940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (38940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (38950) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39010) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39010) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39180) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39250) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39360) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39420) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39550) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39660) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39780) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39780) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39840) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39850) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39900) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (39960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (39960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (39970) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40020) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40140) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40200) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40200) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40270) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40320) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40380) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40450) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40450) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40560) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40750) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40750) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40800) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40870) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (40980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (40980) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (40980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41040) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41220) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41280) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41280) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41290) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41340) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41340) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41340) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41400) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41400) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41400) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41460) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41460) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41470) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41520) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41520) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41520) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41580) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41580) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41590) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41640) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41640) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41640) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41700) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41700) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41700) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41760) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41760) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41760) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41820) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41820) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41820) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41880) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41890) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41890) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (41940) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (41940) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (41950) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42000) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42000) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42000) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42060) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42060) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42060) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42120) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42120) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42120) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42180) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42180) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42190) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42240) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42240) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42240) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42300) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42300) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42300) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42360) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42360) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42360) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42400) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (42400) MQTT: Processing topic: responsenumber[0m
+[0;32mI (42400) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"1719","service_name":"Giao dich tren 1 ty","device_name":"4"}[0m
+[0;32mI (42420) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42420) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42430) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42480) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42480) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42480) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42540) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42540) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42540) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42600) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42600) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42600) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42660) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42660) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42660) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42720) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42720) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42720) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42780) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42780) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42780) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42840) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42840) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42840) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42900) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42900) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42900) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (42960) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (42960) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (42960) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43020) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43020) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43030) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43080) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43080) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43080) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43140) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43140) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43150) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43200) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43210) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43210) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43260) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43260) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43260) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43320) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43320) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43320) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43380) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43380) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43380) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43440) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43440) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43440) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43500) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43500) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43500) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43560) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43560) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43570) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43620) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43620) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43620) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43680) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43680) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43680) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43740) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43740) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43750) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43800) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43800) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43800) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43860) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43860) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43860) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43920) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43920) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43920) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (43980) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (43980) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (43980) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44040) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44040) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44040) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44100) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44100) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44100) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44160) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44160) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44160) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (44220) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (44220) NVS_UTILS: Read user ID successfully: 03[0m
+[0;32mI (44220) MAC_UTILS: Loaded user_id from NVS: 03[0m

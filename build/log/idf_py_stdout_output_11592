@@ -1,0 +1,682 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM3'
+%��ѹesp32: SPI Speed    �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20dc4h (134596) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030dec vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030e14 vaddr=3ffb0000 size=04c18h ( 19480) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=00035a34 vaddr=40080000 size=0a5e4h ( 42468) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a9108h (692488) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e9130 vaddr=4008a5e4 size=0ed00h ( 60672) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (455) app_init: Project name:     hello_world[0m
+[0;32mI (459) app_init: App version:      8d7e8db-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 15 2025 10:53:14[0m
+[0;32mI (468) app_init: ELF file SHA256:  1e70174b9...[0m
+[0;32mI (473) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (477) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (481) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (485) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (489) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (495) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFB94E0 len 00026B20 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (523) spi_flash: detected chip: generic[0m
+[0;32mI (525) spi_flash: flash io: dio[0m
+[0;33mW (528) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (551) main_task: Started on CPU0[0m
+[0;32mI (561) main_task: Calling app_main()[0m
+[0;32mI (561) LED: LED initialized on GPIO 2[0m
+[0;32mI (561) LED: LED OFF[0m
+[0;32mI (561) DEMO: I2C initialized successfully[0m
+[0;32mI (1451) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1471) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1471) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1491) wifi:wifi driver task: 3ffc266c, prio:23, stack:6656, core=0[0m
+[0;32mI (1501) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1501) wifi:wifi certification version: v7.0[0m
+[0;32mI (1501) wifi:config NVS flash: enabled[0m
+[0;32mI (1501) wifi:config nano formatting: disabled[0m
+[0;32mI (1511) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1511) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1521) wifi:Init management short buffer num: 32[0m
+[0;32mI (1521) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1521) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1531) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1531) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1541) wifi_init: rx ba win: 6[0m
+[0;32mI (1541) wifi_init: accept mbox: 6[0m
+[0;32mI (1541) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1541) wifi_init: udp mbox: 6[0m
+[0;32mI (1551) wifi_init: tcp mbox: 6[0m
+[0;32mI (1551) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1551) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1561) wifi_init: tcp mss: 1440[0m
+[0;32mI (1561) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1561) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1571) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1661) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1661) wifi:enable tsf[0m
+[0;32mI (1661) WIFI: WiFi initialized[0m
+[0;32mI (1661) WIFI: WiFi STA started[0m
+[0;32mI (4161) WIFI: Found 13 APs[0m
+[0;32mI (4161) WIFI: 4 saved wifi in nvs[0m
+[0;32mI (4161) WIFI: SAVED WIF: Anh Kiet[0m
+[0;32mI (4161) WIFI: SAVED WIF: NamTrung[0m
+[0;32mI (4161) WIFI: SAVED WIF: Namtrung 2.4G[0m
+[0;32mI (4161) WIFI: SAVED WIF: NGUYEN HUYNH ANH KIET 2002[0m
+[0;32mI (4171) WIFI: FOUND SAVED WIFI: Anh Kiet (RSSI=-58), BSSID: CC:71:90 19:D2:F8[0m
+[0;32mI (4181) WIFI: BEST WIFI: Anh Kiet (RSSI=-58), BSSID: CC:71:90 19:D2:F8[0m
+[0;32mI (4191) NVS_UTILS: WiFi credential saved[0m
+[0;32mI (4191) main_task: Returned from app_main()[0m
+[0;32mI (4191) STATE_MACHINE: System state task started[0m
+[0;32mI (9001) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (9001) mqtt_client: Client was not initialized[0m
+[0;32mI (9011) STATE_MACHINE: Have a saved wifi network in NVS: Anh Kiet[0m
+[0;32mI (9051) wifi:flush txq[0m
+[0;32mI (9061) wifi:stop sw txq[0m
+[0;32mI (9061) wifi:lmac stop hw txq[0m
+[0;32mI (9061) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (9061) wifi:enable tsf[0m
+[0;32mI (9071) WIFI: WiFi STA started[0m
+[0;32mI (9391) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9401) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (9421) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (9471) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (9571) wifi:connected with Anh Kiet, aid = 6, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (9571) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (9581) wifi:pm start, type: 1[0m
+
+[0;32mI (9581) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (9581) WIFI: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (9641) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (11261) esp_netif_handlers: sta ip: 192.168.1.3, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (11261) WIFI: WiFi connected, got IP[0m
+[0;32mI (12311) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (12311) MQTT: MQTT initialized[0m
+[0;32mI (12331) wifi:I (12331) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64
+[1;31mE (22331) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (22331) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (22331) mqtt_client: Error transport connect[0m
+[0;32mI (22331) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (22331) LED: LED OFF[0m
+[0;32mI (22331) MQTT: MQTT disconnected[0m
+[0;32mI (22341) LED: LED OFF[0m
+[1;31mE (42351) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (42351) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (42351) mqtt_client: Error transport connect[0m
+[0;32mI (42351) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (42351) LED: LED OFF[0m
+[0;32mI (42351) MQTT: MQTT disconnected[0m
+[0;32mI (42361) LED: LED OFF[0m
+[1;31mE (62371) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (62371) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (62371) mqtt_client: Error transport connect[0m
+[0;32mI (62371) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (62371) LED: LED OFF[0m
+[0;32mI (62371) MQTT: MQTT disconnected[0m
+[0;32mI (62381) LED: LED OFF[0m
+[1;31mE (82391) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (82391) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (82391) mqtt_client: Error transport connect[0m
+[0;32mI (82391) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (82391) LED: LED OFF[0m
+[0;32mI (82391) MQTT: MQTT disconnected[0m
+[0;32mI (82401) LED: LED OFF[0m
+[1;31mE (102411) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (102411) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (102411) mqtt_client: Error transport connect[0m
+[0;32mI (102411) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (102411) LED: LED OFF[0m
+[0;32mI (102411) MQTT: MQTT disconnected[0m
+[0;32mI (102421) LED: LED OFF[0m
+[1;31mE (122431) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (122431) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (122431) mqtt_client: Error transport connect[0m
+[0;32mI (122431) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (122431) LED: LED OFF[0m
+[0;32mI (122431) MQTT: MQTT disconnected[0m
+[0;32mI (122441) LED: LED OFF[0m
+[1;31mE (142451) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (142451) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (142451) mqtt_client: Error transport connect[0m
+[0;32mI (142451) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (142451) LED: LED OFF[0m
+[0;32mI (142451) MQTT: MQTT disconnected[0m
+[0;32mI (142461) LED: LED OFF[0m
+[1;31mE (162471) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (162471) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (162471) mqtt_client: Error transport connect[0m
+[0;32mI (162471) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (162471) LED: LED OFF[0m
+[0;32mI (162471) MQTT: MQTT disconnected[0m
+[0;32mI (162481) LED: LED OFF[0m
+[1;31mE (182491) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (182491) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (182491) mqtt_client: Error transport connect[0m
+[0;32mI (182491) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (182491) LED: LED OFF[0m
+[0;32mI (182491) MQTT: MQTT disconnected[0m
+[0;32mI (182501) LED: LED OFF[0m
+[1;31mE (202511) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (202511) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (202511) mqtt_client: Error transport connect[0m
+[0;32mI (202511) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (202511) LED: LED OFF[0m
+[0;32mI (202511) MQTT: MQTT disconnected[0m
+[0;32mI (202521) LED: LED OFF[0m
+[1;31mE (222531) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (222531) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (222531) mqtt_client: Error transport connect[0m
+[0;32mI (222531) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (222531) LED: LED OFF[0m
+[0;32mI (222531) MQTT: MQTT disconnected[0m
+[0;32mI (222541) LED: LED OFF[0m
+[1;31mE (242551) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (242551) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (242551) mqtt_client: Error transport connect[0m
+[0;32mI (242551) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (242551) LED: LED OFF[0m
+[0;32mI (242551) MQTT: MQTT disconnected[0m
+[0;32mI (242561) LED: LED OFF[0m
+[1;31mE (262571) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (262571) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (262571) mqtt_client: Error transport connect[0m
+[0;32mI (262571) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (262571) LED: LED OFF[0m
+[0;32mI (262571) MQTT: MQTT disconnected[0m
+[0;32mI (262581) LED: LED OFF[0m
+[1;31mE (282591) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (282591) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (282591) mqtt_client: Error transport connect[0m
+[0;32mI (282591) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (282591) LED: LED OFF[0m
+[0;32mI (282591) MQTT: MQTT disconnected[0m
+[0;32mI (282601) LED: LED OFF[0m
+[1;31mE (302611) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (302611) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (302611) mqtt_client: Error transport connect[0m
+[0;32mI (302611) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (302611) LED: LED OFF[0m
+[0;32mI (302611) MQTT: MQTT disconnected[0m
+[0;32mI (302621) LED: LED OFF[0m
+[1;31mE (322631) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (322631) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (322631) mqtt_client: Error transport connect[0m
+[0;32mI (322631) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (322631) LED: LED OFF[0m
+[0;32mI (322631) MQTT: MQTT disconnected[0m
+[0;32mI (322641) LED: LED OFF[0m
+[1;31mE (342651) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (342651) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (342651) mqtt_client: Error transport connect[0m
+[0;32mI (342651) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (342651) LED: LED OFF[0m
+[0;32mI (342651) MQTT: MQTT disconnected[0m
+[0;32mI (342661) LED: LED OFF[0m
+[1;31mE (362671) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (362671) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (362671) mqtt_client: Error transport connect[0m
+[0;32mI (362671) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (362671) LED: LED OFF[0m
+[0;32mI (362671) MQTT: MQTT disconnected[0m
+[0;32mI (362681) LED: LED OFF[0m
+[1;31mE (382691) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (382691) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (382691) mqtt_client: Error transport connect[0m
+[0;32mI (382691) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (382691) LED: LED OFF[0m
+[0;32mI (382691) MQTT: MQTT disconnected[0m
+[0;32mI (382701) LED: LED OFF[0m
+[1;31mE (402711) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (402711) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (402711) mqtt_client: Error transport connect[0m
+[0;32mI (402711) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (402711) LED: LED OFF[0m
+[0;32mI (402711) MQTT: MQTT disconnected[0m
+[0;32mI (402721) LED: LED OFF[0m
+[1;31mE (422731) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (422731) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (422731) mqtt_client: Error transport connect[0m
+[0;32mI (422731) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (422731) LED: LED OFF[0m
+[0;32mI (422731) MQTT: MQTT disconnected[0m
+[0;32mI (422741) LED: LED OFF[0m
+[1;31mE (442751) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (442751) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (442751) mqtt_client: Error transport connect[0m
+[0;32mI (442751) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (442751) LED: LED OFF[0m
+[0;32mI (442751) MQTT: MQTT disconnected[0m
+[0;32mI (442761) LED: LED OFF[0m
+[1;31mE (462771) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (462771) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (462771) mqtt_client: Error transport connect[0m
+[0;32mI (462771) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (462771) LED: LED OFF[0m
+[0;32mI (462771) MQTT: MQTT disconnected[0m
+[0;32mI (462781) LED: LED OFF[0m
+[1;31mE (482791) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (482791) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (482791) mqtt_client: Error transport connect[0m
+[0;32mI (482791) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (482791) LED: LED OFF[0m
+[0;32mI (482791) MQTT: MQTT disconnected[0m
+[0;32mI (482801) LED: LED OFF[0m
+[1;31mE (502811) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (502811) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (502811) mqtt_client: Error transport connect[0m
+[0;32mI (502811) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (502811) LED: LED OFF[0m
+[0;32mI (502811) MQTT: MQTT disconnected[0m
+[0;32mI (502821) LED: LED OFF[0m
+[1;31mE (522831) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (522831) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (522831) mqtt_client: Error transport connect[0m
+[0;32mI (522831) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (522831) LED: LED OFF[0m
+[0;32mI (522831) MQTT: MQTT disconnected[0m
+[0;32mI (522841) LED: LED OFF[0m
+[1;31mE (542851) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (542851) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (542851) mqtt_client: Error transport connect[0m
+[0;32mI (542851) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (542851) LED: LED OFF[0m
+[0;32mI (542851) MQTT: MQTT disconnected[0m
+[0;32mI (542861) LED: LED OFF[0m
+[1;31mE (562871) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (562871) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (562871) mqtt_client: Error transport connect[0m
+[0;32mI (562871) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (562871) LED: LED OFF[0m
+[0;32mI (562871) MQTT: MQTT disconnected[0m
+[0;32mI (562881) LED: LED OFF[0m
+[1;31mE (582891) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (582891) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (582891) mqtt_client: Error transport connect[0m
+[0;32mI (582891) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (582891) LED: LED OFF[0m
+[0;32mI (582891) MQTT: MQTT disconnected[0m
+[0;32mI (582901) LED: LED OFF[0m
+[1;31mE (602911) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (602911) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (602911) mqtt_client: Error transport connect[0m
+[0;32mI (602911) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (602911) LED: LED OFF[0m
+[0;32mI (602911) MQTT: MQTT disconnected[0m
+[0;32mI (602921) LED: LED OFF[0m
+[1;31mE (622931) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (622931) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (622931) mqtt_client: Error transport connect[0m
+[0;32mI (622931) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (622931) LED: LED OFF[0m
+[0;32mI (622931) MQTT: MQTT disconnected[0m
+[0;32mI (622941) LED: LED OFF[0m
+[1;31mE (642951) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (642951) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (642951) mqtt_client: Error transport connect[0m
+[0;32mI (642951) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (642951) LED: LED OFF[0m
+[0;32mI (642951) MQTT: MQTT disconnected[0m
+[0;32mI (642961) LED: LED OFF[0m
+[1;31mE (662971) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (662971) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (662971) mqtt_client: Error transport connect[0m
+[0;32mI (662971) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (662971) LED: LED OFF[0m
+[0;32mI (662971) MQTT: MQTT disconnected[0m
+[0;32mI (662981) LED: LED OFF[0m
+[1;31mE (682991) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (682991) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (682991) mqtt_client: Error transport connect[0m
+[0;32mI (682991) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (682991) LED: LED OFF[0m
+[0;32mI (682991) MQTT: MQTT disconnected[0m
+[0;32mI (683001) LED: LED OFF[0m
+[1;31mE (703011) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (703011) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (703011) mqtt_client: Error transport connect[0m
+[0;32mI (703011) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (703011) LED: LED OFF[0m
+[0;32mI (703011) MQTT: MQTT disconnected[0m
+[0;32mI (703021) LED: LED OFF[0m
+[1;31mE (723031) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (723031) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (723031) mqtt_client: Error transport connect[0m
+[0;32mI (723031) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (723031) LED: LED OFF[0m
+[0;32mI (723031) MQTT: MQTT disconnected[0m
+[0;32mI (723041) LED: LED OFF[0m
+[1;31mE (743051) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (743051) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (743051) mqtt_client: Error transport connect[0m
+[0;32mI (743051) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (743051) LED: LED OFF[0m
+[0;32mI (743051) MQTT: MQTT disconnected[0m
+[0;32mI (743061) LED: LED OFF[0m
+[1;31mE (763071) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (763071) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (763071) mqtt_client: Error transport connect[0m
+[0;32mI (763071) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (763071) LED: LED OFF[0m
+[0;32mI (763071) MQTT: MQTT disconnected[0m
+[0;32mI (763081) LED: LED OFF[0m
+[1;31mE (783091) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (783091) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (783091) mqtt_client: Error transport connect[0m
+[0;32mI (783091) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (783091) LED: LED OFF[0m
+[0;32mI (783091) MQTT: MQTT disconnected[0m
+[0;32mI (783101) LED: LED OFF[0m
+[1;31mE (803111) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (803111) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (803111) mqtt_client: Error transport connect[0m
+[0;32mI (803111) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (803111) LED: LED OFF[0m
+[0;32mI (803121) MQTT: MQTT disconnected[0m
+[0;32mI (803121) LED: LED OFF[0m
+[1;31mE (828131) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (828131) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (828131) mqtt_client: Error transport connect[0m
+[0;32mI (828131) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (828131) LED: LED OFF[0m
+[0;32mI (828141) MQTT: MQTT disconnected[0m
+[0;32mI (828141) LED: LED OFF[0m
+[1;31mE (853151) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (853151) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (853151) mqtt_client: Error transport connect[0m
+[0;32mI (853151) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (853151) LED: LED OFF[0m
+[0;32mI (853151) MQTT: MQTT disconnected[0m
+[0;32mI (853161) LED: LED OFF[0m
+[1;31mE (873171) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (873171) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (873171) mqtt_client: Error transport connect[0m
+[0;32mI (873171) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (873171) LED: LED OFF[0m
+[0;32mI (873171) MQTT: MQTT disconnected[0m
+[0;32mI (873181) LED: LED OFF[0m
+[1;31mE (893191) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (893191) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (893191) mqtt_client: Error transport connect[0m
+[0;32mI (893191) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (893191) LED: LED OFF[0m
+[0;32mI (893191) MQTT: MQTT disconnected[0m
+[0;32mI (893201) LED: LED OFF[0m
+[1;31mE (913211) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (913211) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (913211) mqtt_client: Error transport connect[0m
+[0;32mI (913211) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (913211) LED: LED OFF[0m
+[0;32mI (913211) MQTT: MQTT disconnected[0m
+[0;32mI (913221) LED: LED OFF[0m
+[1;31mE (933231) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (933231) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (933231) mqtt_client: Error transport connect[0m
+[0;32mI (933231) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (933231) LED: LED OFF[0m
+[0;32mI (933231) MQTT: MQTT disconnected[0m
+[0;32mI (933241) LED: LED OFF[0m
+[1;31mE (953251) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (953251) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (953251) mqtt_client: Error transport connect[0m
+[0;32mI (953251) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (953251) LED: LED OFF[0m
+[0;32mI (953251) MQTT: MQTT disconnected[0m
+[0;32mI (953261) LED: LED OFF[0m
+[1;31mE (973271) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (973271) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (973271) mqtt_client: Error transport connect[0m
+[0;32mI (973271) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (973271) LED: LED OFF[0m
+[0;32mI (973271) MQTT: MQTT disconnected[0m
+[0;32mI (973281) LED: LED OFF[0m
+[1;31mE (993291) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (993291) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (993291) mqtt_client: Error transport connect[0m
+[0;32mI (993291) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (993291) LED: LED OFF[0m
+[0;32mI (993291) MQTT: MQTT disconnected[0m
+[0;32mI (993301) LED: LED OFF[0m
+[1;31mE (1013311) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1013311) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1013311) mqtt_client: Error transport connect[0m
+[0;32mI (1013311) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1013311) LED: LED OFF[0m
+[0;32mI (1013311) MQTT: MQTT disconnected[0m
+[0;32mI (1013321) LED: LED OFF[0m
+[1;31mE (1038331) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1038331) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1038331) mqtt_client: Error transport connect[0m
+[0;32mI (1038331) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1038331) LED: LED OFF[0m
+[0;32mI (1038331) MQTT: MQTT disconnected[0m
+[0;32mI (1038341) LED: LED OFF[0m
+[1;31mE (1063351) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1063351) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1063351) mqtt_client: Error transport connect[0m
+[0;32mI (1063351) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1063351) LED: LED OFF[0m
+[0;32mI (1063351) MQTT: MQTT disconnected[0m
+[0;32mI (1063361) LED: LED OFF[0m
+[1;31mE (1088371) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1088371) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1088371) mqtt_client: Error transport connect[0m
+[0;32mI (1088371) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1088371) LED: LED OFF[0m
+[0;32mI (1088371) MQTT: MQTT disconnected[0m
+[0;32mI (1088381) LED: LED OFF[0m
+[1;31mE (1113391) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1113391) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1113391) mqtt_client: Error transport connect[0m
+[0;32mI (1113391) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1113391) LED: LED OFF[0m
+[0;32mI (1113391) MQTT: MQTT disconnected[0m
+[0;32mI (1113401) LED: LED OFF[0m
+[1;31mE (1138411) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1138411) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1138411) mqtt_client: Error transport connect[0m
+[0;32mI (1138411) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1138411) LED: LED OFF[0m
+[0;32mI (1138411) MQTT: MQTT disconnected[0m
+[0;32mI (1138421) LED: LED OFF[0m
+[1;31mE (1163431) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1163431) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1163431) mqtt_client: Error transport connect[0m
+[0;32mI (1163431) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1163431) LED: LED OFF[0m
+[0;32mI (1163431) MQTT: MQTT disconnected[0m
+[0;32mI (1163441) LED: LED OFF[0m
+[1;31mE (1188451) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1188451) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1188451) mqtt_client: Error transport connect[0m
+[0;32mI (1188451) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1188451) LED: LED OFF[0m
+[0;32mI (1188451) MQTT: MQTT disconnected[0m
+[0;32mI (1188461) LED: LED OFF[0m
+[1;31mE (1213471) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (1213471) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (1213471) mqtt_client: Error transport connect[0m
+[0;32mI (1213471) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (1213471) LED: LED OFF[0m
+[0;32mI (1213471) MQTT: MQTT disconnected[0m
+[0;32mI (1213481) LED: LED OFF[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20dc4h (134596) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030dec vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030e14 vaddr=3ffb0000 size=04c18h ( 19480) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=00035a34 vaddr=40080000 size=0a5e4h ( 42468) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a9108h (692488) map[0m
+[0;32mI (399) esp_image: segment 5: paddr=000e9130 vaddr=4008a5e4 size=0ed00h ( 60672) load[0m
+[0;32mI (435) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (435) boot: Disabling RNG early entropy source...[0m
+[0;32mI (446) cpu_start: Multicore app[0m
+[0;32mI (454) cpu_start: Pro cpu start user code[0m
+[0;32mI (454) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (454) app_init: Application information:[0m
+[0;32mI (455) app_init: Project name:     hello_world[0m
+[0;32mI (459) app_init: App version:      8d7e8db-dirty[0m
+[0;32mI (463) app_init: Compile time:     Dec 15 2025 10:53:14[0m
+[0;32mI (468) app_init: ELF file SHA256:  1e70174b9...[0m
+[0;32mI (473) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (477) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (481) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (485) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (489) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (495) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFB94E0 len 00026B20 (154 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (516) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (523) spi_flash: detected chip: generic[0m
+[0;32mI (525) spi_flash: flash io: dio[0m
+[0;33mW (528) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (540) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (551) main_task: Started on CPU0[0m
+[0;32mI (561) main_task: Calling app_main()[0m
+[0;32mI (561) LED: LED initialized on GPIO 2[0m
+[0;32mI (561) LED: LED OFF[0m
+[0;32mI (561) DEMO: I2C initialized successfully[0m
+[0;32mI (1451) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1471) MAC_UTILS: WiFi STA MAC: A8:42:E3:4C:7C:BC[0m
+[0;32mI (1471) MAC_UTILS: Loaded user_id from NVS: 03[0m
+[0;32mI (1491) wifi:wifi driver task: 3ffc266c, prio:23, stack:6656, core=0[0m
+[0;32mI (1501) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1501) wifi:wifi certification version: v7.0[0m
+[0;32mI (1501) wifi:config NVS flash: enabled[0m
+[0;32mI (1501) wifi:config nano formatting: disabled[0m
+[0;32mI (1511) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1511) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1521) wifi:Init management short buffer num: 32[0m
+[0;32mI (1521) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1521) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1531) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1531) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1541) wifi_init: rx ba win: 6[0m
+[0;32mI (1541) wifi_init: accept mbox: 6[0m
+[0;32mI (1541) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1541) wifi_init: udp mbox: 6[0m
+[0;32mI (1551) wifi_init: tcp mbox: 6[0m
+[0;32mI (1551) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1551) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1561) wifi_init: tcp mss: 1440[0m
+[0;32mI (1561) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1561) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1631) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1711) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (1711) wifi:enable tsf[0m
+[0;32mI (1721) WIFI: WiFi initialized[0m
+[0;32mI (1721) WIFI: WiFi STA started[0m
+[0;32mI (4221) WIFI: Found 16 APs[0m
+[0;32mI (4221) WIFI: 4 saved wifi in nvs[0m
+[0;32mI (4221) WIFI: SAVED WIF: Anh Kiet[0m
+[0;32mI (4221) WIFI: SAVED WIF: NamTrung[0m
+[0;32mI (4221) WIFI: SAVED WIF: Namtrung 2.4G[0m
+[0;32mI (4221) WIFI: SAVED WIF: NGUYEN HUYNH ANH KIET 2002[0m
+[0;32mI (4231) WIFI: FOUND SAVED WIFI: Anh Kiet (RSSI=-63), BSSID: CC:71:90 19:D2:F8[0m
+[0;32mI (4241) WIFI: BEST WIFI: Anh Kiet (RSSI=-63), BSSID: CC:71:90 19:D2:F8[0m
+[0;32mI (4251) NVS_UTILS: WiFi credential saved[0m
+[0;32mI (4251) main_task: Returned from app_main()[0m
+[0;32mI (4251) STATE_MACHINE: System state task started[0m
+[0;32mI (7131) NVS_UTILS: Read user ID successfully: 2222[0m
+[1;31mE (7131) mqtt_client: Client was not initialized[0m
+[0;32mI (7151) STATE_MACHINE: Have a saved wifi network in NVS: Anh Kiet[0m
+[0;32mI (7191) wifi:flush txq[0m
+[0;32mI (7201) wifi:stop sw txq[0m
+[0;32mI (7201) wifi:lmac stop hw txq[0m
+[0;32mI (7201) wifi:mode : sta (a8:42:e3:4c:7c:bc)[0m
+[0;32mI (7201) wifi:enable tsf[0m
+[0;32mI (7211) WIFI: WiFi STA started[0m
+[0;32mI (7481) wifi:new:<2,0>, old:<1,0>, ap:<255,255>, sta:<2,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7491) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (7511) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (7561) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (7661) wifi:connected with Anh Kiet, aid = 3, channel 2, BW20, bssid = cc:71:90:19:d2:f8[0m
+[0;32mI (7661) wifi:security: WPA2-PSK, phy: bgn, rssi: -73[0m
+[0;32mI (7671) wifi:pm start, type: 1[0m
+
+[0;32mI (7671) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (7681) WIFI: Connected to SSID:Anh Kiet, channel:2[0m
+[0;32mI (7731) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (8881) esp_netif_handlers: sta ip: 192.168.1.3, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (8881) WIFI: WiFi connected, got IP[0m
+[0;32mI (9911) MQTT: Registered device with WiFi STA MAC: {"device_id":"A8:42:E3:4C:7C:BC","status":"offline"}[0m
+[0;32mI (9911) MQTT: MQTT initialized[0m
+[0;32mI (9931) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (9931) wifi:<ba-add>idx:0 (ifx:0, cc:71:90:19:d2:f8), tid:0, ssn:5, winSize:64[0m
+[1;31mE (19931) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (19931) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (19931) mqtt_client: Error transport connect[0m
+[0;32mI (19931) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (19931) LED: LED OFF[0m
+[0;32mI (19931) MQTT: MQTT disconnected[0m
+[0;32mI (19941) LED: LED OFF[0m
+[1;31mE (39951) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (39951) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (39951) mqtt_client: Error transport connect[0m
+[0;32mI (39951) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (39951) LED: LED OFF[0m
+[0;32mI (39951) MQTT: MQTT disconnected[0m
+[0;32mI (39961) LED: LED OFF[0m
+[1;31mE (59971) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (59971) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (59971) mqtt_client: Error transport connect[0m
+[0;32mI (59971) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (59971) LED: LED OFF[0m
+[0;32mI (59971) MQTT: MQTT disconnected[0m
+[0;32mI (59981) LED: LED OFF[0m

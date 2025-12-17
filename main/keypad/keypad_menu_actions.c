@@ -5,6 +5,10 @@ extern char counter_id[3];
 
 extern esp_mqtt_client_handle_t mqtt_client;
 
+extern uint8_t service_scroll_pos;
+
+extern uint8_t ssid_scroll_pos;
+
 
 void select_option(){
       backup_input_buffer();
@@ -21,6 +25,7 @@ void select_option(){
             //saved_buffer_index = buffer_index;
 
             g_keypad.current_mode = MODE_WIFI_SSID;
+            set_sys_state(STATE_WIFI_INPUT);//
             memset(g_keypad.input_buffer, 0, sizeof(g_keypad.input_buffer));
             g_keypad.buffer_index = 0;
             xSemaphoreGive(g_mutex.input_mutex);
@@ -29,21 +34,28 @@ void select_option(){
             g_keypad.key_press_count = 0;
             g_keypad.caps_lock = false;
             g_keypad.hide = true;
+            /*
             lcd_show_wifi_input("");
             lcd_put_cur(1,0);//
             lcd_send_cmd(0x0F);//
+            */
         }
 
         else if (g_keypad.menu_selection == 2) {
            if (g_keypad.device_list_ready && g_keypad.device_count > 0) {
                 g_keypad.selected_index = 0;
                 g_keypad.in_selection_mode = true;
-                g_keypad.current_mode = MODE_DEVICE_SELECT;  
-                lcd_show_device_list();
+
+                g_keypad.current_mode = MODE_DEVICE_SELECT; 
+                set_sys_state(STATE_DEVICE_LIST); //
+                //lcd_show_device_list();
             } else {
+                set_sys_state(STATE_NO_DATA);
+                /*
                 lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU");
                 vTaskDelay(pdMS_TO_TICKS(800));
                 g_keypad.current_mode = MODE_NORMAL;
+                */
             }
         }
 
@@ -51,12 +63,18 @@ void select_option(){
            if (g_keypad.service_list_ready && g_keypad.service_count > 0) {
                 g_keypad.selected_index2 = 0;
                 g_keypad.in_selection_mode = true;
+
                 g_keypad.current_mode = MODE_SERVICE_SELECT;  
-                lcd_show_service_list();
+                set_sys_state(STATE_SERVICE_LIST);//
+                service_scroll_pos=0;//
+                //lcd_show_service_list();
             } else {
+                /*
                 lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU");
                 vTaskDelay(pdMS_TO_TICKS(800));
                 g_keypad.current_mode = MODE_NORMAL;
+                */
+               set_sys_state(STATE_NO_DATA);
             }
         }
 
@@ -80,6 +98,7 @@ void select_option(){
 
 
                g_keypad.current_mode=MODE_NORMAL;
+               set_sys_state(STATE_RUNNING);//
                
         }
 
@@ -88,12 +107,16 @@ void select_option(){
                 g_keypad.selected_index = 0;
                 g_keypad.in_selection_mode = true;
                 g_keypad.current_mode = MODE_USER_SELECT;  
+                set_sys_state(STATE_USER_LIST);//
                 //lcd_show_device_list();
-                lcd_show_user_list();
+                //lcd_show_user_list();
             } else {
+                /*
                 lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU");
                 vTaskDelay(pdMS_TO_TICKS(1500));
                 g_keypad.current_mode = MODE_NORMAL;
+                */
+               set_sys_state(STATE_NO_DATA);
             }
         }
 
@@ -196,53 +219,20 @@ void select_option(){
 
         }
         else if (g_keypad.menu_selection==9){
-            //set_sys_state(STATE_SAVED_WIFI);
-            lcd_show_saved_wifi();//
+            ssid_scroll_pos = 0;
+            g_keypad.wifi_position=0;
+            lcd_clear();//
+            set_sys_state(STATE_SAVED_WIFI);
+            //lcd_show_saved_wifi();//
             g_keypad.current_mode=MODE_SAVED_WIFI;
+            //lcd_clear();//
         }
 
 
 }
 
 
-void capslock_input() {
-    g_keypad.caps_lock = !g_keypad.caps_lock;
 
-    xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
-
-    char view[17];
-
-    if (g_keypad.wifi_len <= 16) {
-        memcpy(view, g_keypad.input_buffer, g_keypad.wifi_len);
-        view[g_keypad.wifi_len] = '\0';
-    } else {
-        memcpy(view,
-               &g_keypad.input_buffer[g_keypad.ssid_window_start],
-               16);
-        view[16] = '\0';
-    }
-
-    if (g_keypad.wifi_step == 0){
-        lcd_show_wifi_input(view);
-    }
-
-    else{
-        lcd_show_wifi_pass(view);
-    }
-
-    // CURSOR
-    
-    int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
-    if (cursor_col < 0) cursor_col = 0;
-    if (cursor_col > 15) cursor_col = 15;
-
-    lcd_put_cur(1, cursor_col);
-    lcd_send_cmd(0x0F);
-
-    xSemaphoreGive(g_mutex.input_mutex);
-
-
-}
 
 
 
@@ -266,7 +256,10 @@ void enter_service(){
         // strcpy(selected_id,selected_service_id);
          
          //ESP_LOGI("DEMO","%s",selected_id);
-        lcd_show_position_list();
+
+        //lcd_show_position_list();
+        set_sys_state(STATE_SERVICE_POSITON);//
+
         }
 
        // in_selection_mode = false;
@@ -301,5 +294,6 @@ void enter_user(){
 
         g_keypad.in_selection_mode = false;
         g_keypad.current_mode = MODE_NORMAL;
-        set_display_state(DISPLAY_MAIN_SCREEN);
+        set_sys_state(STATE_RUNNING);
+        //set_display_state(DISPLAY_MAIN_SCREEN);
 };

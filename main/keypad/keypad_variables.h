@@ -29,6 +29,7 @@ typedef struct {
     char        prev_number[5];
     //char        wifi_ssid[17];
     char        wifi_pass[64];//17
+    uint8_t     bssid[6];
     char        saved_ssid[32] ;//17
     char        saved_pass[64] ;//17
     uint8_t     saved_bssid[6];
@@ -87,10 +88,15 @@ typedef struct {
     char         wifi_ssid[32]; 
     uint8_t      wifi_position;
     char         view[17];
+    char         masked[17];
     int          len;  
     char         user_pass_buffer[5];
     uint8_t      user_pass_index;  
     uint8_t      delete_wifi_option;
+    int          cursor_col;
+    char         display_service[17];
+    char         display_saved_ssid[33];
+
 
 
 } keypad_context_t;

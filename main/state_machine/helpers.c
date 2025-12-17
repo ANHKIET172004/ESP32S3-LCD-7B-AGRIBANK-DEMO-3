@@ -16,7 +16,7 @@ void wifi_config(){
                 strncpy((char *)wifi_config.sta.password, g_keypad.saved_pass, sizeof(wifi_config.sta.password) - 1);
                 memcpy(wifi_config.sta.bssid,g_keypad.saved_bssid,6);
 
-                //wifi_config.sta.bssid_set=true;//
+                wifi_config.sta.bssid_set=false;//
 
                 wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK;
                 esp_wifi_disconnect();
@@ -64,6 +64,6 @@ void reload_oldscreen(){
         }            
 
             set_sys_state(STATE_MQTT_ERROR);
-            set_display_state(DISPLAY_MAIN_SCREEN);
+            //set_display_state(DISPLAY_MAIN_SCREEN);
 
 }

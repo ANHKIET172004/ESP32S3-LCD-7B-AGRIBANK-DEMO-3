@@ -3,34 +3,35 @@
 
 
 void lcd_render_ssid_editor() {
-    lcd_lock();
-    lcd_clear();
+    //lcd_lock();
+   // lcd_clear();
 
-    lcd_put_cur(0, 0);
-    lcd_send_string("*NHAP TEN WIFI:");
+   // lcd_put_cur(0, 0);
+   // lcd_send_string("*NHAP TEN WIFI:");
     //lcd_send_cmd(0x0F);//
 
-    char view[17] = {0};
+    //char view[17] = {0};
 
     if (g_keypad.wifi_len <= 16) {
-        memcpy(view, g_keypad.wifi_ssid, g_keypad.wifi_len);
+        memcpy(g_keypad.view, g_keypad.wifi_ssid, g_keypad.wifi_len);
     } 
     else {
-        memcpy(view, &g_keypad.wifi_ssid[g_keypad.ssid_window_start],16);
+        memcpy(g_keypad.view, &g_keypad.wifi_ssid[g_keypad.ssid_window_start],16);
     }
 
-    lcd_put_cur(1, 0);
-    lcd_send_string(view);
+   // lcd_put_cur(1, 0);
+   // lcd_send_string(g_keypad.view);
 
    
-    int lcd_pos = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
-    if (lcd_pos < 0) lcd_pos = 0;
-    if (lcd_pos > 15) lcd_pos = 15;
+    //int lcd_pos = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    g_keypad.cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    if (g_keypad.cursor_col < 0) g_keypad.cursor_col = 0;
+    if (g_keypad.cursor_col > 15) g_keypad.cursor_col = 15;
 
-    lcd_put_cur(1, lcd_pos);
-    lcd_send_cmd(0x0F);
+    //lcd_put_cur(1, lcd_pos);
+    //lcd_send_cmd(0x0F);
 
-    lcd_unlock();
+   // lcd_unlock();
 }
 
 
@@ -98,49 +99,52 @@ void lcd_cursor_right() {
 
 
     //tạo str hiển thị lcd
-    char lcd_str[17];
+   // char lcd_str[17];
+   
     if (g_keypad.wifi_len <= 16) {
-        memcpy(lcd_str, g_keypad.input_buffer, g_keypad.wifi_len);
-        lcd_str[g_keypad.wifi_len] = '\0';
+        memcpy(g_keypad.view, g_keypad.input_buffer, g_keypad.wifi_len);
+        g_keypad.view[g_keypad.wifi_len] = '\0';
     } else {
-        memcpy(lcd_str, &g_keypad.input_buffer[g_keypad.ssid_window_start], 16);
-        lcd_str[16] = '\0';
+        memcpy(g_keypad.view, &g_keypad.input_buffer[g_keypad.ssid_window_start], 16);
+        g_keypad.view[16] = '\0';
     }
 
     // hiển thị chuỗi custom lên lcd
-    if (g_keypad.wifi_step == 0)
-        lcd_show_wifi_input(lcd_str);
+    if (g_keypad.wifi_step == 0){}
+       // lcd_show_wifi_input(g_keypad.view);
     else {
         if (g_keypad.hide) {
-            char masked[17];
-            int L = strlen(lcd_str);
+            //char masked[17];
+            
+            int L = strlen(g_keypad.view);
             for (int i = 0; i < L; i++) 
             {
             if (i!=L-1){
-            masked[i] = '*';
+            g_keypad.masked[i] = '*';
             }
             else {
-            masked[i] = lcd_str[i];
+            g_keypad.masked[i] = g_keypad.view[i];
             }
             }
-            masked[L] = '\0';
-            lcd_show_wifi_pass(masked);
+            g_keypad.masked[L] = '\0';
+           // lcd_show_wifi_pass(g_keypad.masked);
         } else {
-            lcd_show_wifi_pass(lcd_str);
+            //lcd_show_wifi_pass(g_keypad.view);
         }
     }
 
     // tính vị trí trên lcd
-    int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
-    if (cursor_col < 0) cursor_col = 0;
-    if (cursor_col > 15) cursor_col = 15;
+    //int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    g_keypad.cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    if (g_keypad.cursor_col < 0) g_keypad.cursor_col = 0;
+    if (g_keypad.cursor_col > 15) g_keypad.cursor_col = 15;
 
-    lcd_put_cur(1, cursor_col);
-    lcd_send_cmd(0x0F);
+   // lcd_put_cur(1, cursor_col);
+   // lcd_send_cmd(0x0F);
 
 }
 
-
+/*
 void ssid_delete_at_cursor() {
 
     if (g_keypad.wifi_len == 0) return;
@@ -213,3 +217,4 @@ void ssid_delete_at_cursor() {
     lcd_put_cur(1, cursor_col);
     lcd_send_cmd(0x0F);
 }
+*/

@@ -28,6 +28,8 @@ void delete_wifi_input_key();
 
 void enter_wifi();
 
+void capslock_input();
+
 
 
 #endif

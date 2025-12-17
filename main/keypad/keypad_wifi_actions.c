@@ -59,63 +59,110 @@ void hide_wifi_input() {
 
     g_keypad.hide = !g_keypad.hide;
 
+    /*
     lcd_lock();
     lcd_clear();
     lcd_put_cur(0, 0);
     lcd_send_string("*NHAP MAT KHAU:");
+    */
 
     xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
 
-    char view[17];
+    //char view[17];
     int len = g_keypad.wifi_len;
 
     if (len <= 16&&len>0) {
-        memcpy(view, g_keypad.input_buffer, len);
-        view[len] = '\0';
+        memcpy(g_keypad. view, g_keypad.input_buffer, len);
+       g_keypad. view[len] = '\0';
         g_keypad.ssid_window_start = 0;
     }
     
     else {       
-        memcpy(view,&g_keypad.input_buffer[g_keypad.ssid_window_start],16);
-        view[16] = '\0';
+        memcpy(g_keypad.view,&g_keypad.input_buffer[g_keypad.ssid_window_start],16);
+        g_keypad.view[16] = '\0';
 
     }
         
 
-    if (g_keypad.hide&&strlen(view)>0) {
+    if (g_keypad.hide&&strlen(g_keypad.view)>0) {
+      
 
-
-        char masked[17];
-        int L = strlen(view);
+        //char masked[17];
+        int L = strlen(g_keypad.view);
         
         for (int i = 0; i < L; i++) {
         if (i!=L-1){
-            masked[i] = '*';
+            g_keypad.masked[i] = '*';
         }
         else {
-            masked[i]=view[i];
+            g_keypad.masked[i]=g_keypad.view[i];
         }
         }
-        masked[L] = '\0';
+        g_keypad.masked[L] = '\0';
 
-        
+        /*
         lcd_put_cur(1, 0);
         lcd_send_string(masked);
+        */
     }
     else {
+        /*
         lcd_put_cur(1, 0);
         lcd_send_string(view);
+        */
+
     }
 
-    int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
-    if (cursor_col < 0) cursor_col = 0;
-    if (cursor_col > 15) cursor_col = 15;
-
-    lcd_put_cur(1, cursor_col);
+    //int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    g_keypad.cursor_col= g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    if (g_keypad.cursor_col < 0) g_keypad.cursor_col = 0;
+    if (g_keypad.cursor_col > 15) g_keypad.cursor_col = 15;
+/*
+    lcd_put_cur(1, g_keypad.cursor_col);
     lcd_send_cmd(0x0F);
+*/
+    xSemaphoreGive(g_mutex.input_mutex);
+   // lcd_unlock();
+}
+
+void capslock_input() {
+    g_keypad.caps_lock = !g_keypad.caps_lock;
+
+    xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
+
+   // char view[17];
+   
+    if (g_keypad.wifi_len <= 16) {
+        memcpy( g_keypad.view, g_keypad.input_buffer, g_keypad.wifi_len);
+         g_keypad.view[g_keypad.wifi_len] = '\0';
+    } else {
+        memcpy( g_keypad.view,
+               &g_keypad.input_buffer[g_keypad.ssid_window_start],
+               16);
+         g_keypad.view[16] = '\0';
+    }
+
+    if (g_keypad.wifi_step == 0){
+       // lcd_show_wifi_input( g_keypad.view);
+    }
+
+    else{
+       // lcd_show_wifi_pass( g_keypad.view);
+    }
+
+    // CURSOR
+    
+    //int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    g_keypad.cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    if (g_keypad.cursor_col < 0) g_keypad.cursor_col = 0;
+    if (g_keypad.cursor_col > 15) g_keypad.cursor_col = 15;
+
+   // lcd_put_cur(1, cursor_col);
+   // lcd_send_cmd(0x0F);
 
     xSemaphoreGive(g_mutex.input_mutex);
-    lcd_unlock();
+
+
 }
 
 void update_wifi_input_buffer(char key) {
@@ -151,48 +198,53 @@ void update_wifi_input_buffer(char key) {
     else if (g_keypad.ssid_real_pos >= g_keypad.ssid_window_start + 15)//
         g_keypad.ssid_window_start = g_keypad.ssid_real_pos - 15;
 
-    char view[17];
+   // char view[17];
 
     if (g_keypad.wifi_len < 16) {//<=
-        memcpy(view, g_keypad.input_buffer, g_keypad.wifi_len);
-        view[g_keypad.wifi_len] = '\0';
+        memcpy(g_keypad.view, g_keypad.input_buffer, g_keypad.wifi_len);
+        g_keypad.view[g_keypad.wifi_len] = '\0';
     } else {
-        memcpy(view,&g_keypad.input_buffer[g_keypad.ssid_window_start],16);//16
-        view[16] = '\0';
+        memcpy(g_keypad.view,&g_keypad.input_buffer[g_keypad.ssid_window_start],16);//16
+       g_keypad. view[16] = '\0';
     }
+////////////////////////////
+    if (g_keypad.wifi_step == 0){
 
-    if (g_keypad.wifi_step == 0)
-        lcd_show_wifi_input(view);
+    }
+      //  lcd_show_wifi_input(g_keypad.view);
     else {
         if (g_keypad.hide) {
-            char masked[17];
-            int L = strlen(view);
+            //char masked[17];
+            int L = strlen(g_keypad.view);
             if (L>0){
                 for (int i = 0; i < L; i++) {
                     if (i!=L-1){
-                      masked[i] = '*';//<L
+                      g_keypad.masked[i] = '*';//<L
                     }
                     else {
-                      masked[L-1]=view[L-1];
+                        g_keypad.masked[L-1]=g_keypad.view[L-1];
                     }
                 
                 }
             }
-                masked[L] = '\0';// quan trong
+                  g_keypad.masked[L] = '\0';// quan trong
 
   
-            lcd_show_wifi_pass(masked);
+           // lcd_show_wifi_pass(  g_keypad.masked);
         } else {
-            lcd_show_wifi_pass(view);
+            //lcd_show_wifi_pass(g_keypad.view);
         }
     }
 
-    int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
-    if (cursor_col < 0) cursor_col = 0;
-    if (cursor_col > 15) cursor_col = 15;
+    //int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    g_keypad.cursor_col  = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    if (g_keypad.cursor_col < 0) g_keypad.cursor_col = 0;
+    if (g_keypad.cursor_col > 15) g_keypad.cursor_col = 15;
 
-    lcd_put_cur(1, cursor_col);
+    /*
+    lcd_put_cur(1, g_keypad.cursor_col);
     lcd_send_cmd(0x0F);
+    */
 
     xSemaphoreGive(g_mutex.input_mutex);
 }
@@ -245,58 +297,59 @@ void delete_wifi_input_key() {
     }
 
 
-    char view[17];
+    //char view[17];
 
     if (g_keypad.wifi_len < 16) {
-        memcpy(view, g_keypad.input_buffer, g_keypad.wifi_len);
-        view[g_keypad.wifi_len] = '\0';
+        memcpy(g_keypad.view, g_keypad.input_buffer, g_keypad.wifi_len);
+      g_keypad.view[g_keypad.wifi_len] = '\0';
     } 
     
     else if (g_keypad.wifi_len == 16) {
-        memcpy(view, &g_keypad.input_buffer[1], 15);
-        view[15] = '\0';
+        memcpy(g_keypad.view, &g_keypad.input_buffer[1], 15);
+        g_keypad.view[15] = '\0';
     } 
     
     else {
-        memcpy(view,&g_keypad.input_buffer[g_keypad.ssid_window_start],16);
-        view[16] = '\0';
+        memcpy(g_keypad.view,&g_keypad.input_buffer[g_keypad.ssid_window_start],16);
+        g_keypad.view[16] = '\0';
     }
 
-
-    if (g_keypad.wifi_step == 0)
-        lcd_show_wifi_input(view);
+//////////////////
+    if (g_keypad.wifi_step == 0){}
+      //  lcd_show_wifi_input(g_keypad.view);
     else {
         if (g_keypad.hide) {
-            char masked[17];
-            if (strlen(view)>0){
-                for (int i = 0; i < 16 && view[i]; i++)
+            //char masked[17];
+            if (strlen(g_keypad.view)>0){
+                for (int i = 0; i < 16 && g_keypad.view[i]; i++)
                 if (i>0){
-                    masked[i-1] = '*';
-                    masked[i]=view[i];
-                    masked[strlen(view)] = '\0';// quan trọng
+                   g_keypad. masked[i-1] = '*';
+                    g_keypad. masked[i]=g_keypad.view[i];
+                    g_keypad. masked[strlen(g_keypad.view)] = '\0';// quan trọng
                 }
                 else {
-                    masked[i]=view[i];  
-                    masked[strlen(view)] = '\0';// quan trọng
+                    g_keypad. masked[i]=g_keypad.view[i];  
+                    g_keypad. masked[strlen(g_keypad.view)] = '\0';// quan trọng
                 }
             }
             else {
-                masked[strlen(view)]='\0';
+                g_keypad. masked[strlen(g_keypad.view)]='\0';
             }
-            lcd_show_wifi_pass(masked);
+            //lcd_show_wifi_pass(masked);
         }
         else {
-            lcd_show_wifi_pass(view);
+            //lcd_show_wifi_pass(view);
         }
     }
 
 
-    int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
-    if (cursor_col < 0) cursor_col = 0;
-    if (cursor_col > 15) cursor_col = 15;
+    //int cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    g_keypad. cursor_col = g_keypad.ssid_real_pos - g_keypad.ssid_window_start;
+    if (g_keypad. cursor_col < 0) g_keypad. cursor_col = 0;
+    if (g_keypad. cursor_col > 15) g_keypad. cursor_col = 15;
 
-    lcd_put_cur(1, cursor_col);
-    lcd_send_cmd(0x0F);
+   // lcd_put_cur(1, g_keypad. cursor_col);
+    //lcd_send_cmd(0x0F);
 
     xSemaphoreGive(g_mutex.input_mutex);
 }
@@ -310,9 +363,15 @@ void enter_wifi() {
         ESP_LOGI("WIFI LOG", "SSID = %s", g_keypad.wifi_ssid);
         xSemaphoreGive(g_mutex.input_mutex);
 
-        lcd_show_wifi_pass("");
-        lcd_put_cur(1, 0);
-        lcd_send_cmd(0x0F);
+        
+        //lcd_show_wifi_pass("");
+        g_keypad.view[0]='\0';//
+        //lcd_put_cur(1, 0);
+        g_keypad.cursor_col=0;//
+       // lcd_send_cmd(0x0F);
+
+
+       
 
         return;
     }
@@ -328,6 +387,10 @@ void enter_wifi() {
         xSemaphoreGive(g_mutex.input_mutex);
 
         lcd_send_cmd(0x0C);   // tắt con trỏ
+
+        memset(g_keypad.view,0,sizeof(g_keypad.view));//
+        memset(g_keypad.masked,0,sizeof(g_keypad.masked));//
+        g_keypad.cursor_col=0;//
 
         set_user_selected_wifi(true);
         set_sys_state(STATE_WIFI_CONNECT);
