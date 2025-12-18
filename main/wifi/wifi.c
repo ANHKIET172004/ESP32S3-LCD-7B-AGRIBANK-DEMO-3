@@ -31,7 +31,6 @@ void wifi_scan()
     }
 
     int best_rssi    = -1000;
-    int best_ap_index   = -1;
     int best_saved_index = -1;
 
 
@@ -42,24 +41,19 @@ void wifi_scan()
         .channel = 0,
         .show_hidden = true
     };
-/*
-    ESP_ERROR_CHECK(esp_wifi_scan_start(&scan_config, true));
-    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&num, ap_info));
-
-    ESP_LOGI(TAG, "Found %d APs", num);
-*/
-
-
 
     load_wifi_list(list);  
 
+    if (list->count==0){
+        set_sys_state(STATE_NO_WIFI);
+        return;
+    }
+
     int tmp_rssi[list->count];
-   // int8_t tmp_best_saved_index[list->count];
     int tmp_cnt[list->count];
 
     for (int i=0;i<list->count;i++){
            tmp_rssi[i]=0;
-        //   tmp_best_saved_index[i]=0;
            tmp_cnt[i]=0;
     }
 
@@ -68,11 +62,11 @@ void wifi_scan()
 
     for (uint8_t i=0;i<list->count;i++){
             
-         ESP_LOGI(TAG,"SAVED WIF: %s",list->aps[i].ssid);
+         ESP_LOGI(TAG,"SAVED WIFI: %s",list->aps[i].ssid);
             
     }
 
-    for (int a=0;a<5;a++){
+    for (int a=0;a<3;a++){
 
 ////
     num = MAX_AP;
@@ -80,15 +74,7 @@ void wifi_scan()
     ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&num, ap_info));
 
     ESP_LOGI(TAG, "Found %d APs", num);
-////
 
-/*
-    for (uint8_t i=0;i<list->count;i++){
-            
-         ESP_LOGI(TAG,"SAVED WIF: %s",list->aps[i].ssid);
-            
-    }
-*/
 
     for (uint8_t i = 0; i < num; i++) {
 
@@ -101,45 +87,36 @@ void wifi_scan()
         ap_info[i].bssid[3],ap_info[i].bssid[4],ap_info[i].bssid[5]);
              
                 tmp_rssi[j]+=ap_info[i].rssi;
-               // tmp_best_saved_index[j]=j;
                 tmp_cnt[j]++;
-                /*
-                if (ap_info[i].rssi > best_rssi) {
-                    best_rssi = ap_info[i].rssi;
-                    best_ap_index = i;
-                    best_saved_index = j;
-                }
-                    */
+                
             }
         }
     }
 
-    for (int i=0;i<list->count;i++){
+    
+
+}   
+for (int i=0;i<list->count;i++){
         if (tmp_cnt[i]==0) continue;;
         if ((tmp_rssi[i]/tmp_cnt[i]) > best_rssi) {
                     best_rssi = tmp_rssi[i]/tmp_cnt[i];
-                    best_ap_index = i;
                     best_saved_index = i;
                 }
     }
 
-    if (best_ap_index < 0) {
+    if (best_saved_index < 0) {
         ESP_LOGW(TAG, "No saved WiFi found in scan");
         free(ap_info);
         free(list);
+        set_sys_state(STATE_NO_WIFI);//
         return;
     }
-
-}
-/*
-    ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d), BSSID: %02X:%02X:%02X %02X:%02X:%02X",ap_info[best_ap_index].ssid,ap_info[best_ap_index].rssi,
-        ap_info[best_ap_index].bssid[0],ap_info[best_ap_index].bssid[1],ap_info[best_ap_index].bssid[2],
-        ap_info[best_ap_index].bssid[3],ap_info[best_ap_index].bssid[4],ap_info[best_ap_index].bssid[5]);
-        */
+      ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d)",list->aps[best_saved_index].ssid,best_rssi);//
 
     strcpy(g_keypad.saved_ssid, list->aps[best_saved_index].ssid);
     strcpy(g_keypad.saved_pass, list->aps[best_saved_index].pass);
-    memcpy(g_keypad.saved_bssid,list->aps[best_ap_index].bssid,6);
+    memcpy(g_keypad.saved_bssid,list->aps[best_saved_index].bssid,6);
+    g_keypad.best_saved_index=best_saved_index;//
 
     free(ap_info);
     free(list);

@@ -56,18 +56,40 @@ void app_main(void) {
     esp_netif_init();
     esp_event_loop_create_default();
     wifi_init();
-    wifi_scan();
+   // if (read_wifi_credentials_from_nvs(g_keypad.saved_ssid,g_keypad.saved_pass,g_keypad.saved_bssid)!=ESP_OK){
+  esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, g_keypad.saved_pass, &g_state.password_len, NULL);
+  if (err != ESP_OK) {
+   wifi_scan();
+    }
+   else {
+        wifi_list *list = calloc(1, sizeof(wifi_list));
+        
+
+        if (!list) {
+            ESP_LOGE(TAG, "malloc failed");
+            free(list);
+        }
+        else {
+            load_wifi_list(list);
+            for (int i=0;i<list->count;i++){
+                if (strncmp(g_keypad.saved_ssid,list->aps[i].ssid,sizeof(g_keypad.saved_ssid)-1)==0){
+                    g_keypad.best_saved_index=i;
+                }
+            }
+            free(list);
+        }
+    }
 
     mqtt_queue = xQueueCreate(MQTT_QUEUE_LENGTH, sizeof(mqtt_message_t));
     if (mqtt_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create MQTT queue!");
     } 
-    //save_wifi_credentials1("NGUYEN HUYNH ANH KIET 2002","1234",NULL);
+    save_wifi_credentials1("NGUYEN HUYNH ANH KIET 2002","1234",NULL);
     xTaskCreatePinnedToCore(mqtt_process_task, "mqtt_task", 6* 1024, NULL, 4, NULL,0 );
     xTaskCreatePinnedToCore(keypad_task, "keypad_task", 7* 1024, NULL, 6, NULL, 1);
     xTaskCreatePinnedToCore( system_task, "system_task",  4*1024, NULL,5, &g_state.system_task_handle, 1 );
-    xTaskCreate(service_scroll_task, "service_scroll_task", 2048, NULL, 1, NULL);
-    xTaskCreate(ssid_scroll_task, "ssid_scroll_task", 2048, NULL, 1, NULL);
+    xTaskCreate(service_scroll_task, "service_scroll_task", 2048, NULL, 4, NULL);
+    xTaskCreate(ssid_scroll_task, "ssid_scroll_task", 2048, NULL, 4, NULL);
 
 
 }

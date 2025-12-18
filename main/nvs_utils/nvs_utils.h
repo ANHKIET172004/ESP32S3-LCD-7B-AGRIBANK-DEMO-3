@@ -18,6 +18,9 @@ void delete_counter_id(void) ;
 
 
 void save_wifi_credentials(const char *ssid, const char *password, const uint8_t* bssid) ;
+void delete_wifi_credentials_from_nvs(void);
+
+
 void save_wifi_credentials1(const char *ssid, const char *password, const uint8_t* bssid) ;
 
 esp_err_t read_wifi_credentials_from_nvs(char *ssid, size_t *ssid_len_ptr, char *password, size_t *password_len_ptr, uint8_t* bssid) ;

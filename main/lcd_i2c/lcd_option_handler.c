@@ -3,7 +3,7 @@
 static char* TAG ="DEBUG";
 
 char service_scroll_buffer[68];
-char ssid_scroll_buffer[36];
+char ssid_scroll_buffer[37];
 
 uint8_t service_scroll_pos = 0;
 uint8_t ssid_scroll_pos = 0;
@@ -13,6 +13,8 @@ extern char counter_id[3];
 
 extern bool start;
 extern uint8_t start_cnt;
+
+uint8_t scroll_cnt=0;
 
 void lcd_show_main_screen(const char *number) {
     lcd_lock();
@@ -282,38 +284,42 @@ void lcd_show_position_list(void) {
 
 void lcd_show_service_list(void) {
 
-    lcd_lock();
-   // lcd_clear();
+    char full_name[64] = {0};
+
+
+
+    xSemaphoreTake(g_mutex.service_list_mutex, portMAX_DELAY);
+    strncpy(full_name, g_keypad.service_list[g_keypad.selected_index2].name, sizeof(full_name) - 1);
+    full_name[sizeof(full_name) - 1]='\0';//
+    xSemaphoreGive(g_mutex.service_list_mutex);
+
+    //lcd_clear();
     lcd_put_cur(0, 0);
     lcd_send_string("*CHON DICH VU:");
 
-    char full_name[64] = {0};
-    
-    //xSemaphoreTake(g_mutex.display_service_mutex, portMAX_DELAY);//
-
-    xSemaphoreTake(g_mutex.service_list_mutex, portMAX_DELAY);
-    strncpy(full_name, g_keypad.service_list[g_keypad.selected_index2].name, sizeof(g_keypad.display_service) - 1);
-    
-    xSemaphoreGive(g_mutex.service_list_mutex);
 
     int len = strlen(full_name);
     
     if (len <= 15) {
+      //  lcd_lock();
         set_scroll_enable(false);
+        lcd_put_cur(1,0);
+        lcd_send_string("                ");
         lcd_put_cur(1, 0);
         lcd_send_string(">");
         lcd_send_string(full_name);
+       // lcd_unlock();
     } 
     else {
-        set_scroll_enable(true);
+        
         //strcpy(service_scroll_buffer, full_name);
-        sprintf(service_scroll_buffer,"%s   ",full_name);
+        sprintf(service_scroll_buffer,"%s  ",full_name);
+        set_scroll_enable(true);
         //service_scroll_pos = 0;
 
     }
-   // xSemaphoreGive(g_mutex.display_service_mutex);//
-
-    lcd_unlock();
+    
+    
 }
 
 void lcd_show_menu(void) {
@@ -356,14 +362,23 @@ void lcd_show_menu(void) {
        lcd_send_string(">MO QUAY");
     }
        */
+      /*
     else if (g_keypad.menu_selection==8){
        lcd_put_cur(1, 0);
        lcd_send_string(">DOI MAT KHAU");
     }
-
-    else if (g_keypad.menu_selection==9){
+*/
+    else if (g_keypad.menu_selection==8){
        lcd_put_cur(1, 0);
        lcd_send_string(">WIFI DA LUU");
+    }
+    else if (g_keypad.menu_selection==9){
+       lcd_put_cur(1, 0);
+       lcd_send_string(">GOI SO BO QUA");
+    }
+    else if (g_keypad.menu_selection==10){
+       lcd_put_cur(1, 0);
+       lcd_send_string(">TU DONG KET NOI");
     }
 
     lcd_unlock();
@@ -446,6 +461,44 @@ void lcd_show_delete_wifi_options(void) {
     lcd_unlock();
 }
 
+void lcd_show__auto_connect_options(void) {
+    
+    lcd_lock();
+    lcd_clear();
+    lcd_put_cur(0, 0);
+    char header[17] = {0};
+    snprintf(header, sizeof(header), "*TU DONG KET NOI");
+    lcd_send_string(header);
+    lcd_put_cur(1,1);
+    lcd_send_string("1.YES");
+    lcd_put_cur(1,11);
+    lcd_send_string("2.NO");
+   
+    char line[2] = {0};
+    
+    if (g_keypad.auto_connect_option==1){
+
+        snprintf(line, sizeof(line), ">");
+        lcd_put_cur(1, 0);
+        lcd_send_string(line);
+        lcd_put_cur(1, 10);
+        lcd_send_string(" ");
+    
+    }
+
+    else {
+
+        snprintf(line, sizeof(line), ">");
+        lcd_put_cur(1, 10);
+        lcd_send_string(line);
+        lcd_put_cur(1, 0);
+        lcd_send_string(" ");
+
+    }
+  
+    lcd_unlock();
+}
+
 void lcd_show_saved_wifi(void) {
     wifi_list *list = calloc(1, sizeof(wifi_list));
     if (!list) {
@@ -475,13 +528,20 @@ void lcd_show_saved_wifi(void) {
     lcd_send_string("*WIFI DA LUU:");
 
     char display_saved_wifi[17];
-    snprintf(display_saved_wifi, sizeof(display_saved_wifi),
-           ">%.*s", 15, list->aps[g_keypad.wifi_position].ssid);
+    
     display_saved_wifi[16] = '\0';
 
 
     
-    if (strlen(list->aps[g_keypad.wifi_position].ssid)<=15){
+    if (strlen(list->aps[g_keypad.wifi_position].ssid)<=14){//15
+        if (g_keypad.wifi_position!=g_keypad.best_saved_index){
+            snprintf(display_saved_wifi, sizeof(display_saved_wifi),
+                ">%.*s", 14, list->aps[g_keypad.wifi_position].ssid);
+            }
+        else {
+            snprintf(display_saved_wifi, sizeof(display_saved_wifi),
+            ">%.*s*", 14, list->aps[g_keypad.wifi_position].ssid);
+        }
         lcd_put_cur(1,0);
         lcd_send_string("                ");
         lcd_put_cur(1,0);
@@ -489,12 +549,88 @@ void lcd_show_saved_wifi(void) {
     }
     else {
        // strncpy(ssid_scroll_buffer,list->aps[g_keypad.wifi_position].ssid,sizeof(ssid_scroll_buffer));
-        sprintf(ssid_scroll_buffer,"%s   ",list->aps[g_keypad.wifi_position].ssid);
+       if (g_keypad.wifi_position!=g_keypad.best_saved_index){
+            sprintf(ssid_scroll_buffer,"%s   ",list->aps[g_keypad.wifi_position].ssid);
+        }
+       else {
+            sprintf(ssid_scroll_buffer,"%s*   ",list->aps[g_keypad.wifi_position].ssid);
+       }
         set_ssid_scroll_enable(true);//
     }
 
     free(list);
     
+}
+
+void lcd_show_saved_wifi_option(void) {
+    lcd_lock();
+    lcd_clear();
+    lcd_put_cur(0, 0);
+    lcd_send_string("*TUY CHON:");
+    if (g_keypad.saved_wifi_option==1){
+        lcd_put_cur(1, 0);
+        lcd_send_string(">XOA WIFI");
+    }
+    else if (g_keypad.saved_wifi_option==2){
+       lcd_put_cur(1, 0);
+       lcd_send_string(">TU DONG KET NOI");
+    }
+    lcd_unlock();
+}
+
+void service_scroll_task1(void *pvParameter) {
+    static uint8_t scroll_round = 0;
+
+    while (1) {
+
+        if (get_scroll_enable()) {
+
+            xSemaphoreTake(g_mutex.display_service_mutex, portMAX_DELAY);
+
+            uint8_t len = strlen(service_scroll_buffer);
+            if (len == 0) {
+                xSemaphoreGive(g_mutex.display_service_mutex);
+                vTaskDelay(pdMS_TO_TICKS(500));
+                continue;
+            }
+
+            g_keypad.display_service[0] = '>';
+
+            for (int i = 0; i < 15; i++) {
+                uint8_t idx = (service_scroll_pos + i) % len;
+                g_keypad.display_service[i + 1] = service_scroll_buffer[idx];
+
+                /* quay về đầu chuỗi = hoàn thành 1 vòng */
+                if (idx == 0 && i == 0) {
+                    scroll_round++;
+                }
+            }
+
+            g_keypad.display_service[16] = '\0';
+
+            lcd_put_cur(1, 0);
+            lcd_send_string("                ");
+            lcd_put_cur(1, 0);
+            lcd_send_string(g_keypad.display_service);
+
+            service_scroll_pos++;
+
+            if (service_scroll_pos >= len) {
+                service_scroll_pos = 0;
+            }
+
+            /* 👉 DỪNG SAU 1 VÒNG */
+            if (scroll_round >= 1) {
+                scroll_round = 0;
+                service_scroll_pos = 0;
+                set_scroll_enable(false);   // tắt scroll
+            }
+
+            xSemaphoreGive(g_mutex.display_service_mutex);
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
 }
 
 
@@ -505,9 +641,10 @@ void service_scroll_task(void *pvParameter) {
 
         if (get_scroll_enable()) {
 
-            //service_scroll_pos = 0;//
 
-            xSemaphoreTake(g_mutex.display_service_mutex,portMAX_DELAY);
+            //service_scroll_pos = 0;//
+            xSemaphoreTake(g_mutex.display_service_mutex, portMAX_DELAY);//
+
 
             uint8_t len = strlen(service_scroll_buffer);
 
@@ -518,13 +655,19 @@ void service_scroll_task(void *pvParameter) {
                 uint8_t idx = (service_scroll_pos + i) % len;// vd: len=20, pos<=len: 1%20=1 20%20=0, pos>len: 21%20=1
                
                 g_keypad.display_service[i + 1] = service_scroll_buffer[idx];//i+1 vì bắt đầu hiển thị từ vị trí 0 trên lcd (vị trí 0 là '>')
-              
+               
+                
             }
 
             g_keypad.display_service[16] = '\0';
 
             
             lcd_lock();
+            //lcd_clear();//
+            //lcd_put_cur(0, 0);//
+            //lcd_send_string("*CHON DICH VU:");//
+            lcd_put_cur(1, 0);
+            lcd_send_string("                 ");//
             lcd_put_cur(1, 0);
             lcd_send_string(g_keypad.display_service);//lcd_str
             lcd_unlock();
@@ -536,11 +679,13 @@ void service_scroll_task(void *pvParameter) {
                 service_scroll_pos = 0;                  
                 
             }
-            xSemaphoreGive(g_mutex.display_service_mutex);
-            vTaskDelay(pdMS_TO_TICKS(500)); //
+                
+           // vTaskDelay(pdMS_TO_TICKS(200)); //
+            xSemaphoreGive(g_mutex.display_service_mutex);//
+           
         }
 
-        vTaskDelay(pdMS_TO_TICKS(50)); //500
+        vTaskDelay(pdMS_TO_TICKS(500)); //500
     }
 }
 

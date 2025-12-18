@@ -4,21 +4,29 @@ Command: ninja flash
 Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
 [2/10] No install step for 'bootloader'
 [3/10] Completed 'bootloader'
-[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c: In function 'wifi_init':
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:1614:18: warning: unused variable 'netif' [-Wunused-variable]
- 1614 |     esp_netif_t *netif = esp_netif_get_handle_from_ifkey("WIFI_STA_DEF");
-      |                  ^~~~~
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c: At top level:
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:1536:13: warning: 'wifi_prov_event_handler' defined but not used [-Wunused-function]
- 1536 | static void wifi_prov_event_handler(void* arg, esp_event_base_t event_base,
-      |             ^~~~~~~~~~~~~~~~~~~~~~~
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:77:26: warning: 'selected_id_mutex' defined but not used [-Wunused-variable]
-   77 | static SemaphoreHandle_t selected_id_mutex = NULL;
-      |                          ^~~~~~~~~~~~~~~~~
-D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/hello_world_main.c:72:26: warning: 'wifi_config_mutex' defined but not used [-Wunused-variable]
-   72 | static SemaphoreHandle_t wifi_config_mutex = NULL;
-      |                          ^~~~~~~~~~~~~~~~~
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lcd_i2c/lcd_option_handler.c.obj
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_user_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:91:24: warning: passing argument 1 of 'lcd_send_string' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   91 |        lcd_send_string(number);
+      |                        ^~~~~~
+In file included from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/esp_mqtt_client/esp_mqtt_client.h:12,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/keypad/keypad.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:4,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/state_machine/state_machine.h:11,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/mutex/mutex.h:8,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/wifi/wifi.h:10,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.h:7,
+                 from D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:1:
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:28:29: note: expected 'char *' but argument is of type 'const char *'
+   28 | void lcd_send_string (char *str);  // send string to the lcd
+      |                       ~~~~~~^~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c: In function 'lcd_show_new_user_pass':
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/lcd_option_handler.c:101:24: warning: passing argument 1 of 'lcd_send_string' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  101 |        lcd_send_string(number);
+      |                        ^~~~~~
+D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/main/lcd_i2c/i2c-lcd.h:28:29: note: expected 'char *' but argument is of type 'const char *'
+   28 | void lcd_send_string (char *str);  // send string to the lcd
+      |                       ~~~~~~^~~
 [5/10] Linking C static library esp-idf\main\libmain.a
 [6/10] Generating esp-idf/esp_system/ld/sections.ld
 [7/10] Linking CXX executable hello_world.elf
@@ -29,16 +37,17 @@ Merged 2 ELF sections
 Successfully created esp32 image.
 Generated D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D "D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\esp-idf\esptool_py" && D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/partition_table/partition-table.bin" "D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build/hello_world.bin""
-hello_world.bin binary size 0xe4670 bytes. Smallest app partition is 0x100000 bytes. 0x1b990 bytes (11%) free.
+hello_world.bin binary size 0xe8210 bytes. Smallest app partition is 0x100000 bytes. 0x17df0 bytes (9%) free.
 [9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\components\esptool_py && D:\ESP32_IDF\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5 -D SERIAL_TOOL=D:/ESP32_IDF/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/examples/get-started/agribank demo/build" -P D:/ESP32_IDF/Espressif/frameworks/esp-idf-v5.5/components/esptool_py/run_serial_tool.cmake"
-esptool.py --chip esp32 -p COM9 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
 esptool.py v4.9.1
-Serial port COM9
+Serial port COM3
 Connecting....
 Chip is ESP32-D0WD-V3 (revision v3.0)
 Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+WARNING: Detected crystal freq 41.01MHz is quite different to normalized freq 40MHz. Unsupported crystal in use?
 Crystal is 40MHz
-MAC: 94:e6:86:09:a4:78
+MAC: a8:42:e3:4c:7c:bc
 Uploading stub...
 Running stub...
 Stub running...
@@ -46,56 +55,57 @@ Changing baud rate to 460800
 Changed.
 Configuring flash size...
 Flash will be erased from 0x00001000 to 0x00007fff...
-Flash will be erased from 0x00010000 to 0x000f4fff...
+Flash will be erased from 0x00010000 to 0x000f8fff...
 Flash will be erased from 0x00008000 to 0x00008fff...
 SHA digest in image updated
 Compressed 26240 bytes to 16493...
 Writing at 0x00001000... (50 %)
 Writing at 0x000075f5... (100 %)
-Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.8 seconds (effective 279.7 kbit/s)...
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.5 seconds (effective 384.5 kbit/s)...
 Hash of data verified.
-Compressed 935536 bytes to 584166...
+Compressed 950800 bytes to 592607...
 Writing at 0x00010000... (2 %)
-Writing at 0x0001cdc9... (5 %)
-Writing at 0x00028509... (8 %)
-Writing at 0x00031560... (11 %)
-Writing at 0x000393c1... (13 %)
-Writing at 0x0003ed3c... (16 %)
-Writing at 0x000449ab... (19 %)
-Writing at 0x0004a7c7... (22 %)
-Writing at 0x00050227... (25 %)
-Writing at 0x0005623c... (27 %)
-Writing at 0x0005c172... (30 %)
-Writing at 0x00061a7c... (33 %)
-Writing at 0x000676b1... (36 %)
-Writing at 0x0006d497... (38 %)
-Writing at 0x00073272... (41 %)
-Writing at 0x00078dd5... (44 %)
-Writing at 0x0007ebc8... (47 %)
-Writing at 0x00084f79... (50 %)
-Writing at 0x0008ade9... (52 %)
-Writing at 0x00090958... (55 %)
-Writing at 0x00095e8f... (58 %)
-Writing at 0x0009b472... (61 %)
-Writing at 0x000a129a... (63 %)
-Writing at 0x000a6c8c... (66 %)
-Writing at 0x000ac392... (69 %)
-Writing at 0x000b1dae... (72 %)
-Writing at 0x000b7b0d... (75 %)
-Writing at 0x000bd434... (77 %)
-Writing at 0x000c31d0... (80 %)
-Writing at 0x000c8bf6... (83 %)
-Writing at 0x000ce53a... (86 %)
-Writing at 0x000d6872... (88 %)
-Writing at 0x000df324... (91 %)
-Writing at 0x000e50fc... (94 %)
-Writing at 0x000eb58f... (97 %)
-Writing at 0x000f08a9... (100 %)
-Wrote 935536 bytes (584166 compressed) at 0x00010000 in 13.2 seconds (effective 566.9 kbit/s)...
+Writing at 0x0001cd8a... (5 %)
+Writing at 0x0002868d... (8 %)
+Writing at 0x00031ee4... (10 %)
+Writing at 0x0003a0b6... (13 %)
+Writing at 0x0003f9f0... (16 %)
+Writing at 0x00045542... (18 %)
+Writing at 0x0004b30f... (21 %)
+Writing at 0x00050e69... (24 %)
+Writing at 0x00056eb5... (27 %)
+Writing at 0x0005ced9... (29 %)
+Writing at 0x00062850... (32 %)
+Writing at 0x000684a5... (35 %)
+Writing at 0x0006e2f0... (37 %)
+Writing at 0x00073fec... (40 %)
+Writing at 0x00079aea... (43 %)
+Writing at 0x0007f818... (45 %)
+Writing at 0x00085d34... (48 %)
+Writing at 0x0008bb64... (51 %)
+Writing at 0x00091831... (54 %)
+Writing at 0x00096dac... (56 %)
+Writing at 0x0009c17f... (59 %)
+Writing at 0x000a1e51... (62 %)
+Writing at 0x000a79d4... (64 %)
+Writing at 0x000ad1ea... (67 %)
+Writing at 0x000b2a16... (70 %)
+Writing at 0x000b8838... (72 %)
+Writing at 0x000be170... (75 %)
+Writing at 0x000c3cf4... (78 %)
+Writing at 0x000c9a42... (81 %)
+Writing at 0x000cf27e... (83 %)
+Writing at 0x000d4a83... (86 %)
+Writing at 0x000df5ad... (89 %)
+Writing at 0x000e59dc... (91 %)
+Writing at 0x000ebd3c... (94 %)
+Writing at 0x000f18ba... (97 %)
+Writing at 0x000f6e8d... (100 %)
+Wrote 950800 bytes (592607 compressed) at 0x00010000 in 13.7 seconds (effective 556.6 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 103...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 418.3 kbit/s)...
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 909.7 kbit/s)...
 Hash of data verified.
 
 Leaving...

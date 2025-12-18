@@ -11,6 +11,6 @@ void mqtt_publish_device_id(const char *id) ;
 
 void mqtt_publish_service_id(const char *id);
 
-
+void request_skipnumber();
 
 #endif

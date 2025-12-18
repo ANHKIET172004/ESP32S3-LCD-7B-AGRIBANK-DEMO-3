@@ -4,7 +4,7 @@ extern char temp_buff[17];
 
 
 void wifi_config(){
-            //esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, g_keypad.saved_pass, &g_state.password_len, NULL);
+          //  esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, g_keypad.saved_pass, &g_state.password_len, NULL);
             //if (err == ESP_OK && strlen(g_keypad.saved_ssid) > 0) {
             if ( strlen(g_keypad.saved_ssid) > 0) {
                 ESP_LOGI("STATE_MACHINE", "Have a saved wifi network in NVS: %s", g_keypad.saved_ssid);
@@ -16,7 +16,7 @@ void wifi_config(){
                 strncpy((char *)wifi_config.sta.password, g_keypad.saved_pass, sizeof(wifi_config.sta.password) - 1);
                 memcpy(wifi_config.sta.bssid,g_keypad.saved_bssid,6);
 
-                wifi_config.sta.bssid_set=false;//
+               // wifi_config.sta.bssid_set=true;//
 
                 wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK;
                 esp_wifi_disconnect();
@@ -26,9 +26,11 @@ void wifi_config(){
                 esp_wifi_connect();
                 set_sys_state(STATE_WIFI_CONNECT);
             } else {
-                lcd_show_message("KHONG CO WIFI", "");
-                vTaskDelay(pdMS_TO_TICKS(800));
-                set_sys_state(STATE_RUNNING);
+                //lcd_show_message("KHONG CO WIFI", "");
+                //vTaskDelay(pdMS_TO_TICKS(800));
+                //set_sys_state(STATE_RUNNING);
+                set_sys_state(STATE_NO_WIFI);
+
             }
 }
 

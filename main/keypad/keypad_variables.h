@@ -30,7 +30,7 @@ typedef struct {
     //char        wifi_ssid[17];
     char        wifi_pass[64];//17
     uint8_t     bssid[6];
-    char        saved_ssid[32] ;//17
+    char        saved_ssid[33] ;//17//32
     char        saved_pass[64] ;//17
     uint8_t     saved_bssid[6];
     int         current_mode;
@@ -96,6 +96,9 @@ typedef struct {
     int          cursor_col;
     char         display_service[17];
     char         display_saved_ssid[33];
+    uint8_t      best_saved_index;
+    uint8_t      saved_wifi_option;
+    uint8_t      auto_connect_option;
 
 
 

@@ -40,7 +40,9 @@ enum Mode {
     MODE_SAVED_WIFI=12,
     MODE_DELETE_WIFI_OPTION=13,
     MODE_DELETE_USER_PASS=14,
-    
+    MODE_SAVED_WIFI_OPTION=15,
+    MODE_AUTO_CONNECT=16,
+    MODE_AUTO_CONNECT_WIFI=17,
 
 };
 
@@ -67,6 +69,9 @@ void process_key_new_user_pass(char key);
 void process_key_option_select(char key) ;
 void process_saved_wifi_select(char key);
 void process_key_delete_wifi_option(char key) ;
+void process_key_saved_wifi_option(char key) ;
+void process_auto_connect_option(char key) ;
+void process_key_auto_connect_wifi(char key) ;
 void process_key(char key) ;
 void old_screen_reload();
 

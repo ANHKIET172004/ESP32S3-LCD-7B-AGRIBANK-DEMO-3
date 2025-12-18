@@ -198,6 +198,52 @@ void save_wifi_credentials(const char *ssid, const char *password, const uint8_t
     nvs_close(nvs_handle);
 }
 
+void delete_wifi_credentials_from_nvs(void)
+{
+    nvs_handle_t nvs_handle;
+    esp_err_t err = nvs_open("wifi_cred", NVS_READWRITE, &nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to open NVS handle (%s)!", esp_err_to_name(err));
+        return;
+    }
+
+    // Xóa SSID
+    err = nvs_erase_key(nvs_handle, "ssid");
+    if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) {
+        ESP_LOGE(TAG, "Failed to erase ssid (%s)", esp_err_to_name(err));
+        goto fail;
+    }
+
+    // Xóa password
+    err = nvs_erase_key(nvs_handle, "password");
+    if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) {
+        ESP_LOGE(TAG, "Failed to erase password (%s)", esp_err_to_name(err));
+        goto fail;
+    }
+
+    /*
+    err = nvs_erase_key(nvs_handle, "bssid");
+    if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) {
+        ESP_LOGE(TAG, "Failed to erase bssid (%s)", esp_err_to_name(err));
+        goto fail;
+    }
+    */
+
+    err = nvs_commit(nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to commit erase (%s)", esp_err_to_name(err));
+        goto fail;
+    }
+
+    ESP_LOGI(TAG, "Wi-Fi credentials deleted successfully");
+
+    nvs_close(nvs_handle);
+    return;
+
+fail:
+    nvs_close(nvs_handle);
+}
+
 void save_wifi_credentials2(const char *ssid, const char *password, const uint8_t* bssid){
     if (!ssid||!password) return;
 

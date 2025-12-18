@@ -9,6 +9,7 @@ extern uint8_t service_scroll_pos;
 
 extern uint8_t ssid_scroll_pos;
 
+bool requestskip=false;
 
 void select_option(){
       backup_input_buffer();
@@ -211,6 +212,7 @@ void select_option(){
 
         }
             */
+           /*
         else if (g_keypad.menu_selection==8){
 
             set_sys_state(STATE_NEW_USER_PASS);
@@ -218,7 +220,8 @@ void select_option(){
             
 
         }
-        else if (g_keypad.menu_selection==9){
+            */
+        else if (g_keypad.menu_selection==8){
             ssid_scroll_pos = 0;
             g_keypad.wifi_position=0;
             lcd_clear();//
@@ -226,6 +229,17 @@ void select_option(){
             //lcd_show_saved_wifi();//
             g_keypad.current_mode=MODE_SAVED_WIFI;
             //lcd_clear();//
+        }
+        else if (g_keypad.menu_selection==9){
+            requestskip=true;
+            //request_skipnumber();
+
+        }
+
+        else if (g_keypad.menu_selection==10){
+            g_keypad.current_mode=MODE_AUTO_CONNECT_WIFI;
+            set_sys_state(STATE__AUTO_CONNECT_WIFI);
+
         }
 
 

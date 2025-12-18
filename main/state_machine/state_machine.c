@@ -9,10 +9,10 @@ state_context_t g_state={
     . display_state = DISPLAY_IDLE,
     . prev_display_state = DISPLAY_IDLE,
     . display_update_time = 0,
-    //. sys_state = STATE_INIT,
-    //. prev_sys_state = STATE_INIT,
-    . sys_state = STATE_LOGOUT,//
-    . prev_sys_state = STATE_LOGOUT,//
+    . sys_state = STATE_INIT,
+    . prev_sys_state = STATE_INIT,
+    //. sys_state = STATE_LOGOUT,//
+    //. prev_sys_state = STATE_LOGOUT,//
     . state_enter_time = 0,
     . system_task_handle = NULL,
     . selected_ssid = {0},
@@ -59,7 +59,8 @@ void handle_display(void) {
            
             break;
         case DISPLAY_LOGOUT:
-            lcd_show_message("  DA DANG XUAT!"," \"A\"->DANG NHAP");
+            //lcd_show_message("  DA DANG XUAT!"," \"A\"->DANG NHAP");
+            lcd_show_message("  DA DONG QUAY!"," \"A\"  ->MO QUAY");
             break;
         case DISPLAY_USER_PASS:
 
@@ -130,6 +131,43 @@ void handle_display(void) {
              break;
         case DISPLAY_NO_DATA:
              lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU");
+             break;
+        case DISPLAY_SAVED_WIFI_OPTION:
+              lcd_show_saved_wifi_option();
+              break;
+        case DISPLAY_NO_WIFI:
+              
+             lcd_show_message("KHONG CO WIFI", "");
+
+              break;
+        case DISPLAY_AUTO_CONNECT:
+             lcd_show__auto_connect_options();
+             break;
+        case DISPLAY_AUTO_CONNECT_WIFI:
+        esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, 
+            g_keypad.saved_pass, &g_state.password_len, NULL);
+             if (err == ESP_OK) {
+                if (strlen(g_keypad.saved_ssid)<=16){
+                set_ssid_scroll_enable(false);
+                lcd_clear();
+                lcd_put_cur(0,0);
+                lcd_put_cur(0,0);
+                lcd_send_string("*WIFI KET NOI:");
+                lcd_put_cur(1,0);
+                lcd_send_string(g_keypad.saved_ssid);
+                }
+                else {
+                    set_ssid_scroll_enable(true);
+                }
+                }
+            else {
+                lcd_clear();
+                lcd_put_cur(0,0);
+                lcd_send_string("TU DONG KET NOI:");
+                lcd_put_cur(1,0);
+                lcd_send_string("KHONG CO WIFI");
+            }
+
              break;
         case DISPLAY_WIFI_INPUT:
 
@@ -233,6 +271,18 @@ void update_display_state(void) {
              set_display_state(DISPLAY_NO_DATA);
              break;
         
+        case STATE_SAVED_WIFI_OPTION:
+              set_display_state(DISPLAY_SAVED_WIFI_OPTION);
+              break;
+        case STATE_NO_WIFI:
+              set_display_state(DISPLAY_NO_WIFI);
+              break;
+        case STATE_AUTO_CONNECT:
+              set_display_state(DISPLAY_AUTO_CONNECT);
+              break;
+        case STATE__AUTO_CONNECT_WIFI:
+                set_display_state(DISPLAY_AUTO_CONNECT_WIFI);
+                break;
         default:
             set_display_state(DISPLAY_IDLE);
             break;
@@ -348,7 +398,30 @@ void system_state_update(){
                 break;
             case STATE_USER_LIST:
                  break;
+            case STATE_SAVED_WIFI_OPTION:
+                 break;
+            case STATE_AUTO_CONNECT:
+                 break;
+            case STATE__AUTO_CONNECT_WIFI:
+                 break;
+            case STATE_NO_WIFI:
+            {
+                  uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
+
+                if (get_sys_state() != g_state.prev_sys_state) {
+                    g_state.state_enter_time = current_time;
+                }
+                
+                if (current_time - g_state.state_enter_time >= STATE_DISPLAY_DURATION) {
+                    g_keypad.current_mode=MODE_NORMAL;//
+                    set_sys_state(STATE_RUNNING);//
+                }
+
+                esp_task_wdt_reset();
+                 break;
+            }
             case STATE_USER_PASSWORD_ERROR:
+            {
             uint32_t current_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
                 if (get_sys_state() !=g_state. prev_sys_state) {
                     g_state.state_enter_time = current_time;
@@ -360,9 +433,10 @@ void system_state_update(){
                 }
                 esp_task_wdt_reset();
                 break;
-
+            }
             default:
-                set_sys_state(STATE_LOGOUT);
+                //set_sys_state(STATE_LOGOUT);
+                set_sys_state(STATE_INIT);
                 
                 break;
         }
