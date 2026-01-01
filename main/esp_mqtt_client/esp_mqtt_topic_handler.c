@@ -8,16 +8,13 @@ extern char current_number[5] ;
 
 extern char device_name[7] ;
 
-
+extern char counter_id[3];
 extern esp_mqtt_client_handle_t mqtt_client;
 
 static void sort_device_list_by_counter(void)
 {
     for (int i = 0; i < g_keypad.device_count - 1; i++) {
         for (int j = i + 1; j < g_keypad.device_count; j++) {
-
-            //int c1 = atoi(g_keypad.device_list[i].counter_id);
-            //int c2 = atoi(g_keypad.device_list[j].counter_id);
 
             int c1 = extract_counter_number(g_keypad.device_list[i].counter_id);
             int c2 = extract_counter_number(g_keypad.device_list[j].counter_id);
@@ -48,6 +45,7 @@ static void sort_device_list_by_counter(void)
             if (!root) {
                 ESP_LOGE(TAG, "Failed to parse responsenumber JSON");
                 //continue;
+                cJSON_Delete(root);//
                 return ;
             }
 
@@ -84,17 +82,19 @@ static void sort_device_list_by_counter(void)
 
                         if(g_keypad.skip==true){
                         
-                         sprintf(send_number,"{\"device_id\":\"%s\",\"number\":\"%s\",\"skip\":\"yes\"}",g_keypad.selected_device_id,num->valuestring);
+                          snprintf(send_number,sizeof(send_number),"{\"device_id\":\"%s\",\"number\":\"%s\",\"skip\":\"yes\"}",
+                          g_keypad.selected_device_id,num->valuestring);
 
                         }
                         else {
                         
-                         sprintf(send_number,"{\"device_id\":\"%s\",\"number\":\"%s\",\"skip\":\"no\"}",g_keypad.selected_device_id,num->valuestring);
+                          snprintf(send_number,sizeof(send_number),"{\"device_id\":\"%s\",\"number\":\"%s\",\"skip\":\"no\"}",
+                          g_keypad.selected_device_id,num->valuestring);
 
                         }
 
                         if (g_keypad.recall==false){
-                         esp_mqtt_client_publish(mqtt_client, "number", send_number, 0, 0, 0);   
+                           esp_mqtt_client_publish(mqtt_client, "number", send_number, 0, 0, 0);   
                         }
                         else {
                             g_keypad.recall=false;
@@ -109,17 +109,18 @@ static void sort_device_list_by_counter(void)
                           size_t num_len = sizeof(g_keypad.prev_number);
                         size_t status_len = 12;
                         char temp_status[12] = {0};
-                                    if (read_current_number_from_nvs(g_keypad.prev_number, &num_len) == ESP_OK && 
-                        strlen(g_keypad.prev_number) > 0 &&
-                        read_current_number_status_from_nvs(temp_status, status_len) == ESP_OK &&
-                        strlen(temp_status) > 0) {
-                        
-                        char display[DISPLAY_LINE_MAX + 1] = {0};
-                        snprintf(display, sizeof(display), "%s:%s", temp_status, g_keypad.prev_number);
-                        update_temp_buff(display);
-                    } else {
-                        update_temp_buff("___");
-                    }            
+                        if (read_current_number_from_nvs(g_keypad.prev_number, &num_len) == ESP_OK && 
+                            strlen(g_keypad.prev_number) > 0 &&
+                            read_current_number_status_from_nvs(temp_status, status_len) == ESP_OK &&
+                            strlen(temp_status) > 0) {
+                            
+                            char display[DISPLAY_LINE_MAX + 1] = {0};
+                            snprintf(display, sizeof(display), "%s:%s", temp_status, g_keypad.prev_number);
+                            update_temp_buff(display);
+                        } 
+                        else {
+                            update_temp_buff("___");
+                        }            
 
                        // sys_state=STATE_MQTT_ERROR;
                         set_display_state(DISPLAY_MAIN_SCREEN);
@@ -132,7 +133,7 @@ static void sort_device_list_by_counter(void)
 };
 
  void device_list_handler(mqtt_message_t msg){
-     ESP_LOGI(TAG,"%S",msg.payload);
+     ESP_LOGI(TAG,"%s",msg.payload);
     cJSON *root = cJSON_Parse(msg.payload);
     if (!root) {
         ESP_LOGE(TAG, "Failed to parse device/list JSON");
@@ -220,12 +221,12 @@ static void sort_device_list_by_counter(void)
                 strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name, 15);
                 char device_name_new[11]={0};
                 //sprintf(device_name_new,"%s (X)",device_name);
-                sprintf(device_name_new,"%s*",device_name);
+                sprintf(device_name_new,"%s *",device_name);
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
                 strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name_new, 15);
                 g_keypad.device_list[g_keypad.device_count].name[15] = '\0';
-                save_counter_id(g_keypad.device_list[g_keypad.device_count].counter_id
-);
+                save_counter_id(g_keypad.device_list[g_keypad.device_count].counter_id);
+                strcpy(counter_id,g_keypad.device_list[g_keypad.device_count].counter_id);//
                 xSemaphoreGive(g_mutex.device_list_mutex);//
 
             } 
@@ -255,11 +256,12 @@ static void sort_device_list_by_counter(void)
 }
 
  void service_list_handler(mqtt_message_t msg){
-                ESP_LOGI(TAG,"%S",msg.payload);
+            ESP_LOGI(TAG,"%S",msg.payload);
 
             cJSON *root = cJSON_Parse(msg.payload);
             if (!root) {
                 ESP_LOGE(TAG, "Failed to parse service/list JSON");
+                cJSON_Delete(root);//
                 return;
                 //continue;
             }
@@ -270,7 +272,6 @@ static void sort_device_list_by_counter(void)
                 return;
                 //continue;
             }
-
            
                 g_keypad.service_count = 0;
                 cJSON *item = NULL;
@@ -294,12 +295,9 @@ static void sort_device_list_by_counter(void)
                         
                         custom_string(name->valuestring, service_name, 
                                         sizeof(service_name));
-                                    
-                        //strncpy(g_keypad.service_list[g_keypad.service_count].name, service_name, 15);
-                        //g_keypad.service_list[g_keypad.service_count].name[15] = '\0';
 
-                        strncpy(g_keypad.service_list[g_keypad.service_count].name, service_name, 64);//
-                        g_keypad.service_list[g_keypad.service_count].name[64] = '\0';//
+                        strncpy(g_keypad.service_list[g_keypad.service_count].name, service_name, sizeof(g_keypad.service_list[g_keypad.service_count].name)-1);//
+                        g_keypad.service_list[g_keypad.service_count].name[sizeof(g_keypad.service_list[g_keypad.service_count].name)-1] = '\0';//
 
                         xSemaphoreGive(g_mutex.service_list_mutex);//
                         

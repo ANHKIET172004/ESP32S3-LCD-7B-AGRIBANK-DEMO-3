@@ -42,7 +42,13 @@ void select_option(){
             */
         }
 
-        else if (g_keypad.menu_selection == 2) {
+        else if (g_keypad.menu_selection==2){
+            //requestskip=true;
+            request_skipnumber();
+
+        }
+
+        else if (g_keypad.menu_selection == 3) {
            if (g_keypad.device_list_ready && g_keypad.device_count > 0) {
                 g_keypad.selected_index = 0;
                 g_keypad.in_selection_mode = true;
@@ -60,7 +66,7 @@ void select_option(){
             }
         }
 
-        else if (g_keypad.menu_selection == 3) {
+        else if (g_keypad.menu_selection == 4) {
            if (g_keypad.service_list_ready && g_keypad.service_count > 0) {
                 g_keypad.selected_index2 = 0;
                 g_keypad.in_selection_mode = true;
@@ -79,7 +85,7 @@ void select_option(){
             }
         }
 
-        else if (g_keypad.menu_selection == 4) {
+        else if (g_keypad.menu_selection == 5) {
                char json_msg[128]={0};
                sprintf(json_msg,"Device_id:");
                uint8_t mac[6];
@@ -92,10 +98,10 @@ void select_option(){
             }
 
                //strcpy(selected_id,mac_str);
-               xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
+               //xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
 
                esp_mqtt_client_publish(mqtt_client, "device/register", mac_str , 0, 0, 0);
-               xSemaphoreGive(g_mutex.mqtt_mutex);
+               //xSemaphoreGive(g_mutex.mqtt_mutex);
 
 
                g_keypad.current_mode=MODE_NORMAL;
@@ -103,6 +109,7 @@ void select_option(){
                
         }
 
+        /*
          else if (g_keypad.menu_selection == 5) {
            if (g_keypad.device_list_ready && g_keypad.device_count > 0) {
                 g_keypad.selected_index = 0;
@@ -112,14 +119,12 @@ void select_option(){
                 //lcd_show_device_list();
                 //lcd_show_user_list();
             } else {
-                /*
-                lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU");
-                vTaskDelay(pdMS_TO_TICKS(1500));
-                g_keypad.current_mode = MODE_NORMAL;
-                */
+               
                set_sys_state(STATE_NO_DATA);
             }
         }
+           */ 
+        
 
 
 
@@ -221,6 +226,7 @@ void select_option(){
 
         }
             */
+           /*
         else if (g_keypad.menu_selection==8){
             ssid_scroll_pos = 0;
             g_keypad.wifi_position=0;
@@ -230,18 +236,21 @@ void select_option(){
             g_keypad.current_mode=MODE_SAVED_WIFI;
             //lcd_clear();//
         }
-        else if (g_keypad.menu_selection==9){
-            requestskip=true;
-            //request_skipnumber();
+            */
 
-        }
-
+            
+/*
         else if (g_keypad.menu_selection==10){
             g_keypad.current_mode=MODE_AUTO_CONNECT_WIFI;
             set_sys_state(STATE__AUTO_CONNECT_WIFI);
 
         }
+        else if (g_keypad.menu_selection==11){
+            g_keypad.current_mode=MODE_CONNECTING_WIFI;
+            set_sys_state(STATE_CONNECTING_WIFI);
 
+        }
+*/
 
 }
 

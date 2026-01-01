@@ -195,6 +195,7 @@ void lcd_show_device_list(void) {
     read_current_counter_id();//
     
     //if ((strcmp(g_keypad.device_list[g_keypad. selected_index].device_id,g_keypad.selected_device_id)==0)&&(strcmp(g_keypad.device_list[g_keypad. selected_index].user_id,current_user_id)!=0)){
+  /*
     if (strcmp(g_keypad.device_list[g_keypad. selected_index].device_id,g_keypad.selected_device_id)==0){    
     lcd_put_cur(1,strlen(g_keypad.device_list[g_keypad.selected_index].name)+2);
     lcd_send_string("(V)");
@@ -206,7 +207,7 @@ void lcd_show_device_list(void) {
     }
     
     }
-      
+      */
 
     xSemaphoreGive(g_mutex.device_list_mutex);//
     lcd_unlock();
@@ -328,34 +329,41 @@ void lcd_show_menu(void) {
     lcd_put_cur(0, 0);
     lcd_send_string("*CAI DAT");
     if (g_keypad.menu_selection==1){
-    lcd_put_cur(1, 0);
-    lcd_send_string(">CAU HINH WIFI");
+        lcd_put_cur(1, 0);
+        lcd_send_string(">KET NOI WIFI");
     }
     else if (g_keypad.menu_selection==2){
        lcd_put_cur(1, 0);
-       lcd_send_string(">CHUYEN QUAY");
+       lcd_send_string(">GOI SO BO QUA");
     }
     else if (g_keypad.menu_selection==3){
        lcd_put_cur(1, 0);
-       lcd_send_string(">CHUYEN DICH VU");
+       lcd_send_string(">CHUYEN QUAY");
     }
     else if (g_keypad.menu_selection==4){
        lcd_put_cur(1, 0);
+       lcd_send_string(">CHUYEN DICH VU");
+    }
+    else if (g_keypad.menu_selection==5){
+       lcd_put_cur(1, 0);
        lcd_send_string(">DANG KY TB");
     }
-
+/*
     else if (g_keypad.menu_selection==5){
        lcd_put_cur(1, 0);
        lcd_send_string(">CHUYEN TB");
     }
+       */
     else if (g_keypad.menu_selection==6){
-       lcd_put_cur(1, 0);
-       lcd_send_string(">RESET");
-    }
-    else if (g_keypad.menu_selection==7){
        lcd_put_cur(1, 0);
        lcd_send_string(">DONG QUAY");
     }
+
+    else if (g_keypad.menu_selection==7){
+       lcd_put_cur(1, 0);
+       lcd_send_string(">RESET");
+    }
+
     /*
     else if (g_keypad.menu_selection==8){
        lcd_put_cur(1, 0);
@@ -368,19 +376,23 @@ void lcd_show_menu(void) {
        lcd_send_string(">DOI MAT KHAU");
     }
 */
+/*
     else if (g_keypad.menu_selection==8){
        lcd_put_cur(1, 0);
        lcd_send_string(">WIFI DA LUU");
     }
-    else if (g_keypad.menu_selection==9){
-       lcd_put_cur(1, 0);
-       lcd_send_string(">GOI SO BO QUA");
-    }
+       */
+
+    /*
     else if (g_keypad.menu_selection==10){
        lcd_put_cur(1, 0);
        lcd_send_string(">TU DONG KET NOI");
     }
-
+    else if (g_keypad.menu_selection==11){
+       lcd_put_cur(1, 0);
+       lcd_send_string(">DANG KET NOI");
+    }
+*/
     lcd_unlock();
 }
 
@@ -533,15 +545,17 @@ void lcd_show_saved_wifi(void) {
 
 
     
-    if (strlen(list->aps[g_keypad.wifi_position].ssid)<=14){//15
-        if (g_keypad.wifi_position!=g_keypad.best_saved_index){
+    if (strlen(list->aps[g_keypad.wifi_position].ssid)<=15){//15
+       // if (g_keypad.wifi_position!=g_keypad.best_saved_index){
             snprintf(display_saved_wifi, sizeof(display_saved_wifi),
                 ">%.*s", 14, list->aps[g_keypad.wifi_position].ssid);
-            }
+         //   }
+         /*
         else {
             snprintf(display_saved_wifi, sizeof(display_saved_wifi),
             ">%.*s*", 14, list->aps[g_keypad.wifi_position].ssid);
         }
+            */
         lcd_put_cur(1,0);
         lcd_send_string("                ");
         lcd_put_cur(1,0);
@@ -549,12 +563,14 @@ void lcd_show_saved_wifi(void) {
     }
     else {
        // strncpy(ssid_scroll_buffer,list->aps[g_keypad.wifi_position].ssid,sizeof(ssid_scroll_buffer));
-       if (g_keypad.wifi_position!=g_keypad.best_saved_index){
+      // if (g_keypad.wifi_position!=g_keypad.best_saved_index){
             sprintf(ssid_scroll_buffer,"%s   ",list->aps[g_keypad.wifi_position].ssid);
-        }
+      //  }
+      /*
        else {
             sprintf(ssid_scroll_buffer,"%s*   ",list->aps[g_keypad.wifi_position].ssid);
        }
+            */
         set_ssid_scroll_enable(true);//
     }
 
@@ -578,60 +594,6 @@ void lcd_show_saved_wifi_option(void) {
     lcd_unlock();
 }
 
-void service_scroll_task1(void *pvParameter) {
-    static uint8_t scroll_round = 0;
-
-    while (1) {
-
-        if (get_scroll_enable()) {
-
-            xSemaphoreTake(g_mutex.display_service_mutex, portMAX_DELAY);
-
-            uint8_t len = strlen(service_scroll_buffer);
-            if (len == 0) {
-                xSemaphoreGive(g_mutex.display_service_mutex);
-                vTaskDelay(pdMS_TO_TICKS(500));
-                continue;
-            }
-
-            g_keypad.display_service[0] = '>';
-
-            for (int i = 0; i < 15; i++) {
-                uint8_t idx = (service_scroll_pos + i) % len;
-                g_keypad.display_service[i + 1] = service_scroll_buffer[idx];
-
-                /* quay về đầu chuỗi = hoàn thành 1 vòng */
-                if (idx == 0 && i == 0) {
-                    scroll_round++;
-                }
-            }
-
-            g_keypad.display_service[16] = '\0';
-
-            lcd_put_cur(1, 0);
-            lcd_send_string("                ");
-            lcd_put_cur(1, 0);
-            lcd_send_string(g_keypad.display_service);
-
-            service_scroll_pos++;
-
-            if (service_scroll_pos >= len) {
-                service_scroll_pos = 0;
-            }
-
-            /* 👉 DỪNG SAU 1 VÒNG */
-            if (scroll_round >= 1) {
-                scroll_round = 0;
-                service_scroll_pos = 0;
-                set_scroll_enable(false);   // tắt scroll
-            }
-
-            xSemaphoreGive(g_mutex.display_service_mutex);
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(500));
-    }
-}
 
 
 void service_scroll_task(void *pvParameter) {
@@ -682,10 +644,11 @@ void service_scroll_task(void *pvParameter) {
                 
            // vTaskDelay(pdMS_TO_TICKS(200)); //
             xSemaphoreGive(g_mutex.display_service_mutex);//
+            vTaskDelay(pdMS_TO_TICKS(500)); 
            
         }
 
-        vTaskDelay(pdMS_TO_TICKS(500)); //500
+        vTaskDelay(pdMS_TO_TICKS(50)); //500
     }
 }
 

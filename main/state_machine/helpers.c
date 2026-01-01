@@ -4,9 +4,12 @@ extern char temp_buff[17];
 
 
 void wifi_config(){
-          //  esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, g_keypad.saved_pass, &g_state.password_len, NULL);
-            //if (err == ESP_OK && strlen(g_keypad.saved_ssid) > 0) {
-            if ( strlen(g_keypad.saved_ssid) > 0) {
+          size_t ssid_len=sizeof(g_keypad.saved_ssid);
+          size_t password_len=sizeof(g_keypad.saved_pass);
+          
+          esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &ssid_len, g_keypad.saved_pass, &password_len, NULL);
+              if (err == ESP_OK && strlen(g_keypad.saved_ssid) > 0) {
+           // if ( strlen(g_keypad.saved_ssid) > 0) {
                 ESP_LOGI("STATE_MACHINE", "Have a saved wifi network in NVS: %s", g_keypad.saved_ssid);
                 
                 set_wifi_retry_count(0);

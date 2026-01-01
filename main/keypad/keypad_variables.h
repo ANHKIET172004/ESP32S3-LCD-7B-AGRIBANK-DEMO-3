@@ -99,7 +99,7 @@ typedef struct {
     uint8_t      best_saved_index;
     uint8_t      saved_wifi_option;
     uint8_t      auto_connect_option;
-
+    char         connecting_wifi[33];
 
 
 } keypad_context_t;

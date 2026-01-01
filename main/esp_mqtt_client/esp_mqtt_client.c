@@ -54,37 +54,49 @@ extern keypad_context_t g_keypad;
 extern mutex_context_t g_mutex;
 
 
-void custom_string(const char *input, char *output, size_t output_len) {
-    if (input == NULL || output == NULL) return;
-    
+void custom_string(const char *input, char *output, size_t output_len)
+{
+    if (!input || !output || output_len == 0) return;
+
+    size_t out_idx = 0;
+    size_t i = 0;
+
     memset(output, 0, output_len);
-    int out_idx = 0;
-    int i = 0;
-    
+
     while (input[i] && out_idx < output_len - 1) {
         int matched = 0;
-        
+
         for (int j = 0; accent_map[j].accent != NULL; j++) {
-            int accent_len = strlen(accent_map[j].accent);
+            size_t accent_len = strlen(accent_map[j].accent);
+            size_t replace_len = strlen(accent_map[j].replacement);
+
+            // đảm bảo input còn đủ byte 
+            if (strlen(&input[i]) < accent_len) continue;
+
             if (strncmp(&input[i], accent_map[j].accent, accent_len) == 0) {
-                int replace_len = strlen(accent_map[j].replacement);
-                if (out_idx + replace_len < output_len) {
-                    strcpy(&output[out_idx], accent_map[j].replacement);
-                    out_idx += replace_len;
-                    i += accent_len;// i+=accent_len thay vì i++; vì 1 ký tự có dấu có thể có nhiều hơn 1 phần tử char
-                    matched = 1;
+
+                // đảm bảo output còn đủ chỗ + '\0' 
+                if (out_idx + replace_len >= output_len)
                     break;
+
+                for (size_t k = 0; k < replace_len; k++) {
+                    output[out_idx++] = accent_map[j].replacement[k];
                 }
+
+                i += accent_len;
+                matched = 1;
+                break;
             }
         }
-        
+
         if (!matched) {
-            output[out_idx++] = input[i++];// ko matched->ký tự ko dấu, chỉ có 1 byte nên index input và output chỉ tăng 1 
+            output[out_idx++] = input[i++];
         }
     }
-    
-    output[out_idx] = '\0';
+
+    output[out_idx] = '\0';// quan trọng//
 }
+
 
 
 void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
@@ -99,7 +111,6 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             set_mqtt_connected(true);  
             char str[128]={0};
             sprintf(str, "{\"device_id\":\"%s\",\"status\":\"online\"}",g_keypad.default_id);
-            xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
 
             esp_mqtt_client_publish(mqtt_client, "device/status", str, 0, 1, true);
 
@@ -107,11 +118,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             esp_mqtt_client_subscribe(event->client, "device/list", 1);
             esp_mqtt_client_subscribe(event->client, "service/list", 1);
             esp_mqtt_client_subscribe(event->client, "feedback_status", 0);
-
-
-            
-           xSemaphoreGive(g_mutex.mqtt_mutex);
-
+        
             break;
 
         case MQTT_EVENT_DISCONNECTED:
@@ -181,8 +188,7 @@ void mqtt_init(void) {
         //.network.timeout_ms = 60000,  
 
         .session = {
-            //.keepalive = 60,
-            .keepalive = 30,
+            .keepalive = 15,
             .disable_clean_session = false,
             .last_will.topic = "device/status",
 
@@ -268,11 +274,9 @@ void mqtt_process_task(void *pvParameters) {
 
                 if (read_current_number_from_nvs(current_num,&num_len)==ESP_OK){
 
-                xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
 
                 esp_mqtt_client_publish(mqtt_client, "check current number", current_num, 0, 0, 0);
 
-                xSemaphoreGive(g_mutex.mqtt_mutex);
                // led_on();
                 }
              }

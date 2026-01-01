@@ -28,6 +28,7 @@ typedef enum {
     STATE_NO_WIFI,
     STATE_AUTO_CONNECT,
     STATE__AUTO_CONNECT_WIFI,
+    STATE_CONNECTING_WIFI,
 } SystemState;
 
 typedef enum {
@@ -58,6 +59,8 @@ typedef enum {
     DISPLAY_NO_WIFI=24,
     DISPLAY_AUTO_CONNECT=25,
     DISPLAY_AUTO_CONNECT_WIFI=26,
+    DISPLAY_CONNECTING_WIFI=27,
+
 
 } DisplayState;
 

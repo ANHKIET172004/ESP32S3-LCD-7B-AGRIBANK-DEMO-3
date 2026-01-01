@@ -161,12 +161,9 @@ void call_number(){
         } else if(get_mqtt_connected())  {
             
             g_keypad.skip=false;
-            //set_publish(true); 
              char json_msg[64];
             sprintf(json_msg, "{\"device_id\":\"%s\",\"request\":\"number\"}",g_keypad.selected_device_id);//
-            xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
             esp_mqtt_client_publish(mqtt_client, "requestnumber", json_msg, 0, 0, 0);
-            xSemaphoreGive(g_mutex.mqtt_mutex);
 
         }
     
@@ -190,13 +187,10 @@ void skip_number(){
            reload_oldscreen();
         } else if (get_mqtt_connected()) {
             
-            xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
             //esp_mqtt_client_publish(mqtt_client, "skipnumber_display", "skip", 0, 0, 0);
             char json_msg[128];
             sprintf(json_msg,"{\"device_id\":\"%s\"}",g_keypad.selected_device_id);//
             esp_mqtt_client_publish(mqtt_client, "skipnumber", json_msg, 0, 0, 0);
-            xSemaphoreGive(g_mutex.mqtt_mutex);
-
             
         }
         return;
@@ -215,9 +209,7 @@ void recall_number(){
         } else if(get_mqtt_connected()) {
             char json_msg[128];
             sprintf(json_msg,"{\"device_id\":\"%s\"}",g_keypad.selected_device_id);//
-            xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
             esp_mqtt_client_publish(mqtt_client, "recallnumber", json_msg, 0, 0, 0);
-            xSemaphoreGive(g_mutex.mqtt_mutex);
 
         }
         return;
@@ -282,9 +274,7 @@ void check_user_pass(){
         g_keypad.key_press_count = 0;
         ///
 
-        xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
         esp_mqtt_client_publish(mqtt_client, "reset_number", "reset", 0, 0, 0);
-        xSemaphoreGive(g_mutex.mqtt_mutex);
 
         //save_login_status("YES");
         if (start1==true){

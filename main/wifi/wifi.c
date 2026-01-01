@@ -118,6 +118,10 @@ for (int i=0;i<list->count;i++){
     memcpy(g_keypad.saved_bssid,list->aps[best_saved_index].bssid,6);
     g_keypad.best_saved_index=best_saved_index;//
 
+    memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
+    strncpy(g_keypad.connecting_wifi,g_keypad.saved_ssid,sizeof(g_keypad.connecting_wifi)-1);//
+    g_keypad.connecting_wifi[sizeof(g_keypad.connecting_wifi)-1]='\0';//
+
     free(ap_info);
     free(list);
 }
@@ -133,7 +137,6 @@ for (int i=0;i<list->count;i++){
         ESP_LOGI(TAG, "WiFi connected, got IP");
         set_sys_state(STATE_WIFI_SUCCESS);
         g_keypad.current_mode = MODE_NORMAL;//
-        //set_mqtt_start(true);
         set_wifi_retry_count(0);
 
         set_wifi_connected(true);
@@ -151,14 +154,18 @@ for (int i=0;i<list->count;i++){
 
         if (get_user_selected_wifi()) {  
             set_user_selected_wifi(false);  
-            //save_wifi_credentials(g_keypad.wifi_ssid, g_keypad.wifi_pass, NULL);
+            save_wifi_credentials(g_keypad.wifi_ssid, g_keypad.wifi_pass, NULL);
           
-            save_wifi_credentials1(g_keypad.wifi_ssid, g_keypad.wifi_pass, ap.bssid);
+           // save_wifi_credentials1(g_keypad.wifi_ssid, g_keypad.wifi_pass, ap.bssid);
+           // memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
+           // strncpy(g_keypad.connecting_wifi,g_keypad.wifi_ssid,sizeof(g_keypad.connecting_wifi)-1);
+           // g_keypad.connecting_wifi[sizeof(g_keypad.connecting_wifi)-1]='\0';
             
 
 
 
         }
+
     }
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_CONNECTED) {
         wifi_event_sta_connected_t *ev = (wifi_event_sta_connected_t *) event_data;
@@ -167,7 +174,9 @@ for (int i=0;i<list->count;i++){
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
         wifi_event_sta_disconnected_t* ev = (wifi_event_sta_disconnected_t*) event_data;
         ESP_LOGI(TAG, "STA disconnected, reason=%d", ev->reason);
-
+       // g_keypad.connecting_wifi[0]='\0';//
+       //memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
+       //sprintf(g_keypad.connecting_wifi,"KHONG CO WIFI");
 
 
         if (get_user_selected_wifi()) { //trường hợp lỗi khi người dùng nhập wifi trực tiếp từ keypad

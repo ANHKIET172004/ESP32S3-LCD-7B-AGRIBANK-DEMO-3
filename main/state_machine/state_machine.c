@@ -4,6 +4,8 @@
 #define TAG "STATE_MACHINE"
  char temp_buff[17] = {0};
 
+ extern char ssid_scroll_buffer[37];
+
 state_context_t g_state={
 
     . display_state = DISPLAY_IDLE,
@@ -17,8 +19,8 @@ state_context_t g_state={
     . system_task_handle = NULL,
     . selected_ssid = {0},
     . selected_pass = {0},
-    . ssid_len = sizeof(g_state.selected_ssid),
-    . password_len = sizeof(g_state.selected_pass),
+    //. ssid_len = sizeof(g_state.selected_ssid),
+    //. password_len = sizeof(g_state.selected_pass),
 
 };
 
@@ -52,7 +54,8 @@ void handle_display(void) {
         
         case DISPLAY_WIFI_ERROR:
             lcd_show_message("TRANG THAI WIFI:", "THAT BAI!");
-            
+            memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
+            sprintf(g_keypad.connecting_wifi,"KHONG CO WIFI");//
             break;
         case DISPLAY_MQTT_ERROR:
             lcd_show_message("GOI THAT BAI!", "KHONG KET NOI!");
@@ -143,9 +146,28 @@ void handle_display(void) {
         case DISPLAY_AUTO_CONNECT:
              lcd_show__auto_connect_options();
              break;
+        case DISPLAY_CONNECTING_WIFI:
+             if (strlen(g_keypad.connecting_wifi)<=16){
+                    set_ssid_scroll_enable(false);
+                    lcd_clear();
+                    lcd_put_cur(0,0);
+                    lcd_put_cur(0,0);
+                    lcd_send_string("*WIFI KET NOI:");
+                    lcd_put_cur(1,0);
+                    lcd_send_string(g_keypad.connecting_wifi);
+                    }
+             else {     
+                    sprintf(ssid_scroll_buffer,"%s   ",g_keypad.connecting_wifi);
+
+                    set_ssid_scroll_enable(true);
+                    }
+             break;
         case DISPLAY_AUTO_CONNECT_WIFI:
-        esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, 
-            g_keypad.saved_pass, &g_state.password_len, NULL);
+
+        size_t ssid_len=sizeof(g_keypad.saved_ssid);
+        size_t password_len=sizeof(g_keypad.saved_pass);
+        esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &ssid_len, 
+            g_keypad.saved_pass, &password_len, NULL);
              if (err == ESP_OK) {
                 if (strlen(g_keypad.saved_ssid)<=16){
                 set_ssid_scroll_enable(false);
@@ -157,6 +179,8 @@ void handle_display(void) {
                 lcd_send_string(g_keypad.saved_ssid);
                 }
                 else {
+                    sprintf(ssid_scroll_buffer,"%s   ",g_keypad.saved_ssid);
+
                     set_ssid_scroll_enable(true);
                 }
                 }
@@ -186,10 +210,10 @@ void handle_display(void) {
              lcd_put_cur(1, g_keypad.cursor_col);
              lcd_send_cmd(0x0F);
 
-                    break;
+            break;
         case DISPLAY_IDLE:
         default:
-                    break;
+            break;
     }
     
     g_state.prev_display_state = get_display_state();
@@ -282,6 +306,9 @@ void update_display_state(void) {
               break;
         case STATE__AUTO_CONNECT_WIFI:
                 set_display_state(DISPLAY_AUTO_CONNECT_WIFI);
+                break;
+        case STATE_CONNECTING_WIFI:
+                set_display_state(DISPLAY_CONNECTING_WIFI);
                 break;
         default:
             set_display_state(DISPLAY_IDLE);
@@ -403,6 +430,8 @@ void system_state_update(){
             case STATE_AUTO_CONNECT:
                  break;
             case STATE__AUTO_CONNECT_WIFI:
+                 break;
+            case STATE_CONNECTING_WIFI:
                  break;
             case STATE_NO_WIFI:
             {

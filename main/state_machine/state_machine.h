@@ -31,8 +31,8 @@ uint32_t state_enter_time ;
 TaskHandle_t system_task_handle;
 char selected_ssid[17];
 char selected_pass[17] ;
-size_t ssid_len ;
-size_t password_len;
+//size_t ssid_len ;
+//size_t password_len;
 
 
 } state_context_t;
