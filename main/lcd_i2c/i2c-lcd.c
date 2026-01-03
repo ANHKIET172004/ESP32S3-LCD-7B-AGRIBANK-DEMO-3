@@ -104,7 +104,7 @@ void lcd_init(void)
     esp_rom_delay_us(1000);
 }
 
-void lcd_send_string (char *str)
+void lcd_send_string (const char *str)
 {
 	while (*str) lcd_send_data (*str++);
 }

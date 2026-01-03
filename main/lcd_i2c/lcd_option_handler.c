@@ -12,7 +12,7 @@ extern char current_counter_id[3];
 extern char counter_id[3];
 
 extern bool start;
-extern uint8_t start_cnt;
+//extern uint8_t start_cnt;
 
 uint8_t scroll_cnt=0;
 
@@ -34,16 +34,23 @@ void lcd_show_main_screen(const char *number) {
 
 
     lcd_put_cur(0, 0);
-    sprintf(display,"ID:%s  STATUS:OK",counter_id);//
+    //sprintf(display,"ID:%s  STATUS:OK",counter_id);//
+    sprintf(display,"ID:%s",counter_id);//
     lcd_send_string(display);
+    lcd_put_cur(0,7);
+    lcd_send_string("STATUS:OK");
+    
+
 
     }
     else if (!get_mqtt_connected()) {
         
-        lcd_put_cur(0, 0);
-       sprintf(display,"ID:%s  STATUS:NO",counter_id);//
+    lcd_put_cur(0, 0);
+       //sprintf(display,"ID:%s  STATUS:NO",counter_id);//
+       sprintf(display,"ID:%s",counter_id);//
        lcd_send_string(display);
-
+       lcd_put_cur(0,7);
+       lcd_send_string("STATUS:NO");
     }
 
     lcd_put_cur(1, 0);
@@ -190,7 +197,16 @@ void lcd_show_device_list(void) {
     char line[17] = {0};
 
     xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
+    //if (strcmp(g_keypad.device_list[g_keypad.selected_index].device_id, g_keypad.default_id)!=0){//
     snprintf(line, sizeof(line), ">%s", g_keypad.device_list[g_keypad.selected_index].name);    
+    //}
+   
+    //else {
+    //snprintf(line, sizeof(line), ">%s*", g_keypad.device_list[g_keypad.selected_index].name); 
+     
+
+  //  }
+    
     lcd_send_string(line);
     read_current_counter_id();//
     
@@ -211,9 +227,12 @@ void lcd_show_device_list(void) {
 
     xSemaphoreGive(g_mutex.device_list_mutex);//
     lcd_unlock();
+    
+   
 }
 
 
+/*
 void lcd_show_user_list(void) {
     
     lcd_lock();
@@ -244,7 +263,7 @@ void lcd_show_user_list(void) {
     xSemaphoreGive(g_mutex.device_list_mutex);//
     lcd_unlock();
 }
-
+*/
 void lcd_show_position_list(void) {
     
     lcd_lock();
@@ -295,21 +314,22 @@ void lcd_show_service_list(void) {
     xSemaphoreGive(g_mutex.service_list_mutex);
 
     //lcd_clear();
+    lcd_lock();//
     lcd_put_cur(0, 0);
     lcd_send_string("*CHON DICH VU:");
-
+    lcd_unlock();//
 
     int len = strlen(full_name);
     
     if (len <= 15) {
-      //  lcd_lock();
+        lcd_lock();
         set_scroll_enable(false);
         lcd_put_cur(1,0);
         lcd_send_string("                ");
         lcd_put_cur(1, 0);
         lcd_send_string(">");
         lcd_send_string(full_name);
-       // lcd_unlock();
+        lcd_unlock();
     } 
     else {
         

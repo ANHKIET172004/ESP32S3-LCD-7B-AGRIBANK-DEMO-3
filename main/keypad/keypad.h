@@ -55,7 +55,7 @@ typedef struct {
 } accent_map_t;
 
 
-extern uint8_t start_cnt ;
+//extern uint8_t start_cnt ;
 
 
 

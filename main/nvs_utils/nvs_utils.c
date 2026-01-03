@@ -372,7 +372,7 @@ void delete_wifi_credentials(uint8_t index){
     wifi_list* list=calloc(1,sizeof(wifi_list));
     load_wifi_list(list);
 
-    if (index<0||index>list->count){
+    if (index>list->count){
         ESP_LOGI(TAG,"INVALID INDEX");
 
     }

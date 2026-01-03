@@ -8,7 +8,7 @@
 
 typedef struct {
     char device_id[18];// mac id
-    char name[16];
+    char name[16];//16
     //char name[64];
     char counter_id[3];
 } DeviceInfo;

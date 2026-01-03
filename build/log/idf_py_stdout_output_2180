@@ -1,0 +1,430 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM11 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM11'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=209e8h (133608) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030a10 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030a38 vaddr=3ffb0000 size=04c48h ( 19528) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=00035688 vaddr=40080000 size=0a990h ( 43408) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a8054h (688212) map[0m
+[0;32mI (398) esp_image: segment 5: paddr=000e807c vaddr=4008a990 size=0e954h ( 59732) load[0m
+[0;32mI (434) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (434) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (453) cpu_start: Pro cpu start user code[0m
+[0;32mI (453) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (453) app_init: Application information:[0m
+[0;32mI (453) app_init: Project name:     hello_world[0m
+[0;32mI (457) app_init: App version:      c572475-dirty[0m
+[0;32mI (461) app_init: Compile time:     Jan  2 2026 22:24:12[0m
+[0;32mI (466) app_init: ELF file SHA256:  ffad5c62c...[0m
+[0;32mI (471) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (475) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (479) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (483) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (487) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (493) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFB9590 len 00026A70 (154 KiB): DRAM[0m
+[0;32mI (503) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (514) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (521) spi_flash: detected chip: generic[0m
+[0;32mI (523) spi_flash: flash io: dio[0m
+[0;33mW (526) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (538) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (549) main_task: Started on CPU0[0m
+[0;32mI (559) main_task: Calling app_main()[0m
+[0;32mI (559) LED: LED initialized on GPIO 2[0m
+[0;32mI (559) LED: LED OFF[0m
+[0;32mI (559) DEMO: I2C initialized successfully[0m
+[0;32mI (1449) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1469) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1479) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (1489) wifi:wifi driver task: 3ffc273c, prio:23, stack:6656, core=0[0m
+[0;32mI (1499) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1499) wifi:wifi certification version: v7.0[0m
+[0;32mI (1499) wifi:config NVS flash: enabled[0m
+[0;32mI (1499) wifi:config nano formatting: disabled[0m
+[0;32mI (1509) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1509) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1509) wifi:Init management short buffer num: 32[0m
+[0;32mI (1519) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1519) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1529) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1529) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1539) wifi_init: rx ba win: 6[0m
+[0;32mI (1539) wifi_init: accept mbox: 6[0m
+[0;32mI (1539) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1539) wifi_init: udp mbox: 6[0m
+[0;32mI (1549) wifi_init: tcp mbox: 6[0m
+[0;32mI (1549) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1549) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1559) wifi_init: tcp mss: 1440[0m
+[0;32mI (1559) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1559) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1659) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1729) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1729) wifi:enable tsf[0m
+[0;32mI (1739) WIFI: WiFi initialized[0m
+[0;32mI (1739) WIFI: WiFi STA started[0m
+Free heap: 178348 bytes
+[0;32mI (1739) STATE_MACHINE: System FSM task started[0m
+[0;32mI (1839) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1879) wifi:flush txq[0m
+[0;32mI (1879) wifi:stop sw txq[0m
+[0;32mI (1879) wifi:lmac stop hw txq[0m
+[0;32mI (1889) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1889) wifi:enable tsf[0m
+[0;32mI (1889) WIFI: WiFi STA started[0m
+[0;32mI (1939) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1939) wifi:state: init -> auth (0xb0)[0m
+Free heap: 178016 bytes
+[0;32mI (2939) wifi:state: auth -> init (0x200)[0m
+[0;32mI (2949) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2949) WIFI: STA disconnected, reason=2[0m
+[0;32mI (2959) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2959) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2989) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3029) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3119) wifi:connected with NamTrung, aid = 30, channel 6, BW20, bssid = 10:5f:02:75:17:10[0m
+[0;32mI (3129) wifi:security: WPA2-PSK, phy: bgn, rssi: -82[0m
+[0;32mI (3139) wifi:pm start, type: 1[0m
+
+[0;32mI (3139) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3139) WIFI: Connected to SSID:NamTrung, channel:6[0m
+Free heap: 176940 bytes
+[0;32mI (4239) esp_netif_handlers: sta ip: 10.10.1.53, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (4239) WIFI: WiFi connected, got IP[0m
+[0;32mI (4239) WIFI: Connected BSSID: 10:5F:02:75:17:10[0m
+[0;32mI (4239) WIFI: SSID: NamTrung, RSSI: -82[0m
+Free heap: 177140 bytes
+[0;32mI (5309) MQTT: Registered device with WiFi STA MAC: {"device_id":"B8:D6:1A:B9:DA:A4","status":"offline"}[0m
+[0;32mI (5309) MQTT: MQTT initialized[0m
+[0;32mI (5329) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (5479) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:17:10), tid:7, ssn:5, winSize:64[0m
+[0;32mI (5519) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:17:10), tid:0, ssn:1, winSize:64[0m
+Free heap: 164396 bytes
+[0;32mI (5789) LED: LED ON[0m
+[0;32mI (5789) MQTT: MQTT connected[0m
+Free heap: 162752 bytes
+[0;32mI (7359) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (7359) MQTT: Processing topic: device/list[0m
+[0;32mI (7359) MQTT: Processing topic data: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (7359) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (7389) MQTT: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (7409) MQTT: Extracted counter ID: 1 from name: quầy 1[0m
+[0;32mI (7409) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7419) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (7419) MQTT: Extracted counter ID: 2 from name: quầy 2[0m
+[0;32mI (7419) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7429) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (7429) MQTT: Extracted counter ID: 3 from name: quầy 3[0m
+[0;32mI (7439) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7439) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (7449) MQTT: Found current device (MAC match): B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7449) NVS_UTILS: User ID saved successfully: 3[0m
+[0;32mI (7459) MQTT: Extracted counter ID: 4 from name: quầy 4[0m
+[0;32mI (7459) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7469) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (7469) MQTT: Extracted counter ID: 5 from name: quầy 5[0m
+[0;32mI (7479) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (7479) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (7479) MQTT: Device list updated: 5 devices[0m
+[0;32mI (7489) MQTT: Sorted device list successfully[0m
+[0;32mI (7509) MQTT: Processing topic: service/list[0m
+[0;32mI (7509) MQTT: Processing topic data: [{"id":7,"name":"Giao dich duoi 1 ty"},{"id":9,"name":"Giao dich khac"},{"id":10,"name":"Lay so cho vui"},{"id":1,"name":"Giao dich tren 1 ty"}][0m
+[0;32mI (7519) MQTT: [{"id":7,"name":"Giao dich duoi 1 ty"},{"id":9,"name":"Giao dich khac"},{"id":10,"name":"Lay so cho vui"},{"id":1,"name":"Giao dich tren 1 ty"}][0m
+[0;32mI (7539) MQTT: Service list updated: 4 services[0m
+Free heap: 166272 bytes
+Free heap: 166272 bytes
+Free heap: 166272 bytes
+Free heap: 166272 bytes
+Free heap: 166272 bytes
+Free heap: 166272 bytes
+[0;32mI (13489) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (13489) MQTT: Processing topic: responsenumber[0m
+[0;32mI (13489) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"2611","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166264 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (15779) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 164520 bytes
+[0;32mI (21799) wifi:bcn_timeout,ap_probe_send_start[0m
+Free heap: 164704 bytes
+[0;32mI (23079) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (23079) MQTT: Processing topic: responsenumber[0m
+[0;32mI (23089) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"4625","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 4"}[0m
+[0;32mI (23179) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (23179) MQTT: Processing topic: responsenumber[0m
+[0;32mI (23179) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3612","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166260 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (31269) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (31269) MQTT: Processing topic: responsenumber[0m
+[0;32mI (31269) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3613","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 163012 bytes
+[0;32mI (32639) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (32649) MQTT: Processing topic: responsenumber[0m
+[0;32mI (32649) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"2612","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 1"}[0m
+Free heap: 164324 bytes
+Free heap: 164576 bytes
+[0;32mI (34089) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (34089) MQTT: Processing topic: responsenumber[0m
+[0;32mI (34089) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1623","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 1"}[0m
+[0;32mI (34329) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (34329) MQTT: Processing topic: responsenumber[0m
+[0;32mI (34329) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1624","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (34339) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (34359) NVS_UTILS: current number saved successfully![0m
+Free heap: 164440 bytes
+[0;32mI (34799) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (34799) MQTT: Processing topic: responsenumber[0m
+[0;32mI (34799) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"1625","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (34809) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (34819) NVS_UTILS: current number saved successfully![0m
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+[0;32mI (37059) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (37059) MQTT: Processing topic: responsenumber[0m
+[0;32mI (37059) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3614","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (37069) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (37079) NVS_UTILS: current number saved successfully![0m
+Free heap: 166008 bytes
+[0;32mI (38399) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (38409) MQTT: Processing topic: responsenumber[0m
+[0;32mI (38409) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3615","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (38419) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (38429) NVS_UTILS: current number saved successfully![0m
+Free heap: 162880 bytes
+[0;32mI (38949) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (38949) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (38949) MQTT: Processing topic: responsenumber[0m
+[0;32mI (38949) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4626","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 2"}[0m
+[0;32mI (38989) MQTT: Processing topic: responsenumber[0m
+[0;32mI (38989) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3616","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (38989) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (39009) NVS_UTILS: current number saved successfully![0m
+Free heap: 166008 bytes
+[0;32mI (40719) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (40729) MQTT: Processing topic: responsenumber[0m
+[0;32mI (40729) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4627","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 162880 bytes
+[0;32mI (40839) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (40839) MQTT: Processing topic: responsenumber[0m
+[0;32mI (40849) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3617","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (40859) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (40869) NVS_UTILS: current number saved successfully![0m
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+[0;32mI (43589) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (43589) MQTT: Processing topic: responsenumber[0m
+[0;32mI (43589) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3618","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (43599) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (43619) NVS_UTILS: current number saved successfully![0m
+[0;32mI (43699) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (43709) MQTT: Processing topic: responsenumber[0m
+[0;32mI (43709) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3619","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (43719) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (43729) NVS_UTILS: current number saved successfully![0m
+Free heap: 164172 bytes
+Free heap: 166008 bytes
+[0;32mI (45449) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (45449) MQTT: Processing topic: responsenumber[0m
+[0;32mI (45449) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4628","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 5"}[0m
+[0;32mI (45589) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (45589) MQTT: Processing topic: responsenumber[0m
+[0;32mI (45589) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3620","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (45599) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (45619) NVS_UTILS: current number saved successfully![0m
+Free heap: 166008 bytes
+Free heap: 164180 bytes
+Free heap: 166008 bytes
+[0;32mI (48629) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (48629) MQTT: Processing topic: responsenumber[0m
+[0;32mI (48629) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"3621","service_name":"Giao dich khac","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (48649) NVS_UTILS: current number saved successfully![0m
+[0;32mI (48699) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (48699) MQTT: Processing topic: responsenumber[0m
+[0;32mI (48699) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"4629","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+Free heap: 164180 bytes
+[0;32mI (50789) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (50789) MQTT: Processing topic: responsenumber[0m
+[0;32mI (50789) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"4630","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (50799) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (50819) NVS_UTILS: current number saved successfully![0m
+[0;32mI (50949) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (50949) MQTT: Processing topic: responsenumber[0m
+[0;32mI (50949) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2613","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (50959) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (50969) NVS_UTILS: current number saved successfully![0m
+Free heap: 164448 bytes
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+[0;32mI (55249) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (55249) MQTT: Processing topic: responsenumber[0m
+[0;32mI (55249) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2614","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (55259) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (55269) NVS_UTILS: current number saved successfully![0m
+[0;32mI (55369) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (55379) MQTT: Processing topic: responsenumber[0m
+[0;32mI (55379) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2615","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (55389) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (55399) NVS_UTILS: current number saved successfully![0m
+[0;32mI (55539) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (55539) MQTT: Processing topic: responsenumber[0m
+[0;32mI (55539) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4631","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 5"}[0m
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+[0;32mI (58059) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58059) MQTT: Processing topic: responsenumber[0m
+[0;32mI (58059) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"4632","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (58069) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (58079) NVS_UTILS: current number saved successfully![0m
+[0;32mI (58219) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (58219) MQTT: Processing topic: responsenumber[0m
+[0;32mI (58219) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+Free heap: 165776 bytes
+[0;32mI (59029) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+Free heap: 166008 bytes
+Free heap: 166008 bytes
+[0;32mI (61469) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (61469) MQTT: Processing topic: responsenumber[0m
+[0;32mI (61469) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+[0;32mI (61579) MQTT: MQTT_EVENT_DATA[0m
+Free heap: 165780 bytes
+[0;32mI (62279) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (62299) MQTT: Processing topic: responsenumber[0m
+[0;32mI (62299) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+Free heap: 165780 bytes
+[0;32mI (63099) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (63299) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (63309) MQTT: Processing topic: responsenumber[0m
+[0;32mI (63309) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"4633","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 4"}[0m
+[0;32mI (63489) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (63489) MQTT: Processing topic: responsenumber[0m
+[0;32mI (63489) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+Free heap: 165780 bytes
+[0;32mI (64289) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+[0;32mI (70459) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (70459) MQTT: Processing topic: responsenumber[0m
+[0;32mI (70459) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"1626","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 4"}[0m
+[0;32mI (70689) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (70689) MQTT: Processing topic: responsenumber[0m
+[0;32mI (70689) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+Free heap: 165776 bytes
+[0;32mI (71489) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+Free heap: 166012 bytes
+Free heap: 164444 bytes
+[0;32mI (72739) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (72749) MQTT: Processing topic: responsenumber[0m
+[0;32mI (72749) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3622","service_name":"Giao dich khac","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+[0;32mI (77249) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (77249) MQTT: Processing topic: responsenumber[0m
+[0;32mI (77249) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"2616","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 3"}[0m
+[0;32mI (77259) NVS_UTILS: Status saved successfully: SO DANG GOI[0m
+[0;32mI (77269) NVS_UTILS: current number saved successfully![0m
+[0;32mI (77289) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (77289) MQTT: Processing topic: responsenumber[0m
+[0;32mI (77289) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"NoAvailable"}[0m
+[0;32mI (77369) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (77369) MQTT: Processing topic: responsenumber[0m
+[0;32mI (77369) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+Free heap: 165780 bytes
+[0;32mI (78179) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+[0;32mI (86569) wifi:bcn_timeout,ap_probe_send_start[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+[0;32mI (88609) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (88619) MQTT: Processing topic: responsenumber[0m
+[0;32mI (88619) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1627","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 1"}[0m
+[0;32mI (88709) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (88719) MQTT: Processing topic: responsenumber[0m
+[0;32mI (88719) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4634","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 5"}[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+[0;32mI (91679) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (91679) MQTT: Processing topic: responsenumber[0m
+[0;32mI (91679) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3623","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+[0;32mI (91709) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (91719) MQTT: Processing topic: responsenumber[0m
+[0;32mI (91719) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3624","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+[0;32mI (95269) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (95269) MQTT: Processing topic: responsenumber[0m
+[0;32mI (95269) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+[0;32mI (95419) MQTT: MQTT_EVENT_DATA[0m
+Free heap: 165772 bytes
+[0;32mI (96069) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (96089) MQTT: Processing topic: responsenumber[0m
+[0;32mI (96089) MQTT: Processing topic data: {"device_id":"B8:D6:1A:B9:DA:A4","number":"NoAvailable"}[0m
+[0;32mI (96519) MQTT: MQTT_EVENT_DATA[0m
+Free heap: 165780 bytes
+[0;32mI (96889) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (96909) MQTT: Processing topic: responsenumber[0m
+[0;32mI (96909) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2617","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes
+Free heap: 166012 bytes

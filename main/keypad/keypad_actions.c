@@ -219,6 +219,12 @@ void recall_number(){
 
 void publish_device_id(){
 
+        if (!get_mqtt_connected()) { 
+           
+           reload_oldscreen();
+           return;
+        }
+
         g_keypad.skip=true;
 
         backup_input_buffer();
@@ -243,6 +249,11 @@ void publish_device_id(){
 };
 
 void publish_service_id(){
+        if (!get_mqtt_connected()) { 
+           
+           reload_oldscreen();
+           return;
+        }
             if (g_keypad. selected_positon==false){
             g_keypad.positon_flag=false;
         }
@@ -261,6 +272,7 @@ void publish_service_id(){
         //set_display_state(DISPLAY_MAIN_SCREEN);
 };
 
+/*
 void check_user_pass(){
     
     char tmp[5];
@@ -325,3 +337,4 @@ void delete_user_pass_buffer(){
     
 
 }
+    */

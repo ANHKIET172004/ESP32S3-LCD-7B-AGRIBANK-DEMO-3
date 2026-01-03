@@ -14,7 +14,7 @@ esp_mqtt_client_handle_t mqtt_client = NULL;
 char current_number[5] = {0};
 
 //char device_name[7] = {0};
-char device_name[8] = {0};
+char device_name[8] = {0};//8
 
 
 accent_map_t accent_map[] = {
@@ -44,7 +44,8 @@ accent_map_t accent_map[] = {
     {"Ơ", "O"}, {"Ớ", "O"}, {"Ờ", "O"}, {"Ở", "O"}, {"Ỡ", "O"}, {"Ợ", "O"},
     {"Ú", "U"}, {"Ù", "U"}, {"Ủ", "U"}, {"Ũ", "U"}, {"Ụ", "U"},
     {"Ư", "U"}, {"Ứ", "U"}, {"Ừ", "U"}, {"Ử", "U"}, {"Ữ", "U"}, {"Ự", "U"},
-    {"Ý", "Y"}, {"Ỳ", "Y"}, {"Ỷ", "Y"}, {"Ỹ", "Y"}, {"Ỵ", "Y"},
+    {"Ý", "Y"}, {"Ỳ", "Y"}, {"Ỷ", "Y"}, {"Ỹ", "Y"}, {"Ỵ", "Y"}, {"1","1"},{"2","2"},
+    {"3","3"},{"4","4"},{"5","5"},{"6","6"},{"7","7"},{"8","8"},{"9","9"},{"0","0"},
     {NULL, NULL}
 };
 
@@ -60,29 +61,30 @@ void custom_string(const char *input, char *output, size_t output_len)
 
     size_t out_idx = 0;
     size_t i = 0;
+    size_t input_len = strlen(input);
 
     memset(output, 0, output_len);
 
-    while (input[i] && out_idx < output_len - 1) {
+    while (i < input_len && out_idx < output_len - 1) {
         int matched = 0;
 
         for (int j = 0; accent_map[j].accent != NULL; j++) {
-            size_t accent_len = strlen(accent_map[j].accent);
+            size_t accent_len  = strlen(accent_map[j].accent);
             size_t replace_len = strlen(accent_map[j].replacement);
 
-            // đảm bảo input còn đủ byte 
-            if (strlen(&input[i]) < accent_len) continue;
+            if (i + accent_len > input_len)
+                continue;
 
             if (strncmp(&input[i], accent_map[j].accent, accent_len) == 0) {
 
-                // đảm bảo output còn đủ chỗ + '\0' 
                 if (out_idx + replace_len >= output_len)
-                    break;
+                    goto done;
 
-                for (size_t k = 0; k < replace_len; k++) {
-                    output[out_idx++] = accent_map[j].replacement[k];
-                }
+                memcpy(&output[out_idx],
+                       accent_map[j].replacement,
+                       replace_len);
 
+                out_idx += replace_len;
                 i += accent_len;
                 matched = 1;
                 break;
@@ -94,7 +96,8 @@ void custom_string(const char *input, char *output, size_t output_len)
         }
     }
 
-    output[out_idx] = '\0';// quan trọng//
+done:
+    output[out_idx] = '\0';
 }
 
 

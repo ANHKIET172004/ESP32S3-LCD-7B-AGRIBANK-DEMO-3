@@ -44,13 +44,19 @@ void select_option(){
 
         else if (g_keypad.menu_selection==2){
             //requestskip=true;
+            
             request_skipnumber();
 
         }
 
         else if (g_keypad.menu_selection == 3) {
            if (g_keypad.device_list_ready && g_keypad.device_count > 0) {
+                if (strcmp(g_keypad.device_list[0].device_id, g_keypad.default_id)==0){//
+                    g_keypad.selected_index = 1;
+                }
+                else {
                 g_keypad.selected_index = 0;
+                }
                 g_keypad.in_selection_mode = true;
 
                 g_keypad.current_mode = MODE_DEVICE_SELECT; 
@@ -86,6 +92,11 @@ void select_option(){
         }
 
         else if (g_keypad.menu_selection == 5) {
+           if (!get_mqtt_connected()) { 
+           
+                reload_oldscreen();
+                return;
+                }
                char json_msg[128]={0};
                sprintf(json_msg,"Device_id:");
                uint8_t mac[6];

@@ -21,4 +21,5 @@ idf_component_register(SRCS "lcd_i2c/i2c-lcd.c" "main.c"
                        PRIV_REQUIRES newlib
                        PRIV_REQUIRES json
                        PRIV_REQUIRES wifi_provisioning
+                       PRIV_REQUIRES unity
                        INCLUDE_DIRS ".")

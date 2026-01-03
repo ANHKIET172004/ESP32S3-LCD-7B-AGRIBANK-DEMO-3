@@ -14,6 +14,7 @@ extern char counter_id[3];
 extern uint8_t scroll_cnt;
 
 extern bool requestskip;
+extern uint8_t service_scroll_pos;
 
 keypad_context_t g_keypad={
      .input_buffer= {0},
@@ -182,16 +183,34 @@ void process_key_normal_mode(char key) {
 void process_key_device_select(char key) {
     switch (key){
     case '1':
+
+
+            
          if (g_keypad. selected_index > 0) {
             g_keypad. selected_index--;
         
          }
          else {
+
             g_keypad. selected_index=g_keypad.device_count-1;
+            
          }
+         if (strcmp(g_keypad.device_list[g_keypad.selected_index].device_id, g_keypad.default_id)==0){//
+               // g_keypad. selected_index--;
+            if (g_keypad. selected_index > 0) {
+              g_keypad. selected_index--;
+        
+            }
+            else {
+
+              g_keypad. selected_index=g_keypad.device_count-1;
+            
+         }
+            }
     break;
 
     case'2' :
+
         if (g_keypad.selected_index < g_keypad.device_count - 1) {
         g_keypad.selected_index++;
         
@@ -199,6 +218,16 @@ void process_key_device_select(char key) {
        else {
           g_keypad.selected_index=0;
        }
+        if (strcmp(g_keypad.device_list[g_keypad.selected_index].device_id, g_keypad.default_id)==0){//
+              //  g_keypad. selected_index++;
+            if (g_keypad.selected_index < g_keypad.device_count - 1) {
+                g_keypad.selected_index++;
+        
+            } 
+            else {
+                g_keypad.selected_index=0;
+            }
+            }
     break;
 
     case 'B':
@@ -260,6 +289,7 @@ void process_key_service_select(char key) {
 
     case '1':
      lcd_clear();//
+     service_scroll_pos=0;
      if (g_keypad.selected_index2 > 0) {
         g_keypad.selected_index2--;
 
@@ -273,6 +303,7 @@ void process_key_service_select(char key) {
 
     case '2':
     lcd_clear();//
+    service_scroll_pos=0;//
      if ( g_keypad.selected_index2 < g_keypad.service_count - 1) {
         g_keypad.selected_index2++;
         
@@ -397,6 +428,7 @@ void process_key_logout_mode(char key){
     }
 }
 
+/*
 void process_key_user_pass(char key){
 
     if (key>='0'&&key<='9'){
@@ -429,7 +461,9 @@ void process_key_user_pass(char key){
         }
         // return ;
 }
+*/
 
+/*
 void process_key_new_user_pass(char key){
 
     if (key>='0'&&key<='9'){
@@ -445,10 +479,10 @@ void process_key_new_user_pass(char key){
             g_keypad.user_pass_index=0;        
             old_screen_reload();
 
-        /*
-        g_keypad.current_mode=MODE_NORMAL;
-        set_sys_state(STATE_RUNNING);
-        */
+        
+      //  g_keypad.current_mode=MODE_NORMAL;
+      //  set_sys_state(STATE_RUNNING);
+        
             break;
         case 'C':
             delete_user_pass_buffer();
@@ -469,7 +503,7 @@ void process_key_new_user_pass(char key){
    
 }
 
-
+*/
 
 void process_key_option_select(char key) {
     switch(key){
@@ -491,6 +525,11 @@ void process_key_option_select(char key) {
 
         case 'D':
             if (g_keypad.selected_option==true){
+                if (!get_mqtt_connected()) {     
+                reload_oldscreen();
+                return;
+                }
+
                 if (g_keypad.menu_selection==6){
                     esp_mqtt_client_publish(mqtt_client, "closed", "closed", 0, 0, 0);// gửi mess đóng qầy để màn hình display
                     g_keypad.current_mode=MODE_LOGOUT;//
@@ -498,9 +537,10 @@ void process_key_option_select(char key) {
                     }
                 else if (g_keypad.menu_selection==7) {
                     set_sys_state(STATE_RUNNING);//
-                    char saved_counter_id[4] = {0};
-                    esp_err_t err = read_counter_id_from_nvs(saved_counter_id, sizeof(saved_counter_id));
+                    //char saved_counter_id[4] = {0};
+                    //esp_err_t err = read_counter_id_from_nvs(saved_counter_id, sizeof(saved_counter_id));
 
+                    /*
                     if (err == ESP_OK && strlen(saved_counter_id) > 0) {
                         // Có counter_id đã lưu
                         strncpy(g_keypad.counter_id, saved_counter_id, sizeof(g_keypad.counter_id) - 1);
@@ -511,10 +551,10 @@ void process_key_option_select(char key) {
                         strcpy(g_keypad.counter_id, "00");
                         ESP_LOGI("DEMO", "No saved g_keypad.counter_id, using default: %s", g_keypad.counter_id);
                     }
-
+                    */
                   
-                    save_called_number("0000");
-
+                    //save_called_number("0000");
+                      save_called_number("");//
 
                     uint8_t mac[6];
                     char mac_str[18];
@@ -818,7 +858,7 @@ void process_key(char key)
         case MODE_LOGOUT:
             process_key_logout_mode(key);
             break;
-
+/*
         case MODE_USER_PASS:
             process_key_user_pass(key);
             break;
@@ -826,7 +866,7 @@ void process_key(char key)
         case MODE_NEW_USER_PASS:
             process_key_new_user_pass(key);
             break;
-
+*/
         case MODE_CONTINUE:
             process_key_option_select(key);
             break;

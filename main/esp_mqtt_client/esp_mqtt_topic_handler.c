@@ -76,7 +76,7 @@ static void sort_device_list_by_counter(void)
                         
                         esp_task_wdt_reset();
                         save_called_number(num->valuestring);
-                        xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
+                        //xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
 
                         char send_number[128]={0};
 
@@ -99,14 +99,14 @@ static void sort_device_list_by_counter(void)
                         else {
                             g_keypad.recall=false;
                         }                   
-                        xSemaphoreGive(g_mutex.mqtt_mutex);
+                        //xSemaphoreGive(g_mutex.mqtt_mutex);
 
                     }
                     else {
                         update_temp_buff("KHONG CO SO!");
                         vTaskDelay(pdMS_TO_TICKS(800));//
 
-                          size_t num_len = sizeof(g_keypad.prev_number);
+                        size_t num_len = sizeof(g_keypad.prev_number);
                         size_t status_len = 12;
                         char temp_status[12] = {0};
                         if (read_current_number_from_nvs(g_keypad.prev_number, &num_len) == ESP_OK && 
@@ -174,7 +174,11 @@ static void sort_device_list_by_counter(void)
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
 
 
-                snprintf(g_keypad.device_list[g_keypad.device_count].counter_id, 3, "%02d", counter_num % 100);
+                //snprintf(g_keypad.device_list[g_keypad.device_count].counter_id, 3, "%02d", counter_num % 100);
+                //snprintf(g_keypad.device_list[g_keypad.device_count].counter_id, 3, "%2d", counter_num % 100);
+                snprintf(g_keypad.device_list[g_keypad.device_count].counter_id, 3, "%d", counter_num % 100);
+
+
                 ESP_LOGI(TAG, "Extracted counter ID: %d from name: %s", counter_num, name->valuestring);
 
 
@@ -207,39 +211,45 @@ static void sort_device_list_by_counter(void)
             
             // Lưu id
             if (is_current_device) {
-                custom_string(name->valuestring, device_name, 
-                sizeof(device_name));
+              //  custom_string(name->valuestring, device_name, sizeof(device_name));
                 /////
-
-                /*
+            strncpy(device_name,g_keypad.device_list[g_keypad.device_count].counter_id,sizeof(device_name));
+    /*
                 strncpy(device_name,
                     g_keypad.device_list[g_keypad.device_count].counter_id
                     ,sizeof(device_name));
                   */
 
                 /////
-                strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name, 15);
-                char device_name_new[11]={0};
-                //sprintf(device_name_new,"%s (X)",device_name);
-                sprintf(device_name_new,"%s *",device_name);
+                
+             //   strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name, 15);
+                //char device_name_new[16]={0};
+               // sprintf(device_name_new,"%s (X)",device_name);
+                //sprintf(device_name_new,"%s *",device_name);
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
-                strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name_new, 15);
+                //strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name_new, 15);
+                strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name, 15);
                 g_keypad.device_list[g_keypad.device_count].name[15] = '\0';
                 save_counter_id(g_keypad.device_list[g_keypad.device_count].counter_id);
                 strcpy(counter_id,g_keypad.device_list[g_keypad.device_count].counter_id);//
                 xSemaphoreGive(g_mutex.device_list_mutex);//
+                
 
             } 
             
             else {
-                custom_string(name->valuestring, device_name, 
-                                sizeof(device_name));
+               // custom_string(name->valuestring, device_name, 
+                 //               sizeof(device_name));
                 xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
+                strncpy(device_name,g_keypad.device_list[g_keypad.device_count].counter_id,sizeof(device_name));
+
                 strncpy(g_keypad.device_list[g_keypad.device_count].name, device_name, 15);
+
                 g_keypad.device_list[g_keypad.device_count].name[15] = '\0';
                 xSemaphoreGive(g_mutex.device_list_mutex);//
             }
                 
+              
             
             g_keypad.device_count++;
         }
