@@ -148,7 +148,6 @@ void process_key_normal_mode(char key) {
             g_keypad.current_mode = MODE_MENU;
             g_keypad.menu_selection = 1;
             set_sys_state(STATE_MENU);//
-            //lcd_show_menu();
             break;
 
         case 'B':
@@ -183,9 +182,7 @@ void process_key_normal_mode(char key) {
 void process_key_device_select(char key) {
     switch (key){
     case '1':
-
-
-            
+     
          if (g_keypad. selected_index > 0) {
             g_keypad. selected_index--;
         
@@ -196,7 +193,6 @@ void process_key_device_select(char key) {
             
          }
          if (strcmp(g_keypad.device_list[g_keypad.selected_index].device_id, g_keypad.default_id)==0){//
-               // g_keypad. selected_index--;
             if (g_keypad. selected_index > 0) {
               g_keypad. selected_index--;
         
@@ -219,7 +215,6 @@ void process_key_device_select(char key) {
           g_keypad.selected_index=0;
        }
         if (strcmp(g_keypad.device_list[g_keypad.selected_index].device_id, g_keypad.default_id)==0){//
-              //  g_keypad. selected_index++;
             if (g_keypad.selected_index < g_keypad.device_count - 1) {
                 g_keypad.selected_index++;
         
@@ -255,7 +250,6 @@ void process_key_user_select(char key) {
         else {
          g_keypad.selected_index=g_keypad.device_count - 1;
         }
-        //lcd_show_user_list();
         break;
 
 
@@ -266,7 +260,6 @@ void process_key_user_select(char key) {
        else {
         g_keypad.selected_index=0;
        }
-        //lcd_show_user_list();
         break;
   
     case 'B':
@@ -428,94 +421,17 @@ void process_key_logout_mode(char key){
     }
 }
 
-/*
-void process_key_user_pass(char key){
 
-    if (key>='0'&&key<='9'){
-        update_user_pass_buffer(key);
-        return;
-    }
-    
-    switch (key){
-        case 'B':
-            memset(g_keypad.user_pass_buffer,0,sizeof(g_keypad.user_pass_buffer));
-            g_keypad.user_pass_index=0;
-            g_keypad.current_mode=MODE_LOGOUT;
-            set_sys_state(STATE_LOGOUT);
-            //return;
-        break;
-
-        case 'C':
-            delete_user_pass_buffer();
-            //return;
-            break;
-
-        case 'D':
-
-            check_user_pass();
-            
-             break;
-
-        default:
-            break;
-        }
-        // return ;
-}
-*/
-
-/*
-void process_key_new_user_pass(char key){
-
-    if (key>='0'&&key<='9'){
-        update_user_pass_buffer(key);
-        return;
-    }
-    
-    
-    switch (key)
-    {
-        case 'B':
-            memset(g_keypad.user_pass_buffer,0,sizeof(g_keypad.user_pass_buffer));
-            g_keypad.user_pass_index=0;        
-            old_screen_reload();
-
-        
-      //  g_keypad.current_mode=MODE_NORMAL;
-      //  set_sys_state(STATE_RUNNING);
-        
-            break;
-        case 'C':
-            delete_user_pass_buffer();
-            break;
-        
-        case 'D':
-            // check_user_pass();
-            save_user_pass(g_keypad.user_pass_buffer);
-            memset(g_keypad.user_pass_buffer,0,sizeof(g_keypad.user_pass_buffer));
-            g_keypad.user_pass_index=0;
-            set_sys_state(STATE_RUNNING);
-            g_keypad.current_mode=MODE_NORMAL;
-            break;
-        
-        default:
-            break;
-        }
-   
-}
-
-*/
 
 void process_key_option_select(char key) {
     switch(key){
     
         case '1':
             g_keypad.selected_option=true;
-        // lcd_show_options();
             break;
         
         case '2':
             g_keypad.selected_option=false;
-        //  lcd_show_options();
             break;
 
         case 'B':
@@ -538,22 +454,7 @@ void process_key_option_select(char key) {
                 else if (g_keypad.menu_selection==7) {
                     set_sys_state(STATE_RUNNING);//
                     //char saved_counter_id[4] = {0};
-                    //esp_err_t err = read_counter_id_from_nvs(saved_counter_id, sizeof(saved_counter_id));
 
-                    /*
-                    if (err == ESP_OK && strlen(saved_counter_id) > 0) {
-                        // Có counter_id đã lưu
-                        strncpy(g_keypad.counter_id, saved_counter_id, sizeof(g_keypad.counter_id) - 1);
-                        g_keypad.counter_id[sizeof(g_keypad.counter_id) - 1] = '\0';
-                        ESP_LOGI("DEMO", "Loaded counter_id from NVS: %s", g_keypad.counter_id);
-                    } else {
-                        // Không có counter_id, dùng mặc định 00
-                        strcpy(g_keypad.counter_id, "00");
-                        ESP_LOGI("DEMO", "No saved g_keypad.counter_id, using default: %s", g_keypad.counter_id);
-                    }
-                    */
-                  
-                    //save_called_number("0000");
                       save_called_number("");//
 
                     uint8_t mac[6];
@@ -567,9 +468,7 @@ void process_key_option_select(char key) {
 
                     strcpy(g_keypad.default_id,mac_str);
                     
-                    //xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
                     esp_mqtt_client_publish(mqtt_client, "reset_number", "reset", 0, 0, 0);
-                    //xSemaphoreGive(g_mutex.mqtt_mutex);
 
                     //
                     counter_id_init();// mac
@@ -610,217 +509,7 @@ void process_key_option_select(char key) {
 
 }
 
-void process_key_delete_wifi_option(char key) {
-    if (key == '1') {
-        g_keypad.delete_wifi_option=1;
-       // lcd_show_delete_wifi_options();
-        
-    }
-    else if (key == '2' ) {
-        g_keypad.delete_wifi_option=2;
-       // lcd_show_delete_wifi_options();
-        
-    }
-    else if (key == 'B') {
-       
-       //lcd_clear();
-       //old_screen_reload();
-       g_keypad.current_mode=MODE_SAVED_WIFI_OPTION;
-       set_sys_state(STATE_SAVED_WIFI_OPTION);
 
-       
-    }
-
-    else if (key == 'D') {
-        if (g_keypad.delete_wifi_option==1){
-         delete_wifi_credentials(g_keypad.wifi_position);
-         g_keypad.current_mode=MODE_NORMAL;
-         set_sys_state(STATE_RUNNING);
-        }
-        else {
-        g_keypad.current_mode=MODE_SAVED_WIFI;
-       set_sys_state(STATE_SAVED_WIFI);
-        }
-    }
-}
-
-void process_auto_connect_option(char key) {
-    if (key == '1') {
-        g_keypad.auto_connect_option=1;
-        
-    }
-    else if (key == '2' ) {
-        g_keypad.auto_connect_option=2;
-        
-    }
-    else if (key == 'B') {
-       
-       g_keypad.current_mode=MODE_SAVED_WIFI_OPTION;
-       set_sys_state(STATE_SAVED_WIFI_OPTION);
-
-       
-    }
-
-    else if (key == 'D') {
-        if (g_keypad.auto_connect_option==1){
-            wifi_list *list = calloc(1, sizeof(wifi_list));
-            if (!list) {
-                ESP_LOGE(TAG, "calloc failed");
-               // free(list);//
-                //
-                g_keypad.current_mode=MODE_NORMAL;
-                set_sys_state(STATE_RUNNING);
-                free(list);                
-                //
-                return;
-            }
-
-
-
-
-            load_wifi_list(list);
-
-                        if (list->count == 0) {
-                //    free(list);//
-                    //
-                ESP_LOGE(TAG, "count=0");
-                g_keypad.current_mode=MODE_NORMAL;
-                set_sys_state(STATE_RUNNING);
-                free(list);
-                    //
-                    return;//
-                }
-
-            save_wifi_credentials(list->aps[g_keypad.wifi_position].ssid,list->aps[g_keypad.wifi_position].pass,
-                list->aps[g_keypad.wifi_position].bssid);
-            g_keypad.current_mode=MODE_NORMAL;
-            set_sys_state(STATE_RUNNING);
-            free(list);
-        }
-        else {
-        delete_wifi_credentials_from_nvs();
-        g_keypad.current_mode=MODE_NORMAL;//
-        set_sys_state(STATE_RUNNING);//
-
-        }
-    }
-}
-
-void process_key_saved_wifi_option(char key) {
-    if (key == '1') {
-        g_keypad.saved_wifi_option=1;
-        
-    }
-    else if (key == '2' ) {
-        g_keypad.saved_wifi_option=2;
-        
-    }
-    else if (key == 'B') {
-       
-
-       g_keypad.current_mode=MODE_SAVED_WIFI;
-       set_sys_state(STATE_SAVED_WIFI);
-
-       
-    }
-
-    else if (key == 'D') {
-
-    
-        
-        if (g_keypad.saved_wifi_option==1){
-            // delete_wifi_credentials(g_keypad.wifi_position);
-            g_keypad.delete_wifi_option=1;//
-            g_keypad.current_mode=MODE_DELETE_WIFI_OPTION;
-            set_sys_state(STATE_DELETE_WIFI_OPTION);
-        }
-        else {
-            g_keypad.auto_connect_option=1;//
-            g_keypad.current_mode=MODE_AUTO_CONNECT;
-            set_sys_state(STATE_AUTO_CONNECT);
-
-        }
-        
-
-
-
-    }
-}
-
-void process_saved_wifi_select(char key){
-    wifi_list* list=calloc(1,sizeof(wifi_list));
-    load_wifi_list(list);
-    
-    
-    if (key=='2'){
-        lcd_clear();
-        set_ssid_scroll_enable(false);//
-        if (g_keypad.wifi_position<list->count-1){
-            g_keypad.wifi_position++;
-        }
-        else {
-            g_keypad.wifi_position=0;
-        }
-    }
-    else if (key=='1') {
-        lcd_clear();
-        set_ssid_scroll_enable(false);//
-        if (g_keypad.wifi_position>0){
-            g_keypad.wifi_position--;
-        }
-        else {
-            g_keypad.wifi_position=list->count-1;
-        }
-    }
-
-    else if (key=='B'){
-        set_ssid_scroll_enable(false);//
-        g_keypad.current_mode=MODE_MENU;
-        set_sys_state(STATE_MENU);
-        //lcd_clear();
-        //old_screen_reload();
-        //set_sys_state(STATE_RUNNING);//
-    }
-
-    else if (key=='D') {
-       
-       //delete_wifi_credentials(g_keypad.wifi_position);
-       set_ssid_scroll_enable(false);//
-       g_keypad.delete_wifi_option=1;
-       //g_keypad.current_mode=MODE_DELETE_WIFI_OPTION;
-       //set_sys_state(STATE_DELETE_WIFI_OPTION);
-       g_keypad.saved_wifi_option=1;//
-       g_keypad.current_mode=MODE_SAVED_WIFI_OPTION;
-       set_sys_state(STATE_SAVED_WIFI_OPTION);
-       
-
-    }
-    free(list);
-}
-
-void process_key_auto_connect_wifi(char key) {
-   
-     if (key == 'B') {
-       
-       set_ssid_scroll_enable(false);//
-       g_keypad.current_mode=MODE_MENU;
-       set_sys_state(STATE_MENU);
-
-       
-    }
-}
-
-void process_key_connecting_wifi(char key) {
-   
-     if (key == 'B') {
-       
-       set_ssid_scroll_enable(false);//
-       g_keypad.current_mode=MODE_MENU;
-       set_sys_state(STATE_MENU);
-
-       
-    }
-}
 
 void process_key(char key)
 {
@@ -858,37 +547,10 @@ void process_key(char key)
         case MODE_LOGOUT:
             process_key_logout_mode(key);
             break;
-/*
-        case MODE_USER_PASS:
-            process_key_user_pass(key);
-            break;
 
-        case MODE_NEW_USER_PASS:
-            process_key_new_user_pass(key);
-            break;
-*/
         case MODE_CONTINUE:
             process_key_option_select(key);
             break;
-
-        case MODE_SAVED_WIFI:
-            process_saved_wifi_select(key);
-            break;
-        case MODE_DELETE_WIFI_OPTION:
-            process_key_delete_wifi_option(key);
-            break;
-        case MODE_SAVED_WIFI_OPTION:
-            process_key_saved_wifi_option(key);
-            break;
-        case MODE_AUTO_CONNECT:
-            process_auto_connect_option(key);
-            break;
-        case MODE_AUTO_CONNECT_WIFI:
-            process_key_auto_connect_wifi(key);
-            break;
-        case MODE_CONNECTING_WIFI:
-             process_key_connecting_wifi(key);
-             break;
 
         default:
             break;

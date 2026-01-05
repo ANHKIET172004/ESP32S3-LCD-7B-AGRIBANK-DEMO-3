@@ -21,7 +21,6 @@ void save_wifi_credentials(const char *ssid, const char *password, const uint8_t
 void delete_wifi_credentials_from_nvs(void);
 
 
-void save_wifi_credentials1(const char *ssid, const char *password, const uint8_t* bssid) ;
 
 esp_err_t read_wifi_credentials_from_nvs(char *ssid, size_t *ssid_len_ptr, char *password, size_t *password_len_ptr, uint8_t* bssid) ;
 
@@ -33,11 +32,7 @@ esp_err_t read_current_number_status_from_nvs(char *number_status, size_t buffer
 
 void save_number_status(const char *number_status);
 void delete_number_status(void) ;
-void save_user_pass(const char *user_pass) ;
-esp_err_t read_user_pass_from_nvs(char *user_pass, size_t buffer_size) ;
 
-void save_login_status(const char *user_pass) ;
-esp_err_t read_login_status(char *user_pass, size_t buffer_size) ;
 
 void load_wifi_list(wifi_list* list);
 

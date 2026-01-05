@@ -5,7 +5,7 @@ extern esp_mqtt_client_handle_t mqtt_client;
 
 extern keypad_context_t g_keypad;
 
-extern bool start1;
+//extern bool start1;
 
 void old_screen_reload(){
     //lcd_clear();

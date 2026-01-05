@@ -68,19 +68,7 @@ void handle_display(void)
         case DISPLAY_LOGOUT:
             lcd_show_message("  DA DONG QUAY!", " \"A\"  ->MO QUAY");
             break;
-/*
-        case DISPLAY_USER_PASS:
-            lcd_show_user_pass(
-                g_keypad.user_pass_index ? g_keypad.user_pass_buffer : "____"
-            );
-            break;
 
-        case DISPLAY_NEW_USER_PASS:
-            lcd_show_new_user_pass(
-                g_keypad.user_pass_index ? g_keypad.user_pass_buffer : "____"
-            );
-            break;
-*/
         case DISPLAY_MAIN_SCREEN:
             if (g_keypad.current_mode == MODE_NORMAL) {
                 xSemaphoreTake(g_mutex.input_mutex, portMAX_DELAY);
@@ -91,42 +79,15 @@ void handle_display(void)
             }
             break;
 
-        case DISPLAY_USER_PASSWORD_ERROR:
-            lcd_clear();
-            lcd_put_cur(0,0);
-            lcd_send_string("SAI MAT KHAU!");
-            lcd_put_cur(1,0);
-            lcd_send_string("THU LAI SAU!");
-            break;
-
         case DISPLAY_CONTINUE:          lcd_show_options(); break;
-     //   case DISPLAY_SAVED_WIFI:        lcd_show_saved_wifi(); break;
-     //   case DISPLAY_DELET_WIFI_OPTION: lcd_show_delete_wifi_options(); break;
         case DISPLAY_MENU:              lcd_send_cmd(0x0C); lcd_show_menu(); break;
         case DISPLAY_DEVICE_LIST:       lcd_show_device_list(); break;
         case DISPLAY_SERVICE_LIST:      lcd_show_service_list(); break;
         case DISPLAY_SERVICE_POSITION:  lcd_show_position_list(); break;
-     //   case DISPLAY_USER_LIST:         lcd_show_user_list(); break;
-        case DISPLAY_NO_DATA:           lcd_show_message("CHUA CO DU LIEU", "THU LAI SAU"); break;
-     //   case DISPLAY_SAVED_WIFI_OPTION: lcd_show_saved_wifi_option(); break;
+        case DISPLAY_NO_DATA:           lcd_show_message("KHONG CO KET NOI", "THU LAI SAU"); break;
         case DISPLAY_NO_WIFI:           lcd_show_message("KHONG CO WIFI", ""); break;
-    //    case DISPLAY_AUTO_CONNECT:      lcd_show__auto_connect_options(); break;
+        case DISPLAY_WIFI_RETRY:        lcd_show_message("TRANG THAI WIFI:","KET NOI LAI..."); break;
 
-        /*
-        case DISPLAY_CONNECTING_WIFI:
-            if (strlen(g_keypad.connecting_wifi) <= 16) {
-                set_ssid_scroll_enable(false);
-                lcd_clear();
-                lcd_put_cur(0,0);
-                lcd_send_string("*WIFI KET NOI:");
-                lcd_put_cur(1,0);
-                lcd_send_string(g_keypad.connecting_wifi);
-            } else {
-                sprintf(ssid_scroll_buffer, "%s   ", g_keypad.connecting_wifi);
-                set_ssid_scroll_enable(true);
-            }
-            break;
-*/
         case DISPLAY_WIFI_INPUT:
             if (g_keypad.wifi_step == 0)
                 lcd_show_wifi_input(g_keypad.view);
@@ -174,6 +135,7 @@ void update_display_state(void)
         //case STATE_AUTO_CONNECT:        set_display_state(DISPLAY_AUTO_CONNECT); break;
         //case STATE__AUTO_CONNECT_WIFI:  set_display_state(DISPLAY_AUTO_CONNECT_WIFI); break;
         //case STATE_CONNECTING_WIFI:     set_display_state(DISPLAY_CONNECTING_WIFI); break;
+        case STATE_WIFI_RETRY:         set_display_state(DISPLAY_WIFI_RETRY); break;
 
         default:
             set_display_state(DISPLAY_IDLE);
@@ -211,10 +173,6 @@ static void state_enter(SystemState  state)
         case STATE_INIT:
             wifi_config();
             break;
-/*
-        case STATE_USER_PASSWORD_ERROR:
-            break;
-            */
 
         default:
             break;
@@ -237,22 +195,19 @@ static void state_run(SystemState  state)
 
         case STATE_WIFI_ERROR:
         case STATE_MQTT_ERROR:
-   //     case STATE_NO_DATA:
         case STATE_NO_WIFI:
             if (now - g_state.state_enter_time >= STATE_DISPLAY_DURATION) {
                 g_keypad.current_mode = MODE_NORMAL;
                 set_sys_state(STATE_RUNNING);
             }
             break;
-
-            /*
-        case STATE_USER_PASSWORD_ERROR:
+        case STATE_NO_DATA:
             if (now - g_state.state_enter_time >= STATE_DISPLAY_DURATION) {
-                g_keypad.current_mode = MODE_LOGOUT;
-                set_sys_state(STATE_LOGOUT);
+                g_keypad.current_mode = MODE_NORMAL;
+                set_sys_state(STATE_RUNNING);
             }
             break;
-*/
+
         default:
             break;
     }
@@ -263,9 +218,6 @@ static void state_exit(SystemState  state)
 {
     switch (state) {
 
-    //    case STATE_USER_PASSWORD_ERROR:
-            // buzzer_off();
-      //      break;
 
         default:
             break;

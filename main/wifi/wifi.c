@@ -13,7 +13,7 @@ extern keypad_context_t g_keypad;
 
 wifi_ap_record_t ap;
 
-
+extern bool start;
 
 
 void wifi_scan()
@@ -198,10 +198,13 @@ for (int i=0;i<list->count;i++){
             }
           
         } 
-        else{// lỗi sau khi wifi đã kết nối
+        else if (!get_user_selected_wifi()){// lỗi sau khi wifi đã kết nối hoặc khi reconnect lại wifi lúc khởi động
          
             increment_wifi_retry_count();  
             int retry_count = get_wifi_retry_count();  
+            if (retry_count==1){
+                set_sys_state(STATE_WIFI_RETRY);
+            }
             if (retry_count < WIFI_MAX_RETRY) {
                 esp_wifi_connect();
             } else {

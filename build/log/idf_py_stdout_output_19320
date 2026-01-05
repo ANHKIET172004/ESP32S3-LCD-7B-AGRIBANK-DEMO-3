@@ -1,0 +1,1022 @@
+Command: D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM11 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\hello_world.elf D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\examples\get-started\agribank demo\build\bootloader\bootloader.elf --force-color -m 'D:\ESP32_IDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\ESP32_IDF\Espressif\frameworks\esp-idf-v5.5\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20808h (133128) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030830 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030858 vaddr=3ffb0000 size=04c48h ( 19528) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000354a8 vaddr=40080000 size=0ab70h ( 43888) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a7c10h (687120) map[0m
+[0;32mI (397) esp_image: segment 5: paddr=000e7c38 vaddr=4008ab70 size=0e774h ( 59252) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (452) cpu_start: Pro cpu start user code[0m
+[0;32mI (452) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      6fb4eee-dirty[0m
+[0;32mI (461) app_init: Compile time:     Jan  4 2026 11:55:58[0m
+[0;32mI (466) app_init: ELF file SHA256:  516083dfd...[0m
+[0;32mI (470) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (478) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (482) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (486) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB9590 len 00026A70 (154 KiB): DRAM[0m
+[0;32mI (503) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (508) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (514) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (520) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (538) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (548) main_task: Started on CPU0[0m
+[0;32mI (558) main_task: Calling app_main()[0m
+[0;32mI (558) LED: LED initialized on GPIO 2[0m
+[0;32mI (558) LED: LED OFF[0m
+[0;32mI (558) DEMO: I2C initialized successfully[0m
+[0;32mI (1448) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1478) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1478) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (1488) wifi:wifi driver task: 3ffc273c, prio:23, stack:6656, core=0[0m
+[0;32mI (1498) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1498) wifi:wifi certification version: v7.0[0m
+[0;32mI (1498) wifi:config NVS flash: enabled[0m
+[0;32mI (1498) wifi:config nano formatting: disabled[0m
+[0;32mI (1508) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1508) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1518) wifi:Init management short buffer num: 32[0m
+[0;32mI (1518) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1518) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1528) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1528) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1538) wifi_init: rx ba win: 6[0m
+[0;32mI (1538) wifi_init: accept mbox: 6[0m
+[0;32mI (1538) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1548) wifi_init: udp mbox: 6[0m
+[0;32mI (1548) wifi_init: tcp mbox: 6[0m
+[0;32mI (1548) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1548) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1558) wifi_init: tcp mss: 1440[0m
+[0;32mI (1558) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1558) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1608) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1678) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1788) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1788) wifi:enable tsf[0m
+[0;32mI (1788) WIFI: WiFi initialized[0m
+[0;32mI (1798) WIFI: WiFi STA started[0m
+Free heap: 178196 bytes
+[0;32mI (1798) STATE_MACHINE: System FSM task started[0m
+[0;32mI (1898) STATE_MACHINE: Have a saved wifi network in NVS: NamTrung[0m
+[0;32mI (1938) wifi:flush txq[0m
+[0;32mI (1938) wifi:stop sw txq[0m
+[0;32mI (1938) wifi:lmac stop hw txq[0m
+[0;32mI (1948) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1948) wifi:enable tsf[0m
+[0;32mI (1948) WIFI: WiFi STA started[0m
+[0;32mI (1958) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1968) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1978) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1988) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2028) wifi:connected with NamTrung, aid = 17, channel 6, BW20, bssid = 10:5f:02:75:27:1e[0m
+[0;32mI (2028) wifi:security: WPA2-PSK, phy: bgn, rssi: -62[0m
+[0;32mI (2038) wifi:pm start, type: 1[0m
+
+[0;32mI (2038) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2038) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2048) WIFI: Connected to SSID:NamTrung, channel:6[0m
+Free heap: 177116 bytes
+[0;32mI (2868) wifi:<ba-add>idx:0 (ifx:0, 10:5f:02:75:27:1e), tid:0, ssn:1, winSize:64[0m
+[0;32mI (3078) esp_netif_handlers: sta ip: 10.10.1.105, mask: 255.255.252.0, gw: 10.10.1.1[0m
+[0;32mI (3078) WIFI: WiFi connected, got IP[0m
+[0;32mI (3078) WIFI: Connected BSSID: 10:5F:02:75:27:1E[0m
+[0;32mI (3078) WIFI: SSID: NamTrung, RSSI: -62[0m
+Free heap: 177060 bytes
+[0;32mI (4118) MQTT: Registered device with WiFi STA MAC: {"device_id":"B8:D6:1A:B9:DA:A4","status":"offline"}[0m
+[0;32mI (4118) MQTT: MQTT initialized[0m
+[0;32mI (4138) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (4138) wifi:<ba-add>idx:1 (ifx:0, 10:5f:02:75:27:1e), tid:7, ssn:5, winSize:64[0m
+[0;32mI (4178) LED: LED ON[0m
+[0;32mI (4178) MQTT: MQTT connected[0m
+[0;32mI (4388) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4388) MQTT: Processing topic: device/list[0m
+[0;32mI (4388) MQTT: Processing topic data: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (4398) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (4418) MQTT: [{"id":"94:E6:86:09:A4:78","name":"qu\u1ea7y 1"},{"id":"A8:42:E3:4C:7C:BC","name":"qu\u1ea7y 2"},{"id":"B8:D6:1A:B9:DA:A4","name":"qu\u1ea7y 3"},{"id":"R1:42:E3:4C:7C:BC","name":"qu\u1ea7y 4"},{"id":"R2:42:E3:4C:7C:BC","name":"qu\u1ea7y 5"}][0m
+[0;32mI (4438) MQTT: Extracted counter ID: 1 from name: quầy 1[0m
+[0;32mI (4438) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4438) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (4448) MQTT: Extracted counter ID: 2 from name: quầy 2[0m
+[0;32mI (4448) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4458) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (4458) MQTT: Extracted counter ID: 3 from name: quầy 3[0m
+[0;32mI (4468) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4468) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (4478) MQTT: Found current device (MAC match): B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4478) NVS_UTILS: User ID saved successfully: 3[0m
+[0;32mI (4488) MQTT: Extracted counter ID: 4 from name: quầy 4[0m
+[0;32mI (4488) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4498) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (4498) MQTT: Extracted counter ID: 5 from name: quầy 5[0m
+[0;32mI (4508) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (4508) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (4508) MQTT: Device list updated: 5 devices[0m
+[0;32mI (4518) MQTT: Sorted device list successfully[0m
+[0;32mI (4538) MQTT: Processing topic: service/list[0m
+[0;32mI (4538) MQTT: Processing topic data: [{"id":7,"name":"Giao dich duoi 1 ty"},{"id":9,"name":"Giao dich khac"},{"id":10,"name":"Lay so cho vui"},{"id":1,"name":"Giao dich tren 1 ty"}][0m
+[0;32mI (4538) MQTT: [{"id":7,"name":"Giao dich duoi 1 ty"},{"id":9,"name":"Giao dich khac"},{"id":10,"name":"Lay so cho vui"},{"id":1,"name":"Giao dich tren 1 ty"}][0m
+[0;32mI (4568) MQTT: Service list updated: 4 services[0m
+Free heap: 166268 bytes
+Free heap: 166268 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (9618) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (9618) MQTT: Processing topic: responsenumber[0m
+[0;32mI (9618) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1684","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 1"}[0m
+Free heap: 166276 bytes
+Free heap: 166272 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (12908) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (12918) MQTT: Processing topic: responsenumber[0m
+[0;32mI (12918) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3705","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (16988) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (16988) MQTT: Processing topic: responsenumber[0m
+[0;32mI (16988) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4756","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 5"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (23128) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (23138) MQTT: Processing topic: responsenumber[0m
+[0;32mI (23138) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"4757","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (27028) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (27028) MQTT: Processing topic: responsenumber[0m
+[0;32mI (27028) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"2721","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 1"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (30098) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (30098) MQTT: Processing topic: responsenumber[0m
+[0;32mI (30098) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3706","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (37178) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (37178) MQTT: Processing topic: responsenumber[0m
+[0;32mI (37178) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"2722","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 1"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (44478) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (44478) MQTT: Processing topic: responsenumber[0m
+[0;32mI (44478) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"1685","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (49448) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (49448) MQTT: Processing topic: responsenumber[0m
+[0;32mI (49448) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"3707","service_name":"Giao dich khac","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (55388) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (55388) MQTT: Processing topic: responsenumber[0m
+[0;32mI (55388) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"1686","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (57748) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (57748) MQTT: Processing topic: responsenumber[0m
+[0;32mI (57748) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"2723","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (59588) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (59588) MQTT: Processing topic: responsenumber[0m
+[0;32mI (59588) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"2724","service_name":"Giao dich duoi 1 ty","device_name":"qu\u1ea7y 1"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (63698) WIFI LOG: SSID = iPhone Anh Kiet[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (64818) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (64818) MQTT: Processing topic: responsenumber[0m
+[0;32mI (64818) MQTT: Processing topic data: {"device_id":"R1:42:E3:4C:7C:BC","number":"4758","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 4"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (69728) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (69728) MQTT: Processing topic: responsenumber[0m
+[0;32mI (69738) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3708","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (71768) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (71778) MQTT: Processing topic: responsenumber[0m
+[0;32mI (71778) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"3709","service_name":"Giao dich khac","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (73818) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (73818) MQTT: Processing topic: responsenumber[0m
+[0;32mI (73818) MQTT: Processing topic data: {"device_id":"94:E6:86:09:A4:78","number":"1687","service_name":"Giao dich tren 1 ty","device_name":"qu\u1ea7y 1"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (78148) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (78148) MQTT: Processing topic: responsenumber[0m
+[0;32mI (78148) MQTT: Processing topic data: {"device_id":"R2:42:E3:4C:7C:BC","number":"4759","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 5"}[0m
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+Free heap: 166276 bytes
+[0;32mI (84168) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (84168) MQTT: Processing topic: responsenumber[0m
+[0;32mI (84168) MQTT: Processing topic data: {"device_id":"A8:42:E3:4C:7C:BC","number":"4760","service_name":"Lay so cho vui","device_name":"qu\u1ea7y 2"}[0m
+Free heap: 166276 bytes
+[0;32mI (85058) WIFI LOG: PASS = 061002aK[0m
+[0;32mI (85058) wifi:state: run -> init (0x0)[0m
+[0;32mI (85068) wifi:pm stop, total sleep time: 62295164 us / 83028148 us[0m
+
+[0;32mI (85068) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (85068) wifi:<ba-del>idx:1, tid:7[0m
+[0;32mI (85068) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (85088) WIFI: STA disconnected, reason=8[0m
+[1;31mE (85088) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (85088) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;32mI (85098) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (85098) LED: LED OFF[0m
+[1;31mE (85098) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (85108) MQTT: MQTT disconnected[0m
+[0;32mI (85108) LED: LED OFF[0m
+[1;31mE (85138) wifi:sta is connecting, return error[0m
+Free heap: 167124 bytes
+[0;32mI (86088) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (86088) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (86108) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (86118) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (86158) wifi:connected with iPhone Anh Kiet, aid = 1, channel 6, BW20, bssid = 56:07:d2:f4:36:88[0m
+[0;32mI (86158) wifi:security: WPA2-PSK, phy: bgn, rssi: -34[0m
+[0;32mI (86188) wifi:pm start, type: 1[0m
+
+[0;32mI (86188) WIFI: Connected to SSID:iPhone Anh Kiet, channel:6[0m
+[0;32mI (86218) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+Free heap: 166968 bytes
+[0;32mI (87438) esp_netif_handlers: sta ip: 172.20.10.13, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (87438) WIFI: WiFi connected, got IP[0m
+[0;32mI (87438) WIFI: Connected BSSID: 56:07:D2:F4:36:88[0m
+[0;32mI (87438) WIFI: SSID: iPhone Anh Kiet, RSSI: -45[0m
+[0;32mI (87458) NVS_UTILS: Wi-Fi credentials saved successfully![0m
+Free heap: 167000 bytes
+[0;32mI (88478) MQTT: Registered device with WiFi STA MAC: {"device_id":"B8:D6:1A:B9:DA:A4","status":"offline"}[0m
+[0;32mI (88478) mqtt_client: Client force reconnect requested[0m
+[0;32mI (88488) wifi:<ba-add>idx:0 (ifx:0, 56:07:d2:f4:36:88), tid:0, ssn:2, winSize:64[0m
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+Free heap: 166104 bytes
+[1;31mE (98498) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (98498) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (98498) mqtt_client: Error transport connect[0m
+[0;32mI (98498) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (98498) LED: LED OFF[0m
+[0;32mI (98498) MQTT: MQTT disconnected[0m
+[0;32mI (98508) LED: LED OFF[0m
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166800 bytes
+Free heap: 166128 bytes
+Free heap: 165932 bytes
+Free heap: 165932 bytes
+Free heap: 165992 bytes
+Free heap: 165796 bytes
+Free heap: 165992 bytes
+Free heap: 165992 bytes
+[0;32mI (115258) wifi:bcn_timeout,ap_probe_send_start[0m
+Free heap: 165808 bytes
+Free heap: 166004 bytes
+[0;32mI (117758) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (117758) wifi:state: run -> init (0xc800)[0m
+[0;32mI (117768) wifi:pm stop, total sleep time: 19056557 us / 31578276 us[0m
+
+[0;32mI (117768) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (117768) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (117778) WIFI: STA disconnected, reason=200[0m
+[1;31mE (117778) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[1;31mE (117788) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (117788) mqtt_client: Error transport connect[0m
+[0;32mI (117798) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (117798) LED: LED OFF[0m
+[0;32mI (117798) MQTT: MQTT disconnected[0m
+[0;32mI (117808) LED: LED OFF[0m
+Free heap: 167272 bytes
+Free heap: 167272 bytes
+Free heap: 167272 bytes
+[0;32mI (120198) WIFI: STA disconnected, reason=201[0m
+Free heap: 167272 bytes
+Free heap: 167272 bytes
+[0;32mI (122608) WIFI: STA disconnected, reason=201[0m
+Free heap: 167272 bytes
+Free heap: 167272 bytes
+Free heap: 167272 bytes
+[0;32mI (125028) WIFI: STA disconnected, reason=201[0m
+Free heap: 167272 bytes
+Free heap: 167272 bytes
+[0;32mI (127438) WIFI: STA disconnected, reason=201[0m
+[1;31mE (127438) WIFI: Saved WiFi connection failed after 5 retries[0m
+[1;31mE (127808) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (127808) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (127808) mqtt_client: Error transport connect[0m
+[0;32mI (127808) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (127818) LED: LED OFF[0m
+[0;32mI (127818) MQTT: MQTT disconnected[0m
+[0;32mI (127818) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[0;32mI (133948) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (142818) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (142818) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (142818) mqtt_client: Error transport connect[0m
+[0;32mI (142818) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (142818) LED: LED OFF[0m
+[0;32mI (142828) MQTT: MQTT disconnected[0m
+[0;32mI (142828) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (157828) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (157828) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (157828) mqtt_client: Error transport connect[0m
+[0;32mI (157828) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (157828) LED: LED OFF[0m
+[0;32mI (157838) MQTT: MQTT disconnected[0m
+[0;32mI (157838) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (172838) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (172838) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (172838) mqtt_client: Error transport connect[0m
+[0;32mI (172838) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (172838) LED: LED OFF[0m
+[0;32mI (172848) MQTT: MQTT disconnected[0m
+[0;32mI (172848) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (187848) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (187848) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (187848) mqtt_client: Error transport connect[0m
+[0;32mI (187858) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (187858) LED: LED OFF[0m
+[0;32mI (187858) MQTT: MQTT disconnected[0m
+[0;32mI (187868) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (197868) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (197868) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (197868) mqtt_client: Error transport connect[0m
+[0;32mI (197868) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (197868) LED: LED OFF[0m
+[0;32mI (197878) MQTT: MQTT disconnected[0m
+[0;32mI (197878) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (212878) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (212878) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (212878) mqtt_client: Error transport connect[0m
+[0;32mI (212878) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (212878) LED: LED OFF[0m
+[0;32mI (212888) MQTT: MQTT disconnected[0m
+[0;32mI (212888) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+[1;31mE (227888) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (227888) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (227888) mqtt_client: Error transport connect[0m
+[0;32mI (227898) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (227898) LED: LED OFF[0m
+[0;32mI (227898) MQTT: MQTT disconnected[0m
+[0;32mI (227908) LED: LED OFF[0m
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+Free heap: 167300 bytes
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20808h (133128) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030830 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030858 vaddr=3ffb0000 size=04c48h ( 19528) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000354a8 vaddr=40080000 size=0ab70h ( 43888) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a7c10h (687120) map[0m
+[0;32mI (397) esp_image: segment 5: paddr=000e7c38 vaddr=4008ab70 size=0e774h ( 59252) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (452) cpu_start: Pro cpu start user code[0m
+[0;32mI (452) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      6fb4eee-dirty[0m
+[0;32mI (461) app_init: Compile time:     Jan  4 2026 11:55:58[0m
+[0;32mI (466) app_init: ELF file SHA256:  516083dfd...[0m
+[0;32mI (470) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (478) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (482) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (486) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB9590 len 00026A70 (154 KiB): DRAM[0m
+[0;32mI (503) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (508) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (514) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (520) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (538) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (548) main_task: Started on CPU0[0m
+[0;32mI (558) main_task: Calling app_main()[0m
+[0;32mI (558) LED: LED initialized on GPIO 2[0m
+[0;32mI (558) LED: LED OFF[0m
+[0;32mI (558) DEMO: I2C initialized successfully[0m
+[0;32mI (1448) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1468) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1478) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (1488) wifi:wifi driver task: 3ffc273c, prio:23, stack:6656, core=0[0m
+[0;32mI (1498) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1498) wifi:wifi certification version: v7.0[0m
+[0;32mI (1498) wifi:config NVS flash: enabled[0m
+[0;32mI (1498) wifi:config nano formatting: disabled[0m
+[0;32mI (1508) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1508) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1518) wifi:Init management short buffer num: 32[0m
+[0;32mI (1518) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1518) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1528) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1528) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1538) wifi_init: rx ba win: 6[0m
+[0;32mI (1538) wifi_init: accept mbox: 6[0m
+[0;32mI (1538) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1548) wifi_init: udp mbox: 6[0m
+[0;32mI (1548) wifi_init: tcp mbox: 6[0m
+[0;32mI (1548) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1548) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1558) wifi_init: tcp mss: 1440[0m
+[0;32mI (1558) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1558) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1618) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1688) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1688) wifi:enable tsf[0m
+[0;32mI (1698) WIFI: WiFi initialized[0m
+[0;32mI (1698) WIFI: WiFi STA started[0m
+Free heap: 178340 bytes
+[0;32mI (1698) STATE_MACHINE: System FSM task started[0m
+[0;32mI (1798) STATE_MACHINE: Have a saved wifi network in NVS: iPhone Anh Kiet[0m
+[0;32mI (1838) wifi:flush txq[0m
+[0;32mI (1838) wifi:stop sw txq[0m
+[0;32mI (1838) wifi:lmac stop hw txq[0m
+[0;32mI (1848) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1848) wifi:enable tsf[0m
+[0;32mI (1848) WIFI: WiFi STA started[0m
+[0;32mI (1858) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1868) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1898) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1908) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1938) wifi:connected with iPhone Anh Kiet, aid = 1, channel 6, BW20, bssid = 16:17:0f:56:f9:d9[0m
+[0;32mI (1938) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (1958) wifi:pm start, type: 1[0m
+
+[0;32mI (1958) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1958) WIFI: Connected to SSID:iPhone Anh Kiet, channel:6[0m
+[0;32mI (1998) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+Free heap: 177124 bytes
+[0;32mI (3428) esp_netif_handlers: sta ip: 172.20.10.13, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (3428) WIFI: WiFi connected, got IP[0m
+[0;32mI (3428) WIFI: Connected BSSID: 16:17:0F:56:F9:D9[0m
+[0;32mI (3428) WIFI: SSID: iPhone Anh Kiet, RSSI: -36[0m
+Free heap: 177148 bytes
+[0;32mI (4488) MQTT: Registered device with WiFi STA MAC: {"device_id":"B8:D6:1A:B9:DA:A4","status":"offline"}[0m
+[0;32mI (4488) MQTT: MQTT initialized[0m
+[0;32mI (4508) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+[0;32mI (4508) wifi:<ba-add>idx:0 (ifx:0, 16:17:0f:56:f9:d9), tid:0, ssn:2, winSize:64[0m
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166228 bytes
+Free heap: 166032 bytes
+[1;31mE (14508) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (14508) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (14508) mqtt_client: Error transport connect[0m
+[0;32mI (14508) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (14508) LED: LED OFF[0m
+[0;32mI (14508) MQTT: MQTT disconnected[0m
+[0;32mI (14518) LED: LED OFF[0m
+Free heap: 166684 bytes
+Free heap: 166776 bytes
+Free heap: 166776 bytes
+Free heap: 166776 bytes
+[0;32mI (18448) wifi:bcn_timeout,ap_probe_send_start[0m
+Free heap: 166776 bytes
+Free heap: 166768 bytes
+Free heap: 166780 bytes
+[0;32mI (20948) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (20948) wifi:state: run -> init (0xc800)[0m
+[0;32mI (20958) wifi:pm stop, total sleep time: 8546060 us / 18997813 us[0m
+
+[0;32mI (20958) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (20958) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (20968) WIFI: STA disconnected, reason=200[0m
+Free heap: 167384 bytes
+Free heap: 167384 bytes
+[0;32mI (23378) WIFI: STA disconnected, reason=201[0m
+Free heap: 167376 bytes
+[1;31mE (24518) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (24518) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (24518) mqtt_client: Error transport connect[0m
+[0;32mI (24518) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (24528) LED: LED OFF[0m
+[0;32mI (24528) MQTT: MQTT disconnected[0m
+[0;32mI (24528) LED: LED OFF[0m
+Free heap: 167376 bytes
+Free heap: 167376 bytes
+[0;32mI (25798) WIFI: STA disconnected, reason=201[0m
+Free heap: 167372 bytes
+Free heap: 167372 bytes
+[0;32mI (28218) WIFI: STA disconnected, reason=201[0m
+Free heap: 167372 bytes
+Free heap: 167372 bytes
+[0;32mI (30628) WIFI: STA disconnected, reason=201[0m
+[1;31mE (30628) WIFI: Saved WiFi connection failed after 5 retries[0m
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+[1;31mE (39528) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (39528) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (39528) mqtt_client: Error transport connect[0m
+[0;32mI (39538) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (39538) LED: LED OFF[0m
+[0;32mI (39538) MQTT: MQTT disconnected[0m
+[0;32mI (39548) LED: LED OFF[0m
+Free heap: 167412 bytes
+Free heap: 167412 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+[1;31mE (49548) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (49548) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (49548) mqtt_client: Error transport connect[0m
+[0;32mI (49548) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (49548) LED: LED OFF[0m
+[0;32mI (49558) MQTT: MQTT disconnected[0m
+[0;32mI (49558) LED: LED OFF[0m
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+[1;31mE (64558) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (64558) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (64558) mqtt_client: Error transport connect[0m
+[0;32mI (64558) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (64558) LED: LED OFF[0m
+[0;32mI (64568) MQTT: MQTT disconnected[0m
+[0;32mI (64568) LED: LED OFF[0m
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+Free heap: 167420 bytes
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  3 2025 10:07:42[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20808h (133128) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030830 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=00030858 vaddr=3ffb0000 size=04c48h ( 19528) load[0m
+[0;32mI (145) esp_image: segment 3: paddr=000354a8 vaddr=40080000 size=0ab70h ( 43888) load[0m
+[0;32mI (162) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a7c10h (687120) map[0m
+[0;32mI (397) esp_image: segment 5: paddr=000e7c38 vaddr=4008ab70 size=0e774h ( 59252) load[0m
+[0;32mI (433) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (433) boot: Disabling RNG early entropy source...[0m
+[0;32mI (444) cpu_start: Multicore app[0m
+[0;32mI (452) cpu_start: Pro cpu start user code[0m
+[0;32mI (452) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (452) app_init: Application information:[0m
+[0;32mI (452) app_init: Project name:     hello_world[0m
+[0;32mI (456) app_init: App version:      6fb4eee-dirty[0m
+[0;32mI (461) app_init: Compile time:     Jan  4 2026 11:55:58[0m
+[0;32mI (466) app_init: ELF file SHA256:  516083dfd...[0m
+[0;32mI (470) app_init: ESP-IDF:          v5.5-dirty[0m
+[0;32mI (474) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (478) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (482) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (486) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (492) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB9590 len 00026A70 (154 KiB): DRAM[0m
+[0;32mI (503) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (508) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (514) heap_init: At 400992E4 len 00006D1C (27 KiB): IRAM[0m
+[0;32mI (520) spi_flash: detected chip: generic[0m
+[0;32mI (522) spi_flash: flash io: dio[0m
+[0;33mW (525) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (538) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (548) main_task: Started on CPU0[0m
+[0;32mI (558) main_task: Calling app_main()[0m
+[0;32mI (558) LED: LED initialized on GPIO 2[0m
+[0;32mI (558) LED: LED OFF[0m
+[0;32mI (558) DEMO: I2C initialized successfully[0m
+[0;32mI (1448) DEMO: Starting keypad MQTT application[0m
+[0;32mI (1468) MAC_UTILS: WiFi STA MAC: B8:D6:1A:B9:DA:A4[0m
+[0;32mI (1478) MAC_UTILS: Loaded user_id from NVS: 3[0m
+[0;32mI (1488) wifi:wifi driver task: 3ffc273c, prio:23, stack:6656, core=0[0m
+[0;32mI (1498) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (1498) wifi:wifi certification version: v7.0[0m
+[0;32mI (1498) wifi:config NVS flash: enabled[0m
+[0;32mI (1498) wifi:config nano formatting: disabled[0m
+[0;32mI (1508) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1508) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1518) wifi:Init management short buffer num: 32[0m
+[0;32mI (1518) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1518) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1528) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1528) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1538) wifi_init: rx ba win: 6[0m
+[0;32mI (1538) wifi_init: accept mbox: 6[0m
+[0;32mI (1538) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1548) wifi_init: udp mbox: 6[0m
+[0;32mI (1548) wifi_init: tcp mbox: 6[0m
+[0;32mI (1548) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1548) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1558) wifi_init: tcp mss: 1440[0m
+[0;32mI (1558) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1558) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1608) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1678) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1688) wifi:enable tsf[0m
+[0;32mI (1688) WIFI: WiFi initialized[0m
+[0;32mI (1688) WIFI: WiFi STA started[0m
+Free heap: 178340 bytes
+[0;32mI (1688) STATE_MACHINE: System FSM task started[0m
+[0;32mI (1788) STATE_MACHINE: Have a saved wifi network in NVS: iPhone Anh Kiet[0m
+[0;32mI (1908) wifi:flush txq[0m
+[0;32mI (1908) wifi:stop sw txq[0m
+[0;32mI (1908) wifi:lmac stop hw txq[0m
+[0;32mI (1908) wifi:mode : sta (b8:d6:1a:b9:da:a4)[0m
+[0;32mI (1908) wifi:enable tsf[0m
+[0;32mI (1918) WIFI: WiFi STA started[0m
+Free heap: 178032 bytes
+Free heap: 178032 bytes
+[0;32mI (4328) WIFI: STA disconnected, reason=201[0m
+Free heap: 178012 bytes
+Free heap: 178012 bytes
+Free heap: 178008 bytes
+[0;32mI (6748) WIFI: STA disconnected, reason=201[0m
+Free heap: 178008 bytes
+Free heap: 178008 bytes
+[0;32mI (9158) WIFI: STA disconnected, reason=201[0m
+Free heap: 178012 bytes
+Free heap: 178004 bytes
+[0;32mI (11578) WIFI: STA disconnected, reason=201[0m
+Free heap: 178004 bytes
+Free heap: 178012 bytes
+Free heap: 178012 bytes
+[0;32mI (13998) WIFI: STA disconnected, reason=201[0m
+[1;31mE (13998) WIFI: Saved WiFi connection failed after 5 retries[0m
+Free heap: 178048 bytes
+[0;32mI (15058) NVS_UTILS: Read status successfully: SO DANG GOI[0m
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178048 bytes
+Free heap: 178068 bytes
+Free heap: 178068 bytes
+Free heap: 178068 bytes

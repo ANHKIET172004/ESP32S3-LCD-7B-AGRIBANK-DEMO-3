@@ -12,21 +12,11 @@ extern char current_counter_id[3];
 extern char counter_id[3];
 
 extern bool start;
-//extern uint8_t start_cnt;
 
 uint8_t scroll_cnt=0;
 
 void lcd_show_main_screen(const char *number) {
     lcd_lock();
-    
-    /*
-    
-    if (start_cnt > 20) {
-        start_cnt = 1;
-    }
-    start_cnt++;
-    */
- 
     
     lcd_clear();
     char display[17]={0};  
@@ -209,21 +199,7 @@ void lcd_show_device_list(void) {
     
     lcd_send_string(line);
     read_current_counter_id();//
-    
-    //if ((strcmp(g_keypad.device_list[g_keypad. selected_index].device_id,g_keypad.selected_device_id)==0)&&(strcmp(g_keypad.device_list[g_keypad. selected_index].user_id,current_user_id)!=0)){
-  /*
-    if (strcmp(g_keypad.device_list[g_keypad. selected_index].device_id,g_keypad.selected_device_id)==0){    
-    lcd_put_cur(1,strlen(g_keypad.device_list[g_keypad.selected_index].name)+2);
-    lcd_send_string("(V)");
-    }
-    else {
-    if (strcmp(g_keypad.device_list[g_keypad. selected_index].counter_id,current_counter_id)!=0){
-    lcd_put_cur(1,strlen(g_keypad.device_list[g_keypad.selected_index].name)+2);
-    lcd_send_string("   "); 
-    }
-    
-    }
-      */
+
 
     xSemaphoreGive(g_mutex.device_list_mutex);//
     lcd_unlock();
@@ -232,38 +208,6 @@ void lcd_show_device_list(void) {
 }
 
 
-/*
-void lcd_show_user_list(void) {
-    
-    lcd_lock();
-    lcd_clear();
-    lcd_put_cur(0, 0);
-    char header[17] = {0};
-    snprintf(header, sizeof(header), "*CHON TB:");
-    lcd_send_string(header);
-    lcd_put_cur(1, 0);
-    char line[17] = {0};
-    xSemaphoreTake(g_mutex.device_list_mutex, portMAX_DELAY);//
-    snprintf(line, sizeof(line), ">%s", g_keypad.device_list[g_keypad.selected_index].name);    
-    lcd_send_string(line);
-    read_current_counter_id();//
-    //if ((strcmp(g_keypad.device_list[g_keypad. selected_index].device_id,g_keypad.selected_device_id)==0)&&(strcmp(g_keypad.device_list[g_keypad. selected_index].user_id,current_counter_id)!=0)){
-    if (strcmp(g_keypad.device_list[g_keypad. selected_index].device_id,g_keypad.selected_device_id)==0){
-    lcd_put_cur(1,strlen(g_keypad.device_list[g_keypad.selected_index].name)+2);
-    lcd_send_string("(V)");
-    }
-    else {
-    if (strcmp(g_keypad.device_list[g_keypad. selected_index].counter_id,current_counter_id)!=0){
-
-    lcd_put_cur(1,strlen(g_keypad.device_list[g_keypad.selected_index].name)+2);
-    lcd_send_string("   "); 
-    }
-    }
-      
-    xSemaphoreGive(g_mutex.device_list_mutex);//
-    lcd_unlock();
-}
-*/
 void lcd_show_position_list(void) {
     
     lcd_lock();
@@ -662,7 +606,6 @@ void service_scroll_task(void *pvParameter) {
                 
             }
                 
-           // vTaskDelay(pdMS_TO_TICKS(200)); //
             xSemaphoreGive(g_mutex.display_service_mutex);//
             vTaskDelay(pdMS_TO_TICKS(500)); 
            
@@ -672,6 +615,7 @@ void service_scroll_task(void *pvParameter) {
     }
 }
 
+/*
 void ssid_scroll_task(void *pvParameter) {
     //char lcd_str[17];
 
@@ -721,7 +665,7 @@ void ssid_scroll_task(void *pvParameter) {
     }
 }
 
-
+*/
 void lcd_mainscreen_init(){
 
     lcd_init();

@@ -24,7 +24,7 @@ bool user_selected_wifi = false;
 
 char counter_id[3]={0};
 
-bool start1=true;
+//bool start1=true;
 
 
 
@@ -35,25 +35,6 @@ extern state_context_t g_state;
 extern void service_scroll_task(void *pvParameter);
 
 //extern void ssid_scroll_task(void *pvParameter) ;
-
-void setUp(void)
-{
-    memset(g_keypad.input_buffer, 0, sizeof(g_keypad.input_buffer));
- //   g_keypad.input_len = 0;
-}
-
-void tearDown(void) {}
-
-void test_key(void)
-{
-    char last_pressed_key = 'B';
-    g_keypad.current_mode=MODE_NORMAL;
-    process_key(last_pressed_key);
-  //  last_pressed_key = ' ';
-
-
-
-}
 
 
 void app_main(void) {
@@ -80,39 +61,6 @@ void app_main(void) {
     esp_netif_init();
     esp_event_loop_create_default();
     wifi_init();
-   // size_t ssid_len=sizeof(g_keypad.saved_ssid);
-   // size_t pass_len=sizeof(g_keypad.saved_pass);
-   // if (read_wifi_credentials_from_nvs(g_keypad.saved_ssid,g_keypad.saved_pass,g_keypad.saved_bssid)!=ESP_OK){
-    //esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &g_state.ssid_len, 
-      //                 g_keypad.saved_pass, &g_state.password_len, NULL);
-    //esp_err_t err = read_wifi_credentials_from_nvs(g_keypad.saved_ssid, &ssid_len,g_keypad.saved_pass, &pass_len, NULL);
-    /*
-    if (err != ESP_OK) {
-        wifi_scan();
-    }
-    else {
-        wifi_list *list = calloc(1, sizeof(wifi_list));
-        
-
-        if (!list) {
-            ESP_LOGE(TAG, "malloc failed");
-            free(list);
-        }
-        else {
-            load_wifi_list(list);
-            for (int i=0;i<list->count;i++){
-                if (strncmp(g_keypad.saved_ssid,list->aps[i].ssid,sizeof(g_keypad.saved_ssid)-1)==0){
-                    g_keypad.best_saved_index=i;
-                    memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
-                   strncpy(g_keypad.connecting_wifi,g_keypad.saved_ssid,sizeof(g_keypad.connecting_wifi)-1);//
-                   g_keypad.connecting_wifi[sizeof(g_keypad.connecting_wifi)-1]='\0';//
-                }
-            }
-            free(list);
-
-        }
-    }
-        */
 
     mqtt_queue = xQueueCreate(MQTT_QUEUE_LENGTH, sizeof(mqtt_message_t));
     if (mqtt_queue == NULL) {
@@ -127,12 +75,13 @@ void app_main(void) {
 
    // xTaskCreate(ssid_scroll_task, "ssid_scroll_task", 2048, NULL, 4, NULL);
 
-   
+   /*
     while (1){
         size_t free_heap = esp_get_free_heap_size();
        printf("Free heap: %d bytes\n", free_heap);
      //  test_key();
        vTaskDelay(pdMS_TO_TICKS(1000));
     }
+       */
        
 }
