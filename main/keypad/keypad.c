@@ -94,7 +94,7 @@ void process_key_wifi_mode(char key) {
         enter_wifi(); 
         //return;
         break;
-    case 'C':
+    case '#': // C
         delete_wifi_input_key();
 
         //return;
@@ -105,7 +105,7 @@ void process_key_wifi_mode(char key) {
         //return;
         break;
     
-    case'#': 
+    case'C': // #
         if (g_keypad.buffer_index>0) {
         hide_wifi_input();
 
@@ -129,11 +129,17 @@ void process_key_normal_mode(char key) {
 
     switch (key){
         case 'D':
+            if (g_keypad.buffer_index>0){
             enter_number();
+            }
+            else {
+            recall_number();
+            }
+            
             break;
         
 
-        case 'C':
+        case '#': //C
             delete_normal_input_key();
             break;
         
@@ -159,13 +165,13 @@ void process_key_normal_mode(char key) {
                 break;
 
 
-        case '#':
+       /* case '#':
             if (g_keypad.buffer_index<1) {
                 recall_number();
             }
                 break;
-
-        case '*':
+*/
+        case 'C': //*
             if (g_keypad.buffer_index<1) {
 
                 skip_number();

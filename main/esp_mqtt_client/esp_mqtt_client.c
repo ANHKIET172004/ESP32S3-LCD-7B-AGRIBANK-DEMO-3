@@ -110,7 +110,6 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             led_on();
 
             ESP_LOGI(TAG, "MQTT connected");
-            //set_sys_state(STATE_RUNNING);
             set_mqtt_connected(true);  
             char str[128]={0};
             sprintf(str, "{\"device_id\":\"%s\",\"status\":\"online\"}",g_keypad.default_id);
@@ -120,7 +119,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             esp_mqtt_client_subscribe(event->client, "responsenumber", 0);
             esp_mqtt_client_subscribe(event->client, "device/list", 1);
             esp_mqtt_client_subscribe(event->client, "service/list", 1);
-            esp_mqtt_client_subscribe(event->client, "feedback_status", 0);
+       //     esp_mqtt_client_subscribe(event->client, "feedback_status", 0);
         
             break;
 
@@ -128,8 +127,6 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             ESP_LOGI(TAG, "MQTT disconnected");
             led_off();
             set_mqtt_connected(false); 
-            //set_sys_state(STATE_RUNNING);
-            //set_publish(false);
             break;
 
         case MQTT_EVENT_DATA:
@@ -155,9 +152,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
         
         case MQTT_EVENT_ERROR:
             ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
-            //set_publish(false);
             led_off();
-            //set_sys_state(STATE_RUNNING);
             break;    
 
         default:
@@ -242,7 +237,6 @@ void mqtt_process_task(void *pvParameters) {
     while (1) {
         esp_task_wdt_reset(); 
 
-        //if ((xQueueReceive(mqtt_queue, &msg, xTicksToWait) != pdTRUE)&&(g_keypad.stop==true)) {
         if ((xQueueReceive(mqtt_queue, &msg, xTicksToWait) != pdTRUE)) {
             continue; 
         }
@@ -265,6 +259,7 @@ void mqtt_process_task(void *pvParameters) {
             service_list_handler(msg);
         }
 
+        /*
         else if (strcmp(msg.topic, "feedback_status") == 0) {
            
 
@@ -274,23 +269,23 @@ void mqtt_process_task(void *pvParameters) {
 
                 char current_num[5]={0};
                 size_t num_len=sizeof(current_num);
+                char check_response[30]={0};
+                
 
                 if (read_current_number_from_nvs(current_num,&num_len)==ESP_OK){
 
 
                 esp_mqtt_client_publish(mqtt_client, "check current number", current_num, 0, 0, 0);
 
-               // led_on();
                 }
              }
              else if (strcmp(msg.payload,"disconnected")==0){
-                //led_off();
              }
 
 
         }
 
-
+*/
 
 
 
