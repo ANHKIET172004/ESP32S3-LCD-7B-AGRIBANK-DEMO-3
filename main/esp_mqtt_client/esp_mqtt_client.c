@@ -119,7 +119,7 @@ void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event
             esp_mqtt_client_subscribe(event->client, "responsenumber", 0);
             esp_mqtt_client_subscribe(event->client, "device/list", 1);
             esp_mqtt_client_subscribe(event->client, "service/list", 1);
-       //     esp_mqtt_client_subscribe(event->client, "feedback_status", 0);
+            esp_mqtt_client_subscribe(event->client, "feedback_status", 0);
         
             break;
 
@@ -259,7 +259,7 @@ void mqtt_process_task(void *pvParameters) {
             service_list_handler(msg);
         }
 
-        /*
+        
         else if (strcmp(msg.topic, "feedback_status") == 0) {
            
 
@@ -269,13 +269,16 @@ void mqtt_process_task(void *pvParameters) {
 
                 char current_num[5]={0};
                 size_t num_len=sizeof(current_num);
-                char check_response[30]={0};
+                //char check_response[30]={0};
                 
 
                 if (read_current_number_from_nvs(current_num,&num_len)==ESP_OK){
+                
+                char str[128]={0};
+                sprintf(str, "{\"device_id\":\"%s\",\"number\":\"%s\"}",g_keypad.default_id,current_num);
 
-
-                esp_mqtt_client_publish(mqtt_client, "check current number", current_num, 0, 0, 0);
+                //esp_mqtt_client_publish(mqtt_client, "check current number", current_num, 0, 0, 0);
+                esp_mqtt_client_publish(mqtt_client, "check current number", str, 0, 0, 0);
 
                 }
              }
@@ -285,7 +288,7 @@ void mqtt_process_task(void *pvParameters) {
 
         }
 
-*/
+
 
 
 
