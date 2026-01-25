@@ -66,8 +66,8 @@ void app_main(void) {
         init_fail_hanlde(2);// restart nếu số lần restart còn nằm trong khoảng cho phép
     } 
     else {
-        if (read_retry(2)>0){
-            reset_retry(2);// reset lại số lần restart trước đó (nếu có)
+        if (read_retry(1)>0){
+            reset_retry(1);// reset lại số lần restart trước đó (nếu có)
 
         }
         ESP_LOGI(TAG, "Created MQTT queue successfully!");

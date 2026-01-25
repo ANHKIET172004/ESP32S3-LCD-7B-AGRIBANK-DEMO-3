@@ -129,31 +129,31 @@ void wifi_init(void)
     ret = esp_wifi_init(&cfg);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_init failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(1);// restart nếu số lần restart còn trong mức cho phép
+        init_fail_hanlde(2);// restart nếu số lần restart còn trong mức cho phép
         //return;           
     }
-    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
-        reset_retry(1);
+    if (read_retry(2)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(2);
     }
 
     ret = esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL, NULL);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Register WIFI_EVENT failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(1);
+        init_fail_hanlde(3);
         //return;
     }
-    if (read_retry(1)>0){
-        reset_retry(1);
+    if (read_retry(3)>0){
+        reset_retry(3);
     }
 
     ret = esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &wifi_event_handler, NULL, NULL);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Register IP_EVENT failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(1);
+        init_fail_hanlde(4);
         //return;
     }
-    if (read_retry(1)>0){
-        reset_retry(1);
+    if (read_retry(4)>0){
+        reset_retry(4);
     }
 
     wifi_config_t wifi_config = {0};  
@@ -161,34 +161,34 @@ void wifi_init(void)
     ret = esp_wifi_set_mode(WIFI_MODE_STA);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_set_mode failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(1);
+        init_fail_hanlde(5);
 
         //return;
     }
-    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
-        reset_retry(1);
+    if (read_retry(5)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(5);
     }
 
     ret = esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_set_config failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(1);
+        init_fail_hanlde(6);
 
         //return;
     }
-    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
-        reset_retry(1);
+    if (read_retry(6)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(6);
     }
 
     ret = esp_wifi_start();
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_start failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(1);
+        init_fail_hanlde(7);
 
         //return;
     }
-    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
-        reset_retry(1);
+    if (read_retry(7)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(7);
     }
 
     ESP_LOGI(TAG, "WiFi initialized successfully");

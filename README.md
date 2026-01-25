@@ -140,6 +140,12 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **D (không nhập số)** → Gọi lại số hiện tại
   - **A** → Chuyển sang `STATE_MENU`
 
+<div align="center">
+  <img src="main/photo/manhinhchinh.png" alt="Màn hình chính" width="50%"/>
+  <br>
+  <em>Màn hình chính</em>
+</div>
+
 ---
 
 ### STATE_MENU – Menu chức năng
@@ -150,6 +156,12 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **2** → Quay lại chức năng trước
   - **D** → Chọn chức năng
   - **A** → Thoát menu → `STATE_RUNNING`
+
+<div align="center">
+  <img src="main/photo/menu.jpg" alt="Màn hình menu" width="50%"/>
+  <br>
+  <em>Màn hình menu</em>
+</div>
 
 ### Các chức năng có trong MENU
 
@@ -200,6 +212,11 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **A** → Trở lại màn hình trước đó
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
+<div align="center">
+  <img src="main/photo/nhaptenwifi.jpg" alt="Màn hình chọn quầy" width="50%"/>
+  <br>
+  <em>Màn hình nhập tên wifi</em>
+</div>
 
 #### ▪ Nhập mật khẩu
 
@@ -213,6 +230,11 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **A** → Trở lại màn hình trước đó
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
+<div align="center">
+  <img src="main/photo/nhapmatkhau.jpg" alt="Màn hình chọn quầy" width="50%"/>
+  <br>
+  <em>Màn hình nhập mật khẩu </em>
+</div>
 
 ---
 
@@ -261,6 +283,12 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - Chuyển số đang xử lý đến màn hình đánh giá và màn hình hiển thị số
   - Hoàn tất → `STATE_RUNNING`
 
+<div align="center">
+  <img src="main/photo/chonquay.jpg" alt="Màn hình chọn quầy" width="50%"/>
+  <br>
+  <em>Màn hình chọn quầy</em>
+</div>
+
 ---
 
 ### STATE_SERVICE_LIST – Chuyển dịch vụ
@@ -272,6 +300,12 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **D** → Chọn dịch vụ
   - **A** → Quay về màn hình trước đó
 - Sau khi chọn dịch vụ → **STATE_SERVICE_POSITON**
+
+<div align="center">
+  <img src="main/photo/chondichvu.png" alt="Màn hình chọn dịch vụ" width="50%"/>
+  <br>
+  <em>Màn hình chọn dịch vụ</em>
+</div>
 
 ---
 
