@@ -26,8 +26,30 @@ mutex_context_t g_mutex={
 
 };
 
+static StaticQueue_t  lcdMutexBuffer;
+// Buffer tĩnh cho từng mutex (khai báo static để tránh dùng stack)
+static StaticQueue_t stateMutexBuffer;
+static StaticQueue_t displaystateMutexBuffer;
+static StaticQueue_t inputMutexBuffer;
+static StaticQueue_t deviceListMutexBuffer;
+static StaticQueue_t serviceListMutexBuffer;
+static StaticQueue_t wifiConfigMutexBuffer;
+static StaticQueue_t mqttMutexBuffer;
+static StaticQueue_t selectedIdMutexBuffer;
+static StaticQueue_t mqttStartMutexBuffer;
+static StaticQueue_t wifiStartMutexBuffer;
+static StaticQueue_t mqttConnectedMutexBuffer;
+static StaticQueue_t wifiConnectedMutexBuffer;
+static StaticQueue_t wifiRetryMutexBuffer;
+static StaticQueue_t userSelectedWifiMutexBuffer;
+static StaticQueue_t scrollMutexBuffer;
+static StaticQueue_t displayServiceMutexBuffer;
+static StaticQueue_t ssidScrollMutexBuffer;
+static StaticQueue_t displaySavedSsidMutexBuffer;
+
 void mutex_init() {
-    g_mutex. lcd_mutex = xSemaphoreCreateMutex();
+    //g_mutex. lcd_mutex = xSemaphoreCreateMutex();
+    /*
     g_mutex. state_mutex = xSemaphoreCreateMutex();
     g_mutex.display_state_mutex = xSemaphoreCreateMutex();
     g_mutex.input_mutex = xSemaphoreCreateMutex();
@@ -46,6 +68,26 @@ void mutex_init() {
     g_mutex.display_service_mutex=xSemaphoreCreateMutex();
     g_mutex.ssid_scroll_mutex=xSemaphoreCreateMutex();
     g_mutex.display_saved_ssid_mutex=xSemaphoreCreateMutex();
+    */
+    g_mutex.lcd_mutex=xSemaphoreCreateMutexStatic(&lcdMutexBuffer);
+    g_mutex.state_mutex= xSemaphoreCreateMutexStatic(&stateMutexBuffer);
+    g_mutex.display_state_mutex= xSemaphoreCreateMutexStatic(&displaystateMutexBuffer);
+    g_mutex.input_mutex= xSemaphoreCreateMutexStatic(&inputMutexBuffer);
+    g_mutex.device_list_mutex= xSemaphoreCreateMutexStatic(&deviceListMutexBuffer);
+    g_mutex.service_list_mutex= xSemaphoreCreateMutexStatic(&serviceListMutexBuffer);
+    g_mutex.wifi_config_mutex= xSemaphoreCreateMutexStatic(&wifiConfigMutexBuffer);
+    g_mutex.mqtt_mutex= xSemaphoreCreateMutexStatic(&mqttMutexBuffer);
+    g_mutex.selected_id_mutex= xSemaphoreCreateMutexStatic(&selectedIdMutexBuffer);
+    g_mutex.mqtt_start_mutex= xSemaphoreCreateMutexStatic(&mqttStartMutexBuffer);
+    g_mutex.wifi_start_mutex= xSemaphoreCreateMutexStatic(&wifiStartMutexBuffer);
+    g_mutex.mqtt_connected_mutex= xSemaphoreCreateMutexStatic(&mqttConnectedMutexBuffer);
+    g_mutex.wifi_connected_mutex= xSemaphoreCreateMutexStatic(&wifiConnectedMutexBuffer);
+    g_mutex.wifi_retry_mutex= xSemaphoreCreateMutexStatic(&wifiRetryMutexBuffer);
+    g_mutex.user_selected_wifi_mutex = xSemaphoreCreateMutexStatic(&userSelectedWifiMutexBuffer);
+    g_mutex.scroll_mutex= xSemaphoreCreateMutexStatic(&scrollMutexBuffer);
+    g_mutex.display_service_mutex= xSemaphoreCreateMutexStatic(&displayServiceMutexBuffer);
+    g_mutex.ssid_scroll_mutex= xSemaphoreCreateMutexStatic(&ssidScrollMutexBuffer);
+    g_mutex.display_saved_ssid_mutex = xSemaphoreCreateMutexStatic(&displaySavedSsidMutexBuffer);
 }
 
 bool get_mqtt_connected(void) {

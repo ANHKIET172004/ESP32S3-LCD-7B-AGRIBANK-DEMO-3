@@ -2,6 +2,9 @@
 
 #define TAG "NVS_UTILS"
 
+
+/******các hàm xử lý counter id***** */
+
 void save_counter_id(const char *counter_id) {
     if (!counter_id || strlen(counter_id) == 0) {
         ESP_LOGW(TAG, "Invalid counter_id to save");
@@ -90,6 +93,9 @@ void delete_counter_id(void) {
     
     nvs_close(nvs_handle);
 }
+
+/******các hàm xử lý counter id***** */
+
 
 esp_err_t read_wifi_credentials_from_nvs(char *ssid, size_t *ssid_len_ptr, char *password, size_t *password_len_ptr, uint8_t* bssid) {
     nvs_handle_t my_handle;
@@ -237,6 +243,7 @@ fail:
     nvs_close(nvs_handle);
 }
 
+/*
 void save_wifi_credentials2(const char *ssid, const char *password, const uint8_t* bssid){
     if (!ssid||!password) return;
 
@@ -285,8 +292,8 @@ void save_wifi_credentials2(const char *ssid, const char *password, const uint8_
 
 
 }
-
-
+*/
+/*
 static void remove_oldest_wifi(wifi_list *list)
 {
     if (list->count == 0) return;
@@ -297,7 +304,7 @@ static void remove_oldest_wifi(wifi_list *list)
 
     memset(&list->aps[list->count - 1], 0, sizeof(wifi_list));
 }
-
+*/
 
 
 esp_err_t save_wifi_list(const wifi_list *list)
@@ -446,6 +453,7 @@ void delete_number_status(void) {
     nvs_close(nvs_handle);
 }
 
+/*
 static esp_err_t read_pass_count(uint8_t *count)
 {
     nvs_handle_t handle;
@@ -477,3 +485,4 @@ static esp_err_t read_pass_by_index(uint8_t index, char *pass, size_t len)
     nvs_close(handle);
     return err;
 }
+*/

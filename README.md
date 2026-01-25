@@ -9,6 +9,12 @@ Hệ thống cho phép:
 - Số được gọi sẽ được gửi đến màn hình gọi số để hiển thị và màn hình đánh giá chất lượng để lưu kết quả đánh giá
 - Hiển thị thông tin rõ ràng, dễ sử dụng
 
+<div align="center">
+  <img src="main/photo/sodokhoihtxh.jpg" alt="Sơ đồ khối hệ thống xếp hàng" width="70%"/>
+  <br>
+  <em>Sơ đồ khối hệ thống xếp hàng</em>
+</div>
+
 ---
 
 ## Features
@@ -37,8 +43,6 @@ Hệ thống cho phép:
 | Keypad   | Bàn phím ma trận số 4x4 | Nhập số, ký tự và tùy chỉnh các chức năng của thiết bị                                                    |
 | Display  | LCD 16x2                | Hiển thị thông tin như số đang gọi, dữ liệu nhập từ bàn phím, các chức năng của thiết bị, ...             |
 
----
-
 ## Pin Configuration
 
 - Keypad Rows / Columns → GPIO
@@ -64,6 +68,25 @@ Hệ thống cho phép:
   | R2 | 4 | 5 | 6 | B |
   | R3 | 7 | 8 | 9 | C |
   | R4 | ^ | 0 | DEL | D |
+
+## Quy tắc bàn phím (T9-style)
+
+| Phím | Ký tự / Chức năng    | Mô tả                                       |
+| ---- | -------------------- | ------------------------------------------- |
+| 0    | space (khoảng trắng) | Nhấn để chèn khoảng trắng và số 0           |
+| 1    | ! ? @ # \*           | Ký tự đặc biệt                              |
+| 2    | a b c 2              | Nhấn 1 lần: a, 2 lần: b, 3 lần: c, 4 lần: 2 |
+| 3    | d e f 3              | d → e → f → 3                               |
+| 4    | g h i 4              | g → h → i → 4                               |
+| 5    | j k l 5              | j → k → l → 5                               |
+| 6    | m n o 6              | m → n → o → 6                               |
+| 7    | p q r s 7            | p → q → r → s → 7                           |
+| 8    | t u v 8              | t → u → v → 8                               |
+| 9    | w x y z 9            | w → x → y → z → 9                           |
+
+**Lưu ý khi gõ phím:**
+
+- Nhấn giữ hoặc nhấn nhanh liên tục để chuyển qua các ký tự trên cùng một phím.
 
 ## Project Structure
 
@@ -99,37 +122,21 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - WiFi
   - MQTT
   - NVS
-- Đọc thông tin WiFi đã lưu trong NVS
-- Chuyển sang `STATE_WIFI_CONNECT`
+- Đọc thông tin WiFi đã lưu trong NVS, nếu chưa có thông tin wifi được lưu → **STATE_NO_WIFI**, nếu có thông tin → **STATE_WIFI_CONNECT**
 
 ---
 
-### STATE_WIFI_CONNECT – Kết nối WiFi
-
-- Nếu **có WiFi đã lưu trong NVS**:
-  - Thử kết nối WiFi đã lưu
-  - Hiển thị trạng thái kết nối trên LCD
-  - Retry tối đa **5 lần**
-- Nếu **kết nối thành công**:
-  - `STATUS = OK`
-  - Chuyển sang `STATE_MAIN`
-- Nếu **kết nối thất bại sau 5 lần**:
-  - `STATUS = NO`
-  - Chuyển sang `STATE_MAIN`
-
----
-
-### STATE_MAIN – Màn hình chính / Gọi số
+### STATE_RUNNING – STATE chính của thiết bị
 
 - Hiển thị:
   - Số đang gọi
   - ID thiết bị
-  - Trạng thái kết nối (`OK / NO`)
+  - Trạng thái kết nối (`OK / NO`) (OK nếu kết nối thành công đến server, NO nếu mất kết nối đến wifi hoặc server)
 - Xử lý phím:
   - **B** → Gọi số tiếp theo
     - Nếu thất bại hiển thị `"GOI THAT BAI"`
   - **C** → Bỏ qua số hiện tại
-  - **Nhập số (4 chữ số và là số được lấy từ kiosk) + D** → Gọi ưu tiên số đã nhập
+  - **Nhập số (4 chữ số và là số đã được lấy từ kiosk) + D** → Gọi ưu tiên số đã nhập
   - **D (không nhập số)** → Gọi lại số hiện tại
   - **A** → Chuyển sang `STATE_MENU`
 
@@ -137,79 +144,157 @@ một màn hình hiển thị và tập chức năng cụ thể.
 
 ### STATE_MENU – Menu chức năng
 
-- Hiển thị danh sách chức năng
-- Điều khiển:
+- LCD hiển thị danh sách chức năng thiết bị
+- Xử lý phím:
   - **1** → Chuyển sang chức năng tiếp theo
   - **2** → Quay lại chức năng trước
   - **D** → Chọn chức năng
-  - **A** → Thoát menu → `STATE_MAIN`
+  - **A** → Thoát menu → `STATE_RUNNING`
+
+### Các chức năng có trong MENU
+
+#### ▪ GOI LAI SO BO QUA
+
+- nhấn D khi màn hình hiển thị chức năng này → Gửi tin nhắn đến server thông MQTT để lấy số → **STATE_RUNNING** (Hiển thị số tại màn hình chính)
+
+#### ▪ CHUYEN QUAY
+
+→ **STATE_DEVICE_LIST**
+
+#### ▪ CHUYEN DICH VU
+
+→ **STATE_SERVICE_LIST**
+
+#### ▪ DANG KY TB
+
+- Thiết bị gửi địa chỉ MAC đến server để đăng ký thiết bị thông qua web
+- Hoàn tất → **STATE_RUNNING**
+
+#### ▪ CHUYEN DICH VU
+
+→ **STATE_SERVICE_LIST**
+
+#### ▪ RESET
+
+→ **STATE_CONTINUE**
 
 ---
 
-### STATE_WIFI_CONFIG – Cấu hình WiFi
+### STATE_WIFI_RETRY:
 
-#### ▪ STATE_WIFI_SSID_INPUT – Nhập tên WiFi
+- Retry 5 lần
+- Thất bại → **STATE_WIFI_ERROR**
+- Thành công → **STATE_WIFI_SUCCESS**
 
+---
+
+### STATE_WIFI_INPUT – State cấu hình WiFi
+
+#### ▪ Nhập tên WiFi
+
+- Màn hình LCD hiển thị ký tự nhập từ bàn phím,con trỏ sẽ nằm ở cuối chuỗi ký tự hiển thị trên lcd
 - Nhập tên WiFi từ bàn phím
 - **^** → Chuyển chữ hoa / chữ thường
 - **D** → Chuyển sang nhập mật khẩu
-- **DEL** → Xóa ký tự vừa nhập
+- **DEL** → Xóa ký tự ở bên trái con trỏ
+- **A** → Trở lại màn hình trước đó
+- **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
+- **Tối đa 63 ký tự**
 
-#### STATE_WIFI_PASS_INPUT – Nhập mật khẩu
+#### ▪ Nhập mật khẩu
 
+- Màn hình LCD hiển thị ký tự nhập từ bàn phím,con trỏ sẽ nằm ở cuối chuỗi ký tự hiển thị trên lcd
 - Nhập mật khẩu WiFi
-- Mặc định hiển thị `*`
+- **Mặc định hiển thị `*`**
 - **C** → Ẩn / hiện mật khẩu
-- **^** → Chuyển chữ hoa / chữ thường
+- **^** → Chuyển chữ hoa / chữ thường (**mặc định chữ thường**)
 - **DEL** → Xóa ký tự vừa nhập
 - **D** → Bắt đầu kết nối WiFi → `STATE_WIFI_CONNECT`
+- **A** → Trở lại màn hình trước đó
+- **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
+- **Tối đa 63 ký tự**
 
 ---
 
-### STATE_CALL_SKIPPED – Gọi số đã bỏ qua
+## STATE_WIFI_CONNECT
 
-- Gửi yêu cầu đến server
-- Server trả về số đã bị bỏ qua trước đó
-- Hiển thị số nhận được
-- Chuyển về `STATE_MAIN`
+- Màn hình LCD hiển thị "TRANG THAI WIFI: DANG KET NOI"
+- **Không xử lý phím nhấn tại state này**
+- Nếu kết nối thành công → **STATE_WIFI_SUCCESS**
+- **Nếu kết nối thất bại sẽ retry 5 lần**
+- Nếu kết nối thất bại sau 5 lần retry → **STATE_WIFI_ERROR**
 
 ---
 
-### 🔹 STATE_TRANSFER_COUNTER – Chuyển quầy
+## STATE_WIFI_SUCCESS
+
+- Màn hình LCD hiển thị "TRANG THAI WIFI: THANH CONG!" trong 1s
+- **Không xử lý phím nhấn tại state này**
+- Sau 1s hiển thị → **STATE_RUNNING**
+
+---
+
+## STATE_WIFI_ERROR
+
+- Màn hình LCD hiển thị "TRANG THAI WIFI: THAT BAI!" trong 1s
+- **Không xử lý phím nhấn tại state này**
+- Sau 1s hiển thị → **STATE_RUNNING**
+
+---
+
+## STATE_NO_WIFI
+
+- Màn hình LCD hiển thị "TRANG THAI WIFI: THAT BAI!" trong 1s
+- **Không xử lý phím nhấn tại state này**
+- Sau 1s hiển thị → **STATE_RUNNING**
+
+---
+
+### STATE_DEVICE_LIST – Chuyển quầy
 
 - Hiển thị danh sách ID các thiết bị trong hệ thống
-- Điều khiển:
+- Xử lý phím:
   - **1** → Chuyển tới thiết bị tiếp theo
   - **2** → Quay lại thiết bị trước
   - **D** → Chọn quầy
 - Sau khi chọn:
-  - Chuyển số đang xử lý sang quầy được chọn
-  - Gửi lệnh xóa dữ liệu đến màn hình đánh giá:
-    - Nếu tồn tại `next_number` → xóa `next_number`
-    - Nếu không → xóa `current_number`
-- Chuyển về `STATE_MAIN`
+  - Chuyển số đang xử lý đến màn hình đánh giá và màn hình hiển thị số
+  - Hoàn tất → `STATE_RUNNING`
 
 ---
 
-### STATE_TRANSFER_SERVICE – Chuyển dịch vụ
+### STATE_SERVICE_LIST – Chuyển dịch vụ
 
 - Hiển thị danh sách dịch vụ
-- Điều khiển:
-  - **1 / 2** → Duyệt danh sách dịch vụ
+- Xử lí phím:
+  - **1** → Chuyển tới thiết bị tiếp theo
+  - **2** → Quay lại thiết bị trước
   - **D** → Chọn dịch vụ
-- Sau khi chọn dịch vụ:
-  - Chọn vị trí chuyển số:
-    - Đầu dịch vụ
-    - Cuối dịch vụ
-- Hoàn tất → `STATE_MAIN`
+  - **A** → Quay về màn hình trước đó
+- Sau khi chọn dịch vụ → **STATE_SERVICE_POSITON**
 
 ---
 
-### STATE_REGISTER_DEVICE – Đăng ký thiết bị
+### STATE_SERVICE_POSITON – Chọn vị trí để chuyển dịch vụ
 
-- Gửi MAC address của thiết bị lên server
-- Chờ cấu hình từ hệ thống web (tên thiết bị, dịch vụ)
-- Hoàn tất → `STATE_MAIN`
+- Hiển thị vị trí dịch vụ
+- Xử lí phím:
+  - **1** → Đầu dịch vụ
+  - **2** → Cuối dịch vụ
+  - **D** → Chọn vị trí dịch vụ
+  - **A** → Quay về màn hình trước đó
+- Sau khi chọn vị trí dịch vụ → Gửi yêu cầu đến server→ **STATE_SERVICE_POSITON**
+
+---
+
+### STATE_CONTINUE – Tiếp tục hay không
+
+- Xử lí phím:
+  - **1** → YES
+  - **2** → NO
+  - **A** → Quay lại
+- chọn YES → Thực hiện Reset/Closed
+- Hoàn tất → **STATE_RUNNING** (chọn reset) hoặc **STATE_CLOSED** (chọn đóng quầy)
 
 ---
 
@@ -219,29 +304,30 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - Gửi lệnh reset đến:
   - Màn hình đánh giá
   - Màn hình hiển thị số
-- Chuyển về `STATE_MAIN`
+- Chuyển về `STATE_RUNNING`
 
 ---
 
 ### STATE_CLOSED – Đóng quầy
 
-- Gửi lệnh hiển thị:
-  - `"QUẦY TẠM THỜI ĐÓNG"`
+- Gửi lệnh hiển thị đến màn hình hiển thị dòng chữ`"QUẦY TẠM THỜI ĐÓNG"`
 - Khóa chức năng gọi số
-- Chuyển sang `STATE_LOCKED`
+  → `STATE_LOGOUT`
 
 ---
 
-### STATE_LOCKED – Quầy bị khóa
+### STATE_LOGOUT – Quầy bị khóa
 
 - Vô hiệu hóa các chức năng gọi số
-- **A** → Thoát chế độ khóa → `STATE_MAIN`
+- **A** → Thoát chế độ khóa → `STATE_RUNNING`
 
-## ⚠ Error Handling
+## Error Handling
 
 - WiFi retry: 5 lần
 - MQTT reconnect: tự động
 - Mất kết nối đến server hoặc mất kết nối wifi: hiển thị "STATUS:NO" trên màn hình LCD
+
+---
 
 | Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-H21 | ESP32-H4 | ESP32-P4 | ESP32-S2 | ESP32-S3 | Linux |
 | ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | --------- | -------- | -------- | -------- | -------- | ----- |
@@ -260,7 +346,6 @@ Select the instructions depending on Espressif chip installed on your developmen
 
 - [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
 - [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
-
 
 ## Example folder contents
 
@@ -283,16 +368,15 @@ For more information on structure and contents of ESP-IDF projects, please refer
 
 ## Troubleshooting
 
-* Program upload failure
-
-    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
+- Program upload failure
+  - Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
+  - The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
 
 ## Technical support and feedback
 
 Please use the following feedback channels:
 
-* For technical queries, go to the [esp32.com](https://esp32.com/) forum
-* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
+- For technical queries, go to the [esp32.com](https://esp32.com/) forum
+- For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
 
 We will get back to you as soon as possible.

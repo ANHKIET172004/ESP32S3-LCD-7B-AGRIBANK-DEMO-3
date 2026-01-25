@@ -16,118 +16,7 @@ wifi_ap_record_t ap;
 extern bool start;
 
 
-void wifi_scan()
-{
-    uint16_t num = MAX_AP;
-
-    wifi_ap_record_t *ap_info = calloc(MAX_AP, sizeof(wifi_ap_record_t));
-    wifi_list *list = calloc(1, sizeof(wifi_list));
-
-    if (!ap_info || !list) {
-        ESP_LOGE(TAG, "malloc failed");
-        free(ap_info);
-        free(list);
-        return;
-    }
-
-    int best_rssi    = -1000;
-    int best_saved_index = -1;
-
-
-    
-    wifi_scan_config_t scan_config = {
-        .ssid = NULL,
-        .bssid = NULL,
-        .channel = 0,
-        .show_hidden = true
-    };
-
-    load_wifi_list(list);  
-
-    if (list->count==0){
-        set_sys_state(STATE_NO_WIFI);
-        return;
-    }
-
-    int tmp_rssi[list->count];
-    int tmp_cnt[list->count];
-
-    for (int i=0;i<list->count;i++){
-           tmp_rssi[i]=0;
-           tmp_cnt[i]=0;
-    }
-
-
-    ESP_LOGI(TAG,"%d saved wifi in nvs",list->count);
-
-    for (uint8_t i=0;i<list->count;i++){
-            
-         ESP_LOGI(TAG,"SAVED WIFI: %s",list->aps[i].ssid);
-            
-    }
-
-    for (int a=0;a<3;a++){
-
-////
-    num = MAX_AP;
-    ESP_ERROR_CHECK(esp_wifi_scan_start(&scan_config, true));
-    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&num, ap_info));
-
-    ESP_LOGI(TAG, "Found %d APs", num);
-
-
-    for (uint8_t i = 0; i < num; i++) {
-
-        for (uint8_t j = 0; j < list->count; j++) {
-
-            if ((strcmp((char*)ap_info[i].ssid, list->aps[j].ssid) == 0)&&(memcmp(ap_info[i].bssid,list->aps[j].bssid,6))==0) {
-
-                ESP_LOGI(TAG, "FOUND SAVED WIFI: %s (RSSI=%d), BSSID: %02X:%02X:%02X %02X:%02X:%02X",ap_info[i].ssid,ap_info[i].rssi,
-        ap_info[i].bssid[0],ap_info[i].bssid[1],ap_info[i].bssid[2],
-        ap_info[i].bssid[3],ap_info[i].bssid[4],ap_info[i].bssid[5]);
-             
-                tmp_rssi[j]+=ap_info[i].rssi;
-                tmp_cnt[j]++;
-                
-            }
-        }
-    }
-
-    
-
-}   
-for (int i=0;i<list->count;i++){
-        if (tmp_cnt[i]==0) continue;;
-        if ((tmp_rssi[i]/tmp_cnt[i]) > best_rssi) {
-                    best_rssi = tmp_rssi[i]/tmp_cnt[i];
-                    best_saved_index = i;
-                }
-    }
-
-    if (best_saved_index < 0) {
-        ESP_LOGW(TAG, "No saved WiFi found in scan");
-        free(ap_info);
-        free(list);
-        set_sys_state(STATE_NO_WIFI);//
-        return;
-    }
-      ESP_LOGI(TAG, "BEST WIFI: %s (RSSI=%d)",list->aps[best_saved_index].ssid,best_rssi);//
-
-    strcpy(g_keypad.saved_ssid, list->aps[best_saved_index].ssid);
-    strcpy(g_keypad.saved_pass, list->aps[best_saved_index].pass);
-    memcpy(g_keypad.saved_bssid,list->aps[best_saved_index].bssid,6);
-    g_keypad.best_saved_index=best_saved_index;//
-
-    memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
-    strncpy(g_keypad.connecting_wifi,g_keypad.saved_ssid,sizeof(g_keypad.connecting_wifi)-1);//
-    g_keypad.connecting_wifi[sizeof(g_keypad.connecting_wifi)-1]='\0';//
-
-    free(ap_info);
-    free(list);
-}
-
-
- void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) {
+void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
         ESP_LOGI(TAG, "WiFi STA started");
         //esp_wifi_connect();
@@ -136,7 +25,8 @@ for (int i=0;i<list->count;i++){
     else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ESP_LOGI(TAG, "WiFi connected, got IP");
         set_sys_state(STATE_WIFI_SUCCESS);
-        g_keypad.current_mode = MODE_NORMAL;//
+        //g_keypad.current_mode = MODE_NORMAL;//
+        g_keypad.current_mode=MODE_NO_KEY;//
         set_wifi_retry_count(0);
 
         set_wifi_connected(true);
@@ -155,13 +45,6 @@ for (int i=0;i<list->count;i++){
         if (get_user_selected_wifi()) {  
             set_user_selected_wifi(false);  
             save_wifi_credentials(g_keypad.wifi_ssid, g_keypad.wifi_pass, NULL);
-          
-           // save_wifi_credentials1(g_keypad.wifi_ssid, g_keypad.wifi_pass, ap.bssid);
-           // memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
-           // strncpy(g_keypad.connecting_wifi,g_keypad.wifi_ssid,sizeof(g_keypad.connecting_wifi)-1);
-           // g_keypad.connecting_wifi[sizeof(g_keypad.connecting_wifi)-1]='\0';
-            
-
 
 
         }
@@ -174,9 +57,6 @@ for (int i=0;i<list->count;i++){
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
         wifi_event_sta_disconnected_t* ev = (wifi_event_sta_disconnected_t*) event_data;
         ESP_LOGI(TAG, "STA disconnected, reason=%d", ev->reason);
-       // g_keypad.connecting_wifi[0]='\0';//
-       //memset(g_keypad.connecting_wifi, 0, sizeof(g_keypad.connecting_wifi));
-       //sprintf(g_keypad.connecting_wifi,"KHONG CO WIFI");
 
 
         if (get_user_selected_wifi()) { //trường hợp lỗi khi người dùng nhập wifi trực tiếp từ keypad
@@ -187,8 +67,9 @@ for (int i=0;i<list->count;i++){
             if (retry_count == WIFI_MAX_RETRY) {
                 ESP_LOGE(TAG, "WiFi connection failed after %d retries", WIFI_MAX_RETRY);
                 set_wifi_retry_count(0);//
-                g_keypad.current_mode = MODE_NORMAL;//
+                //g_keypad.current_mode = MODE_NORMAL;//
                 set_user_selected_wifi(false);
+                g_keypad.current_mode=MODE_NO_KEY;//
                 set_sys_state(STATE_WIFI_ERROR);
                 return;
             } 
@@ -202,7 +83,8 @@ for (int i=0;i<list->count;i++){
          
             increment_wifi_retry_count();  
             int retry_count = get_wifi_retry_count();  
-            if (retry_count==1){
+            if (retry_count==1){// kết nối thất bại sẽ chuyển sang state retry
+                g_keypad.current_mode=MODE_NO_KEY;//
                 set_sys_state(STATE_WIFI_RETRY);
             }
             if (retry_count < WIFI_MAX_RETRY) {
@@ -215,7 +97,7 @@ for (int i=0;i<list->count;i++){
     }
 }
 
-
+/*
 void wifi_init(void) {
     esp_netif_create_default_wifi_sta();
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -233,4 +115,83 @@ void wifi_init(void) {
     
     
 }  
+    */
+
+void wifi_init(void)
+{
+    esp_err_t ret;
+
+    // Tạo netif cho STA
+    esp_netif_create_default_wifi_sta();
+
+    // Init WiFi với config mặc định
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ret = esp_wifi_init(&cfg);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "esp_wifi_init failed: %s", esp_err_to_name(ret));
+        init_fail_hanlde(1);// restart nếu số lần restart còn trong mức cho phép
+        //return;           
+    }
+    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(1);
+    }
+
+    ret = esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL, NULL);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Register WIFI_EVENT failed: %s", esp_err_to_name(ret));
+        init_fail_hanlde(1);
+        //return;
+    }
+    if (read_retry(1)>0){
+        reset_retry(1);
+    }
+
+    ret = esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &wifi_event_handler, NULL, NULL);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Register IP_EVENT failed: %s", esp_err_to_name(ret));
+        init_fail_hanlde(1);
+        //return;
+    }
+    if (read_retry(1)>0){
+        reset_retry(1);
+    }
+
+    wifi_config_t wifi_config = {0};  
+
+    ret = esp_wifi_set_mode(WIFI_MODE_STA);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "esp_wifi_set_mode failed: %s", esp_err_to_name(ret));
+        init_fail_hanlde(1);
+
+        //return;
+    }
+    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(1);
+    }
+
+    ret = esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "esp_wifi_set_config failed: %s", esp_err_to_name(ret));
+        init_fail_hanlde(1);
+
+        //return;
+    }
+    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(1);
+    }
+
+    ret = esp_wifi_start();
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "esp_wifi_start failed: %s", esp_err_to_name(ret));
+        init_fail_hanlde(1);
+
+        //return;
+    }
+    if (read_retry(1)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
+        reset_retry(1);
+    }
+
+    ESP_LOGI(TAG, "WiFi initialized successfully");
+}
+
 

@@ -10,6 +10,7 @@
 #include "mutex/mutex.h"
 #include "keypad/keypad_variables.h"
 #include "types.h"
+#include "init_handle/init_handle.h"
 
 
 
@@ -23,6 +24,6 @@ void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id
 
 void wifi_init(void) ;
 
-void wifi_scan();
+//void wifi_scan();
 
 #endif

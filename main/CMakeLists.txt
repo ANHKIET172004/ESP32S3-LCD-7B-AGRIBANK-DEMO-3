@@ -9,6 +9,7 @@ idf_component_register(SRCS "lcd_i2c/i2c-lcd.c" "main.c"
                             "mac_utils/mac_utils.c" "mutex/mutex.c" "state_machine/state_machine.c"
                              "state_machine/helpers.c" "wifi/wifi.c" "led/led.c"
                             "nvs_utils/nvs_utils.c" "lcd_i2c/lcd_option_handler.c"
+                            "init_handle/init_handle.c"
                        PRIV_REQUIRES spi_flash
                        PRIV_REQUIRES esp_driver_gpio
                        PRIV_REQUIRES nvs_flash

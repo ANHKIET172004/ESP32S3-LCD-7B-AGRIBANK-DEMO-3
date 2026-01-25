@@ -33,7 +33,8 @@ keypad_context_t g_keypad={
      .prev_number = {0},
      .saved_input_buffer= {0},
      .saved_buffer_index = 0,
-     .current_mode = MODE_NORMAL,
+     //.current_mode = MODE_NORMAL,
+     .current_mode=MODE_NO_KEY,
      //.current_mode = MODE_LOGOUT,//
      .saved_ssid = {0},
      .saved_pass = {0},
@@ -82,11 +83,12 @@ void process_key_wifi_mode(char key) {
 
     }
     switch (key){
-    case 'A':         
+    case 'B':         
         lcd_cursor_right();         
         break;
     
-    case 'B':       
+    case 'A':  
+         memset(g_keypad.input_buffer, 0, sizeof(g_keypad.input_buffer));//
          lcd_send_cmd(0x0C);
          old_screen_reload();
          break; 
@@ -231,7 +233,7 @@ void process_key_device_select(char key) {
             }
     break;
 
-    case 'B':
+    case 'A':
 
         old_screen_reload();
 
@@ -314,7 +316,7 @@ void process_key_service_select(char key) {
 
     
    
-    case 'B':
+    case 'A':
        set_scroll_enable(false);
        scroll_cnt=0;//
        old_screen_reload();
@@ -353,7 +355,7 @@ void process_key_position_select(char key) {
         //lcd_show_position_list();     
         break;
 
-    case 'B':
+    case 'A':
          //lcd_clear();//
          g_keypad.current_mode=MODE_SERVICE_SELECT;
          set_sys_state(STATE_SERVICE_LIST);//
@@ -391,7 +393,7 @@ void process_key_menu_mode(char key) {
             g_keypad.menu_selection=7;
         }
         break;
-    case 'B':
+    case 'A':
         g_keypad.current_mode = MODE_NORMAL;
         set_sys_state(STATE_RUNNING);//
 
@@ -415,9 +417,7 @@ void process_key_logout_mode(char key){
         save_called_number("");
         update_temp_buff("");
 
-        //xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
         esp_mqtt_client_publish(mqtt_client, "reset_number", "reset", 0, 0, 0);
-        //xSemaphoreGive(g_mutex.mqtt_mutex);
         
 /*
         set_sys_state(STATE_USER_PASS);
@@ -440,7 +440,7 @@ void process_key_option_select(char key) {
             g_keypad.selected_option=false;
             break;
 
-        case 'B':
+        case 'A':
 
             old_screen_reload();
             break;
@@ -556,6 +556,9 @@ void process_key(char key)
 
         case MODE_CONTINUE:
             process_key_option_select(key);
+            break;
+        case MODE_NO_KEY:
+        
             break;
 
         default:

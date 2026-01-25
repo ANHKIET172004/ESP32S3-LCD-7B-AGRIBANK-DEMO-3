@@ -1,0 +1,25 @@
+
+## WORKFLOW
+
+1. Khởi động thiết bị
+2. Nếu có wifi được lưu trong NVS thì sẽ chờ giây lát để thiết bị kết nối lại đến wifi cũ
+3. Nếu kết nối wifi cũ thất bại thì sẽ kết nối lại 5 lần, nếu 5 lần thất bại thì sẽ chuyển đến màn hình chính, đồng thời "STATUS" hiển thị là "NO"
+4. Nhấn phím B để gọi số tiếp theo, nếu gọi thất bại sẽ hiển thị dòng "GOI THAT BAI"
+5. Nhấn phím C để bỏ qua số hiện tại
+6. Nhập từ bàn phím 1 số thứ tự bất kì, sau đó nhấn D thì sẽ gọi ưu tiên số thứ tự vừa nhập (lưu ý là số nhập từ bàn phím phải có 4 chữ số và là số có trong danh sách số cấp từ server)
+7. Nếu không nhập số ưu tiên mà chỉ nhấn D thì sẽ thực hiện chức năng gọi lại số hiện tại
+8. Nhấn phím A để vào menu, lưu ý ở chế độ menu này, phím D sẽ là phím enter chọn chức năng trong menu, phím 1 để tiến tới chức năng tiếp theo trong menu, phím 2 để lùi lại các chức năng trong menu, nhấn phím A khi đang ở trong menu để thoát khỏi menu trở lại màn hình chính
+9. Khi chọn WIFI ở MENU thì sẽ chuyển sang chế độ cấu hình wifi, ở chế độ này thì sẽ vào màn hình nhập tên WIFI đầu tiên
+10. Nhập tên wifi vào và nhấn D để chuyển sang nhập mật khẩu, phím ^ để chuyển sang viết chữ in hoa, nếu đang ở chế độ nhập chữ in hoa thì nhấn phím ^ một lần nữa để chuyển sang chế độ nhập chữ thường
+
+11. Sau khi chuyển nhập mật khẩu, phím ^ để chuyển đổi giữa nhập chữ thường và in hoa tương tự khi ở chế độ nhập tên wifi. Mặc định ban đầu ở chế độ này sẽ không hiển thị passowrd trên màn hình mà hiển thị bằng ký tự "\*" để bảo mật, nếu người dùng muốn hiển thi passowrd thì có thể nhấn phím C, nếu muốn chuyển về ẩn password thì tiếp tục nhấn C. Sau khi nhập xong password thì nhấn D để bắt đầu kết nối wifi
+12. Khi kết nối wifi, thiết bị sẽ hiển thị màn hình chờ kết nối. Nếu kết nối thất bại sẽ retry 5 lần, nếu 5 lần đều thất bại thì màn hình hiển thị "TRANG THAI KET NOI: THAT BAI" và trở về màn hình chính, , "STATUS" ở màn hình chính hiển thị "NO". Nếu kết nối thành công thì màn hình hiển thị "TRANG THAI KET NOI: THANH CONG", sau đó trở lại màn hình chính, "STATUS" ở màn hình chính hiển thị "OK"
+13. Khi chọn "GOI SO BO QUA" ở menu thì sẽ gửi tin nhắn đến server và server sẽ trả về số thứ tự đã được bỏ qua trước đó, màn hình sẽ trở về màn hình chính và hiển thị tại "SO DANG GOI" là số được server trả về.
+14. Khi chọn "CHUYEN QUAY" thì màn hình sẽ chuyển sang chế độ chuyển quầy và màn hình hiển thị danh sách các id thiết bị của các bàn phím trong hệ thống. Ở chế độ này, người dùng nhấn 1 để tiến tới các thiết bị trong danh sách và nhấn 2 để lùi lại các id các thiết bị trong danh sách, nhấn D để chọn quầy mà số sẽ được chuyển đến. Sau khi nhấn D thì số sẽ được chuyển đến quầy được chọn, đồng thời thiết bị sẽ gửi 1 lệnh đến màn hình đánh giá để xóa giá trị đang lưu bên trong nó. Việc xóa số thực hiện theo cách: nếu có next_number tồn tại thì xóa next_number, nếu chỉ có current_number thì xóa current_number
+15. Khi chọn "CHUYEN DICH VU" thì màn hình sẽ chuyển sang chế độ chuyển dịch vụ và màn hình sẽ hiển thị danh sách tên các dịch vụ trong hệ thống. Ở chế độ này, người dùng sử dụng phím 1 và 2 tương tự như ở chế độ "CHUYEN QUAY", nhấn "D' để chọn dịch vụ mà số thứ tự thiết bị đang xử lý sẽ được chuyển sang. Sau khi nhấn chọn dịch vụ sẽ chuyển, sẽ chuyển sang chế độ chọn vị trí trong dịch vụ mà số sẽ được chuyển đến, có 2 lựa chọn là đầu và cuối dịch vụ.
+16. Nhấn Enter để chọn hoặc thoát
+17. Chọn "DANG KY TB" trong menu để đăng ký thiết bị. Khi nhấn chọn đăng ký thiết bị thì thiết bị sẽ gửi tin nhắn chứa địa chỉ mac của thiết bị đến server, sau đó người dùng web hệ thống để đặt tên thiết bị và gán dịch vụ cho thiết bị.
+18. Chọn "RESET" trong menu để xóa đang xử lý hiện tại của thiết bị, đồng thời gửi lệnh đến màn hình đánh giá và màn hình hiển thị số thông qua MQTT để xóa các số được lưu bên trong các thiết bị đó.
+19. Chọn "DONG QUAY" trong menu để gửi lệnh đến màn hình hiển thị số thứ tự hiển thị dòng "QUẦY TẠM THỜI ĐÓNG", đồng thời chuyển chế độ hiện tại của bàn phím gọi số sang chế độ bị khóa.
+20. Ở chế độ bị khóa thì nhấn phím "A" để quay về màn hình chính
+21.

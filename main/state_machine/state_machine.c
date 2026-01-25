@@ -117,28 +117,17 @@ void update_display_state(void)
         case STATE_MQTT_ERROR:          set_display_state(DISPLAY_MQTT_ERROR); break;
         case STATE_RUNNING:             set_display_state(DISPLAY_MAIN_SCREEN); break;
         case STATE_LOGOUT:              set_display_state(DISPLAY_LOGOUT); break;
-        //case STATE_USER_PASS:           set_display_state(DISPLAY_USER_PASS); break;
-        //case STATE_USER_PASSWORD_ERROR: set_display_state(DISPLAY_USER_PASSWORD_ERROR); break;
-        //case STATE_NEW_USER_PASS:       set_display_state(DISPLAY_NEW_USER_PASS); break;
         case STATE_CONTINUE:            set_display_state(DISPLAY_CONTINUE); break;
-       // case STATE_SAVED_WIFI:          set_display_state(DISPLAY_SAVED_WIFI); break;
-        //case STATE_DELETE_WIFI_OPTION:  set_display_state(DISPLAY_DELET_WIFI_OPTION); break;
         case STATE_MENU:                set_display_state(DISPLAY_MENU); break;
         case STATE_DEVICE_LIST:         set_display_state(DISPLAY_DEVICE_LIST); break;
         case STATE_SERVICE_LIST:        set_display_state(DISPLAY_SERVICE_LIST); break;
         case STATE_SERVICE_POSITON:     set_display_state(DISPLAY_SERVICE_POSITION); break;
         case STATE_WIFI_INPUT:          set_display_state(DISPLAY_WIFI_INPUT); break;
-        //case STATE_USER_LIST:           set_display_state(DISPLAY_USER_LIST); break;
         case STATE_NO_DATA:             set_display_state(DISPLAY_NO_DATA); break;
-        //case STATE_SAVED_WIFI_OPTION:   set_display_state(DISPLAY_SAVED_WIFI_OPTION); break;
         case STATE_NO_WIFI:             set_display_state(DISPLAY_NO_WIFI); break;
-        //case STATE_AUTO_CONNECT:        set_display_state(DISPLAY_AUTO_CONNECT); break;
-        //case STATE__AUTO_CONNECT_WIFI:  set_display_state(DISPLAY_AUTO_CONNECT_WIFI); break;
-        //case STATE_CONNECTING_WIFI:     set_display_state(DISPLAY_CONNECTING_WIFI); break;
-        case STATE_WIFI_RETRY:         set_display_state(DISPLAY_WIFI_RETRY); break;
+        case STATE_WIFI_RETRY:          set_display_state(DISPLAY_WIFI_RETRY); break;
 
-        default:
-            set_display_state(DISPLAY_IDLE);
+        default:                        set_display_state(DISPLAY_IDLE);
             break;
     }
 }
@@ -189,6 +178,7 @@ static void state_run(SystemState  state)
         case STATE_WIFI_SUCCESS:
             if (now - g_state.state_enter_time >= STATE_DISPLAY_DURATION) {
                 mqtt_init();
+                g_keypad.current_mode=MODE_NORMAL;//
                 set_sys_state(STATE_RUNNING);
             }
             break;

@@ -18,13 +18,11 @@
 
 #define TAG "DEMO"
 
-//uint8_t start_cnt = 0;
 bool start=true;
 bool user_selected_wifi = false;
 
 char counter_id[3]={0};
 
-//bool start1=true;
 
 
 
@@ -34,14 +32,13 @@ extern state_context_t g_state;
 
 extern void service_scroll_task(void *pvParameter);
 
-//extern void ssid_scroll_task(void *pvParameter) ;
 
 
 void app_main(void) {
 
     mutex_init();
     led_init();
-    led_off();  
+    led_off(); //
     keypad_init();
     ESP_ERROR_CHECK(i2c_master_init());
     ESP_LOGI(TAG, "I2C initialized successfully");
@@ -63,10 +60,20 @@ void app_main(void) {
     wifi_init();
 
     mqtt_queue = xQueueCreate(MQTT_QUEUE_LENGTH, sizeof(mqtt_message_t));
+
     if (mqtt_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create MQTT queue!");
+        init_fail_hanlde(2);// restart nếu số lần restart còn nằm trong khoảng cho phép
     } 
- //   save_wifi_credentials1("NGUYEN HUYNH ANH KIET 2002","1234",NULL);
+    else {
+        if (read_retry(2)>0){
+            reset_retry(2);// reset lại số lần restart trước đó (nếu có)
+
+        }
+        ESP_LOGI(TAG, "Created MQTT queue successfully!");
+
+
+    }
     xTaskCreatePinnedToCore(mqtt_process_task, "mqtt_task", 6* 1024, NULL, 4, NULL,0 );
     xTaskCreatePinnedToCore(keypad_task, "keypad_task", 7* 1024, NULL, 6, NULL, 1);
     xTaskCreatePinnedToCore( system_task, "system_task",  4*1024, NULL,5, &g_state.system_task_handle, 1 );

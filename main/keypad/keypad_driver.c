@@ -50,11 +50,11 @@ void wait_key_release() {
         bool key_still_pressed = false;
         for (int col = 0; col < 4; col++) {
             if (gpio_get_level(cols[col]) == 0) {
-                key_still_pressed = true;
+                key_still_pressed = true;// có 1 col=0->có phím đang nhấn->thoát khỏi for
                 break;
             }
         }
-        if (!key_still_pressed) {
+        if (!key_still_pressed) {// không có phím nhấn->thoát khỏi while->thoát hàm
             break;
         }
         vTaskDelay(pdMS_TO_TICKS(10));

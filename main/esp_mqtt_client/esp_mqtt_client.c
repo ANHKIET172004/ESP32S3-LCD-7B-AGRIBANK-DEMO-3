@@ -176,7 +176,7 @@ void mqtt_init(void) {
         ////
     const esp_mqtt_client_config_t mqtt_cfg = {
         .broker = {
-            .address.port = 1883,
+            .address.port = 1884,
             .address.uri = "mqtt://10.10.1.21",
         },
         .credentials = {

@@ -76,7 +76,6 @@ static void sort_device_list_by_counter(void)
                         
                         esp_task_wdt_reset();
                         save_called_number(num->valuestring);
-                        //xSemaphoreTake(g_mutex.mqtt_mutex, portMAX_DELAY);
 
                         char send_number[128]={0};
 
@@ -99,7 +98,6 @@ static void sort_device_list_by_counter(void)
                         else {
                             g_keypad.recall=false;
                         }                   
-                        //xSemaphoreGive(g_mutex.mqtt_mutex);
 
                     }
                     else {
