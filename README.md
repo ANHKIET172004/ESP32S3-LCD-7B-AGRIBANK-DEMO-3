@@ -213,7 +213,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
 <div align="center">
-  <img src="main/photo/nhaptenwifi.jpg" alt="Màn hình chọn quầy" width="50%"/>
+  <img src="main/photo/nhaptenwifi.jpg" alt="Màn hình wifi" width="50%"/>
   <br>
   <em>Màn hình nhập tên wifi</em>
 </div>
@@ -231,7 +231,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
 <div align="center">
-  <img src="main/photo/nhapmatkhau.jpg" alt="Màn hình chọn quầy" width="50%"/>
+  <img src="main/photo/nhapmatkhau.jpg" alt="Màn hình mat khau" width="50%"/>
   <br>
   <em>Màn hình nhập mật khẩu </em>
 </div>
