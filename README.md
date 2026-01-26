@@ -230,6 +230,9 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **A** → Trở lại màn hình trước đó
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
+
+![man hinh mat khau](./main/photo/nhapmatkhau.jpg)
+
 <div align="center">
   <img src="./main/photo/nhapmatkhau.jpg" alt="Màn hình mat khau" width="50%"/>
   <br>
