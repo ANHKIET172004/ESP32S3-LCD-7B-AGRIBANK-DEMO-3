@@ -141,7 +141,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **A** → Chuyển sang `STATE_MENU`
 
 <div align="center">
-  <img src="./main/photo/manhinhchinh.png" alt="Màn hình chính" width="50%"/>
+  <img src="main/photo/manhinhchinh.png" alt="Màn hình chính" width="50%"/>
   <br>
   <em>Màn hình chính</em>
 </div>
