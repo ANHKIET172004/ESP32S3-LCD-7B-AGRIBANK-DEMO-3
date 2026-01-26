@@ -232,7 +232,10 @@ void mqtt_init(void) {
 void mqtt_process_task(void *pvParameters) {
     mqtt_message_t msg;
     const TickType_t xTicksToWait = pdMS_TO_TICKS(1000);
-    esp_task_wdt_add(NULL);  // 
+    esp_task_wdt_add(NULL);  //
+    //esp_mqtt_client_publish(mqtt_client, "transfernumber", NULL, 0, 1, true);//
+
+ 
 
     while (1) {
         esp_task_wdt_reset(); 

@@ -10,6 +10,6 @@
 esp_err_t save_retry(uint8_t x);
 uint8_t read_retry(uint8_t x);
 void reset_retry(uint8_t x);
-void init_fail_hanlde(uint8_t x);
+void init_fail_handle(uint8_t x);
 
 #endif

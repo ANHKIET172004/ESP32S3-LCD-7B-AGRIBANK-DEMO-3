@@ -14,7 +14,7 @@
 #include "mac_utils/mac_utils.h"
 #include "esp_heap_caps.h"
 #include "unity.h"
-
+#include "init_handle/init_handle.h"
 
 #define TAG "DEMO"
 
@@ -63,7 +63,7 @@ void app_main(void) {
 
     if (mqtt_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create MQTT queue!");
-        init_fail_hanlde(2);// restart nếu số lần restart còn nằm trong khoảng cho phép
+        init_fail_handle(1);// restart nếu số lần restart còn nằm trong khoảng cho phép
     } 
     else {
         if (read_retry(1)>0){

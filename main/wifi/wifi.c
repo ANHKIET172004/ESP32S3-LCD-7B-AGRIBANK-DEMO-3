@@ -2,6 +2,7 @@
 #include "esp_mqtt_client/esp_mqtt_client.h"
 #include "keypad/keypad.h"
 #include "state_machine/state_machine.h"
+#include "init_handle/init_handle.h"
 
 #define TAG "WIFI"
 
@@ -129,7 +130,7 @@ void wifi_init(void)
     ret = esp_wifi_init(&cfg);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_init failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(2);// restart nếu số lần restart còn trong mức cho phép
+        init_fail_handle(2);// restart nếu số lần restart còn trong mức cho phép
         //return;           
     }
     if (read_retry(2)>0){// khởi tạo thành công-> reset số lần đã restart trước đó (nếu có)
@@ -139,7 +140,7 @@ void wifi_init(void)
     ret = esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL, NULL);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Register WIFI_EVENT failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(3);
+        init_fail_handle(3);
         //return;
     }
     if (read_retry(3)>0){
@@ -149,7 +150,7 @@ void wifi_init(void)
     ret = esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &wifi_event_handler, NULL, NULL);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Register IP_EVENT failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(4);
+        init_fail_handle(4);
         //return;
     }
     if (read_retry(4)>0){
@@ -161,7 +162,7 @@ void wifi_init(void)
     ret = esp_wifi_set_mode(WIFI_MODE_STA);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_set_mode failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(5);
+        init_fail_handle(5);
 
         //return;
     }
@@ -172,7 +173,7 @@ void wifi_init(void)
     ret = esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_set_config failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(6);
+        init_fail_handle(6);
 
         //return;
     }
@@ -183,7 +184,7 @@ void wifi_init(void)
     ret = esp_wifi_start();
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "esp_wifi_start failed: %s", esp_err_to_name(ret));
-        init_fail_hanlde(7);
+        init_fail_handle(7);
 
         //return;
     }
