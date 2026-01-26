@@ -10,7 +10,7 @@ Hệ thống cho phép:
 - Hiển thị thông tin rõ ràng, dễ sử dụng
 
 <div align="center">
-  <img src="main/photo/sodokhoihtxh.jpg" alt="Sơ đồ khối hệ thống xếp hàng" width="70%"/>
+  <img src="./main/photo/sodokhoihtxh.jpg" alt="Sơ đồ khối hệ thống xếp hàng" width="70%"/>
   <br>
   <em>Sơ đồ khối hệ thống xếp hàng</em>
 </div>
@@ -141,7 +141,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **A** → Chuyển sang `STATE_MENU`
 
 <div align="center">
-  <img src="main/photo/manhinhchinh.png" alt="Màn hình chính" width="50%"/>
+  <img src="./main/photo/manhinhchinh.png" alt="Màn hình chính" width="50%"/>
   <br>
   <em>Màn hình chính</em>
 </div>
@@ -158,7 +158,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **A** → Thoát menu → `STATE_RUNNING`
 
 <div align="center">
-  <img src="main/photo/menu.jpg" alt="Màn hình menu" width="50%"/>
+  <img src="./main/photo/menu.jpg" alt="Màn hình menu" width="50%"/>
   <br>
   <em>Màn hình menu</em>
 </div>
@@ -213,7 +213,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
 <div align="center">
-  <img src="main/photo/nhaptenwifi.jpg" alt="Màn hình wifi" width="50%"/>
+  <img src="./main/photo/nhaptenwifi.jpg" alt="Màn hình wifi" width="50%"/>
   <br>
   <em>Màn hình nhập tên wifi</em>
 </div>
@@ -231,7 +231,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
 <div align="center">
-  <img src="main/photo/nhapmatkhau.jpg" alt="Màn hình mat khau" width="50%"/>
+  <img src="./main/photo/nhapmatkhau.jpg" alt="Màn hình mat khau" width="50%"/>
   <br>
   <em>Màn hình nhập mật khẩu </em>
 </div>
@@ -284,7 +284,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - Hoàn tất → `STATE_RUNNING`
 
 <div align="center">
-  <img src="main/photo/chonquay.jpg" alt="Màn hình chọn quầy" width="50%"/>
+  <img src="./main/photo/chonquay.jpg" alt="Màn hình chọn quầy" width="50%"/>
   <br>
   <em>Màn hình chọn quầy</em>
 </div>
@@ -302,7 +302,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - Sau khi chọn dịch vụ → **STATE_SERVICE_POSITON**
 
 <div align="center">
-  <img src="main/photo/chondichvu.png" alt="Màn hình chọn dịch vụ" width="50%"/>
+  <img src="./main/photo/chondichvu.png" alt="Màn hình chọn dịch vụ" width="50%"/>
   <br>
   <em>Màn hình chọn dịch vụ</em>
 </div>

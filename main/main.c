@@ -80,7 +80,6 @@ void app_main(void) {
     //xTaskCreate(service_scroll_task, "service_scroll_task", 2048, NULL, 4, NULL);
     xTaskCreatePinnedToCore(service_scroll_task, "service_scroll_task", 2* 1024, NULL, 4, NULL, 1);
 
-   // xTaskCreate(ssid_scroll_task, "ssid_scroll_task", 2048, NULL, 4, NULL);
 
    /*
     while (1){
