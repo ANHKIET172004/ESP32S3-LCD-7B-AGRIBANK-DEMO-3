@@ -159,11 +159,9 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **D** → Chọn chức năng
   - **A** → Thoát menu → `STATE_RUNNING`
 
-<div align="center">
   <img src="./main/photo/menu.jpg" alt="Màn hình menu" width="50%"/>
   <br>
   <em>Màn hình menu</em>
-</div>
 
 ### Các chức năng có trong MENU
 
