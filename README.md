@@ -140,6 +140,8 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **D (không nhập số)** → Gọi lại số hiện tại
   - **A** → Chuyển sang `STATE_MENU`
 
+![manhinhchinh](./main/photo/manhinhching.png)
+
 <div align="center">
   <img src="./main/photo/manhinhching.png" alt="Màn hình chính" width="50%"/>
   <br>
