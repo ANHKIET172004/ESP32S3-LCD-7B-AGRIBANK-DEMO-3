@@ -155,11 +155,13 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **1** → Chuyển sang chức năng tiếp theo
   - **2** → Quay lại chức năng trước
   - **D** → Chọn chức năng
-  - **A** → Thoát menu → `STATE_RUNNING`
 
-  <img src="./main/photo/menu.jpg" alt="Màn hình menu" width="50%"/>
-  <br>
-  <em>Màn hình menu</em>
+  - **A** → Thoát menu → `STATE_RUNNING`
+  <div align="center">
+    <img src="./main/photo/menu.jpg" alt="Màn hình menu" width="50%"/>
+    <br>
+    <em>Màn hình menu</em>
+  </div>
 
 ### Các chức năng có trong MENU
 
