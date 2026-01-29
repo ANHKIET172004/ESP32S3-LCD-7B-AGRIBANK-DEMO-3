@@ -140,8 +140,6 @@ một màn hình hiển thị và tập chức năng cụ thể.
   - **D (không nhập số)** → Gọi lại số hiện tại
   - **A** → Chuyển sang `STATE_MENU`
 
-![manhinhchinh](./main/photo/manhinhching.png)
-
 <div align="center">
   <img src="./main/photo/manhinhching.png" alt="Màn hình chính" width="50%"/>
   <br>
@@ -212,6 +210,7 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **A** → Trở lại màn hình trước đó
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
+
 <div align="center">
   <img src="./main/photo/nhaptenwifi.jpg" alt="Màn hình wifi" width="50%"/>
   <br>
@@ -230,8 +229,6 @@ một màn hình hiển thị và tập chức năng cụ thể.
 - **A** → Trở lại màn hình trước đó
 - **B** → Di chuyển con trỏ sang trái, **nếu con trỏ di chuyển đến hết chuỗi ký tự hiển thị trên màn hình thì sẽ quay lại đầu chuỗi**
 - **Tối đa 63 ký tự**
-
-![man hinh mat khau](./main/photo/nhapmatkhau.jpg)
 
 <div align="center">
   <img src="./main/photo/nhapmatkhau.jpg" alt="Màn hình mat khau" width="50%"/>
